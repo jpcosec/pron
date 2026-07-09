@@ -1,0 +1,1632 @@
+tags:
+  cross:deskops_kb:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  cross:graphlang_kb:
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  cross:provenance_concept_graph:
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-kb-needs-three-connected-graph-strata
+  cross:tutor_apoe_hum_ecosystem:
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  domain:graph_architecture:
+  - atom-the-kb-needs-three-connected-graph-strata
+  domain:knowledge_management:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  domain:knowledge_representation:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  entity:ast_node:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  entity:atom:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  entity:concept:
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  entity:concept_group:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  entity:question_type:
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  entity:sample:
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  entity:source:
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  entity:tag_facet:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  entity:taxonomy_node:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  entity:tracked-document:
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  entity:workflow_item:
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  graph:concept:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-kb-needs-three-connected-graph-strata
+  graph:lineage:
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  graph:materialization:
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  graph:provenance:
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  graph:retrieval:
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  graph:structure:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-the-kb-needs-three-connected-graph-strata
+  graph:taxonomy:
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  layer:atom:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  layer:document:
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  layer:graph:
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  layer:graph_concept:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-kb-needs-three-connected-graph-strata
+  layer:graph_provenance:
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  layer:graph_structure:
+  - atom-the-kb-needs-three-connected-graph-strata
+  layer:markup:
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  layer:projection:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  layer:retrieval:
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  layer:sample:
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  layer:source:
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  layer:structure:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  layer:workflow:
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  system:deskops:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  system:graph_ui:
+  - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  system:hum:
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  system:hum_scrapper:
+  - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  system:kb:
+  - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+  - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-atom-status-tags-should-support-review-and-migration-governance
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+  - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+  - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+  - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
+  - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+  - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+  - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
+  - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+  - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+  - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+  - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  - atom-source-identity-validation-should-precede-anchor-validation
+  - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+  - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+  - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+  - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+  - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
+  - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+  - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+  - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  system:kgdb:
+  - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  system:marcado:
+  - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  system:ontomap:
+  - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  system:sldb:
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  system:sldb_ui:
+  - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+  system:spec2viz:
+  - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  topic:anchoring:
+  - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+  - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+  - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-source-identity-validation-should-precede-anchor-validation
+  - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  topic:ast_first:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  topic:atomicity:
+  - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  topic:bootstrap_kb:
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+  - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  topic:composition:
+  - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+  - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  topic:concept_graph:
+  - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+  topic:coverage:
+  - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  topic:deskops_atoms:
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  topic:document_structure:
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  topic:knowledge_retrieval:
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  topic:legacy_extraction:
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  topic:migration:
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  topic:multi_source:
+  - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  topic:provenance:
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  topic:provenance_retrieval:
+  - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+  - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+  topic:query_retrieval:
+  - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
+  - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+  - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  topic:sample:
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  topic:source_adapters:
+  - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+  - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  topic:structural_graph:
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  topic:tag_facets:
+  - atom-atom-status-tags-should-support-review-and-migration-governance
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+  topic:taxonomy:
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+  - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  type.knowledge.atom:
+  - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+  - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-atom-status-tags-should-support-review-and-migration-governance
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+  - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+  - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+  - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
+  - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+  - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+  - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
+  - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+  - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+  - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+  - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+  - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  - atom-source-identity-validation-should-precede-anchor-validation
+  - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+  - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+  - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+  - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+  - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
+  - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+  - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  workspace.desk.atoms:
+  - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+  - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
+  - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-atom-status-tags-should-support-review-and-migration-governance
+  - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  - atom-bootstrap-kb-should-track-grounding-status-explicitly
+  - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+  - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+  - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+  - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
+  - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+  - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+  - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+  - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
+  - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+  - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+  - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
+  - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+  - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+  - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  - atom-source-identity-validation-should-precede-anchor-validation
+  - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+  - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+  - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+  - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+  - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
+  - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+  - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+  - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+  - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+  - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+documents:
+  atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
+    model: AtomDoc
+    path: desk/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version:
+    model: AtomDoc
+    path: desk/atoms/atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible:
+    model: AtomDoc
+    path: desk/atoms/atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-identity-validation-should-precede-anchor-validation:
+    model: AtomDoc
+    path: desk/atoms/atom-source-identity-validation-should-precede-anchor-validation.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time:
+    model: AtomDoc
+    path: desk/atoms/atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance:
+    model: AtomDoc
+    path: desk/atoms/atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled:
+    model: AtomDoc
+    path: desk/atoms/atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-composition-should-provide-depth-without-inflating-atomic-answers:
+    model: AtomDoc
+    path: desk/atoms/atom-composition-should-provide-depth-without-inflating-atomic-answers.md
+    tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms:
+    model: AtomDoc
+    path: desk/atoms/atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms.md
+    tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sldb-should-own-tracked-document-structure-for-future-kb-documents:
+    model: AtomDoc
+    path: desk/atoms/atom-sldb-should-own-tracked-document-structure-for-future-kb-documents.md
+    tags:
+    - entity:tracked-document
+    - layer:document
+    - system:sldb
+    - topic:document_structure
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-marcado-should-own-the-annotation-layer-over-samples:
+    model: AtomDoc
+    path: desk/atoms/atom-marcado-should-own-the-annotation-layer-over-samples.md
+    tags:
+    - system:marcado
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth:
+    model: AtomDoc
+    path: desk/atoms/atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth.md
+    tags:
+    - system:kgdb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions:
+    model: AtomDoc
+    path: desk/atoms/atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions.md
+    tags:
+    - system:ontomap
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately:
+    model: AtomDoc
+    path: desk/atoms/atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately.md
+    tags:
+    - system:graph_ui
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources:
+    model: AtomDoc
+    path: desk/atoms/atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources.md
+    tags:
+    - system:spec2viz
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth:
+    model: AtomDoc
+    path: desk/atoms/atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth.md
+    tags:
+    - system:hum_scrapper
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-repopackage-can-help-model-repository-structure-as-a-source-projection:
+    model: AtomDoc
+    path: desk/atoms/atom-repopackage-can-help-model-repository-structure-as-a-source-projection.md
+    tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval:
+    model: AtomDoc
+    path: desk/atoms/atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval.md
+    tags:
+    - system:kb
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples:
+    model: AtomDoc
+    path: desk/atoms/atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples.md
+    tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity:
+    model: AtomDoc
+    path: desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity.md
+    tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum:
+    model: AtomDoc
+    path: desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum.md
+    tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources:
+    model: AtomDoc
+    path: desk/atoms/atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources.md
+    tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis:
+    model: AtomDoc
+    path: desk/atoms/atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths:
+    model: AtomDoc
+    path: desk/atoms/atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths.md
+    tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families:
+    model: AtomDoc
+    path: desk/atoms/atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus:
+    model: AtomDoc
+    path: desk/atoms/atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus.md
+    tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-project-tags-should-distinguish-repository-context-from-system-identity:
+    model: AtomDoc
+    path: desk/atoms/atom-project-tags-should-distinguish-repository-context-from-system-identity.md
+    tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb:
+    model: AtomDoc
+    path: desk/atoms/atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb.md
+    tags:
+    - system:sldb_ui
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus:
+    model: AtomDoc
+    path: desk/atoms/atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus.md
+    tags:
+    - system:deskops
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only:
+    model: AtomDoc
+    path: desk/atoms/atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms:
+    model: AtomDoc
+    path: desk/atoms/atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms.md
+    tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring:
+    model: AtomDoc
+    path: desk/atoms/atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text:
+    model: AtomDoc
+    path: desk/atoms/atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain:
+    model: AtomDoc
+    path: desk/atoms/atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain.md
+    tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms:
+    model: AtomDoc
+    path: desk/atoms/atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms.md
+    tags:
+    - system:kb
+    - topic:coverage
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct:
+    model: AtomDoc
+    path: desk/atoms/atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct.md
+    tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers:
+    model: AtomDoc
+    path: desk/atoms/atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers.md
+    tags:
+    - system:kb
+    - topic:atomicity
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons:
+    model: AtomDoc
+    path: desk/atoms/atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers:
+    model: AtomDoc
+    path: desk/atoms/atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers.md
+    tags:
+    - system:kb
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-treat-notebooks-as-multi-projection-sources:
+    model: AtomDoc
+    path: desk/atoms/atom-the-kb-should-treat-notebooks-as-multi-projection-sources.md
+    tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-api-snapshots-should-be-treated-as-versioned-structured-sources:
+    model: AtomDoc
+    path: desk/atoms/atom-api-snapshots-should-be-treated-as-versioned-structured-sources.md
+    tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context:
+    model: AtomDoc
+    path: desk/atoms/atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context.md
+    tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them:
+    model: AtomDoc
+    path: desk/atoms/atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them.md
+    tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms:
+    model: AtomDoc
+    path: desk/atoms/atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms.md
+    tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation:
+    model: AtomDoc
+    path: desk/atoms/atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge:
+    model: AtomDoc
+    path: desk/atoms/atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge.md
+    tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-status-tags-should-support-review-and-migration-governance:
+    model: AtomDoc
+    path: desk/atoms/atom-atom-status-tags-should-support-review-and-migration-governance.md
+    tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb:
+    model: AtomDoc
+    path: desk/atoms/atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb.md
+    tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans:
+    model: AtomDoc
+    path: desk/atoms/atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans.md
+    tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-samples-should-be-annotable-without-losing-their-deterministic-binding:
+    model: AtomDoc
+    path: desk/atoms/atom-samples-should-be-annotable-without-losing-their-deterministic-binding.md
+    tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path:
+    model: AtomDoc
+    path: desk/atoms/atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path.md
+    tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations:
+    model: AtomDoc
+    path: desk/atoms/atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations.md
+    tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only:
+    model: AtomDoc
+    path: desk/atoms/atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only.md
+    tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation:
+    model: AtomDoc
+    path: desk/atoms/atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation.md
+    tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links:
+    model: AtomDoc
+    path: desk/atoms/atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links.md
+    tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship:
+    model: AtomDoc
+    path: desk/atoms/atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship.md
+    tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/architecture/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:deskops_atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/architecture/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
+    tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:atom
+    - layer:graph_concept
+    - layer:retrieval
+    - system:kb
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-tags-should-be-facets-not-the-primary-concept-structure:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/architecture/atom-tags-should-be-facets-not-the-primary-concept-structure.md
+    tags:
+    - cross:provenance_concept_graph
+    - domain:knowledge_representation
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/concept/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
+    tags:
+    - domain:knowledge_representation
+    - entity:concept_group
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/concept/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_representation
+    - entity:taxonomy_node
+    - graph:concept
+    - graph:taxonomy
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:concept_graph
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-question-type-should-remain-an-explicit-governance-dimension:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/concept/atom-question-type-should-remain-an-explicit-governance-dimension.md
+    tags:
+    - domain:knowledge_management
+    - entity:question_type
+    - graph:concept
+    - layer:atom
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/governance/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/governance/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
+    tags:
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-needs-three-connected-graph-strata:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/graph/atom-the-kb-needs-three-connected-graph-strata.md
+    tags:
+    - cross:provenance_concept_graph
+    - domain:graph_architecture
+    - entity:atom
+    - graph:concept
+    - graph:provenance
+    - graph:structure
+    - layer:graph
+    - layer:graph_concept
+    - layer:graph_provenance
+    - layer:graph_structure
+    - system:kb
+    - topic:concept_graph
+    - topic:provenance
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/legacy/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
+    tags:
+    - cross:graphlang_kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:retrieval
+    - layer:graph
+    - layer:retrieval
+    - system:hum
+    - topic:knowledge_retrieval
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/legacy/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
+    tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:concept
+    - graph:concept
+    - layer:graph_concept
+    - system:hum
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/legacy/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
+    tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:source
+    - graph:materialization
+    - layer:graph
+    - layer:source
+    - system:hum
+    - topic:legacy_extraction
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/legacy/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
+    tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:workflow_item
+    - layer:workflow
+    - system:hum
+    - topic:composition
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/migration/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/migration/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
+    tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-bootstrap-kb-should-track-grounding-status-explicitly:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/provenance/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
+    tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/provenance/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
+    tags:
+    - domain:knowledge_management
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-grounding-status-should-distinguish-textual-human-and-validated-support:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/provenance/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
+    tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-samples-should-be-the-evidence-objects-between-sources-and-atoms:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/provenance/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
+    tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:markup
+    - layer:sample
+    - system:kb
+    - system:marcado
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-provenance-graph-is-the-relational-backbone-of-the-kb:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/provenance/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
+    tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:retrieval
+    - system:kb
+    - topic:provenance
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:retrieval
+    - layer:workflow
+    - system:kb
+    - topic:concept_graph
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-kb-should-support-queries-by-source-project-and-crossing:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/query/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - graph:retrieval
+    - layer:retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-each-source-type-should-expose-its-own-retrievable-projections:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/source/atom-each-source-type-should-expose-its-own-retrievable-projections.md
+    tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-source-layer-must-be-multi-source-and-adapter-based:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/source/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
+    tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-ast-is-a-first-class-document-structure-category-in-the-kb:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/structure/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
+    tags:
+    - domain:knowledge_representation
+    - entity:ast_node
+    - graph:structure
+    - layer:projection
+    - layer:structure
+    - system:kb
+    - topic:ast_first
+    - topic:multi_source
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container:
+    model: AtomDoc
+    path: desk/atoms/kb/bootstrap/workflow/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
+    tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies:
+    model: AtomDoc
+    path: desk/atoms/atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-distilled-from-should-link-atoms-to-the-samples-they-abstract:
+    model: AtomDoc
+    path: desk/atoms/atom-distilled-from-should-link-atoms-to-the-samples-they-abstract.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from:
+    model: AtomDoc
+    path: desk/atoms/atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies:
+    model: AtomDoc
+    path: desk/atoms/atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy:
+    model: AtomDoc
+    path: desk/atoms/atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy.md
+    tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-about-concept-should-express-the-primary-semantic-target-of-an-atom:
+    model: AtomDoc
+    path: desk/atoms/atom-about-concept-should-express-the-primary-semantic-target-of-an-atom.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it:
+    model: AtomDoc
+    path: desk/atoms/atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts:
+    model: AtomDoc
+    path: desk/atoms/atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts:
+    model: AtomDoc
+    path: desk/atoms/atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts.md
+    tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology:
+    model: AtomDoc
+    path: desk/atoms/atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept:
+    model: AtomDoc
+    path: desk/atoms/atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement:
+    model: AtomDoc
+    path: desk/atoms/atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement.md
+    tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy:
+    model: AtomDoc
+    path: desk/atoms/atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy.md
+    tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels:
+    model: AtomDoc
+    path: desk/atoms/atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels.md
+    tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy:
+    model: AtomDoc
+    path: desk/atoms/atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb:
+    model: AtomDoc
+    path: desk/atoms/atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb.md
+    tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section:
+    model: AtomDoc
+    path: desk/atoms/atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support:
+    model: AtomDoc
+    path: desk/atoms/atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support.md
+    tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms

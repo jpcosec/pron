@@ -1,0 +1,4828 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-about-concept-should-express-the-primary-semantic-target-of-an-atom",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-about-concept-should-express-the-primary-semantic-target-of-an-atom",
+          "identity": "atom-about-concept-should-express-the-primary-semantic-target-of-an-atom",
+          "label": "About concept should express the primary semantic target of an atom",
+          "path": "desk/atoms/atom-about-concept-should-express-the-primary-semantic-target-of-an-atom.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-about-concept-should-express-the-primary-semantic-target-of-an-atom.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-about-concept-should-express-the-primary-semantic-target-of-an-atom"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators",
+          "identity": "atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators",
+          "label": "Anchor bundles should combine structural, textual, and contextual locators",
+          "path": "desk/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version",
+          "identity": "atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version",
+          "label": "Anchor validation should bind every sample to a source artifact version",
+          "path": "desk/atoms/atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it",
+          "identity": "atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it",
+          "label": "Anchored in should connect a sample to the locator bundle used to recover it",
+          "path": "desk/atoms/atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-api-snapshots-should-be-treated-as-versioned-structured-sources",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-api-snapshots-should-be-treated-as-versioned-structured-sources",
+          "identity": "atom-api-snapshots-should-be-treated-as-versioned-structured-sources",
+          "label": "API snapshots should be treated as versioned structured sources",
+          "path": "desk/atoms/atom-api-snapshots-should-be-treated-as-versioned-structured-sources.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-api-snapshots-should-be-treated-as-versioned-structured-sources.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-api-snapshots-should-be-treated-as-versioned-structured-sources"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-ast-is-a-first-class-document-structure-category-in-the-kb",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-ast-is-a-first-class-document-structure-category-in-the-kb",
+          "identity": "atom-ast-is-a-first-class-document-structure-category-in-the-kb",
+          "label": "AST is a first-class document structure category in the KB",
+          "path": "desk/atoms/kb/bootstrap/structure/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/structure/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-ast-is-a-first-class-document-structure-category-in-the-kb"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers",
+          "identity": "atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers",
+          "label": "Atom answers should remain stable enough to be recomposed across future KB layers",
+          "path": "desk/atoms/atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-atom-status-tags-should-support-review-and-migration-governance",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-atom-status-tags-should-support-review-and-migration-governance",
+          "identity": "atom-atom-status-tags-should-support-review-and-migration-governance",
+          "label": "Atom status tags should support review and migration governance",
+          "path": "desk/atoms/atom-atom-status-tags-should-support-review-and-migration-governance.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-atom-status-tags-should-support-review-and-migration-governance.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-atom-status-tags-should-support-review-and-migration-governance"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline",
+          "identity": "atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline",
+          "label": "The bootstrap KB must preserve current atom ids and 5WH1+ discipline",
+          "path": "desk/atoms/kb/bootstrap/governance/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/governance/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-bootstrap-kb-should-track-grounding-status-explicitly",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-bootstrap-kb-should-track-grounding-status-explicitly",
+          "identity": "atom-bootstrap-kb-should-track-grounding-status-explicitly",
+          "label": "The bootstrap KB should track grounding status explicitly",
+          "path": "desk/atoms/kb/bootstrap/provenance/atom-bootstrap-kb-should-track-grounding-status-explicitly.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/provenance/atom-bootstrap-kb-should-track-grounding-status-explicitly.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-bootstrap-kb-should-track-grounding-status-explicitly"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface",
+          "identity": "atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface",
+          "label": "The bootstrap KB should treat current Deskops atoms as the canonical bootstrap surface",
+          "path": "desk/atoms/kb/bootstrap/architecture/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/architecture/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples",
+          "identity": "atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples",
+          "label": "Bootstrap provenance should begin with source stubs before full samples",
+          "path": "desk/atoms/kb/bootstrap/provenance/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/provenance/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons",
+          "identity": "atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons",
+          "label": "Bridge atoms should state reusable relations rather than narrating long comparisons",
+          "path": "desk/atoms/atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text",
+          "identity": "atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text",
+          "label": "Code sources should expose symbol-aware support paths in addition to raw text",
+          "path": "desk/atoms/atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts",
+          "identity": "atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts",
+          "label": "Composes should link atoms into larger synthesized knowledge artifacts",
+          "path": "desk/atoms/atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-composition-should-provide-depth-without-inflating-atomic-answers",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-composition-should-provide-depth-without-inflating-atomic-answers",
+          "identity": "atom-composition-should-provide-depth-without-inflating-atomic-answers",
+          "label": "Composition should provide depth without inflating atomic answers",
+          "path": "desk/atoms/atom-composition-should-provide-depth-without-inflating-atomic-answers.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-composition-should-provide-depth-without-inflating-atomic-answers.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-composition-should-provide-depth-without-inflating-atomic-answers"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished",
+          "identity": "atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished",
+          "label": "ConceptGroup, TaxonomyNode, and TagFacet should be distinguished",
+          "path": "desk/atoms/kb/bootstrap/concept/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/concept/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb",
+          "identity": "atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb",
+          "label": "Contrasts with should preserve meaningful conceptual opposition in the KB",
+          "path": "desk/atoms/atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms",
+          "identity": "atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms",
+          "label": "Coverage views should reveal which source regions have not yet produced atoms",
+          "path": "desk/atoms/atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes",
+          "identity": "atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes",
+          "label": "Cross-project analysis should produce bridge atoms, not only local notes",
+          "path": "desk/atoms/kb/bootstrap/architecture/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/architecture/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms",
+          "identity": "atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms",
+          "label": "Cross-project synthesis atoms should be reviewable independently from local source atoms",
+          "path": "desk/atoms/atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects",
+          "identity": "atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects",
+          "label": "Cross tags should mark bridge knowledge between systems and projects",
+          "path": "desk/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy",
+          "identity": "atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy",
+          "label": "Depends on should express knowledge prerequisites without collapsing them into hierarchy",
+          "path": "desk/atoms/atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels",
+          "identity": "atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels",
+          "label": "Derived from should connect transformed knowledge artifacts across representation levels",
+          "path": "desk/atoms/atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container",
+          "identity": "atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container",
+          "label": "Deskops is a bootstrap surface, not the final KB container",
+          "path": "desk/atoms/kb/bootstrap/workflow/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/workflow/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus",
+          "identity": "atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus",
+          "label": "Deskops should remain the operational authoring surface for the bootstrap corpus",
+          "path": "desk/atoms/atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-distilled-from-should-link-atoms-to-the-samples-they-abstract",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-distilled-from-should-link-atoms-to-the-samples-they-abstract",
+          "identity": "atom-distilled-from-should-link-atoms-to-the-samples-they-abstract",
+          "label": "Distilled from should link atoms to the samples they abstract",
+          "path": "desk/atoms/atom-distilled-from-should-link-atoms-to-the-samples-they-abstract.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-distilled-from-should-link-atoms-to-the-samples-they-abstract.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-distilled-from-should-link-atoms-to-the-samples-they-abstract"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section",
+          "identity": "atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section",
+          "label": "Drawn from section should connect a support object to an explicit source section",
+          "path": "desk/atoms/atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-each-source-type-should-expose-its-own-retrievable-projections",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-each-source-type-should-expose-its-own-retrievable-projections",
+          "identity": "atom-each-source-type-should-expose-its-own-retrievable-projections",
+          "label": "Each source type should expose its own retrievable projections",
+          "path": "desk/atoms/kb/bootstrap/source/atom-each-source-type-should-expose-its-own-retrievable-projections.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/source/atom-each-source-type-should-expose-its-own-retrievable-projections.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-each-source-type-should-expose-its-own-retrievable-projections"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags",
+          "identity": "atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags",
+          "label": "Every bootstrap atom should carry project, source, and grounding tags",
+          "path": "desk/atoms/kb/bootstrap/governance/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/governance/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible",
+          "identity": "atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible",
+          "label": "Exact quote anchors should be paired with structural locators when possible",
+          "path": "desk/atoms/atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology",
+          "identity": "atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology",
+          "label": "Folder taxonomy can seed the concept graph without being the final ontology",
+          "path": "desk/atoms/kb/bootstrap/concept/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/concept/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance",
+          "identity": "atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance",
+          "label": "Git sources should support repository blob commit and file-level provenance",
+          "path": "desk/atoms/atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them",
+          "identity": "atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them",
+          "label": "Governance tags should help detect malformed atoms not only retrieve them",
+          "path": "desk/atoms/atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately",
+          "identity": "atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately",
+          "label": "Graph UI should visualize lineage concept and structure perspectives separately",
+          "path": "desk/atoms/atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation",
+          "identity": "atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation",
+          "label": "Graphlang is relevant as a query and representation ambition, not as final foundation",
+          "path": "desk/atoms/kb/bootstrap/legacy/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/legacy/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-grounding-status-should-distinguish-textual-human-and-validated-support",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-grounding-status-should-distinguish-textual-human-and-validated-support",
+          "identity": "atom-grounding-status-should-distinguish-textual-human-and-validated-support",
+          "label": "Grounding status should distinguish textual, human-located, and validated support",
+          "path": "desk/atoms/kb/bootstrap/provenance/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/provenance/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-grounding-status-should-distinguish-textual-human-and-validated-support"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy",
+          "identity": "atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy",
+          "label": "Grouped under should support looser conceptual clustering than strict hierarchy",
+          "path": "desk/atoms/atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once",
+          "identity": "atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once",
+          "label": "Historical atoms should be backfilled by value and use, not all at once",
+          "path": "desk/atoms/kb/bootstrap/migration/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/migration/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth",
+          "identity": "atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth",
+          "label": "Hum-scrapper should be treated as a source acquisition layer not as knowledge truth",
+          "path": "desk/atoms/atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring",
+          "identity": "atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring",
+          "label": "JSON and YAML sources should expose object-path projections for anchoring",
+          "path": "desk/atoms/atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching",
+          "identity": "atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching",
+          "label": "KG-Trees contribute the idea of structured knowledge branching",
+          "path": "desk/atoms/kb/bootstrap/legacy/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/legacy/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth",
+          "identity": "atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth",
+          "label": "KGDB should materialize queryable graph projections rather than documentary truth",
+          "path": "desk/atoms/atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers",
+          "identity": "atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers",
+          "label": "Legacy extraction should preserve useful architecture intuitions without inheriting obsolete containers",
+          "path": "desk/atoms/atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy",
+          "identity": "atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy",
+          "label": "Located in taxonomy should place atoms or concepts within a navigable hierarchy",
+          "path": "desk/atoms/atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-marcado-should-own-the-annotation-layer-over-samples",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-marcado-should-own-the-annotation-layer-over-samples",
+          "identity": "atom-marcado-should-own-the-annotation-layer-over-samples",
+          "label": "Marcado should own the annotation layer over samples",
+          "path": "desk/atoms/atom-marcado-should-own-the-annotation-layer-over-samples.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-marcado-should-own-the-annotation-layer-over-samples.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-marcado-should-own-the-annotation-layer-over-samples"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge",
+          "identity": "atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge",
+          "label": "Materialized diagrams should be derived views over atomized architecture knowledge",
+          "path": "desk/atoms/atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support",
+          "identity": "atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support",
+          "label": "Mentions symbol should express weaker symbol linkage than structural support",
+          "path": "desk/atoms/atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill",
+          "identity": "atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill",
+          "label": "New work should create sample-ready atoms even before full backfill",
+          "path": "desk/atoms/kb/bootstrap/migration/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/migration/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources",
+          "identity": "atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources",
+          "label": "One atom may be supported by multiple samples from multiple sources",
+          "path": "desk/atoms/atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions",
+          "identity": "atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions",
+          "label": "Ontomap should curate explicit concept mappings across knowledge regions",
+          "path": "desk/atoms/atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time",
+          "identity": "atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time",
+          "label": "PDF sources need text structure and layout projections at the same time",
+          "path": "desk/atoms/atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-project-tags-should-distinguish-repository-context-from-system-identity",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-project-tags-should-distinguish-repository-context-from-system-identity",
+          "identity": "atom-project-tags-should-distinguish-repository-context-from-system-identity",
+          "label": "Project tags should distinguish repository context from system identity",
+          "path": "desk/atoms/atom-project-tags-should-distinguish-repository-context-from-system-identity.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-project-tags-should-distinguish-repository-context-from-system-identity.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-project-tags-should-distinguish-repository-context-from-system-identity"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct",
+          "identity": "atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct",
+          "label": "Provenance retrieval and concept retrieval should remain interoperable but distinct",
+          "path": "desk/atoms/atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum",
+          "identity": "atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum",
+          "label": "Queries should be able to isolate atoms by graph stratum",
+          "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity",
+          "identity": "atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity",
+          "label": "Queries should be able to isolate atoms by grounding maturity",
+          "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples",
+          "identity": "atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples",
+          "label": "Queries should be able to isolate atoms that still need samples",
+          "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-question-type-should-remain-an-explicit-governance-dimension",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-question-type-should-remain-an-explicit-governance-dimension",
+          "identity": "atom-question-type-should-remain-an-explicit-governance-dimension",
+          "label": "Question type should remain an explicit governance dimension",
+          "path": "desk/atoms/kb/bootstrap/concept/atom-question-type-should-remain-an-explicit-governance-dimension.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/concept/atom-question-type-should-remain-an-explicit-governance-dimension.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-question-type-should-remain-an-explicit-governance-dimension"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology",
+          "identity": "atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology",
+          "label": "Relation mapping should drive the discovery of missing entities in the ontology",
+          "path": "desk/atoms/atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-repopackage-can-help-model-repository-structure-as-a-source-projection",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-repopackage-can-help-model-repository-structure-as-a-source-projection",
+          "identity": "atom-repopackage-can-help-model-repository-structure-as-a-source-projection",
+          "label": "Repopackage can help model repository structure as a source projection",
+          "path": "desk/atoms/atom-repopackage-can-help-model-repository-structure-as-a-source-projection.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-repopackage-can-help-model-repository-structure-as-a-source-projection.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-repopackage-can-help-model-repository-structure-as-a-source-projection"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms",
+          "identity": "atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms",
+          "label": "Reports should be treated as compositions rather than as primary knowledge atoms",
+          "path": "desk/atoms/atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from",
+          "identity": "atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from",
+          "label": "Sampled from should link a sample to the exact source artifact it comes from",
+          "path": "desk/atoms/atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-samples-should-be-annotable-without-losing-their-deterministic-binding",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-samples-should-be-annotable-without-losing-their-deterministic-binding",
+          "identity": "atom-samples-should-be-annotable-without-losing-their-deterministic-binding",
+          "label": "Samples should be annotable without losing their deterministic binding",
+          "path": "desk/atoms/atom-samples-should-be-annotable-without-losing-their-deterministic-binding.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-samples-should-be-annotable-without-losing-their-deterministic-binding.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-samples-should-be-annotable-without-losing-their-deterministic-binding"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-samples-should-be-the-evidence-objects-between-sources-and-atoms",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-samples-should-be-the-evidence-objects-between-sources-and-atoms",
+          "identity": "atom-samples-should-be-the-evidence-objects-between-sources-and-atoms",
+          "label": "Samples should be the evidence objects between sources and atoms",
+          "path": "desk/atoms/kb/bootstrap/provenance/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/provenance/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-samples-should-be-the-evidence-objects-between-sources-and-atoms"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept",
+          "identity": "atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept",
+          "label": "Secondary about should capture non-primary conceptual relevance without replacing about concept",
+          "path": "desk/atoms/atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families",
+          "identity": "atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families",
+          "label": "Section paths symbol paths and AST paths are complementary anchor families",
+          "path": "desk/atoms/atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-sldb-should-own-tracked-document-structure-for-future-kb-documents",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-sldb-should-own-tracked-document-structure-for-future-kb-documents",
+          "identity": "atom-sldb-should-own-tracked-document-structure-for-future-kb-documents",
+          "label": "SLDB should own tracked document structure for future KB documents",
+          "path": "desk/atoms/atom-sldb-should-own-tracked-document-structure-for-future-kb-documents.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-sldb-should-own-tracked-document-structure-for-future-kb-documents.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-sldb-should-own-tracked-document-structure-for-future-kb-documents"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb",
+          "identity": "atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb",
+          "label": "Sldb UI can become a document and sample inspection surface for the KB",
+          "path": "desk/atoms/atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context",
+          "identity": "atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context",
+          "label": "Source adapters should emit enough metadata to reconstruct retrieval context",
+          "path": "desk/atoms/atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation",
+          "identity": "atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation",
+          "label": "Source adapters should expose enough structure to support future graph derivation",
+          "path": "desk/atoms/atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-source-identity-validation-should-precede-anchor-validation",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-source-identity-validation-should-precede-anchor-validation",
+          "identity": "atom-source-identity-validation-should-precede-anchor-validation",
+          "label": "Source identity validation should precede anchor validation",
+          "path": "desk/atoms/atom-source-identity-validation-should-precede-anchor-validation.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-source-identity-validation-should-precede-anchor-validation.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-source-identity-validation-should-precede-anchor-validation"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus",
+          "identity": "atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus",
+          "label": "Source kind should remain a first-class governance facet in the atom corpus",
+          "path": "desk/atoms/atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb",
+          "identity": "atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb",
+          "label": "Source-oriented atoms and synthesis atoms should coexist in the same KB",
+          "path": "desk/atoms/atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources",
+          "identity": "atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources",
+          "label": "Spec2viz should generate maintained diagrams from structured sources",
+          "path": "desk/atoms/atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths",
+          "identity": "atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths",
+          "label": "Structural graph nodes should remain projected from sources rather than authored as primary truths",
+          "path": "desk/atoms/atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement",
+          "identity": "atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement",
+          "label": "Subconcept of should express concept hierarchy independently from atom placement",
+          "path": "desk/atoms/atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain",
+          "identity": "atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain",
+          "label": "Support queries should traverse sources samples atoms and compositions as one lineage chain",
+          "path": "desk/atoms/atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts",
+          "identity": "atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts",
+          "label": "Supported by structure should link atoms to source structure beyond textual excerpts",
+          "path": "desk/atoms/atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies",
+          "identity": "atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies",
+          "label": "Supports should connect evidence to the atoms or compositions it justifies",
+          "path": "desk/atoms/atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-tags-should-be-facets-not-the-primary-concept-structure",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-tags-should-be-facets-not-the-primary-concept-structure",
+          "identity": "atom-tags-should-be-facets-not-the-primary-concept-structure",
+          "label": "Tags should be facets, not the primary concept structure",
+          "path": "desk/atoms/kb/bootstrap/architecture/atom-tags-should-be-facets-not-the-primary-concept-structure.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/architecture/atom-tags-should-be-facets-not-the-primary-concept-structure.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-tags-should-be-facets-not-the-primary-concept-structure"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship",
+          "identity": "atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship",
+          "label": "The bootstrap corpus should accumulate explicit bridge atoms for every major tool relationship",
+          "path": "desk/atoms/atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation",
+          "identity": "atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation",
+          "label": "The bootstrap KB should welcome partial provenance without confusing it with validation",
+          "path": "desk/atoms/atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only",
+          "identity": "atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only",
+          "label": "The concept graph should be atom-centered rather than concept-only",
+          "path": "desk/atoms/atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms",
+          "identity": "atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms",
+          "label": "The first bootstrap corpus should prioritize architecture governance and provenance atoms",
+          "path": "desk/atoms/atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-needs-three-connected-graph-strata",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-needs-three-connected-graph-strata",
+          "identity": "atom-the-kb-needs-three-connected-graph-strata",
+          "label": "The KB needs three connected graph strata",
+          "path": "desk/atoms/kb/bootstrap/graph/atom-the-kb-needs-three-connected-graph-strata.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/graph/atom-the-kb-needs-three-connected-graph-strata.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-needs-three-connected-graph-strata"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path",
+          "identity": "atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path",
+          "label": "The KB should avoid fake retroactive samples with no recoverable evidence path",
+          "path": "desk/atoms/atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only",
+          "identity": "atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only",
+          "label": "The KB should avoid flattening all source structures into plain text only",
+          "path": "desk/atoms/atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations",
+          "identity": "atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations",
+          "label": "The KB should avoid using tags as a substitute for explicit relations",
+          "path": "desk/atoms/atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis",
+          "identity": "atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis",
+          "label": "The KB should distinguish source evidence from atom-level synthesis",
+          "path": "desk/atoms/atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-support-queries-by-source-project-and-crossing",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-support-queries-by-source-project-and-crossing",
+          "identity": "atom-the-kb-should-support-queries-by-source-project-and-crossing",
+          "label": "The KB should support queries by source, project, and crossing",
+          "path": "desk/atoms/kb/bootstrap/query/atom-the-kb-should-support-queries-by-source-project-and-crossing.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/query/atom-the-kb-should-support-queries-by-source-project-and-crossing.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-support-queries-by-source-project-and-crossing"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-kb-should-treat-notebooks-as-multi-projection-sources",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-kb-should-treat-notebooks-as-multi-projection-sources",
+          "identity": "atom-the-kb-should-treat-notebooks-as-multi-projection-sources",
+          "label": "The KB should treat notebooks as multi-projection sources",
+          "path": "desk/atoms/atom-the-kb-should-treat-notebooks-as-multi-projection-sources.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-kb-should-treat-notebooks-as-multi-projection-sources.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-kb-should-treat-notebooks-as-multi-projection-sources"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line",
+          "identity": "atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line",
+          "label": "The NL-SL-KG pipeline anticipates a source-to-graph transformation line",
+          "path": "desk/atoms/kb/bootstrap/legacy/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/legacy/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies",
+          "identity": "atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies",
+          "label": "The ontology loop should iterate by mapping relations before freezing entity taxonomies",
+          "path": "desk/atoms/atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-provenance-graph-is-the-relational-backbone-of-the-kb",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-provenance-graph-is-the-relational-backbone-of-the-kb",
+          "identity": "atom-the-provenance-graph-is-the-relational-backbone-of-the-kb",
+          "label": "The provenance graph is the relational backbone of the KB",
+          "path": "desk/atoms/kb/bootstrap/provenance/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/provenance/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-provenance-graph-is-the-relational-backbone-of-the-kb"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-source-layer-must-be-multi-source-and-adapter-based",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-source-layer-must-be-multi-source-and-adapter-based",
+          "identity": "atom-the-source-layer-must-be-multi-source-and-adapter-based",
+          "label": "The source layer must be multi-source and adapter-based",
+          "path": "desk/atoms/kb/bootstrap/source/atom-the-source-layer-must-be-multi-source-and-adapter-based.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/source/atom-the-source-layer-must-be-multi-source-and-adapter-based.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-source-layer-must-be-multi-source-and-adapter-based"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans",
+          "identity": "atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans",
+          "label": "The source-sample-atom-composition chain should remain legible to humans",
+          "path": "desk/atoms/atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model",
+          "identity": "atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model",
+          "label": "The universal knowledge loop contributes a process view, not a storage model",
+          "path": "desk/atoms/kb/bootstrap/legacy/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/kb/bootstrap/legacy/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval",
+          "identity": "atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval",
+          "label": "TractatusIR suggests value in addressable textual units for retrieval",
+          "path": "desk/atoms/atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links",
+          "identity": "atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links",
+          "label": "View generation should be reversible back to atoms and evidence links",
+          "path": "desk/atoms/atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links"
+    },
+    {
+      "type": "atom",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "atom:atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled",
+          "node_type": "atom"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled",
+          "identity": "atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled",
+          "label": "Webpage sources should be snapshot-bound before they are sampled",
+          "path": "desk/atoms/atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/atoms/atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "atom:atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled"
+    },
+    {
+      "type": "config_file",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "config_file:desk/atoms/tag-namespaces.yaml",
+          "node_type": "config_file"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "config",
+          "identity": "desk/atoms/tag-namespaces.yaml",
+          "path": "desk/atoms/tag-namespaces.yaml"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "desk/atoms/tag-namespaces.yaml",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "config_file:desk/atoms/tag-namespaces.yaml"
+    },
+    {
+      "type": "config_file",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "config_file:desk/config.json",
+          "node_type": "config_file"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "config",
+          "identity": "desk/config.json",
+          "path": "desk/config.json"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "desk/config.json",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "config_file:desk/config.json"
+    },
+    {
+      "type": "config_file",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "config_file:metadata/atoms/atom-metadata-registry.yaml",
+          "node_type": "config_file"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "config",
+          "identity": "metadata/atoms/atom-metadata-registry.yaml",
+          "path": "metadata/atoms/atom-metadata-registry.yaml"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "metadata/atoms/atom-metadata-registry.yaml",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "config_file:metadata/atoms/atom-metadata-registry.yaml"
+    },
+    {
+      "type": "pill",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "pill:contexts-pills",
+          "node_type": "pill"
+        },
+        "edges": [],
+        "semantics": {
+          "document_id": "contexts-pills",
+          "identity": "contexts-pills",
+          "label": "Pills",
+          "path": "desk/contexts/pills.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "desk/contexts/pills.md",
+              "source_kind": "file_metadata"
+            }
+          ]
+        }
+      },
+      "id": "pill:contexts-pills"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/ATOM_CONCEPT_GRAPH.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/ATOM_CONCEPT_GRAPH.md",
+          "label": "Atom Concept Graph",
+          "path": "spec/ATOM_CONCEPT_GRAPH.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/ATOM_CONCEPT_GRAPH.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/ATOM_CONCEPT_GRAPH.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/ATOM_CONCEPT_GRAPH.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/ATOM_CONCEPT_GRAPH_SCHEMA.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/ATOM_CONCEPT_GRAPH_SCHEMA.md",
+          "label": "Atom Concept Graph Schema",
+          "path": "spec/ATOM_CONCEPT_GRAPH_SCHEMA.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/ATOM_CONCEPT_GRAPH_SCHEMA.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/ATOM_CONCEPT_GRAPH_SCHEMA.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/ATOM_CONCEPT_GRAPH_SCHEMA.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/ATOM_METADATA_DOC.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/ATOM_METADATA_DOC.md",
+          "label": "Atom Metadata Doc",
+          "path": "spec/ATOM_METADATA_DOC.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/ATOM_METADATA_DOC.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/ATOM_METADATA_DOC.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/ATOM_METADATA_DOC.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md",
+          "label": "Bootstrap KB with Current Deskops",
+          "path": "spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md",
+          "label": "Deskops for Knowledge Management",
+          "path": "spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/GRAPH_ARCHITECTURE.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/GRAPH_ARCHITECTURE.md",
+          "label": "Graph Architecture",
+          "path": "spec/GRAPH_ARCHITECTURE.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/GRAPH_ARCHITECTURE.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/GRAPH_ARCHITECTURE.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/GRAPH_ARCHITECTURE.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/KB_SYSTEM_CLARIFICATIONS.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/KB_SYSTEM_CLARIFICATIONS.md",
+          "label": "KB System Clarifications",
+          "path": "spec/KB_SYSTEM_CLARIFICATIONS.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/KB_SYSTEM_CLARIFICATIONS.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/KB_SYSTEM_CLARIFICATIONS.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/KB_SYSTEM_CLARIFICATIONS.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/KB_SYSTEM_SPEC.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/KB_SYSTEM_SPEC.md",
+          "label": "KB System Spec",
+          "path": "spec/KB_SYSTEM_SPEC.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/KB_SYSTEM_SPEC.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/KB_SYSTEM_SPEC.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/KB_SYSTEM_SPEC.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md",
+          "label": "Legacy Extraction from hum-ecosystem",
+          "path": "spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/MULTI_SOURCE_ANCHORING.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/MULTI_SOURCE_ANCHORING.md",
+          "label": "Multi-Source Anchoring",
+          "path": "spec/MULTI_SOURCE_ANCHORING.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/MULTI_SOURCE_ANCHORING.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/MULTI_SOURCE_ANCHORING.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/MULTI_SOURCE_ANCHORING.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/NAMESPACE_TREE.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/NAMESPACE_TREE.md",
+          "label": "Namespace Tree",
+          "path": "spec/NAMESPACE_TREE.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/NAMESPACE_TREE.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/NAMESPACE_TREE.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/NAMESPACE_TREE.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/THREE_GRAPH_MODEL_DIAGRAMS.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/THREE_GRAPH_MODEL_DIAGRAMS.md",
+          "label": "Three-Graph Model Diagrams",
+          "path": "spec/THREE_GRAPH_MODEL_DIAGRAMS.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/THREE_GRAPH_MODEL_DIAGRAMS.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/THREE_GRAPH_MODEL_DIAGRAMS.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/THREE_GRAPH_MODEL_DIAGRAMS.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md",
+          "label": "Atom Authoring Procedure",
+          "path": "spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_AUTHORING_STANDARD.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_AUTHORING_STANDARD.md",
+          "label": "Atom Authoring Standard",
+          "path": "spec/atom_quality/ATOM_AUTHORING_STANDARD.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHORING_STANDARD.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHORING_STANDARD.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_AUTHORING_STANDARD.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_AUTHOR_SKILLS.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_AUTHOR_SKILLS.md",
+          "label": "Atom Author Skills",
+          "path": "spec/atom_quality/ATOM_AUTHOR_SKILLS.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHOR_SKILLS.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_AUTHOR_SKILLS.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_AUTHOR_SKILLS.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md",
+          "label": "Atom Model Alignment and Migration Notes",
+          "path": "spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_MODEL_ALIGNMENT_AND_MIGRATION_NOTES.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_QUALITY_CHECKLIST.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_QUALITY_CHECKLIST.md",
+          "label": "Atom Quality Checklist",
+          "path": "spec/atom_quality/ATOM_QUALITY_CHECKLIST.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_QUALITY_CHECKLIST.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_QUALITY_CHECKLIST.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_QUALITY_CHECKLIST.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_REVIEW_ROUTINE.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_REVIEW_ROUTINE.md",
+          "label": "Atom Review Routine",
+          "path": "spec/atom_quality/ATOM_REVIEW_ROUTINE.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_REVIEW_ROUTINE.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_REVIEW_ROUTINE.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_REVIEW_ROUTINE.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md",
+          "label": "Atom Tagging and Provenance Conventions",
+          "path": "spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/atom_quality/INDEX.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/atom_quality/INDEX.md",
+          "label": "Atom Quality Index",
+          "path": "spec/atom_quality/INDEX.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/atom_quality/INDEX.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/atom_quality/INDEX.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/atom_quality/INDEX.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/INDEX.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/INDEX.md",
+          "label": "Source Apps Index",
+          "path": "spec/source_apps/INDEX.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/INDEX.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/INDEX.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/INDEX.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/SYNTHESIZED_ARCHITECTURE.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/SYNTHESIZED_ARCHITECTURE.md",
+          "label": "Synthesized Architecture for a Comprehensive Knowledge App",
+          "path": "spec/source_apps/SYNTHESIZED_ARCHITECTURE.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/SYNTHESIZED_ARCHITECTURE.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/SYNTHESIZED_ARCHITECTURE.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/SYNTHESIZED_ARCHITECTURE.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/deskops.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/deskops.md",
+          "label": "deskops",
+          "path": "spec/source_apps/deskops.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/deskops.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/deskops.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/deskops.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/graph_ui.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/graph_ui.md",
+          "label": "graph_ui",
+          "path": "spec/source_apps/graph_ui.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/graph_ui.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/graph_ui.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/graph_ui.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/hum-scrapper.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/hum-scrapper.md",
+          "label": "hum-scrapper",
+          "path": "spec/source_apps/hum-scrapper.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/hum-scrapper.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/hum-scrapper.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/hum-scrapper.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/kgdb.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/kgdb.md",
+          "label": "kgdb",
+          "path": "spec/source_apps/kgdb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/kgdb.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/kgdb.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/kgdb.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/marcado.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/marcado.md",
+          "label": "marcado",
+          "path": "spec/source_apps/marcado.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/marcado.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/marcado.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/marcado.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/ontomap.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/ontomap.md",
+          "label": "ontomap",
+          "path": "spec/source_apps/ontomap.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/ontomap.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/ontomap.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/ontomap.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/repopackage.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/repopackage.md",
+          "label": "repopackage",
+          "path": "spec/source_apps/repopackage.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/repopackage.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/repopackage.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/repopackage.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/sldb-ui.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/sldb-ui.md",
+          "label": "sldb-ui",
+          "path": "spec/source_apps/sldb-ui.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/sldb-ui.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/sldb-ui.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/sldb-ui.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/sldb.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/sldb.md",
+          "label": "sldb",
+          "path": "spec/source_apps/sldb.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/sldb.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/sldb.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/sldb.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/spec2viz.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/spec2viz.md",
+          "label": "spec2viz",
+          "path": "spec/source_apps/spec2viz.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/spec2viz.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/spec2viz.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/spec2viz.md"
+    },
+    {
+      "type": "spec",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "spec:spec/source_apps/tractatusIR.md",
+          "node_type": "spec"
+        },
+        "edges": [],
+        "semantics": {
+          "file_kind": "spec",
+          "identity": "spec/source_apps/tractatusIR.md",
+          "label": "tractatusIR",
+          "path": "spec/source_apps/tractatusIR.md"
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": {
+          "extractor": "deskops_kgdb_snapshot_v1",
+          "provenance": [
+            {
+              "extractor": "desk_doc_nodes_v1",
+              "path": "spec/source_apps/tractatusIR.md",
+              "source_kind": "file_metadata"
+            },
+            {
+              "extractor": "desk_source_file_nodes_v1",
+              "path": "spec/source_apps/tractatusIR.md",
+              "source_kind": "path_rule"
+            }
+          ]
+        }
+      },
+      "id": "spec:spec/source_apps/tractatusIR.md"
+    }
+  ],
+  "links": []
+}

@@ -1,0 +1,5341 @@
+documents:
+- doc_name: atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  sections:
+  - path: anchor-bundles-should-combine-structural-textual-and-contextual-locators
+    title: Anchor bundles should combine structural, textual, and contextual locators
+    breadcrumbs:
+    - Anchor bundles should combine structural, textual, and contextual locators
+    about:
+    - Anchor bundles should combine structural, textual, and contextual locators
+    - anchor bundles should combine structural textual and contextual locators
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchor-bundles-should-combine-structural-textual-and-contextual-locators
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: anchor-bundles-should-combine-structural-textual-and-contextual-locators/answer
+    title: Answer
+    breadcrumbs:
+    - Anchor bundles should combine structural, textual, and contextual locators
+    - Answer
+    about:
+    - Anchor bundles should combine structural, textual, and contextual locators
+    - anchor bundles should combine structural textual and contextual locators
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+  sections:
+  - path: anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+    title: Anchor validation should bind every sample to a source artifact version
+    breadcrumbs:
+    - Anchor validation should bind every sample to a source artifact version
+    about:
+    - Anchor validation should bind every sample to a source artifact version
+    - anchor validation should bind every sample to a source artifact version
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchor-validation-should-bind-every-sample-to-a-source-artifact-version
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: anchor-validation-should-bind-every-sample-to-a-source-artifact-version/answer
+    title: Answer
+    breadcrumbs:
+    - Anchor validation should bind every sample to a source artifact version
+    - Answer
+    about:
+    - Anchor validation should bind every sample to a source artifact version
+    - anchor validation should bind every sample to a source artifact version
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  sections:
+  - path: exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+    title: Exact quote anchors should be paired with structural locators when possible
+    breadcrumbs:
+    - Exact quote anchors should be paired with structural locators when possible
+    about:
+    - Exact quote anchors should be paired with structural locators when possible
+    - exact quote anchors should be paired with structural locators when possible
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: exact-quote-anchors-should-be-paired-with-structural-locators-when-possible/answer
+    title: Answer
+    breadcrumbs:
+    - Exact quote anchors should be paired with structural locators when possible
+    - Answer
+    about:
+    - Exact quote anchors should be paired with structural locators when possible
+    - exact quote anchors should be paired with structural locators when possible
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-source-identity-validation-should-precede-anchor-validation
+  sections:
+  - path: source-identity-validation-should-precede-anchor-validation
+    title: Source identity validation should precede anchor validation
+    breadcrumbs:
+    - Source identity validation should precede anchor validation
+    about:
+    - Source identity validation should precede anchor validation
+    - source identity validation should precede anchor validation
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: source-identity-validation-should-precede-anchor-validation
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: source-identity-validation-should-precede-anchor-validation/answer
+    title: Answer
+    breadcrumbs:
+    - Source identity validation should precede anchor validation
+    - Answer
+    about:
+    - Source identity validation should precede anchor validation
+    - source identity validation should precede anchor validation
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  sections:
+  - path: pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+    title: PDF sources need text structure and layout projections at the same time
+    breadcrumbs:
+    - PDF sources need text structure and layout projections at the same time
+    about:
+    - PDF sources need text structure and layout projections at the same time
+    - pdf sources need text structure and layout projections at the same time
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: pdf-sources-need-text-structure-and-layout-projections-at-the-same-time/answer
+    title: Answer
+    breadcrumbs:
+    - PDF sources need text structure and layout projections at the same time
+    - Answer
+    about:
+    - PDF sources need text structure and layout projections at the same time
+    - pdf sources need text structure and layout projections at the same time
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
+  sections:
+  - path: git-sources-should-support-repository-blob-commit-and-file-level-provenance
+    title: Git sources should support repository blob commit and file-level provenance
+    breadcrumbs:
+    - Git sources should support repository blob commit and file-level provenance
+    about:
+    - Git sources should support repository blob commit and file-level provenance
+    - git sources should support repository blob commit and file level provenance
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: git-sources-should-support-repository-blob-commit-and-file-level-provenance
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: git-sources-should-support-repository-blob-commit-and-file-level-provenance/answer
+    title: Answer
+    breadcrumbs:
+    - Git sources should support repository blob commit and file-level provenance
+    - Answer
+    about:
+    - Git sources should support repository blob commit and file-level provenance
+    - git sources should support repository blob commit and file level provenance
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  sections:
+  - path: webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+    title: Webpage sources should be snapshot-bound before they are sampled
+    breadcrumbs:
+    - Webpage sources should be snapshot-bound before they are sampled
+    about:
+    - Webpage sources should be snapshot-bound before they are sampled
+    - webpage sources should be snapshot bound before they are sampled
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: webpage-sources-should-be-snapshot-bound-before-they-are-sampled/answer
+    title: Answer
+    breadcrumbs:
+    - Webpage sources should be snapshot-bound before they are sampled
+    - Answer
+    about:
+    - Webpage sources should be snapshot-bound before they are sampled
+    - webpage sources should be snapshot bound before they are sampled
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-composition-should-provide-depth-without-inflating-atomic-answers
+  sections:
+  - path: composition-should-provide-depth-without-inflating-atomic-answers
+    title: Composition should provide depth without inflating atomic answers
+    breadcrumbs:
+    - Composition should provide depth without inflating atomic answers
+    about:
+    - Composition should provide depth without inflating atomic answers
+    - composition should provide depth without inflating atomic answers
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: composition-should-provide-depth-without-inflating-atomic-answers
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: composition-should-provide-depth-without-inflating-atomic-answers/answer
+    title: Answer
+    breadcrumbs:
+    - Composition should provide depth without inflating atomic answers
+    - Answer
+    about:
+    - Composition should provide depth without inflating atomic answers
+    - composition should provide depth without inflating atomic answers
+    - Answer
+    - answer
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  sections:
+  - path: reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+    title: Reports should be treated as compositions rather than as primary knowledge
+      atoms
+    breadcrumbs:
+    - Reports should be treated as compositions rather than as primary knowledge atoms
+    about:
+    - Reports should be treated as compositions rather than as primary knowledge atoms
+    - reports should be treated as compositions rather than as primary knowledge atoms
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms/answer
+    title: Answer
+    breadcrumbs:
+    - Reports should be treated as compositions rather than as primary knowledge atoms
+    - Answer
+    about:
+    - Reports should be treated as compositions rather than as primary knowledge atoms
+    - reports should be treated as compositions rather than as primary knowledge atoms
+    - Answer
+    - answer
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  sections:
+  - path: sldb-should-own-tracked-document-structure-for-future-kb-documents
+    title: SLDB should own tracked document structure for future KB documents
+    breadcrumbs:
+    - SLDB should own tracked document structure for future KB documents
+    about:
+    - SLDB should own tracked document structure for future KB documents
+    - sldb should own tracked document structure for future kb documents
+    - entity:tracked-document
+    - layer:document
+    - system:sldb
+    - topic:document_structure
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:tracked-document
+    - layer:document
+    - system:sldb
+    - topic:document_structure
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: sldb-should-own-tracked-document-structure-for-future-kb-documents
+    level: 1
+    line_start: 13
+    line_end: 14
+  - path: sldb-should-own-tracked-document-structure-for-future-kb-documents/answer
+    title: Answer
+    breadcrumbs:
+    - SLDB should own tracked document structure for future KB documents
+    - Answer
+    about:
+    - SLDB should own tracked document structure for future KB documents
+    - sldb should own tracked document structure for future kb documents
+    - Answer
+    - answer
+    - entity:tracked-document
+    - layer:document
+    - system:sldb
+    - topic:document_structure
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:tracked-document
+    - layer:document
+    - system:sldb
+    - topic:document_structure
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 15
+    line_end: 16
+- doc_name: atom-marcado-should-own-the-annotation-layer-over-samples
+  sections:
+  - path: marcado-should-own-the-annotation-layer-over-samples
+    title: Marcado should own the annotation layer over samples
+    breadcrumbs:
+    - Marcado should own the annotation layer over samples
+    about:
+    - Marcado should own the annotation layer over samples
+    - marcado should own the annotation layer over samples
+    - system:marcado
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: marcado-should-own-the-annotation-layer-over-samples
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: marcado-should-own-the-annotation-layer-over-samples/answer
+    title: Answer
+    breadcrumbs:
+    - Marcado should own the annotation layer over samples
+    - Answer
+    about:
+    - Marcado should own the annotation layer over samples
+    - marcado should own the annotation layer over samples
+    - Answer
+    - answer
+    - system:marcado
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  sections:
+  - path: kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+    title: KGDB should materialize queryable graph projections rather than documentary
+      truth
+    breadcrumbs:
+    - KGDB should materialize queryable graph projections rather than documentary
+      truth
+    about:
+    - KGDB should materialize queryable graph projections rather than documentary
+      truth
+    - kgdb should materialize queryable graph projections rather than documentary
+      truth
+    - system:kgdb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kgdb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth/answer
+    title: Answer
+    breadcrumbs:
+    - KGDB should materialize queryable graph projections rather than documentary
+      truth
+    - Answer
+    about:
+    - KGDB should materialize queryable graph projections rather than documentary
+      truth
+    - kgdb should materialize queryable graph projections rather than documentary
+      truth
+    - Answer
+    - answer
+    - system:kgdb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kgdb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  sections:
+  - path: ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+    title: Ontomap should curate explicit concept mappings across knowledge regions
+    breadcrumbs:
+    - Ontomap should curate explicit concept mappings across knowledge regions
+    about:
+    - Ontomap should curate explicit concept mappings across knowledge regions
+    - ontomap should curate explicit concept mappings across knowledge regions
+    - system:ontomap
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:ontomap
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions/answer
+    title: Answer
+    breadcrumbs:
+    - Ontomap should curate explicit concept mappings across knowledge regions
+    - Answer
+    about:
+    - Ontomap should curate explicit concept mappings across knowledge regions
+    - ontomap should curate explicit concept mappings across knowledge regions
+    - Answer
+    - answer
+    - system:ontomap
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:ontomap
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  sections:
+  - path: graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+    title: Graph UI should visualize lineage concept and structure perspectives separately
+    breadcrumbs:
+    - Graph UI should visualize lineage concept and structure perspectives separately
+    about:
+    - Graph UI should visualize lineage concept and structure perspectives separately
+    - graph ui should visualize lineage concept and structure perspectives separately
+    - system:graph_ui
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:graph_ui
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately/answer
+    title: Answer
+    breadcrumbs:
+    - Graph UI should visualize lineage concept and structure perspectives separately
+    - Answer
+    about:
+    - Graph UI should visualize lineage concept and structure perspectives separately
+    - graph ui should visualize lineage concept and structure perspectives separately
+    - Answer
+    - answer
+    - system:graph_ui
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:graph_ui
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  sections:
+  - path: spec2viz-should-generate-maintained-diagrams-from-structured-sources
+    title: Spec2viz should generate maintained diagrams from structured sources
+    breadcrumbs:
+    - Spec2viz should generate maintained diagrams from structured sources
+    about:
+    - Spec2viz should generate maintained diagrams from structured sources
+    - spec2viz should generate maintained diagrams from structured sources
+    - system:spec2viz
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:spec2viz
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: spec2viz-should-generate-maintained-diagrams-from-structured-sources
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: spec2viz-should-generate-maintained-diagrams-from-structured-sources/answer
+    title: Answer
+    breadcrumbs:
+    - Spec2viz should generate maintained diagrams from structured sources
+    - Answer
+    about:
+    - Spec2viz should generate maintained diagrams from structured sources
+    - spec2viz should generate maintained diagrams from structured sources
+    - Answer
+    - answer
+    - system:spec2viz
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:spec2viz
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  sections:
+  - path: hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+    title: Hum-scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    breadcrumbs:
+    - Hum-scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    about:
+    - Hum-scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    - hum scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    - system:hum_scrapper
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:hum_scrapper
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth/answer
+    title: Answer
+    breadcrumbs:
+    - Hum-scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    - Answer
+    about:
+    - Hum-scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    - hum scrapper should be treated as a source acquisition layer not as knowledge
+      truth
+    - Answer
+    - answer
+    - system:hum_scrapper
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:hum_scrapper
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  sections:
+  - path: repopackage-can-help-model-repository-structure-as-a-source-projection
+    title: Repopackage can help model repository structure as a source projection
+    breadcrumbs:
+    - Repopackage can help model repository structure as a source projection
+    about:
+    - Repopackage can help model repository structure as a source projection
+    - repopackage can help model repository structure as a source projection
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: repopackage-can-help-model-repository-structure-as-a-source-projection
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: repopackage-can-help-model-repository-structure-as-a-source-projection/answer
+    title: Answer
+    breadcrumbs:
+    - Repopackage can help model repository structure as a source projection
+    - Answer
+    about:
+    - Repopackage can help model repository structure as a source projection
+    - repopackage can help model repository structure as a source projection
+    - Answer
+    - answer
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  sections:
+  - path: tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+    title: TractatusIR suggests value in addressable textual units for retrieval
+    breadcrumbs:
+    - TractatusIR suggests value in addressable textual units for retrieval
+    about:
+    - TractatusIR suggests value in addressable textual units for retrieval
+    - tractatusir suggests value in addressable textual units for retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: tractatusir-suggests-value-in-addressable-textual-units-for-retrieval/answer
+    title: Answer
+    breadcrumbs:
+    - TractatusIR suggests value in addressable textual units for retrieval
+    - Answer
+    about:
+    - TractatusIR suggests value in addressable textual units for retrieval
+    - tractatusir suggests value in addressable textual units for retrieval
+    - Answer
+    - answer
+    - system:kb
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  sections:
+  - path: queries-should-be-able-to-isolate-atoms-that-still-need-samples
+    title: Queries should be able to isolate atoms that still need samples
+    breadcrumbs:
+    - Queries should be able to isolate atoms that still need samples
+    about:
+    - Queries should be able to isolate atoms that still need samples
+    - queries should be able to isolate atoms that still need samples
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: queries-should-be-able-to-isolate-atoms-that-still-need-samples
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: queries-should-be-able-to-isolate-atoms-that-still-need-samples/answer
+    title: Answer
+    breadcrumbs:
+    - Queries should be able to isolate atoms that still need samples
+    - Answer
+    about:
+    - Queries should be able to isolate atoms that still need samples
+    - queries should be able to isolate atoms that still need samples
+    - Answer
+    - answer
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+  sections:
+  - path: queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+    title: Queries should be able to isolate atoms by grounding maturity
+    breadcrumbs:
+    - Queries should be able to isolate atoms by grounding maturity
+    about:
+    - Queries should be able to isolate atoms by grounding maturity
+    - queries should be able to isolate atoms by grounding maturity
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: queries-should-be-able-to-isolate-atoms-by-grounding-maturity
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: queries-should-be-able-to-isolate-atoms-by-grounding-maturity/answer
+    title: Answer
+    breadcrumbs:
+    - Queries should be able to isolate atoms by grounding maturity
+    - Answer
+    about:
+    - Queries should be able to isolate atoms by grounding maturity
+    - queries should be able to isolate atoms by grounding maturity
+    - Answer
+    - answer
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
+  sections:
+  - path: queries-should-be-able-to-isolate-atoms-by-graph-stratum
+    title: Queries should be able to isolate atoms by graph stratum
+    breadcrumbs:
+    - Queries should be able to isolate atoms by graph stratum
+    about:
+    - Queries should be able to isolate atoms by graph stratum
+    - queries should be able to isolate atoms by graph stratum
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: queries-should-be-able-to-isolate-atoms-by-graph-stratum
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: queries-should-be-able-to-isolate-atoms-by-graph-stratum/answer
+    title: Answer
+    breadcrumbs:
+    - Queries should be able to isolate atoms by graph stratum
+    - Answer
+    about:
+    - Queries should be able to isolate atoms by graph stratum
+    - queries should be able to isolate atoms by graph stratum
+    - Answer
+    - answer
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  sections:
+  - path: one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+    title: One atom may be supported by multiple samples from multiple sources
+    breadcrumbs:
+    - One atom may be supported by multiple samples from multiple sources
+    about:
+    - One atom may be supported by multiple samples from multiple sources
+    - one atom may be supported by multiple samples from multiple sources
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: one-atom-may-be-supported-by-multiple-samples-from-multiple-sources/answer
+    title: Answer
+    breadcrumbs:
+    - One atom may be supported by multiple samples from multiple sources
+    - Answer
+    about:
+    - One atom may be supported by multiple samples from multiple sources
+    - one atom may be supported by multiple samples from multiple sources
+    - Answer
+    - answer
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+  sections:
+  - path: the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+    title: The KB should distinguish source evidence from atom-level synthesis
+    breadcrumbs:
+    - The KB should distinguish source evidence from atom-level synthesis
+    about:
+    - The KB should distinguish source evidence from atom-level synthesis
+    - the kb should distinguish source evidence from atom level synthesis
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-kb-should-distinguish-source-evidence-from-atom-level-synthesis/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should distinguish source evidence from atom-level synthesis
+    - Answer
+    about:
+    - The KB should distinguish source evidence from atom-level synthesis
+    - the kb should distinguish source evidence from atom level synthesis
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  sections:
+  - path: structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+    title: Structural graph nodes should remain projected from sources rather than
+      authored as primary truths
+    breadcrumbs:
+    - Structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    about:
+    - Structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    - structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths/answer
+    title: Answer
+    breadcrumbs:
+    - Structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    - Answer
+    about:
+    - Structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    - structural graph nodes should remain projected from sources rather than authored
+      as primary truths
+    - Answer
+    - answer
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  sections:
+  - path: section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+    title: Section paths symbol paths and AST paths are complementary anchor families
+    breadcrumbs:
+    - Section paths symbol paths and AST paths are complementary anchor families
+    about:
+    - Section paths symbol paths and AST paths are complementary anchor families
+    - section paths symbol paths and ast paths are complementary anchor families
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families/answer
+    title: Answer
+    breadcrumbs:
+    - Section paths symbol paths and AST paths are complementary anchor families
+    - Answer
+    about:
+    - Section paths symbol paths and AST paths are complementary anchor families
+    - section paths symbol paths and ast paths are complementary anchor families
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+  sections:
+  - path: source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+    title: Source kind should remain a first-class governance facet in the atom corpus
+    breadcrumbs:
+    - Source kind should remain a first-class governance facet in the atom corpus
+    about:
+    - Source kind should remain a first-class governance facet in the atom corpus
+    - source kind should remain a first class governance facet in the atom corpus
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus/answer
+    title: Answer
+    breadcrumbs:
+    - Source kind should remain a first-class governance facet in the atom corpus
+    - Answer
+    about:
+    - Source kind should remain a first-class governance facet in the atom corpus
+    - source kind should remain a first class governance facet in the atom corpus
+    - Answer
+    - answer
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-project-tags-should-distinguish-repository-context-from-system-identity
+  sections:
+  - path: project-tags-should-distinguish-repository-context-from-system-identity
+    title: Project tags should distinguish repository context from system identity
+    breadcrumbs:
+    - Project tags should distinguish repository context from system identity
+    about:
+    - Project tags should distinguish repository context from system identity
+    - project tags should distinguish repository context from system identity
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: project-tags-should-distinguish-repository-context-from-system-identity
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: project-tags-should-distinguish-repository-context-from-system-identity/answer
+    title: Answer
+    breadcrumbs:
+    - Project tags should distinguish repository context from system identity
+    - Answer
+    about:
+    - Project tags should distinguish repository context from system identity
+    - project tags should distinguish repository context from system identity
+    - Answer
+    - answer
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+  sections:
+  - path: sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+    title: Sldb UI can become a document and sample inspection surface for the KB
+    breadcrumbs:
+    - Sldb UI can become a document and sample inspection surface for the KB
+    about:
+    - Sldb UI can become a document and sample inspection surface for the KB
+    - sldb ui can become a document and sample inspection surface for the kb
+    - system:sldb_ui
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:sldb_ui
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb/answer
+    title: Answer
+    breadcrumbs:
+    - Sldb UI can become a document and sample inspection surface for the KB
+    - Answer
+    about:
+    - Sldb UI can become a document and sample inspection surface for the KB
+    - sldb ui can become a document and sample inspection surface for the kb
+    - Answer
+    - answer
+    - system:sldb_ui
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:sldb_ui
+    - topic:knowledge_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  sections:
+  - path: deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+    title: Deskops should remain the operational authoring surface for the bootstrap
+      corpus
+    breadcrumbs:
+    - Deskops should remain the operational authoring surface for the bootstrap corpus
+    about:
+    - Deskops should remain the operational authoring surface for the bootstrap corpus
+    - deskops should remain the operational authoring surface for the bootstrap corpus
+    - system:deskops
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:deskops
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus/answer
+    title: Answer
+    breadcrumbs:
+    - Deskops should remain the operational authoring surface for the bootstrap corpus
+    - Answer
+    about:
+    - Deskops should remain the operational authoring surface for the bootstrap corpus
+    - deskops should remain the operational authoring surface for the bootstrap corpus
+    - Answer
+    - answer
+    - system:deskops
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:deskops
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
+  sections:
+  - path: the-concept-graph-should-be-atom-centered-rather-than-concept-only
+    title: The concept graph should be atom-centered rather than concept-only
+    breadcrumbs:
+    - The concept graph should be atom-centered rather than concept-only
+    about:
+    - The concept graph should be atom-centered rather than concept-only
+    - the concept graph should be atom centered rather than concept only
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-concept-graph-should-be-atom-centered-rather-than-concept-only
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-concept-graph-should-be-atom-centered-rather-than-concept-only/answer
+    title: Answer
+    breadcrumbs:
+    - The concept graph should be atom-centered rather than concept-only
+    - Answer
+    about:
+    - The concept graph should be atom-centered rather than concept-only
+    - the concept graph should be atom centered rather than concept only
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  sections:
+  - path: cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+    title: Cross-project synthesis atoms should be reviewable independently from local
+      source atoms
+    breadcrumbs:
+    - Cross-project synthesis atoms should be reviewable independently from local
+      source atoms
+    about:
+    - Cross-project synthesis atoms should be reviewable independently from local
+      source atoms
+    - cross project synthesis atoms should be reviewable independently from local
+      source atoms
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms/answer
+    title: Answer
+    breadcrumbs:
+    - Cross-project synthesis atoms should be reviewable independently from local
+      source atoms
+    - Answer
+    about:
+    - Cross-project synthesis atoms should be reviewable independently from local
+      source atoms
+    - cross project synthesis atoms should be reviewable independently from local
+      source atoms
+    - Answer
+    - answer
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  sections:
+  - path: json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+    title: JSON and YAML sources should expose object-path projections for anchoring
+    breadcrumbs:
+    - JSON and YAML sources should expose object-path projections for anchoring
+    about:
+    - JSON and YAML sources should expose object-path projections for anchoring
+    - json and yaml sources should expose object path projections for anchoring
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: json-and-yaml-sources-should-expose-object-path-projections-for-anchoring/answer
+    title: Answer
+    breadcrumbs:
+    - JSON and YAML sources should expose object-path projections for anchoring
+    - Answer
+    about:
+    - JSON and YAML sources should expose object-path projections for anchoring
+    - json and yaml sources should expose object path projections for anchoring
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  sections:
+  - path: code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+    title: Code sources should expose symbol-aware support paths in addition to raw
+      text
+    breadcrumbs:
+    - Code sources should expose symbol-aware support paths in addition to raw text
+    about:
+    - Code sources should expose symbol-aware support paths in addition to raw text
+    - code sources should expose symbol aware support paths in addition to raw text
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text/answer
+    title: Answer
+    breadcrumbs:
+    - Code sources should expose symbol-aware support paths in addition to raw text
+    - Answer
+    about:
+    - Code sources should expose symbol-aware support paths in addition to raw text
+    - code sources should expose symbol aware support paths in addition to raw text
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+  sections:
+  - path: support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+    title: Support queries should traverse sources samples atoms and compositions
+      as one lineage chain
+    breadcrumbs:
+    - Support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    about:
+    - Support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    - support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain/answer
+    title: Answer
+    breadcrumbs:
+    - Support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    - Answer
+    about:
+    - Support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    - support queries should traverse sources samples atoms and compositions as one
+      lineage chain
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  sections:
+  - path: coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+    title: Coverage views should reveal which source regions have not yet produced
+      atoms
+    breadcrumbs:
+    - Coverage views should reveal which source regions have not yet produced atoms
+    about:
+    - Coverage views should reveal which source regions have not yet produced atoms
+    - coverage views should reveal which source regions have not yet produced atoms
+    - system:kb
+    - topic:coverage
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:coverage
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms/answer
+    title: Answer
+    breadcrumbs:
+    - Coverage views should reveal which source regions have not yet produced atoms
+    - Answer
+    about:
+    - Coverage views should reveal which source regions have not yet produced atoms
+    - coverage views should reveal which source regions have not yet produced atoms
+    - Answer
+    - answer
+    - system:kb
+    - topic:coverage
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:coverage
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+  sections:
+  - path: provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+    title: Provenance retrieval and concept retrieval should remain interoperable
+      but distinct
+    breadcrumbs:
+    - Provenance retrieval and concept retrieval should remain interoperable but distinct
+    about:
+    - Provenance retrieval and concept retrieval should remain interoperable but distinct
+    - provenance retrieval and concept retrieval should remain interoperable but distinct
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct/answer
+    title: Answer
+    breadcrumbs:
+    - Provenance retrieval and concept retrieval should remain interoperable but distinct
+    - Answer
+    about:
+    - Provenance retrieval and concept retrieval should remain interoperable but distinct
+    - provenance retrieval and concept retrieval should remain interoperable but distinct
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  sections:
+  - path: atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+    title: Atom answers should remain stable enough to be recomposed across future
+      KB layers
+    breadcrumbs:
+    - Atom answers should remain stable enough to be recomposed across future KB layers
+    about:
+    - Atom answers should remain stable enough to be recomposed across future KB layers
+    - atom answers should remain stable enough to be recomposed across future kb layers
+    - system:kb
+    - topic:atomicity
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:atomicity
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers/answer
+    title: Answer
+    breadcrumbs:
+    - Atom answers should remain stable enough to be recomposed across future KB layers
+    - Answer
+    about:
+    - Atom answers should remain stable enough to be recomposed across future KB layers
+    - atom answers should remain stable enough to be recomposed across future kb layers
+    - Answer
+    - answer
+    - system:kb
+    - topic:atomicity
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:atomicity
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  sections:
+  - path: bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+    title: Bridge atoms should state reusable relations rather than narrating long
+      comparisons
+    breadcrumbs:
+    - Bridge atoms should state reusable relations rather than narrating long comparisons
+    about:
+    - Bridge atoms should state reusable relations rather than narrating long comparisons
+    - bridge atoms should state reusable relations rather than narrating long comparisons
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons/answer
+    title: Answer
+    breadcrumbs:
+    - Bridge atoms should state reusable relations rather than narrating long comparisons
+    - Answer
+    about:
+    - Bridge atoms should state reusable relations rather than narrating long comparisons
+    - bridge atoms should state reusable relations rather than narrating long comparisons
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  sections:
+  - path: legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+    title: Legacy extraction should preserve useful architecture intuitions without
+      inheriting obsolete containers
+    breadcrumbs:
+    - Legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    about:
+    - Legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    - legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    - system:kb
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers/answer
+    title: Answer
+    breadcrumbs:
+    - Legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    - Answer
+    about:
+    - Legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    - legacy extraction should preserve useful architecture intuitions without inheriting
+      obsolete containers
+    - Answer
+    - answer
+    - system:kb
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  sections:
+  - path: the-kb-should-treat-notebooks-as-multi-projection-sources
+    title: The KB should treat notebooks as multi-projection sources
+    breadcrumbs:
+    - The KB should treat notebooks as multi-projection sources
+    about:
+    - The KB should treat notebooks as multi-projection sources
+    - the kb should treat notebooks as multi projection sources
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-treat-notebooks-as-multi-projection-sources
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-kb-should-treat-notebooks-as-multi-projection-sources/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should treat notebooks as multi-projection sources
+    - Answer
+    about:
+    - The KB should treat notebooks as multi-projection sources
+    - the kb should treat notebooks as multi projection sources
+    - Answer
+    - answer
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-api-snapshots-should-be-treated-as-versioned-structured-sources
+  sections:
+  - path: api-snapshots-should-be-treated-as-versioned-structured-sources
+    title: API snapshots should be treated as versioned structured sources
+    breadcrumbs:
+    - API snapshots should be treated as versioned structured sources
+    about:
+    - API snapshots should be treated as versioned structured sources
+    - api snapshots should be treated as versioned structured sources
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: api-snapshots-should-be-treated-as-versioned-structured-sources
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: api-snapshots-should-be-treated-as-versioned-structured-sources/answer
+    title: Answer
+    breadcrumbs:
+    - API snapshots should be treated as versioned structured sources
+    - Answer
+    about:
+    - API snapshots should be treated as versioned structured sources
+    - api snapshots should be treated as versioned structured sources
+    - Answer
+    - answer
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+  sections:
+  - path: source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+    title: Source adapters should emit enough metadata to reconstruct retrieval context
+    breadcrumbs:
+    - Source adapters should emit enough metadata to reconstruct retrieval context
+    about:
+    - Source adapters should emit enough metadata to reconstruct retrieval context
+    - source adapters should emit enough metadata to reconstruct retrieval context
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context/answer
+    title: Answer
+    breadcrumbs:
+    - Source adapters should emit enough metadata to reconstruct retrieval context
+    - Answer
+    about:
+    - Source adapters should emit enough metadata to reconstruct retrieval context
+    - source adapters should emit enough metadata to reconstruct retrieval context
+    - Answer
+    - answer
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  sections:
+  - path: governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+    title: Governance tags should help detect malformed atoms not only retrieve them
+    breadcrumbs:
+    - Governance tags should help detect malformed atoms not only retrieve them
+    about:
+    - Governance tags should help detect malformed atoms not only retrieve them
+    - governance tags should help detect malformed atoms not only retrieve them
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them/answer
+    title: Answer
+    breadcrumbs:
+    - Governance tags should help detect malformed atoms not only retrieve them
+    - Answer
+    about:
+    - Governance tags should help detect malformed atoms not only retrieve them
+    - governance tags should help detect malformed atoms not only retrieve them
+    - Answer
+    - answer
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  sections:
+  - path: the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+    title: The first bootstrap corpus should prioritize architecture governance and
+      provenance atoms
+    breadcrumbs:
+    - The first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    about:
+    - The first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    - the first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms/answer
+    title: Answer
+    breadcrumbs:
+    - The first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    - Answer
+    about:
+    - The first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    - the first bootstrap corpus should prioritize architecture governance and provenance
+      atoms
+    - Answer
+    - answer
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  sections:
+  - path: the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+    title: The bootstrap KB should welcome partial provenance without confusing it
+      with validation
+    breadcrumbs:
+    - The bootstrap KB should welcome partial provenance without confusing it with
+      validation
+    about:
+    - The bootstrap KB should welcome partial provenance without confusing it with
+      validation
+    - the bootstrap kb should welcome partial provenance without confusing it with
+      validation
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation/answer
+    title: Answer
+    breadcrumbs:
+    - The bootstrap KB should welcome partial provenance without confusing it with
+      validation
+    - Answer
+    about:
+    - The bootstrap KB should welcome partial provenance without confusing it with
+      validation
+    - the bootstrap kb should welcome partial provenance without confusing it with
+      validation
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  sections:
+  - path: materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+    title: Materialized diagrams should be derived views over atomized architecture
+      knowledge
+    breadcrumbs:
+    - Materialized diagrams should be derived views over atomized architecture knowledge
+    about:
+    - Materialized diagrams should be derived views over atomized architecture knowledge
+    - materialized diagrams should be derived views over atomized architecture knowledge
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge/answer
+    title: Answer
+    breadcrumbs:
+    - Materialized diagrams should be derived views over atomized architecture knowledge
+    - Answer
+    about:
+    - Materialized diagrams should be derived views over atomized architecture knowledge
+    - materialized diagrams should be derived views over atomized architecture knowledge
+    - Answer
+    - answer
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-atom-status-tags-should-support-review-and-migration-governance
+  sections:
+  - path: atom-status-tags-should-support-review-and-migration-governance
+    title: Atom status tags should support review and migration governance
+    breadcrumbs:
+    - Atom status tags should support review and migration governance
+    about:
+    - Atom status tags should support review and migration governance
+    - atom status tags should support review and migration governance
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: atom-status-tags-should-support-review-and-migration-governance
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: atom-status-tags-should-support-review-and-migration-governance/answer
+    title: Answer
+    breadcrumbs:
+    - Atom status tags should support review and migration governance
+    - Answer
+    about:
+    - Atom status tags should support review and migration governance
+    - atom status tags should support review and migration governance
+    - Answer
+    - answer
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  sections:
+  - path: source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+    title: Source-oriented atoms and synthesis atoms should coexist in the same KB
+    breadcrumbs:
+    - Source-oriented atoms and synthesis atoms should coexist in the same KB
+    about:
+    - Source-oriented atoms and synthesis atoms should coexist in the same KB
+    - source oriented atoms and synthesis atoms should coexist in the same kb
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb/answer
+    title: Answer
+    breadcrumbs:
+    - Source-oriented atoms and synthesis atoms should coexist in the same KB
+    - Answer
+    about:
+    - Source-oriented atoms and synthesis atoms should coexist in the same KB
+    - source oriented atoms and synthesis atoms should coexist in the same kb
+    - Answer
+    - answer
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+  sections:
+  - path: the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+    title: The source-sample-atom-composition chain should remain legible to humans
+    breadcrumbs:
+    - The source-sample-atom-composition chain should remain legible to humans
+    about:
+    - The source-sample-atom-composition chain should remain legible to humans
+    - the source sample atom composition chain should remain legible to humans
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-source-sample-atom-composition-chain-should-remain-legible-to-humans
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-source-sample-atom-composition-chain-should-remain-legible-to-humans/answer
+    title: Answer
+    breadcrumbs:
+    - The source-sample-atom-composition chain should remain legible to humans
+    - Answer
+    about:
+    - The source-sample-atom-composition chain should remain legible to humans
+    - the source sample atom composition chain should remain legible to humans
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-samples-should-be-annotable-without-losing-their-deterministic-binding
+  sections:
+  - path: samples-should-be-annotable-without-losing-their-deterministic-binding
+    title: Samples should be annotable without losing their deterministic binding
+    breadcrumbs:
+    - Samples should be annotable without losing their deterministic binding
+    about:
+    - Samples should be annotable without losing their deterministic binding
+    - samples should be annotable without losing their deterministic binding
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: samples-should-be-annotable-without-losing-their-deterministic-binding
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: samples-should-be-annotable-without-losing-their-deterministic-binding/answer
+    title: Answer
+    breadcrumbs:
+    - Samples should be annotable without losing their deterministic binding
+    - Answer
+    about:
+    - Samples should be annotable without losing their deterministic binding
+    - samples should be annotable without losing their deterministic binding
+    - Answer
+    - answer
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  sections:
+  - path: the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+    title: The KB should avoid fake retroactive samples with no recoverable evidence
+      path
+    breadcrumbs:
+    - The KB should avoid fake retroactive samples with no recoverable evidence path
+    about:
+    - The KB should avoid fake retroactive samples with no recoverable evidence path
+    - the kb should avoid fake retroactive samples with no recoverable evidence path
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should avoid fake retroactive samples with no recoverable evidence path
+    - Answer
+    about:
+    - The KB should avoid fake retroactive samples with no recoverable evidence path
+    - the kb should avoid fake retroactive samples with no recoverable evidence path
+    - Answer
+    - answer
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+  sections:
+  - path: the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+    title: The KB should avoid using tags as a substitute for explicit relations
+    breadcrumbs:
+    - The KB should avoid using tags as a substitute for explicit relations
+    about:
+    - The KB should avoid using tags as a substitute for explicit relations
+    - the kb should avoid using tags as a substitute for explicit relations
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should avoid using tags as a substitute for explicit relations
+    - Answer
+    about:
+    - The KB should avoid using tags as a substitute for explicit relations
+    - the kb should avoid using tags as a substitute for explicit relations
+    - Answer
+    - answer
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:tag_facets
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  sections:
+  - path: the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+    title: The KB should avoid flattening all source structures into plain text only
+    breadcrumbs:
+    - The KB should avoid flattening all source structures into plain text only
+    about:
+    - The KB should avoid flattening all source structures into plain text only
+    - the kb should avoid flattening all source structures into plain text only
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should avoid flattening all source structures into plain text only
+    - Answer
+    about:
+    - The KB should avoid flattening all source structures into plain text only
+    - the kb should avoid flattening all source structures into plain text only
+    - Answer
+    - answer
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  sections:
+  - path: source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+    title: Source adapters should expose enough structure to support future graph
+      derivation
+    breadcrumbs:
+    - Source adapters should expose enough structure to support future graph derivation
+    about:
+    - Source adapters should expose enough structure to support future graph derivation
+    - source adapters should expose enough structure to support future graph derivation
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: source-adapters-should-expose-enough-structure-to-support-future-graph-derivation/answer
+    title: Answer
+    breadcrumbs:
+    - Source adapters should expose enough structure to support future graph derivation
+    - Answer
+    about:
+    - Source adapters should expose enough structure to support future graph derivation
+    - source adapters should expose enough structure to support future graph derivation
+    - Answer
+    - answer
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:source_adapters
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  sections:
+  - path: view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+    title: View generation should be reversible back to atoms and evidence links
+    breadcrumbs:
+    - View generation should be reversible back to atoms and evidence links
+    about:
+    - View generation should be reversible back to atoms and evidence links
+    - view generation should be reversible back to atoms and evidence links
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: view-generation-should-be-reversible-back-to-atoms-and-evidence-links/answer
+    title: Answer
+    breadcrumbs:
+    - View generation should be reversible back to atoms and evidence links
+    - Answer
+    about:
+    - View generation should be reversible back to atoms and evidence links
+    - view generation should be reversible back to atoms and evidence links
+    - Answer
+    - answer
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+  sections:
+  - path: the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+    title: The bootstrap corpus should accumulate explicit bridge atoms for every
+      major tool relationship
+    breadcrumbs:
+    - The bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    about:
+    - The bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    - the bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship/answer
+    title: Answer
+    breadcrumbs:
+    - The bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    - Answer
+    about:
+    - The bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    - the bootstrap corpus should accumulate explicit bridge atoms for every major
+      tool relationship
+    - Answer
+    - answer
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  sections:
+  - path: the-bootstrap-kb-should-treat-current-deskops-atoms-as-the-canonical-bootstrap-surface
+    title: The bootstrap KB should treat current Deskops atoms as the canonical bootstrap
+      surface
+    breadcrumbs:
+    - The bootstrap KB should treat current Deskops atoms as the canonical bootstrap
+      surface
+    about:
+    - The bootstrap KB should treat current Deskops atoms as the canonical bootstrap
+      surface
+    - the bootstrap kb should treat current deskops atoms as the canonical bootstrap
+      surface
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:deskops_atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:deskops_atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-bootstrap-kb-should-treat-current-deskops-atoms-as-the-canonical-bootstrap-surface
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: the-bootstrap-kb-should-treat-current-deskops-atoms-as-the-canonical-bootstrap-surface/answer
+    title: Answer
+    breadcrumbs:
+    - The bootstrap KB should treat current Deskops atoms as the canonical bootstrap
+      surface
+    - Answer
+    about:
+    - The bootstrap KB should treat current Deskops atoms as the canonical bootstrap
+      surface
+    - the bootstrap kb should treat current deskops atoms as the canonical bootstrap
+      surface
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:deskops_atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:deskops_atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+  sections:
+  - path: cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+    title: Cross-project analysis should produce bridge atoms, not only local notes
+    breadcrumbs:
+    - Cross-project analysis should produce bridge atoms, not only local notes
+    about:
+    - Cross-project analysis should produce bridge atoms, not only local notes
+    - cross project analysis should produce bridge atoms not only local notes
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:atom
+    - layer:graph_concept
+    - layer:retrieval
+    - system:kb
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:atom
+    - layer:graph_concept
+    - layer:retrieval
+    - system:kb
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes/answer
+    title: Answer
+    breadcrumbs:
+    - Cross-project analysis should produce bridge atoms, not only local notes
+    - Answer
+    about:
+    - Cross-project analysis should produce bridge atoms, not only local notes
+    - cross project analysis should produce bridge atoms not only local notes
+    - Answer
+    - answer
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:atom
+    - layer:graph_concept
+    - layer:retrieval
+    - system:kb
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:atom
+    - layer:graph_concept
+    - layer:retrieval
+    - system:kb
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-tags-should-be-facets-not-the-primary-concept-structure
+  sections:
+  - path: tags-should-be-facets-not-the-primary-concept-structure
+    title: Tags should be facets, not the primary concept structure
+    breadcrumbs:
+    - Tags should be facets, not the primary concept structure
+    about:
+    - Tags should be facets, not the primary concept structure
+    - tags should be facets not the primary concept structure
+    - cross:provenance_concept_graph
+    - domain:knowledge_representation
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:provenance_concept_graph
+    - domain:knowledge_representation
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: tags-should-be-facets-not-the-primary-concept-structure
+    level: 1
+    line_start: 20
+    line_end: 21
+  - path: tags-should-be-facets-not-the-primary-concept-structure/answer
+    title: Answer
+    breadcrumbs:
+    - Tags should be facets, not the primary concept structure
+    - Answer
+    about:
+    - Tags should be facets, not the primary concept structure
+    - tags should be facets not the primary concept structure
+    - Answer
+    - answer
+    - cross:provenance_concept_graph
+    - domain:knowledge_representation
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:provenance_concept_graph
+    - domain:knowledge_representation
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 22
+    line_end: 23
+- doc_name: atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
+  sections:
+  - path: conceptgroup-taxonomynode-and-tagfacet-should-be-distinguished
+    title: ConceptGroup, TaxonomyNode, and TagFacet should be distinguished
+    breadcrumbs:
+    - ConceptGroup, TaxonomyNode, and TagFacet should be distinguished
+    about:
+    - ConceptGroup, TaxonomyNode, and TagFacet should be distinguished
+    - conceptgroup taxonomynode and tagfacet should be distinguished
+    - domain:knowledge_representation
+    - entity:concept_group
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:concept_group
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: conceptgroup-taxonomynode-and-tagfacet-should-be-distinguished
+    level: 1
+    line_start: 20
+    line_end: 21
+  - path: conceptgroup-taxonomynode-and-tagfacet-should-be-distinguished/answer
+    title: Answer
+    breadcrumbs:
+    - ConceptGroup, TaxonomyNode, and TagFacet should be distinguished
+    - Answer
+    about:
+    - ConceptGroup, TaxonomyNode, and TagFacet should be distinguished
+    - conceptgroup taxonomynode and tagfacet should be distinguished
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:concept_group
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:concept_group
+    - entity:tag_facet
+    - entity:taxonomy_node
+    - graph:concept
+    - layer:graph_concept
+    - system:kb
+    - topic:concept_graph
+    - topic:tag_facets
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 22
+    line_end: 23
+- doc_name: atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  sections:
+  - path: folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+    title: Folder taxonomy can seed the concept graph without being the final ontology
+    breadcrumbs:
+    - Folder taxonomy can seed the concept graph without being the final ontology
+    about:
+    - Folder taxonomy can seed the concept graph without being the final ontology
+    - folder taxonomy can seed the concept graph without being the final ontology
+    - cross:deskops_kb
+    - domain:knowledge_representation
+    - entity:taxonomy_node
+    - graph:concept
+    - graph:taxonomy
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:concept_graph
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_representation
+    - entity:taxonomy_node
+    - graph:concept
+    - graph:taxonomy
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:concept_graph
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+    level: 1
+    line_start: 20
+    line_end: 21
+  - path: folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology/answer
+    title: Answer
+    breadcrumbs:
+    - Folder taxonomy can seed the concept graph without being the final ontology
+    - Answer
+    about:
+    - Folder taxonomy can seed the concept graph without being the final ontology
+    - folder taxonomy can seed the concept graph without being the final ontology
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_representation
+    - entity:taxonomy_node
+    - graph:concept
+    - graph:taxonomy
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:concept_graph
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_representation
+    - entity:taxonomy_node
+    - graph:concept
+    - graph:taxonomy
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:concept_graph
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 22
+    line_end: 23
+- doc_name: atom-question-type-should-remain-an-explicit-governance-dimension
+  sections:
+  - path: question-type-should-remain-an-explicit-governance-dimension
+    title: Question type should remain an explicit governance dimension
+    breadcrumbs:
+    - Question type should remain an explicit governance dimension
+    about:
+    - Question type should remain an explicit governance dimension
+    - question type should remain an explicit governance dimension
+    - domain:knowledge_management
+    - entity:question_type
+    - graph:concept
+    - layer:atom
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:question_type
+    - graph:concept
+    - layer:atom
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: question-type-should-remain-an-explicit-governance-dimension
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: question-type-should-remain-an-explicit-governance-dimension/answer
+    title: Answer
+    breadcrumbs:
+    - Question type should remain an explicit governance dimension
+    - Answer
+    about:
+    - Question type should remain an explicit governance dimension
+    - question type should remain an explicit governance dimension
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:question_type
+    - graph:concept
+    - layer:atom
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:question_type
+    - graph:concept
+    - layer:atom
+    - layer:graph_concept
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
+  sections:
+  - path: the-bootstrap-kb-must-preserve-current-atom-ids-and-5wh1-discipline
+    title: The bootstrap KB must preserve current atom ids and 5WH1+ discipline
+    breadcrumbs:
+    - The bootstrap KB must preserve current atom ids and 5WH1+ discipline
+    about:
+    - The bootstrap KB must preserve current atom ids and 5WH1+ discipline
+    - the bootstrap kb must preserve current atom ids and 5wh1 discipline
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-bootstrap-kb-must-preserve-current-atom-ids-and-5wh1-discipline
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: the-bootstrap-kb-must-preserve-current-atom-ids-and-5wh1-discipline/answer
+    title: Answer
+    breadcrumbs:
+    - The bootstrap KB must preserve current atom ids and 5WH1+ discipline
+    - Answer
+    about:
+    - The bootstrap KB must preserve current atom ids and 5WH1+ discipline
+    - the bootstrap kb must preserve current atom ids and 5wh1 discipline
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - system:deskops
+    - system:kb
+    - topic:atomicity
+    - topic:bootstrap_kb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  sections:
+  - path: every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+    title: Every bootstrap atom should carry project, source, and grounding tags
+    breadcrumbs:
+    - Every bootstrap atom should carry project, source, and grounding tags
+    about:
+    - Every bootstrap atom should carry project, source, and grounding tags
+    - every bootstrap atom should carry project source and grounding tags
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: every-bootstrap-atom-should-carry-project-source-and-grounding-tags/answer
+    title: Answer
+    breadcrumbs:
+    - Every bootstrap atom should carry project, source, and grounding tags
+    - Answer
+    about:
+    - Every bootstrap atom should carry project, source, and grounding tags
+    - every bootstrap atom should carry project source and grounding tags
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-the-kb-needs-three-connected-graph-strata
+  sections:
+  - path: the-kb-needs-three-connected-graph-strata
+    title: The KB needs three connected graph strata
+    breadcrumbs:
+    - The KB needs three connected graph strata
+    about:
+    - The KB needs three connected graph strata
+    - the kb needs three connected graph strata
+    - cross:provenance_concept_graph
+    - domain:graph_architecture
+    - entity:atom
+    - graph:concept
+    - graph:provenance
+    - graph:structure
+    - layer:graph
+    - layer:graph_concept
+    - layer:graph_provenance
+    - layer:graph_structure
+    - system:kb
+    - topic:concept_graph
+    - topic:provenance
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:provenance_concept_graph
+    - domain:graph_architecture
+    - entity:atom
+    - graph:concept
+    - graph:provenance
+    - graph:structure
+    - layer:graph
+    - layer:graph_concept
+    - layer:graph_provenance
+    - layer:graph_structure
+    - system:kb
+    - topic:concept_graph
+    - topic:provenance
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-needs-three-connected-graph-strata
+    level: 1
+    line_start: 24
+    line_end: 25
+  - path: the-kb-needs-three-connected-graph-strata/answer
+    title: Answer
+    breadcrumbs:
+    - The KB needs three connected graph strata
+    - Answer
+    about:
+    - The KB needs three connected graph strata
+    - the kb needs three connected graph strata
+    - Answer
+    - answer
+    - cross:provenance_concept_graph
+    - domain:graph_architecture
+    - entity:atom
+    - graph:concept
+    - graph:provenance
+    - graph:structure
+    - layer:graph
+    - layer:graph_concept
+    - layer:graph_provenance
+    - layer:graph_structure
+    - system:kb
+    - topic:concept_graph
+    - topic:provenance
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:provenance_concept_graph
+    - domain:graph_architecture
+    - entity:atom
+    - graph:concept
+    - graph:provenance
+    - graph:structure
+    - layer:graph
+    - layer:graph_concept
+    - layer:graph_provenance
+    - layer:graph_structure
+    - system:kb
+    - topic:concept_graph
+    - topic:provenance
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 26
+    line_end: 27
+- doc_name: atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  sections:
+  - path: graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+    title: Graphlang is relevant as a query and representation ambition, not as final
+      foundation
+    breadcrumbs:
+    - Graphlang is relevant as a query and representation ambition, not as final foundation
+    about:
+    - Graphlang is relevant as a query and representation ambition, not as final foundation
+    - graphlang is relevant as a query and representation ambition not as final foundation
+    - cross:graphlang_kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:retrieval
+    - layer:graph
+    - layer:retrieval
+    - system:hum
+    - topic:knowledge_retrieval
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:graphlang_kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:retrieval
+    - layer:graph
+    - layer:retrieval
+    - system:hum
+    - topic:knowledge_retrieval
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation/answer
+    title: Answer
+    breadcrumbs:
+    - Graphlang is relevant as a query and representation ambition, not as final foundation
+    - Answer
+    about:
+    - Graphlang is relevant as a query and representation ambition, not as final foundation
+    - graphlang is relevant as a query and representation ambition not as final foundation
+    - Answer
+    - answer
+    - cross:graphlang_kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:retrieval
+    - layer:graph
+    - layer:retrieval
+    - system:hum
+    - topic:knowledge_retrieval
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:graphlang_kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:retrieval
+    - layer:graph
+    - layer:retrieval
+    - system:hum
+    - topic:knowledge_retrieval
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  sections:
+  - path: kg-trees-contribute-the-idea-of-structured-knowledge-branching
+    title: KG-Trees contribute the idea of structured knowledge branching
+    breadcrumbs:
+    - KG-Trees contribute the idea of structured knowledge branching
+    about:
+    - KG-Trees contribute the idea of structured knowledge branching
+    - kg trees contribute the idea of structured knowledge branching
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:concept
+    - graph:concept
+    - layer:graph_concept
+    - system:hum
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:concept
+    - graph:concept
+    - layer:graph_concept
+    - system:hum
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: kg-trees-contribute-the-idea-of-structured-knowledge-branching
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: kg-trees-contribute-the-idea-of-structured-knowledge-branching/answer
+    title: Answer
+    breadcrumbs:
+    - KG-Trees contribute the idea of structured knowledge branching
+    - Answer
+    about:
+    - KG-Trees contribute the idea of structured knowledge branching
+    - kg trees contribute the idea of structured knowledge branching
+    - Answer
+    - answer
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:concept
+    - graph:concept
+    - layer:graph_concept
+    - system:hum
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:concept
+    - graph:concept
+    - layer:graph_concept
+    - system:hum
+    - topic:concept_graph
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  sections:
+  - path: the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+    title: The NL-SL-KG pipeline anticipates a source-to-graph transformation line
+    breadcrumbs:
+    - The NL-SL-KG pipeline anticipates a source-to-graph transformation line
+    about:
+    - The NL-SL-KG pipeline anticipates a source-to-graph transformation line
+    - the nl sl kg pipeline anticipates a source to graph transformation line
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:source
+    - graph:materialization
+    - layer:graph
+    - layer:source
+    - system:hum
+    - topic:legacy_extraction
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:source
+    - graph:materialization
+    - layer:graph
+    - layer:source
+    - system:hum
+    - topic:legacy_extraction
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line/answer
+    title: Answer
+    breadcrumbs:
+    - The NL-SL-KG pipeline anticipates a source-to-graph transformation line
+    - Answer
+    about:
+    - The NL-SL-KG pipeline anticipates a source-to-graph transformation line
+    - the nl sl kg pipeline anticipates a source to graph transformation line
+    - Answer
+    - answer
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:source
+    - graph:materialization
+    - layer:graph
+    - layer:source
+    - system:hum
+    - topic:legacy_extraction
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_representation
+    - entity:source
+    - graph:materialization
+    - layer:graph
+    - layer:source
+    - system:hum
+    - topic:legacy_extraction
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  sections:
+  - path: the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+    title: The universal knowledge loop contributes a process view, not a storage
+      model
+    breadcrumbs:
+    - The universal knowledge loop contributes a process view, not a storage model
+    about:
+    - The universal knowledge loop contributes a process view, not a storage model
+    - the universal knowledge loop contributes a process view not a storage model
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:workflow_item
+    - layer:workflow
+    - system:hum
+    - topic:composition
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:workflow_item
+    - layer:workflow
+    - system:hum
+    - topic:composition
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model/answer
+    title: Answer
+    breadcrumbs:
+    - The universal knowledge loop contributes a process view, not a storage model
+    - Answer
+    about:
+    - The universal knowledge loop contributes a process view, not a storage model
+    - the universal knowledge loop contributes a process view not a storage model
+    - Answer
+    - answer
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:workflow_item
+    - layer:workflow
+    - system:hum
+    - topic:composition
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:tutor_apoe_hum_ecosystem
+    - domain:knowledge_management
+    - entity:workflow_item
+    - layer:workflow
+    - system:hum
+    - topic:composition
+    - topic:legacy_extraction
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  sections:
+  - path: historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+    title: Historical atoms should be backfilled by value and use, not all at once
+    breadcrumbs:
+    - Historical atoms should be backfilled by value and use, not all at once
+    about:
+    - Historical atoms should be backfilled by value and use, not all at once
+    - historical atoms should be backfilled by value and use not all at once
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once/answer
+    title: Answer
+    breadcrumbs:
+    - Historical atoms should be backfilled by value and use, not all at once
+    - Answer
+    about:
+    - Historical atoms should be backfilled by value and use, not all at once
+    - historical atoms should be backfilled by value and use not all at once
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  sections:
+  - path: new-work-should-create-sample-ready-atoms-even-before-full-backfill
+    title: New work should create sample-ready atoms even before full backfill
+    breadcrumbs:
+    - New work should create sample-ready atoms even before full backfill
+    about:
+    - New work should create sample-ready atoms even before full backfill
+    - new work should create sample ready atoms even before full backfill
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: new-work-should-create-sample-ready-atoms-even-before-full-backfill
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: new-work-should-create-sample-ready-atoms-even-before-full-backfill/answer
+    title: Answer
+    breadcrumbs:
+    - New work should create sample-ready atoms even before full backfill
+    - Answer
+    about:
+    - New work should create sample-ready atoms even before full backfill
+    - new work should create sample ready atoms even before full backfill
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - layer:sample
+    - layer:workflow
+    - system:kb
+    - topic:migration
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-bootstrap-kb-should-track-grounding-status-explicitly
+  sections:
+  - path: the-bootstrap-kb-should-track-grounding-status-explicitly
+    title: The bootstrap KB should track grounding status explicitly
+    breadcrumbs:
+    - The bootstrap KB should track grounding status explicitly
+    about:
+    - The bootstrap KB should track grounding status explicitly
+    - the bootstrap kb should track grounding status explicitly
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-bootstrap-kb-should-track-grounding-status-explicitly
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: the-bootstrap-kb-should-track-grounding-status-explicitly/answer
+    title: Answer
+    breadcrumbs:
+    - The bootstrap KB should track grounding status explicitly
+    - Answer
+    about:
+    - The bootstrap KB should track grounding status explicitly
+    - the bootstrap kb should track grounding status explicitly
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  sections:
+  - path: bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+    title: Bootstrap provenance should begin with source stubs before full samples
+    breadcrumbs:
+    - Bootstrap provenance should begin with source stubs before full samples
+    about:
+    - Bootstrap provenance should begin with source stubs before full samples
+    - bootstrap provenance should begin with source stubs before full samples
+    - domain:knowledge_management
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: bootstrap-provenance-should-begin-with-source-stubs-before-full-samples/answer
+    title: Answer
+    breadcrumbs:
+    - Bootstrap provenance should begin with source stubs before full samples
+    - Answer
+    about:
+    - Bootstrap provenance should begin with source stubs before full samples
+    - bootstrap provenance should begin with source stubs before full samples
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-grounding-status-should-distinguish-textual-human-and-validated-support
+  sections:
+  - path: grounding-status-should-distinguish-textual-human-located-and-validated-support
+    title: Grounding status should distinguish textual, human-located, and validated
+      support
+    breadcrumbs:
+    - Grounding status should distinguish textual, human-located, and validated support
+    about:
+    - Grounding status should distinguish textual, human-located, and validated support
+    - grounding status should distinguish textual human located and validated support
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: grounding-status-should-distinguish-textual-human-located-and-validated-support
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: grounding-status-should-distinguish-textual-human-located-and-validated-support/answer
+    title: Answer
+    breadcrumbs:
+    - Grounding status should distinguish textual, human-located, and validated support
+    - Answer
+    about:
+    - Grounding status should distinguish textual, human-located, and validated support
+    - grounding status should distinguish textual human located and validated support
+    - Answer
+    - answer
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_management
+    - entity:atom
+    - entity:sample
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:sample
+    - system:kb
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  sections:
+  - path: samples-should-be-the-evidence-objects-between-sources-and-atoms
+    title: Samples should be the evidence objects between sources and atoms
+    breadcrumbs:
+    - Samples should be the evidence objects between sources and atoms
+    about:
+    - Samples should be the evidence objects between sources and atoms
+    - samples should be the evidence objects between sources and atoms
+    - domain:knowledge_representation
+    - entity:atom
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:markup
+    - layer:sample
+    - system:kb
+    - system:marcado
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:markup
+    - layer:sample
+    - system:kb
+    - system:marcado
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: samples-should-be-the-evidence-objects-between-sources-and-atoms
+    level: 1
+    line_start: 21
+    line_end: 22
+  - path: samples-should-be-the-evidence-objects-between-sources-and-atoms/answer
+    title: Answer
+    breadcrumbs:
+    - Samples should be the evidence objects between sources and atoms
+    - Answer
+    about:
+    - Samples should be the evidence objects between sources and atoms
+    - samples should be the evidence objects between sources and atoms
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:atom
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:markup
+    - layer:sample
+    - system:kb
+    - system:marcado
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - entity:sample
+    - entity:source
+    - graph:provenance
+    - layer:markup
+    - layer:sample
+    - system:kb
+    - system:marcado
+    - topic:provenance
+    - topic:sample
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 23
+    line_end: 24
+- doc_name: atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  sections:
+  - path: the-provenance-graph-is-the-relational-backbone-of-the-kb
+    title: The provenance graph is the relational backbone of the KB
+    breadcrumbs:
+    - The provenance graph is the relational backbone of the KB
+    about:
+    - The provenance graph is the relational backbone of the KB
+    - the provenance graph is the relational backbone of the kb
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:retrieval
+    - system:kb
+    - topic:provenance
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:retrieval
+    - system:kb
+    - topic:provenance
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-provenance-graph-is-the-relational-backbone-of-the-kb
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: the-provenance-graph-is-the-relational-backbone-of-the-kb/answer
+    title: Answer
+    breadcrumbs:
+    - The provenance graph is the relational backbone of the KB
+    - Answer
+    about:
+    - The provenance graph is the relational backbone of the KB
+    - the provenance graph is the relational backbone of the kb
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:retrieval
+    - system:kb
+    - topic:provenance
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:atom
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - layer:retrieval
+    - system:kb
+    - topic:provenance
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  sections:
+  - path: cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+    title: Cross tags should mark bridge knowledge between systems and projects
+    breadcrumbs:
+    - Cross tags should mark bridge knowledge between systems and projects
+    about:
+    - Cross tags should mark bridge knowledge between systems and projects
+    - cross tags should mark bridge knowledge between systems and projects
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:retrieval
+    - layer:workflow
+    - system:kb
+    - topic:concept_graph
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:retrieval
+    - layer:workflow
+    - system:kb
+    - topic:concept_graph
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: cross-tags-should-mark-bridge-knowledge-between-systems-and-projects/answer
+    title: Answer
+    breadcrumbs:
+    - Cross tags should mark bridge knowledge between systems and projects
+    - Answer
+    about:
+    - Cross tags should mark bridge knowledge between systems and projects
+    - cross tags should mark bridge knowledge between systems and projects
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:retrieval
+    - layer:workflow
+    - system:kb
+    - topic:concept_graph
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:retrieval
+    - layer:workflow
+    - system:kb
+    - topic:concept_graph
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-the-kb-should-support-queries-by-source-project-and-crossing
+  sections:
+  - path: the-kb-should-support-queries-by-source-project-and-crossing
+    title: The KB should support queries by source, project, and crossing
+    breadcrumbs:
+    - The KB should support queries by source, project, and crossing
+    about:
+    - The KB should support queries by source, project, and crossing
+    - the kb should support queries by source project and crossing
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - graph:retrieval
+    - layer:retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - graph:retrieval
+    - layer:retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-kb-should-support-queries-by-source-project-and-crossing
+    level: 1
+    line_start: 18
+    line_end: 19
+  - path: the-kb-should-support-queries-by-source-project-and-crossing/answer
+    title: Answer
+    breadcrumbs:
+    - The KB should support queries by source, project, and crossing
+    - Answer
+    about:
+    - The KB should support queries by source, project, and crossing
+    - the kb should support queries by source project and crossing
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - graph:retrieval
+    - layer:retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - graph:retrieval
+    - layer:retrieval
+    - system:kb
+    - topic:knowledge_retrieval
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 20
+    line_end: 21
+- doc_name: atom-each-source-type-should-expose-its-own-retrievable-projections
+  sections:
+  - path: each-source-type-should-expose-its-own-retrievable-projections
+    title: Each source type should expose its own retrievable projections
+    breadcrumbs:
+    - Each source type should expose its own retrievable projections
+    about:
+    - Each source type should expose its own retrievable projections
+    - each source type should expose its own retrievable projections
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: each-source-type-should-expose-its-own-retrievable-projections
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: each-source-type-should-expose-its-own-retrievable-projections/answer
+    title: Answer
+    breadcrumbs:
+    - Each source type should expose its own retrievable projections
+    - Answer
+    about:
+    - Each source type should expose its own retrievable projections
+    - each source type should expose its own retrievable projections
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-the-source-layer-must-be-multi-source-and-adapter-based
+  sections:
+  - path: the-source-layer-must-be-multi-source-and-adapter-based
+    title: The source layer must be multi-source and adapter-based
+    breadcrumbs:
+    - The source layer must be multi-source and adapter-based
+    about:
+    - The source layer must be multi-source and adapter-based
+    - the source layer must be multi source and adapter based
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-source-layer-must-be-multi-source-and-adapter-based
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: the-source-layer-must-be-multi-source-and-adapter-based/answer
+    title: Answer
+    breadcrumbs:
+    - The source layer must be multi-source and adapter-based
+    - Answer
+    about:
+    - The source layer must be multi-source and adapter-based
+    - the source layer must be multi source and adapter based
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:source
+    - layer:projection
+    - layer:source
+    - system:kb
+    - topic:anchoring
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  sections:
+  - path: ast-is-a-first-class-document-structure-category-in-the-kb
+    title: AST is a first-class document structure category in the KB
+    breadcrumbs:
+    - AST is a first-class document structure category in the KB
+    about:
+    - AST is a first-class document structure category in the KB
+    - ast is a first class document structure category in the kb
+    - domain:knowledge_representation
+    - entity:ast_node
+    - graph:structure
+    - layer:projection
+    - layer:structure
+    - system:kb
+    - topic:ast_first
+    - topic:multi_source
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:ast_node
+    - graph:structure
+    - layer:projection
+    - layer:structure
+    - system:kb
+    - topic:ast_first
+    - topic:multi_source
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: ast-is-a-first-class-document-structure-category-in-the-kb
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: ast-is-a-first-class-document-structure-category-in-the-kb/answer
+    title: Answer
+    breadcrumbs:
+    - AST is a first-class document structure category in the KB
+    - Answer
+    about:
+    - AST is a first-class document structure category in the KB
+    - ast is a first class document structure category in the kb
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:ast_node
+    - graph:structure
+    - layer:projection
+    - layer:structure
+    - system:kb
+    - topic:ast_first
+    - topic:multi_source
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:ast_node
+    - graph:structure
+    - layer:projection
+    - layer:structure
+    - system:kb
+    - topic:ast_first
+    - topic:multi_source
+    - topic:structural_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  sections:
+  - path: deskops-is-a-bootstrap-surface-not-the-final-kb-container
+    title: Deskops is a bootstrap surface, not the final KB container
+    breadcrumbs:
+    - Deskops is a bootstrap surface, not the final KB container
+    about:
+    - Deskops is a bootstrap surface, not the final KB container
+    - deskops is a bootstrap surface not the final kb container
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: deskops-is-a-bootstrap-surface-not-the-final-kb-container
+    level: 1
+    line_start: 19
+    line_end: 20
+  - path: deskops-is-a-bootstrap-surface-not-the-final-kb-container/answer
+    title: Answer
+    breadcrumbs:
+    - Deskops is a bootstrap surface, not the final KB container
+    - Answer
+    about:
+    - Deskops is a bootstrap surface, not the final KB container
+    - deskops is a bootstrap surface not the final kb container
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - domain:knowledge_management
+    - entity:atom
+    - layer:atom
+    - layer:workflow
+    - system:deskops
+    - system:kb
+    - topic:bootstrap_kb
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 21
+    line_end: 22
+- doc_name: atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+  sections:
+  - path: the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+    title: The ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    breadcrumbs:
+    - The ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    about:
+    - The ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    - the ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies/answer
+    title: Answer
+    breadcrumbs:
+    - The ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    - Answer
+    about:
+    - The ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    - the ontology loop should iterate by mapping relations before freezing entity
+      taxonomies
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  sections:
+  - path: distilled-from-should-link-atoms-to-the-samples-they-abstract
+    title: Distilled from should link atoms to the samples they abstract
+    breadcrumbs:
+    - Distilled from should link atoms to the samples they abstract
+    about:
+    - Distilled from should link atoms to the samples they abstract
+    - distilled from should link atoms to the samples they abstract
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: distilled-from-should-link-atoms-to-the-samples-they-abstract
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: distilled-from-should-link-atoms-to-the-samples-they-abstract/answer
+    title: Answer
+    breadcrumbs:
+    - Distilled from should link atoms to the samples they abstract
+    - Answer
+    about:
+    - Distilled from should link atoms to the samples they abstract
+    - distilled from should link atoms to the samples they abstract
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+  sections:
+  - path: sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+    title: Sampled from should link a sample to the exact source artifact it comes
+      from
+    breadcrumbs:
+    - Sampled from should link a sample to the exact source artifact it comes from
+    about:
+    - Sampled from should link a sample to the exact source artifact it comes from
+    - sampled from should link a sample to the exact source artifact it comes from
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from/answer
+    title: Answer
+    breadcrumbs:
+    - Sampled from should link a sample to the exact source artifact it comes from
+    - Answer
+    about:
+    - Sampled from should link a sample to the exact source artifact it comes from
+    - sampled from should link a sample to the exact source artifact it comes from
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  sections:
+  - path: supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+    title: Supports should connect evidence to the atoms or compositions it justifies
+    breadcrumbs:
+    - Supports should connect evidence to the atoms or compositions it justifies
+    about:
+    - Supports should connect evidence to the atoms or compositions it justifies
+    - supports should connect evidence to the atoms or compositions it justifies
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies/answer
+    title: Answer
+    breadcrumbs:
+    - Supports should connect evidence to the atoms or compositions it justifies
+    - Answer
+    about:
+    - Supports should connect evidence to the atoms or compositions it justifies
+    - supports should connect evidence to the atoms or compositions it justifies
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+  sections:
+  - path: located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+    title: Located in taxonomy should place atoms or concepts within a navigable hierarchy
+    breadcrumbs:
+    - Located in taxonomy should place atoms or concepts within a navigable hierarchy
+    about:
+    - Located in taxonomy should place atoms or concepts within a navigable hierarchy
+    - located in taxonomy should place atoms or concepts within a navigable hierarchy
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy/answer
+    title: Answer
+    breadcrumbs:
+    - Located in taxonomy should place atoms or concepts within a navigable hierarchy
+    - Answer
+    about:
+    - Located in taxonomy should place atoms or concepts within a navigable hierarchy
+    - located in taxonomy should place atoms or concepts within a navigable hierarchy
+    - Answer
+    - answer
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  sections:
+  - path: about-concept-should-express-the-primary-semantic-target-of-an-atom
+    title: About concept should express the primary semantic target of an atom
+    breadcrumbs:
+    - About concept should express the primary semantic target of an atom
+    about:
+    - About concept should express the primary semantic target of an atom
+    - about concept should express the primary semantic target of an atom
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: about-concept-should-express-the-primary-semantic-target-of-an-atom
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: about-concept-should-express-the-primary-semantic-target-of-an-atom/answer
+    title: Answer
+    breadcrumbs:
+    - About concept should express the primary semantic target of an atom
+    - Answer
+    about:
+    - About concept should express the primary semantic target of an atom
+    - about concept should express the primary semantic target of an atom
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  sections:
+  - path: anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+    title: Anchored in should connect a sample to the locator bundle used to recover
+      it
+    breadcrumbs:
+    - Anchored in should connect a sample to the locator bundle used to recover it
+    about:
+    - Anchored in should connect a sample to the locator bundle used to recover it
+    - anchored in should connect a sample to the locator bundle used to recover it
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it/answer
+    title: Answer
+    breadcrumbs:
+    - Anchored in should connect a sample to the locator bundle used to recover it
+    - Answer
+    about:
+    - Anchored in should connect a sample to the locator bundle used to recover it
+    - anchored in should connect a sample to the locator bundle used to recover it
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+  sections:
+  - path: supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+    title: Supported by structure should link atoms to source structure beyond textual
+      excerpts
+    breadcrumbs:
+    - Supported by structure should link atoms to source structure beyond textual
+      excerpts
+    about:
+    - Supported by structure should link atoms to source structure beyond textual
+      excerpts
+    - supported by structure should link atoms to source structure beyond textual
+      excerpts
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts/answer
+    title: Answer
+    breadcrumbs:
+    - Supported by structure should link atoms to source structure beyond textual
+      excerpts
+    - Answer
+    about:
+    - Supported by structure should link atoms to source structure beyond textual
+      excerpts
+    - supported by structure should link atoms to source structure beyond textual
+      excerpts
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+  sections:
+  - path: composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+    title: Composes should link atoms into larger synthesized knowledge artifacts
+    breadcrumbs:
+    - Composes should link atoms into larger synthesized knowledge artifacts
+    about:
+    - Composes should link atoms into larger synthesized knowledge artifacts
+    - composes should link atoms into larger synthesized knowledge artifacts
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts/answer
+    title: Answer
+    breadcrumbs:
+    - Composes should link atoms into larger synthesized knowledge artifacts
+    - Answer
+    about:
+    - Composes should link atoms into larger synthesized knowledge artifacts
+    - composes should link atoms into larger synthesized knowledge artifacts
+    - Answer
+    - answer
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  sections:
+  - path: relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+    title: Relation mapping should drive the discovery of missing entities in the
+      ontology
+    breadcrumbs:
+    - Relation mapping should drive the discovery of missing entities in the ontology
+    about:
+    - Relation mapping should drive the discovery of missing entities in the ontology
+    - relation mapping should drive the discovery of missing entities in the ontology
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology/answer
+    title: Answer
+    breadcrumbs:
+    - Relation mapping should drive the discovery of missing entities in the ontology
+    - Answer
+    about:
+    - Relation mapping should drive the discovery of missing entities in the ontology
+    - relation mapping should drive the discovery of missing entities in the ontology
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  sections:
+  - path: secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+    title: Secondary about should capture non-primary conceptual relevance without
+      replacing about concept
+    breadcrumbs:
+    - Secondary about should capture non-primary conceptual relevance without replacing
+      about concept
+    about:
+    - Secondary about should capture non-primary conceptual relevance without replacing
+      about concept
+    - secondary about should capture non primary conceptual relevance without replacing
+      about concept
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept/answer
+    title: Answer
+    breadcrumbs:
+    - Secondary about should capture non-primary conceptual relevance without replacing
+      about concept
+    - Answer
+    about:
+    - Secondary about should capture non-primary conceptual relevance without replacing
+      about concept
+    - secondary about should capture non primary conceptual relevance without replacing
+      about concept
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  sections:
+  - path: subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+    title: Subconcept of should express concept hierarchy independently from atom
+      placement
+    breadcrumbs:
+    - Subconcept of should express concept hierarchy independently from atom placement
+    about:
+    - Subconcept of should express concept hierarchy independently from atom placement
+    - subconcept of should express concept hierarchy independently from atom placement
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement/answer
+    title: Answer
+    breadcrumbs:
+    - Subconcept of should express concept hierarchy independently from atom placement
+    - Answer
+    about:
+    - Subconcept of should express concept hierarchy independently from atom placement
+    - subconcept of should express concept hierarchy independently from atom placement
+    - Answer
+    - answer
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  sections:
+  - path: grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+    title: Grouped under should support looser conceptual clustering than strict hierarchy
+    breadcrumbs:
+    - Grouped under should support looser conceptual clustering than strict hierarchy
+    about:
+    - Grouped under should support looser conceptual clustering than strict hierarchy
+    - grouped under should support looser conceptual clustering than strict hierarchy
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy/answer
+    title: Answer
+    breadcrumbs:
+    - Grouped under should support looser conceptual clustering than strict hierarchy
+    - Answer
+    about:
+    - Grouped under should support looser conceptual clustering than strict hierarchy
+    - grouped under should support looser conceptual clustering than strict hierarchy
+    - Answer
+    - answer
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:taxonomy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  sections:
+  - path: derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+    title: Derived from should connect transformed knowledge artifacts across representation
+      levels
+    breadcrumbs:
+    - Derived from should connect transformed knowledge artifacts across representation
+      levels
+    about:
+    - Derived from should connect transformed knowledge artifacts across representation
+      levels
+    - derived from should connect transformed knowledge artifacts across representation
+      levels
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels/answer
+    title: Answer
+    breadcrumbs:
+    - Derived from should connect transformed knowledge artifacts across representation
+      levels
+    - Answer
+    about:
+    - Derived from should connect transformed knowledge artifacts across representation
+      levels
+    - derived from should connect transformed knowledge artifacts across representation
+      levels
+    - Answer
+    - answer
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+  sections:
+  - path: depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+    title: Depends on should express knowledge prerequisites without collapsing them
+      into hierarchy
+    breadcrumbs:
+    - Depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    about:
+    - Depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    - depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy/answer
+    title: Answer
+    breadcrumbs:
+    - Depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    - Answer
+    about:
+    - Depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    - depends on should express knowledge prerequisites without collapsing them into
+      hierarchy
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+  sections:
+  - path: contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+    title: Contrasts with should preserve meaningful conceptual opposition in the
+      KB
+    breadcrumbs:
+    - Contrasts with should preserve meaningful conceptual opposition in the KB
+    about:
+    - Contrasts with should preserve meaningful conceptual opposition in the KB
+    - contrasts with should preserve meaningful conceptual opposition in the kb
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb/answer
+    title: Answer
+    breadcrumbs:
+    - Contrasts with should preserve meaningful conceptual opposition in the KB
+    - Answer
+    about:
+    - Contrasts with should preserve meaningful conceptual opposition in the KB
+    - contrasts with should preserve meaningful conceptual opposition in the kb
+    - Answer
+    - answer
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  sections:
+  - path: drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+    title: Drawn from section should connect a support object to an explicit source
+      section
+    breadcrumbs:
+    - Drawn from section should connect a support object to an explicit source section
+    about:
+    - Drawn from section should connect a support object to an explicit source section
+    - drawn from section should connect a support object to an explicit source section
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section/answer
+    title: Answer
+    breadcrumbs:
+    - Drawn from section should connect a support object to an explicit source section
+    - Answer
+    about:
+    - Drawn from section should connect a support object to an explicit source section
+    - drawn from section should connect a support object to an explicit source section
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+  sections:
+  - path: mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+    title: Mentions symbol should express weaker symbol linkage than structural support
+    breadcrumbs:
+    - Mentions symbol should express weaker symbol linkage than structural support
+    about:
+    - Mentions symbol should express weaker symbol linkage than structural support
+    - mentions symbol should express weaker symbol linkage than structural support
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support/answer
+    title: Answer
+    breadcrumbs:
+    - Mentions symbol should express weaker symbol linkage than structural support
+    - Answer
+    about:
+    - Mentions symbol should express weaker symbol linkage than structural support
+    - mentions symbol should express weaker symbol linkage than structural support
+    - Answer
+    - answer
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:kb
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
