@@ -6,6 +6,7 @@
 # Editor
 .vscode/
 .idea/
+human_feedback/.obsidian/
 
 # Logs
 *.log
