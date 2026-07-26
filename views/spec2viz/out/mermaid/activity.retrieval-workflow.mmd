@@ -1,0 +1,20 @@
+flowchart TD
+    __start([Start])
+    parse_question["Parse incoming question"]
+    infer_intent["Infer dominant question type or intent"]
+    detect_dimensions["Detect topic and system dimensions"]
+    estimate_scope["Estimate scope and abstraction level"]
+    preselect_branches["Preselect relevant branches and facets"]
+    gather_candidates["Gather candidates from branches and relations"]
+    rank_candidates["Rank or filter candidates"]
+    compose_answer["Compose useful subset in useful order"]
+    __end([End])
+    __start --> parse_question
+    parse_question --> infer_intent
+    infer_intent --> detect_dimensions
+    detect_dimensions --> estimate_scope
+    estimate_scope --> preselect_branches
+    preselect_branches --> gather_candidates
+    gather_candidates --> rank_candidates
+    rank_candidates --> compose_answer
+    compose_answer --> __end

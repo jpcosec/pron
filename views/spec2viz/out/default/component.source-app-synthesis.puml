@@ -1,0 +1,49 @@
+@startuml
+skinparam component<<boundary>> BackgroundColor #FCECC9
+skinparam component<<boundary>> BorderColor #D4A73C
+skinparam component<<boundary>> FontColor #5E450B
+skinparam rectangle<<boundary>> BackgroundColor #FCECC9
+skinparam rectangle<<boundary>> BorderColor #D4A73C
+skinparam rectangle<<boundary>> FontColor #5E450B
+skinparam database<<boundary>> BackgroundColor #FCECC9
+skinparam database<<boundary>> BorderColor #D4A73C
+skinparam database<<boundary>> FontColor #5E450B
+skinparam package<<boundary>> BackgroundColor #FCECC9
+skinparam package<<boundary>> BorderColor #D4A73C
+skinparam package<<boundary>> FontColor #5E450B
+skinparam component<<core>> BackgroundColor #D8ECFF
+skinparam component<<core>> BorderColor #4C78A8
+skinparam component<<core>> FontColor #16324F
+skinparam rectangle<<core>> BackgroundColor #D8ECFF
+skinparam rectangle<<core>> BorderColor #4C78A8
+skinparam rectangle<<core>> FontColor #16324F
+skinparam database<<core>> BackgroundColor #D8ECFF
+skinparam database<<core>> BorderColor #4C78A8
+skinparam database<<core>> FontColor #16324F
+skinparam package<<core>> BackgroundColor #D8ECFF
+skinparam package<<core>> BorderColor #4C78A8
+skinparam package<<core>> FontColor #16324F
+
+package "New Knowledge System" as KnowledgeSystem <<core>> {
+  component "deskops Atom Discipline + UX" as DeskopsDiscipline <<core>>
+  component "sldb Structured Document Layer" as SldbDocuments <<core>>
+  component "marcado Annotation and Addressability" as MarcadoAnnotation <<core>>
+  component "kgdb Relation and Lineage Layer" as KgdbRelations <<core>>
+  rectangle "sldb-ui Document Operator Surface" as SldbUiSurface <<boundary>>
+  rectangle "graph_ui Relational Operator Surface" as GraphUiSurface <<boundary>>
+  rectangle "spec2viz Derived Visual Views" as Spec2vizViews <<boundary>>
+  rectangle "ontomap Optional Semantic Formalization" as OntomapFormalization <<boundary>>
+  rectangle "hum-scrapper Future Source Acquisition" as HumScrapperIngestion <<boundary>>
+  rectangle "repopackage Federation Contracts" as RepoPackageFederation <<boundary>>
+}
+
+DeskopsDiscipline --> SldbDocuments : small atoms and 5WH1+
+MarcadoAnnotation --> SldbDocuments : structured annotation on samples
+KgdbRelations --> SldbDocuments : explicit navigable relations
+SldbUiSurface --> SldbDocuments : source vs rendered inspection
+GraphUiSurface --> KgdbRelations : lineage and graph editing
+Spec2vizViews --> SldbDocuments : visual reporting from structured inputs
+OntomapFormalization --> KgdbRelations : richer formal semantics if needed
+HumScrapperIngestion --> SldbDocuments : future captured sources and candidates
+RepoPackageFederation --> KnowledgeSystem : inter-repo composition and contracts
+@enduml

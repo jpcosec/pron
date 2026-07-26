@@ -1,0 +1,9 @@
+@startuml
+[*] --> none
+
+none --> textual_only : record textual provenance
+textual_only --> located_humanly : identify section or location
+textual_only --> sample_linked : create explicit sample [enough evidence to bind a cut]
+located_humanly --> sample_linked : bind sample to source
+sample_linked --> validated : validate anchor deterministically
+@enduml

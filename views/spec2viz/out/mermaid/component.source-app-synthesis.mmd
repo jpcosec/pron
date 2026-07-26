@@ -1,0 +1,31 @@
+graph TD
+    KnowledgeSystem["New Knowledge System"]
+    KnowledgeSystem --> DeskopsDiscipline
+    KnowledgeSystem --> SldbDocuments
+    KnowledgeSystem --> MarcadoAnnotation
+    KnowledgeSystem --> KgdbRelations
+    KnowledgeSystem --> SldbUiSurface
+    KnowledgeSystem --> GraphUiSurface
+    KnowledgeSystem --> Spec2vizViews
+    KnowledgeSystem --> OntomapFormalization
+    KnowledgeSystem --> HumScrapperIngestion
+    KnowledgeSystem --> RepoPackageFederation
+    DeskopsDiscipline["deskops Atom Discipline + UX"]
+    SldbDocuments["sldb Structured Document Layer"]
+    MarcadoAnnotation["marcado Annotation and Addressability"]
+    KgdbRelations["kgdb Relation and Lineage Layer"]
+    SldbUiSurface["sldb-ui Document Operator Surface"]
+    GraphUiSurface["graph_ui Relational Operator Surface"]
+    Spec2vizViews["spec2viz Derived Visual Views"]
+    OntomapFormalization["ontomap Optional Semantic Formalization"]
+    HumScrapperIngestion["hum-scrapper Future Source Acquisition"]
+    RepoPackageFederation["repopackage Federation Contracts"]
+    DeskopsDiscipline -->|small atoms and 5WH1+| SldbDocuments
+    MarcadoAnnotation -->|structured annotation on samples| SldbDocuments
+    KgdbRelations -->|explicit navigable relations| SldbDocuments
+    SldbUiSurface -->|source vs rendered inspection| SldbDocuments
+    GraphUiSurface -->|lineage and graph editing| KgdbRelations
+    Spec2vizViews -->|visual reporting from structured inputs| SldbDocuments
+    OntomapFormalization -->|richer formal semantics if needed| KgdbRelations
+    HumScrapperIngestion -->|future captured sources and candidates| SldbDocuments
+    RepoPackageFederation -->|inter-repo composition and contracts| KnowledgeSystem

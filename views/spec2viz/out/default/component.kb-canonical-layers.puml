@@ -1,0 +1,53 @@
+@startuml
+skinparam component<<boundary>> BackgroundColor #FCECC9
+skinparam component<<boundary>> BorderColor #D4A73C
+skinparam component<<boundary>> FontColor #5E450B
+skinparam rectangle<<boundary>> BackgroundColor #FCECC9
+skinparam rectangle<<boundary>> BorderColor #D4A73C
+skinparam rectangle<<boundary>> FontColor #5E450B
+skinparam database<<boundary>> BackgroundColor #FCECC9
+skinparam database<<boundary>> BorderColor #D4A73C
+skinparam database<<boundary>> FontColor #5E450B
+skinparam package<<boundary>> BackgroundColor #FCECC9
+skinparam package<<boundary>> BorderColor #D4A73C
+skinparam package<<boundary>> FontColor #5E450B
+skinparam component<<core>> BackgroundColor #D8ECFF
+skinparam component<<core>> BorderColor #4C78A8
+skinparam component<<core>> FontColor #16324F
+skinparam rectangle<<core>> BackgroundColor #D8ECFF
+skinparam rectangle<<core>> BorderColor #4C78A8
+skinparam rectangle<<core>> FontColor #16324F
+skinparam database<<core>> BackgroundColor #D8ECFF
+skinparam database<<core>> BorderColor #4C78A8
+skinparam database<<core>> FontColor #16324F
+skinparam package<<core>> BackgroundColor #D8ECFF
+skinparam package<<core>> BorderColor #4C78A8
+skinparam package<<core>> FontColor #16324F
+
+package "Knowledge KB" as KnowledgeKB <<core>> {
+  rectangle "Sources / Source Records" as Sources <<boundary>>
+  rectangle "Samples / Biopsies" as Samples <<boundary>>
+  component "Annotation / Semantic Markup" as Markup <<core>>
+  component "Knowledge Atoms" as Atoms <<core>>
+  component "Compositions / Derived Views" as Compositions <<core>>
+  component "Provenance Graph" as ProvenanceGraph <<core>>
+  component "Atom-Centered Concept Graph" as ConceptGraph <<core>>
+  component "Projected Structural Graph" as StructuralGraph <<core>>
+  rectangle "Knowledge CLI" as KnowledgeCLI <<boundary>>
+  rectangle "Document UI" as DocumentUI <<boundary>>
+  rectangle "Graph UI" as GraphUI <<boundary>>
+  rectangle "spec2viz Derived Views" as Spec2vizViews <<boundary>>
+}
+
+Samples --> Sources : verifiable cut from versioned source
+Markup --> Samples : semantic ranges live on samples
+Atoms --> Samples : provenance points to evidence
+Compositions --> Atoms : depth by composition
+ProvenanceGraph --> Atoms : lineage backbone
+ConceptGraph --> Atoms : atom-centered semantics
+StructuralGraph --> Samples : structural support projection
+KnowledgeCLI --> Atoms : authoring and retrieval
+DocumentUI --> Samples : source vs rendered and annotation
+GraphUI --> ProvenanceGraph : lineage and neighborhood
+Spec2vizViews --> Compositions : maintained derived diagrams
+@enduml

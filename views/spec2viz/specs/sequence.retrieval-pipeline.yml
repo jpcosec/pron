@@ -1,0 +1,52 @@
+id: sequence.retrieval-pipeline
+title: Contextual Retrieval Pipeline
+type: sequence
+version: "0.1"
+data:
+  participants:
+    - id: UserQuestion
+      kind: actor
+    - id: RetrievalLayer
+      kind: component
+    - id: IndexSurface
+      kind: component
+    - id: GraphRelations
+      kind: component
+    - id: AnswerComposer
+      kind: component
+  messages:
+    - from: UserQuestion
+      to: RetrievalLayer
+      message: ask concrete question in context
+    - from: RetrievalLayer
+      to: RetrievalLayer
+      message: parse question and infer dominant intent
+      kind: sync
+    - from: RetrievalLayer
+      to: RetrievalLayer
+      message: detect topic dimensions and estimate scope
+      kind: sync
+    - from: RetrievalLayer
+      to: IndexSurface
+      message: preselect branches and facets
+      kind: sync
+    - from: IndexSurface
+      to: RetrievalLayer
+      message: return candidate atoms
+      kind: sync
+    - from: RetrievalLayer
+      to: GraphRelations
+      message: gather related nodes and lineage clues
+      kind: sync
+    - from: GraphRelations
+      to: RetrievalLayer
+      message: return complementary relations
+      kind: sync
+    - from: RetrievalLayer
+      to: AnswerComposer
+      message: rank and select useful subset
+      kind: sync
+    - from: AnswerComposer
+      to: UserQuestion
+      message: compose and return answer slice
+      kind: sync

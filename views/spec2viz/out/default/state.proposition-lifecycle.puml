@@ -1,0 +1,8 @@
+@startuml
+[*] --> unvalidated
+
+unvalidated --> unsinnig : structural validation fail [S_i = 0]
+unvalidated --> sinnlos : tautology or contradiction
+unvalidated --> sinnvoll_true : evaluate proposition [S_i = 1 and V_i = 1]
+unvalidated --> sinnvoll_false : evaluate proposition [S_i = 1 and V_i = 0]
+@enduml

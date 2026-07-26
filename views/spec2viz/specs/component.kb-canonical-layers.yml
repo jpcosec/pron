@@ -1,0 +1,116 @@
+id: component.kb-canonical-layers
+title: Knowledge KB Canonical Layers
+type: component
+version: "0.1"
+data:
+  nodes:
+    KnowledgeKB:
+      label: Knowledge KB
+      kind: core
+      contains:
+        - Sources
+        - Samples
+        - Markup
+        - Atoms
+        - Compositions
+        - ProvenanceGraph
+        - ConceptGraph
+        - StructuralGraph
+        - KnowledgeCLI
+        - DocumentUI
+        - GraphUI
+        - Spec2vizViews
+
+    Sources:
+      label: Sources / Source Records
+      kind: boundary
+
+    Samples:
+      label: Samples / Biopsies
+      kind: boundary
+
+    Markup:
+      label: Annotation / Semantic Markup
+      kind: core
+
+    Atoms:
+      label: Knowledge Atoms
+      kind: core
+
+    Compositions:
+      label: Compositions / Derived Views
+      kind: core
+
+    ProvenanceGraph:
+      label: Provenance Graph
+      kind: core
+
+    ConceptGraph:
+      label: Atom-Centered Concept Graph
+      kind: core
+
+    StructuralGraph:
+      label: Projected Structural Graph
+      kind: core
+
+    KnowledgeCLI:
+      label: Knowledge CLI
+      kind: boundary
+
+    DocumentUI:
+      label: Document UI
+      kind: boundary
+
+    GraphUI:
+      label: Graph UI
+      kind: boundary
+
+    Spec2vizViews:
+      label: spec2viz Derived Views
+      kind: boundary
+
+  edges:
+    - from: Samples
+      to: Sources
+      relation: sampled_from
+      label: verifiable cut from versioned source
+    - from: Markup
+      to: Samples
+      relation: annotates
+      label: semantic ranges live on samples
+    - from: Atoms
+      to: Samples
+      relation: distilled_from
+      label: provenance points to evidence
+    - from: Compositions
+      to: Atoms
+      relation: composes
+      label: depth by composition
+    - from: ProvenanceGraph
+      to: Atoms
+      relation: indexes
+      label: lineage backbone
+    - from: ConceptGraph
+      to: Atoms
+      relation: organizes
+      label: atom-centered semantics
+    - from: StructuralGraph
+      to: Samples
+      relation: supports
+      label: structural support projection
+    - from: KnowledgeCLI
+      to: Atoms
+      relation: operates_on
+      label: authoring and retrieval
+    - from: DocumentUI
+      to: Samples
+      relation: inspects
+      label: source vs rendered and annotation
+    - from: GraphUI
+      to: ProvenanceGraph
+      relation: visualizes
+      label: lineage and neighborhood
+    - from: Spec2vizViews
+      to: Compositions
+      relation: renders
+      label: maintained derived diagrams

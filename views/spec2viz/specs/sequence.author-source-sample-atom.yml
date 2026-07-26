@@ -1,0 +1,63 @@
+id: sequence.author-source-sample-atom
+title: Authoring Flow From Source to Atom
+type: sequence
+version: "0.1"
+data:
+  participants:
+    - id: Author
+      kind: actor
+    - id: KnowledgeCLI
+      kind: component
+    - id: SourceRegistry
+      kind: boundary
+    - id: SampleStore
+      kind: component
+    - id: Marcado
+      kind: component
+    - id: AtomCorpus
+      kind: component
+    - id: MetadataRegistry
+      kind: database
+    - id: SLDB
+      kind: component
+  messages:
+    - from: Author
+      to: KnowledgeCLI
+      message: register source artifact
+    - from: KnowledgeCLI
+      to: SourceRegistry
+      message: persist path + source_hash_sha256
+      kind: sync
+    - from: Author
+      to: KnowledgeCLI
+      message: create sample / biopsy
+    - from: KnowledgeCLI
+      to: SampleStore
+      message: cut verifiable sample from source
+      kind: sync
+    - from: Author
+      to: KnowledgeCLI
+      message: annotate sample
+    - from: KnowledgeCLI
+      to: Marcado
+      message: open sample for semantic markup
+      kind: sync
+    - from: Marcado
+      to: SampleStore
+      message: persist ranges and anchors
+      kind: sync
+    - from: Author
+      to: KnowledgeCLI
+      message: add distilled atom
+    - from: KnowledgeCLI
+      to: AtomCorpus
+      message: write atom with provenance to sample
+      kind: sync
+    - from: KnowledgeCLI
+      to: MetadataRegistry
+      message: write governance metadata
+      kind: sync
+    - from: KnowledgeCLI
+      to: SLDB
+      message: refresh index and graph projections
+      kind: sync

@@ -1,0 +1,98 @@
+id: matrix.capability-surfaces
+title: Capability Surfaces Across Source Apps
+type: component_view_matrix
+version: "0.1"
+data:
+  views:
+    - id: authoring
+      label: Authoring
+      stages:
+        - id: create
+          label: create
+        - id: review
+          label: review
+        - id: compose
+          label: compose
+    - id: evidence
+      label: Evidence and Samples
+      stages:
+        - id: register_source
+          label: register source
+        - id: sample
+          label: sample
+        - id: annotate
+          label: annotate
+        - id: validate
+          label: validate
+    - id: graph
+      label: Graph and Retrieval
+      stages:
+        - id: materialize
+          label: materialize
+        - id: trace
+          label: trace
+        - id: inspect
+          label: inspect
+    - id: views
+      label: Views and Reporting
+      stages:
+        - id: document_ui
+          label: document ui
+        - id: graph_ui
+          label: graph ui
+        - id: diagrams
+          label: diagrams
+        - id: reports
+          label: reports
+  components:
+    - name: KnowledgeSystem
+      kind: core
+      stages:
+        authoring: [create, review, compose]
+        evidence: [register_source, sample, annotate, validate]
+        graph: [materialize, trace, inspect]
+        views: [document_ui, graph_ui, diagrams, reports]
+      children:
+        - name: Deskops
+          kind: service
+          stages:
+            authoring: [create, review, compose]
+        - name: SLDB
+          kind: service
+          stages:
+            evidence: [register_source, sample]
+            graph: [materialize, inspect]
+            views: [document_ui, reports]
+        - name: Marcado
+          kind: service
+          stages:
+            evidence: [annotate, validate]
+        - name: KGDB
+          kind: service
+          stages:
+            graph: [materialize, trace, inspect]
+        - name: SLDB_UI
+          kind: ui
+          stages:
+            views: [document_ui]
+        - name: Graph_UI
+          kind: ui
+          stages:
+            views: [graph_ui]
+        - name: Spec2viz
+          kind: ui
+          stages:
+            views: [diagrams, reports]
+        - name: Ontomap
+          kind: service
+          stages:
+            graph: [inspect]
+        - name: HumScrapper
+          kind: service
+          stages:
+            evidence: [register_source]
+        - name: RepoPackage
+          kind: service
+          stages:
+            graph: [inspect]
+            views: [reports]

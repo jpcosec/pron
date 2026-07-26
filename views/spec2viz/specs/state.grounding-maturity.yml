@@ -1,0 +1,35 @@
+id: state.grounding-maturity
+title: Atom Grounding Maturity States
+type: state
+version: "0.1"
+data:
+  entity: AtomGrounding
+  initial: none
+  states:
+    - id: none
+      label: None
+    - id: textual_only
+      label: Textual Only
+    - id: located_humanly
+      label: Located Humanly
+    - id: sample_linked
+      label: Sample Linked
+    - id: validated
+      label: Validated
+  transitions:
+    - from: none
+      to: textual_only
+      "on": record textual provenance
+    - from: textual_only
+      to: located_humanly
+      "on": identify section or location
+    - from: textual_only
+      to: sample_linked
+      "on": create explicit sample
+      guard: enough evidence to bind a cut
+    - from: located_humanly
+      to: sample_linked
+      "on": bind sample to source
+    - from: sample_linked
+      to: validated
+      "on": validate anchor deterministically

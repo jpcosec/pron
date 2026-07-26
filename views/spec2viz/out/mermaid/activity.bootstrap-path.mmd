@@ -1,0 +1,24 @@
+flowchart TD
+    __start([Start])
+    declare_corpus["Declare current atom corpus as valid bootstrap KB"]
+    derive_index["Derive explicit atom index"]
+    derive_concept_layer["Derive concept and taxonomy links"]
+    derive_provenance_minimum["Add provenance-minimum model"]
+    materialize_graph["Materialize initial graph"]
+    need_forward_samples{"Is new work being created?"}
+    create_forward_samples["Create sample-ready new atoms going forward"]
+    assess_backfill{"Is historical backfill worth doing now?"}
+    progressive_backfill["Backfill old provenance progressively"]
+    __end([End])
+    __start --> declare_corpus
+    declare_corpus --> derive_index
+    derive_index --> derive_concept_layer
+    derive_concept_layer --> derive_provenance_minimum
+    derive_provenance_minimum --> materialize_graph
+    materialize_graph --> need_forward_samples
+    need_forward_samples -->|yes| create_forward_samples
+    need_forward_samples -->|no| assess_backfill
+    create_forward_samples --> assess_backfill
+    assess_backfill -->|yes| progressive_backfill
+    assess_backfill -->|no| __end
+    progressive_backfill --> __end

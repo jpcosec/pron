@@ -1,0 +1,40 @@
+id: activity.retrieval-workflow
+title: Retrieval Workflow
+type: activity
+version: "0.1"
+data:
+  start: parse_question
+  steps:
+    parse_question:
+      label: Parse incoming question
+      next: infer_intent
+
+    infer_intent:
+      label: Infer dominant question type or intent
+      next: detect_dimensions
+
+    detect_dimensions:
+      label: Detect topic and system dimensions
+      next: estimate_scope
+
+    estimate_scope:
+      label: Estimate scope and abstraction level
+      next: preselect_branches
+
+    preselect_branches:
+      label: Preselect relevant branches and facets
+      next: gather_candidates
+
+    gather_candidates:
+      label: Gather candidates from branches and relations
+      next: rank_candidates
+
+    rank_candidates:
+      label: Rank or filter candidates
+      next: compose_answer
+
+    compose_answer:
+      label: Compose useful subset in useful order
+      next: end
+
+  end: end

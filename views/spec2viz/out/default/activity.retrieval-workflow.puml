@@ -1,0 +1,12 @@
+@startuml
+start
+:Parse incoming question;
+:Infer dominant question type or intent;
+:Detect topic and system dimensions;
+:Estimate scope and abstraction level;
+:Preselect relevant branches and facets;
+:Gather candidates from branches and relations;
+:Rank or filter candidates;
+:Compose useful subset in useful order;
+stop
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+actor Author
+participant KnowledgeCLI
+boundary SourceRegistry
+participant SampleStore
+participant Marcado
+participant AtomCorpus
+database MetadataRegistry
+participant SLDB
+
+Author -> KnowledgeCLI: register source artifact
+KnowledgeCLI -> SourceRegistry: persist path + source_hash_sha256
+Author -> KnowledgeCLI: create sample / biopsy
+KnowledgeCLI -> SampleStore: cut verifiable sample from source
+Author -> KnowledgeCLI: annotate sample
+KnowledgeCLI -> Marcado: open sample for semantic markup
+Marcado -> SampleStore: persist ranges and anchors
+Author -> KnowledgeCLI: add distilled atom
+KnowledgeCLI -> AtomCorpus: write atom with provenance to sample
+KnowledgeCLI -> MetadataRegistry: write governance metadata
+KnowledgeCLI -> SLDB: refresh index and graph projections
+@enduml

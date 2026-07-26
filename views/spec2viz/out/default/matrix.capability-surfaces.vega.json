@@ -1,0 +1,710 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Capability Surfaces Across Source Apps",
+  "width": 2200,
+  "height": 464,
+  "padding": 5,
+  "signals": [
+    {
+      "name": "left",
+      "value": 220
+    },
+    {
+      "name": "top",
+      "value": 70
+    },
+    {
+      "name": "cellWidth",
+      "value": 140
+    },
+    {
+      "name": "rowHeight",
+      "value": 34
+    },
+    {
+      "name": "barPadding",
+      "value": 6
+    }
+  ],
+  "data": [
+    {
+      "name": "stages",
+      "values": [
+        {
+          "id": "create",
+          "index": 0,
+          "label": "create",
+          "view": "Authoring"
+        },
+        {
+          "id": "review",
+          "index": 1,
+          "label": "review",
+          "view": "Authoring"
+        },
+        {
+          "id": "compose",
+          "index": 2,
+          "label": "compose",
+          "view": "Authoring"
+        },
+        {
+          "id": "register_source",
+          "index": 3,
+          "label": "register source",
+          "view": "Evidence and Samples"
+        },
+        {
+          "id": "sample",
+          "index": 4,
+          "label": "sample",
+          "view": "Evidence and Samples"
+        },
+        {
+          "id": "annotate",
+          "index": 5,
+          "label": "annotate",
+          "view": "Evidence and Samples"
+        },
+        {
+          "id": "validate",
+          "index": 6,
+          "label": "validate",
+          "view": "Evidence and Samples"
+        },
+        {
+          "id": "materialize",
+          "index": 7,
+          "label": "materialize",
+          "view": "Graph and Retrieval"
+        },
+        {
+          "id": "trace",
+          "index": 8,
+          "label": "trace",
+          "view": "Graph and Retrieval"
+        },
+        {
+          "id": "inspect",
+          "index": 9,
+          "label": "inspect",
+          "view": "Graph and Retrieval"
+        },
+        {
+          "id": "document_ui",
+          "index": 10,
+          "label": "document ui",
+          "view": "Views and Reporting"
+        },
+        {
+          "id": "graph_ui",
+          "index": 11,
+          "label": "graph ui",
+          "view": "Views and Reporting"
+        },
+        {
+          "id": "diagrams",
+          "index": 12,
+          "label": "diagrams",
+          "view": "Views and Reporting"
+        },
+        {
+          "id": "reports",
+          "index": 13,
+          "label": "reports",
+          "view": "Views and Reporting"
+        }
+      ]
+    },
+    {
+      "name": "views",
+      "source": "stages",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "view"
+          ],
+          "fields": [
+            "index",
+            "index"
+          ],
+          "ops": [
+            "min",
+            "max"
+          ],
+          "as": [
+            "minIdx",
+            "maxIdx"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "viewBoundaries",
+      "source": "views",
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "[datum.minIdx, datum.maxIdx + 1]",
+          "as": "indices"
+        },
+        {
+          "type": "flatten",
+          "fields": [
+            "indices"
+          ]
+        },
+        {
+          "type": "aggregate",
+          "groupby": [
+            "indices"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stageBoundaries",
+      "values": [
+        {
+          "index": 0
+        },
+        {
+          "index": 1
+        },
+        {
+          "index": 2
+        },
+        {
+          "index": 3
+        },
+        {
+          "index": 4
+        },
+        {
+          "index": 5
+        },
+        {
+          "index": 6
+        },
+        {
+          "index": 7
+        },
+        {
+          "index": 8
+        },
+        {
+          "index": 9
+        },
+        {
+          "index": 10
+        },
+        {
+          "index": 11
+        },
+        {
+          "index": 12
+        },
+        {
+          "index": 13
+        },
+        {
+          "index": 14
+        }
+      ]
+    },
+    {
+      "name": "rows",
+      "values": [
+        {
+          "id": "KnowledgeSystem",
+          "label": "KnowledgeSystem",
+          "row": 0,
+          "depth": 0
+        },
+        {
+          "id": "Deskops",
+          "label": "Deskops",
+          "row": 1,
+          "depth": 1
+        },
+        {
+          "id": "SLDB",
+          "label": "SLDB",
+          "row": 2,
+          "depth": 1
+        },
+        {
+          "id": "Marcado",
+          "label": "Marcado",
+          "row": 3,
+          "depth": 1
+        },
+        {
+          "id": "KGDB",
+          "label": "KGDB",
+          "row": 4,
+          "depth": 1
+        },
+        {
+          "id": "SLDB_UI",
+          "label": "SLDB_UI",
+          "row": 5,
+          "depth": 1
+        },
+        {
+          "id": "Graph_UI",
+          "label": "Graph_UI",
+          "row": 6,
+          "depth": 1
+        },
+        {
+          "id": "Spec2viz",
+          "label": "Spec2viz",
+          "row": 7,
+          "depth": 1
+        },
+        {
+          "id": "Ontomap",
+          "label": "Ontomap",
+          "row": 8,
+          "depth": 1
+        },
+        {
+          "id": "HumScrapper",
+          "label": "HumScrapper",
+          "row": 9,
+          "depth": 1
+        },
+        {
+          "id": "RepoPackage",
+          "label": "RepoPackage",
+          "row": 10,
+          "depth": 1
+        }
+      ]
+    },
+    {
+      "name": "spans",
+      "values": [
+        {
+          "component": "KnowledgeSystem",
+          "row": 0,
+          "start": 0,
+          "end": 3,
+          "kind": "core",
+          "depth": 0
+        },
+        {
+          "component": "KnowledgeSystem",
+          "row": 0,
+          "start": 3,
+          "end": 7,
+          "kind": "core",
+          "depth": 0
+        },
+        {
+          "component": "KnowledgeSystem",
+          "row": 0,
+          "start": 7,
+          "end": 10,
+          "kind": "core",
+          "depth": 0
+        },
+        {
+          "component": "KnowledgeSystem",
+          "row": 0,
+          "start": 10,
+          "end": 14,
+          "kind": "core",
+          "depth": 0
+        },
+        {
+          "component": "Deskops",
+          "row": 1,
+          "start": 0,
+          "end": 3,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB",
+          "row": 2,
+          "start": 3,
+          "end": 5,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB",
+          "row": 2,
+          "start": 7,
+          "end": 8,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB",
+          "row": 2,
+          "start": 9,
+          "end": 10,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB",
+          "row": 2,
+          "start": 10,
+          "end": 11,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB",
+          "row": 2,
+          "start": 13,
+          "end": 14,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "Marcado",
+          "row": 3,
+          "start": 5,
+          "end": 7,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "KGDB",
+          "row": 4,
+          "start": 7,
+          "end": 10,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "SLDB_UI",
+          "row": 5,
+          "start": 10,
+          "end": 11,
+          "kind": "ui",
+          "depth": 1
+        },
+        {
+          "component": "Graph_UI",
+          "row": 6,
+          "start": 11,
+          "end": 12,
+          "kind": "ui",
+          "depth": 1
+        },
+        {
+          "component": "Spec2viz",
+          "row": 7,
+          "start": 12,
+          "end": 14,
+          "kind": "ui",
+          "depth": 1
+        },
+        {
+          "component": "Ontomap",
+          "row": 8,
+          "start": 9,
+          "end": 10,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "HumScrapper",
+          "row": 9,
+          "start": 3,
+          "end": 4,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "RepoPackage",
+          "row": 10,
+          "start": 9,
+          "end": 10,
+          "kind": "service",
+          "depth": 1
+        },
+        {
+          "component": "RepoPackage",
+          "row": 10,
+          "start": 13,
+          "end": 14,
+          "kind": "service",
+          "depth": 1
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "kindColor",
+      "type": "ordinal",
+      "domain": [
+        "service",
+        "ui",
+        "core"
+      ],
+      "range": [
+        "#94A3B8",
+        "#94A3B8",
+        "#F59E0B"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "text",
+      "from": {
+        "data": "views"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "left + (datum.minIdx + datum.maxIdx + 1) * cellWidth / 2"
+          },
+          "y": {
+            "value": 15
+          },
+          "text": {
+            "field": "view"
+          },
+          "align": {
+            "value": "center"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 15
+          },
+          "fill": {
+            "value": "#475569"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "stages"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "left + datum.index * cellWidth + cellWidth / 2"
+          },
+          "y": {
+            "value": 40
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "center"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#475569"
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {
+        "data": "stageBoundaries"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "left + datum.index * cellWidth"
+          },
+          "y": {
+            "signal": "top - 20"
+          },
+          "y2": {
+            "signal": "top + 11 * rowHeight + 10"
+          },
+          "stroke": {
+            "value": "#CBD5E1"
+          },
+          "strokeDash": {
+            "value": [
+              4,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {
+        "data": "viewBoundaries"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "left + datum.indices * cellWidth"
+          },
+          "y": {
+            "signal": "top - 40"
+          },
+          "y2": {
+            "signal": "top + 11 * rowHeight + 20"
+          },
+          "stroke": {
+            "value": "#475569"
+          },
+          "strokeWidth": {
+            "value": 2.5
+          },
+          "strokeOpacity": {
+            "value": 0.6
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "rows"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 0
+          },
+          "x2": {
+            "signal": "width"
+          },
+          "y": {
+            "signal": "top + datum.row * rowHeight"
+          },
+          "height": {
+            "signal": "rowHeight"
+          },
+          "fill": {
+            "signal": "datum.depth === 0 ? (datum.row % 2 === 0 ? '#475569' : '#94A3B8') : (datum.row % 2 === 0 ? '#CBD5E1' : '#E2E8F0')"
+          },
+          "fillOpacity": {
+            "value": 0.15
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {
+        "data": "rows"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "12 + datum.depth * 18"
+          },
+          "x2": {
+            "signal": "12 + datum.depth * 18"
+          },
+          "y": {
+            "signal": "top + datum.row * rowHeight + 2"
+          },
+          "y2": {
+            "signal": "top + datum.row * rowHeight + rowHeight - 2"
+          },
+          "stroke": {
+            "signal": "datum.depth === 0 ? '#475569' : '#94A3B8'"
+          },
+          "strokeWidth": {
+            "signal": "datum.depth === 0 ? 3 : 1.5"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "rows"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "20 + datum.depth * 18"
+          },
+          "y": {
+            "signal": "top + datum.row * rowHeight + rowHeight / 2"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#111827"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "spans"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "left + datum.start * cellWidth + 4"
+          },
+          "x2": {
+            "signal": "left + datum.end * cellWidth - 4"
+          },
+          "y": {
+            "signal": "top + datum.row * rowHeight + barPadding"
+          },
+          "height": {
+            "signal": "rowHeight - barPadding * 2"
+          },
+          "cornerRadius": {
+            "value": 7
+          },
+          "fill": {
+            "scale": "kindColor",
+            "field": "kind"
+          },
+          "fillOpacity": {
+            "signal": "max(0.3, 1 - (datum.depth * 0.25))"
+          },
+          "stroke": {
+            "scale": "kindColor",
+            "field": "kind"
+          },
+          "strokeOpacity": {
+            "value": 0.7
+          },
+          "strokeWidth": {
+            "value": 1.5
+          }
+        }
+      }
+    }
+  ]
+}

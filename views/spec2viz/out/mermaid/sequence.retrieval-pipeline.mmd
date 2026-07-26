@@ -1,0 +1,15 @@
+sequenceDiagram
+    actor UserQuestion
+    participant RetrievalLayer
+    participant IndexSurface
+    participant GraphRelations
+    participant AnswerComposer
+    UserQuestion->>RetrievalLayer: ask concrete question in context
+    RetrievalLayer->>RetrievalLayer: parse question and infer dominant intent
+    RetrievalLayer->>RetrievalLayer: detect topic dimensions and estimate scope
+    RetrievalLayer->>IndexSurface: preselect branches and facets
+    IndexSurface->>RetrievalLayer: return candidate atoms
+    RetrievalLayer->>GraphRelations: gather related nodes and lineage clues
+    GraphRelations->>RetrievalLayer: return complementary relations
+    RetrievalLayer->>AnswerComposer: rank and select useful subset
+    AnswerComposer->>UserQuestion: compose and return answer slice

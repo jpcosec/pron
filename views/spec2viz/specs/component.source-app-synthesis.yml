@@ -1,0 +1,98 @@
+id: component.source-app-synthesis
+title: Source App Synthesis Into the Knowledge System
+type: component
+version: "0.1"
+data:
+  nodes:
+    KnowledgeSystem:
+      label: New Knowledge System
+      kind: core
+      contains:
+        - DeskopsDiscipline
+        - SldbDocuments
+        - MarcadoAnnotation
+        - KgdbRelations
+        - SldbUiSurface
+        - GraphUiSurface
+        - Spec2vizViews
+        - OntomapFormalization
+        - HumScrapperIngestion
+        - RepoPackageFederation
+
+    DeskopsDiscipline:
+      label: deskops Atom Discipline + UX
+      kind: core
+
+    SldbDocuments:
+      label: sldb Structured Document Layer
+      kind: core
+
+    MarcadoAnnotation:
+      label: marcado Annotation and Addressability
+      kind: core
+
+    KgdbRelations:
+      label: kgdb Relation and Lineage Layer
+      kind: core
+
+    SldbUiSurface:
+      label: sldb-ui Document Operator Surface
+      kind: boundary
+
+    GraphUiSurface:
+      label: graph_ui Relational Operator Surface
+      kind: boundary
+
+    Spec2vizViews:
+      label: spec2viz Derived Visual Views
+      kind: boundary
+
+    OntomapFormalization:
+      label: ontomap Optional Semantic Formalization
+      kind: boundary
+
+    HumScrapperIngestion:
+      label: hum-scrapper Future Source Acquisition
+      kind: boundary
+
+    RepoPackageFederation:
+      label: repopackage Federation Contracts
+      kind: boundary
+
+  edges:
+    - from: DeskopsDiscipline
+      to: SldbDocuments
+      relation: constrains
+      label: small atoms and 5WH1+
+    - from: MarcadoAnnotation
+      to: SldbDocuments
+      relation: enriches
+      label: structured annotation on samples
+    - from: KgdbRelations
+      to: SldbDocuments
+      relation: materializes
+      label: explicit navigable relations
+    - from: SldbUiSurface
+      to: SldbDocuments
+      relation: operates_on
+      label: source vs rendered inspection
+    - from: GraphUiSurface
+      to: KgdbRelations
+      relation: operates_on
+      label: lineage and graph editing
+    - from: Spec2vizViews
+      to: SldbDocuments
+      relation: renders
+      label: visual reporting from structured inputs
+    - from: OntomapFormalization
+      to: KgdbRelations
+      relation: extends
+      label: richer formal semantics if needed
+    - from: HumScrapperIngestion
+      to: SldbDocuments
+      relation: supplies
+      label: future captured sources and candidates
+    - from: RepoPackageFederation
+      to: KnowledgeSystem
+      relation: scales
+      label: inter-repo composition and contracts

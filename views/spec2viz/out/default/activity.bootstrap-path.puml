@@ -1,0 +1,21 @@
+@startuml
+start
+:Declare current atom corpus as valid bootstrap KB;
+:Derive explicit atom index;
+:Derive concept and taxonomy links;
+:Add provenance-minimum model;
+:Materialize initial graph;
+if (Is new work being created??) then (yes)
+:Create sample-ready new atoms going forward;
+if (Is historical backfill worth doing now??) then (yes)
+:Backfill old provenance progressively;
+else (no)
+endif
+else (no)
+if (Is historical backfill worth doing now??) then (yes)
+:Backfill old provenance progressively;
+else (no)
+endif
+endif
+stop
+@enduml

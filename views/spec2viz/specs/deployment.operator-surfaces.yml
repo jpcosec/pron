@@ -1,0 +1,85 @@
+id: deployment.operator-surfaces
+title: Knowledge Runtime and Operator Surfaces
+type: deployment
+version: "0.1"
+data:
+  nodes:
+    browser:
+      label: Browser
+      kind: client
+      contains:
+        - document_ui
+        - graph_ui
+        - rendered_views
+    workstation:
+      label: Operator Workstation
+      kind: client
+      contains:
+        - knowledge_cli
+        - spec2viz_cli
+    workspace:
+      label: Knowledge Workspace
+      kind: server
+      contains:
+        - atom_corpus
+        - metadata_registry
+        - spec_repo
+    runtime:
+      label: Local Runtime Services
+      kind: server
+      contains:
+        - sldb_runtime
+        - graph_projection
+  artifacts:
+    document_ui:
+      label: Document UI
+      kind: frontend
+    graph_ui:
+      label: Graph UI
+      kind: frontend
+    rendered_views:
+      label: Rendered Diagram Views
+      kind: frontend
+    knowledge_cli:
+      label: Knowledge CLI
+      kind: backend
+    spec2viz_cli:
+      label: spec2viz CLI
+      kind: backend
+    atom_corpus:
+      label: Atom Corpus
+      kind: database
+    metadata_registry:
+      label: Atom Metadata Registry
+      kind: database
+    spec_repo:
+      label: Spec and View Specs
+      kind: database
+    sldb_runtime:
+      label: SLDB Runtime
+      kind: backend
+    graph_projection:
+      label: Graph Projection Runtime
+      kind: backend
+  connections:
+    - from: document_ui
+      to: sldb_runtime
+      protocol: HTTPS
+    - from: graph_ui
+      to: graph_projection
+      protocol: HTTPS
+    - from: knowledge_cli
+      to: atom_corpus
+      protocol: local_fs
+    - from: knowledge_cli
+      to: metadata_registry
+      protocol: local_fs
+    - from: knowledge_cli
+      to: sldb_runtime
+      protocol: local_runtime
+    - from: spec2viz_cli
+      to: spec_repo
+      protocol: local_fs
+    - from: spec2viz_cli
+      to: rendered_views
+      protocol: local_render

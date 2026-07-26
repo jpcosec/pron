@@ -1,0 +1,28 @@
+@startuml
+node "Browser" as browser {
+  artifact "Document UI" as document_ui
+  artifact "Graph UI" as graph_ui
+  artifact "Rendered Diagram Views" as rendered_views
+}
+node "Operator Workstation" as workstation {
+  artifact "Knowledge CLI" as knowledge_cli
+  artifact "spec2viz CLI" as spec2viz_cli
+}
+node "Knowledge Workspace" as workspace {
+  artifact "Atom Corpus" as atom_corpus
+  artifact "Atom Metadata Registry" as metadata_registry
+  artifact "Spec and View Specs" as spec_repo
+}
+node "Local Runtime Services" as runtime {
+  artifact "SLDB Runtime" as sldb_runtime
+  artifact "Graph Projection Runtime" as graph_projection
+}
+
+document_ui --> sldb_runtime : HTTPS
+graph_ui --> graph_projection : HTTPS
+knowledge_cli --> atom_corpus : local_fs
+knowledge_cli --> metadata_registry : local_fs
+knowledge_cli --> sldb_runtime : local_runtime
+spec2viz_cli --> spec_repo : local_fs
+spec2viz_cli --> rendered_views : local_render
+@enduml

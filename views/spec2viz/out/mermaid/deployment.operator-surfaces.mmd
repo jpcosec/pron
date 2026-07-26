@@ -1,0 +1,26 @@
+graph TD
+    subgraph browser ["Browser"]
+        document_ui["Document UI"]
+        graph_ui["Graph UI"]
+        rendered_views["Rendered Diagram Views"]
+    end
+    subgraph workstation ["Operator Workstation"]
+        knowledge_cli["Knowledge CLI"]
+        spec2viz_cli["spec2viz CLI"]
+    end
+    subgraph workspace ["Knowledge Workspace"]
+        atom_corpus["Atom Corpus"]
+        metadata_registry["Atom Metadata Registry"]
+        spec_repo["Spec and View Specs"]
+    end
+    subgraph runtime ["Local Runtime Services"]
+        sldb_runtime["SLDB Runtime"]
+        graph_projection["Graph Projection Runtime"]
+    end
+    document_ui -->|HTTPS| sldb_runtime
+    graph_ui -->|HTTPS| graph_projection
+    knowledge_cli -->|local_fs| atom_corpus
+    knowledge_cli -->|local_fs| metadata_registry
+    knowledge_cli -->|local_runtime| sldb_runtime
+    spec2viz_cli -->|local_fs| spec_repo
+    spec2viz_cli -->|local_render| rendered_views

@@ -1,0 +1,50 @@
+id: activity.bootstrap-path
+title: Bootstrap Path for the Knowledge Base
+type: activity
+version: "0.1"
+data:
+  start: declare_corpus
+  steps:
+    declare_corpus:
+      label: Declare current atom corpus as valid bootstrap KB
+      next: derive_index
+
+    derive_index:
+      label: Derive explicit atom index
+      next: derive_concept_layer
+
+    derive_concept_layer:
+      label: Derive concept and taxonomy links
+      next: derive_provenance_minimum
+
+    derive_provenance_minimum:
+      label: Add provenance-minimum model
+      next: materialize_graph
+
+    materialize_graph:
+      label: Materialize initial graph
+      next: need_forward_samples
+
+    need_forward_samples:
+      label: Is new work being created?
+      kind: decision
+      branches:
+        "yes": create_forward_samples
+        "no": assess_backfill
+
+    create_forward_samples:
+      label: Create sample-ready new atoms going forward
+      next: assess_backfill
+
+    assess_backfill:
+      label: Is historical backfill worth doing now?
+      kind: decision
+      branches:
+        "yes": progressive_backfill
+        "no": end
+
+    progressive_backfill:
+      label: Backfill old provenance progressively
+      next: end
+
+  end: end

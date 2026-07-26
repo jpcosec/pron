@@ -1,0 +1,34 @@
+id: state.proposition-lifecycle
+title: Proposition Semantic Status Lifecycle
+type: state
+version: "0.1"
+data:
+  entity: Proposition
+  initial: unvalidated
+  states:
+    - id: unvalidated
+      label: Unvalidated
+    - id: unsinnig
+      label: Unsinnig
+    - id: sinnlos
+      label: Sinnlos
+    - id: sinnvoll_true
+      label: Sinnvoll True
+    - id: sinnvoll_false
+      label: Sinnvoll False
+  transitions:
+    - from: unvalidated
+      to: unsinnig
+      "on": structural validation fail
+      guard: S_i = 0
+    - from: unvalidated
+      to: sinnlos
+      "on": tautology or contradiction
+    - from: unvalidated
+      to: sinnvoll_true
+      "on": evaluate proposition
+      guard: S_i = 1 and V_i = 1
+    - from: unvalidated
+      to: sinnvoll_false
+      "on": evaluate proposition
+      guard: S_i = 1 and V_i = 0
