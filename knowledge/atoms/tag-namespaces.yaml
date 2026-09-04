@@ -1,0 +1,69 @@
+notes:
+  - This file now lists semantic tag namespaces that still belong on atoms.
+  - Governance, provenance-status, project, source, grounding, role, scope, phase,
+    bootstrap, method, status, and legacy metadata were moved to `metadata/atoms/atom-metadata-registry.yaml`.
+
+namespaces:
+  cross:
+    examples:
+      - cross:deskops_kb
+      - cross:sldb_kgdb
+      - cross:provenance_concept_graph
+    meaning: Explicit cross-system or cross-project synthesis that is part of the claim.
+    use_when: The atom's knowledge claim is inherently about a bridge across systems,
+      repos, or graph layers.
+  domain:
+    examples:
+      - domain:knowledge_management
+      - domain:knowledge_representation
+      - domain:graph_architecture
+    meaning: Durable knowledge domain the claim belongs to.
+    use_when: The atom belongs to a broader field beyond one tool or repo.
+  entity:
+    examples:
+      - entity:atom
+      - entity:sample
+      - entity:source
+      - entity:taxonomy_node
+      - entity:metadata_registry
+    meaning: Primary modeled entity the claim is about.
+    use_when: The atom is centered on one KB entity type.
+  graph:
+    examples:
+      - graph:provenance
+      - graph:concept
+      - graph:structure
+      - graph:lineage
+    meaning: Graph stratum or graph concern named by the claim itself.
+    use_when: The atom is about provenance, concept, structure, lineage, or related graph semantics.
+  layer:
+    examples:
+      - layer:sample
+      - layer:graph_provenance
+      - layer:graph_concept
+      - layer:structure
+    meaning: Architectural layer the claim applies to.
+    use_when: The atom is specifically about a KB layer or sublayer.
+  system:
+    examples:
+      - system:kb
+      - system:deskops
+      - system:sldb
+      - system:marcado
+      - system:kgdb
+      - system:knowledge
+    meaning: System or tool the claim is about.
+    use_when: The atom belongs to a specific tool, subsystem, or KB surface.
+  topic:
+    do_not_use_when: The information really belongs in a stronger entity, graph,
+      layer, or relation model only.
+    examples:
+      - topic:provenance
+      - topic:multi_source
+      - topic:anchoring
+      - topic:concept_graph
+      - topic:knowledge_cli
+      - topic:atom_metadata
+      - topic:knowledge_graph
+    meaning: Lightweight conceptual topic for discovery and grouping.
+    use_when: The atom needs a human-friendly subject handle.

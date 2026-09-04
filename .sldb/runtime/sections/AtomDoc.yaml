@@ -5339,3 +5339,2855 @@ documents:
     level: 2
     line_start: 13
     line_end: 14
+- doc_name: atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+  sections:
+  - path: a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+    title: A zero-edge graph snapshot should be treated as an incomplete provenance
+      build rather than a healthy graph
+    breadcrumbs:
+    - A zero-edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    about:
+    - A zero-edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    - a zero edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    - graph:lineage
+    - graph:provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph/answer
+    title: Answer
+    breadcrumbs:
+    - A zero-edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    - Answer
+    about:
+    - A zero-edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    - a zero edge graph snapshot should be treated as an incomplete provenance build
+      rather than a healthy graph
+    - Answer
+    - answer
+    - graph:lineage
+    - graph:provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-anchor-references-follow-a-three-tier-scheme
+  sections:
+  - path: anchor-references-follow-a-three-tier-scheme
+    title: Anchor references follow a three-tier scheme
+    breadcrumbs:
+    - Anchor references follow a three-tier scheme
+    about:
+    - Anchor references follow a three-tier scheme
+    - anchor references follow a three tier scheme
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchor-references-follow-a-three-tier-scheme
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: anchor-references-follow-a-three-tier-scheme/answer
+    title: Answer
+    breadcrumbs:
+    - Anchor references follow a three-tier scheme
+    - Answer
+    about:
+    - Anchor references follow a three-tier scheme
+    - anchor references follow a three tier scheme
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-asg-projects-multiple-graphs-per-document
+  sections:
+  - path: asg-projects-multiple-graphs-per-document
+    title: ASG projects multiple graphs per document
+    breadcrumbs:
+    - ASG projects multiple graphs per document
+    about:
+    - ASG projects multiple graphs per document
+    - asg projects multiple graphs per document
+    - domain:knowledge_representation
+    - graph:structure
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:structure
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: asg-projects-multiple-graphs-per-document
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: asg-projects-multiple-graphs-per-document/answer
+    title: Answer
+    breadcrumbs:
+    - ASG projects multiple graphs per document
+    - Answer
+    about:
+    - ASG projects multiple graphs per document
+    - asg projects multiple graphs per document
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - graph:structure
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:structure
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
+  sections:
+  - path: atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
+    title: Atom metadata should live outside atoms in a dedicated registry
+    breadcrumbs:
+    - Atom metadata should live outside atoms in a dedicated registry
+    about:
+    - Atom metadata should live outside atoms in a dedicated registry
+    - atom metadata should live outside atoms in a dedicated registry
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: atom-metadata-should-live-outside-atoms-in-a-dedicated-registry/answer
+    title: Answer
+    breadcrumbs:
+    - Atom metadata should live outside atoms in a dedicated registry
+    - Answer
+    about:
+    - Atom metadata should live outside atoms in a dedicated registry
+    - atom metadata should live outside atoms in a dedicated registry
+    - Answer
+    - answer
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
+  sections:
+  - path: atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
+    title: Atom semantic tags should be limited to the namespace allowlist defined
+      in tag-namespaces.yaml
+    breadcrumbs:
+    - Atom semantic tags should be limited to the namespace allowlist defined in tag-namespaces.yaml
+    about:
+    - Atom semantic tags should be limited to the namespace allowlist defined in tag-namespaces.yaml
+    - atom semantic tags should be limited to the namespace allowlist defined in tag
+      namespaces yaml
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml/answer
+    title: Answer
+    breadcrumbs:
+    - Atom semantic tags should be limited to the namespace allowlist defined in tag-namespaces.yaml
+    - Answer
+    about:
+    - Atom semantic tags should be limited to the namespace allowlist defined in tag-namespaces.yaml
+    - atom semantic tags should be limited to the namespace allowlist defined in tag
+      namespaces yaml
+    - Answer
+    - answer
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-atomic-fact-c-x-d-x-v
+  sections:
+  - path: atomic-fact-c-x-d-x-v
+    title: Atomic Fact (C x D x V)
+    breadcrumbs:
+    - Atomic Fact (C x D x V)
+    about:
+    - Atomic Fact (C x D x V)
+    - atomic fact c x d x v
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: atomic-fact-c-x-d-x-v
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: atomic-fact-c-x-d-x-v/answer
+    title: Answer
+    breadcrumbs:
+    - Atomic Fact (C x D x V)
+    - Answer
+    about:
+    - Atomic Fact (C x D x V)
+    - atomic fact c x d x v
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-boolean-algebra-and-bitwise-execution-kernel
+  sections:
+  - path: boolean-algebra-and-bitwise-execution-kernel
+    title: Boolean Algebra and Bitwise Execution Kernel
+    breadcrumbs:
+    - Boolean Algebra and Bitwise Execution Kernel
+    about:
+    - Boolean Algebra and Bitwise Execution Kernel
+    - boolean algebra and bitwise execution kernel
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: boolean-algebra-and-bitwise-execution-kernel
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: boolean-algebra-and-bitwise-execution-kernel/answer
+    title: Answer
+    breadcrumbs:
+    - Boolean Algebra and Bitwise Execution Kernel
+    - Answer
+    about:
+    - Boolean Algebra and Bitwise Execution Kernel
+    - boolean algebra and bitwise execution kernel
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-canonical-json-as-stable-interchange-format
+  sections:
+  - path: canonical-json-as-stable-interchange-format
+    title: Canonical JSON as stable interchange format
+    breadcrumbs:
+    - Canonical JSON as stable interchange format
+    about:
+    - Canonical JSON as stable interchange format
+    - canonical json as stable interchange format
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: canonical-json-as-stable-interchange-format
+    level: 1
+    line_start: 10
+    line_end: 11
+  - path: canonical-json-as-stable-interchange-format/answer
+    title: Answer
+    breadcrumbs:
+    - Canonical JSON as stable interchange format
+    - Answer
+    about:
+    - Canonical JSON as stable interchange format
+    - canonical json as stable interchange format
+    - Answer
+    - answer
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 12
+    line_end: 13
+- doc_name: atom-context-and-hierarchical-routing
+  sections:
+  - path: context-and-hierarchical-routing
+    title: Context and Hierarchical Routing
+    breadcrumbs:
+    - Context and Hierarchical Routing
+    about:
+    - Context and Hierarchical Routing
+    - context and hierarchical routing
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: context-and-hierarchical-routing
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: context-and-hierarchical-routing/answer
+    title: Answer
+    breadcrumbs:
+    - Context and Hierarchical Routing
+    - Answer
+    about:
+    - Context and Hierarchical Routing
+    - context and hierarchical routing
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-contradictions-stored-not-resolved
+  sections:
+  - path: contradictions-stored-not-resolved
+    title: Contradictions Stored Not Resolved
+    breadcrumbs:
+    - Contradictions Stored Not Resolved
+    about:
+    - Contradictions Stored Not Resolved
+    - contradictions stored not resolved
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: contradictions-stored-not-resolved
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: contradictions-stored-not-resolved/answer
+    title: Answer
+    breadcrumbs:
+    - Contradictions Stored Not Resolved
+    - Answer
+    about:
+    - Contradictions Stored Not Resolved
+    - contradictions stored not resolved
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
+  sections:
+  - path: cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
+    title: Cross tags belong on atoms only when the bridge is part of the claim itself
+    breadcrumbs:
+    - Cross tags belong on atoms only when the bridge is part of the claim itself
+    about:
+    - Cross tags belong on atoms only when the bridge is part of the claim itself
+    - cross tags belong on atoms only when the bridge is part of the claim itself
+    - cross:deskops_kb
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself/answer
+    title: Answer
+    breadcrumbs:
+    - Cross tags belong on atoms only when the bridge is part of the claim itself
+    - Answer
+    about:
+    - Cross tags belong on atoms only when the bridge is part of the claim itself
+    - cross tags belong on atoms only when the bridge is part of the claim itself
+    - Answer
+    - answer
+    - cross:deskops_kb
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:deskops_kb
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:multi_source
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
+  sections:
+  - path: dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
+    title: Dimensional Collapse and Hierarchical Tensor (N x N x C^k)
+    breadcrumbs:
+    - Dimensional Collapse and Hierarchical Tensor (N x N x C^k)
+    about:
+    - Dimensional Collapse and Hierarchical Tensor (N x N x C^k)
+    - dimensional collapse and hierarchical tensor n x n x c k
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k/answer
+    title: Answer
+    breadcrumbs:
+    - Dimensional Collapse and Hierarchical Tensor (N x N x C^k)
+    - Answer
+    about:
+    - Dimensional Collapse and Hierarchical Tensor (N x N x C^k)
+    - dimensional collapse and hierarchical tensor n x n x c k
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-document-identity-resolves-from-explicit-frontmatter-first
+  sections:
+  - path: document-identity-resolves-from-explicit-frontmatter-first
+    title: Document identity resolves from explicit frontmatter first
+    breadcrumbs:
+    - Document identity resolves from explicit frontmatter first
+    about:
+    - Document identity resolves from explicit frontmatter first
+    - document identity resolves from explicit frontmatter first
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: document-identity-resolves-from-explicit-frontmatter-first
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: document-identity-resolves-from-explicit-frontmatter-first/answer
+    title: Answer
+    breadcrumbs:
+    - Document identity resolves from explicit frontmatter first
+    - Answer
+    about:
+    - Document identity resolves from explicit frontmatter first
+    - document identity resolves from explicit frontmatter first
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-don-t-care-rule
+  sections:
+  - path: don-t-care-rule
+    title: Don't Care Rule
+    breadcrumbs:
+    - Don't Care Rule
+    about:
+    - Don't Care Rule
+    - don t care rule
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: don-t-care-rule
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: don-t-care-rule/answer
+    title: Answer
+    breadcrumbs:
+    - Don't Care Rule
+    - Answer
+    about:
+    - Don't Care Rule
+    - don t care rule
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-entity-indexed-by-relation-participation
+  sections:
+  - path: entity-indexed-by-relation-participation
+    title: Entity Indexed by Relation Participation
+    breadcrumbs:
+    - Entity Indexed by Relation Participation
+    about:
+    - Entity Indexed by Relation Participation
+    - entity indexed by relation participation
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: entity-indexed-by-relation-participation
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: entity-indexed-by-relation-participation/answer
+    title: Answer
+    breadcrumbs:
+    - Entity Indexed by Relation Participation
+    - Answer
+    about:
+    - Entity Indexed by Relation Participation
+    - entity indexed by relation participation
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-facets-as-boolean-matrix-projections
+  sections:
+  - path: facets-as-boolean-matrix-projections
+    title: Facets as Boolean Matrix Projections
+    breadcrumbs:
+    - Facets as Boolean Matrix Projections
+    about:
+    - Facets as Boolean Matrix Projections
+    - facets as boolean matrix projections
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: facets-as-boolean-matrix-projections
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: facets-as-boolean-matrix-projections/answer
+    title: Answer
+    breadcrumbs:
+    - Facets as Boolean Matrix Projections
+    - Answer
+    about:
+    - Facets as Boolean Matrix Projections
+    - facets as boolean matrix projections
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
+  sections:
+  - path: frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
+    title: Frontmatter provenance should remain trace text, not the full governance
+      envelope
+    breadcrumbs:
+    - Frontmatter provenance should remain trace text, not the full governance envelope
+    about:
+    - Frontmatter provenance should remain trace text, not the full governance envelope
+    - frontmatter provenance should remain trace text not the full governance envelope
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope/answer
+    title: Answer
+    breadcrumbs:
+    - Frontmatter provenance should remain trace text, not the full governance envelope
+    - Answer
+    about:
+    - Frontmatter provenance should remain trace text, not the full governance envelope
+    - frontmatter provenance should remain trace text not the full governance envelope
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-grafo-indice-g-index-graph-and-collision-detection
+  sections:
+  - path: grafo-indice-g-index-graph-and-collision-detection
+    title: Grafo Indice G / Index Graph and Collision Detection
+    breadcrumbs:
+    - Grafo Indice G / Index Graph and Collision Detection
+    about:
+    - Grafo Indice G / Index Graph and Collision Detection
+    - grafo indice g index graph and collision detection
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: grafo-indice-g-index-graph-and-collision-detection
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: grafo-indice-g-index-graph-and-collision-detection/answer
+    title: Answer
+    breadcrumbs:
+    - Grafo Indice G / Index Graph and Collision Detection
+    - Answer
+    about:
+    - Grafo Indice G / Index Graph and Collision Detection
+    - grafo indice g index graph and collision detection
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
+  sections:
+  - path: graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
+    title: Graph build should be the projection refresh boundary between documents
+      and graph retrieval
+    breadcrumbs:
+    - Graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    about:
+    - Graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    - graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    - graph:provenance
+    - layer:graph_provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - layer:graph_provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval/answer
+    title: Answer
+    breadcrumbs:
+    - Graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    - Answer
+    about:
+    - Graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    - graph build should be the projection refresh boundary between documents and
+      graph retrieval
+    - Answer
+    - answer
+    - graph:provenance
+    - layer:graph_provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - layer:graph_provenance
+    - system:kgdb
+    - system:knowledge
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-graph-edge-endpoints-validate-locally-defer-remotely
+  sections:
+  - path: graph-edge-endpoints-validate-locally-defer-remotely
+    title: Graph edge endpoints validate locally, defer remotely
+    breadcrumbs:
+    - Graph edge endpoints validate locally, defer remotely
+    about:
+    - Graph edge endpoints validate locally, defer remotely
+    - graph edge endpoints validate locally defer remotely
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-edge-endpoints-validate-locally-defer-remotely
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: graph-edge-endpoints-validate-locally-defer-remotely/answer
+    title: Answer
+    breadcrumbs:
+    - Graph edge endpoints validate locally, defer remotely
+    - Answer
+    about:
+    - Graph edge endpoints validate locally, defer remotely
+    - graph edge endpoints validate locally defer remotely
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  sections:
+  - path: graph-endpoint-addressability-requires-semantic-disambiguation
+    title: Graph-endpoint addressability requires semantic disambiguation
+    breadcrumbs:
+    - Graph-endpoint addressability requires semantic disambiguation
+    about:
+    - Graph-endpoint addressability requires semantic disambiguation
+    - graph endpoint addressability requires semantic disambiguation
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-endpoint-addressability-requires-semantic-disambiguation
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: graph-endpoint-addressability-requires-semantic-disambiguation/answer
+    title: Answer
+    breadcrumbs:
+    - Graph-endpoint addressability requires semantic disambiguation
+    - Answer
+    about:
+    - Graph-endpoint addressability requires semantic disambiguation
+    - graph endpoint addressability requires semantic disambiguation
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
+  sections:
+  - path: graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
+    title: Graph neighbors should remain explicit adjacency inspection rather than
+      inferred conceptual similarity
+    breadcrumbs:
+    - Graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    about:
+    - Graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    - graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    - graph:lineage
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity/answer
+    title: Answer
+    breadcrumbs:
+    - Graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    - Answer
+    about:
+    - Graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    - graph neighbors should remain explicit adjacency inspection rather than inferred
+      conceptual similarity
+    - Answer
+    - answer
+    - graph:lineage
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:query_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
+  sections:
+  - path: graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
+    title: Graph trace should answer provenance lineage across the source sample atom
+      composition chain
+    breadcrumbs:
+    - Graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    about:
+    - Graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    - graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain/answer
+    title: Answer
+    breadcrumbs:
+    - Graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    - Answer
+    about:
+    - Graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    - graph trace should answer provenance lineage across the source sample atom composition
+      chain
+    - Answer
+    - answer
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - graph:provenance
+    - layer:graph_provenance
+    - system:knowledge
+    - topic:knowledge_graph
+    - topic:provenance_retrieval
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-information-energy-e-r
+  sections:
+  - path: information-energy-e-r
+    title: Information Energy E(R)
+    breadcrumbs:
+    - Information Energy E(R)
+    about:
+    - Information Energy E(R)
+    - information energy e r
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: information-energy-e-r
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: information-energy-e-r/answer
+    title: Answer
+    breadcrumbs:
+    - Information Energy E(R)
+    - Answer
+    about:
+    - Information Energy E(R)
+    - information energy e r
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-kernel-symbol-policy
+  sections:
+  - path: kernel-symbol-policy
+    title: Kernel Symbol Policy
+    breadcrumbs:
+    - Kernel Symbol Policy
+    about:
+    - Kernel Symbol Policy
+    - kernel symbol policy
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: kernel-symbol-policy
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: kernel-symbol-policy/answer
+    title: Answer
+    breadcrumbs:
+    - Kernel Symbol Policy
+    - Answer
+    about:
+    - Kernel Symbol Policy
+    - kernel symbol policy
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
+  sections:
+  - path: knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
+    title: Knowledge add atom should create a valid atom from the minimum durable
+      knowledge fields
+    breadcrumbs:
+    - Knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    about:
+    - Knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    - knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    - entity:atom
+    - system:knowledge
+    - topic:atom_creation
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_creation
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    - Answer
+    about:
+    - Knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    - knowledge add atom should create a valid atom from the minimum durable knowledge
+      fields
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:atom_creation
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_creation
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  sections:
+  - path: knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+    title: Knowledge CLI should separate knowledge operations from operational workflow
+    breadcrumbs:
+    - Knowledge CLI should separate knowledge operations from operational workflow
+    about:
+    - Knowledge CLI should separate knowledge operations from operational workflow
+    - knowledge cli should separate knowledge operations from operational workflow
+    - system:deskops
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:workflow_separation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:deskops
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:workflow_separation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: knowledge-cli-should-separate-knowledge-operations-from-operational-workflow/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge CLI should separate knowledge operations from operational workflow
+    - Answer
+    about:
+    - Knowledge CLI should separate knowledge operations from operational workflow
+    - knowledge cli should separate knowledge operations from operational workflow
+    - Answer
+    - answer
+    - system:deskops
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:workflow_separation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:deskops
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:workflow_separation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
+  sections:
+  - path: knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
+    title: Knowledge graph commands should remain available without the operational
+      workflow surface
+    breadcrumbs:
+    - Knowledge graph commands should remain available without the operational workflow
+      surface
+    about:
+    - Knowledge graph commands should remain available without the operational workflow
+      surface
+    - knowledge graph commands should remain available without the operational workflow
+      surface
+    - graph:lineage
+    - system:kb
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - system:kb
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge graph commands should remain available without the operational workflow
+      surface
+    - Answer
+    about:
+    - Knowledge graph commands should remain available without the operational workflow
+      surface
+    - knowledge graph commands should remain available without the operational workflow
+      surface
+    - Answer
+    - answer
+    - graph:lineage
+    - system:kb
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:lineage
+    - system:kb
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
+  sections:
+  - path: knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
+    title: Knowledge graph list should provide fast snapshot-native node inventory
+      without semantic reinterpretation
+    breadcrumbs:
+    - Knowledge graph list should provide fast snapshot-native node inventory without
+      semantic reinterpretation
+    about:
+    - Knowledge graph list should provide fast snapshot-native node inventory without
+      semantic reinterpretation
+    - knowledge graph list should provide fast snapshot native node inventory without
+      semantic reinterpretation
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge graph list should provide fast snapshot-native node inventory without
+      semantic reinterpretation
+    - Answer
+    about:
+    - Knowledge graph list should provide fast snapshot-native node inventory without
+      semantic reinterpretation
+    - knowledge graph list should provide fast snapshot native node inventory without
+      semantic reinterpretation
+    - Answer
+    - answer
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+  sections:
+  - path: knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+    title: Knowledge graph show should expose raw node identity semantics path and
+      edge payloads for auditability
+    breadcrumbs:
+    - Knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    about:
+    - Knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    - knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    - Answer
+    about:
+    - Knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    - knowledge graph show should expose raw node identity semantics path and edge
+      payloads for auditability
+    - Answer
+    - answer
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - graph:provenance
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:knowledge_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
+  sections:
+  - path: knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
+    title: Knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    breadcrumbs:
+    - Knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    about:
+    - Knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    - knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    - Answer
+    about:
+    - Knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    - knowledge list atoms should optimize corpus discovery and duplicate avoidance
+      during authoring
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
+  sections:
+  - path: knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
+    title: Knowledge set metadata should support post-creation enrichment without
+      reopening the atom text
+    breadcrumbs:
+    - Knowledge set metadata should support post-creation enrichment without reopening
+      the atom text
+    about:
+    - Knowledge set metadata should support post-creation enrichment without reopening
+      the atom text
+    - knowledge set metadata should support post creation enrichment without reopening
+      the atom text
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge set metadata should support post-creation enrichment without reopening
+      the atom text
+    - Answer
+    about:
+    - Knowledge set metadata should support post-creation enrichment without reopening
+      the atom text
+    - knowledge set metadata should support post creation enrichment without reopening
+      the atom text
+    - Answer
+    - answer
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
+  sections:
+  - path: knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
+    title: Knowledge show atom should surface the full authoring payload in one inspection
+      view
+    breadcrumbs:
+    - Knowledge show atom should surface the full authoring payload in one inspection
+      view
+    about:
+    - Knowledge show atom should surface the full authoring payload in one inspection
+      view
+    - knowledge show atom should surface the full authoring payload in one inspection
+      view
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge show atom should surface the full authoring payload in one inspection
+      view
+    - Answer
+    about:
+    - Knowledge show atom should surface the full authoring payload in one inspection
+      view
+    - knowledge show atom should surface the full authoring payload in one inspection
+      view
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:knowledge_cli
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  sections:
+  - path: knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+    title: Knowledge validate should be the authoring completion gate, not only a
+      storage health check
+    breadcrumbs:
+    - Knowledge validate should be the authoring completion gate, not only a storage
+      health check
+    about:
+    - Knowledge validate should be the authoring completion gate, not only a storage
+      health check
+    - knowledge validate should be the authoring completion gate not only a storage
+      health check
+    - entity:atom
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge validate should be the authoring completion gate, not only a storage
+      health check
+    - Answer
+    about:
+    - Knowledge validate should be the authoring completion gate, not only a storage
+      health check
+    - knowledge validate should be the authoring completion gate not only a storage
+      health check
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:knowledge_cli
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-logical-ranges-as-the-addressable-units-for-anchoring
+  sections:
+  - path: logical-ranges-as-the-addressable-units-for-anchoring
+    title: Logical ranges as the addressable units for anchoring
+    breadcrumbs:
+    - Logical ranges as the addressable units for anchoring
+    about:
+    - Logical ranges as the addressable units for anchoring
+    - logical ranges as the addressable units for anchoring
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: logical-ranges-as-the-addressable-units-for-anchoring
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: logical-ranges-as-the-addressable-units-for-anchoring/answer
+    title: Answer
+    breadcrumbs:
+    - Logical ranges as the addressable units for anchoring
+    - Answer
+    about:
+    - Logical ranges as the addressable units for anchoring
+    - logical ranges as the addressable units for anchoring
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-logicalsystem-as-aggregate-root
+  sections:
+  - path: logicalsystem-as-aggregate-root
+    title: LogicalSystem as Aggregate Root
+    breadcrumbs:
+    - LogicalSystem as Aggregate Root
+    about:
+    - LogicalSystem as Aggregate Root
+    - logicalsystem as aggregate root
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: logicalsystem-as-aggregate-root
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: logicalsystem-as-aggregate-root/answer
+    title: Answer
+    breadcrumbs:
+    - LogicalSystem as Aggregate Root
+    - Answer
+    about:
+    - LogicalSystem as Aggregate Root
+    - logicalsystem as aggregate root
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-meel-engine
+  sections:
+  - path: meel-engine
+    title: MEEL Engine
+    breadcrumbs:
+    - MEEL Engine
+    about:
+    - MEEL Engine
+    - meel engine
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: meel-engine
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: meel-engine/answer
+    title: Answer
+    breadcrumbs:
+    - MEEL Engine
+    - Answer
+    about:
+    - MEEL Engine
+    - meel engine
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  sections:
+  - path: metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+    title: Metadata registry records should be the canonical query surface for governance
+      facets
+    breadcrumbs:
+    - Metadata registry records should be the canonical query surface for governance
+      facets
+    about:
+    - Metadata registry records should be the canonical query surface for governance
+      facets
+    - metadata registry records should be the canonical query surface for governance
+      facets
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:query
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:query
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets/answer
+    title: Answer
+    breadcrumbs:
+    - Metadata registry records should be the canonical query surface for governance
+      facets
+    - Answer
+    about:
+    - Metadata registry records should be the canonical query surface for governance
+      facets
+    - metadata registry records should be the canonical query surface for governance
+      facets
+    - Answer
+    - answer
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:query
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:metadata_registry
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:query
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-offsets-and-spans-are-derived-evidence-not-durable-identity
+  sections:
+  - path: offsets-and-spans-are-derived-evidence-not-durable-identity
+    title: Offsets and spans are derived evidence, not durable identity
+    breadcrumbs:
+    - Offsets and spans are derived evidence, not durable identity
+    about:
+    - Offsets and spans are derived evidence, not durable identity
+    - offsets and spans are derived evidence not durable identity
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: offsets-and-spans-are-derived-evidence-not-durable-identity
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: offsets-and-spans-are-derived-evidence-not-durable-identity/answer
+    title: Answer
+    breadcrumbs:
+    - Offsets and spans are derived evidence, not durable identity
+    - Answer
+    about:
+    - Offsets and spans are derived evidence, not durable identity
+    - offsets and spans are derived evidence not durable identity
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-omnirepresentacion-block-matrix-for-llm-integration
+  sections:
+  - path: omnirepresentacion-block-matrix-for-llm-integration
+    title: Omnirepresentacion / Block Matrix for LLM Integration
+    breadcrumbs:
+    - Omnirepresentacion / Block Matrix for LLM Integration
+    about:
+    - Omnirepresentacion / Block Matrix for LLM Integration
+    - omnirepresentacion block matrix for llm integration
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: omnirepresentacion-block-matrix-for-llm-integration
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: omnirepresentacion-block-matrix-for-llm-integration/answer
+    title: Answer
+    breadcrumbs:
+    - Omnirepresentacion / Block Matrix for LLM Integration
+    - Answer
+    about:
+    - Omnirepresentacion / Block Matrix for LLM Integration
+    - omnirepresentacion block matrix for llm integration
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-proposition-first-architecture
+  sections:
+  - path: proposition-first-architecture
+    title: Proposition-First Architecture
+    breadcrumbs:
+    - Proposition-First Architecture
+    about:
+    - Proposition-First Architecture
+    - proposition first architecture
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: proposition-first-architecture
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: proposition-first-architecture/answer
+    title: Answer
+    breadcrumbs:
+    - Proposition-First Architecture
+    - Answer
+    about:
+    - Proposition-First Architecture
+    - proposition first architecture
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-proposition-lifecycle-semantic-status-classification
+  sections:
+  - path: proposition-lifecycle-semantic-status-classification
+    title: Proposition Lifecycle / Semantic Status Classification
+    breadcrumbs:
+    - Proposition Lifecycle / Semantic Status Classification
+    about:
+    - Proposition Lifecycle / Semantic Status Classification
+    - proposition lifecycle semantic status classification
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: proposition-lifecycle-semantic-status-classification
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: proposition-lifecycle-semantic-status-classification/answer
+    title: Answer
+    breadcrumbs:
+    - Proposition Lifecycle / Semantic Status Classification
+    - Answer
+    about:
+    - Proposition Lifecycle / Semantic Status Classification
+    - proposition lifecycle semantic status classification
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-pure-matrices-vs-block-matrices
+  sections:
+  - path: pure-matrices-vs-block-matrices
+    title: Pure Matrices vs Block Matrices
+    breadcrumbs:
+    - Pure Matrices vs Block Matrices
+    about:
+    - Pure Matrices vs Block Matrices
+    - pure matrices vs block matrices
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: pure-matrices-vs-block-matrices
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: pure-matrices-vs-block-matrices/answer
+    title: Answer
+    breadcrumbs:
+    - Pure Matrices vs Block Matrices
+    - Answer
+    about:
+    - Pure Matrices vs Block Matrices
+    - pure matrices vs block matrices
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+  sections:
+  - path: regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+    title: Regex-valid metadata namespaces should still be excluded from atom tags
+    breadcrumbs:
+    - Regex-valid metadata namespaces should still be excluded from atom tags
+    about:
+    - Regex-valid metadata namespaces should still be excluded from atom tags
+    - regex valid metadata namespaces should still be excluded from atom tags
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:tag_policy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:tag_policy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+    level: 1
+    line_start: 13
+    line_end: 14
+  - path: regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags/answer
+    title: Answer
+    breadcrumbs:
+    - Regex-valid metadata namespaces should still be excluded from atom tags
+    - Answer
+    about:
+    - Regex-valid metadata namespaces should still be excluded from atom tags
+    - regex valid metadata namespaces should still be excluded from atom tags
+    - Answer
+    - answer
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:tag_policy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - entity:atom
+    - system:knowledge
+    - topic:atom_metadata
+    - topic:tag_policy
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 15
+    line_end: 16
+- doc_name: atom-relation-algebra
+  sections:
+  - path: relation-algebra
+    title: Relation Algebra
+    breadcrumbs:
+    - Relation Algebra
+    about:
+    - Relation Algebra
+    - relation algebra
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: relation-algebra
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: relation-algebra/answer
+    title: Answer
+    breadcrumbs:
+    - Relation Algebra
+    - Answer
+    about:
+    - Relation Algebra
+    - relation algebra
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-s-expression-runtime
+  sections:
+  - path: s-expression-runtime
+    title: S-Expression Runtime
+    breadcrumbs:
+    - S-Expression Runtime
+    about:
+    - S-Expression Runtime
+    - s expression runtime
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: s-expression-runtime
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: s-expression-runtime/answer
+    title: Answer
+    breadcrumbs:
+    - S-Expression Runtime
+    - Answer
+    about:
+    - S-Expression Runtime
+    - s expression runtime
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-searchvector
+  sections:
+  - path: searchvector
+    title: SearchVector
+    breadcrumbs:
+    - SearchVector
+    about:
+    - SearchVector
+    - searchvector
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: searchvector
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: searchvector/answer
+    title: Answer
+    breadcrumbs:
+    - SearchVector
+    - Answer
+    about:
+    - SearchVector
+    - searchvector
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-semantic-milestone-markers-define-addressable-ranges-over-prose
+  sections:
+  - path: semantic-milestone-markers-define-addressable-ranges-over-prose
+    title: Semantic milestone markers define addressable ranges over prose
+    breadcrumbs:
+    - Semantic milestone markers define addressable ranges over prose
+    about:
+    - Semantic milestone markers define addressable ranges over prose
+    - semantic milestone markers define addressable ranges over prose
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: semantic-milestone-markers-define-addressable-ranges-over-prose
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: semantic-milestone-markers-define-addressable-ranges-over-prose/answer
+    title: Answer
+    breadcrumbs:
+    - Semantic milestone markers define addressable ranges over prose
+    - Answer
+    about:
+    - Semantic milestone markers define addressable ranges over prose
+    - semantic milestone markers define addressable ranges over prose
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-semantic-namespaces-define-independent-interpretation-rules
+  sections:
+  - path: semantic-namespaces-define-independent-interpretation-rules
+    title: Semantic namespaces define independent interpretation rules
+    breadcrumbs:
+    - Semantic namespaces define independent interpretation rules
+    about:
+    - Semantic namespaces define independent interpretation rules
+    - semantic namespaces define independent interpretation rules
+    - domain:knowledge_representation
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: semantic-namespaces-define-independent-interpretation-rules
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: semantic-namespaces-define-independent-interpretation-rules/answer
+    title: Answer
+    breadcrumbs:
+    - Semantic namespaces define independent interpretation rules
+    - Answer
+    about:
+    - Semantic namespaces define independent interpretation rules
+    - semantic namespaces define independent interpretation rules
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: atom-structural-masks-valid-sense-observed-discriminative
+  sections:
+  - path: structural-masks-valid-sense-observed-discriminative
+    title: Structural Masks (Valid, Sense, Observed, Discriminative)
+    breadcrumbs:
+    - Structural Masks (Valid, Sense, Observed, Discriminative)
+    about:
+    - Structural Masks (Valid, Sense, Observed, Discriminative)
+    - structural masks valid sense observed discriminative
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: structural-masks-valid-sense-observed-discriminative
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: structural-masks-valid-sense-observed-discriminative/answer
+    title: Answer
+    breadcrumbs:
+    - Structural Masks (Valid, Sense, Observed, Discriminative)
+    - Answer
+    about:
+    - Structural Masks (Valid, Sense, Observed, Discriminative)
+    - structural masks valid sense observed discriminative
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-text-as-syntactic-sugar-over-graph-smg-model
+  sections:
+  - path: text-as-syntactic-sugar-over-graph-smg-model
+    title: Text as Syntactic Sugar over Graph (SMG Model)
+    breadcrumbs:
+    - Text as Syntactic Sugar over Graph (SMG Model)
+    about:
+    - Text as Syntactic Sugar over Graph (SMG Model)
+    - text as syntactic sugar over graph smg model
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: text-as-syntactic-sugar-over-graph-smg-model
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: text-as-syntactic-sugar-over-graph-smg-model/answer
+    title: Answer
+    breadcrumbs:
+    - Text as Syntactic Sugar over Graph (SMG Model)
+    - Answer
+    about:
+    - Text as Syntactic Sugar over Graph (SMG Model)
+    - text as syntactic sugar over graph smg model
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - graph:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-two-gates-model-s-i-sense-v-i-truth
+  sections:
+  - path: two-gates-model-s-i-sense-v-i-truth
+    title: Two Gates Model (S_i Sense, V_i Truth)
+    breadcrumbs:
+    - Two Gates Model (S_i Sense, V_i Truth)
+    about:
+    - Two Gates Model (S_i Sense, V_i Truth)
+    - two gates model s i sense v i truth
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: two-gates-model-s-i-sense-v-i-truth
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: two-gates-model-s-i-sense-v-i-truth/answer
+    title: Answer
+    breadcrumbs:
+    - Two Gates Model (S_i Sense, V_i Truth)
+    - Answer
+    about:
+    - Two Gates Model (S_i Sense, V_i Truth)
+    - two gates model s i sense v i truth
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - topic:concept_graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-typestate-typing
+  sections:
+  - path: typestate-typing
+    title: Typestate Typing
+    breadcrumbs:
+    - Typestate Typing
+    about:
+    - Typestate Typing
+    - typestate typing
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: typestate-typing
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: typestate-typing/answer
+    title: Answer
+    breadcrumbs:
+    - Typestate Typing
+    - Answer
+    about:
+    - Typestate Typing
+    - typestate typing
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-universal-grammar-formalization
+  sections:
+  - path: universal-grammar-formalization
+    title: Universal Grammar Formalization
+    breadcrumbs:
+    - Universal Grammar Formalization
+    about:
+    - Universal Grammar Formalization
+    - universal grammar formalization
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: universal-grammar-formalization
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: universal-grammar-formalization/answer
+    title: Answer
+    breadcrumbs:
+    - Universal Grammar Formalization
+    - Answer
+    about:
+    - Universal Grammar Formalization
+    - universal grammar formalization
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-validation-diagnostics-use-structured-codes
+  sections:
+  - path: validation-diagnostics-use-structured-codes
+    title: Validation diagnostics use structured codes
+    breadcrumbs:
+    - Validation diagnostics use structured codes
+    about:
+    - Validation diagnostics use structured codes
+    - validation diagnostics use structured codes
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: validation-diagnostics-use-structured-codes
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: validation-diagnostics-use-structured-codes/answer
+    title: Answer
+    breadcrumbs:
+    - Validation diagnostics use structured codes
+    - Answer
+    about:
+    - Validation diagnostics use structured codes
+    - validation diagnostics use structured codes
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-validation-proceeds-through-5-layered-levels
+  sections:
+  - path: validation-proceeds-through-5-layered-levels
+    title: Validation proceeds through 5 layered levels
+    breadcrumbs:
+    - Validation proceeds through 5 layered levels
+    about:
+    - Validation proceeds through 5 layered levels
+    - validation proceeds through 5 layered levels
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: validation-proceeds-through-5-layered-levels
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: validation-proceeds-through-5-layered-levels/answer
+    title: Answer
+    breadcrumbs:
+    - Validation proceeds through 5 layered levels
+    - Answer
+    about:
+    - Validation proceeds through 5 layered levels
+    - validation proceeds through 5 layered levels
+    - Answer
+    - answer
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - system:marcado
+    - topic:anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: atom-wigame-as-local-language-game
+  sections:
+  - path: wigame-as-local-language-game
+    title: WiGame as Local Language Game
+    breadcrumbs:
+    - WiGame as Local Language Game
+    about:
+    - WiGame as Local Language Game
+    - wigame as local language game
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: wigame-as-local-language-game
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: wigame-as-local-language-game/answer
+    title: Answer
+    breadcrumbs:
+    - WiGame as Local Language Game
+    - Answer
+    about:
+    - WiGame as Local Language Game
+    - wigame as local language game
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 13
+    line_end: 14
