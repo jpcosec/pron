@@ -1639,3 +1639,1357 @@ documents:
   - domain:knowledge_representation
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-deskops-reads-and-writes-through-sldb
+  path: knowledge/atoms/atom-deskops-reads-and-writes-through-sldb.md
+  hash_c: 46efada20594a14d6add4053762ff4d09b998aad00c9ffabab189a7e6f8830f1
+  hash_d: 549fa5a8d914a6f6a0809e513ae5577f42d6523bc83b6f3d1580c16dd50436c3
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-extra-atom-test
+  path: knowledge/atoms/atom-extra-atom-test.md
+  hash_c: 43c6f6f7221f3289d6f9325e5b682526ea2d23120cadf67ebac456d12dfbf3c6
+  hash_d: 88d0e4391787f31cbb6c4fce0480869b5eca7eea628c7a426116dac5c164471c
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops-imports-sldb-cli-helpers-from-their-current-modules
+  path: knowledge/atoms/atom-deskops-imports-sldb-cli-helpers-from-their-current-modules.md
+  hash_c: 408a3840329b2763730a4c6374a1e0634e66b16faa8ce90a38fbd493eb9c5e31
+  hash_d: 702ae3a20d005fa1926c5af35a1569a119656bdefb38bbfd1094503b487556b1
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-task-bundles-are-tracked-in-the-store-at-creation-time
+  path: knowledge/atoms/atom-task-bundles-are-tracked-in-the-store-at-creation-time.md
+  hash_c: 82983c3e2c7247d38b06e5eafa3642e39f30538a5aa48046befdfc62c317330e
+  hash_d: e00c124ce87336571a9a82511adaa645c19653ddd4902a165d64eefcc46fdba4
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-health-is-measured-by-cli-diagnostics
+  path: knowledge/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
+  hash_c: 88b8a3034e2c81cc891f7c2d1c5579d89656d7e6c531744d83ac4b2ed60d3047
+  hash_d: 160c3dfb48f868f441280896dad4b73b30f407ea4db26a3f44a79e5b019c4f81
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:diagnosis
+  - topic:workspace-health
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops-architecture
+  path: knowledge/atoms/atom-deskops-architecture.md
+  hash_c: 98bc9c6c16f32a12bd725155c736a376d91e21c09546a17550330875f8f256f2
+  hash_d: 6cdc528ad12e93a6cd295a46b6cdffd062952e45425bbdeaf711bda5e0331ce8
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
+  path: knowledge/atoms/atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix.md
+  hash_c: 610b9f3f816e3396f325079ad085873f4a5c147d18b5759224325f1dae832840
+  hash_d: 2985e76fb613893de014f6d5c1d32bfe6925bf0401a79c1f0b5623956aa9afa9
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atom-lifecycle-is-complete-create-from-source-split-merge
+  path: knowledge/atoms/atom-atom-lifecycle-is-complete-create-from-source-split-merge.md
+  hash_c: f2de762cb9af04feade520506507daf110f681a9c3b007ec3d2949ff8086abb9
+  hash_d: 941eb7be4ad9cc6323b60d4e2b15a4cca56e5a3acbc6ebfff086c04ed51d59a7
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-stale-state-causes-agent-hallucination
+  path: knowledge/atoms/atom-stale-state-causes-agent-hallucination.md
+  hash_c: 86df8256d7d8734f6b32d07d3633ab7de7099e305a60512243eff1361c238597
+  hash_d: 988fcd63ac12f9b2bd39da7bbfeb7a25d39c5b61dd820e5031037ab15749a777
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-closing-commits-are-tool-made-and-run-linked
+  path: knowledge/atoms/atom-closing-commits-are-tool-made-and-run-linked.md
+  hash_c: f6dac77b92dfb305c735152370c90b84bac46d4553cb63b19b25d08894de1426
+  hash_d: b05ac0b2ff51c7d4eafeaf5754a83dc533ed4a13556411cfd25d16749ba71cff
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:provenance
+  - topic:roles
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-workspaces-classify-as-absent-empty-legacy-or-current
+  path: knowledge/atoms/atom-desk-workspaces-classify-as-absent-empty-legacy-or-current.md
+  hash_c: 9be4e095fa02e7341105133acf8872023d670c1a3ef7dec9ade54058ce4e2c38
+  hash_d: 4d088b84cdddef5570f525500cc27bb8edf51c7222e2f5c15fbad050410e8336
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-test-atom-stress
+  path: knowledge/atoms/atom-test-atom-stress.md
+  hash_c: 8111ab4622a0bdd89257df174eb065bb2dd464fda2dbdf5fd80d70e27c65f015
+  hash_d: 661937b040aaab5afe388f38a7c7d3d117b38fb22d3984f057748c82a23e7d5c
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking
+  path: knowledge/atoms/atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking.md
+  hash_c: 665aba51f48831523e587bf04d620d9e8cb9b61424d7f0d09a2ca22168c30d2a
+  hash_d: 62bfb5aaabb6f901d185923b3073667e3e55a5191b01a119636e09aa0782a351
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-health-delegates-store-diagnostics-to-sldb
+  path: knowledge/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
+  hash_c: 0638aac4f4a4a6c66af5cb212cfafffae64c928310f503e3721a746bfa0b465c
+  hash_d: 3830108bf3a7fce10a12e3c2cac9001ba699d17025fdfcccca83a25d942acc9e
+  semantic_tags:
+  - system:deskops
+  - topic:boundary
+  - topic:sldb
+  - topic:workspace-health
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atom-folder-axis-is-one-configurable-tag-namespace
+  path: knowledge/atoms/atom-atom-folder-axis-is-one-configurable-tag-namespace.md
+  hash_c: 56acd230e8a8e151c1b058e23c8fc79c81c6ded115c582cfa453251115c8601f
+  hash_d: 4f08f3cbb63bda00472ff62c9411e5194ac543134f24ed572e96d502e95b2ca5
+  semantic_tags:
+  - layer:cli
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-001-self-described-store-layout
+  path: knowledge/atoms/atom-001-self-described-store-layout.md
+  hash_c: 559d36507fd5f64935fdb30495d526d7c030eff8f8ce566a13e7551e580cbe21
+  hash_d: d39a87094d5b10eac5eaf80535ce1de372e0749e6a9eb5cae645800c4f955663
+  semantic_tags:
+  - layer:runtime
+  - system:sldb
+  - topic:store
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-drift-checks-are-review-surfaces-not-mutators
+  path: knowledge/atoms/atom-drift-checks-are-review-surfaces-not-mutators.md
+  hash_c: 9f7767218a52550d10173a3282a385592695d6f778b90c6e69610457bb0b340f
+  hash_d: 42fa2fd773b4f2140450fec7833078b14cf31e20acf2d84d2ccf06d871ad25dc
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-role-tool-boundaries-and-evidence-surface
+  path: knowledge/atoms/atom-role-tool-boundaries-and-evidence-surface.md
+  hash_c: 0afb7af50f4ac932cd2eea0d12f7d26145741aa834288dbfb90df90a4db051a7
+  hash_d: 45b3397c51451b122b5cfbfd551b111e101a466e4083f6a64ef999d2132dfaed
+  semantic_tags:
+  - system:deskops
+  - topic:boundaries
+  - topic:roles
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-promotion-flattens-structured-source-sections-into-task-fields
+  path: knowledge/atoms/atom-promotion-flattens-structured-source-sections-into-task-fields.md
+  hash_c: 9b0b8877bbd9de674db4527c0161b9e971567cb76aceb115f12c722f3d97d714
+  hash_d: b4a0808292f0069fb6ed93b071dc17c7621bf58f8fd3e37415cb83a747760fba
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-workflow-role-model-routing
+  path: knowledge/atoms/atom-workflow-role-model-routing.md
+  hash_c: efb6baf8acaf637505ceff19c2f3ae3e6c56a11ec74440125a1ade1f75db8cac
+  hash_d: 666b9babbeb3c619e604bde99a0083a4407ea6e3282c39e1744e42b773880c84
+  semantic_tags:
+  - system:deskops
+  - topic:model-routing
+  - topic:roles
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  path: knowledge/atoms/atom-role-prompts-are-tracked-documents-agent-files-are-materializations.md
+  hash_c: f1effad9fa43ac5e67a4da506eb4d3b3a3f482ce844202e5a9de9a5e8f713965
+  hash_d: 257d3dee2921dff70fdab5f915a807219e87ee6e7fd5875e2b8f300d98143638
+  semantic_tags:
+  - system:deskops
+  - topic:drift-control
+  - topic:materialization
+  - topic:roles
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-from-yaml-test-atom
+  path: knowledge/atoms/atom-from-yaml-test-atom.md
+  hash_c: 6a511865fb8ac0c86e7a72f568666c4a61802e90d27b3195d2d74b8edd2fc3c1
+  hash_d: 0310a4f59132566cbab6ffcc359123e2e0d1f3c18e927c2da0568f54c5eaee0a
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-implementation-feedback-refines-atoms
+  path: knowledge/atoms/knowledge-model/atom-implementation-feedback-refines-atoms.md
+  hash_c: aed69711d82e7f71dfba13b23644ae7518c5fb1daeeb9540dd58902f53d7a0fb
+  hash_d: 38bf0aae1e942358ca3c1b4cc850c97304a890c011fd35c189e6322f97b784a5
+  semantic_tags:
+  - domain:knowledge-management
+  - system:deskops
+  - topic:atoms
+  - topic:drift-control
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-kgdb-is-graph-substrate-not-reasoner
+  path: knowledge/atoms/knowledge-model/atom-kgdb-is-graph-substrate-not-reasoner.md
+  hash_c: e5042439ca6d4a3d31679540d1dc0c7cffa016a73c25a2383fe3fb8c85df640e
+  hash_d: 9150a9052c82b559c2287db8e0b4f12e2d5fda99612e1c9931beb3648666f0f2
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - topic:boundary
+  - topic:knowledge-graph
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-docs-materialize-atoms-for-humans
+  path: knowledge/atoms/knowledge-model/atom-docs-materialize-atoms-for-humans.md
+  hash_c: 9d2870d40bf0466ae0f9d8741e22851f520114f0b4230098316110b01fcc14c9
+  hash_d: 6f29aad8db75313d77d57e95154c6f8cf239be1960dfe3830d5f45d173f8a07d
+  semantic_tags:
+  - domain:knowledge-management
+  - system:deskops
+  - topic:atoms
+  - topic:docs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-reverse-traceability-is-derived
+  path: knowledge/atoms/knowledge-model/atom-reverse-traceability-is-derived.md
+  hash_c: 104efec61bafabd0e954e1b8202bce413c43e9032d9b177de4182c945b94958a
+  hash_d: 608a9921c59b2b5d8aa3a6cdd71eedf1966e9dfee69c38bccee0d7299ee86b7b
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:indexes
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-materializations-declare-source-atoms
+  path: knowledge/atoms/knowledge-model/atom-materializations-declare-source-atoms.md
+  hash_c: 76460dcae965daedd67546d308bef880be907fc157145a3418ff3a559e6e4270
+  hash_d: d4bc9414e52dd6de96be4e591e3dbdb9645e88c217c1f5dca4d832c29904609d
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:materialization
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-diagrams-project-knowledge-relations
+  path: knowledge/atoms/knowledge-model/atom-diagrams-project-knowledge-relations.md
+  hash_c: 4d97ee81438cc1b7c8df960db427194f22c4a01d542abb9bb4be50a2a1696150
+  hash_d: 69070f61bdc60b02540fb90bc8c9408317912fa100dc8084467403ef9f1efc3e
+  semantic_tags:
+  - domain:knowledge-management
+  - system:deskops
+  - topic:atoms
+  - topic:diagrams
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-promotion-needs-explicit-criteria
+  path: knowledge/atoms/knowledge-model/atom-promotion-needs-explicit-criteria.md
+  hash_c: ac0a44385903ed9361af5b8658aecc1cf839647b8c054ddfee520b002b66251f
+  hash_d: f6d29423856501e8bfe465afb526850e55efdd7bd941569d7aaf93f62c9c2f19
+  semantic_tags:
+  - system:deskops
+  - topic:drawer
+  - topic:inbox
+  - topic:knowledge-management
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-kgdb-should-parallel-sldb-not-compete
+  path: knowledge/atoms/knowledge-model/atom-kgdb-should-parallel-sldb-not-compete.md
+  hash_c: 5414c4d7b36c76f9c22d5e585423d604ebadefb9c0651f9b08629809fe630e69
+  hash_d: 4ec5df7e847c6d10c71b42ffa29469dd381e5f1a774305765834e1d8eeaf01c9
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - system:sldb
+  - topic:boundary
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-source-file-relations-make-knowledge-actionable
+  path: knowledge/atoms/knowledge-model/atom-source-file-relations-make-knowledge-actionable.md
+  hash_c: 015f30be043adf9bf2246c788e4545d871acd1b0966a80777123bb3b2d1cc0ba
+  hash_d: 5ded856be07a09dbfc88105b52fa16b72bd1894940c874b64392d244c632c6dc
+  semantic_tags:
+  - system:deskops
+  - topic:knowledge-graph
+  - topic:source-code
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atom-references-carry-roles
+  path: knowledge/atoms/knowledge-model/atom-atom-references-carry-roles.md
+  hash_c: d7d5cca453b2170832bc8305efbc498cc005610886d05e49fdf9877b8e33bd9f
+  hash_d: 3cd30278b5d407235a36475aa8cdaa4fd26d70ce0ac46bcb3d959bf7fd716791
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:metadata
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-specs-formalize-atoms-as-contracts
+  path: knowledge/atoms/knowledge-model/atom-specs-formalize-atoms-as-contracts.md
+  hash_c: 65cb68e03dfa87decd1fd507ff5007948b3b23ee176b622d844804735cfea4ea
+  hash_d: ca04659129ed62c82c0d2d2ee0abdaee46f20a47fad02fa6013cb06844c71098
+  semantic_tags:
+  - domain:knowledge-management
+  - system:deskops
+  - topic:atoms
+  - topic:specs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-sldb-semantics-are-graph-inputs
+  path: knowledge/atoms/knowledge-model/atom-sldb-semantics-are-graph-inputs.md
+  hash_c: b162d752922017d64ac65b4ad22cb430973869fefb19dc1785388a1f3b2b5998
+  hash_d: 561f180b8471b4d651732538f776e6d84b73e79933ace93592cf07ae86640844
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - system:sldb
+  - topic:knowledge-graph
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atoms-distill-project-knowledge
+  path: knowledge/atoms/knowledge-model/atom-atoms-distill-project-knowledge.md
+  hash_c: 849548e7868287b7926a568ca02bd5f815ebcb3552d3cca970d12075b536215c
+  hash_d: ca83ab2ef80f12a12ff6701bcccb1b27f14bc606ecf7ba416f7852cb3db46cbd
+  semantic_tags:
+  - domain:knowledge-management
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-self-reflection-is-a-feedback-loop
+  path: knowledge/atoms/knowledge-model/atom-self-reflection-is-a-feedback-loop.md
+  hash_c: 600d88343001ee1877ce5acfdaf26f7b01079c5170747bccb92cf034b15303d3
+  hash_d: 3c48929982622b581318d434b858e66c148c0f11633ef38eb898e8b0f38698b3
+  semantic_tags:
+  - system:deskops
+  - topic:feedback
+  - topic:knowledge-management
+  - topic:self-reflection
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-main-docs-are-composed-materializations
+  path: knowledge/atoms/knowledge-model/atom-main-docs-are-composed-materializations.md
+  hash_c: 9c64fa9f475b8645aecae8f193746566d4e7f07694fd98271caeeb5dce976271
+  hash_d: 470bced0a380f6e03bed914c5cf9f37644d13c30ec477a7c918d5254e287eacd
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:docs
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-materialization-metadata-is-not-atom-content
+  path: knowledge/atoms/knowledge-model/atom-materialization-metadata-is-not-atom-content.md
+  hash_c: 97744c5800953e6bd72e7ec507c7904bed5c3cb517270b1ea1b1907c5118af1c
+  hash_d: 8a78678f6746b22fc1521a9c0980767b39472e89e7f1ef7f06cc20b7da0e49a7
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:materialization
+  - topic:metadata
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-extensibility-is-a-contract
+  path: knowledge/atoms/knowledge-model/atom-extensibility-is-a-contract.md
+  hash_c: 02a64eef68f616e291068640b336ac974a575f0e60e0297474ceac58071aaf66
+  hash_d: 51e36668987c549d0bee737ac32869ef3ceb579033c92e6a980608f1eda21b21
+  semantic_tags:
+  - system:deskops
+  - topic:contracts
+  - topic:extensibility
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-knowledge-graph-connects-desk-and-source-files
+  path: knowledge/atoms/knowledge-model/atom-knowledge-graph-connects-desk-and-source-files.md
+  hash_c: 88659585c0a7fac25a3cd5be35e01047cd296873d0a4f9f49199fb9aa4ef3192
+  hash_d: 2d90b7e2e48536970aa87704024224f85f389418620a150f308ac25918069b21
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - topic:knowledge-graph
+  - topic:source-code
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-big-documents-need-explicit-modeling-strategy
+  path: knowledge/atoms/knowledge-model/atom-big-documents-need-explicit-modeling-strategy.md
+  hash_c: 10eae54f217dc3592de9e84f9f2f6d478f39735c2e2905adedec7cbc219caea5
+  hash_d: d7a9e445d8ef5549f16ca575334878c4612fc03050ca30f8c24781a1ad7f8d89
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:docs
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-drift-checks-compare-atoms-materializations-implementation
+  path: knowledge/atoms/knowledge-model/atom-drift-checks-compare-atoms-materializations-implementation.md
+  hash_c: f7b2f024e384f37a23b90ea3ace838f06cd33f8d5d5546d23de55328ad070479
+  hash_d: b14fa85d21b80039e748a49c5d7edc4f2a57a0946bbbc7a19a2c0095780274c4
+  semantic_tags:
+  - system:deskops
+  - topic:drift-control
+  - topic:materialization
+  - topic:validation
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-materialization-contracts-bind-source-output-validation
+  path: knowledge/atoms/knowledge-model/atom-materialization-contracts-bind-source-output-validation.md
+  hash_c: 2a57edbbb2595b605b8b88313d49bd1aa9fcd8c7a5ef8760eda7270c4148e68f
+  hash_d: db84c4476ad2890cd7746893460a72475601aa1cc4eca8f3597f8504e7ab9f8b
+  semantic_tags:
+  - system:deskops
+  - topic:materialization
+  - topic:traceability
+  - topic:validation
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-networkx-is-first-graph-runtime
+  path: knowledge/atoms/knowledge-model/atom-networkx-is-first-graph-runtime.md
+  hash_c: acd5e9b6b58e4a5214397ef24f3570491c1c05d7a53d3f97294ad0a14b08b62e
+  hash_d: 8840b607d15c6cab359e0b43e99bb46c8aaad51f0d7b3c79e835d720c89b80cb
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - topic:implementation
+  - topic:knowledge-graph
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-raw-signals-need-distillation-before-formalization
+  path: knowledge/atoms/knowledge-model/atom-raw-signals-need-distillation-before-formalization.md
+  hash_c: 8e4c3a0a973aff2c1acc8250019d3704a9079cd5d434b91f1577ca86ee3b996f
+  hash_d: b6fa7c739aa9f335da8eb05b8f0ced89567e3e6ee4f43231fcabf622c2ca9c57
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:knowledge-management
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer
+  path: knowledge/atoms/atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer.md
+  hash_c: d0c53dea524fb1ed48e1c4480d62c9493788c6cb8fb87a564959def02222214f
+  hash_d: 3b0539216f665284e835743eefd1fd96d2702ccbce1a05b7c25926c39de818af
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops
+  path: knowledge/atoms/atom-deskops.md
+  hash_c: fe1d9cf6139d580ebfb6e574d657517fc7dbf9526ffb90b0f1839e8ffe0da7fc
+  hash_d: c269423423528e441c77e0f1f179a54b6d0b92d548a717ceed08a2111733ccac
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-subagent-runs-are-linked-to-session-logs-by-hash
+  path: knowledge/atoms/atom-subagent-runs-are-linked-to-session-logs-by-hash.md
+  hash_c: deacd5da7730b5a484ff9526fa024f035aec6f906fa02dd49dc6bd269ce61033
+  hash_d: 15173c27270d555fe3f123921363ba12abe5052ff322e0049c302161383b9f38
+  semantic_tags:
+  - system:deskops
+  - topic:evidence
+  - topic:provenance
+  - topic:roles
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-missing-answer-test
+  path: knowledge/atoms/atom-missing-answer-test.md
+  hash_c: 779502b537727dd4d21e1c6bc6ac8b27b971f655c43b979f2f6d26b42da251f0
+  hash_d: 0c531b0224ec85ae92ac989621c8202e89c1594041e565a5a13c3430958af0cb
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-routine-based-task-execution
+  path: knowledge/atoms/workflow-model/atom-routine-based-task-execution.md
+  hash_c: d68b37c08f93e20817f20017266f54924c55facc3de0fe7b56f9c88f82343a0b
+  hash_d: 0fc13b0fe9da739d2c9475f1373f5b115f49fe75016dffeab63ed1a845abd440
+  semantic_tags:
+  - system:deskops
+  - topic:routines
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-test-root-precedence-is-explicit
+  path: knowledge/atoms/workflow-model/atom-desk-test-root-precedence-is-explicit.md
+  hash_c: 84b879a084aeebbfc627ad9117576dc70f7b6303ea6852de3b691360b205a34e
+  hash_d: a38086f8cb4b0791dfb711f39a18acfa7caa2666bb8a57a02edd55f699a5dddd
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:config
+  - topic:testing
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-first-safe-action-follows-read-route
+  path: knowledge/atoms/workflow-model/atom-first-safe-action-follows-read-route.md
+  hash_c: 48984842d6e77c51bc7fb74f3ff38721cdd5d95b6107cbb18288bb97f28da036
+  hash_d: e611b9fdf6e3502f375c0c1892e513253846506eb2fc7a4cd37cf6c076174d77
+  semantic_tags:
+  - system:deskops
+  - topic:onboarding
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-end-as-atoms-docs-or-deletion
+  path: knowledge/atoms/workflow-model/atom-pills-end-as-atoms-docs-or-deletion.md
+  hash_c: d1ffa1e0724db4e331d9f12b85f4e528c7496d954fa9e1d8d739fb636be249f9
+  hash_d: 33dfd68386fa86dce16dc64a1ee9da1d1e8984d77be5dd5b3e6e57e433929930
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:cleanup
+  - topic:pills
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-phase-gates-prevent-agent-skipping
+  path: knowledge/atoms/workflow-model/atom-phase-gates-prevent-agent-skipping.md
+  hash_c: 3275c2b12f804270c7f6b4bddbab4ad5018e9d92afebd48cf54f0b68188d46d0
+  hash_d: b15c21aa3d2d1f86a248977e38ce3a0b79881b509796768f22e4e1a75d119e76
+  semantic_tags:
+  - system:deskops
+  - topic:phase-gates
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-available-tasks-are-board-routed-work
+  path: knowledge/atoms/workflow-model/atom-available-tasks-are-board-routed-work.md
+  hash_c: c4d8174ba3c8057d97f2f547aa3e6a6865c53074833b200a8d3c77af128f754c
+  hash_d: 14f3f1328d6e0136b8a77d325a788f08bd20fa751e6cb8be9dda63204b6b88af
+  semantic_tags:
+  - system:deskops
+  - topic:boards
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-field-oriented-document-composition
+  path: knowledge/atoms/workflow-model/atom-field-oriented-document-composition.md
+  hash_c: f0f846a273110b8fe715040e96a0ed6db105a6247ac83a6d924f8c0af115a434
+  hash_d: 9293a90f5863dd19c401230658fb043067263e637a1ee7131a0ff19095c7d6f8
+  semantic_tags:
+  - system:deskops
+  - topic:composition
+  - topic:fields
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-carry-transitional-task-knowledge
+  path: knowledge/atoms/workflow-model/atom-pills-carry-transitional-task-knowledge.md
+  hash_c: 8a05ad5bc57d36229d603e4493fd53dfeaf2cae78946d72346b38114495c2521
+  hash_d: d9cba60e2fb187f0f01434704a3c6094de45d9d638bd8827921f4f93c503b05f
+  semantic_tags:
+  - pattern:task-to-atom-graduation
+  - system:deskops
+  - topic:knowledge-flow
+  - topic:pills
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-is-document-data-only
+  path: knowledge/atoms/workflow-model/atom-desk-is-document-data-only.md
+  hash_c: 59e0d215871ed2bec196f362ce2e8bd4b057c5f00f5e6c337bc2d90ed4e5ab69
+  hash_d: 7b96b2765272e6cc69302a484b8ce95e52e34c1021cbcefc0b6b9782ee607b69
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:boundary
+  - type.knowledge.atom
+  - workspace.desk.atoms
+  - workspace:desk
+- name: atom-cli-should-match-spoken-workflow-language
+  path: knowledge/atoms/workflow-model/atom-cli-should-match-spoken-workflow-language.md
+  hash_c: 1c8b834d5d5cd8c7acab10344917593f811b53761a951587b6431f57155eeb0e
+  hash_d: d0b0bc23305219b0457f8e55832ceed0ae9ae9ddad8f965ebf40600cd096620b
+  semantic_tags:
+  - layer:cli
+  - system:deskops
+  - topic:usability
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-used-source-artifacts-are-deleted
+  path: knowledge/atoms/workflow-model/atom-used-source-artifacts-are-deleted.md
+  hash_c: 09fa8f7304b35675f769fc6d63e0be33f992dcac8a0260329c1f4cd296fc166e
+  hash_d: e77e32c5305748617dfc840832564f2ba3fc4c2d9cb6ac6ff08b17f43632d6b1
+  semantic_tags:
+  - system:deskops
+  - topic:cleanup
+  - topic:drawer
+  - topic:inbox
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-divide-and-conquer-persisted-operations
+  path: knowledge/atoms/workflow-model/atom-divide-and-conquer-persisted-operations.md
+  hash_c: 950fa5ada4453778c1b27ebb54d5a3150a66e424d0ea59d7d4b6b00d1b2e729c
+  hash_d: 30429fd56638c04d4a8091993cde69c4aef93b1573c84d9c02a7f44f5e350999
+  semantic_tags:
+  - system:deskops
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-task-closeout-checks-pill-knowledge-graduation
+  path: knowledge/atoms/workflow-model/atom-task-closeout-checks-pill-knowledge-graduation.md
+  hash_c: 1557b4922fa1434cbb3f49beaf134217397d890754bee196b722a81d4b8f017c
+  hash_d: 0fc19d6c691d237bf4d9cb38d7a76e8cf74e0d63c1f403aab3817618b5e12121
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:closeout
+  - topic:pills
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-agents-read-through-semantic-tools
+  path: knowledge/atoms/workflow-model/atom-agents-read-through-semantic-tools.md
+  hash_c: 95cf1ec128beda54f421260d695d28cc2f09afb5640941759ad9755ccf390476
+  hash_d: 9a99e8f3d5e25588bd7c3b687bc23928c2b5fd40efcc99ff783098844fdb8b7b
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:agents
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-index-existing-and-bound-future-context
+  path: knowledge/atoms/workflow-model/atom-pills-index-existing-and-bound-future-context.md
+  hash_c: fb80031e7c6a3f9a8a7aca38d3f3de522009527774c31f26996fe656f7954336
+  hash_d: a0b405098882bf1cb5fde20d737ebcc45cba6a64351ba8bceea3bf74422ba480
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:pills
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-git-is-explanatory-surface-for-changes
+  path: knowledge/atoms/workflow-model/atom-git-is-explanatory-surface-for-changes.md
+  hash_c: f7b12df306a5cbc7209873db69d574de72cb4c95658da239302890186359bca8
+  hash_d: 647b2b05cec49eb0cb7157ad50709cc1ca219cf29d6da1e0794ccf9269e8b1ae
+  semantic_tags:
+  - system:deskops
+  - topic:drift-control
+  - topic:git
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-reports-capture-evidence-and-next-decision-surface
+  path: knowledge/atoms/workflow-model/atom-reports-capture-evidence-and-next-decision-surface.md
+  hash_c: c4329e7d0faa396c596a602077a7614d4691d94341d32bfb4a2275839f3ae66b
+  hash_d: 48a4990507a161c97b287c2247af17502f76c5b5f6ecbd6598270b9cf39e75df
+  semantic_tags:
+  - system:deskops
+  - topic:evidence
+  - topic:reports
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-inbox-is-coordination-intake
+  path: knowledge/atoms/workflow-model/atom-inbox-is-coordination-intake.md
+  hash_c: 1a9dd7b688aadbc40a1f9bae6abf119dec0923f5ff16703e2596853ad8f78ac4
+  hash_d: dd87333d4b5f40d4c2723cec0e15dbf43c328ffbd031295d05ddf67135bf0752
+  semantic_tags:
+  - system:deskops
+  - topic:coordination
+  - topic:inbox
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-closeout-verify-requires-tests-links-and-commit
+  path: knowledge/atoms/workflow-model/atom-closeout-verify-requires-tests-links-and-commit.md
+  hash_c: 9b6e5a5b3712a506b738e4fe4a62330213b20c4cf64b7d9fe4d20cacc7b9576c
+  hash_d: f9736de41262d074cf2101827e3340c8dccbfc58e56b7cf4f180f30cc52fadf5
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:materialization
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-phase-closeout-reconciles-pills-and-next-work
+  path: knowledge/atoms/workflow-model/atom-phase-closeout-reconciles-pills-and-next-work.md
+  hash_c: 6e20cdb3d9643305698173fe6e180d078235651f2568a73a4b74c7bc2bf71a6f
+  hash_d: 0dc32f3cfca184c71633df65b5b0d32075042e3ad843e55a0d8922363bf9eeb5
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:phases
+  - topic:pills
+  - topic:reconciliation
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-cli-mutation-testing-uses-sandbox-desk-roots
+  path: knowledge/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md
+  hash_c: 90d09b0738e0a0f41b878d2ef806e9285430c9a9d4a2c471b639ca384a060569
+  hash_d: a0b8bf3460ad9d4e0b45408a9beaaf728e6f030a209fefec9cc24d9edc0f888e
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:materialization
+  - topic:testing
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-inbox-routes-external-needs-toward-work
+  path: knowledge/atoms/workflow-model/atom-inbox-routes-external-needs-toward-work.md
+  hash_c: 06b25fde132f6f39c92089ef387dd38d8b3dfb775f1928777033d40e063cbc05
+  hash_d: c8d1b5e36e96ac6670b7100f747b7b2c845d4b4d44a3a494e54a4532547ec9c3
+  semantic_tags:
+  - system:deskops
+  - topic:coordination
+  - topic:inbox
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-orphan-artifacts-are-knowledge-system-failures
+  path: knowledge/atoms/workflow-model/atom-orphan-artifacts-are-knowledge-system-failures.md
+  hash_c: db16539a28824d8a9e7d5a4fd5bb71122c5d23e3dd99b412a3b3c9dcb5fedd46
+  hash_d: 6d48581f17015f811b37fec2370aa9863f8cc3b168bbbb2444efde4468572e83
+  semantic_tags:
+  - system:deskops
+  - topic:drift-control
+  - topic:knowledge-graph
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-spec-to-visualization-pipeline
+  path: knowledge/atoms/workflow-model/atom-spec-to-visualization-pipeline.md
+  hash_c: b74fce2a8a645230dfcdf122e048ee89a487ea47c167a106881365418bcbf0aa
+  hash_d: 2241cab51df37188e6fb449d07f7504b502cdd27da44fe27c0d17b7e49313bcf
+  semantic_tags:
+  - system:deskops
+  - topic:diagrams
+  - topic:specs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-phases-are-dependency-layers-of-tasks
+  path: knowledge/atoms/workflow-model/atom-phases-are-dependency-layers-of-tasks.md
+  hash_c: a06815f310fcd4e076001691ce74de837b43030f6ab89af6efdbea18ad81d391
+  hash_d: f2f8c2a3e4ac55099ba4cb4ed51027bb54c2aaeac73ae2be7c48141019210c54
+  semantic_tags:
+  - system:deskops
+  - topic:dependencies
+  - topic:phases
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-ease-of-use-requires-progressive-disclosure
+  path: knowledge/atoms/workflow-model/atom-ease-of-use-requires-progressive-disclosure.md
+  hash_c: cad03ccf3390838bef9b385e7d2d9e8d6aff91c9e777964c6586fa86bfccdef9
+  hash_d: df37a20297dc2e6069d811d590153e5a5cad51fc7dd813f5ce7ff45fbdb2c4e0
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:onboarding
+  - topic:ux
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-git-history-is-the-past
+  path: knowledge/atoms/workflow-model/atom-git-history-is-the-past.md
+  hash_c: b29f670404907217c123ade4225703c963e9904c68476a51023854e3f5e799ea
+  hash_d: 0c9e54705148edc1838e83a09c071a08a73a32aee57071524eafad9922abc9f1
+  semantic_tags:
+  - system:deskops
+  - topic:cleanup
+  - topic:drawer
+  - topic:git
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-tasks-enable-zero-context-subagents
+  path: knowledge/atoms/workflow-model/atom-tasks-enable-zero-context-subagents.md
+  hash_c: 1a6b53f75156ba35cb394896fe525197ca42f6cf8ff3f716415d192dd11d76e5
+  hash_d: e5959e4b10d330a68c456320182360152fe1a81b2fdd51fd24974ac0962d73f2
+  semantic_tags:
+  - system:deskops
+  - topic:pills
+  - topic:subagents
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-drawer-is-not-active-work
+  path: knowledge/atoms/workflow-model/atom-drawer-is-not-active-work.md
+  hash_c: fe957e965c08b10f22cbf48463b0e7b4dcb595615dbb3d3bd0e8636ecffbf5ae
+  hash_d: a1ef72726f856f205792e4090859b3a472fab9d219f330095ceda6474b37af21
+  semantic_tags:
+  - system:deskops
+  - topic:drawer
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops-owns-workflow-not-document-infrastructure
+  path: knowledge/atoms/workflow-model/atom-deskops-owns-workflow-not-document-infrastructure.md
+  hash_c: e63b91ea5314587d601636f795acd1bad031a38f0f69bf0b687c21d005f2d98a
+  hash_d: 883c83999c3c371999ec3e5294519be085a2344c57bdfcea0f19a392dda2ab03
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - system:spec2viz
+  - topic:boundary
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-self-generating-spec-derived-cli
+  path: knowledge/atoms/workflow-model/atom-self-generating-spec-derived-cli.md
+  hash_c: 00fdd2214e3d1f7d0aa179c6f08e136f24fccf3bf3d08a9e37304cee96bf307a
+  hash_d: 979a99b4019391d67db3005cc9a5b95dbb14f895c2c4449fcb39a42f28d3c0c3
+  semantic_tags:
+  - layer:cli
+  - system:deskops
+  - topic:specs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-spec2viz-mirrors-sldb-for-diagrams
+  path: knowledge/atoms/workflow-model/atom-spec2viz-mirrors-sldb-for-diagrams.md
+  hash_c: 6f3d8623781523a8aaa0f1a2bca2c9dab74d26f49e9d3b0b0515cd1dd3e0adc9
+  hash_d: 13c4d325a9cfa1c4fbc8682b97ed434c8c8c4676342bcdad4436d162f7fb3397
+  semantic_tags:
+  - system:deskops
+  - system:spec2viz
+  - topic:diagrams
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-task-board-phases
+  path: knowledge/atoms/workflow-model/atom-task-board-phases.md
+  hash_c: cddb3e314aa01dfcaad0e750ae84a3ed18ab5d4a8c869f4fcedea8fa41931140
+  hash_d: d09c88720b5b39c6b95d91848f0e55eb309d652f37b430639240cd701e5bac76
+  semantic_tags:
+  - system:deskops
+  - topic:boards
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-spec-driven-artifact-architecture
+  path: knowledge/atoms/workflow-model/atom-spec-driven-artifact-architecture.md
+  hash_c: 17c135a55794395642282f4a32c1ee79cbd1ce11279113daa8b84fbdc102ca7d
+  hash_d: 424e75a09943e061d0cbc80a354dbab3647f1c2b24dad3ec9dc8b924d61804fb
+  semantic_tags:
+  - system:deskops
+  - topic:artifacts
+  - topic:specs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-clean-code-reduces-knowledge-drift
+  path: knowledge/atoms/workflow-model/atom-clean-code-reduces-knowledge-drift.md
+  hash_c: 6435e14ca77d9781ebd4a2b5147efc0143d4eaa7be75575259977fddb205c6b1
+  hash_d: e615c8fe21f1ca1d6eeb25a0391d65fcfb98afc5d9f79b9441b3b25cd3fe2556
+  semantic_tags:
+  - system:deskops
+  - topic:code-quality
+  - topic:drift-control
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-large-worktree-changes-need-explanatory-slices
+  path: knowledge/atoms/workflow-model/atom-large-worktree-changes-need-explanatory-slices.md
+  hash_c: 8cc450527a8a839f74ea405f7597691a8741dd440491aabba59b3d3418ab9660
+  hash_d: 64cee708425b64088e50ed08b81dfc405e6cc98f7a49f5de035ef6bd13815498
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:git
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-docs-are-human-facing-atom-materializations
+  path: knowledge/atoms/workflow-model/atom-docs-are-human-facing-atom-materializations.md
+  hash_c: d01cf34ed2237c772874f72fef66f8eac523a04e89b5cb6216bcfc88f199e192
+  hash_d: cfe9065adf12ddcb670968ab1a21fddbb5b4a16c899898ea64177b4857d64b66
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:documentation
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-workflow-vocabulary-separates-knowledge-and-work
+  path: knowledge/atoms/workflow-model/atom-workflow-vocabulary-separates-knowledge-and-work.md
+  hash_c: e463110d7290b595ae4ac5f9340ef098993350b3c85099ef89bf621b3d21dcca
+  hash_d: 4502b9e7c9684dd7363e38c856fefe3796c50c108676fe38ec227d83fee0ca70
+  semantic_tags:
+  - system:deskops
+  - topic:vocabulary
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-changes-flow-through-tasks-and-pills
+  path: knowledge/atoms/workflow-model/atom-changes-flow-through-tasks-and-pills.md
+  hash_c: 883d6c5bebf94271d1e7b2fa8fd050484a3ab3f5f527aa88a986cdb02654b6d6
+  hash_d: 9a26fd5795a53d4e0da3e9c67233bebfdc572c6083979d6f9e18ac2bed8be201
+  semantic_tags:
+  - system:deskops
+  - topic:pills
+  - topic:tasks
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-rituals-precede-routines
+  path: knowledge/atoms/workflow-model/atom-rituals-precede-routines.md
+  hash_c: 55bbdd49f46015181cfa0d94ad61045f6a1e7a997785bf6d965cec237715489c
+  hash_d: 2f85e72df87d3860d096ea6e401ff122df5d03e1c543249c823a13cc69eb4935
+  semantic_tags:
+  - system:deskops
+  - topic:rituals
+  - topic:routines
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-are-reusable-across-tasks
+  path: knowledge/atoms/workflow-model/atom-pills-are-reusable-across-tasks.md
+  hash_c: 19baf3c37dbfe2971d717923e05d8d95d86a14fd7be5a274e6b3bb37aaae2870
+  hash_d: 163d4c1361e3ec2556b0b4e5ee41377ab7a0d6ad08be6c819acc336f15872132
+  semantic_tags:
+  - system:deskops
+  - topic:phases
+  - topic:pills
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atoms-are-stable-documentation-core
+  path: knowledge/atoms/workflow-model/atom-atoms-are-stable-documentation-core.md
+  hash_c: 569968c22071cea53395abc5ba698119afdef07c086b0a4aab7b592b81c32ded
+  hash_d: 3e821af85764d61a301fed9677a1ff175534e16ae6a64aa64386d525b47d24be
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:documentation
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-reference-not-copy
+  path: knowledge/atoms/workflow-model/atom-pills-reference-not-copy.md
+  hash_c: 1f98cec7d3121933afffae4de58a869735dd7e545222aa84c6b3f157d8468a1c
+  hash_d: 9ceb31b20f73efbd65504271237bedab67c24258506a3190ee8a80f7e774443b
+  semantic_tags:
+  - system:deskops
+  - topic:drift-control
+  - topic:pills
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-documents-point-to-atoms
+  path: knowledge/atoms/workflow-model/atom-documents-point-to-atoms.md
+  hash_c: e734816f3897151b391893d6021545aa89cacf9e334d1dc0af7a67e170a6c3b7
+  hash_d: 47516fe5798d90b0ec81b603eaa72f0946078b15fd1f224263c6b1e03f935d85
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:atoms
+  - topic:composition
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-upstream-routing-needs-convenient-command
+  path: knowledge/atoms/workflow-model/atom-upstream-routing-needs-convenient-command.md
+  hash_c: c607466502f75351820ca6c1efa7868f0fefb3626b22870e3237b846a08f97c3
+  hash_d: 1d2487e1ece8702717ff0158f0e8e3dcefb4b85ed529eb71be24bdc44b38a8b5
+  semantic_tags:
+  - system:deskops
+  - topic:inbox
+  - topic:tooling
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-closeout-validates-knowledge-surfaces
+  path: knowledge/atoms/workflow-model/atom-closeout-validates-knowledge-surfaces.md
+  hash_c: 7b99d358c78662d54c3e418280fe8cbf1754d6ed11e086f4c9067700bf3a177c
+  hash_d: b7cffb1a08e9fb52eb08c20406b632a4ab6eb0efb3904a7fbc1aa8a0e1c71f9f
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:drift-control
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-kgdb-owns-relations-between-knowledge-surfaces
+  path: knowledge/atoms/workflow-model/atom-kgdb-owns-relations-between-knowledge-surfaces.md
+  hash_c: 6fd9f8958f1849cb2193c64ee0e7ce8dccefedf733300af3a61c4d58c2c838d7
+  hash_d: 1315d5b2f99f5be40a69dd2811c06c87c5b87860fb77ce587ea1d60d6a844668
+  semantic_tags:
+  - system:deskops
+  - system:kgdb
+  - topic:knowledge-graph
+  - topic:relations
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-cli-is-thin-over-primitives-and-sldb
+  path: knowledge/atoms/workflow-model/atom-cli-is-thin-over-primitives-and-sldb.md
+  hash_c: 4cec6b4dbdda5b13c2553ceccf05049bbb2c5964dd5c1a2c71784ce895499da8
+  hash_d: 80307a6129c861df12f0d4e343ae8433808236468feb47d1c17bcdd22f0cd408
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:cli
+  - topic:primitives
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-failed-sldb-paths-become-sldb-inbox-issues
+  path: knowledge/atoms/workflow-model/atom-failed-sldb-paths-become-sldb-inbox-issues.md
+  hash_c: 8bfd4fc521747e0068d1f31d21a6ce185fafe42fd1cbf3216d413a905a60c6f6
+  hash_d: 05306fdcb0884943eee5a038bf01ece0e4a8ddb208bdd11a3426025b39d7df4d
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:inbox
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atoms-answer-one-question
+  path: knowledge/atoms/workflow-model/atom-atoms-answer-one-question.md
+  hash_c: 55ec27b43c0cac3f4894699b3f82ec2fb734b96592bcef89e1553c15752a162c
+  hash_d: 170980ac70bfb22bc6696eb1b6cf1851bbbeba28e8ae292d511406eb714b3754
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-raw-file-reads-flatten-knowledge-layers
+  path: knowledge/atoms/workflow-model/atom-raw-file-reads-flatten-knowledge-layers.md
+  hash_c: 2d17949e9bfa1d5242c4fc0d6a6c048ad1889d877881a48af6edefe8100e0869
+  hash_d: 58049e958a85e3a2dc6cc4ea897e3a27e94903d03b8e25f7c6a39685dd72ab3e
+  semantic_tags:
+  - system:deskops
+  - topic:agents
+  - topic:knowledge-management
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-spec-fields-compile-into-model-fields
+  path: knowledge/atoms/workflow-model/atom-spec-fields-compile-into-model-fields.md
+  hash_c: accab4e0051872c7486135864a70b71737ec29101a5d4789e264b5e04c75a891
+  hash_d: d736af03c19aba75660ccc06127dadcb97dc236e6afc54cb18d8087ffcfb34a6
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:fields
+  - topic:specs
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-create-operations-should-rollback-on-failure
+  path: knowledge/atoms/workflow-model/atom-create-operations-should-rollback-on-failure.md
+  hash_c: c8ea28114220299642ba74fb437c951fd75d13cf8cb64bf25dd3c5913579d2cf
+  hash_d: 4e04aab7b5b54abccddabe4f957051523309f015a64131c1d391a4d90baeac66
+  semantic_tags:
+  - system:deskops
+  - topic:data-integrity
+  - topic:operations
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-code-changes-close-with-tests-and-commit
+  path: knowledge/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md
+  hash_c: 861b219ff788521f0bd6569b1a86e67f9916cd094544d14df30ae3fd694de4e2
+  hash_d: 47d67a01483f8e6cbd6dad04d84267a9666444685b50f1aeaff4989886df838b
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:git
+  - topic:testing
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-primitives-encode-operational-rules
+  path: knowledge/atoms/workflow-model/atom-primitives-encode-operational-rules.md
+  hash_c: 77e401a48eca84d4b7db700fd1eb5db83e086e67dc346135b73761eb312f4f2f
+  hash_d: aa6000268e5f3a54e733efeb96300584fee791e6ef1fdda744969f15674eea22
+  semantic_tags:
+  - system:deskops
+  - topic:primitives
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-automatic-routines-vs-llm-tasks
+  path: knowledge/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md
+  hash_c: 9812e2de129fd87dbbd1e8c7c8088cf553fa0a7b59411a4f87f57f39ceedfbff
+  hash_d: af7e1f0cb872ff455af918a6c2667114c677166ed99a1c2fc494481b7c451c62
+  semantic_tags:
+  - system:deskops
+  - topic:hooks
+  - topic:routines
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-operational-primitives-model
+  path: knowledge/atoms/workflow-model/atom-operational-primitives-model.md
+  hash_c: dede0f2298d0998e1c3408472a728290257119df611c31fdfbd226613f6bee5d
+  hash_d: 305b9243a2ccbf1a0b094bbcbd544dcb52e7d1284db3775c55433892d9cc6a8d
+  semantic_tags:
+  - layer:runtime
+  - system:deskops
+  - topic:routines
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-workflow-surfaces-have-operational-lifetimes
+  path: knowledge/atoms/workflow-model/atom-workflow-surfaces-have-operational-lifetimes.md
+  hash_c: 6e8d76f56e82ea3e0ad694b59106de783b96db7eb165350c3bb5b9f5330ca0e1
+  hash_d: 4156d23d4290353ef27153bfa56332f2d56837e7ec898b616f5964c75ecd10b5
+  semantic_tags:
+  - system:deskops
+  - topic:surfaces
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-clean-subagent-ambiguity-review
+  path: knowledge/atoms/workflow-model/atom-clean-subagent-ambiguity-review.md
+  hash_c: 573f0abd0450ded351dc5c2f382d09af9ff5d5e92ee439406631b518fc9cdfe1
+  hash_d: e292c790c9c8c6d1570c0188c706efba5b247d5df00a1a8bc7bc3977eb629f70
+  semantic_tags:
+  - system:deskops
+  - topic:subagents
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-diagrams-generate-operational-models
+  path: knowledge/atoms/workflow-model/atom-diagrams-generate-operational-models.md
+  hash_c: ecbfa01b894b86bfb7060f6a3671c078b2c90c1b85b141f5602aec4154501b16
+  hash_d: 8cd3c1771d3dd154cfe74f23b6d8989ee02d07e114804d6da72fa662285b8379
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:diagrams
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-task-lifecycle-is-cli-runnable-end-to-end
+  path: knowledge/atoms/workflow-model/atom-task-lifecycle-is-cli-runnable-end-to-end.md
+  hash_c: a853339bbc4e2a8547f83d80b84da579a8a372430198b25187ae0f63ef937aa6
+  hash_d: 0182ff9a401e3275f74fdec4abe7a03d4e6c2a4a776e8be98aa8e95b2a61ffdf
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:tasks
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-work-is-board-routed-to-preserve-intent
+  path: knowledge/atoms/workflow-model/atom-work-is-board-routed-to-preserve-intent.md
+  hash_c: 233aabd3eeec8786c887e5523e7e737672e41181b1ea734b1557eca6aa884585
+  hash_d: e002b5e4a4e6e454e4297b625503d8071a0872d0dc0aa8224fcd982bcaeb2650
+  semantic_tags:
+  - system:deskops
+  - topic:boards
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-repo-artifacts-need-atom-traceability
+  path: knowledge/atoms/workflow-model/atom-repo-artifacts-need-atom-traceability.md
+  hash_c: d67b05e4a2de02698b01286c04e6c1cab7bbb9d33ff045065deb2bfd304742f8
+  hash_d: 7a7cb010674d8ba05907de6f93f8dcda027722e94090675f6125b786c764b1b8
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:knowledge-graph
+  - topic:traceability
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-unwritten-knowledge-belongs-in-atoms-or-materializations
+  path: knowledge/atoms/workflow-model/atom-unwritten-knowledge-belongs-in-atoms-or-materializations.md
+  hash_c: 33d428acab45cf82c7322111dae189a1009164e8af9585542bf849799e69195e
+  hash_d: 7c032d146ce14214268353af1d9b07e07d4b061eae2b03926bc2fba0e6e5d5f8
+  semantic_tags:
+  - system:deskops
+  - system:sldb
+  - topic:atoms
+  - topic:materialization
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-every-change-needs-descriptive-commit
+  path: knowledge/atoms/workflow-model/atom-every-change-needs-descriptive-commit.md
+  hash_c: 7c80bceb5fde522c9594eefb047667722ee2969f78d9ef38e4a3a2f433bae852
+  hash_d: c0199af7293fb71890ef0c140df9af21f41305a0de566ec608995499b69d07cc
+  semantic_tags:
+  - system:deskops
+  - topic:closeout
+  - topic:git
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-drawers-feed-tasks-through-promotion
+  path: knowledge/atoms/workflow-model/atom-drawers-feed-tasks-through-promotion.md
+  hash_c: ecebb906b4645747a0379b98ec3c53252ffb89fdf6d32bb8c6e44c438b2b38b9
+  hash_d: 2d1662192c825e0d538d2df5ade8ce38183783cb2f03e34aabd34709ce81e7d9
+  semantic_tags:
+  - system:deskops
+  - topic:drawer
+  - topic:promotion
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops-automates-repeated-workflow-obligations
+  path: knowledge/atoms/workflow-model/atom-deskops-automates-repeated-workflow-obligations.md
+  hash_c: 88b2a99fb4162ce8f8a9cfa63d2b75c73b9af2f355a4e74ff354dc560d938a02
+  hash_d: f9403b5ccb208e81b463fba5013ff2418f9ed93b031be279502a506be07bc91a
+  semantic_tags:
+  - system:deskops
+  - topic:automation
+  - topic:tasks
+  - topic:workflow
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-sldb-is-read-write-edit-surface
+  path: knowledge/atoms/workflow-model/atom-sldb-is-read-write-edit-surface.md
+  hash_c: d1705e8a8d53e81452d51d340b64867bc1017261a4d55c241034af107bb3fb3b
+  hash_d: caf8fcd2e6d5004da54efd0bc76b5aff4d5907681c35868db6a1554ef1bb1ebd
+  semantic_tags:
+  - system:sldb
+  - topic:editing
+  - topic:structured-documents
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-reports-carry-minimal-reproduction-evidence
+  path: knowledge/atoms/workflow-model/atom-reports-carry-minimal-reproduction-evidence.md
+  hash_c: cb1cb46082f053b6d4136d7e6edb406f0d7208e564ae7f8c7304e1992e305a59
+  hash_d: 05c5925bf64c88b54dd3f9489c44ab0e19d34bdf1dd7a9c303ae8f3b1d686b56
+  semantic_tags:
+  - system:deskops
+  - topic:evidence
+  - topic:reports
+  - topic:testing
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-non-durable-notes-do-not-become-atoms
+  path: knowledge/atoms/workflow-model/atom-non-durable-notes-do-not-become-atoms.md
+  hash_c: e902939fd69022c5ead71ed17650fd3f4c3e2fa46aa6a90aa4b77a6cb9df4b8a
+  hash_d: 6efe8b18640fb79ed766fd8b0a2fcf1e70d7f3fbd69cfff4c99ae94726d82c37
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-real-cli-surfaces-prove-workflow-behavior
+  path: knowledge/atoms/workflow-model/atom-real-cli-surfaces-prove-workflow-behavior.md
+  hash_c: 8aa7056442808e8ee96b6f95884f2632ade06f85206618b3f9d1c700eae024ab
+  hash_d: f777dba3d32489159d5a229d5866a22c88fe079fca2c8a9f81a2fb020c605104
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:validation
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-agents-read-by-decision-need
+  path: knowledge/atoms/workflow-model/atom-agents-read-by-decision-need.md
+  hash_c: ce391480ea0b053f6e68c29bcbba2e20c6863a569d1a34849af1b311e2c5b38c
+  hash_d: 856ab4eee888fde63395871b41ad3d5993920c50a68f448b81beaf2b4794d007
+  semantic_tags:
+  - system:deskops
+  - topic:agents
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atom-candidates-come-from-durable-answers
+  path: knowledge/atoms/workflow-model/atom-atom-candidates-come-from-durable-answers.md
+  hash_c: 93e7735110e1c1e9c9d9e6a8e2e92c57fab1fa25122ef24fcd9df7d394be5fdf
+  hash_d: cf759f05575f7d87cc9343b849013b9d0b8a860047f4cd9f8eb0e221ce82f304
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-pills-are-transient
+  path: knowledge/atoms/workflow-model/atom-pills-are-transient.md
+  hash_c: 5602483f993e5d350be59aea1af76a3110f858d14592566b63af0c14ec7423df
+  hash_d: 9152add8d10de3581826fae53c3087b949c081cff39f6f38a9fa454e7602f23b
+  semantic_tags:
+  - system:deskops
+  - topic:pills
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-clean-agents-start-from-minimum-workflow-set
+  path: knowledge/atoms/workflow-model/atom-clean-agents-start-from-minimum-workflow-set.md
+  hash_c: 759ad9bcabd5ec792d2e0b7f7eb8a4292c599103bf56bc3943b3632ee143b4a4
+  hash_d: ab2671823dd023c294ae90bc644b3903ab9b8275f87ebd225cdb9f708d11d2d1
+  semantic_tags:
+  - system:deskops
+  - topic:agents
+  - topic:workflow-model
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-rendered-diagrams-are-projections
+  path: knowledge/atoms/workflow-model/atom-rendered-diagrams-are-projections.md
+  hash_c: 2acf702c86686411d866492bddb63aaa7fbb5e23443bc4f31f9d27bb7e95e1b2
+  hash_d: b42d04e7e7113480c0cb57f96bf1a122ed93c2a0de157b2174169f6ea00ed8af
+  semantic_tags:
+  - system:deskops
+  - system:spec2viz
+  - topic:diagrams
+  - topic:drift-control
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-cli-gaps-become-tracked-work
+  path: knowledge/atoms/workflow-model/atom-cli-gaps-become-tracked-work.md
+  hash_c: 30588ec59708caac0cd1c36e361cc74238238be52de2e98680bcb811a3910d18
+  hash_d: 404829ae1643f72afb336bb4c88a2a820cdc223ab8da069b6eda3b59a62c9e5b
+  semantic_tags:
+  - system:deskops
+  - topic:cli
+  - topic:routing
+  - topic:tasks
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-codebase-surfaces-generate-atom-candidates
+  path: knowledge/atoms/workflow-model/atom-codebase-surfaces-generate-atom-candidates.md
+  hash_c: 639c9db1cd1c6aee03b31bdddaabbcca98e171b3ce5f29e31ad4e3dc901fb41d
+  hash_d: 27aefe7ac59cbd52ec93fd832b91a9641e044d5c5e9f46d42834230cc03f2e65
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - topic:codebase
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-repair-is-owned-by-deskops
+  path: knowledge/atoms/atom-desk-repair-is-owned-by-deskops.md
+  hash_c: c45dfc651ea66a16d24383af35666a07bf6a0593448604223f5249607787ca4a
+  hash_d: f35a9997bbb8931217ac40e9f21ccc897703629bb1c41a20e7f6f691bcef8b15
+  semantic_tags:
+  - system:deskops
+  - topic:boundary
+  - topic:ownership
+  - topic:workspace-health
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard
+  path: knowledge/atoms/atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard.md
+  hash_c: f0931620067c90bb1398bd9a5bfcc0bced65e5a4e5383fc4e517df016bc87642
+  hash_d: 06db2032ed6bf09be9cfe813993fadd71651456454bccd3b2867167bf08e02ce
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable
+  path: knowledge/atoms/atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable.md
+  hash_c: 8efbfe934cd9d25945efa8f8c6086a3837ee677979662e848eeb043eb3e78343
+  hash_d: 3bfa25312f92adeaebbc0d3e225dd2935ae84bf71fa0ea31379856552dd457f9
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-deskops-models-are-sldb-documents
+  path: knowledge/atoms/atom-deskops-models-are-sldb-documents.md
+  hash_c: 6f2587cca9e6e686d2a874eba8deaa41b16eb086416d773bd56d296458fd7dc2
+  hash_d: ebb06b0fd4e21f16d16e17df1f06d20d8faf531bd8852be641f99432b652033e
+  semantic_tags:
+  - system:deskops
+  - topic:atoms
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-canonical-project-identity-resolves-through-a-shared-registry-resolver
+  path: knowledge/atoms/atom-canonical-project-identity-resolves-through-a-shared-registry-resolver.md
+  hash_c: 60bb3a12748382ea883192b7887e5fccdd340a6376eebeeebb4ad478226cb6c1
+  hash_d: b7b3f4ce7e39b9976b255c3dc9ce0f1bd9f6c8ac7ca83730b5989edb23d36f28
+  semantic_tags:
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-desk-health-is-workspace-integrity-state
+  path: knowledge/atoms/atom-desk-health-is-workspace-integrity-state.md
+  hash_c: e27d2298496a4ea4931c89728e66e53cab928b30f8fd6c823c8b83d55ed2ad85
+  hash_d: 214dc17724598a3052f0b90d761ccc9b8abfa9ba59f1b8bec7b10e08a5e8034f
+  semantic_tags:
+  - system:deskops
+  - topic:diagnosis
+  - topic:workspace-health
+  - type.knowledge.atom
+  - workspace.desk.atoms

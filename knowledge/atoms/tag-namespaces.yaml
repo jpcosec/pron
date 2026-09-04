@@ -1,69 +1,61 @@
-notes:
-  - This file now lists semantic tag namespaces that still belong on atoms.
-  - Governance, provenance-status, project, source, grounding, role, scope, phase,
-    bootstrap, method, status, and legacy metadata were moved to `metadata/atoms/atom-metadata-registry.yaml`.
-
 namespaces:
-  cross:
-    examples:
-      - cross:deskops_kb
-      - cross:sldb_kgdb
-      - cross:provenance_concept_graph
-    meaning: Explicit cross-system or cross-project synthesis that is part of the claim.
-    use_when: The atom's knowledge claim is inherently about a bridge across systems,
-      repos, or graph layers.
   domain:
+    do_not_use_when: A more specific system, topic, layer, or pattern tag applies.
     examples:
-      - domain:knowledge_management
-      - domain:knowledge_representation
-      - domain:graph_architecture
-    meaning: Durable knowledge domain the claim belongs to.
-    use_when: The atom belongs to a broader field beyond one tool or repo.
-  entity:
-    examples:
-      - entity:atom
-      - entity:sample
-      - entity:source
-      - entity:taxonomy_node
-      - entity:metadata_registry
-    meaning: Primary modeled entity the claim is about.
-    use_when: The atom is centered on one KB entity type.
-  graph:
-    examples:
-      - graph:provenance
-      - graph:concept
-      - graph:structure
-      - graph:lineage
-    meaning: Graph stratum or graph concern named by the claim itself.
-    use_when: The atom is about provenance, concept, structure, lineage, or related graph semantics.
+    - domain:knowledge-management
+    - domain:task-execution
+    meaning: Problem domain or durable area of concern.
+    use_when: The atom belongs to a reusable problem domain.
   layer:
+    do_not_use_when: The tag names only a broad topic or system.
     examples:
-      - layer:sample
-      - layer:graph_provenance
-      - layer:graph_concept
-      - layer:structure
-    meaning: Architectural layer the claim applies to.
-    use_when: The atom is specifically about a KB layer or sublayer.
+    - layer:document-model
+    - layer:runtime
+    - layer:cli
+    meaning: Architectural layer where the atom applies.
+    use_when: The atom is scoped to a layer of the system.
+  multi_example:
+    do_not_use_when: not
+    examples:
+    - multi_example:ex1
+    - multi_example:ex2
+    - multi_example:ex3
+    meaning: test
+    use_when: testing
+  pattern:
+    do_not_use_when: The atom merely mentions a topic; use topic instead.
+    examples:
+    - pattern:roundtrip-validation
+    meaning: Reusable solution shape or recurring implementation method.
+    use_when: The atom describes a repeatable way to solve or structure something.
   system:
+    do_not_use_when: The tag is only a general topic.
     examples:
-      - system:kb
-      - system:deskops
-      - system:sldb
-      - system:marcado
-      - system:kgdb
-      - system:knowledge
-    meaning: System or tool the claim is about.
-    use_when: The atom belongs to a specific tool, subsystem, or KB surface.
+    - system:deskops
+    - system:sldb
+    meaning: System, project, or tool the atom belongs to.
+    use_when: The atom is about a specific system.
+  testex:
+    do_not_use_when: no examples needed
+    examples:
+    - testex:foo
+    - testex:bar
+    meaning: test examples
+    use_when: testing example flag
+  testns:
+    do_not_use_when: not testing
+    examples: []
+    meaning: test
+    use_when: testing
   topic:
-    do_not_use_when: The information really belongs in a stronger entity, graph,
-      layer, or relation model only.
+    do_not_use_when: The atom describes a reusable implementation shape.
     examples:
-      - topic:provenance
-      - topic:multi_source
-      - topic:anchoring
-      - topic:concept_graph
-      - topic:knowledge_cli
-      - topic:atom_metadata
-      - topic:knowledge_graph
-    meaning: Lightweight conceptual topic for discovery and grouping.
-    use_when: The atom needs a human-friendly subject handle.
+    - topic:atoms
+    - topic:composition
+    meaning: Subject area discussed by the atom.
+    use_when: The atom is about a conceptual topic.
+  valid_underscore:
+    do_not_use_when: x
+    examples: []
+    meaning: x
+    use_when: x

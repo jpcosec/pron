@@ -35,6 +35,12 @@ tags:
   - atom-typestate-typing
   - atom-universal-grammar-formalization
   - atom-wigame-as-local-language-game
+  domain:knowledge-management:
+  - atom-atoms-distill-project-knowledge
+  - atom-diagrams-project-knowledge-relations
+  - atom-docs-materialize-atoms-for-humans
+  - atom-implementation-feedback-refines-atoms
+  - atom-specs-formalize-atoms-as-contracts
   domain:knowledge_management:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
@@ -196,6 +202,10 @@ tags:
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  layer:cli:
+  - atom-atom-folder-axis-is-one-configurable-tag-namespace
+  - atom-cli-should-match-spoken-workflow-language
+  - atom-self-generating-spec-derived-cli
   layer:document:
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   layer:graph:
@@ -232,6 +242,9 @@ tags:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  layer:runtime:
+  - atom-001-self-described-store-layout
+  - atom-operational-primitives-model
   layer:sample:
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
@@ -253,14 +266,134 @@ tags:
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  pattern:task-to-atom-graduation:
+  - atom-pills-carry-transitional-task-knowledge
   system:deskops:
+  - atom-agents-read-by-decision-need
+  - atom-agents-read-through-semantic-tools
+  - atom-atom-candidates-come-from-durable-answers
+  - atom-atom-folder-axis-is-one-configurable-tag-namespace
+  - atom-atom-references-carry-roles
+  - atom-atoms-answer-one-question
+  - atom-atoms-are-stable-documentation-core
+  - atom-atoms-distill-project-knowledge
+  - atom-automatic-routines-vs-llm-tasks
+  - atom-available-tasks-are-board-routed-work
+  - atom-big-documents-need-explicit-modeling-strategy
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-clean-agents-start-from-minimum-workflow-set
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clean-subagent-ambiguity-review
+  - atom-cli-gaps-become-tracked-work
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-cli-should-match-spoken-workflow-language
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-closing-commits-are-tool-made-and-run-linked
+  - atom-code-changes-close-with-tests-and-commit
+  - atom-codebase-surfaces-generate-atom-candidates
+  - atom-create-operations-should-rollback-on-failure
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-health-is-workspace-integrity-state
+  - atom-desk-is-document-data-only
+  - atom-desk-repair-is-owned-by-deskops
+  - atom-desk-test-root-precedence-is-explicit
+  - atom-deskops
+  - atom-deskops-architecture
+  - atom-deskops-automates-repeated-workflow-obligations
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-models-are-sldb-documents
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-deskops-reads-and-writes-through-sldb
   - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-diagrams-generate-operational-models
+  - atom-diagrams-project-knowledge-relations
+  - atom-divide-and-conquer-persisted-operations
+  - atom-docs-are-human-facing-atom-materializations
+  - atom-docs-materialize-atoms-for-humans
+  - atom-documents-point-to-atoms
+  - atom-drawer-is-not-active-work
+  - atom-drawers-feed-tasks-through-promotion
+  - atom-drift-checks-compare-atoms-materializations-implementation
+  - atom-ease-of-use-requires-progressive-disclosure
+  - atom-every-change-needs-descriptive-commit
+  - atom-extensibility-is-a-contract
+  - atom-extra-atom-test
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-field-oriented-document-composition
+  - atom-first-safe-action-follows-read-route
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-from-yaml-test-atom
+  - atom-git-history-is-the-past
+  - atom-git-is-explanatory-surface-for-changes
+  - atom-implementation-feedback-refines-atoms
+  - atom-inbox-is-coordination-intake
+  - atom-inbox-routes-external-needs-toward-work
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
+  - atom-kgdb-should-parallel-sldb-not-compete
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  - atom-knowledge-graph-connects-desk-and-source-files
+  - atom-large-worktree-changes-need-explanatory-slices
+  - atom-main-docs-are-composed-materializations
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-materialization-metadata-is-not-atom-content
+  - atom-materializations-declare-source-atoms
+  - atom-missing-answer-test
+  - atom-networkx-is-first-graph-runtime
+  - atom-non-durable-notes-do-not-become-atoms
+  - atom-operational-primitives-model
+  - atom-orphan-artifacts-are-knowledge-system-failures
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-phase-gates-prevent-agent-skipping
+  - atom-phases-are-dependency-layers-of-tasks
+  - atom-pills-are-reusable-across-tasks
+  - atom-pills-are-transient
+  - atom-pills-carry-transitional-task-knowledge
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-pills-reference-not-copy
+  - atom-primitives-encode-operational-rules
+  - atom-promotion-needs-explicit-criteria
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-raw-file-reads-flatten-knowledge-layers
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-real-cli-surfaces-prove-workflow-behavior
+  - atom-rendered-diagrams-are-projections
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-reports-carry-minimal-reproduction-evidence
+  - atom-reverse-traceability-is-derived
+  - atom-rituals-precede-routines
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  - atom-role-tool-boundaries-and-evidence-surface
+  - atom-routine-based-task-execution
+  - atom-self-generating-spec-derived-cli
+  - atom-self-reflection-is-a-feedback-loop
+  - atom-sldb-semantics-are-graph-inputs
+  - atom-source-file-relations-make-knowledge-actionable
+  - atom-spec-driven-artifact-architecture
+  - atom-spec-fields-compile-into-model-fields
+  - atom-spec-to-visualization-pipeline
+  - atom-spec2viz-mirrors-sldb-for-diagrams
+  - atom-specs-formalize-atoms-as-contracts
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
+  - atom-task-board-phases
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  - atom-tasks-enable-zero-context-subagents
+  - atom-test-atom-stress
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
+  - atom-upstream-routing-needs-convenient-command
+  - atom-used-source-artifacts-are-deleted
+  - atom-work-is-board-routed-to-preserve-intent
+  - atom-workflow-role-model-routing
+  - atom-workflow-surfaces-have-operational-lifetimes
+  - atom-workflow-vocabulary-separates-knowledge-and-work
   system:graph_ui:
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
   system:hum:
@@ -362,7 +495,13 @@ tags:
   system:kgdb:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-kgdb-should-parallel-sldb-not-compete
+  - atom-knowledge-graph-connects-desk-and-source-files
+  - atom-networkx-is-first-graph-runtime
+  - atom-sldb-semantics-are-graph-inputs
   system:knowledge:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
@@ -401,11 +540,33 @@ tags:
   system:ontomap:
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   system:sldb:
+  - atom-001-self-described-store-layout
+  - atom-agents-read-through-semantic-tools
+  - atom-big-documents-need-explicit-modeling-strategy
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-desk-is-document-data-only
+  - atom-deskops
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-documents-point-to-atoms
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-kgdb-should-parallel-sldb-not-compete
+  - atom-sldb-is-read-write-edit-surface
+  - atom-sldb-semantics-are-graph-inputs
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  - atom-spec-fields-compile-into-model-fields
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
   system:sldb_ui:
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   system:spec2viz:
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-rendered-diagrams-are-projections
+  - atom-spec2viz-mirrors-sldb-for-diagrams
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  topic:agents:
+  - atom-agents-read-by-decision-need
+  - atom-agents-read-through-semantic-tools
+  - atom-clean-agents-start-from-minimum-workflow-set
+  - atom-raw-file-reads-flatten-knowledge-layers
   topic:anchoring:
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-references-follow-a-three-tier-scheme
@@ -431,6 +592,8 @@ tags:
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
+  topic:artifacts:
+  - atom-spec-driven-artifact-architecture
   topic:ast_first:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   topic:atom_creation:
@@ -446,10 +609,49 @@ tags:
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  topic:atoms:
+  - atom-atom-candidates-come-from-durable-answers
+  - atom-atom-folder-axis-is-one-configurable-tag-namespace
+  - atom-atom-references-carry-roles
+  - atom-atoms-answer-one-question
+  - atom-atoms-are-stable-documentation-core
+  - atom-atoms-distill-project-knowledge
+  - atom-codebase-surfaces-generate-atom-candidates
+  - atom-deskops-architecture
+  - atom-deskops-models-are-sldb-documents
+  - atom-deskops-reads-and-writes-through-sldb
+  - atom-diagrams-generate-operational-models
+  - atom-diagrams-project-knowledge-relations
+  - atom-docs-are-human-facing-atom-materializations
+  - atom-docs-materialize-atoms-for-humans
+  - atom-documents-point-to-atoms
+  - atom-extra-atom-test
+  - atom-from-yaml-test-atom
+  - atom-implementation-feedback-refines-atoms
+  - atom-main-docs-are-composed-materializations
+  - atom-materialization-metadata-is-not-atom-content
+  - atom-materializations-declare-source-atoms
+  - atom-missing-answer-test
+  - atom-non-durable-notes-do-not-become-atoms
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-reverse-traceability-is-derived
+  - atom-specs-formalize-atoms-as-contracts
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-test-atom-stress
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
   topic:authoring_workflow:
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
+  topic:automation:
+  - atom-deskops-automates-repeated-workflow-obligations
+  topic:boards:
+  - atom-available-tasks-are-board-routed-work
+  - atom-task-board-phases
+  - atom-work-is-board-routed-to-preserve-intent
   topic:bootstrap_kb:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
@@ -460,9 +662,46 @@ tags:
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  topic:boundaries:
+  - atom-role-tool-boundaries-and-evidence-surface
+  topic:boundary:
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  - atom-desk-is-document-data-only
+  - atom-desk-repair-is-owned-by-deskops
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-should-parallel-sldb-not-compete
+  topic:cleanup:
+  - atom-git-history-is-the-past
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-used-source-artifacts-are-deleted
+  topic:cli:
+  - atom-cli-gaps-become-tracked-work
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-test-root-precedence-is-explicit
+  - atom-ease-of-use-requires-progressive-disclosure
+  - atom-real-cli-surfaces-prove-workflow-behavior
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  topic:closeout:
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-closing-commits-are-tool-made-and-run-linked
+  - atom-code-changes-close-with-tests-and-commit
+  - atom-every-change-needs-descriptive-commit
+  - atom-large-worktree-changes-need-explanatory-slices
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  topic:code-quality:
+  - atom-clean-code-reduces-knowledge-drift
+  topic:codebase:
+  - atom-codebase-surfaces-generate-atom-candidates
   topic:composition:
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-documents-point-to-atoms
+  - atom-field-oriented-document-composition
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
@@ -492,12 +731,103 @@ tags:
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-two-gates-model-s-i-sense-v-i-truth
+  topic:config:
+  - atom-desk-test-root-precedence-is-explicit
+  topic:contracts:
+  - atom-extensibility-is-a-contract
+  topic:coordination:
+  - atom-inbox-is-coordination-intake
+  - atom-inbox-routes-external-needs-toward-work
   topic:coverage:
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  topic:data-integrity:
+  - atom-create-operations-should-rollback-on-failure
+  topic:dependencies:
+  - atom-phases-are-dependency-layers-of-tasks
   topic:deskops_atoms:
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  topic:diagnosis:
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-health-is-workspace-integrity-state
+  topic:diagrams:
+  - atom-diagrams-generate-operational-models
+  - atom-diagrams-project-knowledge-relations
+  - atom-rendered-diagrams-are-projections
+  - atom-spec-to-visualization-pipeline
+  - atom-spec2viz-mirrors-sldb-for-diagrams
+  topic:docs:
+  - atom-big-documents-need-explicit-modeling-strategy
+  - atom-docs-materialize-atoms-for-humans
+  - atom-main-docs-are-composed-materializations
   topic:document_structure:
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  topic:documentation:
+  - atom-atoms-are-stable-documentation-core
+  - atom-docs-are-human-facing-atom-materializations
+  topic:drawer:
+  - atom-drawer-is-not-active-work
+  - atom-drawers-feed-tasks-through-promotion
+  - atom-git-history-is-the-past
+  - atom-promotion-needs-explicit-criteria
+  - atom-used-source-artifacts-are-deleted
+  topic:drift-control:
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-drift-checks-compare-atoms-materializations-implementation
+  - atom-git-is-explanatory-surface-for-changes
+  - atom-implementation-feedback-refines-atoms
+  - atom-orphan-artifacts-are-knowledge-system-failures
+  - atom-pills-reference-not-copy
+  - atom-rendered-diagrams-are-projections
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  topic:editing:
+  - atom-sldb-is-read-write-edit-surface
+  topic:evidence:
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-reports-carry-minimal-reproduction-evidence
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
+  topic:extensibility:
+  - atom-extensibility-is-a-contract
+  topic:feedback:
+  - atom-self-reflection-is-a-feedback-loop
+  topic:fields:
+  - atom-field-oriented-document-composition
+  - atom-spec-fields-compile-into-model-fields
+  topic:git:
+  - atom-code-changes-close-with-tests-and-commit
+  - atom-every-change-needs-descriptive-commit
+  - atom-git-history-is-the-past
+  - atom-git-is-explanatory-surface-for-changes
+  - atom-large-worktree-changes-need-explanatory-slices
+  topic:hooks:
+  - atom-automatic-routines-vs-llm-tasks
+  topic:implementation:
+  - atom-networkx-is-first-graph-runtime
+  topic:inbox:
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-inbox-is-coordination-intake
+  - atom-inbox-routes-external-needs-toward-work
+  - atom-promotion-needs-explicit-criteria
+  - atom-upstream-routing-needs-convenient-command
+  - atom-used-source-artifacts-are-deleted
+  topic:indexes:
+  - atom-reverse-traceability-is-derived
+  topic:knowledge-flow:
+  - atom-pills-carry-transitional-task-knowledge
+  topic:knowledge-graph:
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
+  - atom-knowledge-graph-connects-desk-and-source-files
+  - atom-networkx-is-first-graph-runtime
+  - atom-orphan-artifacts-are-knowledge-system-failures
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-sldb-semantics-are-graph-inputs
+  - atom-source-file-relations-make-knowledge-actionable
+  topic:knowledge-management:
+  - atom-promotion-needs-explicit-criteria
+  - atom-raw-file-reads-flatten-knowledge-layers
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-self-reflection-is-a-feedback-loop
   topic:knowledge_cli:
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
@@ -528,10 +858,29 @@ tags:
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  topic:materialization:
+  - atom-atoms-are-stable-documentation-core
+  - atom-big-documents-need-explicit-modeling-strategy
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-docs-are-human-facing-atom-materializations
+  - atom-drift-checks-compare-atoms-materializations-implementation
+  - atom-main-docs-are-composed-materializations
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-materialization-metadata-is-not-atom-content
+  - atom-materializations-declare-source-atoms
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
+  topic:metadata:
+  - atom-atom-references-carry-roles
+  - atom-materialization-metadata-is-not-atom-content
   topic:migration:
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  topic:model-routing:
+  - atom-workflow-role-model-routing
   topic:multi_source:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -544,11 +893,41 @@ tags:
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  topic:onboarding:
+  - atom-ease-of-use-requires-progressive-disclosure
+  - atom-first-safe-action-follows-read-route
+  topic:operations:
+  - atom-create-operations-should-rollback-on-failure
+  topic:ownership:
+  - atom-desk-repair-is-owned-by-deskops
+  topic:phase-gates:
+  - atom-phase-gates-prevent-agent-skipping
+  topic:phases:
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-phases-are-dependency-layers-of-tasks
+  - atom-pills-are-reusable-across-tasks
+  topic:pills:
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-pills-are-reusable-across-tasks
+  - atom-pills-are-transient
+  - atom-pills-carry-transitional-task-knowledge
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-pills-reference-not-copy
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-tasks-enable-zero-context-subagents
+  topic:primitives:
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-primitives-encode-operational-rules
+  topic:promotion:
+  - atom-drawers-feed-tasks-through-promotion
   topic:provenance:
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atomic-fact-c-x-d-x-v
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
+  - atom-closing-commits-are-tool-made-and-run-linked
   - atom-contradictions-stored-not-resolved
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
@@ -560,6 +939,7 @@ tags:
   - atom-information-energy-e-r
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
   - atom-the-kb-needs-three-connected-graph-strata
@@ -580,6 +960,28 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  topic:reconciliation:
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  topic:relations:
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
+  topic:reports:
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-reports-carry-minimal-reproduction-evidence
+  topic:rituals:
+  - atom-rituals-precede-routines
+  topic:roles:
+  - atom-closing-commits-are-tool-made-and-run-linked
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  - atom-role-tool-boundaries-and-evidence-surface
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
+  - atom-workflow-role-model-routing
+  topic:routines:
+  - atom-automatic-routines-vs-llm-tasks
+  - atom-operational-primitives-model
+  - atom-rituals-precede-routines
+  - atom-routine-based-task-execution
+  topic:routing:
+  - atom-cli-gaps-become-tracked-work
   topic:sample:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
@@ -590,9 +992,24 @@ tags:
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  topic:self-reflection:
+  - atom-self-reflection-is-a-feedback-loop
+  topic:sldb:
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  topic:source-code:
+  - atom-knowledge-graph-connects-desk-and-source-files
+  - atom-source-file-relations-make-knowledge-actionable
   topic:source_adapters:
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  topic:specs:
+  - atom-self-generating-spec-derived-cli
+  - atom-spec-driven-artifact-architecture
+  - atom-spec-fields-compile-into-model-fields
+  - atom-spec-to-visualization-pipeline
+  - atom-specs-formalize-atoms-as-contracts
+  topic:store:
+  - atom-001-self-described-store-layout
   topic:structural_graph:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
@@ -600,6 +1017,13 @@ tags:
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
+  topic:structured-documents:
+  - atom-sldb-is-read-write-edit-surface
+  topic:subagents:
+  - atom-clean-subagent-ambiguity-review
+  - atom-tasks-enable-zero-context-subagents
+  topic:surfaces:
+  - atom-workflow-surfaces-have-operational-lifetimes
   topic:tag_facets:
   - atom-atom-status-tags-should-support-review-and-migration-governance
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -610,6 +1034,23 @@ tags:
   - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
   topic:tag_policy:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+  topic:tasks:
+  - atom-available-tasks-are-board-routed-work
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-clean-subagent-ambiguity-review
+  - atom-cli-gaps-become-tracked-work
+  - atom-deskops-automates-repeated-workflow-obligations
+  - atom-drawer-is-not-active-work
+  - atom-drawers-feed-tasks-through-promotion
+  - atom-inbox-routes-external-needs-toward-work
+  - atom-phases-are-dependency-layers-of-tasks
+  - atom-pills-are-reusable-across-tasks
+  - atom-pills-carry-transitional-task-knowledge
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-routine-based-task-execution
+  - atom-task-board-phases
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  - atom-tasks-enable-zero-context-subagents
   topic:taxonomy:
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
@@ -617,25 +1058,97 @@ tags:
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  topic:testing:
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-code-changes-close-with-tests-and-commit
+  - atom-desk-test-root-precedence-is-explicit
+  - atom-reports-carry-minimal-reproduction-evidence
+  topic:tooling:
+  - atom-upstream-routing-needs-convenient-command
+  topic:traceability:
+  - atom-atom-references-carry-roles
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-materializations-declare-source-atoms
+  - atom-orphan-artifacts-are-knowledge-system-failures
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-reverse-traceability-is-derived
+  - atom-source-file-relations-make-knowledge-actionable
+  topic:usability:
+  - atom-cli-should-match-spoken-workflow-language
+  topic:ux:
+  - atom-ease-of-use-requires-progressive-disclosure
   topic:validation:
+  - atom-drift-checks-compare-atoms-materializations-implementation
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-real-cli-surfaces-prove-workflow-behavior
+  topic:vocabulary:
+  - atom-workflow-vocabulary-separates-knowledge-and-work
+  topic:workflow:
+  - atom-agents-read-through-semantic-tools
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-cli-should-match-spoken-workflow-language
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-deskops
+  - atom-deskops-automates-repeated-workflow-obligations
+  - atom-every-change-needs-descriptive-commit
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-large-worktree-changes-need-explanatory-slices
+  - atom-phase-gates-prevent-agent-skipping
+  - atom-primitives-encode-operational-rules
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-upstream-routing-needs-convenient-command
+  topic:workflow-model:
+  - atom-agents-read-by-decision-need
+  - atom-atom-candidates-come-from-durable-answers
+  - atom-clean-agents-start-from-minimum-workflow-set
+  - atom-divide-and-conquer-persisted-operations
+  - atom-first-safe-action-follows-read-route
+  - atom-non-durable-notes-do-not-become-atoms
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  - atom-work-is-board-routed-to-preserve-intent
+  - atom-workflow-surfaces-have-operational-lifetimes
+  - atom-workflow-vocabulary-separates-knowledge-and-work
   topic:workflow_separation:
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  topic:workspace-health:
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-health-is-workspace-integrity-state
+  - atom-desk-repair-is-owned-by-deskops
   type.knowledge.atom:
+  - atom-001-self-described-store-layout
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-agents-read-by-decision-need
+  - atom-agents-read-through-semantic-tools
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-atom-candidates-come-from-durable-answers
+  - atom-atom-folder-axis-is-one-configurable-tag-namespace
+  - atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard
+  - atom-atom-lifecycle-is-complete-create-from-source-split-merge
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
+  - atom-atom-references-carry-roles
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
   - atom-atom-status-tags-should-support-review-and-migration-governance
   - atom-atomic-fact-c-x-d-x-v
+  - atom-atoms-answer-one-question
+  - atom-atoms-are-stable-documentation-core
+  - atom-atoms-distill-project-knowledge
+  - atom-automatic-routines-vs-llm-tasks
+  - atom-available-tasks-are-board-routed-work
+  - atom-big-documents-need-explicit-modeling-strategy
   - atom-boolean-algebra-and-bitwise-execution-kernel
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
@@ -643,7 +1156,21 @@ tags:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   - atom-canonical-json-as-stable-interchange-format
+  - atom-canonical-project-identity-resolves-through-a-shared-registry-resolver
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-clean-agents-start-from-minimum-workflow-set
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clean-subagent-ambiguity-review
+  - atom-cli-gaps-become-tracked-work
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-cli-should-match-spoken-workflow-language
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-closing-commits-are-tool-made-and-run-linked
+  - atom-code-changes-close-with-tests-and-commit
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-codebase-surfaces-generate-atom-candidates
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -651,26 +1178,63 @@ tags:
   - atom-contradictions-stored-not-resolved
   - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  - atom-create-operations-should-rollback-on-failure
+  - atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-health-is-workspace-integrity-state
+  - atom-desk-is-document-data-only
+  - atom-desk-repair-is-owned-by-deskops
+  - atom-desk-test-root-precedence-is-explicit
+  - atom-desk-workspaces-classify-as-absent-empty-legacy-or-current
+  - atom-deskops
+  - atom-deskops-architecture
+  - atom-deskops-automates-repeated-workflow-obligations
+  - atom-deskops-imports-sldb-cli-helpers-from-their-current-modules
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-models-are-sldb-documents
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-deskops-reads-and-writes-through-sldb
   - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-diagrams-generate-operational-models
+  - atom-diagrams-project-knowledge-relations
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-divide-and-conquer-persisted-operations
+  - atom-docs-are-human-facing-atom-materializations
+  - atom-docs-materialize-atoms-for-humans
+  - atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking
   - atom-document-identity-resolves-from-explicit-frontmatter-first
+  - atom-documents-point-to-atoms
   - atom-don-t-care-rule
+  - atom-drawer-is-not-active-work
+  - atom-drawers-feed-tasks-through-promotion
   - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-drift-checks-are-review-surfaces-not-mutators
+  - atom-drift-checks-compare-atoms-materializations-implementation
   - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-ease-of-use-requires-progressive-disclosure
   - atom-entity-indexed-by-relation-participation
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-every-change-needs-descriptive-commit
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-extensibility-is-a-contract
+  - atom-extra-atom-test
   - atom-facets-as-boolean-matrix-projections
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-field-oriented-document-composition
+  - atom-first-safe-action-follows-read-route
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-from-yaml-test-atom
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
+  - atom-git-history-is-the-past
+  - atom-git-is-explanatory-surface-for-changes
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
   - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
   - atom-grafo-indice-g-index-graph-and-collision-detection
@@ -685,36 +1249,65 @@ tags:
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  - atom-implementation-feedback-refines-atoms
+  - atom-inbox-is-coordination-intake
+  - atom-inbox-routes-external-needs-toward-work
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-kgdb-should-parallel-sldb-not-compete
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
+  - atom-knowledge-graph-connects-desk-and-source-files
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-large-worktree-changes-need-explanatory-slices
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-logicalsystem-as-aggregate-root
+  - atom-main-docs-are-composed-materializations
   - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-materialization-metadata-is-not-atom-content
+  - atom-materializations-declare-source-atoms
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-meel-engine
   - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  - atom-missing-answer-test
+  - atom-networkx-is-first-graph-runtime
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-non-durable-notes-do-not-become-atoms
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-operational-primitives-model
+  - atom-orphan-artifacts-are-knowledge-system-failures
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-phase-gates-prevent-agent-skipping
+  - atom-phases-are-dependency-layers-of-tasks
+  - atom-pills-are-reusable-across-tasks
+  - atom-pills-are-transient
+  - atom-pills-carry-transitional-task-knowledge
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-pills-reference-not-copy
+  - atom-primitives-encode-operational-rules
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-promotion-flattens-structured-source-sections-into-task-fields
+  - atom-promotion-needs-explicit-criteria
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
@@ -723,11 +1316,24 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-raw-file-reads-flatten-knowledge-layers
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-real-cli-surfaces-prove-workflow-behavior
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-rendered-diagrams-are-projections
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-reports-carry-minimal-reproduction-evidence
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-reverse-traceability-is-derived
+  - atom-rituals-precede-routines
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  - atom-role-tool-boundaries-and-evidence-surface
+  - atom-routine-based-task-execution
   - atom-s-expression-runtime
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
@@ -735,23 +1341,41 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-self-generating-spec-derived-cli
+  - atom-self-reflection-is-a-feedback-loop
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
+  - atom-sldb-is-read-write-edit-surface
+  - atom-sldb-semantics-are-graph-inputs
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  - atom-source-file-relations-make-knowledge-actionable
   - atom-source-identity-validation-should-precede-anchor-validation
   - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-spec-driven-artifact-architecture
+  - atom-spec-fields-compile-into-model-fields
+  - atom-spec-to-visualization-pipeline
+  - atom-spec2viz-mirrors-sldb-for-diagrams
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-specs-formalize-atoms-as-contracts
+  - atom-stale-state-causes-agent-hallucination
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-structural-masks-valid-sense-observed-discriminative
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-task-board-phases
+  - atom-task-bundles-are-tracked-in-the-store-at-creation-time
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  - atom-tasks-enable-zero-context-subagents
+  - atom-test-atom-stress
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -774,26 +1398,48 @@ tags:
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
   - atom-universal-grammar-formalization
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
+  - atom-upstream-routing-needs-convenient-command
+  - atom-used-source-artifacts-are-deleted
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-wigame-as-local-language-game
+  - atom-work-is-board-routed-to-preserve-intent
+  - atom-workflow-role-model-routing
+  - atom-workflow-surfaces-have-operational-lifetimes
+  - atom-workflow-vocabulary-separates-knowledge-and-work
   workspace.desk.atoms:
+  - atom-001-self-described-store-layout
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-agents-read-by-decision-need
+  - atom-agents-read-through-semantic-tools
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
+  - atom-atom-candidates-come-from-durable-answers
+  - atom-atom-folder-axis-is-one-configurable-tag-namespace
+  - atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard
+  - atom-atom-lifecycle-is-complete-create-from-source-split-merge
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
+  - atom-atom-references-carry-roles
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
   - atom-atom-status-tags-should-support-review-and-migration-governance
   - atom-atomic-fact-c-x-d-x-v
+  - atom-atoms-answer-one-question
+  - atom-atoms-are-stable-documentation-core
+  - atom-atoms-distill-project-knowledge
+  - atom-automatic-routines-vs-llm-tasks
+  - atom-available-tasks-are-board-routed-work
+  - atom-big-documents-need-explicit-modeling-strategy
   - atom-boolean-algebra-and-bitwise-execution-kernel
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
@@ -801,7 +1447,21 @@ tags:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   - atom-canonical-json-as-stable-interchange-format
+  - atom-canonical-project-identity-resolves-through-a-shared-registry-resolver
+  - atom-changes-flow-through-tasks-and-pills
+  - atom-clean-agents-start-from-minimum-workflow-set
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clean-subagent-ambiguity-review
+  - atom-cli-gaps-become-tracked-work
+  - atom-cli-is-thin-over-primitives-and-sldb
+  - atom-cli-mutation-testing-uses-sandbox-desk-roots
+  - atom-cli-should-match-spoken-workflow-language
+  - atom-closeout-validates-knowledge-surfaces
+  - atom-closeout-verify-requires-tests-links-and-commit
+  - atom-closing-commits-are-tool-made-and-run-linked
+  - atom-code-changes-close-with-tests-and-commit
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-codebase-surfaces-generate-atom-candidates
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -809,26 +1469,63 @@ tags:
   - atom-contradictions-stored-not-resolved
   - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  - atom-create-operations-should-rollback-on-failure
+  - atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
+  - atom-desk-health-delegates-store-diagnostics-to-sldb
+  - atom-desk-health-is-measured-by-cli-diagnostics
+  - atom-desk-health-is-workspace-integrity-state
+  - atom-desk-is-document-data-only
+  - atom-desk-repair-is-owned-by-deskops
+  - atom-desk-test-root-precedence-is-explicit
+  - atom-desk-workspaces-classify-as-absent-empty-legacy-or-current
+  - atom-deskops
+  - atom-deskops-architecture
+  - atom-deskops-automates-repeated-workflow-obligations
+  - atom-deskops-imports-sldb-cli-helpers-from-their-current-modules
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
+  - atom-deskops-models-are-sldb-documents
+  - atom-deskops-owns-workflow-not-document-infrastructure
+  - atom-deskops-reads-and-writes-through-sldb
   - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
+  - atom-diagrams-generate-operational-models
+  - atom-diagrams-project-knowledge-relations
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
+  - atom-divide-and-conquer-persisted-operations
+  - atom-docs-are-human-facing-atom-materializations
+  - atom-docs-materialize-atoms-for-humans
+  - atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking
   - atom-document-identity-resolves-from-explicit-frontmatter-first
+  - atom-documents-point-to-atoms
   - atom-don-t-care-rule
+  - atom-drawer-is-not-active-work
+  - atom-drawers-feed-tasks-through-promotion
   - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
+  - atom-drift-checks-are-review-surfaces-not-mutators
+  - atom-drift-checks-compare-atoms-materializations-implementation
   - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-ease-of-use-requires-progressive-disclosure
   - atom-entity-indexed-by-relation-participation
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
+  - atom-every-change-needs-descriptive-commit
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-extensibility-is-a-contract
+  - atom-extra-atom-test
   - atom-facets-as-boolean-matrix-projections
+  - atom-failed-sldb-paths-become-sldb-inbox-issues
+  - atom-field-oriented-document-composition
+  - atom-first-safe-action-follows-read-route
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
+  - atom-from-yaml-test-atom
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
+  - atom-git-history-is-the-past
+  - atom-git-is-explanatory-surface-for-changes
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
   - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
   - atom-grafo-indice-g-index-graph-and-collision-detection
@@ -843,36 +1540,65 @@ tags:
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  - atom-implementation-feedback-refines-atoms
+  - atom-inbox-is-coordination-intake
+  - atom-inbox-routes-external-needs-toward-work
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-is-graph-substrate-not-reasoner
+  - atom-kgdb-owns-relations-between-knowledge-surfaces
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-kgdb-should-parallel-sldb-not-compete
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
+  - atom-knowledge-graph-connects-desk-and-source-files
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-large-worktree-changes-need-explanatory-slices
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-logicalsystem-as-aggregate-root
+  - atom-main-docs-are-composed-materializations
   - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-materialization-contracts-bind-source-output-validation
+  - atom-materialization-metadata-is-not-atom-content
+  - atom-materializations-declare-source-atoms
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-meel-engine
   - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  - atom-missing-answer-test
+  - atom-networkx-is-first-graph-runtime
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
+  - atom-non-durable-notes-do-not-become-atoms
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-operational-primitives-model
+  - atom-orphan-artifacts-are-knowledge-system-failures
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
+  - atom-phase-closeout-reconciles-pills-and-next-work
+  - atom-phase-gates-prevent-agent-skipping
+  - atom-phases-are-dependency-layers-of-tasks
+  - atom-pills-are-reusable-across-tasks
+  - atom-pills-are-transient
+  - atom-pills-carry-transitional-task-knowledge
+  - atom-pills-end-as-atoms-docs-or-deletion
+  - atom-pills-index-existing-and-bound-future-context
+  - atom-pills-reference-not-copy
+  - atom-primitives-encode-operational-rules
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-promotion-flattens-structured-source-sections-into-task-fields
+  - atom-promotion-needs-explicit-criteria
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
@@ -881,11 +1607,24 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-raw-file-reads-flatten-knowledge-layers
+  - atom-raw-signals-need-distillation-before-formalization
+  - atom-real-cli-surfaces-prove-workflow-behavior
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-rendered-diagrams-are-projections
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-reports-capture-evidence-and-next-decision-surface
+  - atom-reports-carry-minimal-reproduction-evidence
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
+  - atom-reverse-traceability-is-derived
+  - atom-rituals-precede-routines
+  - atom-role-prompts-are-tracked-documents-agent-files-are-materializations
+  - atom-role-tool-boundaries-and-evidence-surface
+  - atom-routine-based-task-execution
   - atom-s-expression-runtime
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
@@ -893,23 +1632,41 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-self-generating-spec-derived-cli
+  - atom-self-reflection-is-a-feedback-loop
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
+  - atom-sldb-is-read-write-edit-surface
+  - atom-sldb-semantics-are-graph-inputs
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  - atom-source-file-relations-make-knowledge-actionable
   - atom-source-identity-validation-should-precede-anchor-validation
   - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
+  - atom-spec-driven-artifact-architecture
+  - atom-spec-fields-compile-into-model-fields
+  - atom-spec-to-visualization-pipeline
+  - atom-spec2viz-mirrors-sldb-for-diagrams
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-specs-formalize-atoms-as-contracts
+  - atom-stale-state-causes-agent-hallucination
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-structural-masks-valid-sense-observed-discriminative
+  - atom-subagent-runs-are-linked-to-session-logs-by-hash
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-task-board-phases
+  - atom-task-bundles-are-tracked-in-the-store-at-creation-time
+  - atom-task-closeout-checks-pill-knowledge-graduation
+  - atom-task-lifecycle-is-cli-runnable-end-to-end
+  - atom-tasks-enable-zero-context-subagents
+  - atom-test-atom-stress
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -932,11 +1689,20 @@ tags:
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
   - atom-universal-grammar-formalization
+  - atom-unwritten-knowledge-belongs-in-atoms-or-materializations
+  - atom-upstream-routing-needs-convenient-command
+  - atom-used-source-artifacts-are-deleted
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-wigame-as-local-language-game
+  - atom-work-is-board-routed-to-preserve-intent
+  - atom-workflow-role-model-routing
+  - atom-workflow-surfaces-have-operational-lifetimes
+  - atom-workflow-vocabulary-separates-knowledge-and-work
+  workspace:desk:
+  - atom-desk-is-document-data-only
 documents:
   atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
     model: AtomDoc
@@ -2419,5 +3185,1226 @@ documents:
     tags:
     - domain:graph_architecture
     - domain:knowledge_representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-reads-and-writes-through-sldb:
+    model: AtomDoc
+    path: knowledge/atoms/atom-deskops-reads-and-writes-through-sldb.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-extra-atom-test:
+    model: AtomDoc
+    path: knowledge/atoms/atom-extra-atom-test.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-imports-sldb-cli-helpers-from-their-current-modules:
+    model: AtomDoc
+    path: knowledge/atoms/atom-deskops-imports-sldb-cli-helpers-from-their-current-modules.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-task-bundles-are-tracked-in-the-store-at-creation-time:
+    model: AtomDoc
+    path: knowledge/atoms/atom-task-bundles-are-tracked-in-the-store-at-creation-time.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-health-is-measured-by-cli-diagnostics:
+    model: AtomDoc
+    path: knowledge/atoms/atom-desk-health-is-measured-by-cli-diagnostics.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:diagnosis
+    - topic:workspace-health
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-architecture:
+    model: AtomDoc
+    path: knowledge/atoms/atom-deskops-architecture.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix:
+    model: AtomDoc
+    path: knowledge/atoms/atom-repo-register-accepts-explicit-path-and-registry-errors-name-the-fix.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-lifecycle-is-complete-create-from-source-split-merge:
+    model: AtomDoc
+    path: knowledge/atoms/atom-atom-lifecycle-is-complete-create-from-source-split-merge.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-stale-state-causes-agent-hallucination:
+    model: AtomDoc
+    path: knowledge/atoms/atom-stale-state-causes-agent-hallucination.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-closing-commits-are-tool-made-and-run-linked:
+    model: AtomDoc
+    path: knowledge/atoms/atom-closing-commits-are-tool-made-and-run-linked.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:provenance
+    - topic:roles
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-workspaces-classify-as-absent-empty-legacy-or-current:
+    model: AtomDoc
+    path: knowledge/atoms/atom-desk-workspaces-classify-as-absent-empty-legacy-or-current.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-test-atom-stress:
+    model: AtomDoc
+    path: knowledge/atoms/atom-test-atom-stress.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking:
+    model: AtomDoc
+    path: knowledge/atoms/atom-doctor-separates-unmodeled-desk-surfaces-from-broken-tracking.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-health-delegates-store-diagnostics-to-sldb:
+    model: AtomDoc
+    path: knowledge/atoms/atom-desk-health-delegates-store-diagnostics-to-sldb.md
+    tags:
+    - system:deskops
+    - topic:boundary
+    - topic:sldb
+    - topic:workspace-health
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-folder-axis-is-one-configurable-tag-namespace:
+    model: AtomDoc
+    path: knowledge/atoms/atom-atom-folder-axis-is-one-configurable-tag-namespace.md
+    tags:
+    - layer:cli
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-001-self-described-store-layout:
+    model: AtomDoc
+    path: knowledge/atoms/atom-001-self-described-store-layout.md
+    tags:
+    - layer:runtime
+    - system:sldb
+    - topic:store
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-drift-checks-are-review-surfaces-not-mutators:
+    model: AtomDoc
+    path: knowledge/atoms/atom-drift-checks-are-review-surfaces-not-mutators.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-role-tool-boundaries-and-evidence-surface:
+    model: AtomDoc
+    path: knowledge/atoms/atom-role-tool-boundaries-and-evidence-surface.md
+    tags:
+    - system:deskops
+    - topic:boundaries
+    - topic:roles
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-promotion-flattens-structured-source-sections-into-task-fields:
+    model: AtomDoc
+    path: knowledge/atoms/atom-promotion-flattens-structured-source-sections-into-task-fields.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-workflow-role-model-routing:
+    model: AtomDoc
+    path: knowledge/atoms/atom-workflow-role-model-routing.md
+    tags:
+    - system:deskops
+    - topic:model-routing
+    - topic:roles
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-role-prompts-are-tracked-documents-agent-files-are-materializations:
+    model: AtomDoc
+    path: knowledge/atoms/atom-role-prompts-are-tracked-documents-agent-files-are-materializations.md
+    tags:
+    - system:deskops
+    - topic:drift-control
+    - topic:materialization
+    - topic:roles
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-from-yaml-test-atom:
+    model: AtomDoc
+    path: knowledge/atoms/atom-from-yaml-test-atom.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-implementation-feedback-refines-atoms:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-implementation-feedback-refines-atoms.md
+    tags:
+    - domain:knowledge-management
+    - system:deskops
+    - topic:atoms
+    - topic:drift-control
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-is-graph-substrate-not-reasoner:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-kgdb-is-graph-substrate-not-reasoner.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - topic:boundary
+    - topic:knowledge-graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-docs-materialize-atoms-for-humans:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-docs-materialize-atoms-for-humans.md
+    tags:
+    - domain:knowledge-management
+    - system:deskops
+    - topic:atoms
+    - topic:docs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-reverse-traceability-is-derived:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-reverse-traceability-is-derived.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:indexes
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-materializations-declare-source-atoms:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-materializations-declare-source-atoms.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:materialization
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-diagrams-project-knowledge-relations:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-diagrams-project-knowledge-relations.md
+    tags:
+    - domain:knowledge-management
+    - system:deskops
+    - topic:atoms
+    - topic:diagrams
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-promotion-needs-explicit-criteria:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-promotion-needs-explicit-criteria.md
+    tags:
+    - system:deskops
+    - topic:drawer
+    - topic:inbox
+    - topic:knowledge-management
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-should-parallel-sldb-not-compete:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-kgdb-should-parallel-sldb-not-compete.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - system:sldb
+    - topic:boundary
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-source-file-relations-make-knowledge-actionable:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-source-file-relations-make-knowledge-actionable.md
+    tags:
+    - system:deskops
+    - topic:knowledge-graph
+    - topic:source-code
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-references-carry-roles:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-atom-references-carry-roles.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:metadata
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-specs-formalize-atoms-as-contracts:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-specs-formalize-atoms-as-contracts.md
+    tags:
+    - domain:knowledge-management
+    - system:deskops
+    - topic:atoms
+    - topic:specs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sldb-semantics-are-graph-inputs:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-sldb-semantics-are-graph-inputs.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - system:sldb
+    - topic:knowledge-graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atoms-distill-project-knowledge:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-atoms-distill-project-knowledge.md
+    tags:
+    - domain:knowledge-management
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-self-reflection-is-a-feedback-loop:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-self-reflection-is-a-feedback-loop.md
+    tags:
+    - system:deskops
+    - topic:feedback
+    - topic:knowledge-management
+    - topic:self-reflection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-main-docs-are-composed-materializations:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-main-docs-are-composed-materializations.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:docs
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-materialization-metadata-is-not-atom-content:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-materialization-metadata-is-not-atom-content.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:materialization
+    - topic:metadata
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-extensibility-is-a-contract:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-extensibility-is-a-contract.md
+    tags:
+    - system:deskops
+    - topic:contracts
+    - topic:extensibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knowledge-graph-connects-desk-and-source-files:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-knowledge-graph-connects-desk-and-source-files.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - topic:knowledge-graph
+    - topic:source-code
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-big-documents-need-explicit-modeling-strategy:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-big-documents-need-explicit-modeling-strategy.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:docs
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-drift-checks-compare-atoms-materializations-implementation:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-drift-checks-compare-atoms-materializations-implementation.md
+    tags:
+    - system:deskops
+    - topic:drift-control
+    - topic:materialization
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-materialization-contracts-bind-source-output-validation:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-materialization-contracts-bind-source-output-validation.md
+    tags:
+    - system:deskops
+    - topic:materialization
+    - topic:traceability
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-networkx-is-first-graph-runtime:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-networkx-is-first-graph-runtime.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - topic:implementation
+    - topic:knowledge-graph
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-raw-signals-need-distillation-before-formalization:
+    model: AtomDoc
+    path: knowledge/atoms/knowledge-model/atom-raw-signals-need-distillation-before-formalization.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:knowledge-management
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer:
+    model: AtomDoc
+    path: knowledge/atoms/atom-anti-pattern-monolithic-api-endpoints-in-sldb-viewer.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops:
+    model: AtomDoc
+    path: knowledge/atoms/atom-deskops.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-subagent-runs-are-linked-to-session-logs-by-hash:
+    model: AtomDoc
+    path: knowledge/atoms/atom-subagent-runs-are-linked-to-session-logs-by-hash.md
+    tags:
+    - system:deskops
+    - topic:evidence
+    - topic:provenance
+    - topic:roles
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-missing-answer-test:
+    model: AtomDoc
+    path: knowledge/atoms/atom-missing-answer-test.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-routine-based-task-execution:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-routine-based-task-execution.md
+    tags:
+    - system:deskops
+    - topic:routines
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-test-root-precedence-is-explicit:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-desk-test-root-precedence-is-explicit.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:config
+    - topic:testing
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-first-safe-action-follows-read-route:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-first-safe-action-follows-read-route.md
+    tags:
+    - system:deskops
+    - topic:onboarding
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-end-as-atoms-docs-or-deletion:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-end-as-atoms-docs-or-deletion.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:cleanup
+    - topic:pills
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-phase-gates-prevent-agent-skipping:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-phase-gates-prevent-agent-skipping.md
+    tags:
+    - system:deskops
+    - topic:phase-gates
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-available-tasks-are-board-routed-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-available-tasks-are-board-routed-work.md
+    tags:
+    - system:deskops
+    - topic:boards
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-field-oriented-document-composition:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-field-oriented-document-composition.md
+    tags:
+    - system:deskops
+    - topic:composition
+    - topic:fields
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-carry-transitional-task-knowledge:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-carry-transitional-task-knowledge.md
+    tags:
+    - pattern:task-to-atom-graduation
+    - system:deskops
+    - topic:knowledge-flow
+    - topic:pills
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-is-document-data-only:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-desk-is-document-data-only.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:boundary
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    - workspace:desk
+  atom-cli-should-match-spoken-workflow-language:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-cli-should-match-spoken-workflow-language.md
+    tags:
+    - layer:cli
+    - system:deskops
+    - topic:usability
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-used-source-artifacts-are-deleted:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-used-source-artifacts-are-deleted.md
+    tags:
+    - system:deskops
+    - topic:cleanup
+    - topic:drawer
+    - topic:inbox
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-divide-and-conquer-persisted-operations:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-divide-and-conquer-persisted-operations.md
+    tags:
+    - system:deskops
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-task-closeout-checks-pill-knowledge-graduation:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-task-closeout-checks-pill-knowledge-graduation.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:closeout
+    - topic:pills
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-agents-read-through-semantic-tools:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-agents-read-through-semantic-tools.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:agents
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-index-existing-and-bound-future-context:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-index-existing-and-bound-future-context.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:pills
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-git-is-explanatory-surface-for-changes:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-git-is-explanatory-surface-for-changes.md
+    tags:
+    - system:deskops
+    - topic:drift-control
+    - topic:git
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-reports-capture-evidence-and-next-decision-surface:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-reports-capture-evidence-and-next-decision-surface.md
+    tags:
+    - system:deskops
+    - topic:evidence
+    - topic:reports
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-inbox-is-coordination-intake:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-inbox-is-coordination-intake.md
+    tags:
+    - system:deskops
+    - topic:coordination
+    - topic:inbox
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-closeout-verify-requires-tests-links-and-commit:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-closeout-verify-requires-tests-links-and-commit.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:materialization
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-phase-closeout-reconciles-pills-and-next-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-phase-closeout-reconciles-pills-and-next-work.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:phases
+    - topic:pills
+    - topic:reconciliation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cli-mutation-testing-uses-sandbox-desk-roots:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-cli-mutation-testing-uses-sandbox-desk-roots.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:materialization
+    - topic:testing
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-inbox-routes-external-needs-toward-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-inbox-routes-external-needs-toward-work.md
+    tags:
+    - system:deskops
+    - topic:coordination
+    - topic:inbox
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-orphan-artifacts-are-knowledge-system-failures:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-orphan-artifacts-are-knowledge-system-failures.md
+    tags:
+    - system:deskops
+    - topic:drift-control
+    - topic:knowledge-graph
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-spec-to-visualization-pipeline:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-spec-to-visualization-pipeline.md
+    tags:
+    - system:deskops
+    - topic:diagrams
+    - topic:specs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-phases-are-dependency-layers-of-tasks:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-phases-are-dependency-layers-of-tasks.md
+    tags:
+    - system:deskops
+    - topic:dependencies
+    - topic:phases
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-ease-of-use-requires-progressive-disclosure:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-ease-of-use-requires-progressive-disclosure.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:onboarding
+    - topic:ux
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-git-history-is-the-past:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-git-history-is-the-past.md
+    tags:
+    - system:deskops
+    - topic:cleanup
+    - topic:drawer
+    - topic:git
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-tasks-enable-zero-context-subagents:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-tasks-enable-zero-context-subagents.md
+    tags:
+    - system:deskops
+    - topic:pills
+    - topic:subagents
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-drawer-is-not-active-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-drawer-is-not-active-work.md
+    tags:
+    - system:deskops
+    - topic:drawer
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-owns-workflow-not-document-infrastructure:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-deskops-owns-workflow-not-document-infrastructure.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - system:spec2viz
+    - topic:boundary
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-self-generating-spec-derived-cli:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-self-generating-spec-derived-cli.md
+    tags:
+    - layer:cli
+    - system:deskops
+    - topic:specs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-spec2viz-mirrors-sldb-for-diagrams:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-spec2viz-mirrors-sldb-for-diagrams.md
+    tags:
+    - system:deskops
+    - system:spec2viz
+    - topic:diagrams
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-task-board-phases:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-task-board-phases.md
+    tags:
+    - system:deskops
+    - topic:boards
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-spec-driven-artifact-architecture:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-spec-driven-artifact-architecture.md
+    tags:
+    - system:deskops
+    - topic:artifacts
+    - topic:specs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clean-code-reduces-knowledge-drift:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-clean-code-reduces-knowledge-drift.md
+    tags:
+    - system:deskops
+    - topic:code-quality
+    - topic:drift-control
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-large-worktree-changes-need-explanatory-slices:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-large-worktree-changes-need-explanatory-slices.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:git
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-docs-are-human-facing-atom-materializations:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-docs-are-human-facing-atom-materializations.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:documentation
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-workflow-vocabulary-separates-knowledge-and-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-workflow-vocabulary-separates-knowledge-and-work.md
+    tags:
+    - system:deskops
+    - topic:vocabulary
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-changes-flow-through-tasks-and-pills:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-changes-flow-through-tasks-and-pills.md
+    tags:
+    - system:deskops
+    - topic:pills
+    - topic:tasks
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-rituals-precede-routines:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-rituals-precede-routines.md
+    tags:
+    - system:deskops
+    - topic:rituals
+    - topic:routines
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-are-reusable-across-tasks:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-are-reusable-across-tasks.md
+    tags:
+    - system:deskops
+    - topic:phases
+    - topic:pills
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atoms-are-stable-documentation-core:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-atoms-are-stable-documentation-core.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:documentation
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-reference-not-copy:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-reference-not-copy.md
+    tags:
+    - system:deskops
+    - topic:drift-control
+    - topic:pills
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-documents-point-to-atoms:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-documents-point-to-atoms.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:atoms
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-upstream-routing-needs-convenient-command:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-upstream-routing-needs-convenient-command.md
+    tags:
+    - system:deskops
+    - topic:inbox
+    - topic:tooling
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-closeout-validates-knowledge-surfaces:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-closeout-validates-knowledge-surfaces.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:drift-control
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-owns-relations-between-knowledge-surfaces:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-kgdb-owns-relations-between-knowledge-surfaces.md
+    tags:
+    - system:deskops
+    - system:kgdb
+    - topic:knowledge-graph
+    - topic:relations
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cli-is-thin-over-primitives-and-sldb:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-cli-is-thin-over-primitives-and-sldb.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:cli
+    - topic:primitives
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-failed-sldb-paths-become-sldb-inbox-issues:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-failed-sldb-paths-become-sldb-inbox-issues.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:inbox
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atoms-answer-one-question:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-atoms-answer-one-question.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-raw-file-reads-flatten-knowledge-layers:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-raw-file-reads-flatten-knowledge-layers.md
+    tags:
+    - system:deskops
+    - topic:agents
+    - topic:knowledge-management
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-spec-fields-compile-into-model-fields:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-spec-fields-compile-into-model-fields.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:fields
+    - topic:specs
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-create-operations-should-rollback-on-failure:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-create-operations-should-rollback-on-failure.md
+    tags:
+    - system:deskops
+    - topic:data-integrity
+    - topic:operations
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-code-changes-close-with-tests-and-commit:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-code-changes-close-with-tests-and-commit.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:git
+    - topic:testing
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-primitives-encode-operational-rules:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-primitives-encode-operational-rules.md
+    tags:
+    - system:deskops
+    - topic:primitives
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-automatic-routines-vs-llm-tasks:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-automatic-routines-vs-llm-tasks.md
+    tags:
+    - system:deskops
+    - topic:hooks
+    - topic:routines
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-operational-primitives-model:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-operational-primitives-model.md
+    tags:
+    - layer:runtime
+    - system:deskops
+    - topic:routines
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-workflow-surfaces-have-operational-lifetimes:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-workflow-surfaces-have-operational-lifetimes.md
+    tags:
+    - system:deskops
+    - topic:surfaces
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clean-subagent-ambiguity-review:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-clean-subagent-ambiguity-review.md
+    tags:
+    - system:deskops
+    - topic:subagents
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-diagrams-generate-operational-models:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-diagrams-generate-operational-models.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:diagrams
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-task-lifecycle-is-cli-runnable-end-to-end:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-task-lifecycle-is-cli-runnable-end-to-end.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:tasks
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-work-is-board-routed-to-preserve-intent:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-work-is-board-routed-to-preserve-intent.md
+    tags:
+    - system:deskops
+    - topic:boards
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-repo-artifacts-need-atom-traceability:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-repo-artifacts-need-atom-traceability.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:knowledge-graph
+    - topic:traceability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-unwritten-knowledge-belongs-in-atoms-or-materializations:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-unwritten-knowledge-belongs-in-atoms-or-materializations.md
+    tags:
+    - system:deskops
+    - system:sldb
+    - topic:atoms
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-every-change-needs-descriptive-commit:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-every-change-needs-descriptive-commit.md
+    tags:
+    - system:deskops
+    - topic:closeout
+    - topic:git
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-drawers-feed-tasks-through-promotion:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-drawers-feed-tasks-through-promotion.md
+    tags:
+    - system:deskops
+    - topic:drawer
+    - topic:promotion
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-automates-repeated-workflow-obligations:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-deskops-automates-repeated-workflow-obligations.md
+    tags:
+    - system:deskops
+    - topic:automation
+    - topic:tasks
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sldb-is-read-write-edit-surface:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-sldb-is-read-write-edit-surface.md
+    tags:
+    - system:sldb
+    - topic:editing
+    - topic:structured-documents
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-reports-carry-minimal-reproduction-evidence:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-reports-carry-minimal-reproduction-evidence.md
+    tags:
+    - system:deskops
+    - topic:evidence
+    - topic:reports
+    - topic:testing
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-non-durable-notes-do-not-become-atoms:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-non-durable-notes-do-not-become-atoms.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-real-cli-surfaces-prove-workflow-behavior:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-real-cli-surfaces-prove-workflow-behavior.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-agents-read-by-decision-need:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-agents-read-by-decision-need.md
+    tags:
+    - system:deskops
+    - topic:agents
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-candidates-come-from-durable-answers:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-atom-candidates-come-from-durable-answers.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pills-are-transient:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-pills-are-transient.md
+    tags:
+    - system:deskops
+    - topic:pills
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clean-agents-start-from-minimum-workflow-set:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-clean-agents-start-from-minimum-workflow-set.md
+    tags:
+    - system:deskops
+    - topic:agents
+    - topic:workflow-model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-rendered-diagrams-are-projections:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-rendered-diagrams-are-projections.md
+    tags:
+    - system:deskops
+    - system:spec2viz
+    - topic:diagrams
+    - topic:drift-control
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cli-gaps-become-tracked-work:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-cli-gaps-become-tracked-work.md
+    tags:
+    - system:deskops
+    - topic:cli
+    - topic:routing
+    - topic:tasks
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-codebase-surfaces-generate-atom-candidates:
+    model: AtomDoc
+    path: knowledge/atoms/workflow-model/atom-codebase-surfaces-generate-atom-candidates.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - topic:codebase
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-repair-is-owned-by-deskops:
+    model: AtomDoc
+    path: knowledge/atoms/atom-desk-repair-is-owned-by-deskops.md
+    tags:
+    - system:deskops
+    - topic:boundary
+    - topic:ownership
+    - topic:workspace-health
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard:
+    model: AtomDoc
+    path: knowledge/atoms/atom-atom-lifecycle-includes-validate-and-delete-with-inbound-reference-guard.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable:
+    model: AtomDoc
+    path: knowledge/atoms/atom-cross-desk-inbox-delivery-is-verifiable-and-acknowledgeable.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-deskops-models-are-sldb-documents:
+    model: AtomDoc
+    path: knowledge/atoms/atom-deskops-models-are-sldb-documents.md
+    tags:
+    - system:deskops
+    - topic:atoms
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-canonical-project-identity-resolves-through-a-shared-registry-resolver:
+    model: AtomDoc
+    path: knowledge/atoms/atom-canonical-project-identity-resolves-through-a-shared-registry-resolver.md
+    tags:
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-desk-health-is-workspace-integrity-state:
+    model: AtomDoc
+    path: knowledge/atoms/atom-desk-health-is-workspace-integrity-state.md
+    tags:
+    - system:deskops
+    - topic:diagnosis
+    - topic:workspace-health
     - type.knowledge.atom
     - workspace.desk.atoms
