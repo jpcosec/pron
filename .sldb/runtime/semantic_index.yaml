@@ -13,6 +13,12 @@ tags:
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   cross:graphlang_kb:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  cross:knar_knowledge:
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   cross:knowledge_kgdb:
   - atom-the-projector-gives-the-evaluator-a-world
   cross:knowledge_sldb:
@@ -118,6 +124,7 @@ tags:
   - atom-context-and-hierarchical-routing
   - atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-entity-indexed-by-relation-participation
@@ -142,6 +149,7 @@ tags:
   - atom-s-expression-runtime
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
@@ -212,6 +220,7 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-descubrimiento-selfdoc
   - atom-knar-knowledge-api
   - atom-knar-sin-parsing-en-agentes
@@ -298,12 +307,14 @@ tags:
   - atom-knar-viewmodel-render
   - atom-knar-workflow-derivado
   - atom-knowledge-decomposes-into-ten-single-motive-components
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
   - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
@@ -314,6 +325,7 @@ tags:
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   entity:ast_node:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -513,6 +525,7 @@ tags:
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
@@ -540,6 +553,7 @@ tags:
   - atom-knar-api-nodo
   - atom-knar-astro-render
   - atom-knar-base-pequena
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-capability
   - atom-knar-capability-runtime
   - atom-knar-cinco-conceptos
@@ -604,6 +618,7 @@ tags:
   - atom-knar-workflow-derivado
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-decomposes-into-ten-single-motive-components
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
@@ -641,6 +656,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-session-expires-by-ttl-and-store-hash
@@ -675,6 +691,7 @@ tags:
   - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-the-projector-gives-the-evaluator-a-world
@@ -730,6 +747,7 @@ tags:
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
@@ -755,6 +773,7 @@ tags:
   - atom-knar-agentes-datos
   - atom-knar-api-nodo
   - atom-knar-base-pequena
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-capability
   - atom-knar-capability-runtime
   - atom-knar-cinco-conceptos
@@ -806,6 +825,7 @@ tags:
   - atom-knar-workflow-derivado
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-decomposes-into-ten-single-motive-components
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
@@ -839,6 +859,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-session-expires-by-ttl-and-store-hash
@@ -869,6 +890,7 @@ tags:
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
   - atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
@@ -1196,10 +1218,12 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   system:knar:
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-knar-agentes-datos
   - atom-knar-api-nodo
   - atom-knar-astro-render
   - atom-knar-base-pequena
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-capability
   - atom-knar-capability-runtime
   - atom-knar-cinco-conceptos
@@ -1262,6 +1286,9 @@ tags:
   - atom-knar-unit-tests
   - atom-knar-viewmodel-render
   - atom-knar-workflow-derivado
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   system:knowledge:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
@@ -1277,12 +1304,14 @@ tags:
   - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-every-read-response-carries-refs-for-auditability
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-help-is-a-projection-of-the-living-grammar
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
@@ -1290,6 +1319,7 @@ tags:
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
@@ -1298,6 +1328,7 @@ tags:
   - atom-one-file-one-component-one-motive
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
@@ -1306,6 +1337,7 @@ tags:
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
@@ -1636,12 +1668,16 @@ tags:
   - atom-code-materializes-specs-and-never-decides-design
   - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-every-read-response-carries-refs-for-auditability
   - atom-help-is-a-projection-of-the-living-grammar
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-decomposes-into-ten-single-motive-components
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-one-file-one-component-one-motive
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
@@ -1650,6 +1686,7 @@ tags:
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
@@ -1752,6 +1789,7 @@ tags:
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
@@ -1794,6 +1832,7 @@ tags:
   - atom-knar-api-nodo
   - atom-knar-astro-render
   - atom-knar-base-pequena
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-capability
   - atom-knar-capability-runtime
   - atom-knar-cinco-conceptos
@@ -1863,6 +1902,7 @@ tags:
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
@@ -1911,6 +1951,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
@@ -1950,6 +1991,7 @@ tags:
   - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
@@ -2022,6 +2064,7 @@ tags:
   - atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
+  - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
@@ -2064,6 +2107,7 @@ tags:
   - atom-knar-api-nodo
   - atom-knar-astro-render
   - atom-knar-base-pequena
+  - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knar-capability
   - atom-knar-capability-runtime
   - atom-knar-cinco-conceptos
@@ -2133,6 +2177,7 @@ tags:
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+  - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
@@ -2181,6 +2226,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
@@ -2220,6 +2266,7 @@ tags:
   - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
+  - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
@@ -5404,6 +5451,72 @@ documents:
     - entity:anchor
     - impl:pending
     - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knowledge-implements-the-knar-knowledge-and-projection-concepts:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knowledge-implements-the-knar-knowledge-and-projection-concepts.md
+    tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-knar-orchestrator-is-the-evaluator-one-level-up:
+    model: AtomDoc
+    path: knowledge/atoms/atom-the-knar-orchestrator-is-the-evaluator-one-level-up.md
+    tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface.md
+    tags:
+    - cross:knar_knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability:
+    model: AtomDoc
+    path: knowledge/atoms/atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability.md
+    tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-declarative-agents-and-declarative-grammar-are-the-same-bet:
+    model: AtomDoc
+    path: knowledge/atoms/atom-declarative-agents-and-declarative-grammar-are-the-same-bet.md
+    tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
     - system:knowledge
     - topic:semantic_anchoring
     - type.knowledge.atom

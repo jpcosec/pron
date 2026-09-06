@@ -3434,3 +3434,74 @@ documents:
   - topic:semantic_anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  path: knowledge/atoms/atom-knowledge-implements-the-knar-knowledge-and-projection-concepts.md
+  hash_c: a20990f883f1910919253b366b9bc0363cafefb857ff23b66ea90cc3cf3d4774
+  hash_d: e83f6cb512a3e1e97d9c6571973459b7361c9398abdf5424c4c19fb5ebd75de1
+  semantic_tags:
+  - cross:knar_knowledge
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
+  - system:knar
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-the-knar-orchestrator-is-the-evaluator-one-level-up
+  path: knowledge/atoms/atom-the-knar-orchestrator-is-the-evaluator-one-level-up.md
+  hash_c: 8c5f9ab8867685bccb36dda5c1fd629ac353417946406f8822a3011fd0a6e648
+  hash_d: 2797a6040f560e3efd8530bb1c021ac1ab6f62f15271d9aac7c852036e9470b3
+  semantic_tags:
+  - cross:knar_knowledge
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
+  - system:knar
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
+  path: knowledge/atoms/atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface.md
+  hash_c: 2831401ba71c5e7b7170a230adfc686e8a4340807d3dd2867cb0e6d8a0d5674d
+  hash_d: 977a12535ea670042da334b465ff03aed1f2aa842aa278ef44c54494482ea59c
+  semantic_tags:
+  - cross:knar_knowledge
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
+  - system:knar
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  path: knowledge/atoms/atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability.md
+  hash_c: 313dedfd218626af7c3aa07c40bf9be9e5ac45516702f4294457efb23ee3c666
+  hash_d: b15a66c9b3c9b4653dda7fe57a7ae730db98df3c71785be66cc77e6d7305fa29
+  semantic_tags:
+  - cross:knar_knowledge
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knar
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-declarative-agents-and-declarative-grammar-are-the-same-bet
+  path: knowledge/atoms/atom-declarative-agents-and-declarative-grammar-are-the-same-bet.md
+  hash_c: cd4ee2d2ed205dd111de1b1d2fbb3a912427eb6e3335e9d02350168fb94bfed1
+  hash_d: 724688c19453eb03b5a0b3309bba99478bfed49e4c9b260ffc6958509bdf5aff
+  semantic_tags:
+  - cross:knar_knowledge
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
+  - system:knar
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms

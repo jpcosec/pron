@@ -16392,3 +16392,332 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  sections:
+  - path: knowledge-implements-the-knar-knowledge-and-projection-concepts
+    title: knowledge implements the KNAR knowledge and projection concepts
+    breadcrumbs:
+    - knowledge implements the KNAR knowledge and projection concepts
+    about:
+    - knowledge implements the KNAR knowledge and projection concepts
+    - knowledge implements the knar knowledge and projection concepts
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-implements-the-knar-knowledge-and-projection-concepts
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: knowledge-implements-the-knar-knowledge-and-projection-concepts/answer
+    title: Answer
+    breadcrumbs:
+    - knowledge implements the KNAR knowledge and projection concepts
+    - Answer
+    about:
+    - knowledge implements the KNAR knowledge and projection concepts
+    - knowledge implements the knar knowledge and projection concepts
+    - Answer
+    - answer
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-the-knar-orchestrator-is-the-evaluator-one-level-up
+  sections:
+  - path: the-knar-orchestrator-is-the-evaluator-one-level-up
+    title: The KNAR orchestrator is the evaluator one level up
+    breadcrumbs:
+    - The KNAR orchestrator is the evaluator one level up
+    about:
+    - The KNAR orchestrator is the evaluator one level up
+    - the knar orchestrator is the evaluator one level up
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-knar-orchestrator-is-the-evaluator-one-level-up
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: the-knar-orchestrator-is-the-evaluator-one-level-up/answer
+    title: Answer
+    breadcrumbs:
+    - The KNAR orchestrator is the evaluator one level up
+    - Answer
+    about:
+    - The KNAR orchestrator is the evaluator one level up
+    - the knar orchestrator is the evaluator one level up
+    - Answer
+    - answer
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
+  sections:
+  - path: the-knar-canonical-api-and-the-knowledge-operations-are-the-same-surface
+    title: The KNAR canonical API and the knowledge operations are the same surface
+    breadcrumbs:
+    - The KNAR canonical API and the knowledge operations are the same surface
+    about:
+    - The KNAR canonical API and the knowledge operations are the same surface
+    - the knar canonical api and the knowledge operations are the same surface
+    - cross:knar_knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-knar-canonical-api-and-the-knowledge-operations-are-the-same-surface
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: the-knar-canonical-api-and-the-knowledge-operations-are-the-same-surface/answer
+    title: Answer
+    breadcrumbs:
+    - The KNAR canonical API and the knowledge operations are the same surface
+    - Answer
+    about:
+    - The KNAR canonical API and the knowledge operations are the same surface
+    - the knar canonical api and the knowledge operations are the same surface
+    - Answer
+    - answer
+    - cross:knar_knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  sections:
+  - path: selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+    title: SelfDoc and anchor motive share one principle of discoverability
+    breadcrumbs:
+    - SelfDoc and anchor motive share one principle of discoverability
+    about:
+    - SelfDoc and anchor motive share one principle of discoverability
+    - selfdoc and anchor motive share one principle of discoverability
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: selfdoc-and-anchor-motive-share-one-principle-of-discoverability/answer
+    title: Answer
+    breadcrumbs:
+    - SelfDoc and anchor motive share one principle of discoverability
+    - Answer
+    about:
+    - SelfDoc and anchor motive share one principle of discoverability
+    - selfdoc and anchor motive share one principle of discoverability
+    - Answer
+    - answer
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-declarative-agents-and-declarative-grammar-are-the-same-bet
+  sections:
+  - path: declarative-agents-and-declarative-grammar-are-the-same-bet
+    title: Declarative agents and declarative grammar are the same bet
+    breadcrumbs:
+    - Declarative agents and declarative grammar are the same bet
+    about:
+    - Declarative agents and declarative grammar are the same bet
+    - declarative agents and declarative grammar are the same bet
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: declarative-agents-and-declarative-grammar-are-the-same-bet
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: declarative-agents-and-declarative-grammar-are-the-same-bet/answer
+    title: Answer
+    breadcrumbs:
+    - Declarative agents and declarative grammar are the same bet
+    - Answer
+    about:
+    - Declarative agents and declarative grammar are the same bet
+    - declarative agents and declarative grammar are the same bet
+    - Answer
+    - answer
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knar_knowledge
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
