@@ -20,6 +20,7 @@ tags:
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   cross:knowledge_kgdb:
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-the-projector-gives-the-evaluator-a-world
   cross:knowledge_sldb:
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
@@ -29,6 +30,8 @@ tags:
   cross:provenance_concept_graph:
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-the-kb-needs-three-connected-graph-strata
+  cross:sldb_kgdb:
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   cross:smg_command_layer:
   - atom-commands-follow-the-smg-model-surface-meaning-graph
   cross:tutor_apoe_hum_ecosystem:
@@ -97,16 +100,21 @@ tags:
   - atom-grafo-indice-g-index-graph-and-collision-detection
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-grafo-fuente-de-verdad
   - atom-knar-knowledge-projection
   - atom-knar-projection
   - atom-knar-projector
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
+  - atom-misnamed-query-fields-silently-match-everything
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-kb-needs-three-connected-graph-strata
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   domain:knowledge_representation:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
@@ -408,7 +416,9 @@ tags:
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   graph:materialization:
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   graph:provenance:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
@@ -424,10 +434,13 @@ tags:
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
   graph:retrieval:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-misnamed-query-fields-silently-match-everything
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   graph:structure:
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-the-kb-needs-three-connected-graph-strata
   graph:taxonomy:
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
@@ -445,14 +458,17 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-marcado-should-own-the-annotation-layer-over-samples
+  - atom-misnamed-query-fields-silently-match-everything
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   - atom-question-type-should-remain-an-explicit-governance-dimension
@@ -463,7 +479,9 @@ tags:
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
   - atom-validation-diagnostics-use-structured-codes
@@ -929,6 +947,7 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
@@ -936,6 +955,7 @@ tags:
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kernel-symbol-policy
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-astro-render
   - atom-knar-clojure-modelo-orquestacion
@@ -964,6 +984,7 @@ tags:
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-meel-engine
+  - atom-misnamed-query-fields-silently-match-everything
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
@@ -978,8 +999,10 @@ tags:
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
@@ -1216,7 +1239,12 @@ tags:
   system:kgdb:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
+  - atom-graph-freshness-is-the-producers-responsibility
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-misnamed-query-fields-silently-match-everything
+  - atom-structuredquery-filters-facets-scope-and-relations
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   system:knar:
   - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-knar-agentes-datos
@@ -1813,6 +1841,7 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
@@ -1827,6 +1856,7 @@ tags:
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-agentes-datos
   - atom-knar-api-nodo
@@ -1916,6 +1946,7 @@ tags:
   - atom-meel-engine
   - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  - atom-misnamed-query-fields-silently-match-everything
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-omnirepresentacion-block-matrix-for-llm-integration
@@ -1968,6 +1999,7 @@ tags:
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-structural-masks-valid-sense-observed-discriminative
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
@@ -1997,6 +2029,7 @@ tags:
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
   - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
@@ -2088,6 +2121,7 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-graph-freshness-is-the-producers-responsibility
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
@@ -2102,6 +2136,7 @@ tags:
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-agentes-datos
   - atom-knar-api-nodo
@@ -2191,6 +2226,7 @@ tags:
   - atom-meel-engine
   - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  - atom-misnamed-query-fields-silently-match-everything
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-omnirepresentacion-block-matrix-for-llm-integration
@@ -2243,6 +2279,7 @@ tags:
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-structural-masks-valid-sense-observed-discriminative
+  - atom-structuredquery-filters-facets-scope-and-relations
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
@@ -2272,6 +2309,7 @@ tags:
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
   - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
@@ -5519,5 +5557,62 @@ documents:
     - system:knar
     - system:knowledge
     - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-nodes-are-identity-edges-and-open-facets:
+    model: AtomDoc
+    path: knowledge/atoms/atom-kgdb-nodes-are-identity-edges-and-open-facets.md
+    tags:
+    - domain:graph_architecture
+    - graph:structure
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route:
+    model: AtomDoc
+    path: knowledge/atoms/atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route.md
+    tags:
+    - cross:sldb_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-structuredquery-filters-facets-scope-and-relations:
+    model: AtomDoc
+    path: knowledge/atoms/atom-structuredquery-filters-facets-scope-and-relations.md
+    tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-misnamed-query-fields-silently-match-everything:
+    model: AtomDoc
+    path: knowledge/atoms/atom-misnamed-query-fields-silently-match-everything.md
+    tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-graph-freshness-is-the-producers-responsibility:
+    model: AtomDoc
+    path: knowledge/atoms/atom-graph-freshness-is-the-producers-responsibility.md
+    tags:
+    - cross:knowledge_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
     - type.knowledge.atom
     - workspace.desk.atoms

@@ -3505,3 +3505,65 @@ documents:
   - topic:semantic_anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-kgdb-nodes-are-identity-edges-and-open-facets
+  path: knowledge/atoms/atom-kgdb-nodes-are-identity-edges-and-open-facets.md
+  hash_c: e47f2c7182488a8bfe6590fdb74426daf73de5cd45f55505ea8e98ce9488665d
+  hash_d: 876b4f4b8de91b9bd6320f3015df4e0adaa3f5808819512981c688d894f7e172
+  semantic_tags:
+  - domain:graph_architecture
+  - graph:structure
+  - impl:external
+  - kind:software
+  - system:kgdb
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
+  path: knowledge/atoms/atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route.md
+  hash_c: 045e7c50427b51c8ab4a62f7d6845ae52cdffafed0c33a2c22785aea63a7544e
+  hash_d: 804831c61d11b2a1e0ac0cace3c62811910e39e8ed4509e1d631a69f422ea56b
+  semantic_tags:
+  - cross:sldb_kgdb
+  - domain:graph_architecture
+  - graph:materialization
+  - impl:external
+  - kind:software
+  - system:kgdb
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-structuredquery-filters-facets-scope-and-relations
+  path: knowledge/atoms/atom-structuredquery-filters-facets-scope-and-relations.md
+  hash_c: 1ddd16c6047d69b046f0a919be89449772fd9a9707832724f5495efe0e774822
+  hash_d: 4aa5c0001812ed9c3012d9e003dd477bd891442bada4c2911a3aad7de3a92028
+  semantic_tags:
+  - domain:graph_architecture
+  - graph:retrieval
+  - impl:external
+  - kind:software
+  - system:kgdb
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-misnamed-query-fields-silently-match-everything
+  path: knowledge/atoms/atom-misnamed-query-fields-silently-match-everything.md
+  hash_c: 059856912114290ecbc0c07f612904e6bd6dafd03472aa4b3af83539db07a970
+  hash_d: 87880fed796f72d9b726e7554b0b87a1b98aff832fac3291bd3c4935029a2998
+  semantic_tags:
+  - domain:graph_architecture
+  - graph:retrieval
+  - impl:external
+  - kind:software
+  - system:kgdb
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-graph-freshness-is-the-producers-responsibility
+  path: knowledge/atoms/atom-graph-freshness-is-the-producers-responsibility.md
+  hash_c: 4842581233833bb40b6da53814e4eb0fbbcab54a5368273a0f8ad5b2096e6076
+  hash_d: 1c808c0f6449dd8e89f9ec488134a7d0a1373248389ceaabb4fa6450bbb2e64d
+  semantic_tags:
+  - cross:knowledge_kgdb
+  - domain:graph_architecture
+  - graph:materialization
+  - impl:external
+  - kind:software
+  - system:kgdb
+  - type.knowledge.atom
+  - workspace.desk.atoms
