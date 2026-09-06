@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-knowledge-cli = "knowledge.cli:main"
+knowledge-cli = "knowledge.cli.main:main"
 
 [project.urls]
 Homepage = "https://github.com/jp-proyectos/knowledge"

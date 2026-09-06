@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
-"""knowledge CLI entry point: python -m knowledge_base."""
+"""knowledge CLI entry point."""
 import sys
 
-from knowledge.cli import main
+from knowledge.cli.main import main
 
 sys.exit(main())
