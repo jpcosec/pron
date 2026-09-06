@@ -222,7 +222,7 @@ def test_derived_relation_foreign_key(kb):
 
 def test_where_uses_sldb_engine(kb):
     _clear_session(kb)
-    code, out = krun(kb, "list", "book", "--where", 'status = active', "--title")
+    code, out = krun(kb, "list", "book", "--where", 'status = \"active\"', "--title")
     assert code == 0
     assert out["payload"] == [{"title": "El otoño del patriarca"}]
 
