@@ -3,13 +3,18 @@
 Implements atom-every-read-response-carries-refs-for-auditability and
 atom-semantic-errors-answer-symbol-motive-and-next-action.
 """
+
 from __future__ import annotations
 
 import json
 from typing import Any
 
 from knowledge.core.results import (
-    Ambiguous, Missing, OperationResult, SemanticError, to_dict,
+    Ambiguous,
+    Missing,
+    OperationResult,
+    SemanticError,
+    to_dict,
 )
 
 
@@ -55,7 +60,9 @@ def _text(data: dict[str, Any]) -> str:
         if data.get("nearest"):
             lines.append(f"  Cercanos: {', '.join(data['nearest'])}")
     else:
-        lines.append(json.dumps(data.get("payload"), ensure_ascii=False, indent=1, default=str))
+        lines.append(
+            json.dumps(data.get("payload"), ensure_ascii=False, indent=1, default=str)
+        )
         if data.get("refs"):
             lines.append("refs: " + ", ".join(data["refs"]))
     return "\n".join(lines)

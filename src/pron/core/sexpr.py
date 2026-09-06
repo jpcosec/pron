@@ -4,6 +4,7 @@ Implements atom-sexpr-serialization-quotes-selectors-and-roundtrips: symbols
 unquoted, selectors always double-quoted, options as trailing :keyword pairs,
 and parse(serialize(e)) == e. Depends on nothing in the project.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass

@@ -3,6 +3,7 @@
 One pending expression at a time, persisted in .knowledge/session.json under
 the cwd, discarded after 15 minutes or when the store's hash_a changes.
 """
+
 from __future__ import annotations
 
 import json
@@ -35,12 +36,17 @@ class Session:
     def save(self, pending_sexpr: str, candidates: list[str]) -> None:
         """Persist one pending expression (replaces any previous one)."""
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(json.dumps({
-            "pending_sexpr": pending_sexpr,
-            "candidates": candidates,
-            "created_at": time.time(),
-            "store_hash": self.store_hash,
-        }, indent=1))
+        self.path.write_text(
+            json.dumps(
+                {
+                    "pending_sexpr": pending_sexpr,
+                    "candidates": candidates,
+                    "created_at": time.time(),
+                    "store_hash": self.store_hash,
+                },
+                indent=1,
+            )
+        )
 
     def clear(self) -> None:
         """Drop the pending state."""

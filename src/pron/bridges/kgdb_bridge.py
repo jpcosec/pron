@@ -4,11 +4,11 @@ Loads the persisted networkx graph produced by `sldb semantic-export` +
 `kgdb ingest-sldb`, and warns on staleness instead of serving old truth
 (atom-graph-freshness-is-the-producers-responsibility).
 """
+
 from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
 
 GRAPH_RELPATH = ".sldb/runtime/knowledge.nx.json"
 

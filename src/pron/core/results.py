@@ -3,6 +3,7 @@
 Implements atom-resolution-outcomes-are-typed-values-not-exceptions: outcomes
 are values, exceptions are reserved for bugs.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field

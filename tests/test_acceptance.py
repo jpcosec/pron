@@ -3,6 +3,7 @@
 Implements atom-canonical-commands-are-acceptance-tests-from-day-one.
 Run from the repo root: PYTHONPATH=src pytest tests/ -x -q
 """
+
 from __future__ import annotations
 
 import json
@@ -16,9 +17,12 @@ ENV = {"PYTHONPATH": str(ROOT / "src")}
 
 def run(*args: str) -> tuple[int, dict | str]:
     import os
+
     r = subprocess.run(
         [sys.executable, "-m", "knowledge", *args],
-        capture_output=True, text=True, cwd=ROOT,
+        capture_output=True,
+        text=True,
+        cwd=ROOT,
         env={**os.environ, **ENV},
     )
     try:
@@ -30,6 +34,7 @@ def run(*args: str) -> tuple[int, dict | str]:
 def test_sexpr_roundtrip():
     sys.path.insert(0, str(ROOT / "src"))
     from knowledge.core.sexpr import parse, serialize
+
     text = '(check (rel preferences (doc user "juanito")) :project summary)'
     assert serialize(parse(text)) == text
 
@@ -115,7 +120,10 @@ def test_where_contains_on_tags():
 
 def test_derived_relation_overlap():
     """A relation that exists in neither store, declared as an expr anchor."""
-    code, out = run("eval", '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))')
+    code, out = run(
+        "eval",
+        '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))',
+    )
     assert code == 0
     tags = [p.get("tag") for p in out["payload"] if "tag" in p]
     assert "domain:knowledge_representation" in tags
@@ -129,7 +137,10 @@ def test_derived_relation_kin():
 
 def test_setop_common_is_intersection():
     code_a, a = run("eval", '(check (kin "atom-searchvector"))')
-    code_o, o = run("eval", '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))')
+    code_o, o = run(
+        "eval",
+        '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))',
+    )
     assert len(o["refs"]) <= len(a["refs"])  # intersection can't exceed one side
 
 
@@ -140,14 +151,20 @@ def test_foreign_kb_full_flow(tmp_path=None):
     derived relations) all declared by the app, zero knowledge code changes.
     """
     import os
+
     kb = Path("/tmp/team-kb")
     if not kb.exists():
         return  # foreign KB fixture not present; covered manually
     env = {**os.environ, **ENV}
 
     def krun(*args):
-        r = subprocess.run([sys.executable, "-m", "knowledge", *args],
-                           capture_output=True, text=True, cwd=kb, env=env)
+        r = subprocess.run(
+            [sys.executable, "-m", "knowledge", *args],
+            capture_output=True,
+            text=True,
+            cwd=kb,
+            env=env,
+        )
         try:
             return r.returncode, json.loads(r.stdout)
         except json.JSONDecodeError:

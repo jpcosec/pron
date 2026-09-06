@@ -5,6 +5,7 @@ test — models, data, and grammar all declared by the fixture. No atoms, no
 dependency on this repo's store. This is the product test: any app should get
 this exact behavior by declaring its own models and anchors.
 """
+
 from __future__ import annotations
 
 import json
@@ -77,18 +78,51 @@ MODELS = textwrap.dedent('''
 ''')
 
 AUTHORS = [
-    {"id": "author-gabriel-garcia", "name": "Gabriel García", "bio": "Realismo mágico.", "tags": ["lang:es"]},
-    {"id": "author-gabriel-mistral", "name": "Gabriel Mistral", "bio": "Homónimo de prueba.", "tags": ["lang:es"]},
-    {"id": "author-ursula", "name": "Ursula K. Le Guin", "bio": "Ciencia ficción.", "tags": ["lang:en"]},
+    {
+        "id": "author-gabriel-garcia",
+        "name": "Gabriel García",
+        "bio": "Realismo mágico.",
+        "tags": ["lang:es"],
+    },
+    {
+        "id": "author-gabriel-mistral",
+        "name": "Gabriel Mistral",
+        "bio": "Homónimo de prueba.",
+        "tags": ["lang:es"],
+    },
+    {
+        "id": "author-ursula",
+        "name": "Ursula K. Le Guin",
+        "bio": "Ciencia ficción.",
+        "tags": ["lang:en"],
+    },
 ]
 
 BOOKS = [
-    {"id": "book-cien-anos", "title": "Cien años de soledad", "author": "author-gabriel-garcia",
-     "status": "done", "synopsis": "Macondo.", "tags": ["genre:novel"]},
-    {"id": "book-otono", "title": "El otoño del patriarca", "author": "author-gabriel-garcia",
-     "status": "active", "synopsis": "El dictador.", "tags": ["genre:novel"]},
-    {"id": "book-dispossessed", "title": "The Dispossessed", "author": "author-ursula",
-     "status": "pending", "synopsis": "Anarres y Urras.", "tags": ["genre:scifi"]},
+    {
+        "id": "book-cien-anos",
+        "title": "Cien años de soledad",
+        "author": "author-gabriel-garcia",
+        "status": "done",
+        "synopsis": "Macondo.",
+        "tags": ["genre:novel"],
+    },
+    {
+        "id": "book-otono",
+        "title": "El otoño del patriarca",
+        "author": "author-gabriel-garcia",
+        "status": "active",
+        "synopsis": "El dictador.",
+        "tags": ["genre:novel"],
+    },
+    {
+        "id": "book-dispossessed",
+        "title": "The Dispossessed",
+        "author": "author-ursula",
+        "status": "pending",
+        "synopsis": "Anarres y Urras.",
+        "tags": ["genre:scifi"],
+    },
 ]
 
 ANCHORS = [
@@ -101,16 +135,29 @@ ANCHORS = [
     ("title", "projection", "fields:title", "Solo el título."),
     ("summary", "projection", "view:summary", "Vista resumida."),
     ("tagged", "relation", "edge:tagged_as", "Los tags de grafo de un documento."),
-    ("works", "expr", "expr:(filter-by book author (doc author _))",
-     "Los libros escritos por un autor: join por foreign key, no existe como edge."),
-    ("shared", "expr", "expr:(common (doc book _) (doc book _))",
-     "Lo que dos libros comparten en el grafo."),
+    (
+        "works",
+        "expr",
+        "expr:(filter-by book author (doc author _))",
+        "Los libros escritos por un autor: join por foreign key, no existe como edge.",
+    ),
+    (
+        "shared",
+        "expr",
+        "expr:(common (doc book _) (doc book _))",
+        "Lo que dos libros comparten en el grafo.",
+    ),
 ]
 
 
 def sh(cwd: Path, *args: str) -> tuple[int, str]:
-    r = subprocess.run(list(args), capture_output=True, text=True, cwd=cwd,
-                       env={**os.environ, "PYTHONPATH": KNOWLEDGE_SRC})
+    r = subprocess.run(
+        list(args),
+        capture_output=True,
+        text=True,
+        cwd=cwd,
+        env={**os.environ, "PYTHONPATH": KNOWLEDGE_SRC},
+    )
     return r.returncode, (r.stdout or r.stderr)
 
 
@@ -128,38 +175,119 @@ def kb(tmp_path_factory) -> Path:
     root = tmp_path_factory.mktemp("library-kb")
     (root / "models.py").write_text(MODELS)
 
-    assert sh(root, sys.executable, "-m", "sldb", "stores", "init", "--path", ".")[0] == 0
+    assert (
+        sh(root, sys.executable, "-m", "sldb", "stores", "init", "--path", ".")[0] == 0
+    )
     for model in ("models:AuthorDoc", "models:BookDoc"):
-        assert sh(root, sys.executable, "-m", "sldb", "models", "add", model,
-                  "--store", ".sldb", "--pythonpath", ".")[0] == 0
-    assert sh(root, sys.executable, "-m", "sldb", "models", "add",
-              "sldb.models.knowledge_surface:AnchorDoc",
-              "--store", ".sldb", "--pythonpath", SLDB_SRC)[0] == 0
+        assert (
+            sh(
+                root,
+                sys.executable,
+                "-m",
+                "sldb",
+                "models",
+                "add",
+                model,
+                "--store",
+                ".sldb",
+                "--pythonpath",
+                ".",
+            )[0]
+            == 0
+        )
+    assert (
+        sh(
+            root,
+            sys.executable,
+            "-m",
+            "sldb",
+            "models",
+            "add",
+            "sldb.models.knowledge_surface:AnchorDoc",
+            "--store",
+            ".sldb",
+            "--pythonpath",
+            SLDB_SRC,
+        )[0]
+        == 0
+    )
 
-    for sub, model, rows in (("authors", "AuthorDoc", AUTHORS), ("books", "BookDoc", BOOKS)):
+    for sub, model, rows in (
+        ("authors", "AuthorDoc", AUTHORS),
+        ("books", "BookDoc", BOOKS),
+    ):
         (root / sub).mkdir()
         for row in rows:
             payload = root / "payload.json"
             payload.write_text(json.dumps(row))
-            code, out = sh(root, sys.executable, "-m", "sldb", "docs", "create",
-                           "--model", model, "-o", f"{sub}/{row['id']}.md",
-                           str(payload), "--store", ".sldb", "--pythonpath", ".")
+            code, out = sh(
+                root,
+                sys.executable,
+                "-m",
+                "sldb",
+                "docs",
+                "create",
+                "--model",
+                model,
+                "-o",
+                f"{sub}/{row['id']}.md",
+                str(payload),
+                "--store",
+                ".sldb",
+                "--pythonpath",
+                ".",
+            )
             assert code == 0, out
 
     (root / "anchors").mkdir()
     for symbol, kind, ref, motive in ANCHORS:
         payload = root / "payload.json"
-        payload.write_text(json.dumps({
-            "id": f"anchor-{symbol}", "symbol": symbol, "kind": kind,
-            "ref": ref, "motive": motive, "tags": ["entity:anchor"],
-        }))
-        code, out = sh(root, sys.executable, "-m", "sldb", "docs", "create",
-                       "--model", "AnchorDoc", "-o", f"anchors/anchor-{symbol}.md",
-                       str(payload), "--store", ".sldb", "--pythonpath", SLDB_SRC)
+        payload.write_text(
+            json.dumps(
+                {
+                    "id": f"anchor-{symbol}",
+                    "symbol": symbol,
+                    "kind": kind,
+                    "ref": ref,
+                    "motive": motive,
+                    "tags": ["entity:anchor"],
+                }
+            )
+        )
+        code, out = sh(
+            root,
+            sys.executable,
+            "-m",
+            "sldb",
+            "docs",
+            "create",
+            "--model",
+            "AnchorDoc",
+            "-o",
+            f"anchors/anchor-{symbol}.md",
+            str(payload),
+            "--store",
+            ".sldb",
+            "--pythonpath",
+            SLDB_SRC,
+        )
         assert code == 0, out
 
-    assert sh(root, sys.executable, "-m", "sldb", "stores", "update",
-              "--store", ".sldb", "--pythonpath", ".")[0] == 0
+    assert (
+        sh(
+            root,
+            sys.executable,
+            "-m",
+            "sldb",
+            "stores",
+            "update",
+            "--store",
+            ".sldb",
+            "--pythonpath",
+            ".",
+        )[0]
+        == 0
+    )
     code, out = krun(root, "project")
     assert code == 0, out
     return root
@@ -222,7 +350,7 @@ def test_derived_relation_foreign_key(kb):
 
 def test_where_uses_sldb_engine(kb):
     _clear_session(kb)
-    code, out = krun(kb, "list", "book", "--where", 'status = \"active\"', "--title")
+    code, out = krun(kb, "list", "book", "--where", 'status = "active"', "--title")
     assert code == 0
     assert out["payload"] == [{"title": "El otoño del patriarca"}]
 
@@ -231,13 +359,17 @@ def test_next_by_status(kb):
     _clear_session(kb)
     code, out = krun(kb, "next", "book", "--summary")
     assert code == 0
-    assert out["payload"]["id"] == "book-otono"  # active outranks pending; done excluded
+    assert (
+        out["payload"]["id"] == "book-otono"
+    )  # active outranks pending; done excluded
 
 
 def test_eval_equals_surface(kb):
     _clear_session(kb)
     _, surface = krun(kb, "show", "book", "book-dispossessed", "--title")
-    _, meaning = krun(kb, "eval", '(check (doc book "book-dispossessed") :project title)')
+    _, meaning = krun(
+        kb, "eval", '(check (doc book "book-dispossessed") :project title)'
+    )
     assert surface["payload"] == meaning["payload"]
 
 
@@ -261,14 +393,53 @@ def test_staleness_guard_then_reproject(kb):
     """Mutating the store makes graph reads refuse stale answers until project."""
     _clear_session(kb)
     payload = kb / "payload.json"
-    payload.write_text(json.dumps({
-        "id": "book-late", "title": "Libro tardío", "author": "author-ursula",
-        "status": "pending", "synopsis": "Nuevo.", "tags": []}))
-    assert sh(kb, sys.executable, "-m", "sldb", "docs", "create", "--model", "BookDoc",
-              "-o", "books/book-late.md", str(payload),
-              "--store", ".sldb", "--pythonpath", ".")[0] == 0
-    assert sh(kb, sys.executable, "-m", "sldb", "stores", "update",
-              "--store", ".sldb", "--pythonpath", ".")[0] == 0
+    payload.write_text(
+        json.dumps(
+            {
+                "id": "book-late",
+                "title": "Libro tardío",
+                "author": "author-ursula",
+                "status": "pending",
+                "synopsis": "Nuevo.",
+                "tags": [],
+            }
+        )
+    )
+    assert (
+        sh(
+            kb,
+            sys.executable,
+            "-m",
+            "sldb",
+            "docs",
+            "create",
+            "--model",
+            "BookDoc",
+            "-o",
+            "books/book-late.md",
+            str(payload),
+            "--store",
+            ".sldb",
+            "--pythonpath",
+            ".",
+        )[0]
+        == 0
+    )
+    assert (
+        sh(
+            kb,
+            sys.executable,
+            "-m",
+            "sldb",
+            "stores",
+            "update",
+            "--store",
+            ".sldb",
+            "--pythonpath",
+            ".",
+        )[0]
+        == 0
+    )
 
     code, out = krun(kb, "book", "book-cien-anos", "check", "tagged")
     assert code == 1

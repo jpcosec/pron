@@ -4,6 +4,7 @@ Implements atom-surface-grammar-is-positional-and-order-agnostic: noun-first
 and verb-first orders desugar to the same Meaning; every token must resolve
 against the anchor table.
 """
+
 from __future__ import annotations
 
 from knowledge.core.anchors import AnchorRegistry
@@ -28,7 +29,13 @@ def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticErro
     verb = next((t for t, k in kinds if k == "operation"), None)
     if verb is None:
         first_unknown = next((t for t, k in kinds if k == "selector"), words[0])
-        return registry.lookup(first_unknown) if isinstance(registry.lookup(first_unknown), SemanticError) else SemanticError(symbol=first_unknown, message=f"'{first_unknown}' no es una operación conocida.")
+        looked_up = registry.lookup(first_unknown)
+        if isinstance(looked_up, SemanticError):
+            return looked_up
+        return SemanticError(
+            symbol=first_unknown,
+            message=f"'{first_unknown}' no es una operación conocida.",
+        )
 
     nouns = [(t, k) for t, k in kinds if k == "model"]
     selectors = [t for t, k in kinds if k == "selector"]
@@ -36,7 +43,10 @@ def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticErro
     exprs = [t for t, k in kinds if k == "expr"]
 
     if not nouns and not exprs:
-        return SemanticError(symbol=verb, message=f"'{verb}' necesita un sustantivo (modelo) sobre el cual operar.")
+        return SemanticError(
+            symbol=verb,
+            message=f"'{verb}' necesita un sustantivo (modelo) sobre el cual operar.",
+        )
 
     if exprs and selectors:
         # derived relation applied to a selector: (expr-sym "selector")

@@ -3,6 +3,7 @@
 Implements atom-the-anchor-table-is-declared-as-sldb-documents-not-code and
 atom-unanchored-symbols-fail-with-an-explicit-semantic-error.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -36,8 +37,10 @@ class AnchorRegistry:
             for doc in self._bridge.documents_of_model("AnchorDoc"):
                 p = doc.payload
                 self._table[p["symbol"]] = Anchor(
-                    symbol=p["symbol"], kind=p["kind"],
-                    ref=p["ref"], motive=p["motive"],
+                    symbol=p["symbol"],
+                    kind=p["kind"],
+                    ref=p["ref"],
+                    motive=p["motive"],
                 )
         return self._table
 

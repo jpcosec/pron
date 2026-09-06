@@ -3,11 +3,11 @@
 Uses the real sldb library layer (load_runtime_documents, resolve_model_ref);
 never reimplements search, never shells out to the sldb CLI.
 """
+
 from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
-from typing import Any
 
 import yaml
 
@@ -28,7 +28,9 @@ class SldbBridge:
         """All tracked RuntimeDocuments (payload already extracted)."""
         if self._docs is None:
             self._docs = load_runtime_documents(
-                self.store, resolve_model_ref, pythonpath=self.pythonpath,
+                self.store,
+                resolve_model_ref,
+                pythonpath=self.pythonpath,
                 include_linked=include_linked,
             )
         return self._docs
@@ -56,7 +58,8 @@ class SldbBridge:
         from sldb.store.query_engine.filter import _where_matches
 
         return [
-            d for d in docs
+            d
+            for d in docs
             if _where_matches(d, expression, resolve_model_ref, self.pythonpath)
         ]
 

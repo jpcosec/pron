@@ -3,6 +3,7 @@
 Implements the usability spec: surface grammar, direct eval, clarification
 dialogue, anchors listing, and the infra layer (model add / project).
 """
+
 from __future__ import annotations
 
 import sys
@@ -25,12 +26,12 @@ def main(argv: list[str] | None = None) -> int:
     if "--format" in args:
         i = args.index("--format")
         fmt = args[i + 1]
-        del args[i:i + 2]
+        del args[i : i + 2]
     root = Path.cwd()
     if "--kb" in args:
         i = args.index("--kb")
         root = Path(args[i + 1]).resolve()
-        del args[i:i + 2]
+        del args[i : i + 2]
 
     if not args:
         print(_help())
@@ -44,11 +45,13 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_anchors(registry, args[1:], fmt)
     if args[0] == "model" and len(args) >= 3 and args[1] == "add":
         from knowledge.infra.projector import model_add
+
         ok, msg = model_add(root, args[2])
         print(msg)
         return 0 if ok else 1
     if args[0] == "project":
         from knowledge.infra.projector import project
+
         ok, msg = project(root)
         print(msg)
         return 0 if ok else 1
@@ -63,13 +66,17 @@ def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
     """The living grammar: all anchors, or one symbol's motive."""
     if rest:
         anchor = registry.lookup(rest[0])
-        text, code = render(anchor if isinstance(anchor, SemanticError) else
-                            _anchor_result(anchor), fmt)
+        text, code = render(
+            anchor if isinstance(anchor, SemanticError) else _anchor_result(anchor), fmt
+        )
         print(text)
         return code
-    rows = [{"symbol": a.symbol, "kind": a.kind, "ref": a.ref, "motive": a.motive}
-            for a in registry.all()]
+    rows = [
+        {"symbol": a.symbol, "kind": a.kind, "ref": a.ref, "motive": a.motive}
+        for a in registry.all()
+    ]
     from knowledge.core.results import OperationResult
+
     text, code = render(OperationResult(status="ok", payload=rows), fmt)
     print(text)
     return code
@@ -77,10 +84,16 @@ def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
 
 def _anchor_result(anchor):
     from knowledge.core.results import OperationResult
-    return OperationResult(status="ok", payload={
-        "symbol": anchor.symbol, "kind": anchor.kind,
-        "ref": anchor.ref, "motive": anchor.motive,
-    })
+
+    return OperationResult(
+        status="ok",
+        payload={
+            "symbol": anchor.symbol,
+            "kind": anchor.kind,
+            "ref": anchor.ref,
+            "motive": anchor.motive,
+        },
+    )
 
 
 def _run_surface(tokens: list[str], root, sldb, registry, fmt: str) -> int:
@@ -129,7 +142,6 @@ def _save_pending(expr, ambiguous: Ambiguous, root, sldb) -> None:
 
 
 def _mark_pending(item):
-    from knowledge.core.sexpr import Symbol
     if isinstance(item, list):
         return [_mark_pending(x) for x in item]
     if isinstance(item, str):

@@ -3,6 +3,7 @@
 Implements atom-the-canonical-operations-are-check-next-assert-create-ingest-return
 (read half) and atom-every-read-response-carries-refs-for-auditability.
 """
+
 from __future__ import annotations
 
 from knowledge.core.results import OperationResult, Resolved
@@ -39,11 +40,15 @@ def check(evaluator, args: list, projection):
         for nid in target["node_ids"]:
             schema = evaluator.kgdb.node(nid) or {}
             semantics = schema.get("semantics") or {}
-            payloads.append(project_payload(dict(semantics), projection) or {"node_id": nid})
+            payloads.append(
+                project_payload(dict(semantics), projection) or {"node_id": nid}
+            )
             refs.append(nid)
         return OperationResult(status="ok", payload=payloads, refs=refs)
 
-    return OperationResult(status="error", payload=f"check no sabe leer {type(target).__name__}")
+    return OperationResult(
+        status="error", payload=f"check no sabe leer {type(target).__name__}"
+    )
 
 
 def _check_rel(evaluator, rel: dict, projection):
@@ -52,7 +57,9 @@ def _check_rel(evaluator, rel: dict, projection):
 
     anchor, source = rel["anchor"], rel["source"]
     if not isinstance(source, Resolved):
-        return OperationResult(status="error", payload="rel requiere un doc resuelto como origen")
+        return OperationResult(
+            status="error", payload="rel requiere un doc resuelto como origen"
+        )
     if not evaluator.kgdb.available():
         return OperationResult(
             status="error",
@@ -71,7 +78,9 @@ def _check_rel(evaluator, rel: dict, projection):
     if direction == "in":
         node_ids = evaluator.kgdb.edges_to(node_id, relation)
     else:
-        node_ids = [e["target_id"] for e in evaluator.kgdb.edges_from(node_id, relation)]
+        node_ids = [
+            e["target_id"] for e in evaluator.kgdb.edges_from(node_id, relation)
+        ]
 
     payloads, refs = [], [source.path]
     for nid in node_ids:

@@ -3,6 +3,7 @@
 Implements atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue:
 exact id, then exact title, then prefix; fuzzy only populates `nearest`.
 """
+
 from __future__ import annotations
 
 from difflib import get_close_matches
@@ -12,7 +13,10 @@ from knowledge.core.results import Ambiguous, Missing, Resolved
 
 
 def resolve_noun(
-    bridge: SldbBridge, model_name: str, selector: str, motive: str,
+    bridge: SldbBridge,
+    model_name: str,
+    selector: str,
+    motive: str,
 ) -> Resolved | Ambiguous | Missing:
     """Resolve a selector against the tracked documents of a model."""
     docs = bridge.documents_of_model(model_name)
@@ -24,8 +28,7 @@ def resolve_noun(
         return _resolved(exact[0])
 
     by_title = [
-        d for d in docs
-        if str(d.payload.get("title", "")).lower() == selector.lower()
+        d for d in docs if str(d.payload.get("title", "")).lower() == selector.lower()
     ]
     if len(by_title) == 1:
         return _resolved(by_title[0])
@@ -46,7 +49,8 @@ def resolve_noun(
 
     # substring over name and title (sldb-style physical match)
     loose = [
-        d for d in docs
+        d
+        for d in docs
         if selector.lower() in d.name.lower()
         or selector.lower() in str(d.payload.get("title", "")).lower()
     ]
@@ -69,6 +73,8 @@ def _ambiguous(docs: list) -> Ambiguous:
 
 def _resolved(doc) -> Resolved:
     return Resolved(
-        name=doc.name, model=doc.model_name,
-        path=str(doc.path), payload=dict(doc.payload),
+        name=doc.name,
+        model=doc.model_name,
+        path=str(doc.path),
+        payload=dict(doc.payload),
     )

@@ -3,16 +3,19 @@
 Implements atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator.
 Grounds (docs m), (doc m "sel"), (rel r expr) and dispatches operations.
 """
+
 from __future__ import annotations
 
-from typing import Any
 
 from knowledge.bridges.kgdb_bridge import KgdbBridge
 from knowledge.bridges.sldb_bridge import SldbBridge
 from knowledge.core.anchors import Anchor, AnchorRegistry
 from knowledge.core.resolution import resolve_noun
 from knowledge.core.results import (
-    Ambiguous, Missing, OperationResult, Resolved, SemanticError,
+    Ambiguous,
+    Missing,
+    Resolved,
+    SemanticError,
 )
 from knowledge.core.sexpr import Keyword, SExpr, Symbol, serialize
 from knowledge.ops import read as read_ops
@@ -21,7 +24,9 @@ from knowledge.ops import read as read_ops
 class Evaluator:
     """Evaluates Meaning against the world (sldb + kgdb)."""
 
-    def __init__(self, sldb: SldbBridge, kgdb: KgdbBridge, registry: AnchorRegistry) -> None:
+    def __init__(
+        self, sldb: SldbBridge, kgdb: KgdbBridge, registry: AnchorRegistry
+    ) -> None:
         self.sldb = sldb
         self.kgdb = kgdb
         self.registry = registry
@@ -29,7 +34,10 @@ class Evaluator:
     def eval(self, expr: SExpr):
         """Evaluate a full expression: (op arg* [:project sym])."""
         if not expr or not isinstance(expr[0], Symbol):
-            return SemanticError(symbol=serialize(expr), message="la expresión no empieza con una operación.")
+            return SemanticError(
+                symbol=serialize(expr),
+                message="la expresión no empieza con una operación.",
+            )
         anchor = self.registry.lookup(expr[0].name)
         if isinstance(anchor, SemanticError):
             return anchor
@@ -61,7 +69,9 @@ class Evaluator:
         while len(out) >= 2 and isinstance(out[-2], Keyword):
             key, val = out[-2].name, out[-1]
             if key == "project":
-                anchor = self.registry.lookup(val.name if isinstance(val, Symbol) else str(val))
+                anchor = self.registry.lookup(
+                    val.name if isinstance(val, Symbol) else str(val)
+                )
                 if not isinstance(anchor, SemanticError):
                     projection = anchor
             elif key == "where":
@@ -101,6 +111,7 @@ class Evaluator:
         if isinstance(anchor, SemanticError) or anchor.kind != "expr":
             return None
         from knowledge.core.sexpr import parse
+
         template = parse(anchor.ref.removeprefix("expr:"))
         holes = iter(arg[1:])
         return _fill(template, holes)
@@ -116,12 +127,14 @@ class Evaluator:
         for g in grounded:
             if isinstance(g, (Ambiguous, Missing, SemanticError)):
                 return g
-        hops = [self._hop_targets(g) for g in grounded]
-        for h in hops:
-            if isinstance(h, SemanticError):
-                return h
+        hops: list[list[str]] = []
+        for g in grounded:
+            targets = self._hop_targets(g)
+            if isinstance(targets, SemanticError):
+                return targets
+            hops.append(targets)
         if op == "related":
-            ids = hops[0]
+            ids = set(hops[0])
         elif op == "common":
             ids = set.intersection(*[set(h) for h in hops]) if hops else set()
         else:
@@ -133,7 +146,10 @@ class Evaluator:
         resolved doc's name. Joins by foreign-key field, a relation stored in
         neither kgdb (no edge) nor sldb (no query for it)."""
         if len(arg) != 4:
-            return SemanticError(symbol="filter-by", message="filter-by requiere (filter-by modelo campo expr).")
+            return SemanticError(
+                symbol="filter-by",
+                message="filter-by requiere (filter-by modelo campo expr).",
+            )
         anchor = self._model_anchor(arg[1])
         if isinstance(anchor, SemanticError):
             return anchor
@@ -142,18 +158,28 @@ class Evaluator:
         if isinstance(inner, (Ambiguous, Missing, SemanticError)):
             return inner
         if not isinstance(inner, Resolved):
-            return SemanticError(symbol="filter-by", message="filter-by requiere un doc resuelto como valor.")
+            return SemanticError(
+                symbol="filter-by",
+                message="filter-by requiere un doc resuelto como valor.",
+            )
         model = anchor.ref.removeprefix("model:")
-        docs = [d for d in self.sldb.documents_of_model(model)
-                if str(d.payload.get(field, "")) == inner.name]
+        docs = [
+            d
+            for d in self.sldb.documents_of_model(model)
+            if str(d.payload.get(field, "")) == inner.name
+        ]
         return {"kind": "docs", "model": model, "docs": docs}
 
     def _hop_targets(self, grounded) -> list[str] | SemanticError:
         """All graph neighbors (out + in) of a grounded doc, any relation."""
         if not isinstance(grounded, Resolved):
-            return SemanticError(symbol="related", message="los combinadores requieren docs resueltos.")
+            return SemanticError(
+                symbol="related", message="los combinadores requieren docs resueltos."
+            )
         if not self.kgdb.available():
-            return SemanticError(symbol="related", message="no hay grafo; corre: knowledge project")
+            return SemanticError(
+                symbol="related", message="no hay grafo; corre: knowledge project"
+            )
         nid = self.kgdb.document_node_id(grounded.model, grounded.name)
         out = [e["target_id"] for e in self.kgdb.edges_from(nid)]
         inc = self.kgdb.edges_to(nid)
@@ -164,7 +190,10 @@ class Evaluator:
         if isinstance(anchor, SemanticError):
             return anchor
         if anchor.kind != "model":
-            return SemanticError(symbol=anchor.symbol, message=f"'{anchor.symbol}' no es un model (es {anchor.kind}).")
+            return SemanticError(
+                symbol=anchor.symbol,
+                message=f"'{anchor.symbol}' no es un model (es {anchor.kind}).",
+            )
         return anchor
 
     def _ground_docs(self, arg):
@@ -172,7 +201,11 @@ class Evaluator:
         if isinstance(anchor, SemanticError):
             return anchor
         model = anchor.ref.removeprefix("model:")
-        return {"kind": "docs", "model": model, "docs": self.sldb.documents_of_model(model)}
+        return {
+            "kind": "docs",
+            "model": model,
+            "docs": self.sldb.documents_of_model(model),
+        }
 
     def _ground_doc(self, arg):
         anchor = self._model_anchor(arg[1])
@@ -183,21 +216,32 @@ class Evaluator:
         return resolve_noun(self.sldb, model, str(selector), anchor.motive)
 
     def _ground_rel(self, arg):
-        anchor = self.registry.lookup(arg[1].name if isinstance(arg[1], Symbol) else str(arg[1]))
+        anchor = self.registry.lookup(
+            arg[1].name if isinstance(arg[1], Symbol) else str(arg[1])
+        )
         if isinstance(anchor, SemanticError):
             return anchor
         if anchor.kind != "relation":
-            return SemanticError(symbol=anchor.symbol, message=f"'{anchor.symbol}' no es una relation (es {anchor.kind}).")
+            return SemanticError(
+                symbol=anchor.symbol,
+                message=f"'{anchor.symbol}' no es una relation (es {anchor.kind}).",
+            )
         inner = self._ground(arg[2])
         if isinstance(inner, (Ambiguous, Missing, SemanticError)):
             return inner
         return {"kind": "rel", "anchor": anchor, "source": inner}
 
     def _dispatch(self, op: str, args: list, projection: Anchor | None):
-        ops = {"check": read_ops.check, "next": read_ops.next_, "return": read_ops.return_}
+        ops = {
+            "check": read_ops.check,
+            "next": read_ops.next_,
+            "return": read_ops.return_,
+        }
         fn = ops.get(op)
         if fn is None:
-            return SemanticError(symbol=op, message=f"operación 'op:{op}' aún no implementada.")
+            return SemanticError(
+                symbol=op, message=f"operación 'op:{op}' aún no implementada."
+            )
         return fn(self, args, projection)
 
 
