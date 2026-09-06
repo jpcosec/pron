@@ -17014,3 +17014,129 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: atom-expr-anchors-declare-derived-relations-neither-store-can-hold
+  sections:
+  - path: expr-anchors-declare-derived-relations-neither-store-can-hold
+    title: Expr anchors declare derived relations neither store can hold
+    breadcrumbs:
+    - Expr anchors declare derived relations neither store can hold
+    about:
+    - Expr anchors declare derived relations neither store can hold
+    - expr anchors declare derived relations neither store can hold
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: expr-anchors-declare-derived-relations-neither-store-can-hold
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: expr-anchors-declare-derived-relations-neither-store-can-hold/answer
+    title: Answer
+    breadcrumbs:
+    - Expr anchors declare derived relations neither store can hold
+    - Answer
+    about:
+    - Expr anchors declare derived relations neither store can hold
+    - expr anchors declare derived relations neither store can hold
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-set-combinators-compose-graph-neighborhoods
+  sections:
+  - path: set-combinators-compose-graph-neighborhoods
+    title: Set combinators compose graph neighborhoods
+    breadcrumbs:
+    - Set combinators compose graph neighborhoods
+    about:
+    - Set combinators compose graph neighborhoods
+    - set combinators compose graph neighborhoods
+    - domain:knowledge_representation
+    - entity:anchor
+    - graph:retrieval
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - graph:retrieval
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: set-combinators-compose-graph-neighborhoods
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: set-combinators-compose-graph-neighborhoods/answer
+    title: Answer
+    breadcrumbs:
+    - Set combinators compose graph neighborhoods
+    - Answer
+    about:
+    - Set combinators compose graph neighborhoods
+    - set combinators compose graph neighborhoods
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - graph:retrieval
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - graph:retrieval
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19

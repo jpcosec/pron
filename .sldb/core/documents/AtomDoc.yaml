@@ -3567,3 +3567,30 @@ documents:
   - system:kgdb
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-expr-anchors-declare-derived-relations-neither-store-can-hold
+  path: knowledge/atoms/atom-expr-anchors-declare-derived-relations-neither-store-can-hold.md
+  hash_c: 056e2488878eb9dc4d6b4e3c00fd0cdcc6b28a74422d7d81e654451c6ec5d226
+  hash_d: c2c494f4d81b430a1044715f3c27e9b6c1f344fd7f0c697ff800f8b8b1442a4e
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-set-combinators-compose-graph-neighborhoods
+  path: knowledge/atoms/atom-set-combinators-compose-graph-neighborhoods.md
+  hash_c: cca4ec21a6df29caf451a20d66af743c56288a9189283fa97d0ff50e775e666d
+  hash_d: c8cbf2d488177690211ff5cc247867804ebc1441baea9a68b43ba33968ba768e
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - graph:retrieval
+  - impl:here
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms

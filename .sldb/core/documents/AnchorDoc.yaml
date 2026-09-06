@@ -131,3 +131,27 @@ documents:
   - system:knowledge
   - type.knowledge.anchor
   - workspace.knowledge.anchors
+- name: anchor-kin
+  path: knowledge/anchors/anchor-kin.md
+  hash_c: 4b74e723296dbe0e2f9d06871761674a6b4f744aa23d338fc994b84ddb2e391e
+  hash_d: 5f89966ff050e4ba46329e48db937c1cb011b74b11cb97d89b7cf810ea06bd40
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-overlap
+  path: knowledge/anchors/anchor-overlap.md
+  hash_c: 8d63768c07125fb9629acc4d442045dc32afe8079a47ac6f8a125fc6c92b43ec
+  hash_d: cd8f3b175c77b237a986be3ed3856a2a2c216155d31fc5ef24f8f29e855e59b5
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors

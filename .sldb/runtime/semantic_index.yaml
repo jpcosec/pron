@@ -120,8 +120,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -147,6 +149,7 @@ tags:
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-entity-indexed-by-relation-participation
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
@@ -169,6 +172,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
@@ -341,8 +345,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -353,9 +359,11 @@ tags:
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   entity:ast_node:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -457,6 +465,7 @@ tags:
   graph:retrieval:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   - atom-misnamed-query-fields-silently-match-everything
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-structuredquery-filters-facets-scope-and-relations
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   graph:structure:
@@ -512,8 +521,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -529,6 +540,7 @@ tags:
   - atom-clarification-state-persists-across-cli-invocations
   - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-every-read-response-carries-refs-for-auditability
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
@@ -546,6 +558,7 @@ tags:
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
@@ -809,6 +822,7 @@ tags:
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-every-read-response-carries-refs-for-auditability
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
@@ -914,6 +928,7 @@ tags:
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-source-identity-validation-should-precede-anchor-validation
   - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
@@ -963,8 +978,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -1365,8 +1382,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -1389,6 +1408,7 @@ tags:
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-every-read-response-carries-refs-for-auditability
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
@@ -1414,6 +1434,7 @@ tags:
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
@@ -1753,6 +1774,7 @@ tags:
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
   - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
   - atom-every-read-response-carries-refs-for-auditability
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
@@ -1763,6 +1785,7 @@ tags:
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
@@ -1825,8 +1848,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -1899,6 +1924,7 @@ tags:
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-every-read-response-carries-refs-for-auditability
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
@@ -2055,6 +2081,7 @@ tags:
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
@@ -2179,6 +2206,7 @@ tags:
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-every-read-response-carries-refs-for-auditability
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
+  - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
@@ -2335,6 +2363,7 @@ tags:
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-set-combinators-compose-graph-neighborhoods
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
@@ -2397,8 +2426,10 @@ tags:
   - anchor-anchor
   - anchor-atom
   - anchor-check
+  - anchor-kin
   - anchor-list
   - anchor-next
+  - anchor-overlap
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -5695,6 +5726,31 @@ documents:
     - system:kgdb
     - type.knowledge.atom
     - workspace.desk.atoms
+  atom-expr-anchors-declare-derived-relations-neither-store-can-hold:
+    model: AtomDoc
+    path: knowledge/atoms/atom-expr-anchors-declare-derived-relations-neither-store-can-hold.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-set-combinators-compose-graph-neighborhoods:
+    model: AtomDoc
+    path: knowledge/atoms/atom-set-combinators-compose-graph-neighborhoods.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - graph:retrieval
+    - impl:here
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
   anchor-check:
     model: AnchorDoc
     path: knowledge/anchors/anchor-check.md
@@ -5810,6 +5866,28 @@ documents:
     path: knowledge/anchors/anchor-tagged.md
     tags:
     - domain:graph_architecture
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-kin:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-kin.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-overlap:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-overlap.md
+    tags:
+    - domain:knowledge_representation
     - entity:anchor
     - impl:here
     - kind:software

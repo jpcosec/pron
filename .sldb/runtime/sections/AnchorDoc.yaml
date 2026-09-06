@@ -604,3 +604,113 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: anchor-kin
+  sections:
+  - path: kin
+    title: kin
+    breadcrumbs:
+    - kin
+    about:
+    - kin
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: kin
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: kin/motive
+    title: Motive
+    breadcrumbs:
+    - kin
+    - Motive
+    about:
+    - kin
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: anchor-overlap
+  sections:
+  - path: overlap
+    title: overlap
+    breadcrumbs:
+    - overlap
+    about:
+    - overlap
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: overlap
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: overlap/motive
+    title: Motive
+    breadcrumbs:
+    - overlap
+    - Motive
+    about:
+    - overlap
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
