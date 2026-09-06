@@ -1390,7 +1390,7 @@ documents:
     - workspace.desk.atoms
   atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/architecture/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
+    path: knowledge/atoms/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management
@@ -1405,7 +1405,7 @@ documents:
     - workspace.desk.atoms
   atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/architecture/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
+    path: knowledge/atoms/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
     tags:
     - cross:tutor_apoe_hum_ecosystem
     - domain:knowledge_management
@@ -1419,7 +1419,7 @@ documents:
     - workspace.desk.atoms
   atom-tags-should-be-facets-not-the-primary-concept-structure:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/architecture/atom-tags-should-be-facets-not-the-primary-concept-structure.md
+    path: knowledge/atoms/atom-tags-should-be-facets-not-the-primary-concept-structure.md
     tags:
     - cross:provenance_concept_graph
     - domain:knowledge_representation
@@ -1435,7 +1435,7 @@ documents:
     - workspace.desk.atoms
   atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/concept/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
+    path: knowledge/atoms/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
     tags:
     - domain:knowledge_representation
     - entity:concept_group
@@ -1451,7 +1451,7 @@ documents:
     - workspace.desk.atoms
   atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/concept/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
+    path: knowledge/atoms/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_representation
@@ -1467,7 +1467,7 @@ documents:
     - workspace.desk.atoms
   atom-question-type-should-remain-an-explicit-governance-dimension:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/concept/atom-question-type-should-remain-an-explicit-governance-dimension.md
+    path: knowledge/atoms/atom-question-type-should-remain-an-explicit-governance-dimension.md
     tags:
     - domain:knowledge_management
     - entity:question_type
@@ -1482,7 +1482,7 @@ documents:
     - workspace.desk.atoms
   atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/governance/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
+    path: knowledge/atoms/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management
@@ -1496,7 +1496,7 @@ documents:
     - workspace.desk.atoms
   atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/governance/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
+    path: knowledge/atoms/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
     tags:
     - domain:knowledge_management
     - entity:atom
@@ -1509,7 +1509,7 @@ documents:
     - workspace.desk.atoms
   atom-the-kb-needs-three-connected-graph-strata:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/graph/atom-the-kb-needs-three-connected-graph-strata.md
+    path: knowledge/atoms/atom-the-kb-needs-three-connected-graph-strata.md
     tags:
     - cross:provenance_concept_graph
     - domain:graph_architecture
@@ -1529,7 +1529,7 @@ documents:
     - workspace.desk.atoms
   atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/legacy/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
+    path: knowledge/atoms/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
     tags:
     - cross:graphlang_kb
     - domain:knowledge_representation
@@ -1544,7 +1544,7 @@ documents:
     - workspace.desk.atoms
   atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/legacy/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
+    path: knowledge/atoms/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
     tags:
     - cross:tutor_apoe_hum_ecosystem
     - domain:knowledge_representation
@@ -1558,7 +1558,7 @@ documents:
     - workspace.desk.atoms
   atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/legacy/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
+    path: knowledge/atoms/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
     tags:
     - cross:tutor_apoe_hum_ecosystem
     - domain:knowledge_representation
@@ -1573,7 +1573,7 @@ documents:
     - workspace.desk.atoms
   atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/legacy/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
+    path: knowledge/atoms/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
     tags:
     - cross:tutor_apoe_hum_ecosystem
     - domain:knowledge_management
@@ -1586,7 +1586,7 @@ documents:
     - workspace.desk.atoms
   atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/migration/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
+    path: knowledge/atoms/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management
@@ -1600,7 +1600,7 @@ documents:
     - workspace.desk.atoms
   atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/migration/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
+    path: knowledge/atoms/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
     tags:
     - domain:knowledge_management
     - entity:atom
@@ -1614,7 +1614,7 @@ documents:
     - workspace.desk.atoms
   atom-bootstrap-kb-should-track-grounding-status-explicitly:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/provenance/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
+    path: knowledge/atoms/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
     tags:
     - domain:knowledge_management
     - entity:atom
@@ -1629,7 +1629,7 @@ documents:
     - workspace.desk.atoms
   atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/provenance/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
+    path: knowledge/atoms/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
     tags:
     - domain:knowledge_management
     - entity:sample
@@ -1644,7 +1644,7 @@ documents:
     - workspace.desk.atoms
   atom-grounding-status-should-distinguish-textual-human-and-validated-support:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/provenance/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
+    path: knowledge/atoms/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
     tags:
     - domain:knowledge_management
     - entity:atom
@@ -1659,7 +1659,7 @@ documents:
     - workspace.desk.atoms
   atom-samples-should-be-the-evidence-objects-between-sources-and-atoms:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/provenance/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
+    path: knowledge/atoms/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
     tags:
     - domain:knowledge_representation
     - entity:atom
@@ -1676,7 +1676,7 @@ documents:
     - workspace.desk.atoms
   atom-the-provenance-graph-is-the-relational-backbone-of-the-kb:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/provenance/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
+    path: knowledge/atoms/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
     tags:
     - domain:knowledge_representation
     - entity:atom
@@ -1691,7 +1691,7 @@ documents:
     - workspace.desk.atoms
   atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
+    path: knowledge/atoms/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management
@@ -1705,7 +1705,7 @@ documents:
     - workspace.desk.atoms
   atom-the-kb-should-support-queries-by-source-project-and-crossing:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/query/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
+    path: knowledge/atoms/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management
@@ -1719,7 +1719,7 @@ documents:
     - workspace.desk.atoms
   atom-each-source-type-should-expose-its-own-retrievable-projections:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/source/atom-each-source-type-should-expose-its-own-retrievable-projections.md
+    path: knowledge/atoms/atom-each-source-type-should-expose-its-own-retrievable-projections.md
     tags:
     - domain:knowledge_representation
     - entity:source
@@ -1732,7 +1732,7 @@ documents:
     - workspace.desk.atoms
   atom-the-source-layer-must-be-multi-source-and-adapter-based:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/source/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
+    path: knowledge/atoms/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
     tags:
     - domain:knowledge_representation
     - entity:source
@@ -1745,7 +1745,7 @@ documents:
     - workspace.desk.atoms
   atom-ast-is-a-first-class-document-structure-category-in-the-kb:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/structure/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
+    path: knowledge/atoms/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
     tags:
     - domain:knowledge_representation
     - entity:ast_node
@@ -1760,7 +1760,7 @@ documents:
     - workspace.desk.atoms
   atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container:
     model: AtomDoc
-    path: knowledge/atoms/kb/bootstrap/workflow/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
+    path: knowledge/atoms/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
     tags:
     - cross:deskops_kb
     - domain:knowledge_management

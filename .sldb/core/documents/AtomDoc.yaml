@@ -506,7 +506,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
-  path: knowledge/atoms/kb/bootstrap/architecture/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
+  path: knowledge/atoms/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
   hash_c: 943ecb459347c39aaccf4667dd97c3c8561776fab4c0dcba5e910ae8c222cba1
   hash_d: 83e3acd827e41df4cbeee5705b1008aca1eefaf0b40a48134b0d1e953fb26920
   semantic_tags:
@@ -522,7 +522,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
-  path: knowledge/atoms/kb/bootstrap/architecture/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
+  path: knowledge/atoms/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
   hash_c: 8a28e1c771a388428497f5c69b4b3a39ecd41ef992fc7901b44ab706f85a155b
   hash_d: f8055d9d6ddb5922ba3024b703d18d3e553fdc5923439f1aae246a4f438b88b5
   semantic_tags:
@@ -537,7 +537,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-tags-should-be-facets-not-the-primary-concept-structure
-  path: knowledge/atoms/kb/bootstrap/architecture/atom-tags-should-be-facets-not-the-primary-concept-structure.md
+  path: knowledge/atoms/atom-tags-should-be-facets-not-the-primary-concept-structure.md
   hash_c: 272e5d343815c06e11d84f4b5b78d2fe45742429b8d69e3dde7d4cfd5357ab0f
   hash_d: 27bb9905c0c8ec6eb7422111accf6bc88c4dfca94940da3c28a32cbaa56b3abc
   semantic_tags:
@@ -554,7 +554,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
-  path: knowledge/atoms/kb/bootstrap/concept/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
+  path: knowledge/atoms/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
   hash_c: 30f33be47fe84af99fc3591bae823ab06f5f163a2cd4f3d05639cf47b179a36a
   hash_d: 20966e15bb038a4716ae29c49a2214fc9ec587735783c23a5b4bfd0c111bce4c
   semantic_tags:
@@ -571,7 +571,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
-  path: knowledge/atoms/kb/bootstrap/concept/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
+  path: knowledge/atoms/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
   hash_c: 2d7eaad1d226a3a0f874987319c7aff537f17a2fa23306d166f8e94862a00eda
   hash_d: 5b08d38e9b0b17c26c5f461c4f0e4ee1ce0522e3f8c641e9af04d16b7dc8f571
   semantic_tags:
@@ -588,7 +588,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-question-type-should-remain-an-explicit-governance-dimension
-  path: knowledge/atoms/kb/bootstrap/concept/atom-question-type-should-remain-an-explicit-governance-dimension.md
+  path: knowledge/atoms/atom-question-type-should-remain-an-explicit-governance-dimension.md
   hash_c: 2048065838da3bdf9e6cdb9c261f0cb4b83783974d73f625d94e1574be360581
   hash_d: ee91eeb387444b78b9f91317684a44875b9ffb9d18c4e6d14d8b2c188ce81510
   semantic_tags:
@@ -604,7 +604,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
-  path: knowledge/atoms/kb/bootstrap/governance/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
+  path: knowledge/atoms/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
   hash_c: 2b45e1861150c72fd3282dcb07cde41dee06352f4d38556512ca37b17cf15571
   hash_d: da51a599185c4f9570f5f59eec656e8b13f2466eb9e937420a9aa0099f0eefdc
   semantic_tags:
@@ -619,7 +619,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
-  path: knowledge/atoms/kb/bootstrap/governance/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
+  path: knowledge/atoms/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
   hash_c: b6d6da429d0e012948c28565504b9caaccdd17c53c0897732c9037ad23d8f681
   hash_d: d3ba3ed809c6ed9b73fed95e8fb41dc8eb5602700eab2d7373b3814f05356458
   semantic_tags:
@@ -633,7 +633,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-needs-three-connected-graph-strata
-  path: knowledge/atoms/kb/bootstrap/graph/atom-the-kb-needs-three-connected-graph-strata.md
+  path: knowledge/atoms/atom-the-kb-needs-three-connected-graph-strata.md
   hash_c: 8a55cea26a7964c7a9e60648d56529b86f2c2eb1aea3c555674e6bf4481ead83
   hash_d: 3fd24a9693797b528c8f7b4001c581b9ea1f15dd9713800b3d9c43b97eb24e1e
   semantic_tags:
@@ -654,7 +654,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
-  path: knowledge/atoms/kb/bootstrap/legacy/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
+  path: knowledge/atoms/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
   hash_c: fcf8b7fd2a1dff32e63da9440b43ef90d83d8ec7d18340160c345a54da94e698
   hash_d: 92e36e37a6043d97ba77056ec966f2ed7f33cf3b259ce77c656de9e0b60326a6
   semantic_tags:
@@ -670,7 +670,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
-  path: knowledge/atoms/kb/bootstrap/legacy/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
+  path: knowledge/atoms/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
   hash_c: fd3c234c51af142139377142b90468bd204d55cfa762b060704c1564cdfdc505
   hash_d: f25d742c013eaa592693960de9ca038b80b456afa706c6c46e0e6dd803c9a49f
   semantic_tags:
@@ -685,7 +685,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
-  path: knowledge/atoms/kb/bootstrap/legacy/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
+  path: knowledge/atoms/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
   hash_c: cc4cdf66886260c25b32c130842c7542fe263076e3b979874ddd58c7dfc4f099
   hash_d: 834f24e5b951bddd59ebd511f98cd7485d986b97bc6aebb13af14a9cabaf66f3
   semantic_tags:
@@ -701,7 +701,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
-  path: knowledge/atoms/kb/bootstrap/legacy/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
+  path: knowledge/atoms/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
   hash_c: b6a1ffc736df53426d0995cbe85c8275ab6a95d7f671711a1152c9da7a4b4cc6
   hash_d: 98e89ee34066daa4e0708703c0fa3199255acc9977981268809f94e6cf2ee17e
   semantic_tags:
@@ -715,7 +715,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
-  path: knowledge/atoms/kb/bootstrap/migration/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
+  path: knowledge/atoms/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
   hash_c: db9d8876b7e02b239f80669c2e0c6538e24f06e104c15abb5d4565b54c784138
   hash_d: b44edb81a9da84e6188431dac4a74392b7ed76c783c79931990607a4c711c7e1
   semantic_tags:
@@ -730,7 +730,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
-  path: knowledge/atoms/kb/bootstrap/migration/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
+  path: knowledge/atoms/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
   hash_c: a050aa7a7ad4c9af1b5eba9c2c8c84803bfc9c40addfbea2404c622cf7c7cc5e
   hash_d: 8cac275f7c17990071a19d09f15870c3c85ff79b637fae648daaea83c6a4671a
   semantic_tags:
@@ -745,7 +745,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-should-track-grounding-status-explicitly
-  path: knowledge/atoms/kb/bootstrap/provenance/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
+  path: knowledge/atoms/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
   hash_c: 2616e34ae608d5f375ec46dff23df195f189e38f13c9734728f411b79da56ff0
   hash_d: d885405a373437519b8dcc98824f3088785e4334f33f8e8bb0c1066c9db7e310
   semantic_tags:
@@ -761,7 +761,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
-  path: knowledge/atoms/kb/bootstrap/provenance/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
+  path: knowledge/atoms/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
   hash_c: 32ffa4ecef2990e507d880d35b81afe16959c067d82458402d8342460765b95f
   hash_d: 47093761468293b90b11404567fad4d06018591e84f3dcdff74ec61d6938f8f4
   semantic_tags:
@@ -777,7 +777,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-grounding-status-should-distinguish-textual-human-and-validated-support
-  path: knowledge/atoms/kb/bootstrap/provenance/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
+  path: knowledge/atoms/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
   hash_c: 298444b49b2f0d286c65341227fa0405425531af03a27d4186486602dd657dc3
   hash_d: 7c5c004b257d976ae25ccc71fbe6dc2a6ad077abfeba8966544018dce568f287
   semantic_tags:
@@ -793,7 +793,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
-  path: knowledge/atoms/kb/bootstrap/provenance/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
+  path: knowledge/atoms/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
   hash_c: 6d48332ebaa98437e325c44b0f8b0a5c9522f3e658bd16780a5f74b9ad26184a
   hash_d: fe76fbf5be469017dd29d756ccefb6ce4fde43c78412b46473b6dddc09e4d019
   semantic_tags:
@@ -811,7 +811,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
-  path: knowledge/atoms/kb/bootstrap/provenance/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
+  path: knowledge/atoms/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
   hash_c: 3b83767d754b51d70e9295c01847110748735ec5895449d72ac19ef9139752c8
   hash_d: 838787a465ce140851b4ec835182f1d211ab137d1e8ef9e0171391022b063266
   semantic_tags:
@@ -827,7 +827,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
-  path: knowledge/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
+  path: knowledge/atoms/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
   hash_c: 5d1f4700d10cd8dd9fdc5433832c7da2ef50aa2a6e622d29670862ee45c906b1
   hash_d: 9661ea006420256868e9de58764b0aad34da79f953516f2a4031be64beb7757c
   semantic_tags:
@@ -842,7 +842,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-support-queries-by-source-project-and-crossing
-  path: knowledge/atoms/kb/bootstrap/query/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
+  path: knowledge/atoms/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
   hash_c: 4823f78ff397337145fbf011ab5792e8a69e64677fa954ac228ef6a6926fceb7
   hash_d: fe8e37f937448768a0dea4fa4df4957dc487a888a26422fec481bcc956998e82
   semantic_tags:
@@ -857,7 +857,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-each-source-type-should-expose-its-own-retrievable-projections
-  path: knowledge/atoms/kb/bootstrap/source/atom-each-source-type-should-expose-its-own-retrievable-projections.md
+  path: knowledge/atoms/atom-each-source-type-should-expose-its-own-retrievable-projections.md
   hash_c: 8dfeed4a8dfee21009f690b3e737c73584ae103797fa62e679f6b62a64ad55d9
   hash_d: bf382387d3dafd8900f3bd0e5b498c9d7426573e1de56576944f9face0fe792f
   semantic_tags:
@@ -871,7 +871,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-source-layer-must-be-multi-source-and-adapter-based
-  path: knowledge/atoms/kb/bootstrap/source/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
+  path: knowledge/atoms/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
   hash_c: 6566eed4c318a127c4b0ed43dbbeb554efe7d748f3354c03f453a37befe5b0f9
   hash_d: 910ef0bd4e0ee6199ba8012e458c4770ca2ebdc915ca520d13de2f6e76b072ca
   semantic_tags:
@@ -885,7 +885,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-ast-is-a-first-class-document-structure-category-in-the-kb
-  path: knowledge/atoms/kb/bootstrap/structure/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
+  path: knowledge/atoms/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
   hash_c: a3148ebf2cd1a7127826aeb01857ab6e6b10cd2731502fef4c09808746b1f1c6
   hash_d: 46285838782462f866de9ad428a14c99c64cd28ae12f8d35a13b984544cc141e
   semantic_tags:
@@ -901,7 +901,7 @@ documents:
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
-  path: knowledge/atoms/kb/bootstrap/workflow/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
+  path: knowledge/atoms/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
   hash_c: a4856df2e56b6b7ae06f561ae41dc646a5fba1782fee3ff0d7d1662f87cfe30b
   hash_d: c718ec0eab739d7d101e2116b475261b2ea8037b62e3bcf6df841cabeaf387e5
   semantic_tags:
