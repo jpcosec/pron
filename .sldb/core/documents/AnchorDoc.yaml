@@ -1,0 +1,133 @@
+documents:
+- name: anchor-check
+  path: knowledge/anchors/anchor-check.md
+  hash_c: 04fa23dd214b55f2da1f5a9c37e2c452c1a0ea1eab5b6cbe0ac89371eae6e553
+  hash_d: 24e28ed32c11573062a894319024e7f7de6664b5c71ec91da77979daffec5a37
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-next
+  path: knowledge/anchors/anchor-next.md
+  hash_c: 9982ffcf6fa642d450fec65207c7ae6f2323712c9851848a597007a1a233a0bd
+  hash_d: fa7671336328c0c1dd2a6bf3896138855dac97984efd2eff5940f063400f3ad1
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-return
+  path: knowledge/anchors/anchor-return.md
+  hash_c: 8579fbb9d245db0dac4511480af0367c76775a32981e2e195c86d7efe46df210
+  hash_d: 7c07939df395068bbcfe40f585a904077773f6a951e40f312cb62cac3d9add62
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-show
+  path: knowledge/anchors/anchor-show.md
+  hash_c: b6ad83b047dafc080a31626ba02107a5062ab85bdebee8f670648a5d02a7a29e
+  hash_d: f7c99e44d23045c635a517a9b207bf7dc2512f4d9c0741bb6cd9ddfb84336ccb
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-list
+  path: knowledge/anchors/anchor-list.md
+  hash_c: 06a629289d17633f674f7d0bc7655e6bfcd2310e95ea4f2bb2a308ea6650a83a
+  hash_d: 5344c950612915d4370b87d0dee3a384bc6e73fc81f5ea96da87dd26dbfa0dfb
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-atom
+  path: knowledge/anchors/anchor-atom.md
+  hash_c: 1852e0ebe69cdb5af7e0fac5dd57615a5f81eb01d62a9a0f9a0f1bdaf063f0eb
+  hash_d: 957ee2caeaa46e9f40b659b0610501cf4ff4f4630891b3afc2a6cd7609404503
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-anchor
+  path: knowledge/anchors/anchor-anchor.md
+  hash_c: ee3ba03f4699a23b8b91e9a23d0222001244de7e1cd38474d04eb0b035cd108a
+  hash_d: 8962a2896a140f3c7c2605bdd6cadc9cb0ad2e911593666bdb9a0aeceb24083a
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-summary
+  path: knowledge/anchors/anchor-summary.md
+  hash_c: e393437be5bfe5a9dc12f3aa636b3305718374d62071a39517ecf76d83895698
+  hash_d: 331b6fed7b90a7632c869fc48c370d6c69913333d219620bbb268d161177b97a
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-title
+  path: knowledge/anchors/anchor-title.md
+  hash_c: e6aac2f43eb57862c59fb2a3976953820e924a77950379e5e9fa01a04b818896
+  hash_d: ebba6693b9dea6ca0048eb4a84a1dd278c3db129bf3feb45fad88e9bded71e63
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-tags
+  path: knowledge/anchors/anchor-tags.md
+  hash_c: 1c08c9d5bd687500259743a99ef334a9c0c833b7b4634e30b11f0a0fab65a9f8
+  hash_d: c1eb04504c3cdd5ade703f22d6c913d2ba8ca48bf445a4b704c70aacc8f91efa
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-tagged
+  path: knowledge/anchors/anchor-tagged.md
+  hash_c: 0f0307b0f8614ae5d96125ddf5d18fc5f7c8d441dd7410f84e65ada219033232
+  hash_d: 8568e9613224a158184fadb96ee3801ace7440f2973af33e1e5df8c378f3c712
+  semantic_tags:
+  - domain:graph_architecture
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors

@@ -76,5 +76,13 @@ models:
   canonical: false
   family: null
   semantics: []
+- name: AnchorDoc
+  model_ref: sldb.models.knowledge_surface:AnchorDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
+  models_index: .sldb/core/models/AnchorDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
 predicates: []
-hash_a: 266cdfd901f9adfc8528f26dd349e7452554cffe9a87326c328d2d9abc668277
+hash_a: 66f6e5656f07c77df7e98e4552a7d908f0e4f1dbccc5327f786e96fa0f2e0377

@@ -4,6 +4,9 @@ nodes:
 - id: type.knowledge
   parents:
   - type
+- id: type.knowledge.anchor
+  parents:
+  - type.knowledge
 - id: type.knowledge.atom
   parents:
   - type.knowledge
@@ -15,4 +18,10 @@ nodes:
 - id: workspace.desk.atoms
   parents:
   - workspace.desk
+- id: workspace.knowledge
+  parents:
+  - workspace
+- id: workspace.knowledge.anchors
+  parents:
+  - workspace.knowledge
 equivalences: {}

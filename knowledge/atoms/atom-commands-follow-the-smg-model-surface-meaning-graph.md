@@ -6,7 +6,7 @@ tags:
 - system:knowledge
 - domain:knowledge_representation
 - kind:concept
-- impl:pending
+- impl:here
 - topic:semantic_anchoring
 - topic:composition
 - cross:smg_command_layer

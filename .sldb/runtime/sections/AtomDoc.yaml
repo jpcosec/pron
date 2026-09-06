@@ -14683,7 +14683,7 @@ documents:
     - the knowledge core is a semantically anchored s expression evaluator
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14692,7 +14692,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14714,7 +14714,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14723,7 +14723,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14744,7 +14744,7 @@ documents:
     - an anchor binds a symbol to a semantic motive and a resolvable referent
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14753,7 +14753,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14775,7 +14775,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14784,7 +14784,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14805,7 +14805,7 @@ documents:
     - anchor kinds partition what a symbol can refer to
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14814,7 +14814,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14836,7 +14836,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14845,7 +14845,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14867,7 +14867,7 @@ documents:
     - cross:knowledge_sldb
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14877,7 +14877,7 @@ documents:
     - cross:knowledge_sldb
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14900,7 +14900,7 @@ documents:
     - cross:knowledge_sldb
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14910,7 +14910,7 @@ documents:
     - cross:knowledge_sldb
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -14930,7 +14930,7 @@ documents:
     - Symbol resolution is stateful and treats ambiguity as dialogue
     - symbol resolution is stateful and treats ambiguity as dialogue
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -14939,7 +14939,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -14961,7 +14961,7 @@ documents:
     - Answer
     - answer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -14970,7 +14970,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -14991,7 +14991,7 @@ documents:
     - Unanchored symbols fail with an explicit semantic error
     - unanchored symbols fail with an explicit semantic error
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15000,7 +15000,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15022,7 +15022,7 @@ documents:
     - Answer
     - answer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15031,7 +15031,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15114,7 +15114,7 @@ documents:
     - the canonical operations are check next assert create ingest return
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15123,7 +15123,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15145,7 +15145,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15154,7 +15154,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15175,7 +15175,7 @@ documents:
     - the infra layer serves the anchoring core not the reverse
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15184,7 +15184,7 @@ documents:
     semantic_tags:
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15206,7 +15206,7 @@ documents:
     - answer
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15215,7 +15215,7 @@ documents:
     semantic_tags:
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15236,7 +15236,7 @@ documents:
     - commands follow the smg model surface meaning graph
     - cross:smg_command_layer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:composition
@@ -15246,7 +15246,7 @@ documents:
     semantic_tags:
     - cross:smg_command_layer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:composition
@@ -15269,7 +15269,7 @@ documents:
     - answer
     - cross:smg_command_layer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:composition
@@ -15279,7 +15279,7 @@ documents:
     semantic_tags:
     - cross:smg_command_layer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:composition
@@ -15300,7 +15300,7 @@ documents:
     - Surface grammar is positional and order-agnostic
     - surface grammar is positional and order agnostic
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:authoring_workflow
@@ -15309,7 +15309,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:authoring_workflow
@@ -15331,7 +15331,7 @@ documents:
     - Answer
     - answer
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:authoring_workflow
@@ -15340,7 +15340,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:authoring_workflow
@@ -15361,7 +15361,7 @@ documents:
     - The meaning layer is directly usable via eval
     - the meaning layer is directly usable via eval
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15369,7 +15369,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15390,7 +15390,7 @@ documents:
     - Answer
     - answer
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15398,7 +15398,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15418,7 +15418,7 @@ documents:
     - Clarification state persists across CLI invocations
     - clarification state persists across cli invocations
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -15427,7 +15427,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -15449,7 +15449,7 @@ documents:
     - Answer
     - answer
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -15458,7 +15458,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:query
@@ -15479,7 +15479,7 @@ documents:
     - Semantic errors answer symbol, motive, and next action
     - semantic errors answer symbol motive and next action
     - domain:governance
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15488,7 +15488,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:governance
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15510,7 +15510,7 @@ documents:
     - Answer
     - answer
     - domain:governance
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15519,7 +15519,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:governance
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15541,7 +15541,7 @@ documents:
     - every read response carries refs for auditability
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15550,7 +15550,7 @@ documents:
     semantic_tags:
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15572,7 +15572,7 @@ documents:
     - answer
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15581,7 +15581,7 @@ documents:
     semantic_tags:
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15662,7 +15662,7 @@ documents:
     - Knowledge decomposes into ten single-motive components
     - knowledge decomposes into ten single motive components
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15670,7 +15670,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15691,7 +15691,7 @@ documents:
     - Answer
     - answer
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15699,7 +15699,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15719,7 +15719,7 @@ documents:
     - Resolution outcomes are typed values, not exceptions
     - resolution outcomes are typed values not exceptions
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15727,7 +15727,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15748,7 +15748,7 @@ documents:
     - Answer
     - answer
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15756,7 +15756,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15777,7 +15777,7 @@ documents:
     - bridges are the only doors to sldb and kgdb
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15786,7 +15786,7 @@ documents:
     semantic_tags:
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15808,7 +15808,7 @@ documents:
     - answer
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15817,7 +15817,7 @@ documents:
     semantic_tags:
     - cross:knowledge_sldb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15839,7 +15839,7 @@ documents:
     - cross:knowledge_sldb
     - domain:system_architecture
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - system:sldb
@@ -15850,7 +15850,7 @@ documents:
     - cross:knowledge_sldb
     - domain:system_architecture
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - system:sldb
@@ -15874,7 +15874,7 @@ documents:
     - cross:knowledge_sldb
     - domain:system_architecture
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - system:sldb
@@ -15885,7 +15885,7 @@ documents:
     - cross:knowledge_sldb
     - domain:system_architecture
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - system:sldb
@@ -15907,7 +15907,7 @@ documents:
     - the projector gives the evaluator a world
     - cross:knowledge_kgdb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15916,7 +15916,7 @@ documents:
     semantic_tags:
     - cross:knowledge_kgdb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15938,7 +15938,7 @@ documents:
     - answer
     - cross:knowledge_kgdb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15947,7 +15947,7 @@ documents:
     semantic_tags:
     - cross:knowledge_kgdb
     - domain:system_architecture
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16032,7 +16032,7 @@ documents:
     - One file, one component, one motive
     - one file one component one motive
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:patterns
@@ -16042,7 +16042,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:patterns
@@ -16065,7 +16065,7 @@ documents:
     - Answer
     - answer
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:patterns
@@ -16075,7 +16075,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:patterns
@@ -16097,7 +16097,7 @@ documents:
     - Canonical commands are acceptance tests from day one
     - canonical commands are acceptance tests from day one
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:testing
@@ -16107,7 +16107,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:testing
@@ -16130,7 +16130,7 @@ documents:
     - Answer
     - answer
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:testing
@@ -16140,7 +16140,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:code_craft
-    - impl:pending
+    - impl:here
     - kind:concept
     - lang:python
     - practice:testing
@@ -16227,7 +16227,7 @@ documents:
     - S-expression serialization quotes selectors and roundtrips
     - s expression serialization quotes selectors and roundtrips
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16235,7 +16235,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16256,7 +16256,7 @@ documents:
     - Answer
     - answer
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16264,7 +16264,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:knowledge_representation
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16284,7 +16284,7 @@ documents:
     - Session expires by TTL and store hash
     - session expires by ttl and store hash
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16292,7 +16292,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16313,7 +16313,7 @@ documents:
     - Answer
     - answer
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16321,7 +16321,7 @@ documents:
     - workspace.desk.atoms
     semantic_tags:
     - domain:retrieval
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16342,7 +16342,7 @@ documents:
     - anchor ref is a typed string with a scheme per kind
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16351,7 +16351,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16373,7 +16373,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16382,7 +16382,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:anchor
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -16721,3 +16721,296 @@ documents:
     level: 2
     line_start: 18
     line_end: 19
+- doc_name: atom-kgdb-nodes-are-identity-edges-and-open-facets
+  sections:
+  - path: kgdb-nodes-are-identity-edges-and-open-facets
+    title: KGDB nodes are identity, edges, and open facets
+    breadcrumbs:
+    - KGDB nodes are identity, edges, and open facets
+    about:
+    - KGDB nodes are identity, edges, and open facets
+    - kgdb nodes are identity edges and open facets
+    - domain:graph_architecture
+    - graph:structure
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:structure
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: kgdb-nodes-are-identity-edges-and-open-facets
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: kgdb-nodes-are-identity-edges-and-open-facets/answer
+    title: Answer
+    breadcrumbs:
+    - KGDB nodes are identity, edges, and open facets
+    - Answer
+    about:
+    - KGDB nodes are identity, edges, and open facets
+    - kgdb nodes are identity edges and open facets
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - graph:structure
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:structure
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
+  sections:
+  - path: the-sldb-export-plus-ingest-pipeline-is-the-operative-graph-route
+    title: The sldb export plus ingest pipeline is the operative graph route
+    breadcrumbs:
+    - The sldb export plus ingest pipeline is the operative graph route
+    about:
+    - The sldb export plus ingest pipeline is the operative graph route
+    - the sldb export plus ingest pipeline is the operative graph route
+    - cross:sldb_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:sldb_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-sldb-export-plus-ingest-pipeline-is-the-operative-graph-route
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: the-sldb-export-plus-ingest-pipeline-is-the-operative-graph-route/answer
+    title: Answer
+    breadcrumbs:
+    - The sldb export plus ingest pipeline is the operative graph route
+    - Answer
+    about:
+    - The sldb export plus ingest pipeline is the operative graph route
+    - the sldb export plus ingest pipeline is the operative graph route
+    - Answer
+    - answer
+    - cross:sldb_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:sldb_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-structuredquery-filters-facets-scope-and-relations
+  sections:
+  - path: structuredquery-filters-facets-scope-and-relations
+    title: StructuredQuery filters facets, scope, and relations
+    breadcrumbs:
+    - StructuredQuery filters facets, scope, and relations
+    about:
+    - StructuredQuery filters facets, scope, and relations
+    - structuredquery filters facets scope and relations
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: structuredquery-filters-facets-scope-and-relations
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: structuredquery-filters-facets-scope-and-relations/answer
+    title: Answer
+    breadcrumbs:
+    - StructuredQuery filters facets, scope, and relations
+    - Answer
+    about:
+    - StructuredQuery filters facets, scope, and relations
+    - structuredquery filters facets scope and relations
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-misnamed-query-fields-silently-match-everything
+  sections:
+  - path: misnamed-query-fields-silently-match-everything
+    title: Misnamed query fields silently match everything
+    breadcrumbs:
+    - Misnamed query fields silently match everything
+    about:
+    - Misnamed query fields silently match everything
+    - misnamed query fields silently match everything
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: misnamed-query-fields-silently-match-everything
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: misnamed-query-fields-silently-match-everything/answer
+    title: Answer
+    breadcrumbs:
+    - Misnamed query fields silently match everything
+    - Answer
+    about:
+    - Misnamed query fields silently match everything
+    - misnamed query fields silently match everything
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - graph:retrieval
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-graph-freshness-is-the-producers-responsibility
+  sections:
+  - path: graph-freshness-is-the-producer-s-responsibility
+    title: Graph freshness is the producer's responsibility
+    breadcrumbs:
+    - Graph freshness is the producer's responsibility
+    about:
+    - Graph freshness is the producer's responsibility
+    - graph freshness is the producer s responsibility
+    - cross:knowledge_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: graph-freshness-is-the-producer-s-responsibility
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: graph-freshness-is-the-producer-s-responsibility/answer
+    title: Answer
+    breadcrumbs:
+    - Graph freshness is the producer's responsibility
+    - Answer
+    about:
+    - Graph freshness is the producer's responsibility
+    - graph freshness is the producer s responsibility
+    - Answer
+    - answer
+    - cross:knowledge_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:graph_architecture
+    - graph:materialization
+    - impl:external
+    - kind:software
+    - system:kgdb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18

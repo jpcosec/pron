@@ -1,0 +1,13 @@
+name: AnchorDoc
+model_ref: sldb.models.knowledge_surface:AnchorDoc
+path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
+documents_index: .sldb/core/documents/AnchorDoc.yaml
+sections_index: .sldb/runtime/sections/AnchorDoc.yaml
+hash_b: 6dfd52163e2d630384c5dd27a46a9ca11a37cfe87477f4a640fdf5ad6e1c3899
+version: 1
+canonical: false
+family: null
+semantics:
+- type.knowledge.anchor
+- workspace.knowledge.anchors
+base_models: []

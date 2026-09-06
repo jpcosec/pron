@@ -6,7 +6,7 @@ tags:
 - system:knowledge
 - domain:knowledge_representation
 - kind:concept
-- impl:pending
+- impl:here
 - topic:semantic_anchoring
 - topic:query
 provenance: Derived from `source/spec/KNOWLEDGE_CORE_SEMANTIC_ANCHORING.md` (knowledge core spec), inspired by SHRDLU-style world-grounded resolution and the existing SMG / s-expression runtime atoms.

@@ -5,7 +5,7 @@ five_wh_one_plus: what
 tags:
 - system:knowledge
 - kind:concept
-- impl:pending
+- impl:here
 - topic:semantic_anchoring
 - domain:retrieval
 provenance: Derived from `source/spec/KNOWLEDGE_USABILITY.md`.

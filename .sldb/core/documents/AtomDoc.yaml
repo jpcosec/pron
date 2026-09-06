@@ -3069,12 +3069,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   path: knowledge/atoms/atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator.md
-  hash_c: aeb0d620737fdb71f19c691aee4563811c6672fa70a4e8d2e773a34816122c72
-  hash_d: 60968aa6cacfb38a994e5b7a1e3923e9f55354576aa13cf29c086d07ab0bf553
+  hash_c: d93809158d275265e3946afe7cc526dd968afa2aad9c9a02c9320918fcc2a265
+  hash_d: 547c0ef375e1d5d679bf943b3f6da038a638a2c555927d6fb875967a96a7df85
   semantic_tags:
   - domain:knowledge_representation
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3082,12 +3082,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   path: knowledge/atoms/atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent.md
-  hash_c: 018f68c77b5530a1c238c424472ff44dcdbb05f3cd4be3455ada236381f61cee
-  hash_d: 3d46713981d2526f708c553feb0c02fbaaafd97edb26dde655fffa7e19a6cb51
+  hash_c: 939a7fa4f2128855d817fb232cfbce4792a6a96fc186faeaaa331a8995c30191
+  hash_d: 9bfb9cbe01d0384e6e08061720aa04208eac7ed6ba63b8a95e93ac0b934060f9
   semantic_tags:
   - domain:knowledge_representation
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3095,12 +3095,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   path: knowledge/atoms/atom-anchor-kinds-partition-what-a-symbol-can-refer-to.md
-  hash_c: efd3b09b3fdfa60de973300ab4c9beb0590fff4e0293bf8189428aa5f2e94856
-  hash_d: 406366f979f46170b32cf4e20fb1acfaed12a3ba237cd2402356fd12d0878091
+  hash_c: e62502b250bcadeeb66ca8117e7a30a2bc09c3236850ebd2668785e124ef6517
+  hash_d: bb62c21b990e7b416c70fcf98d562e41f76653389b50653ff00c513975113e86
   semantic_tags:
   - domain:knowledge_representation
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3108,13 +3108,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   path: knowledge/atoms/atom-the-anchor-table-is-declared-as-sldb-documents-not-code.md
-  hash_c: 4537417ec22593c4308a57ce3833ed3fcd4a1e43f5786c00e7204214a677fe5a
-  hash_d: 4093809d37b40995b1a6b5b55e4b6368253f09078d609dc4bfee3d55307ab98d
+  hash_c: b379bf4359efa242229c69dddf4214315a2d4ceef28de8e76f89f1d2f25a2c67
+  hash_d: 33282ee84c29a3e1c013f37fff5f59574d9864e48d7c41aa429941b90042b33c
   semantic_tags:
   - cross:knowledge_sldb
   - domain:knowledge_representation
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3122,11 +3122,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   path: knowledge/atoms/atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue.md
-  hash_c: 04fbb8ff3032176a0ac14fe5050c7c374f134892ef0e1fd666a2265a22ae2a06
-  hash_d: 651e35f10552409fc07e0b7b459d7344bdba51c1d5bbbb09a1b24e4b240f94c2
+  hash_c: e1937821830e8f31691abe54de59a7d0cc6defde431b6aa7c6bca702645f68a9
+  hash_d: fed1f96ba9cc3c80792a33c430f2118c57ea4a5101ad2a2405b774f84c11cbcd
   semantic_tags:
   - domain:knowledge_representation
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:query
@@ -3135,11 +3135,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   path: knowledge/atoms/atom-unanchored-symbols-fail-with-an-explicit-semantic-error.md
-  hash_c: 1f9fcb2908c5a13da6a7edac983ee2824f9f33acfbf04dc7177304c1347afbe0
-  hash_d: becabab1c71fbb073eb4cbd51fa2412b96bce1b35c7b73d1bca458dc055f3b47
+  hash_c: cfc4ac72af9fc9bd8935267df9ed732fe4a208a2ea125b3a9576fcf74a53f47a
+  hash_d: ef1a7569fd33850705e546b64423aac69dc93548a1efb6da9c81ea67049afab8
   semantic_tags:
   - domain:knowledge_representation
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3161,12 +3161,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   path: knowledge/atoms/atom-the-canonical-operations-are-check-next-assert-create-ingest-return.md
-  hash_c: b10338520a84c4922e983c133f6478a5579f393541777ce4108d10d515a53adb
-  hash_d: 20c9c722d57a69d8b44ba0761e7d5bd2f4e854751ff05cfb3e5fcfb4d3efcc52
+  hash_c: ded38096cf40b87d51c58545fa676681e693ad877e1116eac24f5c738a287e2c
+  hash_d: b7152256992238686880512e85d8a7d34af89db3151c7a39d3de104f06fdc97d
   semantic_tags:
   - domain:knowledge_representation
   - entity:cli_command
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3174,12 +3174,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   path: knowledge/atoms/atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse.md
-  hash_c: 0e339e1b469469a87a7a2b60d00ebc118e43bf27e3ceb0b14145e6c5347d7415
-  hash_d: 976c1f998976720fa240e7d2927947ea1d53c50305701cfe600a83e8036abacf
+  hash_c: 02c721c19942054cc5c8ca7576500e49dc7d3a90905063d0d591ce4f0028ad10
+  hash_d: ab0a3744efd777d02e3cb46f271b05185051d66bdd9f0c357b13e09b4cf62ac3
   semantic_tags:
   - cross:knowledge_sldb
   - domain:system_architecture
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3187,12 +3187,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-commands-follow-the-smg-model-surface-meaning-graph
   path: knowledge/atoms/atom-commands-follow-the-smg-model-surface-meaning-graph.md
-  hash_c: 591cc630c6bb9f160ba0926859ec7b09d7215609b5b2adfe2fd5eade5cc391f2
-  hash_d: 2658e00f25d15b68a539c70a3a860593d31658cb4548171b8b817d5ff4e48658
+  hash_c: 703320000b6f0e2f23a9397366701a9636dd7164621f5d21f90770def6495845
+  hash_d: 1495e852f3f3e6754562de9240bed5c056771487ee2d6e87efcf0dda0c83e003
   semantic_tags:
   - cross:smg_command_layer
   - domain:knowledge_representation
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:composition
@@ -3201,11 +3201,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-surface-grammar-is-positional-and-order-agnostic
   path: knowledge/atoms/atom-surface-grammar-is-positional-and-order-agnostic.md
-  hash_c: 49a053d1e4fe4f29e5d33275065ce7a7eb337d1b85d45150b8f0b05fae36024f
-  hash_d: a889e3cbfba8c2fade6321725ab0b981cfad991f60d82789a9a494477e737764
+  hash_c: bd6a80bc0ffb2fd694a8752174ae6afdd748e9cb70b7ad7793672a20dad0039f
+  hash_d: fb16f0bc8154bdfed7d29077b72ddf2ad34c4b99a34d69eb59d075a7cb5fba4a
   semantic_tags:
   - domain:retrieval
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:authoring_workflow
@@ -3214,11 +3214,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-meaning-layer-is-directly-usable-via-eval
   path: knowledge/atoms/atom-the-meaning-layer-is-directly-usable-via-eval.md
-  hash_c: 14d897d5f6c4b38066c22864013e49cdd0f38fa810f6a57a377fed5aa36356f3
-  hash_d: d3311cd04140aa85ca8889abce0ac666ae2773248edcef798d8885f017dccdae
+  hash_c: 913227bb07ae892b4ba352881f328e0744abec7fbc2c30fc405f30d0cc8bf7e7
+  hash_d: e759b46a61066db418d27ceefdd9d5716adc274d7d4d9384117878187969496d
   semantic_tags:
   - domain:retrieval
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3226,11 +3226,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-clarification-state-persists-across-cli-invocations
   path: knowledge/atoms/atom-clarification-state-persists-across-cli-invocations.md
-  hash_c: d7fe51f71eddc28bcb90a3c8c8746c0833dba29ccfb8c776845a22d981d9638f
-  hash_d: 7ceefdeb93999a24a90fc25c5243efb53656e936433637bcbcc90bc9d5de0cbe
+  hash_c: 34f485750020ef9b945a6ca5f5236e6ca2577eaad27c40b28deb7ea0f03f0c9b
+  hash_d: ba05a308be356aabffff33e96b8de4a1d4b1034092dc2fdfaec1546c9b07e1af
   semantic_tags:
   - domain:retrieval
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:query
@@ -3239,11 +3239,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-semantic-errors-answer-symbol-motive-and-next-action
   path: knowledge/atoms/atom-semantic-errors-answer-symbol-motive-and-next-action.md
-  hash_c: b36a00bac96b6493cf24833f36347d1df07d4e0615280dc9ca75354b8fbdc86c
-  hash_d: 98a982b745ad9d7de08df7352f97dec4bd0409e37726ce7396ce94b97460e95e
+  hash_c: 8d995e48b162d82b64965be8c082d33d100d0055bbf0862bf61d2688506045d0
+  hash_d: 6b8a76546e9e297a858caf45f77165be378fdce4c7d2649cfea994b826889d6c
   semantic_tags:
   - domain:governance
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3252,12 +3252,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-every-read-response-carries-refs-for-auditability
   path: knowledge/atoms/atom-every-read-response-carries-refs-for-auditability.md
-  hash_c: 7e6a008fb0a8b39c7e4a091dcbfec903b81059491800cb4176db121d6314f2cd
-  hash_d: 1558d518c552ef9ef51dede79c84560ce506255ebd31509df33146e35fc812aa
+  hash_c: 956d1e053947eaf34dfc51f6a04c45ce4bb52f02090d0d04a09d27d58559056d
+  hash_d: 82068b2f1dbe5dd0b7cb745bbce840cc672e4d1b0d74f506cc98921e5c1b6869
   semantic_tags:
   - domain:provenance
   - graph:lineage
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3278,11 +3278,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-decomposes-into-ten-single-motive-components
   path: knowledge/atoms/atom-knowledge-decomposes-into-ten-single-motive-components.md
-  hash_c: aa81ad517bfe0c4a6c8634f6149ea2a763f19a23cc450269de9a7b03e13bbd22
-  hash_d: dcda5bfd78874daab8e8cd4ce90064e0feae086d8406237afd1aa6dd71380f7b
+  hash_c: d00176196fa6ae5d323025ea7a9497edc9350bf9b305891deb67866ebba2976f
+  hash_d: 7381304d35b78b293fe7c1f64d984858536e48889e3bf01f3a3608b92ae5e896
   semantic_tags:
   - domain:system_architecture
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3290,11 +3290,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-resolution-outcomes-are-typed-values-not-exceptions
   path: knowledge/atoms/atom-resolution-outcomes-are-typed-values-not-exceptions.md
-  hash_c: 66b8ce58cab7d1c7866fdd2cc66a10cf0fdfa81ee1d56f9c821baa6a2fd33c74
-  hash_d: 4334f9768f4a06b1f25800f39b5645de4d826fba336c06e06636fe78b8d25fb1
+  hash_c: d2c8b03f068101529da8698c12ebaeb682104d684d44c1e03a71bf0d4cef9594
+  hash_d: 3dbb0b346ca8aa9d4005bdd8ac264836197638dc00d21381c1235f0b9a4ac696
   semantic_tags:
   - domain:system_architecture
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3302,12 +3302,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-bridges-are-the-only-doors-to-sldb-and-kgdb
   path: knowledge/atoms/atom-bridges-are-the-only-doors-to-sldb-and-kgdb.md
-  hash_c: a06f58242b7ab2ab715069b224aa88f55e8841dd0d14f75a7089755553a433d8
-  hash_d: 46ef2bf7d5e08f2ae7e7112c5b0d21286247c7a2dfcc875a203b7266638f09f9
+  hash_c: 94775bb932a8af04cb3001d67661b731eb5eed1587e6aa85f5f2889d28fc37da
+  hash_d: c8f02371bdee776311a1a7668b2af5af7cc827e08ab7d1ea05a2ab7f24a66fc9
   semantic_tags:
   - cross:knowledge_sldb
   - domain:system_architecture
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3315,13 +3315,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   path: knowledge/atoms/atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models.md
-  hash_c: 74b03ef8691160ccc6fecef8d3791dc5359f2f08150ae0df325c729176d7c2c1
-  hash_d: 7a477db5ade5dafa6c40dbd0b2439c036bed7b66094316e75af53945e26bdf4b
+  hash_c: 857a31eb12dea7514ab7aa37c733a0b696741625bd85dae4af9cc12da4a3d95b
+  hash_d: a0660363abf7d4ee3e34558f1c2316c9cdff2f62a581c95ea0d430389bb35499
   semantic_tags:
   - cross:knowledge_sldb
   - domain:system_architecture
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - system:sldb
@@ -3330,12 +3330,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-projector-gives-the-evaluator-a-world
   path: knowledge/atoms/atom-the-projector-gives-the-evaluator-a-world.md
-  hash_c: 0c071e30f2cf6d41a2d127c80137e16070b274b935f9a88d3a92305c07838497
-  hash_d: 57647c4584ef09e41ac734306fb4f747e514bcf7bba80993a738d355ca7bbeb9
+  hash_c: e4bd7f3b54b4cf3e55e85ccaac9380de299ceaf90cc71b87f2d8ebe3f55f40fc
+  hash_d: 375a2ef7ec27214da33f6a5e003e5d025933ffd81cd66a7dab5928ae9aeece35
   semantic_tags:
   - cross:knowledge_kgdb
   - domain:system_architecture
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3357,11 +3357,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-one-file-one-component-one-motive
   path: knowledge/atoms/atom-one-file-one-component-one-motive.md
-  hash_c: 4a5ceb453bcd56edfc7badf2b8cd34ff03d0852c6e6955cea576100b96f6cea3
-  hash_d: 022252c137e72d80c07c90916573f063f23bf6ff5a49d9a7d0caac3104fed546
+  hash_c: 69d926488d25d74d16da48b93329ec626feb948ef0faefae02145ccce83699fd
+  hash_d: 454b24b078ed779b6bc56d84e9d1370e87e94301f4521e3effac2ada882662f2
   semantic_tags:
   - domain:code_craft
-  - impl:pending
+  - impl:here
   - kind:concept
   - lang:python
   - practice:patterns
@@ -3371,11 +3371,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-canonical-commands-are-acceptance-tests-from-day-one
   path: knowledge/atoms/atom-canonical-commands-are-acceptance-tests-from-day-one.md
-  hash_c: f160dfc9c9eeeb47be2b5e8dae03c47f27354cac2110c72d95db2b088736d760
-  hash_d: 6039dc4ce733a930bc4b74961e021caba749bc9b3e98442d019c9785e1992fbc
+  hash_c: 2d44b7d514c7a6f76b6d72ea47d3fa6b8363addb6d9f39a0ac4bf21748366b44
+  hash_d: 592ded7334afb417208f3147f6af5424117377e079ee45f1ca9683b18bcf647a
   semantic_tags:
   - domain:code_craft
-  - impl:pending
+  - impl:here
   - kind:concept
   - lang:python
   - practice:testing
@@ -3399,11 +3399,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-sexpr-serialization-quotes-selectors-and-roundtrips
   path: knowledge/atoms/atom-sexpr-serialization-quotes-selectors-and-roundtrips.md
-  hash_c: 2128c61eec72d08f8120808bf87c12c732bc6325f6c3f3ccff66938a948af8ef
-  hash_d: 5e2949d22cb70e1b68e2eb5b47f1ad0eb41e4fb33880837098440912570d2feb
+  hash_c: 723508ada2c96eefa81bb3fe5ef67d2c2a77b4159aad34a3e1f73be206185e1c
+  hash_d: 2dd72d5c13ab5134411c7086b11db8fa3f825afc24aaeea0cb96c37f01954346
   semantic_tags:
   - domain:knowledge_representation
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3411,11 +3411,11 @@ documents:
   - workspace.desk.atoms
 - name: atom-session-expires-by-ttl-and-store-hash
   path: knowledge/atoms/atom-session-expires-by-ttl-and-store-hash.md
-  hash_c: fa67aa4736aa17d8322c90a006ad3f8cb746a5e9f0e7fcf546400a57e10cbebc
-  hash_d: 813004ed96f61e4199cd94a1d70d3fba5f8fbd22e0f1e17099ef481cfb2a447d
+  hash_c: a658c81fea91a11c2281928d263fa143a84cecb5a08897a6faa3c7c843a3fe3a
+  hash_d: 6d89516171046bc8ccf667c347676bdeca1f65ba2ba6f9f541dab4f7fce612a0
   semantic_tags:
   - domain:retrieval
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3423,12 +3423,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   path: knowledge/atoms/atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind.md
-  hash_c: ab50ded5df8f9a81db0885097efbec179d81f6d771d426ad9b79c20cd2373df3
-  hash_d: 814a1a718a90814359cac731dbd1beca99f03eea8e051d419e1c1b84cfcf05aa
+  hash_c: ed554fe9a1107a4b0bd718e5d5c6fb4c04249b87fcf803f2cd8585106678c77c
+  hash_d: 6b969f8925568dd51520ff14aad0ae51eeb51474c36b599d3e0b7beb569aacb1
   semantic_tags:
   - domain:knowledge_representation
   - entity:anchor
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring

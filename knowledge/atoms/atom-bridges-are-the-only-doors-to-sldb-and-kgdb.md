@@ -5,7 +5,7 @@ five_wh_one_plus: how_not
 tags:
 - system:knowledge
 - kind:concept
-- impl:pending
+- impl:here
 - topic:semantic_anchoring
 - domain:system_architecture
 - cross:knowledge_sldb

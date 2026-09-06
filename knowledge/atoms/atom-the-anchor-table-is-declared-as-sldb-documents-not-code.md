@@ -6,7 +6,7 @@ tags:
 - system:knowledge
 - domain:knowledge_representation
 - kind:concept
-- impl:pending
+- impl:here
 - topic:semantic_anchoring
 - entity:anchor
 - cross:knowledge_sldb
