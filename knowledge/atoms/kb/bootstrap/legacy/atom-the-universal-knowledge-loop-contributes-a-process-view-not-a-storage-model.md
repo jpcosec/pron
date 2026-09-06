@@ -10,7 +10,7 @@ tags:
   - topic:composition
   - domain:knowledge_management
   - cross:tutor_apoe_hum_ecosystem
-provenance: Derived from `hum-ecosystem/docs/architecture/universal_knowledge_loop.md` and `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
+provenance: Derived from `hum-ecosystem/docs/architecture/universal_knowledge_loop.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
 

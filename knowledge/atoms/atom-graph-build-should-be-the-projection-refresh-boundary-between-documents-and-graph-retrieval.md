@@ -9,7 +9,7 @@ tags:
 - topic:knowledge_graph
 - graph:provenance
 - layer:graph_provenance
-provenance: Derived from `knowledge`, `spec/source_apps/kgdb.md`, and `spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `knowledge`, `source/spec/source_apps/kgdb.md`, and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 
 # Graph build should be the projection refresh boundary between documents and graph retrieval

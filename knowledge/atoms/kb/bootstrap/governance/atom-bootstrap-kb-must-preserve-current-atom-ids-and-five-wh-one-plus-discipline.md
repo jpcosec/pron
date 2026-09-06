@@ -11,7 +11,7 @@ tags:
   - topic:bootstrap_kb
   - domain:knowledge_management
   - cross:deskops_kb
-provenance: Derived from `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and the observed structure of the current `tutor_apoe/desk/atoms/` corpus.
+provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and the observed structure of the current `tutor_apoe/desk/atoms/` corpus.
 
 ---
 

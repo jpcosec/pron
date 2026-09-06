@@ -12,7 +12,7 @@ tags:
   - topic:multi_source
   - domain:knowledge_representation
   - graph:structure
-provenance: Derived from `kb/spec/MULTI_SOURCE_ANCHORING.md` and the updated component and anchoring diagrams built from that document.
+provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and the updated component and anchoring diagrams built from that document.
 
 ---
 

@@ -11,7 +11,7 @@ tags:
   - topic:concept_graph
   - domain:knowledge_management
   - cross:deskops_kb
-provenance: Derived from `kb/spec/NAMESPACE_TREE.md` and `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
+provenance: Derived from `source/spec/NAMESPACE_TREE.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
 

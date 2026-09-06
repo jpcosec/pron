@@ -7,8 +7,8 @@ tags:
 - system:deskops
 - topic:knowledge_cli
 - topic:workflow_separation
-provenance: Derived from `spec/source_apps/deskops.md`, `spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
-  `spec/ATOM_METADATA_DOC.md`, and the local `knowledge` CLI implementation.
+provenance: Derived from `source/spec/source_apps/deskops.md`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
+  `source/spec/ATOM_METADATA_DOC.md`, and the local `knowledge` CLI implementation.
 ---
 
 # Knowledge CLI should separate knowledge operations from operational workflow

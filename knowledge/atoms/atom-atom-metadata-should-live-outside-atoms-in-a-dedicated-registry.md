@@ -8,8 +8,8 @@ tags:
 - entity:atom
 - topic:atom_metadata
 - topic:provenance
-provenance: Derived from `spec/ATOM_METADATA_DOC.md`, `spec/atom_quality/ATOM_AUTHORING_STANDARD.md`,
-  `spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md`, and `metadata/atoms/atom-metadata-registry.yaml`.
+provenance: Derived from `source/spec/ATOM_METADATA_DOC.md`, `source/spec/atom_quality/ATOM_AUTHORING_STANDARD.md`,
+  `source/spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md`, and `metadata/atoms/atom-metadata-registry.yaml`.
 ---
 
 # Atom metadata should live outside atoms in a dedicated registry

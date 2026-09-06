@@ -17,7 +17,7 @@ tags:
   - graph:concept
   - graph:structure
   - cross:provenance_concept_graph
-provenance: Derived from `kb/spec/GRAPH_ARCHITECTURE.md`, `kb/spec/ATOM_CONCEPT_GRAPH.md`, and `kb/spec/THREE_GRAPH_MODEL_DIAGRAMS.md`.
+provenance: Derived from `source/spec/GRAPH_ARCHITECTURE.md`, `source/spec/ATOM_CONCEPT_GRAPH.md`, and `source/spec/THREE_GRAPH_MODEL_DIAGRAMS.md`.
 
 ---
 

@@ -8,8 +8,8 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:validation
-provenance: Derived from `knowledge`, `spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
-  and `spec/atom_quality/ATOM_QUALITY_CHECKLIST.md`.
+provenance: Derived from `knowledge`, `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
+  and `source/spec/atom_quality/ATOM_QUALITY_CHECKLIST.md`.
 ---
 
 # Knowledge validate should be the authoring completion gate, not only a storage health check

@@ -13,7 +13,7 @@ tags:
   - domain:knowledge_representation
   - graph:concept
   - cross:provenance_concept_graph
-provenance: Derived from `kb/spec/ATOM_CONCEPT_GRAPH.md`, with direct motivation from `tutor_apoe/desk/atoms/tag-namespaces.yaml` and `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`.
+provenance: Derived from `source/spec/ATOM_CONCEPT_GRAPH.md`, with direct motivation from `tutor_apoe/desk/atoms/tag-namespaces.yaml` and `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`.
 
 ---
 

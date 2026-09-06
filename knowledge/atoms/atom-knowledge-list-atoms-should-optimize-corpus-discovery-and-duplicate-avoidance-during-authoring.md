@@ -8,8 +8,8 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:authoring_workflow
-provenance: Derived from `knowledge`, `spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
-  and `spec/source_apps/deskops.md`.
+provenance: Derived from `knowledge`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
+  and `source/spec/source_apps/deskops.md`.
 ---
 
 # Knowledge list atoms should optimize corpus discovery and duplicate avoidance during authoring

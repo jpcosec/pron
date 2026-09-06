@@ -10,7 +10,7 @@ tags:
   - topic:bootstrap_kb
   - topic:provenance
   - domain:knowledge_management
-provenance: Derived from `kb/spec/NAMESPACE_TREE.md` and the tag-governance analysis that motivated the bootstrap tag taxonomy.
+provenance: Derived from `source/spec/NAMESPACE_TREE.md` and the tag-governance analysis that motivated the bootstrap tag taxonomy.
 
 ---
 

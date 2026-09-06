@@ -14,7 +14,7 @@ tags:
   - topic:provenance
   - domain:knowledge_representation
   - graph:provenance
-provenance: Derived from `kb/spec/MULTI_SOURCE_ANCHORING.md` and `kb/spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and `source/spec/GRAPH_ARCHITECTURE.md`.
 
 ---
 

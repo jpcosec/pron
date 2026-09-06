@@ -12,7 +12,7 @@ tags:
   - domain:knowledge_representation
   - graph:provenance
   - graph:lineage
-provenance: Derived from `kb/spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `source/spec/GRAPH_ARCHITECTURE.md`.
 
 ---
 

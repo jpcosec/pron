@@ -5,7 +5,7 @@ five_wh_one_plus: how
 tags:
   - system:kb
   - topic:anchoring
-provenance: Derived from `spec/KB_SYSTEM_SPEC.md` and `spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md` as a synthesis of the recommended hybrid anchoring strategy and the role of anchor bundles in a multi-source KB.
+provenance: Derived from `source/spec/KB_SYSTEM_SPEC.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md` as a synthesis of the recommended hybrid anchoring strategy and the role of anchor bundles in a multi-source KB.
 ---
 
 # Anchor bundles should combine structural, textual, and contextual locators

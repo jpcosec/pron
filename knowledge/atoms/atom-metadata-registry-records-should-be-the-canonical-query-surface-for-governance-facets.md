@@ -8,7 +8,7 @@ tags:
 - entity:metadata_registry
 - topic:query
 - topic:atom_metadata
-provenance: Derived from `metadata/atoms/atom-metadata-registry.yaml`, `spec/ATOM_METADATA_DOC.md`,
+provenance: Derived from `metadata/atoms/atom-metadata-registry.yaml`, `source/spec/ATOM_METADATA_DOC.md`,
   and the local `knowledge` CLI metadata commands.
 ---
 

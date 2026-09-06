@@ -9,7 +9,7 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:authoring_workflow
-provenance: Derived from `knowledge`, `spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
+provenance: Derived from `knowledge`, `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
   and `metadata/atoms/atom-metadata-registry.yaml`.
 ---
 

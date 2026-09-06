@@ -12,7 +12,7 @@ tags:
   - domain:knowledge_representation
   - graph:materialization
   - cross:tutor_apoe_hum_ecosystem
-provenance: Derived from `hum-ecosystem/docs/architecture/nl_sl_kg_pipeline.md` as synthesized in `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
+provenance: Derived from `hum-ecosystem/docs/architecture/nl_sl_kg_pipeline.md` as synthesized in `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
 

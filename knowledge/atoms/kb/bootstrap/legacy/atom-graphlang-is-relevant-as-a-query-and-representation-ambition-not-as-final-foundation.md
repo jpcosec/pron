@@ -12,7 +12,7 @@ tags:
   - domain:knowledge_representation
   - graph:retrieval
   - cross:graphlang_kb
-provenance: Derived from `hum-ecosystem/docs/architecture/graphlang/README.md` and `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
+provenance: Derived from `hum-ecosystem/docs/architecture/graphlang/README.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
 

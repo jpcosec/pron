@@ -11,7 +11,7 @@ tags:
   - topic:concept_graph
   - domain:knowledge_management
   - cross:tutor_apoe_hum_ecosystem
-provenance: Derived from `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md` and the cross-tool review under `kb/spec/source_apps/`.
+provenance: Derived from `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md` and the cross-tool review under `source/spec/source_apps/`.
 
 ---
 

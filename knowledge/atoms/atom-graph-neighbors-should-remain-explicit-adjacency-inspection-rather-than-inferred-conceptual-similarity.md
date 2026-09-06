@@ -9,7 +9,7 @@ tags:
 - topic:query_retrieval
 - graph:provenance
 - graph:lineage
-provenance: Derived from `knowledge` and `spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `knowledge` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 
 # Graph neighbors should remain explicit adjacency inspection rather than inferred conceptual similarity

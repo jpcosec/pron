@@ -11,7 +11,7 @@ tags:
   - topic:migration
   - topic:sample
   - domain:knowledge_management
-provenance: Derived from `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
+provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---
 

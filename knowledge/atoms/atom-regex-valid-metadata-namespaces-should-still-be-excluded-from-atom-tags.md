@@ -7,7 +7,7 @@ tags:
 - entity:atom
 - topic:atom_metadata
 - topic:tag_policy
-provenance: Derived from `knowledge`, `spec/ATOM_METADATA_DOC.md`, and `desk/atoms/tag-namespaces.yaml`.
+provenance: Derived from `knowledge`, `source/spec/ATOM_METADATA_DOC.md`, and `desk/atoms/tag-namespaces.yaml`.
 ---
 
 # Regex-valid metadata namespaces should still be excluded from atom tags

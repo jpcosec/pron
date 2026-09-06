@@ -13,7 +13,7 @@ tags:
   - topic:tag_facets
   - domain:knowledge_representation
   - graph:concept
-provenance: Derived from `kb/spec/ATOM_CONCEPT_GRAPH.md` and `kb/spec/ATOM_CONCEPT_GRAPH_SCHEMA.md`.
+provenance: Derived from `source/spec/ATOM_CONCEPT_GRAPH.md` and `source/spec/ATOM_CONCEPT_GRAPH_SCHEMA.md`.
 
 ---
 

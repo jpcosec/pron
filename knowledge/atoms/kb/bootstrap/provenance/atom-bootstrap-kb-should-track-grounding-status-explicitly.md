@@ -12,7 +12,7 @@ tags:
   - topic:bootstrap_kb
   - domain:knowledge_management
   - graph:provenance
-provenance: Derived from `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
+provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---
 

@@ -10,7 +10,7 @@ tags:
 - graph:lineage
 - graph:provenance
 - layer:graph_provenance
-provenance: Derived from `knowledge`, `spec/source_apps/kgdb.md`, and `spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `knowledge`, `source/spec/source_apps/kgdb.md`, and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 
 # Graph trace should answer provenance lineage across the source sample atom composition chain

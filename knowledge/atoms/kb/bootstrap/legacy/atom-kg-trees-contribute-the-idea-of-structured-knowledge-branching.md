@@ -11,7 +11,7 @@ tags:
   - domain:knowledge_representation
   - graph:concept
   - cross:tutor_apoe_hum_ecosystem
-provenance: Derived from `hum-ecosystem/docs/concepts/KG_TREES.md` as synthesized in `kb/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
+provenance: Derived from `hum-ecosystem/docs/concepts/KG_TREES.md` as synthesized in `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
 

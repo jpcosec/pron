@@ -12,7 +12,7 @@ tags:
   - topic:migration
   - domain:knowledge_management
   - cross:deskops_kb
-provenance: Derived from `kb/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md` and `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
+provenance: Derived from `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md` and `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---
 

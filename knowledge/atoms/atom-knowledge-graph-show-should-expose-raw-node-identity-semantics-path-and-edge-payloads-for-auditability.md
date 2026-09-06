@@ -8,7 +8,7 @@ tags:
 - topic:knowledge_cli
 - topic:knowledge_graph
 - graph:provenance
-provenance: Derived from `knowledge` and `spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `knowledge` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 
 # Knowledge graph show should expose raw node identity semantics path and edge payloads for auditability

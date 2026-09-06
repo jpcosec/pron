@@ -11,7 +11,7 @@ tags:
   - domain:knowledge_management
   - graph:retrieval
   - cross:deskops_kb
-provenance: Derived from the tag-governance design captured in `kb/spec/NAMESPACE_TREE.md` and the bootstrap tag taxonomy.
+provenance: Derived from the tag-governance design captured in `source/spec/NAMESPACE_TREE.md` and the bootstrap tag taxonomy.
 
 ---
 

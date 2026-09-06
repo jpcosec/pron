@@ -9,7 +9,7 @@ tags:
 - topic:knowledge_graph
 - graph:lineage
 - topic:knowledge_cli
-provenance: Derived from `spec/source_apps/deskops.md`, `spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
+provenance: Derived from `source/spec/source_apps/deskops.md`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
   and the local `knowledge` CLI graph commands.
 ---
 

@@ -7,8 +7,8 @@ tags:
 - entity:atom
 - topic:provenance
 - topic:atom_metadata
-provenance: Derived from `spec/ATOM_METADATA_DOC.md`, `spec/atom_quality/ATOM_AUTHORING_STANDARD.md`,
-  and `spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md`.
+provenance: Derived from `source/spec/ATOM_METADATA_DOC.md`, `source/spec/atom_quality/ATOM_AUTHORING_STANDARD.md`,
+  and `source/spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md`.
 ---
 
 # Frontmatter provenance should remain trace text, not the full governance envelope

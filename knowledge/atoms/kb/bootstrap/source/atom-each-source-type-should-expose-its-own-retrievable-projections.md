@@ -10,7 +10,7 @@ tags:
   - topic:multi_source
   - topic:anchoring
   - domain:knowledge_representation
-provenance: Derived from `kb/spec/MULTI_SOURCE_ANCHORING.md` and `kb/spec/source_apps/SYNTHESIZED_ARCHITECTURE.md`.
+provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and `source/spec/source_apps/SYNTHESIZED_ARCHITECTURE.md`.
 
 ---
 

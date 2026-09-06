@@ -8,8 +8,8 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:atom_creation
-provenance: Derived from `knowledge`, `spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
-  and `spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`.
+provenance: Derived from `knowledge`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
+  and `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`.
 ---
 
 # Knowledge add atom should create a valid atom from the minimum durable knowledge fields

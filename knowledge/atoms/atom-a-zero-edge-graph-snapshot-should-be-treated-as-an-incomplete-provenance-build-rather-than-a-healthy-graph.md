@@ -10,7 +10,7 @@ tags:
 - topic:provenance_retrieval
 - graph:provenance
 - graph:lineage
-provenance: Derived from `.sldb/runtime/knowledge_graph.kg.json` and `spec/GRAPH_ARCHITECTURE.md`.
+provenance: Derived from `.sldb/runtime/knowledge_graph.kg.json` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 
 # A zero-edge graph snapshot should be treated as an incomplete provenance build rather than a healthy graph

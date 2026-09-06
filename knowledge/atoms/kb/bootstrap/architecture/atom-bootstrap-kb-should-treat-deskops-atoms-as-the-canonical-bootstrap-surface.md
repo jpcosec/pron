@@ -12,7 +12,7 @@ tags:
   - topic:deskops_atoms
   - domain:knowledge_management
   - cross:deskops_kb
-provenance: Derived from `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and `kb/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`, with supporting observations from the current `tutor_apoe/desk/atoms/` corpus.
+provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`, with supporting observations from the current `tutor_apoe/desk/atoms/` corpus.
 
 ---
 

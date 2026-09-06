@@ -12,7 +12,7 @@ tags:
   - topic:concept_graph
   - domain:knowledge_management
   - graph:concept
-provenance: Derived from `kb/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and the current APOS Deskops atom corpus under `tutor_apoe/desk/atoms/`.
+provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and the current APOS Deskops atom corpus under `tutor_apoe/desk/atoms/`.
 
 ---
 

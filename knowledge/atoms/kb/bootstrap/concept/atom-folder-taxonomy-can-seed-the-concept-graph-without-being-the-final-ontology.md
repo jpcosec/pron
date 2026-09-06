@@ -13,7 +13,7 @@ tags:
   - graph:taxonomy
   - graph:concept
   - cross:deskops_kb
-provenance: Derived from `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`, `tutor_apoe/desk/atoms/`, and `kb/spec/ATOM_CONCEPT_GRAPH.md`.
+provenance: Derived from `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`, `tutor_apoe/desk/atoms/`, and `source/spec/ATOM_CONCEPT_GRAPH.md`.
 
 ---
 

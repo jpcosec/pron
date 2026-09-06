@@ -7,7 +7,7 @@ tags:
   - topic:document_structure
   - layer:document
   - entity:tracked-document
-provenance: Derived from `spec/source_apps/sldb.md` and `spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md` as a synthesis about where tracked KB document structure should live.
+provenance: Derived from `source/spec/source_apps/sldb.md` and `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md` as a synthesis about where tracked KB document structure should live.
 ---
 
 # SLDB should own tracked document structure for future KB documents
