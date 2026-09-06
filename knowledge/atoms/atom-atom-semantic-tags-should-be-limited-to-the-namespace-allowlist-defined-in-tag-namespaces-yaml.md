@@ -8,6 +8,9 @@ tags:
 - entity:atom
 - entity:metadata_registry
 - topic:atom_metadata
+- domain:governance
+- kind:concept
+- impl:pending
 provenance: Derived from `desk/atoms/tag-namespaces.yaml` and the local `knowledge`
   CLI implementation.
 ---

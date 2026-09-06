@@ -9,6 +9,9 @@ tags:
 - topic:query_retrieval
 - graph:provenance
 - graph:lineage
+- domain:retrieval
+- kind:software
+- impl:here
 provenance: Derived from `knowledge` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

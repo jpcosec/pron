@@ -6,6 +6,8 @@ tags:
 - system:marcado
 - graph:structure
 - domain:knowledge_representation
+- kind:software
+- impl:external
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

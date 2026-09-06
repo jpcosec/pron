@@ -8,6 +8,9 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:validation
+- domain:retrieval
+- kind:software
+- impl:here
 provenance: Derived from `knowledge`, `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
   and `source/spec/atom_quality/ATOM_QUALITY_CHECKLIST.md`.
 ---

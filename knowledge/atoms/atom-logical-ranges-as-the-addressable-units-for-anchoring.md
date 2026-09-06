@@ -5,6 +5,9 @@ five_wh_one_plus: what
 tags:
 - system:marcado
 - topic:anchoring
+- domain:provenance
+- kind:software
+- impl:external
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

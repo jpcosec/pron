@@ -9,6 +9,9 @@ tags:
 - topic:knowledge_graph
 - graph:provenance
 - layer:graph_provenance
+- domain:retrieval
+- kind:software
+- impl:external
 provenance: Derived from `knowledge`, `source/spec/source_apps/kgdb.md`, and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

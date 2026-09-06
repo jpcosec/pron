@@ -10,8 +10,10 @@ tags:
   - entity:question_type
   - topic:atomicity
   - topic:concept_graph
-  - domain:knowledge_management
   - graph:concept
+  - domain:governance
+  - kind:software
+  - impl:external
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and the current APOS Deskops atom corpus under `tutor_apoe/desk/atoms/`.
 
 ---

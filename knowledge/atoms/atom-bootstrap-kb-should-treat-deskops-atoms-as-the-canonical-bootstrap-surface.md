@@ -10,8 +10,10 @@ tags:
   - entity:atom
   - topic:bootstrap_kb
   - topic:deskops_atoms
-  - domain:knowledge_management
   - cross:deskops_kb
+  - domain:system_architecture
+  - kind:software
+  - impl:external
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md` and `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`, with supporting observations from the current `tutor_apoe/desk/atoms/` corpus.
 
 ---

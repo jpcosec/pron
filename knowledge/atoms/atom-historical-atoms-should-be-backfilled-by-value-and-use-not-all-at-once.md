@@ -9,8 +9,10 @@ tags:
   - entity:atom
   - topic:migration
   - topic:sample
-  - domain:knowledge_management
   - cross:deskops_kb
+  - domain:system_architecture
+  - kind:software
+  - impl:pending
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---

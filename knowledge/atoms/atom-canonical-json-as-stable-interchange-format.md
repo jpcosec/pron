@@ -4,6 +4,9 @@ title: Canonical JSON as stable interchange format
 five_wh_one_plus: how
 tags:
 - system:marcado
+- domain:knowledge_representation
+- kind:software
+- impl:external
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

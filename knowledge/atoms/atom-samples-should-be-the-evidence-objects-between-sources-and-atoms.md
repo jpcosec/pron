@@ -12,8 +12,10 @@ tags:
   - entity:atom
   - topic:sample
   - topic:provenance
-  - domain:knowledge_representation
   - graph:provenance
+  - domain:provenance
+  - kind:software
+  - impl:external
 provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and `source/spec/GRAPH_ARCHITECTURE.md`.
 
 ---

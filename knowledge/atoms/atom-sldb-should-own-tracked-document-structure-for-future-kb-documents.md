@@ -7,6 +7,9 @@ tags:
   - topic:document_structure
   - layer:document
   - entity:tracked-document
+  - domain:knowledge_representation
+  - kind:software
+  - impl:external
 provenance: Derived from `source/spec/source_apps/sldb.md` and `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md` as a synthesis about where tracked KB document structure should live.
 ---
 

@@ -10,8 +10,10 @@ tags:
   - entity:atom
   - topic:provenance
   - topic:sample
-  - domain:knowledge_management
   - graph:provenance
+  - domain:provenance
+  - kind:software
+  - impl:here
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---

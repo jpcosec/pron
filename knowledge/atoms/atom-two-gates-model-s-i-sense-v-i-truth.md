@@ -3,8 +3,10 @@ id: atom-two-gates-model-s-i-sense-v-i-truth
 title: Two Gates Model (S_i Sense, V_i Truth)
 five_wh_one_plus: how
 tags:
-- domain:knowledge_representation
 - topic:concept_graph
+- domain:knowledge_representation
+- kind:concept
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

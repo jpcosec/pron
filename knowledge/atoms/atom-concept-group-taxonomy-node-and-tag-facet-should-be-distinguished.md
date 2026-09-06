@@ -11,8 +11,10 @@ tags:
   - topic:concept_graph
   - topic:taxonomy
   - topic:tag_facets
-  - domain:knowledge_representation
   - graph:concept
+  - domain:governance
+  - kind:software
+  - impl:pending
 provenance: Derived from `source/spec/ATOM_CONCEPT_GRAPH.md` and `source/spec/ATOM_CONCEPT_GRAPH_SCHEMA.md`.
 
 ---

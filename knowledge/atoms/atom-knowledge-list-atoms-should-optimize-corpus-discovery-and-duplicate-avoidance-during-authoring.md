@@ -8,6 +8,9 @@ tags:
 - entity:atom
 - topic:knowledge_cli
 - topic:authoring_workflow
+- domain:retrieval
+- kind:software
+- impl:here
 provenance: Derived from `knowledge`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
   and `source/spec/source_apps/deskops.md`.
 ---

@@ -9,8 +9,10 @@ tags:
   - entity:atom
   - topic:multi_source
   - topic:concept_graph
-  - domain:knowledge_management
   - cross:deskops_kb
+  - domain:governance
+  - kind:software
+  - impl:pending
 provenance: Derived from `source/spec/NAMESPACE_TREE.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---

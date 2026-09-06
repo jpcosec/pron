@@ -10,6 +10,9 @@ tags:
 - topic:provenance_retrieval
 - graph:provenance
 - graph:lineage
+- domain:provenance
+- kind:software
+- impl:external
 provenance: Derived from `.sldb/runtime/knowledge_graph.kg.json` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

@@ -5,6 +5,9 @@ five_wh_one_plus: how_not
 tags:
   - system:kb
   - topic:structural_graph
+  - domain:knowledge_representation
+  - kind:concept
+  - impl:pending
 provenance: Bootstrap atom carried forward from the legacy Deskops atom corpus (`desk/atoms/`). Exact originating source document(s), section-level anchors, and sample bindings have not yet been curated; treat this as provisional corpus-level provenance pending source-stub and sample backfill.
 ---
 

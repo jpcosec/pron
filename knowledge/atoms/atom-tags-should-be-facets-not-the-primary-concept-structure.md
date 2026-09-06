@@ -10,9 +10,11 @@ tags:
   - topic:tag_facets
   - topic:taxonomy
   - topic:concept_graph
-  - domain:knowledge_representation
   - graph:concept
   - cross:provenance_concept_graph
+  - domain:governance
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/ATOM_CONCEPT_GRAPH.md`, with direct motivation from `tutor_apoe/desk/atoms/tag-namespaces.yaml` and `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`.
 
 ---

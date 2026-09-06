@@ -8,9 +8,11 @@ tags:
   - entity:atom
   - topic:knowledge_retrieval
   - topic:multi_source
-  - domain:knowledge_management
   - graph:retrieval
   - cross:deskops_kb
+  - domain:retrieval
+  - kind:software
+  - impl:pending
 provenance: Derived from the tag-governance design captured in `source/spec/NAMESPACE_TREE.md` and the bootstrap tag taxonomy.
 
 ---

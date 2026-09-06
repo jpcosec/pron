@@ -10,6 +10,9 @@ tags:
 - graph:lineage
 - graph:provenance
 - layer:graph_provenance
+- domain:provenance
+- kind:software
+- impl:here
 provenance: Derived from `knowledge`, `source/spec/source_apps/kgdb.md`, and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

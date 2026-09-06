@@ -9,7 +9,9 @@ tags:
   - entity:atom
   - topic:bootstrap_kb
   - topic:provenance
-  - domain:knowledge_management
+  - domain:provenance
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/NAMESPACE_TREE.md` and the tag-governance analysis that motivated the bootstrap tag taxonomy.
 
 ---

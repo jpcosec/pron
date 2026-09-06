@@ -9,6 +9,9 @@ tags:
 - topic:knowledge_graph
 - graph:lineage
 - topic:knowledge_cli
+- domain:retrieval
+- kind:software
+- impl:here
 provenance: Derived from `source/spec/source_apps/deskops.md`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
   and the local `knowledge` CLI graph commands.
 ---

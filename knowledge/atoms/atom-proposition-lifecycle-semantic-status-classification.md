@@ -3,8 +3,10 @@ id: atom-proposition-lifecycle-semantic-status-classification
 title: Proposition Lifecycle / Semantic Status Classification
 five_wh_one_plus: how
 tags:
-- domain:knowledge_representation
 - topic:concept_graph
+- domain:governance
+- kind:concept
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

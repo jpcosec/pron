@@ -3,8 +3,10 @@ id: atom-information-energy-e-r
 title: Information Energy E(R)
 five_wh_one_plus: why
 tags:
-- domain:knowledge_representation
 - topic:provenance
+- domain:provenance
+- kind:concept
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

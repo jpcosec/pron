@@ -7,6 +7,9 @@ tags:
 - entity:atom
 - topic:provenance
 - topic:atom_metadata
+- domain:governance
+- kind:concept
+- impl:pending
 provenance: Derived from `source/spec/ATOM_METADATA_DOC.md`, `source/spec/atom_quality/ATOM_AUTHORING_STANDARD.md`,
   and `source/spec/atom_quality/ATOM_TAGGING_AND_PROVENANCE_CONVENTIONS.md`.
 ---

@@ -9,9 +9,11 @@ tags:
   - entity:atom
   - topic:legacy_extraction
   - topic:knowledge_retrieval
-  - domain:knowledge_representation
   - graph:retrieval
   - cross:graphlang_kb
+  - domain:retrieval
+  - kind:concept
+  - impl:external
 provenance: Derived from `hum-ecosystem/docs/architecture/graphlang/README.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---

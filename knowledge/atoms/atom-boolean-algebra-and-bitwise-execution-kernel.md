@@ -4,7 +4,8 @@ title: Boolean Algebra and Bitwise Execution Kernel
 five_wh_one_plus: how
 tags:
 - domain:knowledge_representation
-- domain:graph_architecture
+- kind:software
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

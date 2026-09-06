@@ -8,6 +8,9 @@ tags:
 - topic:knowledge_cli
 - topic:knowledge_graph
 - graph:provenance
+- domain:retrieval
+- kind:software
+- impl:here
 provenance: Derived from `knowledge` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

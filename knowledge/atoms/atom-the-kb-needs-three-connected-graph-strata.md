@@ -12,11 +12,13 @@ tags:
   - topic:concept_graph
   - topic:structural_graph
   - topic:provenance
-  - domain:graph_architecture
   - graph:provenance
   - graph:concept
   - graph:structure
   - cross:provenance_concept_graph
+  - domain:graph_architecture
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/GRAPH_ARCHITECTURE.md`, `source/spec/ATOM_CONCEPT_GRAPH.md`, and `source/spec/THREE_GRAPH_MODEL_DIAGRAMS.md`.
 
 ---

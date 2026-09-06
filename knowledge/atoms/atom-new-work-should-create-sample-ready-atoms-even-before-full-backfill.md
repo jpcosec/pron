@@ -10,7 +10,9 @@ tags:
   - entity:sample
   - topic:migration
   - topic:sample
-  - domain:knowledge_management
+  - domain:provenance
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---

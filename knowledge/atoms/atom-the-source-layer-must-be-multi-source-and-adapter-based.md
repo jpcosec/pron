@@ -9,7 +9,9 @@ tags:
   - entity:source
   - topic:multi_source
   - topic:anchoring
-  - domain:knowledge_representation
+  - domain:source_modeling
+  - kind:software
+  - impl:pending
 provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and `source/spec/source_apps/SYNTHESIZED_ARCHITECTURE.md`.
 
 ---

@@ -9,8 +9,10 @@ tags:
   - entity:atom
   - topic:legacy_extraction
   - topic:concept_graph
-  - domain:knowledge_management
   - cross:tutor_apoe_hum_ecosystem
+  - domain:retrieval
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md` and the cross-tool review under `source/spec/source_apps/`.
 
 ---

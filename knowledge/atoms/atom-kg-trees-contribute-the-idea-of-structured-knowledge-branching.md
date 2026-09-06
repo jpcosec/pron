@@ -8,9 +8,11 @@ tags:
   - entity:concept
   - topic:legacy_extraction
   - topic:concept_graph
-  - domain:knowledge_representation
   - graph:concept
   - cross:tutor_apoe_hum_ecosystem
+  - domain:system_architecture
+  - kind:concept
+  - impl:external
 provenance: Derived from `hum-ecosystem/docs/concepts/KG_TREES.md` as synthesized in `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---

@@ -7,6 +7,9 @@ tags:
 - system:deskops
 - topic:knowledge_cli
 - topic:workflow_separation
+- domain:retrieval
+- kind:software
+- impl:external
 provenance: Derived from `source/spec/source_apps/deskops.md`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
   `source/spec/ATOM_METADATA_DOC.md`, and the local `knowledge` CLI implementation.
 ---

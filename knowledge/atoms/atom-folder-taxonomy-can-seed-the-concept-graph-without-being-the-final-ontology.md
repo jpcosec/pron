@@ -9,10 +9,12 @@ tags:
   - entity:taxonomy_node
   - topic:taxonomy
   - topic:concept_graph
-  - domain:knowledge_representation
   - graph:taxonomy
   - graph:concept
   - cross:deskops_kb
+  - domain:system_architecture
+  - kind:software
+  - impl:external
 provenance: Derived from `tutor_apoe/docs/diagrams/apos-atom-taxonomy.md`, `tutor_apoe/desk/atoms/`, and `source/spec/ATOM_CONCEPT_GRAPH.md`.
 
 ---

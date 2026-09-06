@@ -1,91 +1,121 @@
 documents:
 - name: atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   path: knowledge/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md
-  hash_c: f95ef62a653bcd2387fc5beaf9f6a67bda0fdcd222641c9b1c1cad864f7a9c20
-  hash_d: 4d4a7020b78913bd816feca4a38712fdc8f9dc0e2b94d3b9de585f1c505114b1
+  hash_c: 30a004ce5133c3a9ed6d956b1fb8773a721c7a573aa4cd41856b57b259e0b63b
+  hash_d: c123a72c9bdae831b43fb7b936fd383a8827844f0779b8a2b8c13c0ebf11e205
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   path: knowledge/atoms/atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version.md
-  hash_c: 19c8064565ab36b693b7d0426fa1cad2e3a06958d3b04d5e2dfd2b227e4486f5
-  hash_d: ddd089664307a15893abc6299b20a51e10080c269ff8144187d67b56b86c0523
+  hash_c: c9384006c0fc675c3cfb6516a11c75de746ef4924f2cb35837bc677a5b46c2f1
+  hash_d: 93f442a45d5e212db56afabbfa1414146dd16f35a2e9a614f1aed58e9767634e
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
   path: knowledge/atoms/atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible.md
-  hash_c: e2904847c6da388d347657f213dfe26cdb7971343accd5e9da8764c23a8491b3
-  hash_d: 02915cf56b07edd13942b58d34a09253bc7421bf0a25ec169265dc0a24e82193
+  hash_c: 3fbc64db688dd90ded028654e11ef7d5fcfb33bde48d2e6e617b987728aac7b0
+  hash_d: 144071195a174134a01ab37cc3599051de594e5458b7cfe9a830d0e4f9e32072
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-source-identity-validation-should-precede-anchor-validation
   path: knowledge/atoms/atom-source-identity-validation-should-precede-anchor-validation.md
-  hash_c: 9a50bfac649ba181fdbfd29decc8eb786ad254c91e569f097a33ddd73f9ae78f
-  hash_d: 7481d8a8ba657809601a8c13226addf905255be440a7bfaf51060f097e12d78b
+  hash_c: 1334b33522f7723bb8d48020443dc422b4c2d6ffa7745eb7072d6d5167606e8f
+  hash_d: b05a82cc3d9b11b2b71325d85952e1c036fa4c894da69cfa30e8aae5bdf764f2
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   path: knowledge/atoms/atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time.md
-  hash_c: 97621a0b96a9a57c0e52d0264bcb7e4334190ce9de9a08e3c487ee9c5a790367
-  hash_d: ffdbfa50c0e6dedfe1fb0607953533cd298c21e9f1483185919d7b35d94311bd
+  hash_c: 7287f7b63dd147f24c23b309561379f9e3dcf7f153fe2f6476cb7caec9f935f7
+  hash_d: 7c9f6fd7ee35ea8707bbfb9fdf45f71f7f4c5542aff247bb14389435e50f0af6
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
   path: knowledge/atoms/atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance.md
-  hash_c: ba7dfee99bbb547ea977350bfd80dd183893433c10fc2bb6f11ac0221d0b9f08
-  hash_d: a910db9f4e2a019edbf407be652a23c0291af104cc28d842a540fbafbe0b21d1
+  hash_c: 12a1f003bf3d550b16f3dd1b45451e0d305d0f4fc9a35eff3b3df7fac231727d
+  hash_d: 130cccb7e1f03b3c1fab9c8ce4d01934d55acd4d00ce7cc5b901f133f574b63c
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   path: knowledge/atoms/atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled.md
-  hash_c: 642ab03a759454a2033cf189f535e80789a2139644e8915ca3939b20d8d8f7ad
-  hash_d: ccd447a5fac4d7f5b51f0cbd0d4c2e89a150ebc77bb70ff8c57fa6a310311635
+  hash_c: 7b5efc129029283092b0b2d62cf0184736ce2b76439f785c08b733ca7b9fdae7
+  hash_d: 3a7d79bda6a05ddfd5d6797c3a08fa9e76287647ff2bf387b22fbe9665336eda
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-composition-should-provide-depth-without-inflating-atomic-answers
   path: knowledge/atoms/atom-composition-should-provide-depth-without-inflating-atomic-answers.md
-  hash_c: da87f95daebd138a6e2e22415738a914ff614510241c0abad37ab50cbc42ced2
-  hash_d: 35f55fbca33753331aa51b019fffeb7081a8414de964f5cfb3203cbe2958d0b8
+  hash_c: ea5af4fedc1dab9d6de2db084b772ccdafdb4c6de67a76450e7308da7ce50e24
+  hash_d: be128bbeba2b2ad00ab281c171bad0705e6fdd0a8fe8a1df04e3d696bc549e42
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:composition
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   path: knowledge/atoms/atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms.md
-  hash_c: 36e0e76fd0d44ff736036b3a98aaf6d6dfa6690520638d2d3bf9de84d33d922f
-  hash_d: 02c9dad22145489fab1b3cc0aca0fbdd48c2497575b9af86acdc9b1ebb94d4f6
+  hash_c: 3a50573e2eda3201674936dfd842f7fda96eddb024a9a2429bacb96e8685655b
+  hash_d: 9b4fa06606f8a2d93576108a7ea5fe7e5ffa4d05ab7e563228fac9ddc64a31f1
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:composition
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   path: knowledge/atoms/atom-sldb-should-own-tracked-document-structure-for-future-kb-documents.md
-  hash_c: 50111fb87389c061a7a2202ed4a688e579c524c80bece4758d583d8d2d013cb4
-  hash_d: 5678a5f2d730dde90db9d3cc1bee8347a204edfa808d46c78b5af85d01403783
+  hash_c: 2e46a20332e3d410347aa8b735af72e2c46d1ee652b65589c532d74daa220b23
+  hash_d: f5419714c12c88b5284dc527547753d784b9b5848c8bfa9e66392d7bb647565e
   semantic_tags:
+  - domain:knowledge_representation
   - entity:tracked-document
+  - impl:external
+  - kind:software
   - layer:document
   - system:sldb
   - topic:document_structure
@@ -93,426 +123,566 @@ documents:
   - workspace.desk.atoms
 - name: atom-marcado-should-own-the-annotation-layer-over-samples
   path: knowledge/atoms/atom-marcado-should-own-the-annotation-layer-over-samples.md
-  hash_c: 2cd565af3ebe8ebe949a0eabcaa495771019a115b6f4f85fac300998daf65d57
-  hash_d: b66b6caaf246551fcafd8c40409171a896b90760ef3e282eb900de26dd99e57d
+  hash_c: b680890e5d1389678904df36905bfdb79745ba62937b1aeca9ff7002674602a0
+  hash_d: c76951abfa2bc26cc6ef2bf33ea08f916e7e39fdac3f0f9729be186529f7c76d
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:sample
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   path: knowledge/atoms/atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth.md
-  hash_c: 6c3328596957ce7e0ce27a5f5d4b4cb30b6f8795ab16d6e544b1d8cc260ef2e5
-  hash_d: a003de9cf5f9fd765d539c456b58d1551d27d3b3fb96a3aac7b9541629aad3af
+  hash_c: e6b3ad076a40ae7de57089cf5c1ea008bfdb544cffca85f70690225fc04a9270
+  hash_d: 5bfe2b16001e72eacd25806d093fd2b251f175571d13b16d608d365532a7f90a
   semantic_tags:
+  - domain:graph_architecture
+  - impl:external
+  - kind:software
   - system:kgdb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   path: knowledge/atoms/atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions.md
-  hash_c: 64b0dfa1c3a6d14b02cfcddf255bb181006c7dfa9688e387e38a257ce2074494
-  hash_d: 36c478542fe2d4c11f861f88a9858c7038c7364f0cec6abe2e1b40d9f4641b98
+  hash_c: 58f7276d827ad6d7d9937e38cc4ba4d3a1de024268b6b37a250d74f05a3b658e
+  hash_d: 288e404ab82f802e0b6c9a2a884e3ba75e3a0a1b4eca6ad7969cf5c8c4f822af
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:external
+  - kind:software
   - system:ontomap
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
   path: knowledge/atoms/atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately.md
-  hash_c: 2f1cfe9e6aa4ad464fc1131d21fee16ca164209118c47f5e7fa647f4a113f8da
-  hash_d: d8b82400d824da660ff08b568f728297f64de41fa8cac887b2e311ebfb50e4ed
+  hash_c: 8283f1156595c8d235e444df4082719544ce9a270bf746164815e143d8232d4d
+  hash_d: 3b4c0297431c21b62c29862572f22d50e7952cc4239ebc25f9b7c6e93f01e454
   semantic_tags:
+  - domain:graph_architecture
+  - impl:external
+  - kind:software
   - system:graph_ui
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   path: knowledge/atoms/atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources.md
-  hash_c: f97f5bd6ceda8763f57dd837894de79ca395a44a2d7cf38ff5054482f8d4ea12
-  hash_d: 2145ea3f5990bf1d49bc6e8a219f7afcd79dbf193b5f579c547bf1113e6c0c04
+  hash_c: 8d69885eebc303b5c6e8026e63fe6339e2143f1a21eb7b07b9747f3ee79abe15
+  hash_d: 7e89905fe2ff6e5414b1da9775408ef057d377299ba73541a8d0814a127777c9
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:external
+  - kind:software
   - system:spec2viz
   - topic:structural_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   path: knowledge/atoms/atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth.md
-  hash_c: c646f3f3bc97a716ba291cb1338e8eac3fdd20131aa7532d1178600ce0cee13c
-  hash_d: f97304847be6acd91f85246b1b741217a2ce617d5549548462e47aefb11e90b5
+  hash_c: bfdeb4c0a8b140fd8033ce7b6a541229f1539229d8d943325fb08d4a32e14802
+  hash_d: f7d7fbd9209987d3e987d034b120c8772bb1189d6286db95ef49428714afe4be
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:external
+  - kind:software
   - system:hum_scrapper
   - topic:multi_source
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   path: knowledge/atoms/atom-repopackage-can-help-model-repository-structure-as-a-source-projection.md
-  hash_c: 3d17169faac35b0670899c2309df5a39dc725fc4135495bf36e0944955a2ca31
-  hash_d: 4cc5dd254ad164a49948df477658d7ab8db9fe07f6ceef4651ab8751db1b09e6
+  hash_c: a89f85b651ba73a0a42d29e338e30870fc44bfb71fb365cf5bf1367830c0e0f5
+  hash_d: 66a1dae0d37d320480b7f48595322552b4b1a03f431945510800e4ba7da48857
   semantic_tags:
+  - domain:source_modeling
+  - impl:external
+  - kind:software
   - system:kb
   - topic:structural_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
   path: knowledge/atoms/atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval.md
-  hash_c: b857ae3ffcd058f1a70042db5c0928c23f5b7adbf56d38aa7df1ac5e3ce466a8
-  hash_d: 6c96cf9d22793f4ada8493a642191a7c26471d8eed1404380c07cf4f957fb814
+  hash_c: d3a2cea91b5bd5247272f296c484beade5fb3fa08c6f56122f396eed901a36d3
+  hash_d: db2d2d56e3440c3ed12478f4876f999d1abee53f946f94bb01796a146de57841
   semantic_tags:
+  - domain:retrieval
+  - impl:external
+  - kind:concept
   - system:kb
   - topic:knowledge_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   path: knowledge/atoms/atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples.md
-  hash_c: 906215fc9653cb68370a7ea56f1e27e25767194bf0ddf92ce62c4891a0fe8c17
-  hash_d: 6322078aa89464e665f20b2c8411ca65ba703388d0a6218500f5d7ec3819c5a4
+  hash_c: 76826bc2c749c3934ffef7fd40a7c90b62876850963fa09e08129a4c864d539c
+  hash_d: 57c6202f8b3f26c485fea9470eb1b85fb040d94237e108eba93cbe1abed396ca
   semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:query_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   path: knowledge/atoms/atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity.md
-  hash_c: 7a8227f50eab4728ef688792f4cc8a5ae724a680cf5244b58d4a425894243392
-  hash_d: 70c03c476dc8c3be42af49c4e2de988d065b604b792e47f795ad2f214d93a362
+  hash_c: 91aa56f32f4d88707ad7e67de10258d3d540f6c63db58e104a69c90043174fe6
+  hash_d: 9eef20731afbc00fbb018853934f0b7577e7e063324d6239e5c99db019886661
   semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:query_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   path: knowledge/atoms/atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum.md
-  hash_c: f4a66933e3bba6ce982fc754d8805f0a7443ae9de7f2a0a7a575b1796c63021f
-  hash_d: 655505c6749885cd01e6a735fdee1019159a2484ee51781d145fc4b38102d185
+  hash_c: 73605a09eed8d01bbfa0bd131de28f32186a794914798adf22844f22facd4162
+  hash_d: 2d1aa6eebac6a43639a97aff3c478cfc050807d724cebae77b9cab24f724e535
   semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:query_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
   path: knowledge/atoms/atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources.md
-  hash_c: 099f15d8926fb73666c50e7a3e1c52c223ad7d36574e1616772f875695373dd7
-  hash_d: a9f5e6fdd6fdd376cdf89ee4babaebd4187ab398a67a8fb42f6a0ef74538d2e2
+  hash_c: 461d93353a0231615bdba116c53f96ad8ad4943c1e640bf3bf269cf556ac69b0
+  hash_d: b121ff43b3f2abdc370d56480d558fcdb019c23fe533e76905a0c3c740c938f8
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:sample
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   path: knowledge/atoms/atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis.md
-  hash_c: d66248f92ec649107f68f4e1271247361d5e390a07416a27f56af3e6e9b73c1d
-  hash_d: 0fac4579d667b569bbe106bcd3d4986fae1901dac1867c59f2ea3c3f6a6bcf34
+  hash_c: be03ab533c360a635dc57cee5ac05154ae02cdcc12e6e8adc4d648bbd00f679e
+  hash_d: d2c6be3ce1898476685d0a1af4b0ed74d4d8769b75a83d93046d5b9ac99b799f
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   path: knowledge/atoms/atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths.md
-  hash_c: 4da2f1ef9adc99b272e4eacf105f1a0f87b818555dbaf3677a287b7c64e1f80a
-  hash_d: 9cbc1ca51bf2f93625c0182a6f0b21d7a5c6aeb14d50a3717067c5fd54871674
+  hash_c: 2d0d5cc1cb58891093230c657e90c8b9644ce04bc1296dff0e3bca9d0b55fdf5
+  hash_d: ba6f8d1b4e56f1fcf2ab30c1dad648f21f1d03358174d6bf6d0e34d8a9239990
   semantic_tags:
+  - domain:graph_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:structural_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
   path: knowledge/atoms/atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families.md
-  hash_c: f6492e84dcbcfbba9b6392b9d07443b114493ecfe3175b80145752d0c1d51a00
-  hash_d: 2767c15007bc4dea8c6af017b187d1c25ec12a2bdf0b1b14ab72c6534e6331b7
+  hash_c: 1829198e6a57f2fa342886cffd90dcfed32407f8dc7f60dba84b77c44ae43934
+  hash_d: 187250adcda1aac8fe5f1cbc9255e300dcfee104807c543a9cff1ea7473bdec8
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
   path: knowledge/atoms/atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus.md
-  hash_c: 21e26210dde971b434ffb3ba39f19db256954aa48a6ee9b9fd45bdb70840c22d
-  hash_d: a0b44ae5d9a06071278a2ffa04d0d70074e79865dd8fd85a0e5372ada5753a93
+  hash_c: cf7f1c7e5eade07a7549ebcb1743128fa7a213fc88cb31752e30c673e1a87811
+  hash_d: 4b02347c73b22aee5df0fc9c79c9fa2d1cc434d55fad0eed62e8e3a1b03386dd
   semantic_tags:
+  - domain:governance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:tag_facets
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-project-tags-should-distinguish-repository-context-from-system-identity
   path: knowledge/atoms/atom-project-tags-should-distinguish-repository-context-from-system-identity.md
-  hash_c: 77316a3cf75d71c2eed673ccbb136ebbf280c8bacfd70efc5db9b5978bb73b15
-  hash_d: c231d046567aee2cf9badbb15588ccfa2295ad4d07456503a799431def360f8e
+  hash_c: 62700af3626b919f15f3ad9d63b837b2473ee6d97a987f7fec8449fe6d96bd2a
+  hash_d: 93bf2bc70cb794b325d7b65b14c8972a47b714d9e231edbec1bf0a345dfba09f
   semantic_tags:
+  - domain:governance
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:tag_facets
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   path: knowledge/atoms/atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb.md
-  hash_c: 430145a9aea8f943644d6447b323daa816edbed8e4800d73cfcf9ccdc13e331d
-  hash_d: e723b87dc8fe130ef1d39818dfcb0c087488b3529c0bb543c1fee01df2ebcb55
+  hash_c: 078e27fe0eb7f70a86a135b5950ec84e6b5f5e634c999e4aefaaaf98a0c18175
+  hash_d: 96cc94a52be0a13ee1f97a6413f8a3061e8341581852e8ee0ebf184f1dea0d6a
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:sldb_ui
   - topic:knowledge_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
   path: knowledge/atoms/atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus.md
-  hash_c: b4ca5bf4c24f92c1ab02489ff01dbfae68c98fc628f4fbd5799a77b8ea43f248
-  hash_d: 748eba466bcce954b19eb67113188ed5827ea581e12fa75aa203538a9947eae8
+  hash_c: a43e53657b70f9f916621dde6198fb3a3995483b9ad0ad39b3afcd6398c00d00
+  hash_d: 2213adae33574f2c09ba0326c82dbed5580b3cf4e78d94218e409c39b367dae5
   semantic_tags:
+  - domain:system_architecture
+  - impl:external
+  - kind:software
   - system:deskops
   - topic:bootstrap_kb
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   path: knowledge/atoms/atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only.md
-  hash_c: da3d4b79feece139e2882ab8ce153dfdbd11b23910e98c7a5866d0725076d54e
-  hash_d: 598ee3d8132cd0136348fe80aa334338640da67a3b85c4cb4d8a0e397a7ccace
+  hash_c: 5ad0597eb59f716285ab8f31e036022dc82cc4bac582854501e84f1e4ebff53c
+  hash_d: 28e0c36ac265753064e9a023e536eb8b96d6bbf4d473c0fc5db63248cd5fe2ea
   semantic_tags:
+  - domain:graph_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms
   path: knowledge/atoms/atom-cross-project-synthesis-atoms-should-be-reviewable-independently-from-local-source-atoms.md
-  hash_c: 2ed66dc3069a8f3c623b5d83d2c5dea793a4c40275ec08269f911646acfcdbd7
-  hash_d: 57f974dcaa546e6c348ffd0633e2ec543762bbda33c4d5d4e25e1ac4d992f7d3
+  hash_c: f048ad549d8d3cf986276d07e214ab37458315521e25f83ddadb7156531bcec1
+  hash_d: 0f09aae7759fb30dc478fe2f4b2c3f99bd88a1166e6042edc17e61d2791dda5c
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:multi_source
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   path: knowledge/atoms/atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring.md
-  hash_c: 906f6ba15002b9100579f99496814cfcf0433aaa8a8bcfc62d9baf851f98503a
-  hash_d: 5705d7bff5df2fdbc30e6b8c3ea0893117fe1daf207a9cd91b0604a712ce7c23
+  hash_c: 62bb1a13c6dda1d2a77c717ba3058774e157dc23fe204d30e55d093ebb662e98
+  hash_d: 864f5823179afcd4933d705b7b775c24799eac97e590d1903fec7119ba58cfa7
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   path: knowledge/atoms/atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text.md
-  hash_c: e6e13fad7043784ddfa7fb370c57631d2f6992ecf76aab625ebbb2b1162d1dee
-  hash_d: d64baa8404e78d973de062e822477d7b34659b0e8138cc9e2874be7a0c9a2fae
+  hash_c: f02165c7fc18a28132cb86c9219342f6cbd0a642cf38276813ca392d11c06574
+  hash_d: b43922374ccdceb904b22388b6d022635089ca81fa7745bf298837d2a64689ba
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   path: knowledge/atoms/atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain.md
-  hash_c: 7afdb6e8b5e998bf48939d85a6893800cf166ac405ae94779a0f6f1b049beb68
-  hash_d: 0340dbb14272c76401eef534923ed2c8f26997146c7e701dd8995abe2c0f5f3c
+  hash_c: cf24b31c3cd2a90a228fa1f481fe35c8dd626416c4ffb2da9f92d160e2bd328f
+  hash_d: adf870228775d89ff3b672bc223a03bbe223694c23b1d776cdcd2294e7a7d271
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
   path: knowledge/atoms/atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms.md
-  hash_c: b3d0f160477c2b6f455065e67b5e38577f2c7fd76974d0b08062cf989a6119e5
-  hash_d: 0d57f58640bd5df86d2fdc9c7a0be8eada426b8bb3f80da375f10523aab77faa
+  hash_c: 6ed05b06954fa9dd539e615ca1684952412299a97c1ee8b5914cd4005bee8e7f
+  hash_d: db848f56f0fb4dc05abb69462870942e6684739f04eebe5bfbc57fa64af3f633
   semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:coverage
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
   path: knowledge/atoms/atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct.md
-  hash_c: b4cae0c82e1cf8f01f68aa70ae8435439fb2f14e2dacbf3ba290a4588549398e
-  hash_d: 4224b5bb82abeceed5e7a10f46a42cc155bc00dbdef958d9975778f5a37c2803
+  hash_c: e81747ce3e58367e8aea005fc7f5f02f1024d1ca8f1670147c426c306473f5e8
+  hash_d: b54e027948ce180f816521f9d1ebf3a13a912e2a209dad7b387362e2013181d0
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   path: knowledge/atoms/atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers.md
-  hash_c: 64cd1f57e21d1f6a611ce602513107569d36997ee3ccb6c697a4db2a081c01ed
-  hash_d: e0fcec74509f359fef46780f14ae2d16fba98c4ed64a74d5b0e9689b40811f32
+  hash_c: 85caff4fbd4af8ac4b6b76062b3ddadfe6325ed776d6f6f9a22c3cf3d2ff534c
+  hash_d: f8d8fa460db68aa502fee5dd0559d5d2eaa3e4e121d926b7bb3480e69a8b8e39
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:atomicity
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   path: knowledge/atoms/atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons.md
-  hash_c: f5b42be0897dc021553db0272f07f16f34318b123c65aa795347688460c9d641
-  hash_d: 3fdec20a08e8f10d89feaee2d3633d8c64f844ef7cb7ea8d2ca7c9018695db66
+  hash_c: b8017e3264e26d555581bf68ce24068fa51404415ce87a873779d10f161c96a3
+  hash_d: a121ec5a3e103fc112a53790069b73cfd99b20752b154e7fedbd2f8de6c1cc4f
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   path: knowledge/atoms/atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers.md
-  hash_c: 788de72d73b8585ddb8851d962e7f200699c737e5f08de1afbcb071a95c7abe6
-  hash_d: 7a8fcca1e525d29b00cf5aea3350db0b68ab2c2ef651215cb21ed631b0ae2859
+  hash_c: 473ecbad36d0618ad2f848b828246e24c92d528a14cb203940132f10c618aa19
+  hash_d: 0b77fc284781a1d19008ba84db0be80b2917cbcae499c28f0440e3dc7f52640b
   semantic_tags:
+  - domain:system_architecture
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:legacy_extraction
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-treat-notebooks-as-multi-projection-sources
   path: knowledge/atoms/atom-the-kb-should-treat-notebooks-as-multi-projection-sources.md
-  hash_c: 1b2d4a8581b8fe30e3c9b81a0d74811ae6a9d8a76fa805cecf21ce23fcac0ee4
-  hash_d: 14f40a4a2a85155a2442cd0aa5df0668a67b6065e0a442c602737c809b9db2dd
+  hash_c: 7295ab1d62d1290fa56cdc6075c12968488e9482b0baf7b54fc04a32317b5267
+  hash_d: 70ad1ef8ae09d998a20a4020f66ec8e7b3ba3378f518dc0aacb9660caf9de563
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:multi_source
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   path: knowledge/atoms/atom-api-snapshots-should-be-treated-as-versioned-structured-sources.md
-  hash_c: 322ce96e9d03578494d6713a95a2ecd20a82f60eba41f8b911ee038cd9cbdd29
-  hash_d: cd6b0c2f64740ba7297ddf9f0a3e80aafc5118c98cd80a63154f135d4c944aa0
+  hash_c: d1b63ff09103fd522426d28468e0427c8b31084120f142ce72a095bfc3584c88
+  hash_d: d10f001a4e0b067c7d7cc97716e7b577a2123e3752167f67d52e1d4f09d60cbf
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:multi_source
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   path: knowledge/atoms/atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context.md
-  hash_c: 60466db7b73d42a192f60d02d5d4f7120c8e38935f457b851109a032d608b9fc
-  hash_d: 5eea1ad2d070142cb72ee0726eb8df5533b565a1d208f2d9083bb7005fc03a8a
+  hash_c: 12350fd479ec0e8462937d631e5d457b7d6578db86967ef8cd24af08b3386609
+  hash_d: 705ef43b44479dffb7d4c882d0b5cf323703b2651df603b83f7229462e984e05
   semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:source_adapters
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
   path: knowledge/atoms/atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them.md
-  hash_c: f1bef3eefdb2f23ea4e6309010a189f0e6fdf6bcb5731e59e202f61df5235f9b
-  hash_d: 72a7f4f005c8b3c9490718c4abc7cb3e46257cd1e0f34e5dcc5e5fcc4b7746c3
+  hash_c: a76278025104937ca4846d7eab76c8de1f8cbc238006ff37a07bedfc47f02ee0
+  hash_d: b2c20cc1af68ebc7d162584fdf5f4d5342bd3655e4ab3d13c738fb4ed4ec9217
   semantic_tags:
+  - domain:governance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:tag_facets
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
   path: knowledge/atoms/atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms.md
-  hash_c: 75f75023ddec9a1b1002b15068bf851ee0636b377df8faa3586380810b7901f1
-  hash_d: b2aabd2de922c6ebe54e7562f74ca39532b91365b1b7843c03cfcff026ccb968
+  hash_c: 05e53e715821ac718e94e8b5ca90940392acf3b91a6dc170af1bcb6b1f62051a
+  hash_d: f9d1030e33467e7bf094d2b55fe7a0c112652fb9b3202c4a6df00cff8908ce17
   semantic_tags:
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:bootstrap_kb
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
   path: knowledge/atoms/atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation.md
-  hash_c: fe006540227209d614eccef27d6c35a56cc8c6c1f198858b88fdfe85afca7644
-  hash_d: 7ced91dcae293573cee57675b45fcd7ecc6b958c4add139e513c6c252d0daa5e
+  hash_c: 68f968bcf4e93f74378e344683a855219e96c0091b3bccb5fa573c48ae7b0f8d
+  hash_d: 0f7c23861b5ed422872b8ed825f602665797cea39ed12cacbbca857b5c3b3186
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   path: knowledge/atoms/atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge.md
-  hash_c: 5e794f314d4dd14e319ea02add7365f7354e34c7ffc72f51f20254b9c38999ac
-  hash_d: 2a4a9821544ac7311339a47e263a0362ade01d3ecd750fd3113628384f40adf8
+  hash_c: cdde47bc8296a1feb8f40d3357af4e56c0a68b1327de89d4cf6c8004dfefb66c
+  hash_d: 8f82aae0074c6701a0625a4699d8e1393b2c1e316a7b957137d1f7e4c240769e
   semantic_tags:
+  - domain:graph_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:composition
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-atom-status-tags-should-support-review-and-migration-governance
   path: knowledge/atoms/atom-atom-status-tags-should-support-review-and-migration-governance.md
-  hash_c: 7fb377b388572ca8da5f8c469d2ab9d489bdf93818a2f12b62e29da48a596a92
-  hash_d: 24cee8ed313d1044e4fbc1ed24b4aa4adf4b67bac43f05ef0ef54ba5857fb06c
+  hash_c: 4e80cd160d362b9b0072a2dd17731bea867c22e7bde06cd09ee94b9bc01ee5a2
+  hash_d: 9843e9b6239994d399dea2162b63ea5ca278212c5f7f51421f697fd0d4125e23
   semantic_tags:
+  - domain:governance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:tag_facets
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   path: knowledge/atoms/atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb.md
-  hash_c: e04356549a90a67efc6c4af968cbc5c49970eeaed8bb73251f5d9cedaa3e8ac7
-  hash_d: ff9ef2b681d4cb7649b17509da21224e3cf44a9efae4ed682293b0f4486a5e63
+  hash_c: 4c5e0cb6e3655f1833c421d02156099bb3bd9657cfe66d1812885ab4d07794af
+  hash_d: 2894d1ffc845ef9db980ae9c543be01581abedb7d4074587931e29ff7ef87262
   semantic_tags:
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:bootstrap_kb
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   path: knowledge/atoms/atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans.md
-  hash_c: 229e5abfb66e624a8d44f25d01441f61966fc9f7efc9458a14b898dffb4c023e
-  hash_d: d45f0fc5d18c3bf7cd7655ee8ea9639416ac5d9a009cecc7d309ab343d8a4a90
+  hash_c: 29aa11eb7cb4c3d5fd4b6a8d7ab85ff1eb419c66a0114da5b94cd9952293ac96
+  hash_d: ca5ef1b5daa79b56f8155cb6730af29d5f2a3f3a33c0e1b195f10f848330912e
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance_retrieval
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-samples-should-be-annotable-without-losing-their-deterministic-binding
   path: knowledge/atoms/atom-samples-should-be-annotable-without-losing-their-deterministic-binding.md
-  hash_c: ade2d60b59fbfc481668fd23026b753039ebd25faa071f551e03a18711c5bf70
-  hash_d: c8e23471ddbe0702689b9078b5eebf479bdb4ebf3c1d62678c84b2f510a8f3ef
+  hash_c: 0481e5dfaad0f5a99f0c189ffadec1d430b78583cddc0a6ec6eb3789c274b631
+  hash_d: fdbff060249089c48d4ae4c4f923c9c63cc853647e091c2b3fd7cb40917baeb6
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:sample
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   path: knowledge/atoms/atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path.md
-  hash_c: 0999218c5aa573a5ea3818fe0b496300c0c49b74cef4baea53fad2799cb47ee2
-  hash_d: 2ec32e1ff468f453b9b47c8b35b3244649ea5c295c0af07bcb8bc35d6429e236
+  hash_c: ddeb1c71dda948ada45616e297cf5f99006d61dd826805d4813993e73c8e69ea
+  hash_d: 1690a34508be37855cf3ed34dbb0b30ba5950d22644c4355d65e1ea27e592322
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:sample
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations
   path: knowledge/atoms/atom-the-kb-should-avoid-using-tags-as-a-substitute-for-explicit-relations.md
-  hash_c: 65f4e42cfa542469c3c2f0bafc6807b27c495fdc70b9918063ca593c8efcf590
-  hash_d: 6241df2b67c5af510dfd8427181b8f1475eee4d08c6e04e5637798f5113edd74
+  hash_c: 779ca91f32cf34025039cd0c9be60e062fca8377b333057ad0d71b8e6aa92cb8
+  hash_d: d3f83a028e7ea12a5b2b14636b48f07495596eb8ddb0c8a18b8cca1ef5f54289
   semantic_tags:
+  - domain:governance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:tag_facets
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
   path: knowledge/atoms/atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only.md
-  hash_c: 70f0b81dfb366ffb5c9d3911bf9022cab8825c08d2aea69336e8b50a4ef7f2ef
-  hash_d: 305440e8795eb3d16739b0c5123dafca9fab41f698cdeecca39966c7bf50a90a
+  hash_c: fb032f8f8609a34de002759c2ebf9994f6ab5ebf88231de7bc105e330b96b80e
+  hash_d: a77e93c5b7a344dd0d3aaec816ed4a492cd2b9bfc8cd9c3dd44e74923149cf19
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:structural_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
   path: knowledge/atoms/atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation.md
-  hash_c: 707214e21c6f4faaa01f5f1f1208f6335b48bcbf32962c83ff9bf4e314ceb1e1
-  hash_d: 4b68d15f440b8f5f36a5b8886d5159d8cd6d1cc5d35f25edaf6aa79dfac0416e
+  hash_c: 251a4ad0500aa00c5db79d5cc84762fce5371f40f580c95454c7b608978cb313
+  hash_d: be674b9fcb04d93c8c86da652d57b3a8020ec4012f466e99ce9bb90541a3ed94
   semantic_tags:
+  - domain:source_modeling
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:source_adapters
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   path: knowledge/atoms/atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links.md
-  hash_c: ce0b5091e180790fb58e435e85c43b09ce8c517659ec5b4db7bbeecafbccc50f
-  hash_d: 8d725f7148391c03ae5ea4890aafbbc4f906c059901ee22ef1b831821b7c09cf
+  hash_c: 2fffdfeff7daed3cfd531bed95fae4024a7c4b5161a46b14f70129a3c79f1349
+  hash_d: ee40da98ae134f355e7f8b1c60e31d51924362fab95df9d9e11423aa17b85685
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:composition
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   path: knowledge/atoms/atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship.md
-  hash_c: 073ac44a62d648f460d754916247d883d881dbdff0721f184582b2f9bf84c133
-  hash_d: a115e1bd7b1a317006fb65db10ab7f9213995f0e1e71fc6c3102fdcade97d973
+  hash_c: c47e855230a3ecbb1faf6249b2fcde482efc55bf94704c398f40a13361dea6b8
+  hash_d: 5875f2bbaf98c513bd3fb63bf6fda6d439f066bef3978dc0a59fc823cfcdf9c6
   semantic_tags:
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:bootstrap_kb
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
   path: knowledge/atoms/atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface.md
-  hash_c: 943ecb459347c39aaccf4667dd97c3c8561776fab4c0dcba5e910ae8c222cba1
-  hash_d: 83e3acd827e41df4cbeee5705b1008aca1eefaf0b40a48134b0d1e953fb26920
+  hash_c: 1f4947659bfb386cfe9739b2f248c47a61270b798051f7bdf0647b649d9d4c62
+  hash_d: dc7a5cc9bc3188f149ef0b8d793cd30870ca12981f84576c0c7032c35b407fbd
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:system_architecture
   - entity:atom
+  - impl:external
+  - kind:software
   - layer:atom
   - layer:workflow
   - system:deskops
@@ -523,12 +693,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   path: knowledge/atoms/atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes.md
-  hash_c: 8a28e1c771a388428497f5c69b4b3a39ecd41ef992fc7901b44ab706f85a155b
-  hash_d: f8055d9d6ddb5922ba3024b703d18d3e553fdc5923439f1aae246a4f438b88b5
+  hash_c: e789535e20fccf660ad156d72f08d2472a6dc9de4e87293d7da2367ec40eb051
+  hash_d: 65b7abc4460b7f57dab575238b85870a6f9006ded1f7d0632417bcd20c300e42
   semantic_tags:
   - cross:tutor_apoe_hum_ecosystem
-  - domain:knowledge_management
+  - domain:retrieval
   - entity:atom
+  - impl:pending
+  - kind:concept
   - layer:graph_concept
   - layer:retrieval
   - system:kb
@@ -538,14 +710,16 @@ documents:
   - workspace.desk.atoms
 - name: atom-tags-should-be-facets-not-the-primary-concept-structure
   path: knowledge/atoms/atom-tags-should-be-facets-not-the-primary-concept-structure.md
-  hash_c: 272e5d343815c06e11d84f4b5b78d2fe45742429b8d69e3dde7d4cfd5357ab0f
-  hash_d: 27bb9905c0c8ec6eb7422111accf6bc88c4dfca94940da3c28a32cbaa56b3abc
+  hash_c: f574d16f492ddc296ae00d3feabc4cbcfbbda3b54537e93cf4f3f58d03ab7b45
+  hash_d: 8091c8001790dc1e1afd18f33f70b56655f180f75d71ea56cab8acf9c34dfaa2
   semantic_tags:
   - cross:provenance_concept_graph
-  - domain:knowledge_representation
+  - domain:governance
   - entity:tag_facet
   - entity:taxonomy_node
   - graph:concept
+  - impl:pending
+  - kind:concept
   - layer:graph_concept
   - system:kb
   - topic:concept_graph
@@ -555,14 +729,16 @@ documents:
   - workspace.desk.atoms
 - name: atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
   path: knowledge/atoms/atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished.md
-  hash_c: 30f33be47fe84af99fc3591bae823ab06f5f163a2cd4f3d05639cf47b179a36a
-  hash_d: 20966e15bb038a4716ae29c49a2214fc9ec587735783c23a5b4bfd0c111bce4c
+  hash_c: 610fd24586218619d0e7a1a1db00716670b8c73427cacd04158b62772f544be5
+  hash_d: 2ad5cff79b79847d2b348d9f8a5b22a2f26538af1023a0ac5404d03ab9da80be
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:governance
   - entity:concept_group
   - entity:tag_facet
   - entity:taxonomy_node
   - graph:concept
+  - impl:pending
+  - kind:software
   - layer:graph_concept
   - system:kb
   - topic:concept_graph
@@ -572,14 +748,16 @@ documents:
   - workspace.desk.atoms
 - name: atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   path: knowledge/atoms/atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology.md
-  hash_c: 2d7eaad1d226a3a0f874987319c7aff537f17a2fa23306d166f8e94862a00eda
-  hash_d: 5b08d38e9b0b17c26c5f461c4f0e4ee1ce0522e3f8c641e9af04d16b7dc8f571
+  hash_c: af6a8f43ae0629a1e591ff96f6fbfc6a332c8fffbc8129f5d796264a2a8f7415
+  hash_d: 610ff4dae9216cf708cec1e70426b1d06e9199bef079b2cd26408c62cd5f0f4f
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_representation
+  - domain:system_architecture
   - entity:taxonomy_node
   - graph:concept
   - graph:taxonomy
+  - impl:external
+  - kind:software
   - layer:graph_concept
   - system:deskops
   - system:kb
@@ -589,12 +767,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-question-type-should-remain-an-explicit-governance-dimension
   path: knowledge/atoms/atom-question-type-should-remain-an-explicit-governance-dimension.md
-  hash_c: 2048065838da3bdf9e6cdb9c261f0cb4b83783974d73f625d94e1574be360581
-  hash_d: ee91eeb387444b78b9f91317684a44875b9ffb9d18c4e6d14d8b2c188ce81510
+  hash_c: c0a4bda039c06f9b94e8ec0025fbdc27dc0400b52e148f7f192dbde263ddf92d
+  hash_d: 8f6e1a31c26a6b58a42b93498170f7d1427a1d3bb0915a6cc12c6a6f1a4d0414
   semantic_tags:
-  - domain:knowledge_management
+  - domain:governance
   - entity:question_type
   - graph:concept
+  - impl:external
+  - kind:software
   - layer:atom
   - layer:graph_concept
   - system:deskops
@@ -605,12 +785,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   path: knowledge/atoms/atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline.md
-  hash_c: 2b45e1861150c72fd3282dcb07cde41dee06352f4d38556512ca37b17cf15571
-  hash_d: da51a599185c4f9570f5f59eec656e8b13f2466eb9e937420a9aa0099f0eefdc
+  hash_c: e05eab298ebe836c1bc4b8c078e8c1d49eccdfd95a5aad760a38bdb8bdd0ce90
+  hash_d: d6c282c439244d97182df065b45bd4a51953059a82327dd9d983df82b768e9c3
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:system_architecture
   - entity:atom
+  - impl:external
+  - kind:software
   - layer:atom
   - system:deskops
   - system:kb
@@ -620,11 +802,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   path: knowledge/atoms/atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags.md
-  hash_c: b6d6da429d0e012948c28565504b9caaccdd17c53c0897732c9037ad23d8f681
-  hash_d: d3ba3ed809c6ed9b73fed95e8fb41dc8eb5602700eab2d7373b3814f05356458
+  hash_c: 01280a12fb0c52b0a64785735d4c8be9d4235e812c6ecd23f91b21e11a80fd5c
+  hash_d: 57202b482386c4946190af879423f269c765c9531f7c35fb297fb8f8d3660868
   semantic_tags:
-  - domain:knowledge_management
+  - domain:provenance
   - entity:atom
+  - impl:pending
+  - kind:concept
   - layer:atom
   - layer:workflow
   - system:kb
@@ -634,8 +818,8 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-kb-needs-three-connected-graph-strata
   path: knowledge/atoms/atom-the-kb-needs-three-connected-graph-strata.md
-  hash_c: 8a55cea26a7964c7a9e60648d56529b86f2c2eb1aea3c555674e6bf4481ead83
-  hash_d: 3fd24a9693797b528c8f7b4001c581b9ea1f15dd9713800b3d9c43b97eb24e1e
+  hash_c: be1435f2f1fd2f0ae71f325b39b42c82759698636d165220f2617959e7d068b2
+  hash_d: 0aacc60cfde874ab293422371be2cc148d1e2ffb5052e91cf7c44e466a3c9889
   semantic_tags:
   - cross:provenance_concept_graph
   - domain:graph_architecture
@@ -643,6 +827,8 @@ documents:
   - graph:concept
   - graph:provenance
   - graph:structure
+  - impl:pending
+  - kind:concept
   - layer:graph
   - layer:graph_concept
   - layer:graph_provenance
@@ -655,13 +841,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   path: knowledge/atoms/atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation.md
-  hash_c: fcf8b7fd2a1dff32e63da9440b43ef90d83d8ec7d18340160c345a54da94e698
-  hash_d: 92e36e37a6043d97ba77056ec966f2ed7f33cf3b259ce77c656de9e0b60326a6
+  hash_c: fd7b96c761aecb689b83f5a246a752ebb1312ffec1df853f870e743c68386c71
+  hash_d: 778c2f565d6315abc345a5e77ce4dc4048b8cdd3b19514b90a93481896e2edd4
   semantic_tags:
   - cross:graphlang_kb
-  - domain:knowledge_representation
+  - domain:retrieval
   - entity:atom
   - graph:retrieval
+  - impl:external
+  - kind:concept
   - layer:graph
   - layer:retrieval
   - system:hum
@@ -671,13 +859,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
   path: knowledge/atoms/atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching.md
-  hash_c: fd3c234c51af142139377142b90468bd204d55cfa762b060704c1564cdfdc505
-  hash_d: f25d742c013eaa592693960de9ca038b80b456afa706c6c46e0e6dd803c9a49f
+  hash_c: 4f8839d4782006be635ceb3c8578106c8afdb35b86eabf8f4fbfd7264d735008
+  hash_d: 169d990226cbc43456ed2874a0b8ba2d6414921c02de0498e1ba7f163b108bfb
   semantic_tags:
   - cross:tutor_apoe_hum_ecosystem
-  - domain:knowledge_representation
+  - domain:system_architecture
   - entity:concept
   - graph:concept
+  - impl:external
+  - kind:concept
   - layer:graph_concept
   - system:hum
   - topic:concept_graph
@@ -686,13 +876,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   path: knowledge/atoms/atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line.md
-  hash_c: cc4cdf66886260c25b32c130842c7542fe263076e3b979874ddd58c7dfc4f099
-  hash_d: 834f24e5b951bddd59ebd511f98cd7485d986b97bc6aebb13af14a9cabaf66f3
+  hash_c: cd28332c04f119e477e4ef60eb58ff0937984ca488b819831b1a95dd7a46d643
+  hash_d: ea02e3281e0bf25e6f69a915e25085f93dc7a591ba1337ce9274f4ddc67b9ce1
   semantic_tags:
   - cross:tutor_apoe_hum_ecosystem
-  - domain:knowledge_representation
+  - domain:system_architecture
   - entity:source
   - graph:materialization
+  - impl:external
+  - kind:concept
   - layer:graph
   - layer:source
   - system:hum
@@ -702,12 +894,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
   path: knowledge/atoms/atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model.md
-  hash_c: b6a1ffc736df53426d0995cbe85c8275ab6a95d7f671711a1152c9da7a4b4cc6
-  hash_d: 98e89ee34066daa4e0708703c0fa3199255acc9977981268809f94e6cf2ee17e
+  hash_c: 3fab0aa069bd28892c8e612e484a334df771aa42f5a8c0834f802639c97fe5a0
+  hash_d: eefc8d5da8cbc04319ac68c7843821fbb9ca00bb42d763ae6a4e0bb700f8436f
   semantic_tags:
   - cross:tutor_apoe_hum_ecosystem
-  - domain:knowledge_management
+  - domain:system_architecture
   - entity:workflow_item
+  - impl:external
+  - kind:concept
   - layer:workflow
   - system:hum
   - topic:composition
@@ -716,12 +910,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   path: knowledge/atoms/atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once.md
-  hash_c: db9d8876b7e02b239f80669c2e0c6538e24f06e104c15abb5d4565b54c784138
-  hash_d: b44edb81a9da84e6188431dac4a74392b7ed76c783c79931990607a4c711c7e1
+  hash_c: d027f5957a3372cbf7baebca380e5f4c0ce86fc84889639da430c62999e7384d
+  hash_d: d2fcb09ec4f0b6ad63e7dc120a11d17a685abc1891248c4a748c60a2a17839b8
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:system_architecture
   - entity:atom
+  - impl:pending
+  - kind:software
   - layer:sample
   - layer:workflow
   - system:kb
@@ -731,12 +927,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   path: knowledge/atoms/atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill.md
-  hash_c: a050aa7a7ad4c9af1b5eba9c2c8c84803bfc9c40addfbea2404c622cf7c7cc5e
-  hash_d: 8cac275f7c17990071a19d09f15870c3c85ff79b637fae648daaea83c6a4671a
+  hash_c: ee92e1ee6346fd3df2b4025cbf33d08793268f4c3cd9875bd6220829e714de78
+  hash_d: 542aaab04465703d67ccd1727138f3ca8850b4d5b8663610b727be1b9e687962
   semantic_tags:
-  - domain:knowledge_management
+  - domain:provenance
   - entity:atom
   - entity:sample
+  - impl:pending
+  - kind:concept
   - layer:sample
   - layer:workflow
   - system:kb
@@ -746,13 +944,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-bootstrap-kb-should-track-grounding-status-explicitly
   path: knowledge/atoms/atom-bootstrap-kb-should-track-grounding-status-explicitly.md
-  hash_c: 2616e34ae608d5f375ec46dff23df195f189e38f13c9734728f411b79da56ff0
-  hash_d: d885405a373437519b8dcc98824f3088785e4334f33f8e8bb0c1066c9db7e310
+  hash_c: 4391e9b56ff1b7861dc64253cdb2764a08a884ffd872d674f0937b8ab746bc0f
+  hash_d: cef9b44df2658d4ece3776cf81c9863d2d32ed34d34b2b5b0046d421e0b8092e
   semantic_tags:
-  - domain:knowledge_management
+  - domain:provenance
   - entity:atom
   - entity:sample
   - graph:provenance
+  - impl:pending
+  - kind:concept
   - layer:graph_provenance
   - layer:sample
   - system:kb
@@ -762,13 +962,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   path: knowledge/atoms/atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples.md
-  hash_c: 32ffa4ecef2990e507d880d35b81afe16959c067d82458402d8342460765b95f
-  hash_d: 47093761468293b90b11404567fad4d06018591e84f3dcdff74ec61d6938f8f4
+  hash_c: 37aab68634d23f609cae3bd06428ba5ca6709490a1d6f4768124ec994b3058e6
+  hash_d: 264e1cf80284478132bf2dcbc8f583a62a5383b513846fc3f301a2c6972241b1
   semantic_tags:
-  - domain:knowledge_management
+  - domain:provenance
   - entity:sample
   - entity:source
   - graph:provenance
+  - impl:pending
+  - kind:concept
   - layer:graph_provenance
   - layer:sample
   - system:kb
@@ -778,13 +980,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-grounding-status-should-distinguish-textual-human-and-validated-support
   path: knowledge/atoms/atom-grounding-status-should-distinguish-textual-human-and-validated-support.md
-  hash_c: 298444b49b2f0d286c65341227fa0405425531af03a27d4186486602dd657dc3
-  hash_d: 7c5c004b257d976ae25ccc71fbe6dc2a6ad077abfeba8966544018dce568f287
+  hash_c: 0e37c377d511b96c43094ab963a143fd46a292f62ddd5c174f4de71cf320a317
+  hash_d: 7f2bccf9c6989259f60399e3bc2e58158fcbcf25a794280f6aa3c34bd5ecc42d
   semantic_tags:
-  - domain:knowledge_management
+  - domain:provenance
   - entity:atom
   - entity:sample
   - graph:provenance
+  - impl:here
+  - kind:software
   - layer:graph_provenance
   - layer:sample
   - system:kb
@@ -794,14 +998,16 @@ documents:
   - workspace.desk.atoms
 - name: atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
   path: knowledge/atoms/atom-samples-should-be-the-evidence-objects-between-sources-and-atoms.md
-  hash_c: 6d48332ebaa98437e325c44b0f8b0a5c9522f3e658bd16780a5f74b9ad26184a
-  hash_d: fe76fbf5be469017dd29d756ccefb6ce4fde43c78412b46473b6dddc09e4d019
+  hash_c: bf1454bbebef47b0bf979bb90a27e095a26ad3c98bfe719f50fcf0a88d214348
+  hash_d: 735e1268a6f9a150ad6d29d1215f7eba0632c726a6b83d237ed20c0ac7358b40
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
   - entity:atom
   - entity:sample
   - entity:source
   - graph:provenance
+  - impl:external
+  - kind:software
   - layer:markup
   - layer:sample
   - system:kb
@@ -812,13 +1018,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
   path: knowledge/atoms/atom-the-provenance-graph-is-the-relational-backbone-of-the-kb.md
-  hash_c: 3b83767d754b51d70e9295c01847110748735ec5895449d72ac19ef9139752c8
-  hash_d: 838787a465ce140851b4ec835182f1d211ab137d1e8ef9e0171391022b063266
+  hash_c: 4188f1c29afcf0cc14098d584add274e8bbb1e20ae801929531e06f14265a717
+  hash_d: 346f1f5eef757afdd8433eb4f77738abed68e610223d36bd434d0fc4493b897b
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
   - entity:atom
   - graph:lineage
   - graph:provenance
+  - impl:pending
+  - kind:concept
   - layer:graph_provenance
   - layer:retrieval
   - system:kb
@@ -828,12 +1036,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects
   path: knowledge/atoms/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md
-  hash_c: 5d1f4700d10cd8dd9fdc5433832c7da2ef50aa2a6e622d29670862ee45c906b1
-  hash_d: 9661ea006420256868e9de58764b0aad34da79f953516f2a4031be64beb7757c
+  hash_c: e9122ff1d0c8cb79ce56042e0d20756844f1b273682ab9046223a57a84c93264
+  hash_d: 043cdc8bbf2e111fbbb6f4ea6e68594852512cf457be1a3626e232746605adfb
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:governance
   - entity:atom
+  - impl:pending
+  - kind:software
   - layer:retrieval
   - layer:workflow
   - system:kb
@@ -843,13 +1053,15 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-kb-should-support-queries-by-source-project-and-crossing
   path: knowledge/atoms/atom-the-kb-should-support-queries-by-source-project-and-crossing.md
-  hash_c: 4823f78ff397337145fbf011ab5792e8a69e64677fa954ac228ef6a6926fceb7
-  hash_d: fe8e37f937448768a0dea4fa4df4957dc487a888a26422fec481bcc956998e82
+  hash_c: ba5973f654501a6c6ad8d30ae65a0e2f10747db3e5f824a1636d433a160d49c2
+  hash_d: 89b3d8c2e309076a52d90a1881662945bea2a98a131a72feb36c39d704ed67f6
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:retrieval
   - entity:atom
   - graph:retrieval
+  - impl:pending
+  - kind:software
   - layer:retrieval
   - system:kb
   - topic:knowledge_retrieval
@@ -858,11 +1070,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-each-source-type-should-expose-its-own-retrievable-projections
   path: knowledge/atoms/atom-each-source-type-should-expose-its-own-retrievable-projections.md
-  hash_c: 8dfeed4a8dfee21009f690b3e737c73584ae103797fa62e679f6b62a64ad55d9
-  hash_d: bf382387d3dafd8900f3bd0e5b498c9d7426573e1de56576944f9face0fe792f
+  hash_c: 5c51396efbb5290f7b7b0c726938325805834c741af1acdd5891d99d1452b9d9
+  hash_d: 77ec05263696a0a70994e08f97e75daf9387abe84d3fb4541a74a81dc64aa10a
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:source_modeling
   - entity:source
+  - impl:pending
+  - kind:concept
   - layer:projection
   - layer:source
   - system:kb
@@ -872,11 +1086,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-source-layer-must-be-multi-source-and-adapter-based
   path: knowledge/atoms/atom-the-source-layer-must-be-multi-source-and-adapter-based.md
-  hash_c: 6566eed4c318a127c4b0ed43dbbeb554efe7d748f3354c03f453a37befe5b0f9
-  hash_d: 910ef0bd4e0ee6199ba8012e458c4770ca2ebdc915ca520d13de2f6e76b072ca
+  hash_c: bc2dbe39414f338af9c17a4fdb58cd556d723f2b26904326b6d34771718e045b
+  hash_d: 31c581a903ed686437cbddb4c58a63535c8d6e82a353f625068af95250d7367c
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:source_modeling
   - entity:source
+  - impl:pending
+  - kind:software
   - layer:projection
   - layer:source
   - system:kb
@@ -886,12 +1102,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-ast-is-a-first-class-document-structure-category-in-the-kb
   path: knowledge/atoms/atom-ast-is-a-first-class-document-structure-category-in-the-kb.md
-  hash_c: a3148ebf2cd1a7127826aeb01857ab6e6b10cd2731502fef4c09808746b1f1c6
-  hash_d: 46285838782462f866de9ad428a14c99c64cd28ae12f8d35a13b984544cc141e
+  hash_c: 69f9a2b487d0fbea6cfe3fdafc94fac7849c8cb758f3ce16d354b8cbe0e4d7be
+  hash_d: a3c70db33971acad672fbb2d879ac50c31fe7e59cf7545d5a97bbabad2188f8a
   semantic_tags:
   - domain:knowledge_representation
   - entity:ast_node
   - graph:structure
+  - impl:pending
+  - kind:concept
   - layer:projection
   - layer:structure
   - system:kb
@@ -902,12 +1120,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   path: knowledge/atoms/atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container.md
-  hash_c: a4856df2e56b6b7ae06f561ae41dc646a5fba1782fee3ff0d7d1662f87cfe30b
-  hash_d: c718ec0eab739d7d101e2116b475261b2ea8037b62e3bcf6df841cabeaf387e5
+  hash_c: 0edf38c603e2a96aedf890e3884de596d3983501210f97ab5a5339e92fd68268
+  hash_d: 7728cace7206aede2e850a23907fb2ad8013bee1a087f956c1fc468516f4e400
   semantic_tags:
   - cross:deskops_kb
-  - domain:knowledge_management
+  - domain:system_architecture
   - entity:atom
+  - impl:external
+  - kind:software
   - layer:atom
   - layer:workflow
   - system:deskops
@@ -918,173 +1138,230 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   path: knowledge/atoms/atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies.md
-  hash_c: e86faf5143d3108121046c9720185d5792982980abb1d5b1a7e6e8bb4cfa197a
-  hash_d: 826aea3cfba231ba1eb230f92f760f12c4d8e6452e30833675c1956260c800c1
+  hash_c: 949ab33b77ab9aeb086d82b28eaf23db844846f76d75c55a8546d359ecbd7071
+  hash_d: c17932ca4262a2f03fe626fcfdaa0208edd8dd68dd2f5f3685c096ec55162497
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-distilled-from-should-link-atoms-to-the-samples-they-abstract
   path: knowledge/atoms/atom-distilled-from-should-link-atoms-to-the-samples-they-abstract.md
-  hash_c: 173a9357a3dfd090116d1fce5bde17dc17f4fafc79e4f34548ed1024dd9f9ff9
-  hash_d: f87023eb8d1a889ce1488800191a18b194dbde0697b22ed2ed41c50fd71f3b7b
+  hash_c: 30ccd900694d4512e54affd4afb647d1fa93c8c89b396c9074604307bc35e116
+  hash_d: f6fca7d620fa213ca033a916dc29104d1a942b4c2f8f29e7d1e59acd82145807
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   path: knowledge/atoms/atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from.md
-  hash_c: 3083b45fee4d5860a559b231866fa9c762d378bc48ad6f416d00b7bd9f006e4a
-  hash_d: f34a4a89fb4cd487160bcf04c61474fec84b9813e2006eb772d32dd5e7849516
+  hash_c: eed7c408e7c3d61d6d1063a4340098fe181ec9e5291abee09072a565d79eb0d1
+  hash_d: 3b9846850153b87bba5bf88de0cb6e07d7287e6c5ad02748166ea23bee4aca44
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   path: knowledge/atoms/atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies.md
-  hash_c: 17505ba26dbb794a4621a2131a0844512187a2cb10727ced10f2683bce86842a
-  hash_d: 0ad23da20eeaafdff97b3777c646ac77853743dd3461ca1abdf88d023d36d7ec
+  hash_c: c8e21351b89c165147faecb43b9233084d28e4e15d3465ded96bdf54d5c16209
+  hash_d: 528b0acc787b73d8d7c089980153eeeff29f8edcec88ed62f5244f2553a8424f
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   path: knowledge/atoms/atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy.md
-  hash_c: 79a75430c66d002f196c2da00cbec9163a6783c0aab69ce128c26c7f89b0ff30
-  hash_d: 49b9b57b13f2cfd51e39856ff7937acdcecae67fbc911c7d32c810df9204f84f
+  hash_c: 1045a0a3677f04959bdfb6b8034e449c6ff005708f26ec4f8da913e9948846b7
+  hash_d: 20950f2c7366ffed4198359a5523cfed442e666e4ce336a89a55f3f280262d49
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:taxonomy
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   path: knowledge/atoms/atom-about-concept-should-express-the-primary-semantic-target-of-an-atom.md
-  hash_c: f1e40d8094b7076b3205413f2b78b07bdc7e99a04a6e421ae61f2723e6346544
-  hash_d: 77c57f1afcfe76bd890d22a840aa2ab5bc2ffc660e9179869e1a976154eb90d8
+  hash_c: ffbbaf81307b216041b1c9dbc0e513fa15d543ebf672649d6178448ce0501770
+  hash_d: 835f7fa4e37b8b19c6f4c152332dffdcdca486354e0611a56f690bdcafc0ebf0
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
   path: knowledge/atoms/atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it.md
-  hash_c: c4ca8eed573ba0da0205cc9666170b9298cd240beebb746ef86cdf2cdc2ff309
-  hash_d: c810eacb9c7f8bccac0579aa93e27f57c1f9d1904c47966d1094be168195b560
+  hash_c: 679c8d836c8af97e3770a1163d8a095673fee16153e7f456466b96f5b9bc644c
+  hash_d: 32148cd2d1f0fc6cb80823d7f98a9610477e3c4ce7bc3538e008b3aa39d17eb5
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   path: knowledge/atoms/atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts.md
-  hash_c: 571692f796a89ad86fd3ecdb218bd7d8eced4293b20045c018cbb28d802e0075
-  hash_d: 378dbe638f1ff08f018580bdeb8cb0504d852507e02b3758f2348f2b4d63fec6
+  hash_c: 95b2ad72822d8baa91f036f11816de3879979a645ba73c0eabc0f5c68ab561e0
+  hash_d: 6793b524faa5d4a9d9f332d635722464d3198d59d5d54a494dd461bf4e6acd71
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   path: knowledge/atoms/atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts.md
-  hash_c: 9776dc902e0bddc8fe8ab910db000af13e6e1275f3f00fb770d6b948647b6b9a
-  hash_d: afc9f30f5bead7a20a7507e17c372a6cb9b75954cacfc355972bfcde931e88bc
+  hash_c: 9ff2957ad871bf3566db415413bebe824d29556599f2a5b2c89c06ccc23a9846
+  hash_d: 7b5b8b61a5ff622fa991d311b9b140ffc7d9a5d76d5772f7a939b92282002750
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:composition
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
   path: knowledge/atoms/atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology.md
-  hash_c: 8c43bc4f569fc54824d1f55bf0a4f0ea8afd9a01fe4c04943682bfa9c30abe1a
-  hash_d: b775282ea3b0adde9dfb16cdf1adc852651fa0fb614728552e1911dd2ef29208
+  hash_c: 73a7307ad66a1811583e9db72ab83251d26a99c2abb98289ef215f6cdd011544
+  hash_d: 1499eb99e46454e99e37fc5f52534e8b598ceefd08dfd3152f53663b94922134
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   path: knowledge/atoms/atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept.md
-  hash_c: af9003618ee56e525aa6d29ea976f46e3d193a9e1e55cddb3db529285f4a8e03
-  hash_d: cdde29aa9f9b84663c0042adec191c78cc1bc68eb0fbc55dd0004b97da8ed2fe
+  hash_c: add96d070f6a3a4bb1ae98f9003a974840ab95855fe42032bbb82bfa97b5f2ee
+  hash_d: 7518322a1864b541277e12cff33a579d88ad4aff7d7c04ddd9706d2d9e6cb36f
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   path: knowledge/atoms/atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement.md
-  hash_c: 23231ba87931dd17061f1a0e6a2f82580e99b990f1819ce301c873a364e04850
-  hash_d: f25fcfca17530a206dc4124ba5ae1b3b727a851646bc668c74f28e62ab914444
+  hash_c: cf3f8c22ea0621d28364f073c59727ba78a3595499e193a3bf91c918c7c06c80
+  hash_d: 947d740ea2336ccca8809821e2bd52ec863017ac6eb14a6d937d4e1d6f638fc4
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:taxonomy
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   path: knowledge/atoms/atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy.md
-  hash_c: ba4b48cff857b05732dc586f68e483efd031838c451b11b31126e06e77322b5b
-  hash_d: 31286bc157f5bb1bce86602ec4f889d0f0241ac29f7c26c92bd6c72e842146c7
+  hash_c: 45a595052608c19e1c7f8b19682bdafa5c6d43215c1e5186b0abc98ed17c9bba
+  hash_d: 57268e1b5d9a335b98c2904b0aaa864b7de89ab1aa5de7942497aca700f320da
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:taxonomy
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels
   path: knowledge/atoms/atom-derived-from-should-connect-transformed-knowledge-artifacts-across-representation-levels.md
-  hash_c: 887fd364fff1706cf478c9322a94a37cc184045bc4227c303551e58a3ab8ae85
-  hash_d: 57aa4df2f26933960e6a9d86a907ad5e738ef54ab4b461561b465a465e77a434
+  hash_c: ce4b2c56bb5b89cc612fd6f4a64e36bf6e1420155dd400d4a32bbcc1b606a63a
+  hash_d: 6b35633fcd9f95cca4232ee06f184c8356e16570724bfdf9aab63ee92de4c242
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   path: knowledge/atoms/atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy.md
-  hash_c: 13bf773b9ec420b6dac3235e088c486c559a7a7339b1c215821ac11b6274dc56
-  hash_d: 41b4bedce15fdc156f6e09ebe383352a0009c3d3e0d29df98d3476637c893d6d
+  hash_c: a19a71bfa3edc50c65ce06e108a314ae6b0d7fd788e0c51bcfb6129dccd68fd8
+  hash_d: 779c8a8326db69c10f441c47ffa81b5cb2808b99b2afe2d05c6104117245e513
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:software
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb
   path: knowledge/atoms/atom-contrasts-with-should-preserve-meaningful-conceptual-opposition-in-the-kb.md
-  hash_c: c73884a782227263f241de60aafdfb88cd3bd77c6cc6ea41f75bcbf68900d343
-  hash_d: 3236dc33e58012000accba97ac5c3e1fea9c4fcd430adb289ed21af1fe18305a
+  hash_c: 2e3a47b09e3df73dcd241a8afc7a9e1b4225cb22db57981fd049dd86e50c16ef
+  hash_d: 96b7385da044b063164199e175727f36f629fd299e63b8656314e4bd60aefb31
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
   path: knowledge/atoms/atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section.md
-  hash_c: 6748c3999f2ddb444b7841dc43d312e214c05e13229b5c64517bf966192fcfce
-  hash_d: 8acc1ad27c495456a243e69e808e7ecdf8ddd724785c925f0709be80348e23aa
+  hash_c: f833895b35ab4ee228f7993a916e99c01c1da303afeff8afbc251bce6be9af65
+  hash_d: e9a24870fad4db60985f105222e573fdf9964e68e1321a80e069a7927ff4976a
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
   path: knowledge/atoms/atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support.md
-  hash_c: 90a65c5cf61b05fd85a319494ec449bcf8f45ff229fcccf87e0ccd78a2fe73b9
-  hash_d: f83588fa543394fef61757fcba15e93bb36710e1ec3ee59963a2a9e7e45c3b54
+  hash_c: fe4ce25875425c21ed6dc64c48eceb0b6a6113917f7ceda452a7d2bcdb82be4d
+  hash_d: 93b2d92a097eddfe3ef7da872ef9c1780ad4c01e2577e91d97c07e0a5344f25f
   semantic_tags:
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - system:kb
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   path: knowledge/atoms/atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph.md
-  hash_c: 1ca916ca144870301f52a79149414315e0b103005c3b0b85564cc5710586679b
-  hash_d: 00755ca6e1cc7434515a5816b5ad194fc527827f7d5821e44fe62a97a4386f43
+  hash_c: 1df99d1efa18bd8e0c7626c5ba6aab58de5c930b48d59ec022cf70f5f7882edf
+  hash_d: 00fad0b981b7198d94eb95927650b6f7482b512fbce2661557863132a2aa12a7
   semantic_tags:
+  - domain:provenance
   - graph:lineage
   - graph:provenance
+  - impl:external
+  - kind:software
   - system:kgdb
   - system:knowledge
   - topic:knowledge_graph
@@ -1093,30 +1370,38 @@ documents:
   - workspace.desk.atoms
 - name: atom-anchor-references-follow-a-three-tier-scheme
   path: knowledge/atoms/atom-anchor-references-follow-a-three-tier-scheme.md
-  hash_c: f600d8dcda724a3cf236439e2a4e8c78f30272b6dbb42ae11cc387268590a4b6
-  hash_d: 8a2e537c4c96bedbe3fb39ef8939c3307deb09fae7608a50b636a8dfef8cb6de
+  hash_c: 3b421afef657768468d343d5114faacfd1a2598f989bace654fdffa673390094
+  hash_d: 42b0b9f777da326e2faca47c83f0fa91750f655d0cecb6bc7ef3029cf0c40497
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-asg-projects-multiple-graphs-per-document
   path: knowledge/atoms/atom-asg-projects-multiple-graphs-per-document.md
-  hash_c: 9df2b9635597fba982c3d2b16df190732df6d05b37920ba4338699e8de364cb3
-  hash_d: 58e887bd375c5836c21f2aaee509749cb4f3f10193fc64960dca87d9fb83c7f2
+  hash_c: 2c4b4ef881167542f4102a480cd89fca8912ef0aefdb2f8f4fb78bb776142f31
+  hash_d: e6287f4c0212e13c06c06bd91ccb1655dc53ac7fe5d757af396ce52d4f354ff3
   semantic_tags:
   - domain:knowledge_representation
   - graph:structure
+  - impl:external
+  - kind:software
   - system:marcado
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   path: knowledge/atoms/atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry.md
-  hash_c: 49e4d5b8918578de1db8793b2f554e82375897226990f3b0d224036b4eeb1d13
-  hash_d: c5a6a86b5cb86396dca552f1520fa0ef661702652594ef7900aebe7b45a20790
+  hash_c: 0a31c21e1a4a5616db8e22bcca5897c875a92212d87c08e225f47888d2b58d25
+  hash_d: 10e8c90f925552cac5f8e87ed0a54530a5342c48f954e847df987de9209b558f
   semantic_tags:
+  - domain:governance
   - entity:atom
   - entity:metadata_registry
+  - impl:pending
+  - kind:concept
   - system:knowledge
   - topic:atom_metadata
   - topic:provenance
@@ -1124,65 +1409,80 @@ documents:
   - workspace.desk.atoms
 - name: atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
   path: knowledge/atoms/atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml.md
-  hash_c: 0f5eff0178fa9beb71f79d6ba49cfb3981d5f13c5c45f72b5aca99ff261a4578
-  hash_d: b5cb92672fea6c751dde9b082e7237354c7695935e481babd35604960da53a3c
+  hash_c: 7267bc9a18feba812b0ceb0c8f28080a9fde15b292d70eb3670a4ceceaf63c81
+  hash_d: f9133694775d7369de15da9324ff66b553beab6580eb3394ab8505fe162fa580
   semantic_tags:
+  - domain:governance
   - entity:atom
   - entity:metadata_registry
+  - impl:pending
+  - kind:concept
   - system:knowledge
   - topic:atom_metadata
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-atomic-fact-c-x-d-x-v
   path: knowledge/atoms/atom-atomic-fact-c-x-d-x-v.md
-  hash_c: 6f1f8ce87a0f38bb9c907071a83510a43887569c7099e36182206383d014da5f
-  hash_d: cf631de701ba193a5a276b7825c4b0d9c3ad26f0d4e8aec16e2968bf476fd08f
+  hash_c: ac0db2e9809933b5a94adc1d6b944c63481539e2562dcba3dd822d4e471e6358
+  hash_d: 9e8150833ec4e0c7147064578b080dd77fbf05492860e5dc55c897e20f846505
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-boolean-algebra-and-bitwise-execution-kernel
   path: knowledge/atoms/atom-boolean-algebra-and-bitwise-execution-kernel.md
-  hash_c: 2deadfb6a625686138b878b9e2edb27a2775ce0d06613c5c894d6dc921220eac
-  hash_d: f8c745146e584a99f2af36ceeba761a504e16754d30bfee9a2b542b457e634b7
+  hash_c: 82d5fdd4f111daf359c393d9ac6855eb3adf6c27cb79e56a25db68bb2501881a
+  hash_d: 5a99a09e69bd7deba00215af498634049a9a2ffe98eba0c52aa6c3bfae358ef2
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:software
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-canonical-json-as-stable-interchange-format
   path: knowledge/atoms/atom-canonical-json-as-stable-interchange-format.md
-  hash_c: ce28d709f284c2788d695c13d977e9c9671c08765542561b6de444d62bf3adfe
-  hash_d: c71dd2713ce2b15a4fa87f39f995cfe1b06430a5f7aa734fc136e7bde6e2fde0
+  hash_c: 3a2327aa77ab5714e1aded4906d3faec9c6db6e8e847731d8d92bea03e17473e
+  hash_d: 59a734f8ea6899786328f6035fddbe1540978298aa72e12061448c098262b07f
   semantic_tags:
+  - domain:knowledge_representation
+  - impl:external
+  - kind:software
   - system:marcado
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-context-and-hierarchical-routing
   path: knowledge/atoms/atom-context-and-hierarchical-routing.md
-  hash_c: 39eca5f14bb2f7b67ab397926c79f91fe3e1e01bb5b972d5c928bbaf8724dcf3
-  hash_d: 2612edb613097b306b9ccef76bb65dfb879d0d301775c0661a036d6c023ec485
+  hash_c: 8b7d73f46b5ca2d779db886f71787e7cdffd5b9cc56edea8b2a3c6e468b999b8
+  hash_d: aaaa2f1dc5d04d49fb48e5125bcd5d8f66df49ac31b7d7b775f62f124507f84b
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-contradictions-stored-not-resolved
   path: knowledge/atoms/atom-contradictions-stored-not-resolved.md
-  hash_c: a808397132f6dcc72080c384dd292e0f0e23d72659f4ae6373570c8dc2228d62
-  hash_d: ddd76650d82255195ffeb10e747d1022c96b2e356fa25181858113b6c91787a8
+  hash_c: f221e402da7c5e25ae419c104f27b2c95a0c0ea7f4615c547ce30184c4cc7e5c
+  hash_d: e7370a98ebf3f8203e7f90fc3d1e0269225d2a4cc5b0c50839c9d21650a8d37c
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
+  - impl:pending
+  - kind:software
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   path: knowledge/atoms/atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself.md
-  hash_c: 6fddc294889ee1a204b3a71e5843118d92cdf5d7c439d251cc850893f3229f83
-  hash_d: 57b0648a50fa64d4cb38fae376c70d61c15981595e0213c0e2a02bcdeb77f2c4
+  hash_c: dec1c199240d29f8044b37e3472a664abaa3d770fedc30244ee96ad36c83e417
+  hash_d: b48ac86858c963b7b8425087f4cbf064233cd1a608c26ce85be087d84dd9ead8
   semantic_tags:
   - cross:deskops_kb
+  - domain:governance
+  - impl:pending
+  - kind:software
   - system:knowledge
   - topic:atom_metadata
   - topic:multi_source
@@ -1190,55 +1490,67 @@ documents:
   - workspace.desk.atoms
 - name: atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   path: knowledge/atoms/atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k.md
-  hash_c: 1d5b8b5afb7f2e30b592524145ff92fb8f2131620d3a6785cb70a8cff6866c8d
-  hash_d: 87915988af7d870ca8c8d4ac8ba92ac6ee5de7f6f0366a24ca8fc733389ff280
+  hash_c: 1edfa8f73b584bb54853a817e1efda6f276f8b70de867c3eab454b8177d73778
+  hash_d: 80808aea1afaa2ae3b7419db62353d37c48cd655b0a9d644e4d79a5bb35c6eb0
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-document-identity-resolves-from-explicit-frontmatter-first
   path: knowledge/atoms/atom-document-identity-resolves-from-explicit-frontmatter-first.md
-  hash_c: 8283627b55d4f61386a9bce0f8e021bb684405c186c46d35e0a50e9475a94090
-  hash_d: 010c3dd9f3860742347ff67d8068490913eb1517a21cbf80aa4845d5ad7366dc
+  hash_c: d45912bb0f177137583734bbd97311ce54ae89e4757bbabf4062bc1a35463515
+  hash_d: 15bcd6c3e05226d7d083a81a986b5f0b02a85ac5771da828ab45016ee5287038
   semantic_tags:
+  - domain:governance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-don-t-care-rule
   path: knowledge/atoms/atom-don-t-care-rule.md
-  hash_c: 66e473d63c88f4d1f3e9fad820bbdf97abc72b9b459fb25288e7140bb480cc20
-  hash_d: 44498c8beec063ce15b407938fc719138f7b06a7f7555904a3eb888cb5ba57ea
+  hash_c: 91e1a31d614e1ab7a1b7737c67dce938fdb0a2f2b1a64b94d78a57884724f99c
+  hash_d: b3ddbd685b0a6c0d2f0447e56a9d28470f56395ec605eb2f4499abf6152434ac
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-entity-indexed-by-relation-participation
   path: knowledge/atoms/atom-entity-indexed-by-relation-participation.md
-  hash_c: 23d371aa819044365dd29c85062155e05826a4461381c7c96dfef6e572426d13
-  hash_d: 68f106b8d15b9ed2a26850307d441b36cd47e6b42e075d7be9b9d4d5d949798c
+  hash_c: 1e4a32266565c02f7675c07459a8eb85339cbbef2e97881de6b890d5dc956b07
+  hash_d: 2c887ffc3af3a3b2b88198319265eb9a1adaa46de250d33e0efc774d72b22db6
   semantic_tags:
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-facets-as-boolean-matrix-projections
   path: knowledge/atoms/atom-facets-as-boolean-matrix-projections.md
-  hash_c: 98a4c0b19d31337b2cfcfa639b0923a8722a3c3a5752879476825474b9a1e2b4
-  hash_d: 9eebb602bfe1fe632ffcc27c0f1704f4a04386342f4131d24ffa523320ca04f2
+  hash_c: 95c684317f39e325553ee2d1d43a8c0b3fe6e1a4b9438c24c0c11a9b6c7bfaf7
+  hash_d: d42c54e4a0857022562273d25a7becca26d9d6aabf8176eb67f650c0d8100469
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   path: knowledge/atoms/atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope.md
-  hash_c: 449ccbfd50fa71bc67e2c5919782d931d8f19cedf6a8ace127fc88be8de3832c
-  hash_d: bcecb8b63dcfd9efa7e081a97412b82cd07b01b444bcfca6047458eb80f89968
+  hash_c: a54d51e0bd3fe9ad38297d00eb513c74196f295db227759d8312041a4fd66b28
+  hash_d: 6d5c991711e8298f151c9534661ccbb0e52db9ee9941fa202f431c6415a0eb60
   semantic_tags:
+  - domain:governance
   - entity:atom
+  - impl:pending
+  - kind:concept
   - system:knowledge
   - topic:atom_metadata
   - topic:provenance
@@ -1246,19 +1558,24 @@ documents:
   - workspace.desk.atoms
 - name: atom-grafo-indice-g-index-graph-and-collision-detection
   path: knowledge/atoms/atom-grafo-indice-g-index-graph-and-collision-detection.md
-  hash_c: ea06e0545f491a4240d8030cb507d8113f15dd9b05a33c8c94eeb35cd7185f4c
-  hash_d: 9e05d131d631e8b13897e4038195b307823c734c20025f15a168da52e0b6a049
+  hash_c: f14a065d010f0c9fadf93e75c639607941a6f8275f089dfde983d24ea95cd3e0
+  hash_d: 424aef1bcd733efdabe2b9206c85e4b63ee70173cb71959e942a802c0e1ce2ca
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:graph_architecture
   - graph:concept
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   path: knowledge/atoms/atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval.md
-  hash_c: 49bf49c38708aedb0f94061b8754d354eac4c0a402f750bf06497e25a2071a3d
-  hash_d: 7f72744020d57973f447d035e9c2c619ab015ebbd9716fe27d11e877a7dba505
+  hash_c: c036a5754820554c2b49192253006b7289854e902888648bd235f95831d46e65
+  hash_d: ec3a8e726617038e31a4676c2c193a5be0a58e4daceaaee4891f2644c9d04be4
   semantic_tags:
+  - domain:retrieval
   - graph:provenance
+  - impl:external
+  - kind:software
   - layer:graph_provenance
   - system:kgdb
   - system:knowledge
@@ -1267,29 +1584,38 @@ documents:
   - workspace.desk.atoms
 - name: atom-graph-edge-endpoints-validate-locally-defer-remotely
   path: knowledge/atoms/atom-graph-edge-endpoints-validate-locally-defer-remotely.md
-  hash_c: d2206563e54e2a1aba8c9ebe24121a5229986e6fe043fc6ea92e1de9a652af92
-  hash_d: 6b34912f07a1874e0dbfeba2745bf0f4e5046d9449fd8def9aab14d6c9ca1132
+  hash_c: 6fbc6622699e4e85db87ff26bdb2bd300ff9eea41f6aab700831ffaaf0c7cb29
+  hash_d: dea960a745689a15b79cbf827f03024c8564c0c03b754a0cf7577c5c37c1912e
   semantic_tags:
+  - domain:graph_architecture
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-graph-endpoint-addressability-requires-semantic-disambiguation
   path: knowledge/atoms/atom-graph-endpoint-addressability-requires-semantic-disambiguation.md
-  hash_c: f934aae5b87db403b016a52b9276d4e64624da4310b7ca7f575b58563f0fc838
-  hash_d: 5664651022f6e220dad1bee3629ffb44ea382e64d9e97a17df5e8034747f8753
+  hash_c: d7b31a941fc826f7d59752c32d43c3eb3f24f5572ddc311b752347674e258391
+  hash_d: 4aafeba36bddb7ccab324b3d226406591029e652d736a1649276daaa125231b0
   semantic_tags:
+  - domain:graph_architecture
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   path: knowledge/atoms/atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity.md
-  hash_c: 4aeff07beb571d7b64a2fe7284a4717f2d1a1a941745590e95876ce547dacdfb
-  hash_d: 7a4f8bb85284f6707a44c95e4b56a623304db16f7efd64b8d7f3d6f0d9999fda
+  hash_c: a746e97d564cd9b64e12c61ba4be2da5b0ec1f87adef5733ecf3863d399f348d
+  hash_d: 59dfd57bbc91d0fca53bdc964906917d8e30adb8421ce068b59ef0547ab29a5d
   semantic_tags:
+  - domain:retrieval
   - graph:lineage
   - graph:provenance
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:knowledge_graph
   - topic:query_retrieval
@@ -1297,11 +1623,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   path: knowledge/atoms/atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain.md
-  hash_c: c303f68bcc510cea082f6329cf849a9bf628c84f9d84dc8a3211419e73655f94
-  hash_d: 6194b8d2b95ac1d825d042477e334d77c67e1869707c13d228c040cdf7f908cc
+  hash_c: bd1037b2e6e67206b32ddb76c756276128e21f31ff5cdae1eb0a6a92136435c3
+  hash_d: 5a96d4857229f28c2db5e9127aa1ad34d6807d98851c2b7130def057955a8338
   semantic_tags:
+  - domain:provenance
   - graph:lineage
   - graph:provenance
+  - impl:here
+  - kind:software
   - layer:graph_provenance
   - system:knowledge
   - topic:knowledge_graph
@@ -1310,28 +1639,34 @@ documents:
   - workspace.desk.atoms
 - name: atom-information-energy-e-r
   path: knowledge/atoms/atom-information-energy-e-r.md
-  hash_c: 707786c90fd96ee929cf8166ab41f398d14cba59b58bb33cb0076cd70a4cafb2
-  hash_d: 4623033aa53b96849e83b2d5b8d424b13551bf52c64681abd4a2d5d2ef9f22f6
+  hash_c: cc88ecd1431f667359a0bf4681733e66ddfe5062200a998a710113a281f56255
+  hash_d: 61d9ed8e46c4d06879d22bc9339e653e38dbc8d431c692de0282a444496edafd
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:provenance
+  - impl:pending
+  - kind:concept
   - topic:provenance
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-kernel-symbol-policy
   path: knowledge/atoms/atom-kernel-symbol-policy.md
-  hash_c: 126bd43582153d8de529650e031f29c8b49bf330a3558b54642d5712c2b099ad
-  hash_d: 025774659745e47f69229cbb0307f1efb7b0c9d4d96ef44c01e828011cc179e1
+  hash_c: e3be1ba7e5ab8193dcd139971a66436e3f751e77eb88ff1eab96925a808871ab
+  hash_d: ac3dbb5a0e86df1659b47a880b8a6e57103a81b08661cf1a517041b9ac498dfa
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:software
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   path: knowledge/atoms/atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields.md
-  hash_c: 8681d3f26f87984f7de05e974f0f4173c061553b60dd8b37d027e763348c312d
-  hash_d: fbd463e5df42532e467490b73e37194d6f42fc1bafcd38703813ec7172197b1a
+  hash_c: 3fbde5fec22037b3da1a0453bf3ad0029073e83b0a25a6973426158629026e0f
+  hash_d: 32905c8ef5c7bee5a35b16aba90100b47ee4ab62b3061e0bcdf69467d981214d
   semantic_tags:
+  - domain:retrieval
   - entity:atom
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:atom_creation
   - topic:knowledge_cli
@@ -1339,9 +1674,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   path: knowledge/atoms/atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow.md
-  hash_c: 81559717348b1311db7dd5318ea0fc18692e841161b733eecb60340494b2446e
-  hash_d: fe5316603928a87263656c9bd2cfa562c5cb3e4d85ec74f1d586cecd555da31b
+  hash_c: f0cecf24896f938e81a2bafad5ccf364bc163affc8b0bc293c84d00e22519ca1
+  hash_d: f8443db8d3b944f7d9a399b14f7a845a22a461fbe7d563067267bf8ccd7b63b1
   semantic_tags:
+  - domain:retrieval
+  - impl:external
+  - kind:software
   - system:deskops
   - system:knowledge
   - topic:knowledge_cli
@@ -1350,10 +1688,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   path: knowledge/atoms/atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface.md
-  hash_c: 5a44df03476eb9a32e72e4a496f3130593f417b13d1fc564e52d76f17d393d59
-  hash_d: 3e81535e98f68d4c344598fdedee78f1c7c14b15bdc818cec67486db3b327d06
+  hash_c: 5f5d3b01b7ba721c56e3f10f7c7db3baedb650a2a076eaf84916dfd8041043f7
+  hash_d: 2a59bcfa9a9581b51cc0a32509758a44c7c5c92f843ed66420dfe488a5ca1826
   semantic_tags:
+  - domain:retrieval
   - graph:lineage
+  - impl:here
+  - kind:software
   - system:kb
   - system:knowledge
   - topic:knowledge_cli
@@ -1362,10 +1703,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   path: knowledge/atoms/atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation.md
-  hash_c: a809c253aa1cf224fa0f348a818bcf47fb2d3e548b77631a79209c21d4ba333c
-  hash_d: ac142408cd296969bc6ffbf850904206760c8468cc3424a9063d96f60f51cd3a
+  hash_c: df0aec2f0ba49ea8b1fdea5b07d1424fd3a465fbb9bbde302dcb8a978de5de57
+  hash_d: 12a0fcf1692369703d734569f6423a51ba9043e9a462e22ce848bcc39ec5f9bc
   semantic_tags:
+  - domain:retrieval
   - graph:provenance
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:knowledge_cli
   - topic:knowledge_graph
@@ -1373,10 +1717,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   path: knowledge/atoms/atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability.md
-  hash_c: 118902b71f40fd2a5a2544809ac568209689469ea46ffea21cbdf4e439c7bc61
-  hash_d: ac07cc18036a8975e13ec1df44b94538c1e6381aa66db174ab0a368ad19dc3b8
+  hash_c: 9c176ee8ea01cf5788bb1d465247055e6ae5a179a19dc3b74249700c8b91b472
+  hash_d: 3f6d23a19218fdef3c39357432e0176bcac254634661867f970d89370ffe1832
   semantic_tags:
+  - domain:retrieval
   - graph:provenance
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:knowledge_cli
   - topic:knowledge_graph
@@ -1384,10 +1731,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   path: knowledge/atoms/atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring.md
-  hash_c: 833545569b775744d4e61207c914ef86a981af9e7fb95eaa2560e8a50a42508c
-  hash_d: 1f0f4f5148efb750e81283f3103a7bb4dcf9731160736f1f3b84131f8cb5ae65
+  hash_c: 3f0bf1a76d1eed2fd0a9145d17d8f8a28c653ca916a9a6471ce31d783215ea60
+  hash_d: 94a92c43c0ea498757a8ec25dc9803805b046d411f32db323a8663087d37bfb9
   semantic_tags:
+  - domain:retrieval
   - entity:atom
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:authoring_workflow
   - topic:knowledge_cli
@@ -1395,11 +1745,14 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   path: knowledge/atoms/atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text.md
-  hash_c: 12b308541aeb074311b12b588d8848237016adaa902b744dff21eff782052231
-  hash_d: de6c480ca10e77a97729e79699e7eb514166d308b679a11f3bb39368aec5cd43
+  hash_c: 395c999653d7b2e609fb1ec0255397450237c743decf466fe369150415392d79
+  hash_d: 2132288f7eb4881422d5ff45197b691d637dfca0562253956d148641eb28c9f0
   semantic_tags:
+  - domain:governance
   - entity:atom
   - entity:metadata_registry
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:authoring_workflow
   - topic:knowledge_cli
@@ -1407,10 +1760,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
   path: knowledge/atoms/atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view.md
-  hash_c: 61e89c0a03303a8e952d895ca60298051c2a57600356083840abf5429be904e2
-  hash_d: 4a13a5ba6a8d6cc7b917eab4cf723dd3e3ccbc3dc7a8491f83d36c8c8541cf64
+  hash_c: 1276f89a08299f7c953e21b012df9d9f53817fcf2953ab6c86a74760be7cc0c7
+  hash_d: 595b2c1562c1c02d73fc50be88b969cecd237c2dead9e590d418c1b33f28c95b
   semantic_tags:
+  - domain:retrieval
   - entity:atom
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:authoring_workflow
   - topic:knowledge_cli
@@ -1418,10 +1774,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   path: knowledge/atoms/atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check.md
-  hash_c: 47469bba5577fccb8b55881093db6287ec8338d3c43cf93f33c457fe294b470c
-  hash_d: 79de85fb970cf3eab8f5c79ac40f3949ba65c4e9357b95386955d77b2640bfe4
+  hash_c: a6e1b21623f7618e05892bcffaa7b893a6977bb4d5b63aad2c4aab2e6bb585d4
+  hash_d: daa298af234e1bad48ae3fb8bfc64b007561c0bc1eba0c2a982a3db72e99377d
   semantic_tags:
+  - domain:retrieval
   - entity:atom
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:knowledge_cli
   - topic:validation
@@ -1429,37 +1788,45 @@ documents:
   - workspace.desk.atoms
 - name: atom-logical-ranges-as-the-addressable-units-for-anchoring
   path: knowledge/atoms/atom-logical-ranges-as-the-addressable-units-for-anchoring.md
-  hash_c: 56ed09a98e6c6dfb9e359972df08a5f85ed1b0be418c460727bf7cc6058cc93e
-  hash_d: 19b936e60eb92650641d5d255f66da5e381e91b80050f0fada64f566313413c4
+  hash_c: 82719da52b11757691853365d4932eb7c9cca32a8271ba4eb91fa3824db376b7
+  hash_d: ecbdae07af942ce700550a3176d43500b9b5c7f9bf944fe5ec72068cb32bdc5e
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-logicalsystem-as-aggregate-root
   path: knowledge/atoms/atom-logicalsystem-as-aggregate-root.md
-  hash_c: 3b680595b500e5e7eee2c3d211b766e60549caf3a3def7551c5fd98c949dfa7f
-  hash_d: 7fb6b45f5e3e664eea82ae366856a5808406683d39177085d9b69c17879c91bc
+  hash_c: 187c33c1ce2771e87b6560274a6a031202e69cc82340239ed465c3e4ff9af8ba
+  hash_d: 0faa08f86afe0cc59d6ddb5a83c98fbbc2fe9b611fcc539fae37eff5ec9aa314
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-meel-engine
   path: knowledge/atoms/atom-meel-engine.md
-  hash_c: 3331ed1e015a859e772adc5d6126871e552dd60781a758d1146c9b088cf64e70
-  hash_d: 3a0dca2205de825a99a563880bb6facf9b725c3971099fbceb5e69c4a3c59d05
+  hash_c: 75e1260d3f95e394121aca3f1bdd0ab43a3cf784b8448beb30706796bb7bd873
+  hash_d: 83f00a9d5dcb69d3c1dff340385337252568aacbc701715344122ffda4eddd34
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:software
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
   path: knowledge/atoms/atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets.md
-  hash_c: fb6e05d3453e35507b9ba7f788196f529a0ca2d07ee8ed121c5d3b241a304eb4
-  hash_d: b84ae6775c2fc96dbc5af52b52592b49c5e32dd285eb88bee0a34a0b284f9d27
+  hash_c: d412effc6fc2aedac1c4d6562261ae7e493078347c428243d1945c08a436645f
+  hash_d: b59347b8b0e5c576835ef80b79c6912af4b44e590951cdd1353465f903b3844b
   semantic_tags:
+  - domain:governance
   - entity:metadata_registry
+  - impl:pending
+  - kind:concept
   - system:knowledge
   - topic:atom_metadata
   - topic:query
@@ -1467,55 +1834,67 @@ documents:
   - workspace.desk.atoms
 - name: atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   path: knowledge/atoms/atom-offsets-and-spans-are-derived-evidence-not-durable-identity.md
-  hash_c: 3593097595ca3c20ce2c7c4b74c4694bafc356d24138ebc1b06e304975ed4d43
-  hash_d: 12b8c5ae68c9a0a9d5b9e616a84df1cfc00aecff6ded5f5e6690f73f2ad046b4
+  hash_c: 2908d22580b23bee20a7e3e3741b112f561f303a9f838a9c6a14c4f623c6f8b4
+  hash_d: 0292371e53e163c8d48b0aaaff5d8a0b5b0957fe555c2ead506916e85c78f7ad
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-omnirepresentacion-block-matrix-for-llm-integration
   path: knowledge/atoms/atom-omnirepresentacion-block-matrix-for-llm-integration.md
-  hash_c: 005229b8985437d17692bbc7f8608b033b9968d36c504bdd8a39e2463702dd9d
-  hash_d: 6cbe3be08e233b24ccfcc4135d7b8861f419484811bf42a31e65dafffc560047
+  hash_c: fd4cfc45259eb240e1bb33f006f20f896b58ef571a78e25c9614b0197b86e68d
+  hash_d: 1413983e018633ac2192ad819801278145d14f8428be175e00e4bcc505a6ed9d
   semantic_tags:
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-proposition-first-architecture
   path: knowledge/atoms/atom-proposition-first-architecture.md
-  hash_c: b3b1630d7a05d131416b4d4d7b76ca207d9dad0a4c5f35bbf9c6df1ba210b4b7
-  hash_d: 7d98654bc6bfde8e7b75f4eeec5b2d4950249a0bfaf6e4adb26bf9e12360964d
+  hash_c: 01807699537f2573458fb7a18b6be2af5f986e9a1127b2216482799d7873e093
+  hash_d: 446f2e52a9ead646090b1aa9a59f6f527c091bbd84105cb3df418dcf590e91a8
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-proposition-lifecycle-semantic-status-classification
   path: knowledge/atoms/atom-proposition-lifecycle-semantic-status-classification.md
-  hash_c: a36742ce698013b34c81c94874e68c0b77a3132c4b9aee93646679f815d125c7
-  hash_d: a2cd2fe342d6d0a9200708efe74f36e9cc930a23b9c1f89c9ab1732cc830fba8
+  hash_c: 6a551ee347b9053d55f21b5c9a756e6d45908fa98790de0f69fc95fed7b3b611
+  hash_d: 04c5e06771f9272e91eb81c4c82e936ebfd75684cf31a55e834e84a37a6fa50d
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:governance
+  - impl:pending
+  - kind:concept
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-pure-matrices-vs-block-matrices
   path: knowledge/atoms/atom-pure-matrices-vs-block-matrices.md
-  hash_c: 461f147a1cdf9d4b527dcd05fd87b8f0cbdaae39494ffbab064b0eda8cf4a0a6
-  hash_d: 8168316d57454a47ae5c020cf2e57593fa69d3fd2fa0da1b5bce79b50611d777
+  hash_c: 61469dff414f9668ec97d319122d46fc11b0b7b913e8281d79d9a7e5522b1114
+  hash_d: 6ada7eb7987e7d7eacf521ca5714ea44252c3f9f331113815c87dd737c021492
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   path: knowledge/atoms/atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags.md
-  hash_c: 350c6c6498f68b645e1baae824acbf29009a5e57872d1885eed4799418ab7293
-  hash_d: fcb31ec8bf15287993208348ec26f1c71f5f1e4f24d457c16f39f462d7009fcf
+  hash_c: aedbd63e9bc9b7b4196f2cf478d77a15e954f62ad369ab408429a59179856e8c
+  hash_d: bae594d1df09dacc2e7163f2b79805e281f2885ca3756d1de95dce68cfe332a8
   semantic_tags:
+  - domain:governance
   - entity:atom
+  - impl:pending
+  - kind:concept
   - system:knowledge
   - topic:atom_metadata
   - topic:tag_policy
@@ -1523,119 +1902,142 @@ documents:
   - workspace.desk.atoms
 - name: atom-relation-algebra
   path: knowledge/atoms/atom-relation-algebra.md
-  hash_c: fbece3ce6194e1c69840a08f678fe9074f2b5ebb51cd8ae67b2b99c00df755d6
-  hash_d: d166a7a3e7bb343d776f364f2db14ec2ae2d32cfbff7ab436f9effccbc146a92
+  hash_c: c6943c42db87c6bd60e15e4a006557605fd2cac32a1116e1aa88c3a7db9bc453
+  hash_d: b3ba38368a3c357706390de315f5639ca7652f419a8c7feeb7e3862fe250bb7c
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-s-expression-runtime
   path: knowledge/atoms/atom-s-expression-runtime.md
-  hash_c: b287e76dd075b3023be9882f026444f005889417e1acbad9c5b2daedd805aa8e
-  hash_d: f37568b6d6addc8e57ae95e46003813a5ccda1a15768b22e2dbb16c1eb0908c9
+  hash_c: b35c281da6336f63ab7949d8a616b0e2d0780ce17309d38052b0693520bc0409
+  hash_d: cb63acf8f981ea1628354eed17ee580cfa1a434b77d6d9c3209961e6e9a0efcc
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:software
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-searchvector
   path: knowledge/atoms/atom-searchvector.md
-  hash_c: bfc508925d2085e6a8623a8649d0b37ab6944c5afd764fd0e2f96ef2fcd81dd0
-  hash_d: 2e395feb672f12f6f92694c99f1eeb712442dac3a77daa7e3bed8b59e48898b1
+  hash_c: faf1c560c7e455a1011f574064e4fc66f05b96cd3a950b275d836fe52215aeb6
+  hash_d: 4700889b9f8d4810f8f7246542be52303cb1ea3df8571ab2f4dddb21ec241636
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   path: knowledge/atoms/atom-semantic-milestone-markers-define-addressable-ranges-over-prose.md
-  hash_c: 1f391dbd75e60536a5870dec33f71390713e3fe58cba99578f1c0093fcb1c649
-  hash_d: e0c7a2e61c31059e11a6604c6d0cf15378e8a6eebf1f320c2ec1ffd845ec98ef
+  hash_c: bdffefbc81449947b6fba7afc5cbca5e9a9ca472b3b4bf171dd09e3a818b9f2f
+  hash_d: 2c9a17611ae429cabc212354bf56a8f3d26a52ba667061442069a92b23b271a5
   semantic_tags:
+  - domain:provenance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-semantic-namespaces-define-independent-interpretation-rules
   path: knowledge/atoms/atom-semantic-namespaces-define-independent-interpretation-rules.md
-  hash_c: 5e7f09669bcf1cb6367d19d41a8dbc95a7ca2b7470083f259fbc6415898f5f87
-  hash_d: 3928883ed7bb489e762903230f331e1dca0bb7bef84c466b3282e3c3f0d6ee74
+  hash_c: 305e6004c93a1e4070399179e8df28859092d69361c62a13772916247c4bfe47
+  hash_d: 645e8047f7a99dc208c713c91dbf0c08b54299e7f2485657118d7395915dc547
   semantic_tags:
-  - domain:knowledge_representation
+  - domain:governance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-structural-masks-valid-sense-observed-discriminative
   path: knowledge/atoms/atom-structural-masks-valid-sense-observed-discriminative.md
-  hash_c: 25e1e8926c66f3383b49d52374d4e69096839c876dd49f376224fd18533e18c6
-  hash_d: 655c3d151a703f2ee4e3dcef7e935478bb6dbc5d94872ceae6d336e89df5db20
+  hash_c: b4a7868100dee6c552a0fe1fc7c7e776a907095685c6067c20604bdb0ca1ad82
+  hash_d: cf7e4d326bad29737428aa8836ca57e99dac34d528d68c5fcf1266ef47b1665a
   semantic_tags:
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-text-as-syntactic-sugar-over-graph-smg-model
   path: knowledge/atoms/atom-text-as-syntactic-sugar-over-graph-smg-model.md
-  hash_c: 1420de1eb999fd1b9979bba2c08575de1184956148d7774d097ed60849527763
-  hash_d: 705ed2bc7334a0fc819b1bcf6f8311b65613f2236d0dd5e4920a0e78454d1ba0
+  hash_c: ef15f32a68e8ec2656ac8525c6dc5c2c23b1b04dbe088298984d3b858ed434c2
+  hash_d: 381cb1d5970d6274c0ab5284784338aa5ea187a1e9d5415bafe06e5568fba8c9
   semantic_tags:
   - domain:knowledge_representation
   - graph:concept
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-two-gates-model-s-i-sense-v-i-truth
   path: knowledge/atoms/atom-two-gates-model-s-i-sense-v-i-truth.md
-  hash_c: 6d6f977b464dd80d74b903e6b073ec6169f18446269672087f36412330d84e4b
-  hash_d: f920b589ad3c4b3e2d3984405f485b5d0e6e4600033d551696b5be40fa62c16e
+  hash_c: ac008637fdbaf837704b6eb1c0672b6c9c504e74b52ce9d362757c18710c5a44
+  hash_d: 5b5d74619b846a69f3b51e0ed86c183ec2bb107fa4c5f7806af069e8d94b1d77
   semantic_tags:
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - topic:concept_graph
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-typestate-typing
   path: knowledge/atoms/atom-typestate-typing.md
-  hash_c: acdf9d65695a1380cd644fe5aebeaaa3d8c9da3ac44a6afa692e89875df60968
-  hash_d: 20cd78438845938b9e2599c0edabe942a08633e7c46c5df97a12a33cf8286e31
+  hash_c: 1709c30d9c9781f353f2f53dd1584d865d9b994a8a88fac3c078e2baafc708ab
+  hash_d: 4d6ac94b8d69646564f3729a07d16870d8497ad251df4d0970c3d0233508dfa9
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-universal-grammar-formalization
   path: knowledge/atoms/atom-universal-grammar-formalization.md
-  hash_c: 586a81a9cd7c369f55d9cd92a03693e70ab6b389d73a35e396f6e81bbc36bb29
-  hash_d: f1237a603d7b72bcd69f82864df4fbc76746e9584a788785381002bde106312b
+  hash_c: 00b0240496bb0fcf7cfa2a378441c8bf57b7e6d83f9ddbe49bf5fbf40d7885b1
+  hash_d: 8348360c898b9cc2a14791c0dff83b22941401df0450244c47a059137dd831f9
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-validation-diagnostics-use-structured-codes
   path: knowledge/atoms/atom-validation-diagnostics-use-structured-codes.md
-  hash_c: 580f2628a05bf9295a7055d11feefc49f0d1282b1b45bce611bd878e34684b2b
-  hash_d: 45bebf0454efa6411ee254728493517e4b8f6cf2f63cf1364052d91b57232343
+  hash_c: f1947043b15c8dbacb34527a6715ee582ed4e5371a73b112cd95b1a4410bf6c3
+  hash_d: 57b9d710427280d0f5c3114956e07527a8a0e12965d1aaf3f25914fe973dd882
   semantic_tags:
+  - domain:governance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-validation-proceeds-through-5-layered-levels
   path: knowledge/atoms/atom-validation-proceeds-through-5-layered-levels.md
-  hash_c: f102db593521b94ac77a293cae3100908f57e9b1d4eb3927088d9127c36aa434
-  hash_d: 89438d732042234285f9c31681e117f06e4da548fdca9f114a90d74aa0fab701
+  hash_c: 6910aad0e5d1121979e5ade5c40b8a6fe88234c805125d6253c6eaf28b35cfce
+  hash_d: 4d410597900976eff3b7a777360abc0462b4c1fd138c79bb91070d266a6d02d4
   semantic_tags:
+  - domain:governance
+  - impl:external
+  - kind:software
   - system:marcado
   - topic:anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
 - name: atom-wigame-as-local-language-game
   path: knowledge/atoms/atom-wigame-as-local-language-game.md
-  hash_c: a027dfdbe798e2360480d6c7eac9cc283f6ce13a8acbc17ca32a4d9661fbf060
-  hash_d: 606f8b45ae0691aa3dc4696ef2fd7782afb695530ce392705d1129dc1f0cd4a4
+  hash_c: 29156ab131f98f651dd363b908ef50cd737aa5b477b564bc635b13e83379e448
+  hash_d: 39a9f8eb9d34ab7d5f6dfcc4a05815025c0739f1bbc70737687c375070241a25
   semantic_tags:
-  - domain:graph_architecture
   - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
   - type.knowledge.atom
   - workspace.desk.atoms

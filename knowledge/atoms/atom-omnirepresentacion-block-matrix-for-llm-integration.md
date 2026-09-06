@@ -3,8 +3,10 @@ id: atom-omnirepresentacion-block-matrix-for-llm-integration
 title: Omnirepresentacion / Block Matrix for LLM Integration
 five_wh_one_plus: what
 tags:
-- domain:knowledge_representation
 - topic:concept_graph
+- domain:knowledge_representation
+- kind:concept
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

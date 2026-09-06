@@ -3,8 +3,10 @@ id: atom-contradictions-stored-not-resolved
 title: Contradictions Stored Not Resolved
 five_wh_one_plus: how
 tags:
-- domain:knowledge_representation
 - topic:provenance
+- domain:provenance
+- kind:software
+- impl:pending
 provenance: Derived from current project specs during the spec-alignment pass. Exact per-atom source mapping is pending metadata backfill.
 ---
 

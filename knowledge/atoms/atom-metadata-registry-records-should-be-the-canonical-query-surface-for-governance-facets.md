@@ -8,6 +8,9 @@ tags:
 - entity:metadata_registry
 - topic:query
 - topic:atom_metadata
+- domain:governance
+- kind:concept
+- impl:pending
 provenance: Derived from `metadata/atoms/atom-metadata-registry.yaml`, `source/spec/ATOM_METADATA_DOC.md`,
   and the local `knowledge` CLI metadata commands.
 ---

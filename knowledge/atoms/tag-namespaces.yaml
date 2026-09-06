@@ -1,69 +1,117 @@
 notes:
-  - This file now lists semantic tag namespaces that still belong on atoms.
-  - Governance, provenance-status, project, source, grounding, role, scope, phase,
-    bootstrap, method, status, and legacy metadata were moved to `metadata/atoms/atom-metadata-registry.yaml`.
+  - This file lists the semantic tag namespaces that belong on atoms.
+  - Every namespace declares meaning, use_when, do_not_use_when, and examples so
+    boundaries stay explicit and namespaces stop overlapping.
+  - Governance-status, provenance-status, project, source, grounding, role, scope,
+    phase, method, and legacy metadata live in `metadata/atoms/atom-metadata-registry.yaml`.
+
+rules:
+  - "domain: exactly one per atom (mandatory)."
+  - "kind: exactly one per atom (mandatory)."
+  - "impl: exactly one per atom (mandatory)."
+  - "system:kb is deprecated; use a real system or omit."
 
 namespaces:
-  cross:
-    examples:
-      - cross:deskops_kb
-      - cross:sldb_kgdb
-      - cross:provenance_concept_graph
-    meaning: Explicit cross-system or cross-project synthesis that is part of the claim.
-    use_when: The atom's knowledge claim is inherently about a bridge across systems,
-      repos, or graph layers.
   domain:
+    meaning: Durable knowledge field the claim belongs to.
+    use_when: Classifying the atom by the broad discipline of its claim. Exactly one.
+    do_not_use_when: A tool (system:), entity (entity:), or graph stratum (graph:)
+      already answers the question. Domain is the field, not the target.
     examples:
-      - domain:knowledge_management
+      - domain:provenance
       - domain:knowledge_representation
       - domain:graph_architecture
-    meaning: Durable knowledge domain the claim belongs to.
-    use_when: The atom belongs to a broader field beyond one tool or repo.
+      - domain:retrieval
+      - domain:source_modeling
+      - domain:governance
+      - domain:system_architecture
+    values:
+      provenance: Lineage source->sample->atom->composition, anchoring, grounding, evidence.
+      knowledge_representation: The atom model itself - atomicity, relations, composition, concept semantics.
+      graph_architecture: Graph strata, materialization, endpoints, structural/concept/provenance graph as architecture.
+      retrieval: Queries, indexes, CLI, coverage, provenance/concept retrieval.
+      source_modeling: Multi-source adapters, projections, source kinds, snapshots.
+      governance: Tags, namespaces, metadata registry, validation, quality, status policy.
+      system_architecture: Tool boundaries, bootstrap, migration, legacy extraction.
+  kind:
+    meaning: Nature of the subject the atom describes.
+    use_when: Marking whether the claim is about a software artifact or a
+      conceptual/theoretical model. Exactly one.
+    do_not_use_when: You are naming the knowledge field (use domain:) or the tool
+      (use system:).
+    examples:
+      - kind:software
+      - kind:concept
+    values:
+      software: The atom is about a running/implementable software artifact, CLI, adapter, store, or command.
+      concept: The atom is about a theory, model, principle, or representation idea, independent of any implementation.
+  impl:
+    meaning: Implementation status of what the atom describes.
+    use_when: Recording whether the described behavior exists in this repo, in
+      another repo, or is not implemented yet. Exactly one.
+    do_not_use_when: The atom is a pure concept with no implementable surface -
+      still pick one; use impl:pending if nothing is built.
+    examples:
+      - impl:here
+      - impl:external
+      - impl:pending
+    values:
+      here: Implemented in this repository (knowledge/ src/).
+      external: Implemented in another repo or tool (sldb, kgdb, deskops, marcado, etc.).
+      pending: Not implemented yet; aspirational or design-only.
+  system:
+    meaning: System or tool the claim is about.
+    use_when: The atom belongs to a specific tool, subsystem, or KB surface.
+    do_not_use_when: The claim is platform-agnostic knowledge. Do not use system:kb.
+    examples:
+      - system:knowledge
+      - system:deskops
+      - system:sldb
+      - system:kgdb
+      - system:marcado
   entity:
+    meaning: Primary modeled entity the claim is about.
+    use_when: The atom is centered on one KB entity type.
+    do_not_use_when: The atom is about a field or tool rather than a modeled entity.
     examples:
       - entity:atom
       - entity:sample
       - entity:source
       - entity:taxonomy_node
       - entity:metadata_registry
-    meaning: Primary modeled entity the claim is about.
-    use_when: The atom is centered on one KB entity type.
   graph:
+    meaning: Graph stratum or graph concern named by the claim itself.
+    use_when: The atom is about provenance, concept, structure, lineage, or related graph semantics.
+    do_not_use_when: The graph is only incidental context, not the claim.
     examples:
       - graph:provenance
       - graph:concept
       - graph:structure
       - graph:lineage
-    meaning: Graph stratum or graph concern named by the claim itself.
-    use_when: The atom is about provenance, concept, structure, lineage, or related graph semantics.
   layer:
+    meaning: Architectural layer the claim applies to.
+    use_when: The atom is specifically about a KB layer or sublayer.
+    do_not_use_when: The tag names only a broad topic or system.
     examples:
       - layer:sample
       - layer:graph_provenance
       - layer:graph_concept
       - layer:structure
-    meaning: Architectural layer the claim applies to.
-    use_when: The atom is specifically about a KB layer or sublayer.
-  system:
+  cross:
+    meaning: Explicit cross-system or cross-project synthesis that is part of the claim.
+    use_when: The atom's knowledge claim is inherently about a bridge across systems, repos, or graph layers.
+    do_not_use_when: The atom is about one system only; use system: instead.
     examples:
-      - system:kb
-      - system:deskops
-      - system:sldb
-      - system:marcado
-      - system:kgdb
-      - system:knowledge
-    meaning: System or tool the claim is about.
-    use_when: The atom belongs to a specific tool, subsystem, or KB surface.
+      - cross:deskops_kb
+      - cross:sldb_kgdb
+      - cross:provenance_concept_graph
   topic:
-    do_not_use_when: The information really belongs in a stronger entity, graph,
-      layer, or relation model only.
-    examples:
-      - topic:provenance
-      - topic:multi_source
-      - topic:anchoring
-      - topic:concept_graph
-      - topic:knowledge_cli
-      - topic:atom_metadata
-      - topic:knowledge_graph
     meaning: Lightweight conceptual topic for discovery and grouping.
-    use_when: The atom needs a human-friendly subject handle.
+    use_when: The atom needs a human-friendly subject handle not covered by a stronger axis.
+    do_not_use_when: The information belongs in domain:, entity:, graph:, layer:,
+      or a relation model. Do not duplicate a domain value as a topic.
+    examples:
+      - topic:atomicity
+      - topic:composition
+      - topic:migration
+      - topic:authoring_workflow

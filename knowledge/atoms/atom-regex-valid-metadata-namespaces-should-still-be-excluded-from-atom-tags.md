@@ -7,6 +7,9 @@ tags:
 - entity:atom
 - topic:atom_metadata
 - topic:tag_policy
+- domain:governance
+- kind:concept
+- impl:pending
 provenance: Derived from `knowledge`, `source/spec/ATOM_METADATA_DOC.md`, and `desk/atoms/tag-namespaces.yaml`.
 ---
 

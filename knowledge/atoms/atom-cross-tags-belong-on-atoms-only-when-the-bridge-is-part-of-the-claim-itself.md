@@ -7,6 +7,9 @@ tags:
 - topic:multi_source
 - topic:atom_metadata
 - cross:deskops_kb
+- domain:governance
+- kind:software
+- impl:pending
 provenance: Derived from `desk/atoms/tag-namespaces.yaml`, `source/spec/ATOM_METADATA_DOC.md`,
   and `knowledge/atoms/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md`.
 ---

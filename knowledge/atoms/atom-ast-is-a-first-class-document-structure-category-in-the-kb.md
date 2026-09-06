@@ -10,8 +10,10 @@ tags:
   - topic:ast_first
   - topic:structural_graph
   - topic:multi_source
-  - domain:knowledge_representation
   - graph:structure
+  - domain:knowledge_representation
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/MULTI_SOURCE_ANCHORING.md` and the updated component and anchoring diagrams built from that document.
 
 ---

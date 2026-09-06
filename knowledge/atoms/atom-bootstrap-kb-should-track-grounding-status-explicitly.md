@@ -10,8 +10,10 @@ tags:
   - entity:atom
   - topic:provenance
   - topic:bootstrap_kb
-  - domain:knowledge_management
   - graph:provenance
+  - domain:provenance
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/BOOTSTRAP_KB_WITH_CURRENT_DESKOPS.md`.
 
 ---

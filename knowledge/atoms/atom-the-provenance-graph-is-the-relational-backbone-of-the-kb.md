@@ -9,9 +9,11 @@ tags:
   - entity:atom
   - topic:provenance
   - topic:provenance_retrieval
-  - domain:knowledge_representation
   - graph:provenance
   - graph:lineage
+  - domain:provenance
+  - kind:concept
+  - impl:pending
 provenance: Derived from `source/spec/GRAPH_ARCHITECTURE.md`.
 
 ---

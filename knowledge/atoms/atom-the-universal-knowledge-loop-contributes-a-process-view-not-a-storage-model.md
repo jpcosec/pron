@@ -8,8 +8,10 @@ tags:
   - entity:workflow_item
   - topic:legacy_extraction
   - topic:composition
-  - domain:knowledge_management
   - cross:tutor_apoe_hum_ecosystem
+  - domain:system_architecture
+  - kind:concept
+  - impl:external
 provenance: Derived from `hum-ecosystem/docs/architecture/universal_knowledge_loop.md` and `source/spec/LEGACY_EXTRACTION_FROM_HUM_ECOSYSTEM.md`.
 
 ---
