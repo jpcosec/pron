@@ -1,4 +1,8 @@
-stores: []
+stores:
+- name: sldb
+  path: /home/jp/proyectos/hum-ecosystem/tools/sldb/.sldb
+- name: kgdb
+  path: /home/jp/proyectos/hum-ecosystem/tools/kgdb/.sldb
 models:
 - name: BoardDoc
   model_ref: deskops.models:BoardDoc
