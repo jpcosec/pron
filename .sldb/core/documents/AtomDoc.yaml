@@ -3397,3 +3397,40 @@ documents:
   - topic:semantic_anchoring
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  path: knowledge/atoms/atom-sexpr-serialization-quotes-selectors-and-roundtrips.md
+  hash_c: 2128c61eec72d08f8120808bf87c12c732bc6325f6c3f3ccff66938a948af8ef
+  hash_d: 5e2949d22cb70e1b68e2eb5b47f1ad0eb41e4fb33880837098440912570d2feb
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-session-expires-by-ttl-and-store-hash
+  path: knowledge/atoms/atom-session-expires-by-ttl-and-store-hash.md
+  hash_c: fa67aa4736aa17d8322c90a006ad3f8cb746a5e9f0e7fcf546400a57e10cbebc
+  hash_d: 813004ed96f61e4199cd94a1d70d3fba5f8fbd22e0f1e17099ef481cfb2a447d
+  semantic_tags:
+  - domain:retrieval
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+  path: knowledge/atoms/atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind.md
+  hash_c: ab50ded5df8f9a81db0885097efbec179d81f6d771d426ad9b79c20cd2373df3
+  hash_d: 814a1a718a90814359cac731dbd1beca99f03eea8e051d419e1c1b84cfcf05aa
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms

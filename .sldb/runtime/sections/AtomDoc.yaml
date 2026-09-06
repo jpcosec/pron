@@ -16217,3 +16217,178 @@ documents:
     level: 2
     line_start: 18
     line_end: 19
+- doc_name: atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  sections:
+  - path: s-expression-serialization-quotes-selectors-and-roundtrips
+    title: S-expression serialization quotes selectors and roundtrips
+    breadcrumbs:
+    - S-expression serialization quotes selectors and roundtrips
+    about:
+    - S-expression serialization quotes selectors and roundtrips
+    - s expression serialization quotes selectors and roundtrips
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: s-expression-serialization-quotes-selectors-and-roundtrips
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: s-expression-serialization-quotes-selectors-and-roundtrips/answer
+    title: Answer
+    breadcrumbs:
+    - S-expression serialization quotes selectors and roundtrips
+    - Answer
+    about:
+    - S-expression serialization quotes selectors and roundtrips
+    - s expression serialization quotes selectors and roundtrips
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-session-expires-by-ttl-and-store-hash
+  sections:
+  - path: session-expires-by-ttl-and-store-hash
+    title: Session expires by TTL and store hash
+    breadcrumbs:
+    - Session expires by TTL and store hash
+    about:
+    - Session expires by TTL and store hash
+    - session expires by ttl and store hash
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: session-expires-by-ttl-and-store-hash
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: session-expires-by-ttl-and-store-hash/answer
+    title: Answer
+    breadcrumbs:
+    - Session expires by TTL and store hash
+    - Answer
+    about:
+    - Session expires by TTL and store hash
+    - session expires by ttl and store hash
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+  sections:
+  - path: anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+    title: Anchor ref is a typed string with a scheme per kind
+    breadcrumbs:
+    - Anchor ref is a typed string with a scheme per kind
+    about:
+    - Anchor ref is a typed string with a scheme per kind
+    - anchor ref is a typed string with a scheme per kind
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: anchor-ref-is-a-typed-string-with-a-scheme-per-kind/answer
+    title: Answer
+    breadcrumbs:
+    - Anchor ref is a typed string with a scheme per kind
+    - Answer
+    about:
+    - Anchor ref is a typed string with a scheme per kind
+    - anchor ref is a typed string with a scheme per kind
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18

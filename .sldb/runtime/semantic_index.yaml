@@ -105,6 +105,7 @@ tags:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
@@ -141,6 +142,7 @@ tags:
   - atom-s-expression-runtime
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   - atom-structural-masks-valid-sense-observed-discriminative
@@ -224,6 +226,7 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  - atom-session-expires-by-ttl-and-store-hash
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
@@ -307,6 +310,7 @@ tags:
   entity:anchor:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
@@ -469,6 +473,7 @@ tags:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
@@ -638,6 +643,8 @@ tags:
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
   - atom-source-identity-validation-should-precede-anchor-validation
@@ -689,6 +696,7 @@ tags:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
@@ -833,6 +841,8 @@ tags:
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-semantic-linting-is-distinct-from-mechanical-validation
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-source-identity-validation-should-precede-anchor-validation
   - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
@@ -1256,6 +1266,7 @@ tags:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -1288,6 +1299,8 @@ tags:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-semantic-errors-answer-symbol-motive-and-next-action
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
@@ -1615,6 +1628,7 @@ tags:
   topic:semantic_anchoring:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-bridges-are-the-only-doors-to-sldb-and-kgdb
   - atom-canonical-commands-are-acceptance-tests-from-day-one
@@ -1629,6 +1643,8 @@ tags:
   - atom-one-file-one-component-one-motive
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-semantic-errors-answer-symbol-motive-and-next-action
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-surface-grammar-is-positional-and-order-agnostic
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
@@ -1691,6 +1707,7 @@ tags:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
@@ -1898,6 +1915,8 @@ tags:
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
@@ -1958,6 +1977,7 @@ tags:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
@@ -2165,6 +2185,8 @@ tags:
   - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
+  - atom-session-expires-by-ttl-and-store-hash
+  - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
@@ -5348,6 +5370,40 @@ documents:
     - kind:concept
     - lang:generic
     - practice:traceability
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sexpr-serialization-quotes-selectors-and-roundtrips:
+    model: AtomDoc
+    path: knowledge/atoms/atom-sexpr-serialization-quotes-selectors-and-roundtrips.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-session-expires-by-ttl-and-store-hash:
+    model: AtomDoc
+    path: knowledge/atoms/atom-session-expires-by-ttl-and-store-hash.md
+    tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind:
+    model: AtomDoc
+    path: knowledge/atoms/atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
     - type.knowledge.atom

@@ -1,0 +1,33 @@
+graph TD
+    subgraph KnowledgeCLI ["knowledge CLI"]
+        SurfaceParser["surface_parser (tokenize, detect order)"]
+        Desugarer["desugarer (surface -#gt; s-expr, deterministic)"]
+        Session["session (pending expr, TTL 15m + store_hash)"]
+        Evaluator["evaluator (dispatch by anchor kind)"]
+        Renderer["renderer (JSON/text, always refs)"]
+    end
+    AnchorRegistry["anchor_registry (AnchorDoc lookup)"]
+    NounResolver["noun_resolver (Resolved|Ambiguous|Missing)"]
+    OpDispatcher["op_dispatcher (check/next/return | assert/create/ingest)"]
+    SldbBridge["sldb bridge (only door to sldb)"]
+    KgdbBridge["kgdb bridge (only door to kgdb)"]
+    Projector["projector (model add / project)"]
+    SldbStore[".sldb store (docs, models, AnchorDocs)"]
+    KgdbSnapshot["kgdb snapshot (graph.kg.json)"]
+    SurfaceParser -->|"classified tokens"| Desugarer
+    Desugarer -->|"kind lookup"| AnchorRegistry
+    Desugarer -->|"s-expression (Meaning)"| Evaluator
+    Evaluator -->|"symbol -#gt; {kind, ref, motive}"| AnchorRegistry
+    Evaluator -->|"(doc model #quot;selector#quot;)"| NounResolver
+    Evaluator -->|"resolved expression"| OpDispatcher
+    NounResolver -->|"Ambiguous -#gt; pending"| Session
+    NounResolver -->|"doc search"| SldbBridge
+    OpDispatcher -->|"reads + writes (with provenance)"| SldbBridge
+    OpDispatcher -->|"rel traversal"| KgdbBridge
+    AnchorRegistry -->|"AnchorDoc load"| SldbBridge
+    SldbBridge -->|"library layer only"| SldbStore
+    KgdbBridge -->|"validate + warn if stale"| KgdbSnapshot
+    Projector -->|"model add"| SldbStore
+    Projector -->|"project (materialize)"| KgdbSnapshot
+    OpDispatcher -->|"OperationResult"| Renderer
+    Session -->|"clarification resume"| Evaluator

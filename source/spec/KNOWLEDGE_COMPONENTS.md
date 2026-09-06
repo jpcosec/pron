@@ -104,6 +104,59 @@ dependencias. Sin ambigüedad aquí, el código es mecánico.
 - Ningún componente fuera de los bridges importa sldb/kgdb directamente.
 - Los bridges no conocen la gramática; el evaluador no conoce el storage.
 
+## Decisiones cerradas (ex-ambigüedades)
+
+### D1. Serialización de la s-expression
+
+Formato canónico (subset de EDN/lisp, parseable con el kernel propio):
+
+```
+expr      := (op arg*)
+op        := símbolo anclado kind=operation
+arg       := expr | ref | literal | option
+ref       := (docs <model-symbol>)               ; todos los docs del modelo
+           | (doc <model-symbol> <selector>)     ; un doc por selector
+           | (rel <relation-symbol> <expr>)      ; traversal desde expr
+literal   := "string" | número | :keyword
+option    := :project <projection-symbol>        ; siempre par keyword+símbolo
+selector  := "string" (siempre entre comillas dobles; comillas internas se
+             escapan con \"; nunca se interpola sin quoting)
+```
+
+Reglas:
+- Los símbolos van sin comillas; los selectores SIEMPRE con comillas dobles.
+- Las options van al final de la expresión, como pares `:keyword símbolo`.
+- Serialización de vuelta (Meaning→Surface) usa el orden noun-first canónico.
+- Toda s-expr válida roundtripea: parse(serialize(e)) == e.
+
+### D2. Sesión: ubicación, TTL e invalidación
+
+- Archivo: `.knowledge/session.json` bajo el cwd (dir `.knowledge/` es runtime
+  local, gitignored).
+- Contenido: {pending_sexpr, candidates, created_at, cwd, store_hash}.
+- TTL: 15 minutos desde created_at; expirado ⇒ se ignora y se borra.
+- Invalidación adicional: si `store_hash` (hash_a del store) cambió, la sesión
+  se descarta — los candidatos podrían ya no existir.
+- Solo existe una expresión pendiente a la vez; un comando nuevo la reemplaza.
+
+### D3. Contrato de AnchorDoc.ref por kind
+
+`ref` es un string con esquema por kind (validado por el modelo):
+
+| kind       | formato de ref                  | ejemplo                          |
+|------------|--------------------------------|----------------------------------|
+| model      | `model:<ModelName>`            | `model:UserDoc`                  |
+| doc        | `doc:<doc-name>`               | `doc:atom-searchvector`          |
+| relation   | `edge:<relation_type>`         | `edge:declares_preference`       |
+| operation  | `op:<función>`                 | `op:check`                       |
+| projection | `fields:<f1,f2,...>` \| `view:<name>` | `fields:id,title` / `view:summary` |
+
+- Un solo string tipado (no dict): legible en frontmatter, validable con regex
+  por kind, y suficiente — la resolución compleja vive en el evaluador, no en
+  el anchor.
+- `relation` puede sufijar dirección: `edge:declares_preference:in` (default
+  `out`).
+
 ## Orden de implementación (cuando toque)
 
 1. AnchorDoc (modelo, en sldb) + anchor_registry.
