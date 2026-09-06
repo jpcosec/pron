@@ -30,6 +30,13 @@ tags:
   - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-styling-consistency-reduces-review-noise
   - atom-how-much-code-validation-can-be-mechanical
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-contract-tests
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-unit-tests
   - atom-pattern-definitions-prevent-accidental-complexity
   - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
@@ -50,6 +57,9 @@ tags:
   - atom-document-identity-resolves-from-explicit-frontmatter-first
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
@@ -68,6 +78,10 @@ tags:
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-knowledge-projection
+  - atom-knar-projection
+  - atom-knar-projector
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-structural-graph-nodes-should-remain-projected-from-sources-rather-than-authored-as-primary-truths
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
@@ -92,6 +106,9 @@ tags:
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kernel-symbol-policy
+  - atom-knar-agentes-datos
+  - atom-knar-markdown-persistencia
+  - atom-knar-proposal-uml-clojure
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
   - atom-meel-engine
@@ -137,6 +154,7 @@ tags:
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
+  - atom-knar-provenance-ejecucion
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-mentions-symbol-should-express-weaker-symbol-linkage-than-structural-support
@@ -166,6 +184,9 @@ tags:
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-knowledge-api
+  - atom-knar-sin-parsing-en-agentes
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
@@ -184,6 +205,7 @@ tags:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   - atom-each-source-type-should-expose-its-own-retrievable-projections
+  - atom-knar-scraper-responsabilidad
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
@@ -198,6 +220,50 @@ tags:
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-knar-api-nodo
+  - atom-knar-astro-render
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-puente-representaciones
+  - atom-knar-puertos-tipados
+  - atom-knar-pydantic-conservar
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-viewmodel-render
+  - atom-knar-workflow-derivado
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
@@ -409,6 +475,72 @@ tags:
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
+  - atom-knar-agentes-datos
+  - atom-knar-api-nodo
+  - atom-knar-astro-render
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contract-tests
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-knowledge-api
+  - atom-knar-knowledge-projection
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-markdown-persistencia
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-projection
+  - atom-knar-projector
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-proposal-uml-clojure
+  - atom-knar-provenance-ejecucion
+  - atom-knar-puente-representaciones
+  - atom-knar-puertos-tipados
+  - atom-knar-pydantic-conservar
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  - atom-knar-scraper-responsabilidad
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-sin-parsing-en-agentes
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-unit-tests
+  - atom-knar-viewmodel-render
+  - atom-knar-workflow-derivado
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
@@ -531,6 +663,58 @@ tags:
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-knar-agentes-datos
+  - atom-knar-api-nodo
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contract-tests
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-knowledge-api
+  - atom-knar-knowledge-projection
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-markdown-persistencia
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-projection
+  - atom-knar-projector
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-proposal-uml-clojure
+  - atom-knar-provenance-ejecucion
+  - atom-knar-puertos-tipados
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-sin-parsing-en-agentes
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-workflow-derivado
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
@@ -626,6 +810,20 @@ tags:
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kernel-symbol-policy
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-knar-astro-render
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-puente-representaciones
+  - atom-knar-pydantic-conservar
+  - atom-knar-scraper-responsabilidad
+  - atom-knar-unit-tests
+  - atom-knar-viewmodel-render
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
@@ -884,6 +1082,73 @@ tags:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  system:knar:
+  - atom-knar-agentes-datos
+  - atom-knar-api-nodo
+  - atom-knar-astro-render
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contract-tests
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-knowledge-api
+  - atom-knar-knowledge-projection
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-markdown-persistencia
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-projection
+  - atom-knar-projector
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-proposal-uml-clojure
+  - atom-knar-provenance-ejecucion
+  - atom-knar-puente-representaciones
+  - atom-knar-puertos-tipados
+  - atom-knar-pydantic-conservar
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  - atom-knar-scraper-responsabilidad
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-sin-parsing-en-agentes
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-unit-tests
+  - atom-knar-viewmodel-render
+  - atom-knar-workflow-derivado
   system:knowledge:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
@@ -939,6 +1204,8 @@ tags:
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   system:spec2viz:
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
+  topic:adapter:
+  - atom-knar-harness-traduccion
   topic:anchoring:
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
   - atom-anchor-references-follow-a-three-tier-scheme
@@ -964,6 +1231,10 @@ tags:
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
+  topic:api_node:
+  - atom-knar-api-nodo
+  topic:architecture:
+  - atom-knar-cinco-conceptos
   topic:ast_first:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   topic:atom_creation:
@@ -979,6 +1250,8 @@ tags:
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  topic:authentication:
+  - atom-knar-secret-ref
   topic:authoring_workflow:
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
@@ -993,9 +1266,22 @@ tags:
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  topic:capability:
+  - atom-knar-capability
+  topic:completion_test:
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-proposal-fallo-tras-escritura
+  topic:composite_node:
+  - atom-knar-composite-node
+  - atom-knar-proposal-composite-runtime
   topic:composition:
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-contrato-heterogeneo
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
@@ -1025,12 +1311,29 @@ tags:
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-two-gates-model-s-i-sense-v-i-truth
+  topic:contract_test:
+  - atom-knar-contract-tests
   topic:coverage:
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
+  topic:declarative_model:
+  - atom-knar-agentes-datos
   topic:deskops_atoms:
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  topic:discovery:
+  - atom-knar-descubrimiento-selfdoc
   topic:document_structure:
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  topic:execution:
+  - atom-knar-proposal-executor
+  topic:harness:
+  - atom-knar-harness-runtime
+  topic:implementation:
+  - atom-knar-codigo-primitivas
+  topic:knowledge:
+  - atom-knar-grafo-fuente-de-verdad
+  topic:knowledge_api:
+  - atom-knar-knowledge-api
+  - atom-knar-sin-parsing-en-agentes
   topic:knowledge_cli:
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
@@ -1049,11 +1352,16 @@ tags:
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
+  topic:knowledge_loop:
+  - atom-knar-loop-conocimiento
   topic:knowledge_retrieval:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  topic:language_choice:
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
   topic:legacy_extraction:
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
@@ -1061,9 +1369,15 @@ tags:
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  topic:llm_node:
+  - atom-knar-llm-nodo
+  topic:materialization:
+  - atom-knar-proposal-factory-registries
   topic:migration:
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-knar-puente-representaciones
+  - atom-knar-pydantic-conservar
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   topic:multi_source:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
@@ -1077,6 +1391,32 @@ tags:
   - atom-the-kb-should-treat-notebooks-as-multi-projection-sources
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-source-layer-must-be-multi-source-and-adapter-based
+  topic:node:
+  - atom-knar-base-pequena
+  - atom-knar-executable-node
+  topic:node_spec:
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-proposal-configured-node
+  - atom-knar-spec-materializa-nodo
+  topic:orchestration:
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-orquestador-pequeno
+  topic:page_composition:
+  - atom-knar-pagina-compuesta
+  topic:permissions:
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  topic:planning:
+  - atom-knar-resolver-objetivo
+  topic:ports:
+  - atom-knar-puertos-tipados
+  topic:projection:
+  - atom-knar-knowledge-projection
+  - atom-knar-projection
+  - atom-knar-projector
+  topic:prompt:
+  - atom-knar-prompt-derivado
   topic:provenance:
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atomic-fact-c-x-d-x-v
@@ -1091,6 +1431,7 @@ tags:
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
   - atom-information-energy-e-r
+  - atom-knar-provenance-ejecucion
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
@@ -1113,6 +1454,19 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  topic:rendering:
+  - atom-knar-astro-render
+  - atom-knar-viewmodel-render
+  topic:representation:
+  - atom-knar-markdown-persistencia
+  - atom-knar-proposal-uml-clojure
+  topic:runtime:
+  - atom-knar-capability-runtime
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  topic:runtime_contract:
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
   topic:sample:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
@@ -1123,9 +1477,19 @@ tags:
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
+  topic:selfdoc:
+  - atom-knar-selfdoc
+  topic:source_acquisition:
+  - atom-knar-scraper-responsabilidad
   topic:source_adapters:
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
+  topic:sql_node:
+  - atom-knar-sql-nodo
+  topic:state_machine:
+  - atom-knar-estados-especializados
+  - atom-knar-maquina-de-estados
+  - atom-knar-proposal-execution-record
   topic:structural_graph:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
@@ -1150,8 +1514,14 @@ tags:
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  topic:type_compatibility:
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  topic:unit_test:
+  - atom-knar-unit-tests
   topic:validation:
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  topic:workflow:
+  - atom-knar-workflow-derivado
   topic:workflow_separation:
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   type.knowledge.atom:
@@ -1231,6 +1601,72 @@ tags:
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-knar-agentes-datos
+  - atom-knar-api-nodo
+  - atom-knar-astro-render
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contract-tests
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-knowledge-api
+  - atom-knar-knowledge-projection
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-markdown-persistencia
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-projection
+  - atom-knar-projector
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-proposal-uml-clojure
+  - atom-knar-provenance-ejecucion
+  - atom-knar-puente-representaciones
+  - atom-knar-puertos-tipados
+  - atom-knar-pydantic-conservar
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  - atom-knar-scraper-responsabilidad
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-sin-parsing-en-agentes
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-unit-tests
+  - atom-knar-viewmodel-render
+  - atom-knar-workflow-derivado
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
@@ -1407,6 +1843,72 @@ tags:
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
+  - atom-knar-agentes-datos
+  - atom-knar-api-nodo
+  - atom-knar-astro-render
+  - atom-knar-base-pequena
+  - atom-knar-capability
+  - atom-knar-capability-runtime
+  - atom-knar-cinco-conceptos
+  - atom-knar-clojure-modelo-orquestacion
+  - atom-knar-clojurescript-proyecciones
+  - atom-knar-codigo-primitivas
+  - atom-knar-compatibilidad-antes-de-ejecutar
+  - atom-knar-completion-obligatorio
+  - atom-knar-completion-persistencia
+  - atom-knar-completion-tests
+  - atom-knar-componentes-pequenos
+  - atom-knar-composicion-recursiva
+  - atom-knar-composite-node
+  - atom-knar-contract-tests
+  - atom-knar-contrato-heterogeneo
+  - atom-knar-coordinar-ejecucion
+  - atom-knar-descubrimiento-selfdoc
+  - atom-knar-especializaciones-como-datos
+  - atom-knar-estados-especializados
+  - atom-knar-executable-node
+  - atom-knar-grafo-fuente-de-verdad
+  - atom-knar-harness-runtime
+  - atom-knar-harness-traduccion
+  - atom-knar-knowledge-api
+  - atom-knar-knowledge-projection
+  - atom-knar-llm-nodo
+  - atom-knar-loop-conocimiento
+  - atom-knar-maquina-de-estados
+  - atom-knar-markdown-persistencia
+  - atom-knar-orquestador-pequeno
+  - atom-knar-pagina-compuesta
+  - atom-knar-projection
+  - atom-knar-projector
+  - atom-knar-prompt-derivado
+  - atom-knar-proposal-composite-runtime
+  - atom-knar-proposal-configured-node
+  - atom-knar-proposal-execution-record
+  - atom-knar-proposal-executor
+  - atom-knar-proposal-factory-registries
+  - atom-knar-proposal-fallo-tras-escritura
+  - atom-knar-proposal-scoped-knowledge
+  - atom-knar-proposal-uml-clojure
+  - atom-knar-provenance-ejecucion
+  - atom-knar-puente-representaciones
+  - atom-knar-puertos-tipados
+  - atom-knar-pydantic-conservar
+  - atom-knar-resolver-objetivo
+  - atom-knar-runtime
+  - atom-knar-runtime-intercambiable
+  - atom-knar-runtime-protocolo
+  - atom-knar-runtime-sin-semantica
+  - atom-knar-scope-declarado
+  - atom-knar-scope-escritura
+  - atom-knar-scraper-responsabilidad
+  - atom-knar-secret-ref
+  - atom-knar-selfdoc
+  - atom-knar-sin-parsing-en-agentes
+  - atom-knar-spec-materializa-nodo
+  - atom-knar-sql-nodo
+  - atom-knar-unit-tests
+  - atom-knar-viewmodel-render
+  - atom-knar-workflow-derivado
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
@@ -3606,5 +4108,731 @@ documents:
     - lang:generic
     - practice:linting_semantic
     - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-agentes-datos:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-agentes-datos.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:declarative_model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-api-nodo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-api-nodo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:api_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-astro-render:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-astro-render.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-base-pequena:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-base-pequena.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-capability:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-capability.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:capability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-capability-runtime:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-capability-runtime.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-cinco-conceptos:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-cinco-conceptos.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:architecture
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-clojure-modelo-orquestacion:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-clojure-modelo-orquestacion.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-clojurescript-proyecciones:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-clojurescript-proyecciones.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-codigo-primitivas:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-codigo-primitivas.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:implementation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-compatibilidad-antes-de-ejecutar:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-compatibilidad-antes-de-ejecutar.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:type_compatibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-completion-obligatorio:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-completion-obligatorio.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-completion-persistencia:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-completion-persistencia.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-completion-tests:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-completion-tests.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-componentes-pequenos:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-componentes-pequenos.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-composicion-recursiva:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-composicion-recursiva.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-composite-node:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-composite-node.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-contract-tests:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-contract-tests.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:contract_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-contrato-heterogeneo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-contrato-heterogeneo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-coordinar-ejecucion:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-coordinar-ejecucion.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-descubrimiento-selfdoc:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-descubrimiento-selfdoc.md
+    tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:discovery
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-especializaciones-como-datos:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-especializaciones-como-datos.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-estados-especializados:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-estados-especializados.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-executable-node:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-executable-node.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-grafo-fuente-de-verdad:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-grafo-fuente-de-verdad.md
+    tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-harness-runtime:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-harness-runtime.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:harness
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-harness-traduccion:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-harness-traduccion.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:adapter
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-knowledge-api:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-knowledge-api.md
+    tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-knowledge-projection:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-knowledge-projection.md
+    tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-llm-nodo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-llm-nodo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:llm_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-loop-conocimiento:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-loop-conocimiento.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_loop
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-maquina-de-estados:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-maquina-de-estados.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-markdown-persistencia:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-markdown-persistencia.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-orquestador-pequeno:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-orquestador-pequeno.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-pagina-compuesta:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-pagina-compuesta.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:page_composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-projection:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-projection.md
+    tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-projector:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-projector.md
+    tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-prompt-derivado:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-prompt-derivado.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:prompt
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-composite-runtime:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-composite-runtime.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-configured-node:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-configured-node.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-execution-record:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-execution-record.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-executor:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-executor.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:execution
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-factory-registries:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-factory-registries.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-fallo-tras-escritura:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-fallo-tras-escritura.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-scoped-knowledge:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-scoped-knowledge.md
+    tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-proposal-uml-clojure:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-proposal-uml-clojure.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-provenance-ejecucion:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-provenance-ejecucion.md
+    tags:
+    - domain:provenance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-puente-representaciones:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-puente-representaciones.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-puertos-tipados:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-puertos-tipados.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:ports
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-pydantic-conservar:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-pydantic-conservar.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-resolver-objetivo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-resolver-objetivo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:planning
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-runtime-intercambiable:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-runtime-intercambiable.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-runtime:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-runtime.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-runtime-protocolo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-runtime-protocolo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-runtime-sin-semantica:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-runtime-sin-semantica.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-scope-declarado:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-scope-declarado.md
+    tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-scope-escritura:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-scope-escritura.md
+    tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-scraper-responsabilidad:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-scraper-responsabilidad.md
+    tags:
+    - domain:source_modeling
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:source_acquisition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-secret-ref:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-secret-ref.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:authentication
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-selfdoc:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-selfdoc.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:selfdoc
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-sin-parsing-en-agentes:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-sin-parsing-en-agentes.md
+    tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-spec-materializa-nodo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-spec-materializa-nodo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-sql-nodo:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-sql-nodo.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:sql_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-unit-tests:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-unit-tests.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:unit_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-viewmodel-render:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-viewmodel-render.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knar-workflow-derivado:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knar-workflow-derivado.md
+    tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:workflow
     - type.knowledge.atom
     - workspace.desk.atoms

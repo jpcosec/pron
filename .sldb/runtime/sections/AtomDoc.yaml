@@ -10897,3 +10897,3778 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: atom-knar-agentes-datos
+  sections:
+  - path: los-agentes-deben-ser-mayoritariamente-datos-declarativos
+    title: Los agentes deben ser mayoritariamente datos declarativos
+    breadcrumbs:
+    - Los agentes deben ser mayoritariamente datos declarativos
+    about:
+    - Los agentes deben ser mayoritariamente datos declarativos
+    - los agentes deben ser mayoritariamente datos declarativos
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:declarative_model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:declarative_model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-agentes-deben-ser-mayoritariamente-datos-declarativos
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-agentes-deben-ser-mayoritariamente-datos-declarativos/answer
+    title: Answer
+    breadcrumbs:
+    - Los agentes deben ser mayoritariamente datos declarativos
+    - Answer
+    about:
+    - Los agentes deben ser mayoritariamente datos declarativos
+    - los agentes deben ser mayoritariamente datos declarativos
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:declarative_model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:declarative_model
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-api-nodo
+  sections:
+  - path: una-api-se-expone-como-un-nodo-con-petici-n-y-observaci-n-tipadas
+    title: "Una API se expone como un nodo con petici\xF3n y observaci\xF3n tipadas"
+    breadcrumbs:
+    - "Una API se expone como un nodo con petici\xF3n y observaci\xF3n tipadas"
+    about:
+    - "Una API se expone como un nodo con petici\xF3n y observaci\xF3n tipadas"
+    - una api se expone como un nodo con petici n y observaci n tipadas
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:api_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:api_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: una-api-se-expone-como-un-nodo-con-petici-n-y-observaci-n-tipadas
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: una-api-se-expone-como-un-nodo-con-petici-n-y-observaci-n-tipadas/answer
+    title: Answer
+    breadcrumbs:
+    - "Una API se expone como un nodo con petici\xF3n y observaci\xF3n tipadas"
+    - Answer
+    about:
+    - "Una API se expone como un nodo con petici\xF3n y observaci\xF3n tipadas"
+    - una api se expone como un nodo con petici n y observaci n tipadas
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:api_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:api_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-astro-render
+  sections:
+  - path: astro-ocupa-inicialmente-la-capa-de-renderizado-web
+    title: Astro ocupa inicialmente la capa de renderizado web
+    breadcrumbs:
+    - Astro ocupa inicialmente la capa de renderizado web
+    about:
+    - Astro ocupa inicialmente la capa de renderizado web
+    - astro ocupa inicialmente la capa de renderizado web
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: astro-ocupa-inicialmente-la-capa-de-renderizado-web
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: astro-ocupa-inicialmente-la-capa-de-renderizado-web/answer
+    title: Answer
+    breadcrumbs:
+    - Astro ocupa inicialmente la capa de renderizado web
+    - Answer
+    about:
+    - Astro ocupa inicialmente la capa de renderizado web
+    - astro ocupa inicialmente la capa de renderizado web
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-base-pequena
+  sections:
+  - path: la-abstracci-n-base-del-nodo-debe-mantenerse-peque-a
+    title: "La abstracci\xF3n base del nodo debe mantenerse peque\xF1a"
+    breadcrumbs:
+    - "La abstracci\xF3n base del nodo debe mantenerse peque\xF1a"
+    about:
+    - "La abstracci\xF3n base del nodo debe mantenerse peque\xF1a"
+    - la abstracci n base del nodo debe mantenerse peque a
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-abstracci-n-base-del-nodo-debe-mantenerse-peque-a
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-abstracci-n-base-del-nodo-debe-mantenerse-peque-a/answer
+    title: Answer
+    breadcrumbs:
+    - "La abstracci\xF3n base del nodo debe mantenerse peque\xF1a"
+    - Answer
+    about:
+    - "La abstracci\xF3n base del nodo debe mantenerse peque\xF1a"
+    - la abstracci n base del nodo debe mantenerse peque a
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-capability
+  sections:
+  - path: una-capability-declara-una-transformaci-n-que-el-nodo-promete
+    title: "Una capability declara una transformaci\xF3n que el nodo promete"
+    breadcrumbs:
+    - "Una capability declara una transformaci\xF3n que el nodo promete"
+    about:
+    - "Una capability declara una transformaci\xF3n que el nodo promete"
+    - una capability declara una transformaci n que el nodo promete
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:capability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:capability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: una-capability-declara-una-transformaci-n-que-el-nodo-promete
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: una-capability-declara-una-transformaci-n-que-el-nodo-promete/answer
+    title: Answer
+    breadcrumbs:
+    - "Una capability declara una transformaci\xF3n que el nodo promete"
+    - Answer
+    about:
+    - "Una capability declara una transformaci\xF3n que el nodo promete"
+    - una capability declara una transformaci n que el nodo promete
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:capability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:capability
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-capability-runtime
+  sections:
+  - path: la-capacidad-y-el-runtime-son-dimensiones-distintas
+    title: La capacidad y el runtime son dimensiones distintas
+    breadcrumbs:
+    - La capacidad y el runtime son dimensiones distintas
+    about:
+    - La capacidad y el runtime son dimensiones distintas
+    - la capacidad y el runtime son dimensiones distintas
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-capacidad-y-el-runtime-son-dimensiones-distintas
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-capacidad-y-el-runtime-son-dimensiones-distintas/answer
+    title: Answer
+    breadcrumbs:
+    - La capacidad y el runtime son dimensiones distintas
+    - Answer
+    about:
+    - La capacidad y el runtime son dimensiones distintas
+    - la capacidad y el runtime son dimensiones distintas
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-cinco-conceptos
+  sections:
+  - path: la-arquitectura-se-organiza-alrededor-de-cinco-conceptos-fundamentales
+    title: La arquitectura se organiza alrededor de cinco conceptos fundamentales
+    breadcrumbs:
+    - La arquitectura se organiza alrededor de cinco conceptos fundamentales
+    about:
+    - La arquitectura se organiza alrededor de cinco conceptos fundamentales
+    - la arquitectura se organiza alrededor de cinco conceptos fundamentales
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:architecture
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:architecture
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-arquitectura-se-organiza-alrededor-de-cinco-conceptos-fundamentales
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-arquitectura-se-organiza-alrededor-de-cinco-conceptos-fundamentales/answer
+    title: Answer
+    breadcrumbs:
+    - La arquitectura se organiza alrededor de cinco conceptos fundamentales
+    - Answer
+    about:
+    - La arquitectura se organiza alrededor de cinco conceptos fundamentales
+    - la arquitectura se organiza alrededor de cinco conceptos fundamentales
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:architecture
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:architecture
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-clojure-modelo-orquestacion
+  sections:
+  - path: la-propuesta-inicial-usa-clojure-para-modelo-sem-ntico-y-orquestaci-n
+    title: "La propuesta inicial usa Clojure para modelo sem\xE1ntico y orquestaci\xF3\
+      n"
+    breadcrumbs:
+    - "La propuesta inicial usa Clojure para modelo sem\xE1ntico y orquestaci\xF3n"
+    about:
+    - "La propuesta inicial usa Clojure para modelo sem\xE1ntico y orquestaci\xF3n"
+    - la propuesta inicial usa clojure para modelo sem ntico y orquestaci n
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-propuesta-inicial-usa-clojure-para-modelo-sem-ntico-y-orquestaci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-propuesta-inicial-usa-clojure-para-modelo-sem-ntico-y-orquestaci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "La propuesta inicial usa Clojure para modelo sem\xE1ntico y orquestaci\xF3n"
+    - Answer
+    about:
+    - "La propuesta inicial usa Clojure para modelo sem\xE1ntico y orquestaci\xF3n"
+    - la propuesta inicial usa clojure para modelo sem ntico y orquestaci n
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-clojurescript-proyecciones
+  sections:
+  - path: la-propuesta-inicial-usa-clojurescript-para-proyecciones-de-browser-y-ui
+    title: La propuesta inicial usa ClojureScript para proyecciones de browser y UI
+    breadcrumbs:
+    - La propuesta inicial usa ClojureScript para proyecciones de browser y UI
+    about:
+    - La propuesta inicial usa ClojureScript para proyecciones de browser y UI
+    - la propuesta inicial usa clojurescript para proyecciones de browser y ui
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-propuesta-inicial-usa-clojurescript-para-proyecciones-de-browser-y-ui
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-propuesta-inicial-usa-clojurescript-para-proyecciones-de-browser-y-ui/answer
+    title: Answer
+    breadcrumbs:
+    - La propuesta inicial usa ClojureScript para proyecciones de browser y UI
+    - Answer
+    about:
+    - La propuesta inicial usa ClojureScript para proyecciones de browser y UI
+    - la propuesta inicial usa clojurescript para proyecciones de browser y ui
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:language_choice
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-codigo-primitivas
+  sections:
+  - path: el-c-digo-implementa-principalmente-runtimes-y-primitivas
+    title: "El c\xF3digo implementa principalmente runtimes y primitivas"
+    breadcrumbs:
+    - "El c\xF3digo implementa principalmente runtimes y primitivas"
+    about:
+    - "El c\xF3digo implementa principalmente runtimes y primitivas"
+    - el c digo implementa principalmente runtimes y primitivas
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:implementation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:implementation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-c-digo-implementa-principalmente-runtimes-y-primitivas
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-c-digo-implementa-principalmente-runtimes-y-primitivas/answer
+    title: Answer
+    breadcrumbs:
+    - "El c\xF3digo implementa principalmente runtimes y primitivas"
+    - Answer
+    about:
+    - "El c\xF3digo implementa principalmente runtimes y primitivas"
+    - el c digo implementa principalmente runtimes y primitivas
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:implementation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:implementation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-compatibilidad-antes-de-ejecutar
+  sections:
+  - path: la-compatibilidad-de-puertos-se-valida-antes-de-ejecutar
+    title: La compatibilidad de puertos se valida antes de ejecutar
+    breadcrumbs:
+    - La compatibilidad de puertos se valida antes de ejecutar
+    about:
+    - La compatibilidad de puertos se valida antes de ejecutar
+    - la compatibilidad de puertos se valida antes de ejecutar
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:type_compatibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:type_compatibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-compatibilidad-de-puertos-se-valida-antes-de-ejecutar
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-compatibilidad-de-puertos-se-valida-antes-de-ejecutar/answer
+    title: Answer
+    breadcrumbs:
+    - La compatibilidad de puertos se valida antes de ejecutar
+    - Answer
+    about:
+    - La compatibilidad de puertos se valida antes de ejecutar
+    - la compatibilidad de puertos se valida antes de ejecutar
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:type_compatibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:type_compatibility
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-completion-obligatorio
+  sections:
+  - path: todo-nodo-ejecutable-debe-tener-al-menos-un-completion-test
+    title: Todo nodo ejecutable debe tener al menos un completion test
+    breadcrumbs:
+    - Todo nodo ejecutable debe tener al menos un completion test
+    about:
+    - Todo nodo ejecutable debe tener al menos un completion test
+    - todo nodo ejecutable debe tener al menos un completion test
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: todo-nodo-ejecutable-debe-tener-al-menos-un-completion-test
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: todo-nodo-ejecutable-debe-tener-al-menos-un-completion-test/answer
+    title: Answer
+    breadcrumbs:
+    - Todo nodo ejecutable debe tener al menos un completion test
+    - Answer
+    about:
+    - Todo nodo ejecutable debe tener al menos un completion test
+    - todo nodo ejecutable debe tener al menos un completion test
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-completion-persistencia
+  sections:
+  - path: un-completion-test-puede-exigir-que-el-resultado-est-almacenado
+    title: "Un completion test puede exigir que el resultado est\xE9 almacenado"
+    breadcrumbs:
+    - "Un completion test puede exigir que el resultado est\xE9 almacenado"
+    about:
+    - "Un completion test puede exigir que el resultado est\xE9 almacenado"
+    - un completion test puede exigir que el resultado est almacenado
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-completion-test-puede-exigir-que-el-resultado-est-almacenado
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-completion-test-puede-exigir-que-el-resultado-est-almacenado/answer
+    title: Answer
+    breadcrumbs:
+    - "Un completion test puede exigir que el resultado est\xE9 almacenado"
+    - Answer
+    about:
+    - "Un completion test puede exigir que el resultado est\xE9 almacenado"
+    - un completion test puede exigir que el resultado est almacenado
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-completion-tests
+  sections:
+  - path: los-completion-tests-definen-cu-ndo-se-cumpli-el-objetivo-del-nodo
+    title: "Los completion tests definen cu\xE1ndo se cumpli\xF3 el objetivo del nodo"
+    breadcrumbs:
+    - "Los completion tests definen cu\xE1ndo se cumpli\xF3 el objetivo del nodo"
+    about:
+    - "Los completion tests definen cu\xE1ndo se cumpli\xF3 el objetivo del nodo"
+    - los completion tests definen cu ndo se cumpli el objetivo del nodo
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-completion-tests-definen-cu-ndo-se-cumpli-el-objetivo-del-nodo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-completion-tests-definen-cu-ndo-se-cumpli-el-objetivo-del-nodo/answer
+    title: Answer
+    breadcrumbs:
+    - "Los completion tests definen cu\xE1ndo se cumpli\xF3 el objetivo del nodo"
+    - Answer
+    about:
+    - "Los completion tests definen cu\xE1ndo se cumpli\xF3 el objetivo del nodo"
+    - los completion tests definen cu ndo se cumpli el objetivo del nodo
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-componentes-pequenos
+  sections:
+  - path: las-aplicaciones-se-componen-de-nodos-peque-os-y-especializados
+    title: "Las aplicaciones se componen de nodos peque\xF1os y especializados"
+    breadcrumbs:
+    - "Las aplicaciones se componen de nodos peque\xF1os y especializados"
+    about:
+    - "Las aplicaciones se componen de nodos peque\xF1os y especializados"
+    - las aplicaciones se componen de nodos peque os y especializados
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: las-aplicaciones-se-componen-de-nodos-peque-os-y-especializados
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: las-aplicaciones-se-componen-de-nodos-peque-os-y-especializados/answer
+    title: Answer
+    breadcrumbs:
+    - "Las aplicaciones se componen de nodos peque\xF1os y especializados"
+    - Answer
+    about:
+    - "Las aplicaciones se componen de nodos peque\xF1os y especializados"
+    - las aplicaciones se componen de nodos peque os y especializados
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-composicion-recursiva
+  sections:
+  - path: la-composici-n-de-nodos-puede-aplicarse-recursivamente
+    title: "La composici\xF3n de nodos puede aplicarse recursivamente"
+    breadcrumbs:
+    - "La composici\xF3n de nodos puede aplicarse recursivamente"
+    about:
+    - "La composici\xF3n de nodos puede aplicarse recursivamente"
+    - la composici n de nodos puede aplicarse recursivamente
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-composici-n-de-nodos-puede-aplicarse-recursivamente
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-composici-n-de-nodos-puede-aplicarse-recursivamente/answer
+    title: Answer
+    breadcrumbs:
+    - "La composici\xF3n de nodos puede aplicarse recursivamente"
+    - Answer
+    about:
+    - "La composici\xF3n de nodos puede aplicarse recursivamente"
+    - la composici n de nodos puede aplicarse recursivamente
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-composite-node
+  sections:
+  - path: compositenode-expone-una-composici-n-mediante-un-contrato-externo
+    title: "CompositeNode expone una composici\xF3n mediante un contrato externo"
+    breadcrumbs:
+    - "CompositeNode expone una composici\xF3n mediante un contrato externo"
+    about:
+    - "CompositeNode expone una composici\xF3n mediante un contrato externo"
+    - compositenode expone una composici n mediante un contrato externo
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: compositenode-expone-una-composici-n-mediante-un-contrato-externo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: compositenode-expone-una-composici-n-mediante-un-contrato-externo/answer
+    title: Answer
+    breadcrumbs:
+    - "CompositeNode expone una composici\xF3n mediante un contrato externo"
+    - Answer
+    about:
+    - "CompositeNode expone una composici\xF3n mediante un contrato externo"
+    - compositenode expone una composici n mediante un contrato externo
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-contract-tests
+  sections:
+  - path: un-contract-test-comprueba-el-respeto-de-inputs-y-outputs
+    title: Un contract test comprueba el respeto de inputs y outputs
+    breadcrumbs:
+    - Un contract test comprueba el respeto de inputs y outputs
+    about:
+    - Un contract test comprueba el respeto de inputs y outputs
+    - un contract test comprueba el respeto de inputs y outputs
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:contract_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:contract_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-contract-test-comprueba-el-respeto-de-inputs-y-outputs
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-contract-test-comprueba-el-respeto-de-inputs-y-outputs/answer
+    title: Answer
+    breadcrumbs:
+    - Un contract test comprueba el respeto de inputs y outputs
+    - Answer
+    about:
+    - Un contract test comprueba el respeto de inputs y outputs
+    - un contract test comprueba el respeto de inputs y outputs
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:contract_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:contract_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-contrato-heterogeneo
+  sections:
+  - path: el-contrato-com-n-permite-componer-mecanismos-internos-heterog-neos
+    title: "El contrato com\xFAn permite componer mecanismos internos heterog\xE9\
+      neos"
+    breadcrumbs:
+    - "El contrato com\xFAn permite componer mecanismos internos heterog\xE9neos"
+    about:
+    - "El contrato com\xFAn permite componer mecanismos internos heterog\xE9neos"
+    - el contrato com n permite componer mecanismos internos heterog neos
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-contrato-com-n-permite-componer-mecanismos-internos-heterog-neos
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-contrato-com-n-permite-componer-mecanismos-internos-heterog-neos/answer
+    title: Answer
+    breadcrumbs:
+    - "El contrato com\xFAn permite componer mecanismos internos heterog\xE9neos"
+    - Answer
+    about:
+    - "El contrato com\xFAn permite componer mecanismos internos heterog\xE9neos"
+    - el contrato com n permite componer mecanismos internos heterog neos
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-coordinar-ejecucion
+  sections:
+  - path: la-orquestaci-n-incluye-observaci-n-verificaci-n-y-persistencia
+    title: "La orquestaci\xF3n incluye observaci\xF3n, verificaci\xF3n y persistencia"
+    breadcrumbs:
+    - "La orquestaci\xF3n incluye observaci\xF3n, verificaci\xF3n y persistencia"
+    about:
+    - "La orquestaci\xF3n incluye observaci\xF3n, verificaci\xF3n y persistencia"
+    - la orquestaci n incluye observaci n verificaci n y persistencia
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-orquestaci-n-incluye-observaci-n-verificaci-n-y-persistencia
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-orquestaci-n-incluye-observaci-n-verificaci-n-y-persistencia/answer
+    title: Answer
+    breadcrumbs:
+    - "La orquestaci\xF3n incluye observaci\xF3n, verificaci\xF3n y persistencia"
+    - Answer
+    about:
+    - "La orquestaci\xF3n incluye observaci\xF3n, verificaci\xF3n y persistencia"
+    - la orquestaci n incluye observaci n verificaci n y persistencia
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-descubrimiento-selfdoc
+  sections:
+  - path: selfdoc-permite-descubrir-un-nodo-por-su-responsabilidad
+    title: SelfDoc permite descubrir un nodo por su responsabilidad
+    breadcrumbs:
+    - SelfDoc permite descubrir un nodo por su responsabilidad
+    about:
+    - SelfDoc permite descubrir un nodo por su responsabilidad
+    - selfdoc permite descubrir un nodo por su responsabilidad
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:discovery
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:discovery
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: selfdoc-permite-descubrir-un-nodo-por-su-responsabilidad
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: selfdoc-permite-descubrir-un-nodo-por-su-responsabilidad/answer
+    title: Answer
+    breadcrumbs:
+    - SelfDoc permite descubrir un nodo por su responsabilidad
+    - Answer
+    about:
+    - SelfDoc permite descubrir un nodo por su responsabilidad
+    - selfdoc permite descubrir un nodo por su responsabilidad
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:discovery
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:discovery
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-especializaciones-como-datos
+  sections:
+  - path: los-tipos-de-nodo-pueden-ser-especializaciones-configuradas
+    title: Los tipos de nodo pueden ser especializaciones configuradas
+    breadcrumbs:
+    - Los tipos de nodo pueden ser especializaciones configuradas
+    about:
+    - Los tipos de nodo pueden ser especializaciones configuradas
+    - los tipos de nodo pueden ser especializaciones configuradas
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-tipos-de-nodo-pueden-ser-especializaciones-configuradas
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-tipos-de-nodo-pueden-ser-especializaciones-configuradas/answer
+    title: Answer
+    breadcrumbs:
+    - Los tipos de nodo pueden ser especializaciones configuradas
+    - Answer
+    about:
+    - Los tipos de nodo pueden ser especializaciones configuradas
+    - los tipos de nodo pueden ser especializaciones configuradas
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-estados-especializados
+  sections:
+  - path: un-nodo-puede-especializar-su-m-quina-de-estados
+    title: "Un nodo puede especializar su m\xE1quina de estados"
+    breadcrumbs:
+    - "Un nodo puede especializar su m\xE1quina de estados"
+    about:
+    - "Un nodo puede especializar su m\xE1quina de estados"
+    - un nodo puede especializar su m quina de estados
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-nodo-puede-especializar-su-m-quina-de-estados
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-nodo-puede-especializar-su-m-quina-de-estados/answer
+    title: Answer
+    breadcrumbs:
+    - "Un nodo puede especializar su m\xE1quina de estados"
+    - Answer
+    about:
+    - "Un nodo puede especializar su m\xE1quina de estados"
+    - un nodo puede especializar su m quina de estados
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-executable-node
+  sections:
+  - path: executablenode-es-el-contrato-com-n-de-los-componentes-ejecutables
+    title: "ExecutableNode es el contrato com\xFAn de los componentes ejecutables"
+    breadcrumbs:
+    - "ExecutableNode es el contrato com\xFAn de los componentes ejecutables"
+    about:
+    - "ExecutableNode es el contrato com\xFAn de los componentes ejecutables"
+    - executablenode es el contrato com n de los componentes ejecutables
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: executablenode-es-el-contrato-com-n-de-los-componentes-ejecutables
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: executablenode-es-el-contrato-com-n-de-los-componentes-ejecutables/answer
+    title: Answer
+    breadcrumbs:
+    - "ExecutableNode es el contrato com\xFAn de los componentes ejecutables"
+    - Answer
+    about:
+    - "ExecutableNode es el contrato com\xFAn de los componentes ejecutables"
+    - executablenode es el contrato com n de los componentes ejecutables
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-grafo-fuente-de-verdad
+  sections:
+  - path: el-grafo-tipado-es-la-fuente-de-verdad-sem-ntica
+    title: "El grafo tipado es la fuente de verdad sem\xE1ntica"
+    breadcrumbs:
+    - "El grafo tipado es la fuente de verdad sem\xE1ntica"
+    about:
+    - "El grafo tipado es la fuente de verdad sem\xE1ntica"
+    - el grafo tipado es la fuente de verdad sem ntica
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-grafo-tipado-es-la-fuente-de-verdad-sem-ntica
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-grafo-tipado-es-la-fuente-de-verdad-sem-ntica/answer
+    title: Answer
+    breadcrumbs:
+    - "El grafo tipado es la fuente de verdad sem\xE1ntica"
+    - Answer
+    about:
+    - "El grafo tipado es la fuente de verdad sem\xE1ntica"
+    - el grafo tipado es la fuente de verdad sem ntica
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-harness-runtime
+  sections:
+  - path: deepseek-harness-ocupa-el-lugar-de-un-runtime-de-ejecuci-n
+    title: "DeepSeek Harness ocupa el lugar de un runtime de ejecuci\xF3n"
+    breadcrumbs:
+    - "DeepSeek Harness ocupa el lugar de un runtime de ejecuci\xF3n"
+    about:
+    - "DeepSeek Harness ocupa el lugar de un runtime de ejecuci\xF3n"
+    - deepseek harness ocupa el lugar de un runtime de ejecuci n
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:harness
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:harness
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: deepseek-harness-ocupa-el-lugar-de-un-runtime-de-ejecuci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: deepseek-harness-ocupa-el-lugar-de-un-runtime-de-ejecuci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "DeepSeek Harness ocupa el lugar de un runtime de ejecuci\xF3n"
+    - Answer
+    about:
+    - "DeepSeek Harness ocupa el lugar de un runtime de ejecuci\xF3n"
+    - deepseek harness ocupa el lugar de un runtime de ejecuci n
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:harness
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:harness
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-harness-traduccion
+  sections:
+  - path: el-adapter-traduce-las-partes-del-contrato-al-harness
+    title: El adapter traduce las partes del contrato al harness
+    breadcrumbs:
+    - El adapter traduce las partes del contrato al harness
+    about:
+    - El adapter traduce las partes del contrato al harness
+    - el adapter traduce las partes del contrato al harness
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:adapter
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:adapter
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-adapter-traduce-las-partes-del-contrato-al-harness
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-adapter-traduce-las-partes-del-contrato-al-harness/answer
+    title: Answer
+    breadcrumbs:
+    - El adapter traduce las partes del contrato al harness
+    - Answer
+    about:
+    - El adapter traduce las partes del contrato al harness
+    - el adapter traduce las partes del contrato al harness
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:adapter
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:adapter
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-knowledge-api
+  sections:
+  - path: el-acceso-a-knowledge-debe-tener-una-interfaz-estable
+    title: El acceso a knowledge debe tener una interfaz estable
+    breadcrumbs:
+    - El acceso a knowledge debe tener una interfaz estable
+    about:
+    - El acceso a knowledge debe tener una interfaz estable
+    - el acceso a knowledge debe tener una interfaz estable
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-acceso-a-knowledge-debe-tener-una-interfaz-estable
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-acceso-a-knowledge-debe-tener-una-interfaz-estable/answer
+    title: Answer
+    breadcrumbs:
+    - El acceso a knowledge debe tener una interfaz estable
+    - Answer
+    about:
+    - El acceso a knowledge debe tener una interfaz estable
+    - el acceso a knowledge debe tener una interfaz estable
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-knowledge-projection
+  sections:
+  - path: knowledgeprojection-delimita-el-conocimiento-disponible-para-una-tarea
+    title: KnowledgeProjection delimita el conocimiento disponible para una tarea
+    breadcrumbs:
+    - KnowledgeProjection delimita el conocimiento disponible para una tarea
+    about:
+    - KnowledgeProjection delimita el conocimiento disponible para una tarea
+    - knowledgeprojection delimita el conocimiento disponible para una tarea
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledgeprojection-delimita-el-conocimiento-disponible-para-una-tarea
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: knowledgeprojection-delimita-el-conocimiento-disponible-para-una-tarea/answer
+    title: Answer
+    breadcrumbs:
+    - KnowledgeProjection delimita el conocimiento disponible para una tarea
+    - Answer
+    about:
+    - KnowledgeProjection delimita el conocimiento disponible para una tarea
+    - knowledgeprojection delimita el conocimiento disponible para una tarea
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-llm-nodo
+  sections:
+  - path: un-nodo-llm-transforma-input-y-conocimiento-proyectado-en-output-tipado
+    title: Un nodo LLM transforma input y conocimiento proyectado en output tipado
+    breadcrumbs:
+    - Un nodo LLM transforma input y conocimiento proyectado en output tipado
+    about:
+    - Un nodo LLM transforma input y conocimiento proyectado en output tipado
+    - un nodo llm transforma input y conocimiento proyectado en output tipado
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:llm_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:llm_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-nodo-llm-transforma-input-y-conocimiento-proyectado-en-output-tipado
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-nodo-llm-transforma-input-y-conocimiento-proyectado-en-output-tipado/answer
+    title: Answer
+    breadcrumbs:
+    - Un nodo LLM transforma input y conocimiento proyectado en output tipado
+    - Answer
+    about:
+    - Un nodo LLM transforma input y conocimiento proyectado en output tipado
+    - un nodo llm transforma input y conocimiento proyectado en output tipado
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:llm_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:llm_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-loop-conocimiento
+  sections:
+  - path: la-ejecuci-n-cierra-un-ciclo-de-transformaci-n-del-conocimiento
+    title: "La ejecuci\xF3n cierra un ciclo de transformaci\xF3n del conocimiento"
+    breadcrumbs:
+    - "La ejecuci\xF3n cierra un ciclo de transformaci\xF3n del conocimiento"
+    about:
+    - "La ejecuci\xF3n cierra un ciclo de transformaci\xF3n del conocimiento"
+    - la ejecuci n cierra un ciclo de transformaci n del conocimiento
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_loop
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_loop
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-ejecuci-n-cierra-un-ciclo-de-transformaci-n-del-conocimiento
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-ejecuci-n-cierra-un-ciclo-de-transformaci-n-del-conocimiento/answer
+    title: Answer
+    breadcrumbs:
+    - "La ejecuci\xF3n cierra un ciclo de transformaci\xF3n del conocimiento"
+    - Answer
+    about:
+    - "La ejecuci\xF3n cierra un ciclo de transformaci\xF3n del conocimiento"
+    - la ejecuci n cierra un ciclo de transformaci n del conocimiento
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_loop
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_loop
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-maquina-de-estados
+  sections:
+  - path: la-m-quina-de-estados-es-parte-declarativa-del-nodo
+    title: "La m\xE1quina de estados es parte declarativa del nodo"
+    breadcrumbs:
+    - "La m\xE1quina de estados es parte declarativa del nodo"
+    about:
+    - "La m\xE1quina de estados es parte declarativa del nodo"
+    - la m quina de estados es parte declarativa del nodo
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-m-quina-de-estados-es-parte-declarativa-del-nodo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-m-quina-de-estados-es-parte-declarativa-del-nodo/answer
+    title: Answer
+    breadcrumbs:
+    - "La m\xE1quina de estados es parte declarativa del nodo"
+    - Answer
+    about:
+    - "La m\xE1quina de estados es parte declarativa del nodo"
+    - la m quina de estados es parte declarativa del nodo
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-markdown-persistencia
+  sections:
+  - path: markdown-estructurado-persiste-el-conocimiento-sem-ntico
+    title: "Markdown estructurado persiste el conocimiento sem\xE1ntico"
+    breadcrumbs:
+    - "Markdown estructurado persiste el conocimiento sem\xE1ntico"
+    about:
+    - "Markdown estructurado persiste el conocimiento sem\xE1ntico"
+    - markdown estructurado persiste el conocimiento sem ntico
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: markdown-estructurado-persiste-el-conocimiento-sem-ntico
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: markdown-estructurado-persiste-el-conocimiento-sem-ntico/answer
+    title: Answer
+    breadcrumbs:
+    - "Markdown estructurado persiste el conocimiento sem\xE1ntico"
+    - Answer
+    about:
+    - "Markdown estructurado persiste el conocimiento sem\xE1ntico"
+    - markdown estructurado persiste el conocimiento sem ntico
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-orquestador-pequeno
+  sections:
+  - path: el-orquestador-coordina-sin-contener-conocimiento-espec-fico-de-aplicaciones
+    title: "El orquestador coordina sin contener conocimiento espec\xEDfico de aplicaciones"
+    breadcrumbs:
+    - "El orquestador coordina sin contener conocimiento espec\xEDfico de aplicaciones"
+    about:
+    - "El orquestador coordina sin contener conocimiento espec\xEDfico de aplicaciones"
+    - el orquestador coordina sin contener conocimiento espec fico de aplicaciones
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-orquestador-coordina-sin-contener-conocimiento-espec-fico-de-aplicaciones
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-orquestador-coordina-sin-contener-conocimiento-espec-fico-de-aplicaciones/answer
+    title: Answer
+    breadcrumbs:
+    - "El orquestador coordina sin contener conocimiento espec\xEDfico de aplicaciones"
+    - Answer
+    about:
+    - "El orquestador coordina sin contener conocimiento espec\xEDfico de aplicaciones"
+    - el orquestador coordina sin contener conocimiento espec fico de aplicaciones
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:orchestration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-pagina-compuesta
+  sections:
+  - path: una-p-gina-compleja-se-compone-de-proyectores-especializados
+    title: "Una p\xE1gina compleja se compone de proyectores especializados"
+    breadcrumbs:
+    - "Una p\xE1gina compleja se compone de proyectores especializados"
+    about:
+    - "Una p\xE1gina compleja se compone de proyectores especializados"
+    - una p gina compleja se compone de proyectores especializados
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:page_composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:page_composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: una-p-gina-compleja-se-compone-de-proyectores-especializados
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: una-p-gina-compleja-se-compone-de-proyectores-especializados/answer
+    title: Answer
+    breadcrumbs:
+    - "Una p\xE1gina compleja se compone de proyectores especializados"
+    - Answer
+    about:
+    - "Una p\xE1gina compleja se compone de proyectores especializados"
+    - una p gina compleja se compone de proyectores especializados
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:page_composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:page_composition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-projection
+  sections:
+  - path: projection-es-una-representaci-n-particular-del-conocimiento
+    title: "Projection es una representaci\xF3n particular del conocimiento"
+    breadcrumbs:
+    - "Projection es una representaci\xF3n particular del conocimiento"
+    about:
+    - "Projection es una representaci\xF3n particular del conocimiento"
+    - projection es una representaci n particular del conocimiento
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: projection-es-una-representaci-n-particular-del-conocimiento
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: projection-es-una-representaci-n-particular-del-conocimiento/answer
+    title: Answer
+    breadcrumbs:
+    - "Projection es una representaci\xF3n particular del conocimiento"
+    - Answer
+    about:
+    - "Projection es una representaci\xF3n particular del conocimiento"
+    - projection es una representaci n particular del conocimiento
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-projector
+  sections:
+  - path: un-proyector-transforma-conocimiento-en-una-representaci-n
+    title: "Un proyector transforma conocimiento en una representaci\xF3n"
+    breadcrumbs:
+    - "Un proyector transforma conocimiento en una representaci\xF3n"
+    about:
+    - "Un proyector transforma conocimiento en una representaci\xF3n"
+    - un proyector transforma conocimiento en una representaci n
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-proyector-transforma-conocimiento-en-una-representaci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-proyector-transforma-conocimiento-en-una-representaci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "Un proyector transforma conocimiento en una representaci\xF3n"
+    - Answer
+    about:
+    - "Un proyector transforma conocimiento en una representaci\xF3n"
+    - un proyector transforma conocimiento en una representaci n
+    - Answer
+    - answer
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:graph_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:projection
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-prompt-derivado
+  sections:
+  - path: el-prompt-se-deriva-de-selfdoc-conocimiento-y-contrato
+    title: El prompt se deriva de SelfDoc, conocimiento y contrato
+    breadcrumbs:
+    - El prompt se deriva de SelfDoc, conocimiento y contrato
+    about:
+    - El prompt se deriva de SelfDoc, conocimiento y contrato
+    - el prompt se deriva de selfdoc conocimiento y contrato
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:prompt
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:prompt
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-prompt-se-deriva-de-selfdoc-conocimiento-y-contrato
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-prompt-se-deriva-de-selfdoc-conocimiento-y-contrato/answer
+    title: Answer
+    breadcrumbs:
+    - El prompt se deriva de SelfDoc, conocimiento y contrato
+    - Answer
+    about:
+    - El prompt se deriva de SelfDoc, conocimiento y contrato
+    - el prompt se deriva de selfdoc conocimiento y contrato
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:prompt
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:prompt
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-composite-runtime
+  sections:
+  - path: compositeruntime-es-una-forma-propuesta-de-ejecutar-composiciones
+    title: CompositeRuntime es una forma propuesta de ejecutar composiciones
+    breadcrumbs:
+    - CompositeRuntime es una forma propuesta de ejecutar composiciones
+    about:
+    - CompositeRuntime es una forma propuesta de ejecutar composiciones
+    - compositeruntime es una forma propuesta de ejecutar composiciones
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: compositeruntime-es-una-forma-propuesta-de-ejecutar-composiciones
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: compositeruntime-es-una-forma-propuesta-de-ejecutar-composiciones/answer
+    title: Answer
+    breadcrumbs:
+    - CompositeRuntime es una forma propuesta de ejecutar composiciones
+    - Answer
+    about:
+    - CompositeRuntime es una forma propuesta de ejecutar composiciones
+    - compositeruntime es una forma propuesta de ejecutar composiciones
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:composite_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-configured-node
+  sections:
+  - path: un-configurednode-gen-rico-es-una-implementaci-n-propuesta
+    title: "Un ConfiguredNode gen\xE9rico es una implementaci\xF3n propuesta"
+    breadcrumbs:
+    - "Un ConfiguredNode gen\xE9rico es una implementaci\xF3n propuesta"
+    about:
+    - "Un ConfiguredNode gen\xE9rico es una implementaci\xF3n propuesta"
+    - un configurednode gen rico es una implementaci n propuesta
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-configurednode-gen-rico-es-una-implementaci-n-propuesta
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-configurednode-gen-rico-es-una-implementaci-n-propuesta/answer
+    title: Answer
+    breadcrumbs:
+    - "Un ConfiguredNode gen\xE9rico es una implementaci\xF3n propuesta"
+    - Answer
+    about:
+    - "Un ConfiguredNode gen\xE9rico es una implementaci\xF3n propuesta"
+    - un configurednode gen rico es una implementaci n propuesta
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-execution-record
+  sections:
+  - path: executionrecord-separa-estado-de-invocaci-n-y-definici-n-del-nodo
+    title: "ExecutionRecord separa estado de invocaci\xF3n y definici\xF3n del nodo"
+    breadcrumbs:
+    - "ExecutionRecord separa estado de invocaci\xF3n y definici\xF3n del nodo"
+    about:
+    - "ExecutionRecord separa estado de invocaci\xF3n y definici\xF3n del nodo"
+    - executionrecord separa estado de invocaci n y definici n del nodo
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: executionrecord-separa-estado-de-invocaci-n-y-definici-n-del-nodo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: executionrecord-separa-estado-de-invocaci-n-y-definici-n-del-nodo/answer
+    title: Answer
+    breadcrumbs:
+    - "ExecutionRecord separa estado de invocaci\xF3n y definici\xF3n del nodo"
+    - Answer
+    about:
+    - "ExecutionRecord separa estado de invocaci\xF3n y definici\xF3n del nodo"
+    - executionrecord separa estado de invocaci n y definici n del nodo
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:state_machine
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-executor
+  sections:
+  - path: nodeexecutor-concentra-la-ejecuci-n-individual-en-el-dise-o-propuesto
+    title: "NodeExecutor concentra la ejecuci\xF3n individual en el dise\xF1o propuesto"
+    breadcrumbs:
+    - "NodeExecutor concentra la ejecuci\xF3n individual en el dise\xF1o propuesto"
+    about:
+    - "NodeExecutor concentra la ejecuci\xF3n individual en el dise\xF1o propuesto"
+    - nodeexecutor concentra la ejecuci n individual en el dise o propuesto
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:execution
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:execution
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: nodeexecutor-concentra-la-ejecuci-n-individual-en-el-dise-o-propuesto
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: nodeexecutor-concentra-la-ejecuci-n-individual-en-el-dise-o-propuesto/answer
+    title: Answer
+    breadcrumbs:
+    - "NodeExecutor concentra la ejecuci\xF3n individual en el dise\xF1o propuesto"
+    - Answer
+    about:
+    - "NodeExecutor concentra la ejecuci\xF3n individual en el dise\xF1o propuesto"
+    - nodeexecutor concentra la ejecuci n individual en el dise o propuesto
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:execution
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:execution
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-factory-registries
+  sections:
+  - path: factory-y-registros-son-colaboradores-propuestos-para-materializar-nodos
+    title: Factory y registros son colaboradores propuestos para materializar nodos
+    breadcrumbs:
+    - Factory y registros son colaboradores propuestos para materializar nodos
+    about:
+    - Factory y registros son colaboradores propuestos para materializar nodos
+    - factory y registros son colaboradores propuestos para materializar nodos
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: factory-y-registros-son-colaboradores-propuestos-para-materializar-nodos
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: factory-y-registros-son-colaboradores-propuestos-para-materializar-nodos/answer
+    title: Answer
+    breadcrumbs:
+    - Factory y registros son colaboradores propuestos para materializar nodos
+    - Answer
+    about:
+    - Factory y registros son colaboradores propuestos para materializar nodos
+    - factory y registros son colaboradores propuestos para materializar nodos
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:materialization
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-fallo-tras-escritura
+  sections:
+  - path: una-escritura-previa-al-fallo-requiere-conservar-el-estado-fallido-y-su-provenance
+    title: Una escritura previa al fallo requiere conservar el estado fallido y su
+      provenance
+    breadcrumbs:
+    - Una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    about:
+    - Una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    - una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: una-escritura-previa-al-fallo-requiere-conservar-el-estado-fallido-y-su-provenance
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: una-escritura-previa-al-fallo-requiere-conservar-el-estado-fallido-y-su-provenance/answer
+    title: Answer
+    breadcrumbs:
+    - Una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    - Answer
+    about:
+    - Una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    - una escritura previa al fallo requiere conservar el estado fallido y su provenance
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:completion_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-scoped-knowledge
+  sections:
+  - path: scopedknowledge-es-una-propuesta-para-hacer-cumplir-el-scope
+    title: ScopedKnowledge es una propuesta para hacer cumplir el scope
+    breadcrumbs:
+    - ScopedKnowledge es una propuesta para hacer cumplir el scope
+    about:
+    - ScopedKnowledge es una propuesta para hacer cumplir el scope
+    - scopedknowledge es una propuesta para hacer cumplir el scope
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: scopedknowledge-es-una-propuesta-para-hacer-cumplir-el-scope
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: scopedknowledge-es-una-propuesta-para-hacer-cumplir-el-scope/answer
+    title: Answer
+    breadcrumbs:
+    - ScopedKnowledge es una propuesta para hacer cumplir el scope
+    - Answer
+    about:
+    - ScopedKnowledge es una propuesta para hacer cumplir el scope
+    - scopedknowledge es una propuesta para hacer cumplir el scope
+    - Answer
+    - answer
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-proposal-uml-clojure
+  sections:
+  - path: los-diagramas-de-clases-representan-protocolos-y-datos-adem-s-de-clases-oo
+    title: "Los diagramas de clases representan protocolos y datos adem\xE1s de clases\
+      \ OO"
+    breadcrumbs:
+    - "Los diagramas de clases representan protocolos y datos adem\xE1s de clases\
+      \ OO"
+    about:
+    - "Los diagramas de clases representan protocolos y datos adem\xE1s de clases\
+      \ OO"
+    - los diagramas de clases representan protocolos y datos adem s de clases oo
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-diagramas-de-clases-representan-protocolos-y-datos-adem-s-de-clases-oo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-diagramas-de-clases-representan-protocolos-y-datos-adem-s-de-clases-oo/answer
+    title: Answer
+    breadcrumbs:
+    - "Los diagramas de clases representan protocolos y datos adem\xE1s de clases\
+      \ OO"
+    - Answer
+    about:
+    - "Los diagramas de clases representan protocolos y datos adem\xE1s de clases\
+      \ OO"
+    - los diagramas de clases representan protocolos y datos adem s de clases oo
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:representation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-provenance-ejecucion
+  sections:
+  - path: todo-resultado-persistido-debe-rastrearse-a-la-ejecuci-n-que-lo-produjo
+    title: "Todo resultado persistido debe rastrearse a la ejecuci\xF3n que lo produjo"
+    breadcrumbs:
+    - "Todo resultado persistido debe rastrearse a la ejecuci\xF3n que lo produjo"
+    about:
+    - "Todo resultado persistido debe rastrearse a la ejecuci\xF3n que lo produjo"
+    - todo resultado persistido debe rastrearse a la ejecuci n que lo produjo
+    - domain:provenance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: todo-resultado-persistido-debe-rastrearse-a-la-ejecuci-n-que-lo-produjo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: todo-resultado-persistido-debe-rastrearse-a-la-ejecuci-n-que-lo-produjo/answer
+    title: Answer
+    breadcrumbs:
+    - "Todo resultado persistido debe rastrearse a la ejecuci\xF3n que lo produjo"
+    - Answer
+    about:
+    - "Todo resultado persistido debe rastrearse a la ejecuci\xF3n que lo produjo"
+    - todo resultado persistido debe rastrearse a la ejecuci n que lo produjo
+    - Answer
+    - answer
+    - domain:provenance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:provenance
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-puente-representaciones
+  sections:
+  - path: la-integraci-n-inicial-conecta-markdown-pydantic-agentspec-y-clojure
+    title: "La integraci\xF3n inicial conecta Markdown, Pydantic, AgentSpec y Clojure"
+    breadcrumbs:
+    - "La integraci\xF3n inicial conecta Markdown, Pydantic, AgentSpec y Clojure"
+    about:
+    - "La integraci\xF3n inicial conecta Markdown, Pydantic, AgentSpec y Clojure"
+    - la integraci n inicial conecta markdown pydantic agentspec y clojure
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-integraci-n-inicial-conecta-markdown-pydantic-agentspec-y-clojure
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-integraci-n-inicial-conecta-markdown-pydantic-agentspec-y-clojure/answer
+    title: Answer
+    breadcrumbs:
+    - "La integraci\xF3n inicial conecta Markdown, Pydantic, AgentSpec y Clojure"
+    - Answer
+    about:
+    - "La integraci\xF3n inicial conecta Markdown, Pydantic, AgentSpec y Clojure"
+    - la integraci n inicial conecta markdown pydantic agentspec y clojure
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-puertos-tipados
+  sections:
+  - path: los-puertos-definen-entradas-y-salidas-tipadas
+    title: Los puertos definen entradas y salidas tipadas
+    breadcrumbs:
+    - Los puertos definen entradas y salidas tipadas
+    about:
+    - Los puertos definen entradas y salidas tipadas
+    - los puertos definen entradas y salidas tipadas
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:ports
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:ports
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-puertos-definen-entradas-y-salidas-tipadas
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-puertos-definen-entradas-y-salidas-tipadas/answer
+    title: Answer
+    breadcrumbs:
+    - Los puertos definen entradas y salidas tipadas
+    - Answer
+    about:
+    - Los puertos definen entradas y salidas tipadas
+    - los puertos definen entradas y salidas tipadas
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:ports
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:ports
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-pydantic-conservar
+  sections:
+  - path: los-modelos-python-y-pydantic-se-conservan-durante-la-integraci-n-inicial
+    title: "Los modelos Python y Pydantic se conservan durante la integraci\xF3n inicial"
+    breadcrumbs:
+    - "Los modelos Python y Pydantic se conservan durante la integraci\xF3n inicial"
+    about:
+    - "Los modelos Python y Pydantic se conservan durante la integraci\xF3n inicial"
+    - los modelos python y pydantic se conservan durante la integraci n inicial
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: los-modelos-python-y-pydantic-se-conservan-durante-la-integraci-n-inicial
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: los-modelos-python-y-pydantic-se-conservan-durante-la-integraci-n-inicial/answer
+    title: Answer
+    breadcrumbs:
+    - "Los modelos Python y Pydantic se conservan durante la integraci\xF3n inicial"
+    - Answer
+    about:
+    - "Los modelos Python y Pydantic se conservan durante la integraci\xF3n inicial"
+    - los modelos python y pydantic se conservan durante la integraci n inicial
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:migration
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-resolver-objetivo
+  sections:
+  - path: el-orquestador-resuelve-un-objetivo-mediante-capacidades-y-nodos-compatibles
+    title: El orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    breadcrumbs:
+    - El orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    about:
+    - El orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    - el orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:planning
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:planning
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-orquestador-resuelve-un-objetivo-mediante-capacidades-y-nodos-compatibles
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-orquestador-resuelve-un-objetivo-mediante-capacidades-y-nodos-compatibles/answer
+    title: Answer
+    breadcrumbs:
+    - El orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    - Answer
+    about:
+    - El orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    - el orquestador resuelve un objetivo mediante capacidades y nodos compatibles
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:planning
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:planning
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-runtime-intercambiable
+  sections:
+  - path: cambiar-el-runtime-debe-conservar-la-definici-n-sem-ntica-del-agente
+    title: "Cambiar el runtime debe conservar la definici\xF3n sem\xE1ntica del agente"
+    breadcrumbs:
+    - "Cambiar el runtime debe conservar la definici\xF3n sem\xE1ntica del agente"
+    about:
+    - "Cambiar el runtime debe conservar la definici\xF3n sem\xE1ntica del agente"
+    - cambiar el runtime debe conservar la definici n sem ntica del agente
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cambiar-el-runtime-debe-conservar-la-definici-n-sem-ntica-del-agente
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: cambiar-el-runtime-debe-conservar-la-definici-n-sem-ntica-del-agente/answer
+    title: Answer
+    breadcrumbs:
+    - "Cambiar el runtime debe conservar la definici\xF3n sem\xE1ntica del agente"
+    - Answer
+    about:
+    - "Cambiar el runtime debe conservar la definici\xF3n sem\xE1ntica del agente"
+    - cambiar el runtime debe conservar la definici n sem ntica del agente
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-runtime
+  sections:
+  - path: runtime-es-el-backend-que-materializa-una-transformaci-n
+    title: "Runtime es el backend que materializa una transformaci\xF3n"
+    breadcrumbs:
+    - "Runtime es el backend que materializa una transformaci\xF3n"
+    about:
+    - "Runtime es el backend que materializa una transformaci\xF3n"
+    - runtime es el backend que materializa una transformaci n
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: runtime-es-el-backend-que-materializa-una-transformaci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: runtime-es-el-backend-que-materializa-una-transformaci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "Runtime es el backend que materializa una transformaci\xF3n"
+    - Answer
+    about:
+    - "Runtime es el backend que materializa una transformaci\xF3n"
+    - runtime es el backend que materializa una transformaci n
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-runtime-protocolo
+  sections:
+  - path: el-protocolo-runtime-cubre-preparaci-n-invocaci-n-observaci-n-y-cancelaci-n
+    title: "El protocolo Runtime cubre preparaci\xF3n, invocaci\xF3n, observaci\xF3\
+      n y cancelaci\xF3n"
+    breadcrumbs:
+    - "El protocolo Runtime cubre preparaci\xF3n, invocaci\xF3n, observaci\xF3n y\
+      \ cancelaci\xF3n"
+    about:
+    - "El protocolo Runtime cubre preparaci\xF3n, invocaci\xF3n, observaci\xF3n y\
+      \ cancelaci\xF3n"
+    - el protocolo runtime cubre preparaci n invocaci n observaci n y cancelaci n
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-protocolo-runtime-cubre-preparaci-n-invocaci-n-observaci-n-y-cancelaci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-protocolo-runtime-cubre-preparaci-n-invocaci-n-observaci-n-y-cancelaci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "El protocolo Runtime cubre preparaci\xF3n, invocaci\xF3n, observaci\xF3n y\
+      \ cancelaci\xF3n"
+    - Answer
+    about:
+    - "El protocolo Runtime cubre preparaci\xF3n, invocaci\xF3n, observaci\xF3n y\
+      \ cancelaci\xF3n"
+    - el protocolo runtime cubre preparaci n invocaci n observaci n y cancelaci n
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-runtime-sin-semantica
+  sections:
+  - path: el-runtime-no-define-la-sem-ntica-del-agente
+    title: "El runtime no define la sem\xE1ntica del agente"
+    breadcrumbs:
+    - "El runtime no define la sem\xE1ntica del agente"
+    about:
+    - "El runtime no define la sem\xE1ntica del agente"
+    - el runtime no define la sem ntica del agente
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-runtime-no-define-la-sem-ntica-del-agente
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-runtime-no-define-la-sem-ntica-del-agente/answer
+    title: Answer
+    breadcrumbs:
+    - "El runtime no define la sem\xE1ntica del agente"
+    - Answer
+    about:
+    - "El runtime no define la sem\xE1ntica del agente"
+    - el runtime no define la sem ntica del agente
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:runtime_contract
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-scope-declarado
+  sections:
+  - path: cada-nodo-declara-qu-conocimiento-lee-y-escribe
+    title: "Cada nodo declara qu\xE9 conocimiento lee y escribe"
+    breadcrumbs:
+    - "Cada nodo declara qu\xE9 conocimiento lee y escribe"
+    about:
+    - "Cada nodo declara qu\xE9 conocimiento lee y escribe"
+    - cada nodo declara qu conocimiento lee y escribe
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: cada-nodo-declara-qu-conocimiento-lee-y-escribe
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: cada-nodo-declara-qu-conocimiento-lee-y-escribe/answer
+    title: Answer
+    breadcrumbs:
+    - "Cada nodo declara qu\xE9 conocimiento lee y escribe"
+    - Answer
+    about:
+    - "Cada nodo declara qu\xE9 conocimiento lee y escribe"
+    - cada nodo declara qu conocimiento lee y escribe
+    - Answer
+    - answer
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-scope-escritura
+  sections:
+  - path: un-nodo-no-puede-escribir-fuera-de-su-scope
+    title: Un nodo no puede escribir fuera de su scope
+    breadcrumbs:
+    - Un nodo no puede escribir fuera de su scope
+    about:
+    - Un nodo no puede escribir fuera de su scope
+    - un nodo no puede escribir fuera de su scope
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-nodo-no-puede-escribir-fuera-de-su-scope
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-nodo-no-puede-escribir-fuera-de-su-scope/answer
+    title: Answer
+    breadcrumbs:
+    - Un nodo no puede escribir fuera de su scope
+    - Answer
+    about:
+    - Un nodo no puede escribir fuera de su scope
+    - un nodo no puede escribir fuera de su scope
+    - Answer
+    - answer
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:permissions
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-scraper-responsabilidad
+  sections:
+  - path: el-scraper-de-ejemplo-adquiere-fuentes-sin-interpretar-ni-publicar
+    title: El scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    breadcrumbs:
+    - El scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    about:
+    - El scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    - el scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    - domain:source_modeling
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:source_acquisition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:source_modeling
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:source_acquisition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-scraper-de-ejemplo-adquiere-fuentes-sin-interpretar-ni-publicar
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-scraper-de-ejemplo-adquiere-fuentes-sin-interpretar-ni-publicar/answer
+    title: Answer
+    breadcrumbs:
+    - El scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    - Answer
+    about:
+    - El scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    - el scraper de ejemplo adquiere fuentes sin interpretar ni publicar
+    - Answer
+    - answer
+    - domain:source_modeling
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:source_acquisition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:source_modeling
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:source_acquisition
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-secret-ref
+  sections:
+  - path: la-autenticaci-n-de-una-api-puede-declararse-mediante-secret-ref
+    title: "La autenticaci\xF3n de una API puede declararse mediante secret_ref"
+    breadcrumbs:
+    - "La autenticaci\xF3n de una API puede declararse mediante secret_ref"
+    about:
+    - "La autenticaci\xF3n de una API puede declararse mediante secret_ref"
+    - la autenticaci n de una api puede declararse mediante secret ref
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:authentication
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:authentication
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-autenticaci-n-de-una-api-puede-declararse-mediante-secret-ref
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-autenticaci-n-de-una-api-puede-declararse-mediante-secret-ref/answer
+    title: Answer
+    breadcrumbs:
+    - "La autenticaci\xF3n de una API puede declararse mediante secret_ref"
+    - Answer
+    about:
+    - "La autenticaci\xF3n de una API puede declararse mediante secret_ref"
+    - la autenticaci n de una api puede declararse mediante secret ref
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:authentication
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:authentication
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-selfdoc
+  sections:
+  - path: selfdoc-declara-la-identidad-operacional-del-nodo
+    title: SelfDoc declara la identidad operacional del nodo
+    breadcrumbs:
+    - SelfDoc declara la identidad operacional del nodo
+    about:
+    - SelfDoc declara la identidad operacional del nodo
+    - selfdoc declara la identidad operacional del nodo
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:selfdoc
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:selfdoc
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: selfdoc-declara-la-identidad-operacional-del-nodo
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: selfdoc-declara-la-identidad-operacional-del-nodo/answer
+    title: Answer
+    breadcrumbs:
+    - SelfDoc declara la identidad operacional del nodo
+    - Answer
+    about:
+    - SelfDoc declara la identidad operacional del nodo
+    - selfdoc declara la identidad operacional del nodo
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:selfdoc
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:selfdoc
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-sin-parsing-en-agentes
+  sections:
+  - path: el-agente-debe-delegar-el-parsing-de-markdown-a-la-capa-de-knowledge
+    title: El agente debe delegar el parsing de Markdown a la capa de knowledge
+    breadcrumbs:
+    - El agente debe delegar el parsing de Markdown a la capa de knowledge
+    about:
+    - El agente debe delegar el parsing de Markdown a la capa de knowledge
+    - el agente debe delegar el parsing de markdown a la capa de knowledge
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-agente-debe-delegar-el-parsing-de-markdown-a-la-capa-de-knowledge
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-agente-debe-delegar-el-parsing-de-markdown-a-la-capa-de-knowledge/answer
+    title: Answer
+    breadcrumbs:
+    - El agente debe delegar el parsing de Markdown a la capa de knowledge
+    - Answer
+    about:
+    - El agente debe delegar el parsing de Markdown a la capa de knowledge
+    - el agente debe delegar el parsing de markdown a la capa de knowledge
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:knowledge_api
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-spec-materializa-nodo
+  sections:
+  - path: la-especificaci-n-del-nodo-precede-a-su-materializaci-n
+    title: "La especificaci\xF3n del nodo precede a su materializaci\xF3n"
+    breadcrumbs:
+    - "La especificaci\xF3n del nodo precede a su materializaci\xF3n"
+    about:
+    - "La especificaci\xF3n del nodo precede a su materializaci\xF3n"
+    - la especificaci n del nodo precede a su materializaci n
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-especificaci-n-del-nodo-precede-a-su-materializaci-n
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-especificaci-n-del-nodo-precede-a-su-materializaci-n/answer
+    title: Answer
+    breadcrumbs:
+    - "La especificaci\xF3n del nodo precede a su materializaci\xF3n"
+    - Answer
+    about:
+    - "La especificaci\xF3n del nodo precede a su materializaci\xF3n"
+    - la especificaci n del nodo precede a su materializaci n
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:node_spec
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-sql-nodo
+  sections:
+  - path: un-nodo-sql-expone-un-contrato-de-consulta-tipado
+    title: Un nodo SQL expone un contrato de consulta tipado
+    breadcrumbs:
+    - Un nodo SQL expone un contrato de consulta tipado
+    about:
+    - Un nodo SQL expone un contrato de consulta tipado
+    - un nodo sql expone un contrato de consulta tipado
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:sql_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:sql_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-nodo-sql-expone-un-contrato-de-consulta-tipado
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-nodo-sql-expone-un-contrato-de-consulta-tipado/answer
+    title: Answer
+    breadcrumbs:
+    - Un nodo SQL expone un contrato de consulta tipado
+    - Answer
+    about:
+    - Un nodo SQL expone un contrato de consulta tipado
+    - un nodo sql expone un contrato de consulta tipado
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:sql_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:sql_node
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-unit-tests
+  sections:
+  - path: un-unit-test-comprueba-la-implementaci-n-de-una-pieza
+    title: "Un unit test comprueba la implementaci\xF3n de una pieza"
+    breadcrumbs:
+    - "Un unit test comprueba la implementaci\xF3n de una pieza"
+    about:
+    - "Un unit test comprueba la implementaci\xF3n de una pieza"
+    - un unit test comprueba la implementaci n de una pieza
+    - domain:code_craft
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:unit_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:unit_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: un-unit-test-comprueba-la-implementaci-n-de-una-pieza
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: un-unit-test-comprueba-la-implementaci-n-de-una-pieza/answer
+    title: Answer
+    breadcrumbs:
+    - "Un unit test comprueba la implementaci\xF3n de una pieza"
+    - Answer
+    about:
+    - "Un unit test comprueba la implementaci\xF3n de una pieza"
+    - un unit test comprueba la implementaci n de una pieza
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:unit_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:unit_test
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-viewmodel-render
+  sections:
+  - path: la-proyecci-n-al-modelo-de-vista-puede-separarse-del-render-final
+    title: "La proyecci\xF3n al modelo de vista puede separarse del render final"
+    breadcrumbs:
+    - "La proyecci\xF3n al modelo de vista puede separarse del render final"
+    about:
+    - "La proyecci\xF3n al modelo de vista puede separarse del render final"
+    - la proyecci n al modelo de vista puede separarse del render final
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: la-proyecci-n-al-modelo-de-vista-puede-separarse-del-render-final
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: la-proyecci-n-al-modelo-de-vista-puede-separarse-del-render-final/answer
+    title: Answer
+    breadcrumbs:
+    - "La proyecci\xF3n al modelo de vista puede separarse del render final"
+    - Answer
+    about:
+    - "La proyecci\xF3n al modelo de vista puede separarse del render final"
+    - la proyecci n al modelo de vista puede separarse del render final
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:software
+    - system:knar
+    - topic:rendering
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knar-workflow-derivado
+  sections:
+  - path: el-workflow-es-una-representaci-n-de-ejecuci-n-derivada
+    title: "El workflow es una representaci\xF3n de ejecuci\xF3n derivada"
+    breadcrumbs:
+    - "El workflow es una representaci\xF3n de ejecuci\xF3n derivada"
+    about:
+    - "El workflow es una representaci\xF3n de ejecuci\xF3n derivada"
+    - el workflow es una representaci n de ejecuci n derivada
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: el-workflow-es-una-representaci-n-de-ejecuci-n-derivada
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: el-workflow-es-una-representaci-n-de-ejecuci-n-derivada/answer
+    title: Answer
+    breadcrumbs:
+    - "El workflow es una representaci\xF3n de ejecuci\xF3n derivada"
+    - Answer
+    about:
+    - "El workflow es una representaci\xF3n de ejecuci\xF3n derivada"
+    - el workflow es una representaci n de ejecuci n derivada
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knar
+    - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
