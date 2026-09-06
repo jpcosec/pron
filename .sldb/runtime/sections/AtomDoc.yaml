@@ -7750,7 +7750,7 @@ documents:
     - domain:provenance
     - graph:lineage
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - layer:graph_provenance
     - system:knowledge
@@ -7762,7 +7762,7 @@ documents:
     - domain:provenance
     - graph:lineage
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - layer:graph_provenance
     - system:knowledge
@@ -7790,7 +7790,7 @@ documents:
     - domain:provenance
     - graph:lineage
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - layer:graph_provenance
     - system:knowledge
@@ -7802,7 +7802,7 @@ documents:
     - domain:provenance
     - graph:lineage
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - layer:graph_provenance
     - system:knowledge
@@ -7931,7 +7931,7 @@ documents:
       fields
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:atom_creation
@@ -7941,7 +7941,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:atom_creation
@@ -7967,7 +7967,7 @@ documents:
     - answer
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:atom_creation
@@ -7977,7 +7977,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:atom_creation
@@ -8144,7 +8144,7 @@ documents:
       semantic reinterpretation
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8154,7 +8154,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8180,7 +8180,7 @@ documents:
     - answer
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8190,7 +8190,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8216,7 +8216,7 @@ documents:
       payloads for auditability
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8226,7 +8226,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8252,7 +8252,7 @@ documents:
     - answer
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8262,7 +8262,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8361,7 +8361,7 @@ documents:
     - domain:governance
     - entity:atom
     - entity:metadata_registry
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:authoring_workflow
@@ -8372,7 +8372,7 @@ documents:
     - domain:governance
     - entity:atom
     - entity:metadata_registry
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:authoring_workflow
@@ -8399,7 +8399,7 @@ documents:
     - domain:governance
     - entity:atom
     - entity:metadata_registry
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:authoring_workflow
@@ -8410,7 +8410,7 @@ documents:
     - domain:governance
     - entity:atom
     - entity:metadata_registry
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:authoring_workflow
@@ -8508,7 +8508,7 @@ documents:
       health check
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8518,7 +8518,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8544,7 +8544,7 @@ documents:
     - answer
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -8554,7 +8554,7 @@ documents:
     semantic_tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -15114,7 +15114,7 @@ documents:
     - the canonical operations are check next assert create ingest return
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:here
+    - impl:pending
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15123,7 +15123,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:here
+    - impl:pending
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15145,7 +15145,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:here
+    - impl:pending
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15154,7 +15154,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:here
+    - impl:pending
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -17140,3 +17140,874 @@ documents:
     level: 2
     line_start: 18
     line_end: 19
+- doc_name: atom-sexpr-py-is-the-dependency-free-meaning-kernel
+  sections:
+  - path: sexpr-py-is-the-dependency-free-meaning-kernel
+    title: sexpr.py is the dependency-free Meaning kernel
+    breadcrumbs:
+    - sexpr.py is the dependency-free Meaning kernel
+    about:
+    - sexpr.py is the dependency-free Meaning kernel
+    - sexpr py is the dependency free meaning kernel
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: sexpr-py-is-the-dependency-free-meaning-kernel
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: sexpr-py-is-the-dependency-free-meaning-kernel/answer
+    title: Answer
+    breadcrumbs:
+    - sexpr.py is the dependency-free Meaning kernel
+    - Answer
+    about:
+    - sexpr.py is the dependency-free Meaning kernel
+    - sexpr py is the dependency free meaning kernel
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-results-py-defines-the-typed-outcome-values
+  sections:
+  - path: results-py-defines-the-typed-outcome-values
+    title: results.py defines the typed outcome values
+    breadcrumbs:
+    - results.py defines the typed outcome values
+    about:
+    - results.py defines the typed outcome values
+    - results py defines the typed outcome values
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: results-py-defines-the-typed-outcome-values
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: results-py-defines-the-typed-outcome-values/answer
+    title: Answer
+    breadcrumbs:
+    - results.py defines the typed outcome values
+    - Answer
+    about:
+    - results.py defines the typed outcome values
+    - results py defines the typed outcome values
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
+  sections:
+  - path: anchors-py-loads-the-grammar-from-tracked-anchordocs
+    title: anchors.py loads the grammar from tracked AnchorDocs
+    breadcrumbs:
+    - anchors.py loads the grammar from tracked AnchorDocs
+    about:
+    - anchors.py loads the grammar from tracked AnchorDocs
+    - anchors py loads the grammar from tracked anchordocs
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchors-py-loads-the-grammar-from-tracked-anchordocs
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: anchors-py-loads-the-grammar-from-tracked-anchordocs/answer
+    title: Answer
+    breadcrumbs:
+    - anchors.py loads the grammar from tracked AnchorDocs
+    - Answer
+    about:
+    - anchors.py loads the grammar from tracked AnchorDocs
+    - anchors py loads the grammar from tracked anchordocs
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-resolution-py-implements-the-selector-cascade
+  sections:
+  - path: resolution-py-implements-the-selector-cascade
+    title: resolution.py implements the selector cascade
+    breadcrumbs:
+    - resolution.py implements the selector cascade
+    about:
+    - resolution.py implements the selector cascade
+    - resolution py implements the selector cascade
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: resolution-py-implements-the-selector-cascade
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: resolution-py-implements-the-selector-cascade/answer
+    title: Answer
+    breadcrumbs:
+    - resolution.py implements the selector cascade
+    - Answer
+    about:
+    - resolution.py implements the selector cascade
+    - resolution py implements the selector cascade
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-session-py-persists-one-pending-clarification
+  sections:
+  - path: session-py-persists-one-pending-clarification
+    title: session.py persists one pending clarification
+    breadcrumbs:
+    - session.py persists one pending clarification
+    about:
+    - session.py persists one pending clarification
+    - session py persists one pending clarification
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: session-py-persists-one-pending-clarification
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: session-py-persists-one-pending-clarification/answer
+    title: Answer
+    breadcrumbs:
+    - session.py persists one pending clarification
+    - Answer
+    about:
+    - session.py persists one pending clarification
+    - session py persists one pending clarification
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
+  sections:
+  - path: evaluator-py-grounds-symbols-and-dispatches-by-kind
+    title: evaluator.py grounds symbols and dispatches by kind
+    breadcrumbs:
+    - evaluator.py grounds symbols and dispatches by kind
+    about:
+    - evaluator.py grounds symbols and dispatches by kind
+    - evaluator py grounds symbols and dispatches by kind
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: evaluator-py-grounds-symbols-and-dispatches-by-kind
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: evaluator-py-grounds-symbols-and-dispatches-by-kind/answer
+    title: Answer
+    breadcrumbs:
+    - evaluator.py grounds symbols and dispatches by kind
+    - Answer
+    about:
+    - evaluator.py grounds symbols and dispatches by kind
+    - evaluator py grounds symbols and dispatches by kind
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-read-py-implements-check-next-return-with-refs
+  sections:
+  - path: read-py-implements-check-next-return-with-refs
+    title: read.py implements check, next, return with refs
+    breadcrumbs:
+    - read.py implements check, next, return with refs
+    about:
+    - read.py implements check, next, return with refs
+    - read py implements check next return with refs
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: read-py-implements-check-next-return-with-refs
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: read-py-implements-check-next-return-with-refs/answer
+    title: Answer
+    breadcrumbs:
+    - read.py implements check, next, return with refs
+    - Answer
+    about:
+    - read.py implements check, next, return with refs
+    - read py implements check next return with refs
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-sldb-bridge-py-wraps-the-real-library-layer
+  sections:
+  - path: sldb-bridge-py-wraps-the-real-sldb-library-layer
+    title: sldb_bridge.py wraps the real sldb library layer
+    breadcrumbs:
+    - sldb_bridge.py wraps the real sldb library layer
+    about:
+    - sldb_bridge.py wraps the real sldb library layer
+    - sldb bridge py wraps the real sldb library layer
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: sldb-bridge-py-wraps-the-real-sldb-library-layer
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: sldb-bridge-py-wraps-the-real-sldb-library-layer/answer
+    title: Answer
+    breadcrumbs:
+    - sldb_bridge.py wraps the real sldb library layer
+    - Answer
+    about:
+    - sldb_bridge.py wraps the real sldb library layer
+    - sldb bridge py wraps the real sldb library layer
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
+  sections:
+  - path: kgdb-bridge-py-guards-staleness-before-serving-graph-reads
+    title: kgdb_bridge.py guards staleness before serving graph reads
+    breadcrumbs:
+    - kgdb_bridge.py guards staleness before serving graph reads
+    about:
+    - kgdb_bridge.py guards staleness before serving graph reads
+    - kgdb bridge py guards staleness before serving graph reads
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: kgdb-bridge-py-guards-staleness-before-serving-graph-reads
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: kgdb-bridge-py-guards-staleness-before-serving-graph-reads/answer
+    title: Answer
+    breadcrumbs:
+    - kgdb_bridge.py guards staleness before serving graph reads
+    - Answer
+    about:
+    - kgdb_bridge.py guards staleness before serving graph reads
+    - kgdb bridge py guards staleness before serving graph reads
+    - Answer
+    - answer
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-projector-py-materializes-the-world-via-the-verified-pipeline
+  sections:
+  - path: projector-py-materializes-the-world-via-the-verified-pipeline
+    title: projector.py materializes the world via the verified pipeline
+    breadcrumbs:
+    - projector.py materializes the world via the verified pipeline
+    about:
+    - projector.py materializes the world via the verified pipeline
+    - projector py materializes the world via the verified pipeline
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: projector-py-materializes-the-world-via-the-verified-pipeline
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: projector-py-materializes-the-world-via-the-verified-pipeline/answer
+    title: Answer
+    breadcrumbs:
+    - projector.py materializes the world via the verified pipeline
+    - Answer
+    about:
+    - projector.py materializes the world via the verified pipeline
+    - projector py materializes the world via the verified pipeline
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-surface-py-desugars-positional-tokens-into-meaning
+  sections:
+  - path: surface-py-desugars-positional-tokens-into-meaning
+    title: surface.py desugars positional tokens into Meaning
+    breadcrumbs:
+    - surface.py desugars positional tokens into Meaning
+    about:
+    - surface.py desugars positional tokens into Meaning
+    - surface py desugars positional tokens into meaning
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: surface-py-desugars-positional-tokens-into-meaning
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: surface-py-desugars-positional-tokens-into-meaning/answer
+    title: Answer
+    breadcrumbs:
+    - surface.py desugars positional tokens into Meaning
+    - Answer
+    about:
+    - surface.py desugars positional tokens into Meaning
+    - surface py desugars positional tokens into meaning
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-render-py-maps-result-values-to-output-and-exit-codes
+  sections:
+  - path: render-py-maps-result-values-to-output-and-exit-codes
+    title: render.py maps result values to output and exit codes
+    breadcrumbs:
+    - render.py maps result values to output and exit codes
+    about:
+    - render.py maps result values to output and exit codes
+    - render py maps result values to output and exit codes
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: render-py-maps-result-values-to-output-and-exit-codes
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: render-py-maps-result-values-to-output-and-exit-codes/answer
+    title: Answer
+    breadcrumbs:
+    - render.py maps result values to output and exit codes
+    - Answer
+    about:
+    - render.py maps result values to output and exit codes
+    - render py maps result values to output and exit codes
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-main-py-routes-surface-eval-anchors-and-infra
+  sections:
+  - path: main-py-routes-surface-eval-anchors-and-infra
+    title: main.py routes surface, eval, anchors, and infra
+    breadcrumbs:
+    - main.py routes surface, eval, anchors, and infra
+    about:
+    - main.py routes surface, eval, anchors, and infra
+    - main py routes surface eval anchors and infra
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: main-py-routes-surface-eval-anchors-and-infra
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: main-py-routes-surface-eval-anchors-and-infra/answer
+    title: Answer
+    breadcrumbs:
+    - main.py routes surface, eval, anchors, and infra
+    - Answer
+    about:
+    - main.py routes surface, eval, anchors, and infra
+    - main py routes surface eval anchors and infra
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-filter-by-joins-documents-by-foreign-key-field
+  sections:
+  - path: filter-by-joins-documents-by-foreign-key-field
+    title: filter-by joins documents by foreign-key field
+    breadcrumbs:
+    - filter-by joins documents by foreign-key field
+    about:
+    - filter-by joins documents by foreign-key field
+    - filter by joins documents by foreign key field
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: filter-by-joins-documents-by-foreign-key-field
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: filter-by-joins-documents-by-foreign-key-field/answer
+    title: Answer
+    breadcrumbs:
+    - filter-by joins documents by foreign-key field
+    - Answer
+    about:
+    - filter-by joins documents by foreign-key field
+    - filter by joins documents by foreign key field
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-where-values-must-be-quoted-or-numeric
+  sections:
+  - path: where-comparison-values-must-be-quoted-or-numeric
+    title: Where comparison values must be quoted or numeric
+    breadcrumbs:
+    - Where comparison values must be quoted or numeric
+    about:
+    - Where comparison values must be quoted or numeric
+    - where comparison values must be quoted or numeric
+    - cross:knowledge_sldb
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: where-comparison-values-must-be-quoted-or-numeric
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: where-comparison-values-must-be-quoted-or-numeric/answer
+    title: Answer
+    breadcrumbs:
+    - Where comparison values must be quoted or numeric
+    - Answer
+    about:
+    - Where comparison values must be quoted or numeric
+    - where comparison values must be quoted or numeric
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18

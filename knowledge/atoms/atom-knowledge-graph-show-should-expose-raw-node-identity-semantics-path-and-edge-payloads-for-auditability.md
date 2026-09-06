@@ -10,7 +10,7 @@ tags:
 - graph:provenance
 - domain:retrieval
 - kind:software
-- impl:here
+- impl:pending
 provenance: Derived from `knowledge` and `source/spec/GRAPH_ARCHITECTURE.md`.
 ---
 

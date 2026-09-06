@@ -11,7 +11,7 @@ tags:
 - topic:authoring_workflow
 - domain:governance
 - kind:software
-- impl:here
+- impl:pending
 provenance: Derived from `knowledge`, `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`,
   and `metadata/atoms/atom-metadata-registry.yaml`.
 ---

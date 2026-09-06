@@ -10,7 +10,7 @@ tags:
 - topic:atom_creation
 - domain:retrieval
 - kind:software
-- impl:here
+- impl:pending
 provenance: Derived from `knowledge`, `source/spec/DESKOPS_FOR_KNOWLEDGE_MANAGEMENT.md`,
   and `source/spec/atom_quality/ATOM_AUTHORING_PROCEDURE.md`.
 ---

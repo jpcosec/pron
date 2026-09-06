@@ -1623,13 +1623,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   path: knowledge/atoms/atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain.md
-  hash_c: bd1037b2e6e67206b32ddb76c756276128e21f31ff5cdae1eb0a6a92136435c3
-  hash_d: 5a96d4857229f28c2db5e9127aa1ad34d6807d98851c2b7130def057955a8338
+  hash_c: 7e9337b94cb161e4ec067b6fbfa17f19d04e346e1b7d8a5ff52c7bfd3814b5eb
+  hash_d: cf6f7a691cfc8b96a9ba2908aa1a78d228412afff8b090319277acebcc98df75
   semantic_tags:
   - domain:provenance
   - graph:lineage
   - graph:provenance
-  - impl:here
+  - impl:pending
   - kind:software
   - layer:graph_provenance
   - system:knowledge
@@ -1660,12 +1660,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   path: knowledge/atoms/atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields.md
-  hash_c: 3fbde5fec22037b3da1a0453bf3ad0029073e83b0a25a6973426158629026e0f
-  hash_d: 32905c8ef5c7bee5a35b16aba90100b47ee4ab62b3061e0bcdf69467d981214d
+  hash_c: 8fc7b5ccebaf18f8a995d63174b01b454cd7c8b637cd6235fd8321bdc7711aae
+  hash_d: a8b56c6e07d09b66da83bd1157b54ca554d1c2b48ce13ff139a8d2f461db6b0f
   semantic_tags:
   - domain:retrieval
   - entity:atom
-  - impl:here
+  - impl:pending
   - kind:software
   - system:knowledge
   - topic:atom_creation
@@ -1703,12 +1703,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   path: knowledge/atoms/atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation.md
-  hash_c: df0aec2f0ba49ea8b1fdea5b07d1424fd3a465fbb9bbde302dcb8a978de5de57
-  hash_d: 12a0fcf1692369703d734569f6423a51ba9043e9a462e22ce848bcc39ec5f9bc
+  hash_c: 01ea880ae8900bb97e5d1151ea39e1d0626f209dfa08f45b05434b89581f3acb
+  hash_d: c3256746c9474342942e7a451d35bfccd1c6a2229e14737d78eface78fc6de78
   semantic_tags:
   - domain:retrieval
   - graph:provenance
-  - impl:here
+  - impl:pending
   - kind:software
   - system:knowledge
   - topic:knowledge_cli
@@ -1717,12 +1717,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   path: knowledge/atoms/atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability.md
-  hash_c: 9c176ee8ea01cf5788bb1d465247055e6ae5a179a19dc3b74249700c8b91b472
-  hash_d: 3f6d23a19218fdef3c39357432e0176bcac254634661867f970d89370ffe1832
+  hash_c: b70f04fc8703b820efc8dec305b5ce4447efb3e19e1fe1f4f7c69fbecf0d14f5
+  hash_d: 1f90559e89a4c458ccad1a4cc0b80c285f0e732c7165e21dca9b950abe3273d8
   semantic_tags:
   - domain:retrieval
   - graph:provenance
-  - impl:here
+  - impl:pending
   - kind:software
   - system:knowledge
   - topic:knowledge_cli
@@ -1745,13 +1745,13 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   path: knowledge/atoms/atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text.md
-  hash_c: 395c999653d7b2e609fb1ec0255397450237c743decf466fe369150415392d79
-  hash_d: 2132288f7eb4881422d5ff45197b691d637dfca0562253956d148641eb28c9f0
+  hash_c: 44d41b6ea2c5dc842c556714c3f51a5bd53e38f2dcbc489968f9f410c71ac8cc
+  hash_d: 7bbe71ad713b55db386493644a9f03a3523da25738d1c624304112ee998c3e12
   semantic_tags:
   - domain:governance
   - entity:atom
   - entity:metadata_registry
-  - impl:here
+  - impl:pending
   - kind:software
   - system:knowledge
   - topic:authoring_workflow
@@ -1774,12 +1774,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   path: knowledge/atoms/atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check.md
-  hash_c: a6e1b21623f7618e05892bcffaa7b893a6977bb4d5b63aad2c4aab2e6bb585d4
-  hash_d: daa298af234e1bad48ae3fb8bfc64b007561c0bc1eba0c2a982a3db72e99377d
+  hash_c: 16e81d1d83560a5ef0f7d743a21833663630ba26f4957711d26f0fa6fbcc94a9
+  hash_d: bee729561f88f5e9a77b63bf6610ee3f30ca864c388619c62fde3a06cd237fda
   semantic_tags:
   - domain:retrieval
   - entity:atom
-  - impl:here
+  - impl:pending
   - kind:software
   - system:knowledge
   - topic:knowledge_cli
@@ -3161,12 +3161,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   path: knowledge/atoms/atom-the-canonical-operations-are-check-next-assert-create-ingest-return.md
-  hash_c: ded38096cf40b87d51c58545fa676681e693ad877e1116eac24f5c738a287e2c
-  hash_d: b7152256992238686880512e85d8a7d34af89db3151c7a39d3de104f06fdc97d
+  hash_c: b10338520a84c4922e983c133f6478a5579f393541777ce4108d10d515a53adb
+  hash_d: 20c9c722d57a69d8b44ba0761e7d5bd2f4e854751ff05cfb3e5fcfb4d3efcc52
   semantic_tags:
   - domain:knowledge_representation
   - entity:cli_command
-  - impl:here
+  - impl:pending
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring
@@ -3590,6 +3590,190 @@ documents:
   - graph:retrieval
   - impl:here
   - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-sexpr-py-is-the-dependency-free-meaning-kernel
+  path: knowledge/atoms/atom-sexpr-py-is-the-dependency-free-meaning-kernel.md
+  hash_c: f36c8d81d4a0a6a0b7497e2879a2b8ba848f46d798ab0885c4d8281dc1362023
+  hash_d: d2190f650a6ce807059662432f955dfdc6bdbc59ba3e7c12eb845f1d3ab12d7e
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-results-py-defines-the-typed-outcome-values
+  path: knowledge/atoms/atom-results-py-defines-the-typed-outcome-values.md
+  hash_c: c9e193863f3a6f0bfa7dbba14fae0072368c0644f12f4edb9e363c66a85d57a1
+  hash_d: 302196bb8d5de09daf829eed3e2cc06d31bf69c0333cc4f985de90e6633f2428
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
+  path: knowledge/atoms/atom-anchors-py-loads-the-grammar-from-tracked-anchordocs.md
+  hash_c: 2406d3f5c8e3a2c41284c8be1ee316488a4fc916ce9f07f94dfcb0bdd19a09ec
+  hash_d: fdb8f505a8062402086113bc4197a906e066b3d09b305c678afe0694f3783fc3
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-resolution-py-implements-the-selector-cascade
+  path: knowledge/atoms/atom-resolution-py-implements-the-selector-cascade.md
+  hash_c: 71a9da84a09f5d42ce71d608c804879620c87c0dd85ac5af8cdadade0192712a
+  hash_d: 06f0bac7e8ceb1978cb16b5eab9d659c41ee49923f0ef6627016cff0c544072d
+  semantic_tags:
+  - domain:retrieval
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-session-py-persists-one-pending-clarification
+  path: knowledge/atoms/atom-session-py-persists-one-pending-clarification.md
+  hash_c: 95449dc1b8f10c027914a6c2310ef6cccbca7299355f4c68c9632fc47575b156
+  hash_d: 17d50acd22528eec92b6d3c980c38f0fac1ff4402ff6d88bb9a9cedede95d6db
+  semantic_tags:
+  - domain:retrieval
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
+  path: knowledge/atoms/atom-evaluator-py-grounds-symbols-and-dispatches-by-kind.md
+  hash_c: 07e3264d71679a16b87a037df3590b47d6a32db7f2d70fea5bf290d546e28b7a
+  hash_d: df14c764d5650decc3d643b1b7bdea1e4f6b083c00996ac6b2d6d1ba9216ca30
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-read-py-implements-check-next-return-with-refs
+  path: knowledge/atoms/atom-read-py-implements-check-next-return-with-refs.md
+  hash_c: 006f36b3146a152c6dc102efe00806fdf87b5d10d0773cfe613f736f94fa4f30
+  hash_d: 7aa6fb10d3722fe8a8c1cd5fe58c65d55d68e80bf6af6c649cdb5b7cab96f8cb
+  semantic_tags:
+  - domain:retrieval
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-sldb-bridge-py-wraps-the-real-library-layer
+  path: knowledge/atoms/atom-sldb-bridge-py-wraps-the-real-library-layer.md
+  hash_c: e0d506b4f1a6e4bfc7cc861361ea87b4a7b440e7874994681159cd03979f0725
+  hash_d: 5ab9209b60b39eaeca35d56eedc01f58f169c4055faee5fd92ce739fc9bd6471
+  semantic_tags:
+  - cross:knowledge_sldb
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
+  path: knowledge/atoms/atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads.md
+  hash_c: b150191d5da6ed27b59c9388bc9cbf68b14a578880215cdaf7255931875a71ee
+  hash_d: 4ba8536fdb1843b08cbbebf2654673fe98a2409dad68448f24184bd1472b957b
+  semantic_tags:
+  - cross:knowledge_kgdb
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-projector-py-materializes-the-world-via-the-verified-pipeline
+  path: knowledge/atoms/atom-projector-py-materializes-the-world-via-the-verified-pipeline.md
+  hash_c: ac130b6b83b5251be64a71f37755fafbf8e80315436fb1085e1cbd2e6d0dbd41
+  hash_d: 6609cb7efb08fbda354a68d7ccd972316ae9c333299e8f1f0be104d3370dcd7a
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-surface-py-desugars-positional-tokens-into-meaning
+  path: knowledge/atoms/atom-surface-py-desugars-positional-tokens-into-meaning.md
+  hash_c: 83660f652ef18275a699752ceffd015ce8494df4b103dc77170d94cfff8439a7
+  hash_d: 5d2db3f14f0a3d14d414da6bdfdcaf8cc2e78252e3d2f4fcdb0706cd8c88c300
+  semantic_tags:
+  - domain:retrieval
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-render-py-maps-result-values-to-output-and-exit-codes
+  path: knowledge/atoms/atom-render-py-maps-result-values-to-output-and-exit-codes.md
+  hash_c: f532a0579a4c51f29d23cd5d4b5192e84990eee99ac98712639d4d832f41295e
+  hash_d: 00c19f6c87111027a328625433630bd6226786693fc6ebea28d3dbe76e69ce92
+  semantic_tags:
+  - domain:retrieval
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-main-py-routes-surface-eval-anchors-and-infra
+  path: knowledge/atoms/atom-main-py-routes-surface-eval-anchors-and-infra.md
+  hash_c: 1707d4cf8db4e6c4e0eaab73ee55b8143b699ee5c736b88a7c6f911ce44f13d8
+  hash_d: 5b0a94d65ef8d2a6d3e3c72ab32aa762ffc8c6f62dae222dbf39702353338019
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-filter-by-joins-documents-by-foreign-key-field
+  path: knowledge/atoms/atom-filter-by-joins-documents-by-foreign-key-field.md
+  hash_c: 59091158195cef842610edbd3df5ad317c082d74b84b6b3b059ecdc16c2baea9
+  hash_d: 691f5bd8a6c8bb0de24f6c598f2ce2e5cd55c8d42e1feef93769a5e17d1470e2
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-where-values-must-be-quoted-or-numeric
+  path: knowledge/atoms/atom-where-values-must-be-quoted-or-numeric.md
+  hash_c: 03252a1a652c892c37a5a962c219824a214f4a12ff999d18e866747eebcd960e
+  hash_d: dee32ef65ad683189160d4f6af4ba55ec4ec3c413e5b1dbd3dbff4839fd3f42b
+  semantic_tags:
+  - cross:knowledge_sldb
+  - domain:retrieval
+  - impl:here
+  - kind:software
   - system:knowledge
   - topic:semantic_anchoring
   - type.knowledge.atom

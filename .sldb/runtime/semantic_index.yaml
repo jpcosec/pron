@@ -21,12 +21,15 @@ tags:
   - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   cross:knowledge_kgdb:
   - atom-graph-freshness-is-the-producers-responsibility
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-the-projector-gives-the-evaluator-a-world
   cross:knowledge_sldb:
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-bridges-are-the-only-doors-to-sldb-and-kgdb
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-where-values-must-be-quoted-or-numeric
   cross:provenance_concept_graph:
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-the-kb-needs-three-connected-graph-strata
@@ -133,6 +136,7 @@ tags:
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
@@ -149,8 +153,10 @@ tags:
   - atom-depends-on-should-express-knowledge-prerequisites-without-collapsing-them-into-hierarchy
   - atom-dimensional-collapse-and-hierarchical-tensor-n-x-n-x-c-k
   - atom-entity-indexed-by-relation-participation
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kernel-symbol-policy
@@ -173,6 +179,7 @@ tags:
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
@@ -258,12 +265,18 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
+  - atom-read-py-implements-check-next-return-with-refs
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
+  - atom-resolution-py-implements-the-selector-cascade
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
+  - atom-where-values-must-be-quoted-or-numeric
   domain:source_modeling:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
@@ -285,6 +298,7 @@ tags:
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-knar-api-nodo
   - atom-knar-astro-render
   - atom-knar-base-pequena
@@ -332,7 +346,11 @@ tags:
   - atom-knowledge-decomposes-into-ten-single-motive-components
   - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
+  - atom-main-py-routes-surface-eval-anchors-and-infra
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-results-py-defines-the-typed-outcome-values
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
@@ -359,6 +377,7 @@ tags:
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
@@ -535,39 +554,47 @@ tags:
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-bridges-are-the-only-doors-to-sldb-and-kgdb
   - atom-canonical-commands-are-acceptance-tests-from-day-one
   - atom-clarification-state-persists-across-cli-invocations
   - atom-commands-follow-the-smg-model-surface-meaning-graph
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-every-read-response-carries-refs-for-auditability
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
-  - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
-  - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-decomposes-into-ten-single-motive-components
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
-  - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
-  - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   - atom-knowledge-list-atoms-should-optimize-corpus-discovery-and-duplicate-avoidance-during-authoring
-  - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
-  - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-one-file-one-component-one-motive
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
+  - atom-read-py-implements-check-next-return-with-refs
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
-  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  - atom-where-values-must-be-quoted-or-numeric
   impl:pending:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
@@ -621,6 +648,7 @@ tags:
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
   - atom-governance-tags-should-help-detect-malformed-atoms-not-only-retrieve-them
   - atom-grafo-indice-g-index-graph-and-collision-detection
+  - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-help-is-a-projection-of-the-living-grammar
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
@@ -695,7 +723,12 @@ tags:
   - atom-knar-unit-tests
   - atom-knar-viewmodel-render
   - atom-knar-workflow-derivado
+  - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
+  - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
+  - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
   - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
+  - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
@@ -749,6 +782,7 @@ tags:
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
   - atom-the-kb-needs-three-connected-graph-strata
@@ -990,6 +1024,7 @@ tags:
   - anchor-title
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-anchor-references-follow-a-three-tier-scheme
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-boolean-algebra-and-bitwise-execution-kernel
@@ -1004,6 +1039,8 @@ tags:
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
   - atom-document-identity-resolves-from-explicit-frontmatter-first
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
@@ -1016,6 +1053,7 @@ tags:
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-kernel-symbol-policy
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-astro-render
@@ -1043,24 +1081,34 @@ tags:
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-meel-engine
   - atom-misnamed-query-fields-silently-match-everything
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-read-py-implements-check-next-return-with-refs
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-s-expression-runtime
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
+  - atom-session-py-persists-one-pending-clarification
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   - atom-structuredquery-filters-facets-scope-and-relations
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-the-kb-should-distinguish-source-evidence-from-atom-level-synthesis
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
@@ -1068,6 +1116,7 @@ tags:
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  - atom-where-values-must-be-quoted-or-numeric
   lang:clojure:
   - atom-clojure-linting-keeps-the-canonical-core-explicit
   - atom-clojure-patterns-define-canonical-core-shapes
@@ -1397,6 +1446,7 @@ tags:
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
   - atom-bridges-are-the-only-doors-to-sldb-and-kgdb
@@ -1407,13 +1457,16 @@ tags:
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-every-read-response-carries-refs-for-auditability
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-help-is-a-projection-of-the-living-grammar
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
@@ -1427,16 +1480,26 @@ tags:
   - atom-knowledge-set-metadata-should-support-post-creation-enrichment-without-reopening-the-atom-text
   - atom-knowledge-show-atom-should-surface-the-full-authoring-payload-in-one-inspection-view
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
   - atom-one-file-one-component-one-motive
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
+  - atom-read-py-implements-check-next-return-with-refs
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
@@ -1445,6 +1508,7 @@ tags:
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  - atom-where-values-must-be-quoted-or-numeric
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   system:marcado:
   - atom-anchor-references-follow-a-three-tier-scheme
@@ -1766,6 +1830,7 @@ tags:
   - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-bridges-are-the-only-doors-to-sldb-and-kgdb
   - atom-canonical-commands-are-acceptance-tests-from-day-one
   - atom-clarification-state-persists-across-cli-invocations
@@ -1773,21 +1838,34 @@ tags:
   - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
   - atom-declarative-agents-and-declarative-grammar-are-the-same-bet
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-every-read-response-carries-refs-for-auditability
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-help-is-a-projection-of-the-living-grammar
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-knar-canonical-api-and-knowledge-operations-are-the-same-surface
   - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-decomposes-into-ten-single-motive-components
   - atom-knowledge-implements-the-knar-knowledge-and-projection-concepts
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-one-file-one-component-one-motive
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
+  - atom-read-py-implements-check-next-return-with-refs
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-semantic-errors-answer-symbol-motive-and-next-action
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
@@ -1796,6 +1874,7 @@ tags:
   - atom-the-meaning-layer-is-directly-usable-via-eval
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  - atom-where-values-must-be-quoted-or-numeric
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   topic:source_acquisition:
   - atom-knar-scraper-responsabilidad
@@ -1869,6 +1948,7 @@ tags:
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -1921,11 +2001,13 @@ tags:
   - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
   - atom-each-source-type-should-expose-its-own-retrievable-projections
   - atom-entity-indexed-by-relation-participation
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-every-read-response-carries-refs-for-auditability
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
@@ -1949,6 +2031,7 @@ tags:
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-agentes-datos
@@ -2034,6 +2117,7 @@ tags:
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-logicalsystem-as-aggregate-root
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-meel-engine
@@ -2050,6 +2134,7 @@ tags:
   - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
@@ -2061,13 +2146,17 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-read-py-implements-check-next-return-with-refs
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-s-expression-runtime
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
@@ -2081,8 +2170,11 @@ tags:
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
@@ -2099,6 +2191,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
@@ -2138,6 +2231,7 @@ tags:
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
+  - atom-where-values-must-be-quoted-or-numeric
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   workspace.desk.atoms:
@@ -2151,6 +2245,7 @@ tags:
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
+  - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -2203,11 +2298,13 @@ tags:
   - atom-drawn-from-section-should-connect-a-support-object-to-an-explicit-source-section
   - atom-each-source-type-should-expose-its-own-retrievable-projections
   - atom-entity-indexed-by-relation-participation
+  - atom-evaluator-py-grounds-symbols-and-dispatches-by-kind
   - atom-every-bootstrap-atom-should-carry-project-source-and-grounding-tags
   - atom-every-read-response-carries-refs-for-auditability
   - atom-exact-quote-anchors-should-be-paired-with-structural-locators-when-possible
   - atom-expr-anchors-declare-derived-relations-neither-store-can-hold
   - atom-facets-as-boolean-matrix-projections
+  - atom-filter-by-joins-documents-by-foreign-key-field
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-git-sources-should-support-repository-blob-commit-and-file-level-provenance
@@ -2231,6 +2328,7 @@ tags:
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
+  - atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads
   - atom-kgdb-nodes-are-identity-edges-and-open-facets
   - atom-kgdb-should-materialize-queryable-graph-projections-rather-than-documentary-truth
   - atom-knar-agentes-datos
@@ -2316,6 +2414,7 @@ tags:
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-logicalsystem-as-aggregate-root
+  - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
   - atom-meel-engine
@@ -2332,6 +2431,7 @@ tags:
   - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
+  - atom-projector-py-materializes-the-world-via-the-verified-pipeline
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
@@ -2343,13 +2443,17 @@ tags:
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-read-py-implements-check-next-return-with-refs
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-render-py-maps-result-values-to-output-and-exit-codes
   - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-resolution-outcomes-are-typed-values-not-exceptions
+  - atom-resolution-py-implements-the-selector-cascade
+  - atom-results-py-defines-the-typed-outcome-values
   - atom-s-expression-runtime
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
@@ -2363,8 +2467,11 @@ tags:
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-session-expires-by-ttl-and-store-hash
+  - atom-session-py-persists-one-pending-clarification
   - atom-set-combinators-compose-graph-neighborhoods
+  - atom-sexpr-py-is-the-dependency-free-meaning-kernel
   - atom-sexpr-serialization-quotes-selectors-and-roundtrips
+  - atom-sldb-bridge-py-wraps-the-real-library-layer
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
@@ -2381,6 +2488,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-surface-grammar-is-positional-and-order-agnostic
+  - atom-surface-py-desugars-positional-tokens-into-meaning
   - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
@@ -2420,6 +2528,7 @@ tags:
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
+  - atom-where-values-must-be-quoted-or-numeric
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   workspace.knowledge.anchors:
@@ -3944,7 +4053,7 @@ documents:
     - domain:provenance
     - graph:lineage
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - layer:graph_provenance
     - system:knowledge
@@ -3977,7 +4086,7 @@ documents:
     tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:atom_creation
@@ -4017,7 +4126,7 @@ documents:
     tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -4030,7 +4139,7 @@ documents:
     tags:
     - domain:retrieval
     - graph:provenance
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -4057,7 +4166,7 @@ documents:
     - domain:governance
     - entity:atom
     - entity:metadata_registry
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:authoring_workflow
@@ -4083,7 +4192,7 @@ documents:
     tags:
     - domain:retrieval
     - entity:atom
-    - impl:here
+    - impl:pending
     - kind:software
     - system:knowledge
     - topic:knowledge_cli
@@ -5355,7 +5464,7 @@ documents:
     tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:here
+    - impl:pending
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -5747,6 +5856,175 @@ documents:
     - graph:retrieval
     - impl:here
     - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sexpr-py-is-the-dependency-free-meaning-kernel:
+    model: AtomDoc
+    path: knowledge/atoms/atom-sexpr-py-is-the-dependency-free-meaning-kernel.md
+    tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-results-py-defines-the-typed-outcome-values:
+    model: AtomDoc
+    path: knowledge/atoms/atom-results-py-defines-the-typed-outcome-values.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anchors-py-loads-the-grammar-from-tracked-anchordocs:
+    model: AtomDoc
+    path: knowledge/atoms/atom-anchors-py-loads-the-grammar-from-tracked-anchordocs.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-resolution-py-implements-the-selector-cascade:
+    model: AtomDoc
+    path: knowledge/atoms/atom-resolution-py-implements-the-selector-cascade.md
+    tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-session-py-persists-one-pending-clarification:
+    model: AtomDoc
+    path: knowledge/atoms/atom-session-py-persists-one-pending-clarification.md
+    tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-evaluator-py-grounds-symbols-and-dispatches-by-kind:
+    model: AtomDoc
+    path: knowledge/atoms/atom-evaluator-py-grounds-symbols-and-dispatches-by-kind.md
+    tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-read-py-implements-check-next-return-with-refs:
+    model: AtomDoc
+    path: knowledge/atoms/atom-read-py-implements-check-next-return-with-refs.md
+    tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-sldb-bridge-py-wraps-the-real-library-layer:
+    model: AtomDoc
+    path: knowledge/atoms/atom-sldb-bridge-py-wraps-the-real-library-layer.md
+    tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads:
+    model: AtomDoc
+    path: knowledge/atoms/atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads.md
+    tags:
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-projector-py-materializes-the-world-via-the-verified-pipeline:
+    model: AtomDoc
+    path: knowledge/atoms/atom-projector-py-materializes-the-world-via-the-verified-pipeline.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-surface-py-desugars-positional-tokens-into-meaning:
+    model: AtomDoc
+    path: knowledge/atoms/atom-surface-py-desugars-positional-tokens-into-meaning.md
+    tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-render-py-maps-result-values-to-output-and-exit-codes:
+    model: AtomDoc
+    path: knowledge/atoms/atom-render-py-maps-result-values-to-output-and-exit-codes.md
+    tags:
+    - domain:retrieval
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-main-py-routes-surface-eval-anchors-and-infra:
+    model: AtomDoc
+    path: knowledge/atoms/atom-main-py-routes-surface-eval-anchors-and-infra.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-filter-by-joins-documents-by-foreign-key-field:
+    model: AtomDoc
+    path: knowledge/atoms/atom-filter-by-joins-documents-by-foreign-key-field.md
+    tags:
+    - domain:knowledge_representation
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-where-values-must-be-quoted-or-numeric:
+    model: AtomDoc
+    path: knowledge/atoms/atom-where-values-must-be-quoted-or-numeric.md
+    tags:
+    - cross:knowledge_sldb
+    - domain:retrieval
+    - impl:here
+    - kind:software
     - system:knowledge
     - topic:semantic_anchoring
     - type.knowledge.atom
