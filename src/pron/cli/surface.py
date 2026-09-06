@@ -32,20 +32,28 @@ def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticErro
 
     nouns = [(t, k) for t, k in kinds if k == "model"]
     selectors = [t for t, k in kinds if k == "selector"]
-    relations = [(t, k) for t, k in kinds if k == "relation"]
+    relations = [t for t, k in kinds if k == "relation"]
+    exprs = [t for t, k in kinds if k == "expr"]
 
-    if not nouns:
+    if not nouns and not exprs:
         return SemanticError(symbol=verb, message=f"'{verb}' necesita un sustantivo (modelo) sobre el cual operar.")
 
-    noun = nouns[0][0]
-    ref: SExpr
-    if selectors:
-        ref = [Symbol("doc"), Symbol(noun), selectors[0]]
+    if exprs and selectors:
+        # derived relation applied to a selector: (expr-sym "selector")
+        ref: SExpr = [Symbol(exprs[0]), selectors[0]]
+    elif nouns:
+        noun = nouns[0][0]
+        if selectors:
+            ref = [Symbol("doc"), Symbol(noun), selectors[0]]
+        else:
+            ref = [Symbol("docs"), Symbol(noun)]
+        if exprs:
+            ref = [Symbol(exprs[0]), selectors[0] if selectors else ref]
     else:
-        ref = [Symbol("docs"), Symbol(noun)]
+        ref = [Symbol(exprs[0])]
 
     if relations:
-        ref = [Symbol("rel"), Symbol(relations[0][0]), ref]
+        ref = [Symbol("rel"), Symbol(relations[0]), ref]
 
     expr: SExpr = [Symbol(verb), ref]
     if where:

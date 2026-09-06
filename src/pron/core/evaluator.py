@@ -84,6 +84,8 @@ class Evaluator:
             return self._ground_rel(arg)
         if head in ("related", "common", "also"):
             return self._ground_setop(head, arg)
+        if head == "filter-by":
+            return self._ground_filter_by(arg)
         expanded = self._expand_macro(head, arg)
         if expanded is not None:
             return self._ground(expanded)
@@ -125,6 +127,26 @@ class Evaluator:
         else:
             ids = set.union(*[set(h) for h in hops]) if hops else set()
         return {"kind": "nodes", "node_ids": sorted(ids)}
+
+    def _ground_filter_by(self, arg: list):
+        """(filter-by <model-sym> <field> <expr>) -> docs whose field equals the
+        resolved doc's name. Joins by foreign-key field, a relation stored in
+        neither kgdb (no edge) nor sldb (no query for it)."""
+        if len(arg) != 4:
+            return SemanticError(symbol="filter-by", message="filter-by requiere (filter-by modelo campo expr).")
+        anchor = self._model_anchor(arg[1])
+        if isinstance(anchor, SemanticError):
+            return anchor
+        field = arg[2].name if isinstance(arg[2], Symbol) else str(arg[2])
+        inner = self._ground(arg[3])
+        if isinstance(inner, (Ambiguous, Missing, SemanticError)):
+            return inner
+        if not isinstance(inner, Resolved):
+            return SemanticError(symbol="filter-by", message="filter-by requiere un doc resuelto como valor.")
+        model = anchor.ref.removeprefix("model:")
+        docs = [d for d in self.sldb.documents_of_model(model)
+                if str(d.payload.get(field, "")) == inner.name]
+        return {"kind": "docs", "model": model, "docs": docs}
 
     def _hop_targets(self, grounded) -> list[str] | SemanticError:
         """All graph neighbors (out + in) of a grounded doc, any relation."""

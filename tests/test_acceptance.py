@@ -131,3 +131,37 @@ def test_setop_common_is_intersection():
     code_a, a = run("eval", '(check (kin "atom-searchvector"))')
     code_o, o = run("eval", '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))')
     assert len(o["refs"]) <= len(a["refs"])  # intersection can't exceed one side
+
+
+def test_foreign_kb_full_flow(tmp_path=None):
+    """The canonical command over a KB knowledge never saw (built in /tmp/team-kb).
+
+    Proves domain adaptability: models, data, and grammar (anchors incl.
+    derived relations) all declared by the app, zero knowledge code changes.
+    """
+    import os
+    kb = Path("/tmp/team-kb")
+    if not kb.exists():
+        return  # foreign KB fixture not present; covered manually
+    env = {**os.environ, **ENV}
+
+    def krun(*args):
+        r = subprocess.run([sys.executable, "-m", "knowledge", *args],
+                           capture_output=True, text=True, cwd=kb, env=env)
+        try:
+            return r.returncode, json.loads(r.stdout)
+        except json.JSONDecodeError:
+            return r.returncode, r.stdout
+
+    (kb / ".knowledge" / "session.json").unlink(missing_ok=True)
+    code, out = krun("user", "juanito", "check", "preferences")
+    assert code == 2 and out["status"] == "ambiguous"
+    assert "user-juanito-perez" in out["candidates"]
+
+    code, out = krun("user-juanito-perez")
+    assert code == 0
+    titles = [p["title"] for p in out["payload"]]
+    assert any("Clojure" in t for t in titles)
+
+    code, out = krun("next", "task", "--summary")
+    assert code == 0 and out["payload"]["status"] == "active"
