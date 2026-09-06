@@ -9799,3 +9799,1101 @@ documents:
     level: 2
     line_start: 14
     line_end: 15
+- doc_name: atom-async-io-integrity-keeps-reasoning-nodes-pure
+  sections:
+  - path: async-i-o-integrity-keeps-reasoning-nodes-pure
+    title: Async I/O integrity keeps reasoning nodes pure
+    breadcrumbs:
+    - Async I/O integrity keeps reasoning nodes pure
+    about:
+    - Async I/O integrity keeps reasoning nodes pure
+    - async i o integrity keeps reasoning nodes pure
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:runtime_integrity
+    - system:hum_scrapper
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:runtime_integrity
+    - system:hum_scrapper
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: async-i-o-integrity-keeps-reasoning-nodes-pure
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: async-i-o-integrity-keeps-reasoning-nodes-pure/answer
+    title: Answer
+    breadcrumbs:
+    - Async I/O integrity keeps reasoning nodes pure
+    - Answer
+    about:
+    - Async I/O integrity keeps reasoning nodes pure
+    - async i o integrity keeps reasoning nodes pure
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:runtime_integrity
+    - system:hum_scrapper
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:runtime_integrity
+    - system:hum_scrapper
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-clean-code-keeps-implementation-self-explanatory
+  sections:
+  - path: clean-code-keeps-implementation-self-explanatory
+    title: Clean code keeps implementation self-explanatory
+    breadcrumbs:
+    - Clean code keeps implementation self-explanatory
+    about:
+    - Clean code keeps implementation self-explanatory
+    - clean code keeps implementation self explanatory
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:humble
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:humble
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: clean-code-keeps-implementation-self-explanatory
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: clean-code-keeps-implementation-self-explanatory/answer
+    title: Answer
+    breadcrumbs:
+    - Clean code keeps implementation self-explanatory
+    - Answer
+    about:
+    - Clean code keeps implementation self-explanatory
+    - clean code keeps implementation self explanatory
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:humble
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:humble
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-clean-code-reduces-knowledge-drift
+  sections:
+  - path: clean-code-reduces-knowledge-drift
+    title: Clean code reduces knowledge drift
+    breadcrumbs:
+    - Clean code reduces knowledge drift
+    about:
+    - Clean code reduces knowledge drift
+    - clean code reduces knowledge drift
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: clean-code-reduces-knowledge-drift
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: clean-code-reduces-knowledge-drift/answer
+    title: Answer
+    breadcrumbs:
+    - Clean code reduces knowledge drift
+    - Answer
+    about:
+    - Clean code reduces knowledge drift
+    - clean code reduces knowledge drift
+    - Answer
+    - answer
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-clojure-linting-keeps-the-canonical-core-explicit
+  sections:
+  - path: clojure-linting-keeps-the-canonical-core-explicit
+    title: Clojure linting keeps the canonical core explicit
+    breadcrumbs:
+    - Clojure linting keeps the canonical core explicit
+    about:
+    - Clojure linting keeps the canonical core explicit
+    - clojure linting keeps the canonical core explicit
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: clojure-linting-keeps-the-canonical-core-explicit
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: clojure-linting-keeps-the-canonical-core-explicit/answer
+    title: Answer
+    breadcrumbs:
+    - Clojure linting keeps the canonical core explicit
+    - Answer
+    about:
+    - Clojure linting keeps the canonical core explicit
+    - clojure linting keeps the canonical core explicit
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-clojure-patterns-define-canonical-core-shapes
+  sections:
+  - path: clojure-patterns-define-canonical-core-shapes
+    title: Clojure patterns define canonical core shapes
+    breadcrumbs:
+    - Clojure patterns define canonical core shapes
+    about:
+    - Clojure patterns define canonical core shapes
+    - clojure patterns define canonical core shapes
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: clojure-patterns-define-canonical-core-shapes
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: clojure-patterns-define-canonical-core-shapes/answer
+    title: Answer
+    breadcrumbs:
+    - Clojure patterns define canonical core shapes
+    - Answer
+    about:
+    - Clojure patterns define canonical core shapes
+    - clojure patterns define canonical core shapes
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-code-linting-is-architectural-cleanliness-not-only-formatting
+  sections:
+  - path: code-linting-is-architectural-cleanliness-not-only-formatting
+    title: Code linting is architectural cleanliness, not only formatting
+    breadcrumbs:
+    - Code linting is architectural cleanliness, not only formatting
+    about:
+    - Code linting is architectural cleanliness, not only formatting
+    - code linting is architectural cleanliness not only formatting
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: code-linting-is-architectural-cleanliness-not-only-formatting
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: code-linting-is-architectural-cleanliness-not-only-formatting/answer
+    title: Answer
+    breadcrumbs:
+    - Code linting is architectural cleanliness, not only formatting
+    - Answer
+    about:
+    - Code linting is architectural cleanliness, not only formatting
+    - code linting is architectural cleanliness not only formatting
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-code-styling-consistency-reduces-review-noise
+  sections:
+  - path: code-styling-consistency-reduces-review-noise
+    title: Code styling consistency reduces review noise
+    breadcrumbs:
+    - Code styling consistency reduces review noise
+    about:
+    - Code styling consistency reduces review noise
+    - code styling consistency reduces review noise
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:styling
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:styling
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: code-styling-consistency-reduces-review-noise
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: code-styling-consistency-reduces-review-noise/answer
+    title: Answer
+    breadcrumbs:
+    - Code styling consistency reduces review noise
+    - Answer
+    about:
+    - Code styling consistency reduces review noise
+    - code styling consistency reduces review noise
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:styling
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:styling
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-how-much-code-validation-can-be-mechanical
+  sections:
+  - path: how-much-validation-can-be-mechanical
+    title: How much validation can be mechanical
+    breadcrumbs:
+    - How much validation can be mechanical
+    about:
+    - How much validation can be mechanical
+    - how much validation can be mechanical
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: how-much-validation-can-be-mechanical
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: how-much-validation-can-be-mechanical/answer
+    title: Answer
+    breadcrumbs:
+    - How much validation can be mechanical
+    - Answer
+    about:
+    - How much validation can be mechanical
+    - how much validation can be mechanical
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-pattern-definitions-prevent-accidental-complexity
+  sections:
+  - path: pattern-definitions-prevent-accidental-complexity
+    title: Pattern definitions prevent accidental complexity
+    breadcrumbs:
+    - Pattern definitions prevent accidental complexity
+    about:
+    - Pattern definitions prevent accidental complexity
+    - pattern definitions prevent accidental complexity
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: pattern-definitions-prevent-accidental-complexity
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pattern-definitions-prevent-accidental-complexity/answer
+    title: Answer
+    breadcrumbs:
+    - Pattern definitions prevent accidental complexity
+    - Answer
+    about:
+    - Pattern definitions prevent accidental complexity
+    - pattern definitions prevent accidental complexity
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-patterns-are-a-knowledge-dimension-not-only-snippets
+  sections:
+  - path: patterns-are-a-knowledge-dimension-not-only-snippets
+    title: Patterns are a knowledge dimension, not only snippets
+    breadcrumbs:
+    - Patterns are a knowledge dimension, not only snippets
+    about:
+    - Patterns are a knowledge dimension, not only snippets
+    - patterns are a knowledge dimension not only snippets
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: patterns-are-a-knowledge-dimension-not-only-snippets
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: patterns-are-a-knowledge-dimension-not-only-snippets/answer
+    title: Answer
+    breadcrumbs:
+    - Patterns are a knowledge dimension, not only snippets
+    - Answer
+    about:
+    - Patterns are a knowledge dimension, not only snippets
+    - patterns are a knowledge dimension not only snippets
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  sections:
+  - path: python-linting-keeps-cli-and-orchestration-surfaces-clean
+    title: Python linting keeps CLI and orchestration surfaces clean
+    breadcrumbs:
+    - Python linting keeps CLI and orchestration surfaces clean
+    about:
+    - Python linting keeps CLI and orchestration surfaces clean
+    - python linting keeps cli and orchestration surfaces clean
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: python-linting-keeps-cli-and-orchestration-surfaces-clean
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: python-linting-keeps-cli-and-orchestration-surfaces-clean/answer
+    title: Answer
+    breadcrumbs:
+    - Python linting keeps CLI and orchestration surfaces clean
+    - Answer
+    about:
+    - Python linting keeps CLI and orchestration surfaces clean
+    - python linting keeps cli and orchestration surfaces clean
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-python-patterns-define-cli-and-workflow-shapes
+  sections:
+  - path: python-patterns-define-cli-and-workflow-shapes
+    title: Python patterns define CLI and workflow shapes
+    breadcrumbs:
+    - Python patterns define CLI and workflow shapes
+    about:
+    - Python patterns define CLI and workflow shapes
+    - python patterns define cli and workflow shapes
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: python-patterns-define-cli-and-workflow-shapes
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: python-patterns-define-cli-and-workflow-shapes/answer
+    title: Answer
+    breadcrumbs:
+    - Python patterns define CLI and workflow shapes
+    - Answer
+    about:
+    - Python patterns define CLI and workflow shapes
+    - python patterns define cli and workflow shapes
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-python-testing-validates-observable-cli-behavior
+  sections:
+  - path: python-testing-validates-observable-cli-behavior
+    title: Python testing validates observable CLI behavior
+    breadcrumbs:
+    - Python testing validates observable CLI behavior
+    about:
+    - Python testing validates observable CLI behavior
+    - python testing validates observable cli behavior
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: python-testing-validates-observable-cli-behavior
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: python-testing-validates-observable-cli-behavior/answer
+    title: Answer
+    breadcrumbs:
+    - Python testing validates observable CLI behavior
+    - Answer
+    about:
+    - Python testing validates observable CLI behavior
+    - python testing validates observable cli behavior
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-repo-artifacts-need-atom-traceability
+  sections:
+  - path: repo-artifacts-need-atom-traceability
+    title: Repo artifacts need atom traceability
+    breadcrumbs:
+    - Repo artifacts need atom traceability
+    about:
+    - Repo artifacts need atom traceability
+    - repo artifacts need atom traceability
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: repo-artifacts-need-atom-traceability
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: repo-artifacts-need-atom-traceability/answer
+    title: Answer
+    breadcrumbs:
+    - Repo artifacts need atom traceability
+    - Answer
+    about:
+    - Repo artifacts need atom traceability
+    - repo artifacts need atom traceability
+    - Answer
+    - answer
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-semantic-linting-is-distinct-from-mechanical-validation
+  sections:
+  - path: semantic-linting-is-distinct-from-mechanical-validation
+    title: Semantic linting is distinct from mechanical validation
+    breadcrumbs:
+    - Semantic linting is distinct from mechanical validation
+    about:
+    - Semantic linting is distinct from mechanical validation
+    - semantic linting is distinct from mechanical validation
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: semantic-linting-is-distinct-from-mechanical-validation
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: semantic-linting-is-distinct-from-mechanical-validation/answer
+    title: Answer
+    breadcrumbs:
+    - Semantic linting is distinct from mechanical validation
+    - Answer
+    about:
+    - Semantic linting is distinct from mechanical validation
+    - semantic linting is distinct from mechanical validation
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-testing-covers-both-unit-correctness-and-ux-behavior
+  sections:
+  - path: testing-covers-both-unit-correctness-and-ux-behavior
+    title: Testing covers both unit correctness and UX behavior
+    breadcrumbs:
+    - Testing covers both unit correctness and UX behavior
+    about:
+    - Testing covers both unit correctness and UX behavior
+    - testing covers both unit correctness and ux behavior
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: testing-covers-both-unit-correctness-and-ux-behavior
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: testing-covers-both-unit-correctness-and-ux-behavior/answer
+    title: Answer
+    breadcrumbs:
+    - Testing covers both unit correctness and UX behavior
+    - Answer
+    about:
+    - Testing covers both unit correctness and UX behavior
+    - testing covers both unit correctness and ux behavior
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-validator-result-should-be-machine-and-human-usable
+  sections:
+  - path: validator-result-should-be-machine-and-human-usable
+    title: Validator result should be machine- and human-usable
+    breadcrumbs:
+    - Validator result should be machine- and human-usable
+    about:
+    - Validator result should be machine- and human-usable
+    - validator result should be machine and human usable
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: validator-result-should-be-machine-and-human-usable
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: validator-result-should-be-machine-and-human-usable/answer
+    title: Answer
+    breadcrumbs:
+    - Validator result should be machine- and human-usable
+    - Answer
+    about:
+    - Validator result should be machine- and human-usable
+    - validator result should be machine and human usable
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-when-semantic-linting-is-required-beyond-mechanical
+  sections:
+  - path: when-semantic-linting-is-required-beyond-mechanical-validation
+    title: When semantic linting is required beyond mechanical validation
+    breadcrumbs:
+    - When semantic linting is required beyond mechanical validation
+    about:
+    - When semantic linting is required beyond mechanical validation
+    - when semantic linting is required beyond mechanical validation
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: when-semantic-linting-is-required-beyond-mechanical-validation
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: when-semantic-linting-is-required-beyond-mechanical-validation/answer
+    title: Answer
+    breadcrumbs:
+    - When semantic linting is required beyond mechanical validation
+    - Answer
+    about:
+    - When semantic linting is required beyond mechanical validation
+    - when semantic linting is required beyond mechanical validation
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18

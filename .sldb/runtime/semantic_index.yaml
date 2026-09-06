@@ -1,4 +1,7 @@
 tags:
+  cross:code_knowledge:
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-repo-artifacts-need-atom-traceability
   cross:deskops_kb:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
@@ -18,6 +21,25 @@ tags:
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  domain:code_craft:
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
+  - atom-code-styling-consistency-reduces-review-noise
+  - atom-how-much-code-validation-can-be-mechanical
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
+  - atom-validator-result-should-be-machine-and-human-usable
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   domain:governance:
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -338,6 +360,7 @@ tags:
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -347,7 +370,13 @@ tags:
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-code-styling-consistency-reduces-review-noise
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -376,6 +405,7 @@ tags:
   - atom-grafo-indice-g-index-graph-and-collision-detection
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-how-much-code-validation-can-be-mechanical
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kernel-symbol-policy
@@ -389,18 +419,24 @@ tags:
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
   - atom-pure-matrices-vs-block-matrices
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repo-artifacts-need-atom-traceability
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-s-expression-runtime
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
@@ -408,6 +444,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-source-adapters-should-emit-enough-metadata-to-reconstruct-retrieval-context
   - atom-source-adapters-should-expose-enough-structure-to-support-future-graph-derivation
   - atom-source-identity-validation-should-precede-anchor-validation
@@ -420,6 +457,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -439,8 +477,10 @@ tags:
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
   - atom-universal-grammar-formalization
+  - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
   kind:concept:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
@@ -448,6 +488,7 @@ tags:
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -456,7 +497,13 @@ tags:
   - atom-bootstrap-kb-should-track-grounding-status-explicitly
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-code-styling-consistency-reduces-review-noise
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-context-and-hierarchical-routing
@@ -480,6 +527,7 @@ tags:
   - atom-grafo-indice-g-index-graph-and-collision-detection
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
+  - atom-how-much-code-validation-can-be-mechanical
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
@@ -491,23 +539,30 @@ tags:
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
   - atom-pure-matrices-vs-block-matrices
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repo-artifacts-need-atom-traceability
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-sampled-from-should-link-a-sample-to-the-exact-source-artifact-it-comes-from
   - atom-samples-should-be-annotable-without-losing-their-deterministic-binding
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-source-identity-validation-should-precede-anchor-validation
   - atom-source-kind-should-remain-a-first-class-governance-facet-in-the-atom-corpus
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
@@ -518,6 +573,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -537,7 +593,9 @@ tags:
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
   - atom-universal-grammar-formalization
+  - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
   kind:software:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
@@ -601,6 +659,27 @@ tags:
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  lang:clojure:
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  lang:generic:
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
+  - atom-code-styling-consistency-reduces-review-noise
+  - atom-how-much-code-validation-can-be-mechanical
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
+  - atom-repo-artifacts-need-atom-traceability
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
+  - atom-validator-result-should-be-machine-and-human-usable
+  - atom-when-semantic-linting-is-required-beyond-mechanical
+  lang:python:
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   layer:atom:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
@@ -664,14 +743,42 @@ tags:
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
   - atom-new-work-should-create-sample-ready-atoms-even-before-full-backfill
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  practice:clean_code:
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  practice:linting_mechanical:
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-validator-result-should-be-machine-and-human-usable
+  practice:linting_semantic:
+  - atom-how-much-code-validation-can-be-mechanical
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
+  - atom-when-semantic-linting-is-required-beyond-mechanical
+  practice:patterns:
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  practice:runtime_integrity:
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
+  practice:styling:
+  - atom-code-styling-consistency-reduces-review-noise
+  practice:testing:
+  - atom-python-testing-validates-observable-cli-behavior
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
+  practice:traceability:
+  - atom-repo-artifacts-need-atom-traceability
   system:deskops:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
+  - atom-clean-code-reduces-knowledge-drift
   - atom-deskops-is-a-bootstrap-surface-not-the-final-kb-container
   - atom-deskops-should-remain-the-operational-authoring-surface-for-the-bootstrap-corpus
   - atom-folder-taxonomy-can-seed-the-concept-graph-without-being-the-final-ontology
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   - atom-question-type-should-remain-an-explicit-governance-dimension
+  - atom-repo-artifacts-need-atom-traceability
   system:graph_ui:
   - atom-graph-ui-should-visualize-lineage-concept-and-structure-perspectives-separately
   system:hum:
@@ -680,7 +787,10 @@ tags:
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
   system:hum_scrapper:
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
+  system:humble:
+  - atom-clean-code-keeps-implementation-self-explanatory
   system:kb:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
@@ -801,18 +911,30 @@ tags:
   - atom-document-identity-resolves-from-explicit-frontmatter-first
   - atom-graph-edge-endpoints-validate-locally-defer-remotely
   - atom-graph-endpoint-addressability-requires-semantic-disambiguation
+  - atom-how-much-code-validation-can-be-mechanical
   - atom-logical-ranges-as-the-addressable-units-for-anchoring
   - atom-marcado-should-own-the-annotation-layer-over-samples
   - atom-offsets-and-spans-are-derived-evidence-not-durable-identity
   - atom-samples-should-be-the-evidence-objects-between-sources-and-atoms
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
+  - atom-validator-result-should-be-machine-and-human-usable
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   system:ontomap:
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   system:sldb:
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
   system:sldb_ui:
   - atom-sldb-ui-can-become-a-document-and-sample-inspection-surface-for-the-kb
   system:spec2viz:
@@ -1042,6 +1164,7 @@ tags:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -1054,7 +1177,13 @@ tags:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   - atom-canonical-json-as-stable-interchange-format
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-code-styling-consistency-reduces-review-noise
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -1095,6 +1224,7 @@ tags:
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-how-much-code-validation-can-be-mechanical
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
@@ -1124,12 +1254,17 @@ tags:
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
   - atom-pure-matrices-vs-block-matrices
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
@@ -1137,6 +1272,7 @@ tags:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-s-expression-runtime
@@ -1146,6 +1282,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
@@ -1163,6 +1300,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -1187,8 +1325,10 @@ tags:
   - atom-universal-grammar-formalization
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
+  - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
   workspace.desk.atoms:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
@@ -1200,6 +1340,7 @@ tags:
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
+  - atom-async-io-integrity-keeps-reasoning-nodes-pure
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
@@ -1212,7 +1353,13 @@ tags:
   - atom-bootstrap-provenance-should-begin-with-source-stubs-before-full-samples
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   - atom-canonical-json-as-stable-interchange-format
+  - atom-clean-code-keeps-implementation-self-explanatory
+  - atom-clean-code-reduces-knowledge-drift
+  - atom-clojure-linting-keeps-the-canonical-core-explicit
+  - atom-clojure-patterns-define-canonical-core-shapes
+  - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
+  - atom-code-styling-consistency-reduces-review-noise
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -1253,6 +1400,7 @@ tags:
   - atom-grounding-status-should-distinguish-textual-human-and-validated-support
   - atom-grouped-under-should-support-looser-conceptual-clustering-than-strict-hierarchy
   - atom-historical-atoms-should-be-backfilled-by-value-and-use-not-all-at-once
+  - atom-how-much-code-validation-can-be-mechanical
   - atom-hum-scrapper-should-be-treated-as-a-source-acquisition-layer-not-as-knowledge-truth
   - atom-information-energy-e-r
   - atom-json-and-yaml-sources-should-expose-object-path-projections-for-anchoring
@@ -1282,12 +1430,17 @@ tags:
   - atom-omnirepresentacion-block-matrix-for-llm-integration
   - atom-one-atom-may-be-supported-by-multiple-samples-from-multiple-sources
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
+  - atom-pattern-definitions-prevent-accidental-complexity
+  - atom-patterns-are-a-knowledge-dimension-not-only-snippets
   - atom-pdf-sources-need-text-structure-and-layout-projections-at-the-same-time
   - atom-project-tags-should-distinguish-repository-context-from-system-identity
   - atom-proposition-first-architecture
   - atom-proposition-lifecycle-semantic-status-classification
   - atom-provenance-retrieval-and-concept-retrieval-should-remain-interoperable-but-distinct
   - atom-pure-matrices-vs-block-matrices
+  - atom-python-linting-keeps-cli-and-orchestration-surfaces-clean
+  - atom-python-patterns-define-cli-and-workflow-shapes
+  - atom-python-testing-validates-observable-cli-behavior
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
   - atom-queries-should-be-able-to-isolate-atoms-by-grounding-maturity
   - atom-queries-should-be-able-to-isolate-atoms-that-still-need-samples
@@ -1295,6 +1448,7 @@ tags:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-algebra
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
+  - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
   - atom-s-expression-runtime
@@ -1304,6 +1458,7 @@ tags:
   - atom-searchvector
   - atom-secondary-about-should-capture-non-primary-conceptual-relevance-without-replacing-about-concept
   - atom-section-paths-symbol-paths-and-ast-paths-are-complementary-anchor-families
+  - atom-semantic-linting-is-distinct-from-mechanical-validation
   - atom-semantic-milestone-markers-define-addressable-ranges-over-prose
   - atom-semantic-namespaces-define-independent-interpretation-rules
   - atom-sldb-should-own-tracked-document-structure-for-future-kb-documents
@@ -1321,6 +1476,7 @@ tags:
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
   - atom-tags-should-be-facets-not-the-primary-concept-structure
+  - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
@@ -1345,8 +1501,10 @@ tags:
   - atom-universal-grammar-formalization
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
+  - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
 documents:
   atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
@@ -3232,5 +3390,221 @@ documents:
     - domain:knowledge_representation
     - impl:pending
     - kind:concept
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-async-io-integrity-keeps-reasoning-nodes-pure:
+    model: AtomDoc
+    path: knowledge/atoms/atom-async-io-integrity-keeps-reasoning-nodes-pure.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:runtime_integrity
+    - system:hum_scrapper
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clean-code-keeps-implementation-self-explanatory:
+    model: AtomDoc
+    path: knowledge/atoms/atom-clean-code-keeps-implementation-self-explanatory.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:humble
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clean-code-reduces-knowledge-drift:
+    model: AtomDoc
+    path: knowledge/atoms/atom-clean-code-reduces-knowledge-drift.md
+    tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clojure-linting-keeps-the-canonical-core-explicit:
+    model: AtomDoc
+    path: knowledge/atoms/atom-clojure-linting-keeps-the-canonical-core-explicit.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-clojure-patterns-define-canonical-core-shapes:
+    model: AtomDoc
+    path: knowledge/atoms/atom-clojure-patterns-define-canonical-core-shapes.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:clojure
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-code-linting-is-architectural-cleanliness-not-only-formatting:
+    model: AtomDoc
+    path: knowledge/atoms/atom-code-linting-is-architectural-cleanliness-not-only-formatting.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-code-styling-consistency-reduces-review-noise:
+    model: AtomDoc
+    path: knowledge/atoms/atom-code-styling-consistency-reduces-review-noise.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:styling
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-how-much-code-validation-can-be-mechanical:
+    model: AtomDoc
+    path: knowledge/atoms/atom-how-much-code-validation-can-be-mechanical.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-pattern-definitions-prevent-accidental-complexity:
+    model: AtomDoc
+    path: knowledge/atoms/atom-pattern-definitions-prevent-accidental-complexity.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-patterns-are-a-knowledge-dimension-not-only-snippets:
+    model: AtomDoc
+    path: knowledge/atoms/atom-patterns-are-a-knowledge-dimension-not-only-snippets.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-python-linting-keeps-cli-and-orchestration-surfaces-clean:
+    model: AtomDoc
+    path: knowledge/atoms/atom-python-linting-keeps-cli-and-orchestration-surfaces-clean.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:linting_mechanical
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-python-patterns-define-cli-and-workflow-shapes:
+    model: AtomDoc
+    path: knowledge/atoms/atom-python-patterns-define-cli-and-workflow-shapes.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-python-testing-validates-observable-cli-behavior:
+    model: AtomDoc
+    path: knowledge/atoms/atom-python-testing-validates-observable-cli-behavior.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-repo-artifacts-need-atom-traceability:
+    model: AtomDoc
+    path: knowledge/atoms/atom-repo-artifacts-need-atom-traceability.md
+    tags:
+    - cross:code_knowledge
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:deskops
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-semantic-linting-is-distinct-from-mechanical-validation:
+    model: AtomDoc
+    path: knowledge/atoms/atom-semantic-linting-is-distinct-from-mechanical-validation.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-testing-covers-both-unit-correctness-and-ux-behavior:
+    model: AtomDoc
+    path: knowledge/atoms/atom-testing-covers-both-unit-correctness-and-ux-behavior.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:testing
+    - system:sldb
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-validator-result-should-be-machine-and-human-usable:
+    model: AtomDoc
+    path: knowledge/atoms/atom-validator-result-should-be-machine-and-human-usable.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_mechanical
+    - system:marcado
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-when-semantic-linting-is-required-beyond-mechanical:
+    model: AtomDoc
+    path: knowledge/atoms/atom-when-semantic-linting-is-required-beyond-mechanical.md
+    tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:linting_semantic
+    - system:marcado
     - type.knowledge.atom
     - workspace.desk.atoms

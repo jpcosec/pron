@@ -9,6 +9,7 @@ rules:
   - "domain: exactly one per atom (mandatory)."
   - "kind: exactly one per atom (mandatory)."
   - "impl: exactly one per atom (mandatory)."
+  - "practice: and lang: only on domain:code_craft atoms; at least one practice: each."
   - "system:kb is deprecated; use a real system or omit."
 
 namespaces:
@@ -105,6 +106,29 @@ namespaces:
       - cross:deskops_kb
       - cross:sldb_kgdb
       - cross:provenance_concept_graph
+  practice:
+    meaning: Engineering practice facet. Only valid on domain:code_craft atoms.
+    use_when: The code_craft atom is about a specific discipline of writing code.
+    do_not_use_when: The atom is not domain:code_craft, or the practice is only
+      incidental context.
+    examples:
+      - practice:clean_code
+      - practice:styling
+      - practice:linting_mechanical
+      - practice:linting_semantic
+      - practice:patterns
+      - practice:testing
+      - practice:traceability
+      - practice:runtime_integrity
+  lang:
+    meaning: Language scope of a code_craft claim.
+    use_when: The code_craft atom is specialized for a language substrate; use
+      lang:generic when the claim is language-agnostic.
+    do_not_use_when: The atom is not domain:code_craft.
+    examples:
+      - lang:generic
+      - lang:python
+      - lang:clojure
   topic:
     meaning: Lightweight conceptual topic for discovery and grouping.
     use_when: The atom needs a human-friendly subject handle not covered by a stronger axis.
