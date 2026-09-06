@@ -13,9 +13,14 @@ tags:
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   cross:graphlang_kb:
   - atom-graphlang-is-relevant-as-a-query-and-representation-ambition-not-as-final-foundation
+  cross:knowledge_sldb:
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   cross:provenance_concept_graph:
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-the-kb-needs-three-connected-graph-strata
+  cross:smg_command_layer:
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   cross:tutor_apoe_hum_ecosystem:
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
@@ -88,12 +93,15 @@ tags:
   - atom-the-kb-needs-three-connected-graph-strata
   domain:knowledge_representation:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-asg-projects-multiple-graphs-per-document
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   - atom-atom-answers-should-remain-stable-enough-to-be-recomposed-across-future-kb-layers
   - atom-boolean-algebra-and-bitwise-execution-kernel
   - atom-bridge-atoms-should-state-reusable-relations-rather-than-narrating-long-comparisons
   - atom-canonical-json-as-stable-interchange-format
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-context-and-hierarchical-routing
@@ -109,6 +117,7 @@ tags:
   - atom-knar-agentes-datos
   - atom-knar-markdown-persistencia
   - atom-knar-proposal-uml-clojure
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
   - atom-meel-engine
@@ -126,11 +135,15 @@ tags:
   - atom-spec2viz-should-generate-maintained-diagrams-from-structured-sources
   - atom-structural-masks-valid-sense-observed-discriminative
   - atom-subconcept-of-should-express-concept-hierarchy-independently-from-atom-placement
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-text-as-syntactic-sugar-over-graph-smg-model
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
   - atom-the-ontology-loop-should-iterate-by-mapping-relations-before-freezing-entity-taxonomies
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-universal-grammar-formalization
   - atom-wigame-as-local-language-game
   domain:provenance:
@@ -178,6 +191,7 @@ tags:
   - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   domain:retrieval:
   - atom-coverage-views-should-reveal-which-source-regions-have-not-yet-produced-atoms
   - atom-cross-project-analysis-should-produce-bridge-atoms-not-only-local-notes
@@ -268,8 +282,14 @@ tags:
   - atom-source-oriented-atoms-and-synthesis-atoms-should-coexist-in-the-same-kb
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
+  entity:anchor:
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   entity:ast_node:
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
   entity:atom:
@@ -297,6 +317,8 @@ tags:
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-support-queries-by-source-project-and-crossing
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  entity:cli_command:
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   entity:concept:
   - atom-kg-trees-contribute-the-idea-of-structured-knowledge-branching
   entity:concept_group:
@@ -346,6 +368,7 @@ tags:
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-the-provenance-graph-is-the-relational-backbone-of-the-kb
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   graph:materialization:
   - atom-the-nl-sl-kg-pipeline-anticipates-a-source-to-graph-transformation-line
   graph:provenance:
@@ -421,7 +444,9 @@ tags:
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   impl:pending:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
   - atom-api-snapshots-should-be-treated-as-versioned-structured-sources
@@ -443,6 +468,7 @@ tags:
   - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   - atom-code-styling-consistency-reduces-review-noise
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -541,6 +567,7 @@ tags:
   - atom-knar-unit-tests
   - atom-knar-viewmodel-render
   - atom-knar-workflow-derivado
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-legacy-extraction-should-preserve-useful-architecture-intuitions-without-inheriting-obsolete-containers
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
@@ -588,13 +615,17 @@ tags:
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
@@ -608,15 +639,19 @@ tags:
   - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-universal-grammar-formalization
   - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   kind:concept:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
   - atom-ast-is-a-first-class-document-structure-category-in-the-kb
@@ -636,6 +671,7 @@ tags:
   - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   - atom-code-styling-consistency-reduces-review-noise
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-context-and-hierarchical-routing
@@ -715,6 +751,7 @@ tags:
   - atom-knar-spec-materializa-nodo
   - atom-knar-sql-nodo
   - atom-knar-workflow-derivado
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-located-in-taxonomy-should-place-atoms-or-concepts-within-a-navigable-hierarchy
   - atom-logicalsystem-as-aggregate-root
   - atom-materialized-diagrams-should-be-derived-views-over-atomized-architecture-knowledge
@@ -756,13 +793,17 @@ tags:
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
@@ -776,11 +817,13 @@ tags:
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-universal-grammar-formalization
   - atom-validator-result-should-be-machine-and-human-usable
   - atom-view-generation-should-be-reversible-back-to-atoms-and-evidence-links
   - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   kind:software:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-anchor-references-follow-a-three-tier-scheme
@@ -1151,8 +1194,11 @@ tags:
   - atom-knar-workflow-derivado
   system:knowledge:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-atom-metadata-should-live-outside-atoms-in-a-dedicated-registry
   - atom-atom-semantic-tags-should-be-limited-to-the-namespace-allowlist-defined-in-tag-namespaces-yaml
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-cross-tags-belong-on-atoms-only-when-the-bridge-is-part-of-the-claim-itself
   - atom-frontmatter-provenance-should-remain-trace-text-not-the-full-governance-envelope
   - atom-graph-build-should-be-the-projection-refresh-boundary-between-documents-and-graph-retrieval
@@ -1160,6 +1206,7 @@ tags:
   - atom-graph-trace-should-answer-provenance-lineage-across-the-source-sample-atom-composition-chain
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
@@ -1169,6 +1216,12 @@ tags:
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   system:marcado:
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-asg-projects-multiple-graphs-per-document
@@ -1277,6 +1330,7 @@ tags:
   - atom-knar-composite-node
   - atom-knar-proposal-composite-runtime
   topic:composition:
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-knar-componentes-pequenos
@@ -1449,6 +1503,7 @@ tags:
   - atom-the-source-sample-atom-composition-chain-should-remain-legible-to-humans
   topic:query:
   - atom-metadata-registry-records-should-be-the-canonical-query-surface-for-governance-facets
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   topic:query_retrieval:
   - atom-graph-neighbors-should-remain-explicit-adjacency-inspection-rather-than-inferred-conceptual-similarity
   - atom-queries-should-be-able-to-isolate-atoms-by-graph-stratum
@@ -1479,6 +1534,17 @@ tags:
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   topic:selfdoc:
   - atom-knar-selfdoc
+  topic:semantic_anchoring:
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   topic:source_acquisition:
   - atom-knar-scraper-responsabilidad
   topic:source_adapters:
@@ -1520,6 +1586,7 @@ tags:
   - atom-knar-unit-tests
   topic:validation:
   - atom-knowledge-validate-should-be-the-authoring-completion-gate-not-only-a-storage-health-check
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   topic:workflow:
   - atom-knar-workflow-derivado
   topic:workflow_separation:
@@ -1527,7 +1594,9 @@ tags:
   type.knowledge.atom:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
@@ -1554,6 +1623,7 @@ tags:
   - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   - atom-code-styling-consistency-reduces-review-noise
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -1669,6 +1739,7 @@ tags:
   - atom-knar-workflow-derivado
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
@@ -1735,13 +1806,17 @@ tags:
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
@@ -1758,6 +1833,7 @@ tags:
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-universal-grammar-formalization
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
@@ -1766,10 +1842,13 @@ tags:
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   workspace.desk.atoms:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
+  - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
+  - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
   - atom-anchor-references-follow-a-three-tier-scheme
   - atom-anchor-validation-should-bind-every-sample-to-a-source-artifact-version
   - atom-anchored-in-should-connect-a-sample-to-the-locator-bundle-used-to-recover-it
@@ -1796,6 +1875,7 @@ tags:
   - atom-code-linting-is-architectural-cleanliness-not-only-formatting
   - atom-code-sources-should-expose-symbol-aware-support-paths-in-addition-to-raw-text
   - atom-code-styling-consistency-reduces-review-noise
+  - atom-commands-follow-the-smg-model-surface-meaning-graph
   - atom-composes-should-link-atoms-into-larger-synthesized-knowledge-artifacts
   - atom-composition-should-provide-depth-without-inflating-atomic-answers
   - atom-concept-group-taxonomy-node-and-tag-facet-should-be-distinguished
@@ -1911,6 +1991,7 @@ tags:
   - atom-knar-workflow-derivado
   - atom-knowledge-add-atom-should-create-a-valid-atom-from-the-minimum-durable-knowledge-fields
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  - atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
   - atom-knowledge-graph-commands-should-remain-available-without-the-operational-workflow-surface
   - atom-knowledge-graph-list-should-provide-fast-snapshot-native-node-inventory-without-semantic-reinterpretation
   - atom-knowledge-graph-show-should-expose-raw-node-identity-semantics-path-and-edge-payloads-for-auditability
@@ -1977,13 +2058,17 @@ tags:
   - atom-support-queries-should-traverse-sources-samples-atoms-and-compositions-as-one-lineage-chain
   - atom-supported-by-structure-should-link-atoms-to-source-structure-beyond-textual-excerpts
   - atom-supports-should-connect-evidence-to-the-atoms-or-compositions-it-justifies
+  - atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   - atom-tags-should-be-facets-not-the-primary-concept-structure
   - atom-testing-covers-both-unit-correctness-and-ux-behavior
   - atom-text-as-syntactic-sugar-over-graph-smg-model
+  - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
   - atom-the-bootstrap-corpus-should-accumulate-explicit-bridge-atoms-for-every-major-tool-relationship
   - atom-the-bootstrap-kb-should-welcome-partial-provenance-without-confusing-it-with-validation
+  - atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   - atom-the-concept-graph-should-be-atom-centered-rather-than-concept-only
   - atom-the-first-bootstrap-corpus-should-prioritize-architecture-governance-and-provenance-atoms
+  - atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-kb-should-avoid-fake-retroactive-samples-with-no-recoverable-evidence-path
   - atom-the-kb-should-avoid-flattening-all-source-structures-into-plain-text-only
@@ -2000,6 +2085,7 @@ tags:
   - atom-tractatusir-suggests-value-in-addressable-textual-units-for-retrieval
   - atom-two-gates-model-s-i-sense-v-i-truth
   - atom-typestate-typing
+  - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-universal-grammar-formalization
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
@@ -2008,6 +2094,7 @@ tags:
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
 documents:
   atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
     model: AtomDoc
@@ -4834,5 +4921,127 @@ documents:
     - kind:concept
     - system:knar
     - topic:workflow
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator:
+    model: AtomDoc
+    path: knowledge/atoms/atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent:
+    model: AtomDoc
+    path: knowledge/atoms/atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-anchor-kinds-partition-what-a-symbol-can-refer-to:
+    model: AtomDoc
+    path: knowledge/atoms/atom-anchor-kinds-partition-what-a-symbol-can-refer-to.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-anchor-table-is-declared-as-sldb-documents-not-code:
+    model: AtomDoc
+    path: knowledge/atoms/atom-the-anchor-table-is-declared-as-sldb-documents-not-code.md
+    tags:
+    - cross:knowledge_sldb
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue:
+    model: AtomDoc
+    path: knowledge/atoms/atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-unanchored-symbols-fail-with-an-explicit-semantic-error:
+    model: AtomDoc
+    path: knowledge/atoms/atom-unanchored-symbols-fail-with-an-explicit-semantic-error.md
+    tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-write-operations-record-provenance-of-the-command-that-produced-them:
+    model: AtomDoc
+    path: knowledge/atoms/atom-write-operations-record-provenance-of-the-command-that-produced-them.md
+    tags:
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-canonical-operations-are-check-next-assert-create-ingest-return:
+    model: AtomDoc
+    path: knowledge/atoms/atom-the-canonical-operations-are-check-next-assert-create-ingest-return.md
+    tags:
+    - domain:knowledge_representation
+    - entity:cli_command
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse:
+    model: AtomDoc
+    path: knowledge/atoms/atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse.md
+    tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+  atom-commands-follow-the-smg-model-surface-meaning-graph:
+    model: AtomDoc
+    path: knowledge/atoms/atom-commands-follow-the-smg-model-surface-meaning-graph.md
+    tags:
+    - cross:smg_command_layer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:composition
+    - topic:semantic_anchoring
     - type.knowledge.atom
     - workspace.desk.atoms

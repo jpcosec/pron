@@ -3067,3 +3067,135 @@ documents:
   - topic:workflow
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+  path: knowledge/atoms/atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator.md
+  hash_c: aeb0d620737fdb71f19c691aee4563811c6672fa70a4e8d2e773a34816122c72
+  hash_d: 60968aa6cacfb38a994e5b7a1e3923e9f55354576aa13cf29c086d07ab0bf553
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  path: knowledge/atoms/atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent.md
+  hash_c: 018f68c77b5530a1c238c424472ff44dcdbb05f3cd4be3455ada236381f61cee
+  hash_d: 3d46713981d2526f708c553feb0c02fbaaafd97edb26dde655fffa7e19a6cb51
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  path: knowledge/atoms/atom-anchor-kinds-partition-what-a-symbol-can-refer-to.md
+  hash_c: efd3b09b3fdfa60de973300ab4c9beb0590fff4e0293bf8189428aa5f2e94856
+  hash_d: 406366f979f46170b32cf4e20fb1acfaed12a3ba237cd2402356fd12d0878091
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  path: knowledge/atoms/atom-the-anchor-table-is-declared-as-sldb-documents-not-code.md
+  hash_c: 4537417ec22593c4308a57ce3833ed3fcd4a1e43f5786c00e7204214a677fe5a
+  hash_d: 4093809d37b40995b1a6b5b55e4b6368253f09078d609dc4bfee3d55307ab98d
+  semantic_tags:
+  - cross:knowledge_sldb
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+  path: knowledge/atoms/atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue.md
+  hash_c: 04fbb8ff3032176a0ac14fe5050c7c374f134892ef0e1fd666a2265a22ae2a06
+  hash_d: 651e35f10552409fc07e0b7b459d7344bdba51c1d5bbbb09a1b24e4b240f94c2
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:query
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  path: knowledge/atoms/atom-unanchored-symbols-fail-with-an-explicit-semantic-error.md
+  hash_c: 1f9fcb2908c5a13da6a7edac983ee2824f9f33acfbf04dc7177304c1347afbe0
+  hash_d: becabab1c71fbb073eb4cbd51fa2412b96bce1b35c7b73d1bca458dc055f3b47
+  semantic_tags:
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - topic:validation
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-write-operations-record-provenance-of-the-command-that-produced-them
+  path: knowledge/atoms/atom-write-operations-record-provenance-of-the-command-that-produced-them.md
+  hash_c: f025f42ea551838a215bac1a50a40db2e97a4755b5c0547878e1d34f14b373e7
+  hash_d: 5ddeb658895a1d0ba087e548766245432481233fe84a5d56f8c691b183e1fb1d
+  semantic_tags:
+  - domain:provenance
+  - graph:lineage
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-the-canonical-operations-are-check-next-assert-create-ingest-return
+  path: knowledge/atoms/atom-the-canonical-operations-are-check-next-assert-create-ingest-return.md
+  hash_c: b10338520a84c4922e983c133f6478a5579f393541777ce4108d10d515a53adb
+  hash_d: 20c9c722d57a69d8b44ba0761e7d5bd2f4e854751ff05cfb3e5fcfb4d3efcc52
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:cli_command
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  path: knowledge/atoms/atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse.md
+  hash_c: 0e339e1b469469a87a7a2b60d00ebc118e43bf27e3ceb0b14145e6c5347d7415
+  hash_d: 976c1f998976720fa240e7d2927947ea1d53c50305701cfe600a83e8036abacf
+  semantic_tags:
+  - cross:knowledge_sldb
+  - domain:system_architecture
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms
+- name: atom-commands-follow-the-smg-model-surface-meaning-graph
+  path: knowledge/atoms/atom-commands-follow-the-smg-model-surface-meaning-graph.md
+  hash_c: 591cc630c6bb9f160ba0926859ec7b09d7215609b5b2adfe2fd5eade5cc391f2
+  hash_d: 2658e00f25d15b68a539c70a3a860593d31658cb4548171b8b817d5ff4e48658
+  semantic_tags:
+  - cross:smg_command_layer
+  - domain:knowledge_representation
+  - impl:pending
+  - kind:concept
+  - system:knowledge
+  - topic:composition
+  - topic:semantic_anchoring
+  - type.knowledge.atom
+  - workspace.desk.atoms

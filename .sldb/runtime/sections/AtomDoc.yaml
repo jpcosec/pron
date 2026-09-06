@@ -14672,3 +14672,621 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: atom-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+  sections:
+  - path: the-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+    title: The knowledge core is a semantically anchored s-expression evaluator
+    breadcrumbs:
+    - The knowledge core is a semantically anchored s-expression evaluator
+    about:
+    - The knowledge core is a semantically anchored s-expression evaluator
+    - the knowledge core is a semantically anchored s expression evaluator
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-knowledge-core-is-a-semantically-anchored-s-expression-evaluator
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: the-knowledge-core-is-a-semantically-anchored-s-expression-evaluator/answer
+    title: Answer
+    breadcrumbs:
+    - The knowledge core is a semantically anchored s-expression evaluator
+    - Answer
+    about:
+    - The knowledge core is a semantically anchored s-expression evaluator
+    - the knowledge core is a semantically anchored s expression evaluator
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+  sections:
+  - path: an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+    title: An anchor binds a symbol to a semantic motive and a resolvable referent
+    breadcrumbs:
+    - An anchor binds a symbol to a semantic motive and a resolvable referent
+    about:
+    - An anchor binds a symbol to a semantic motive and a resolvable referent
+    - an anchor binds a symbol to a semantic motive and a resolvable referent
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent/answer
+    title: Answer
+    breadcrumbs:
+    - An anchor binds a symbol to a semantic motive and a resolvable referent
+    - Answer
+    about:
+    - An anchor binds a symbol to a semantic motive and a resolvable referent
+    - an anchor binds a symbol to a semantic motive and a resolvable referent
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+  sections:
+  - path: anchor-kinds-partition-what-a-symbol-can-refer-to
+    title: Anchor kinds partition what a symbol can refer to
+    breadcrumbs:
+    - Anchor kinds partition what a symbol can refer to
+    about:
+    - Anchor kinds partition what a symbol can refer to
+    - anchor kinds partition what a symbol can refer to
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchor-kinds-partition-what-a-symbol-can-refer-to
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: anchor-kinds-partition-what-a-symbol-can-refer-to/answer
+    title: Answer
+    breadcrumbs:
+    - Anchor kinds partition what a symbol can refer to
+    - Answer
+    about:
+    - Anchor kinds partition what a symbol can refer to
+    - anchor kinds partition what a symbol can refer to
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+  sections:
+  - path: the-anchor-table-is-declared-as-sldb-documents-not-code
+    title: The anchor table is declared as SLDB documents, not code
+    breadcrumbs:
+    - The anchor table is declared as SLDB documents, not code
+    about:
+    - The anchor table is declared as SLDB documents, not code
+    - the anchor table is declared as sldb documents not code
+    - cross:knowledge_sldb
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-anchor-table-is-declared-as-sldb-documents-not-code
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: the-anchor-table-is-declared-as-sldb-documents-not-code/answer
+    title: Answer
+    breadcrumbs:
+    - The anchor table is declared as SLDB documents, not code
+    - Answer
+    about:
+    - The anchor table is declared as SLDB documents, not code
+    - the anchor table is declared as sldb documents not code
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+  sections:
+  - path: symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+    title: Symbol resolution is stateful and treats ambiguity as dialogue
+    breadcrumbs:
+    - Symbol resolution is stateful and treats ambiguity as dialogue
+    about:
+    - Symbol resolution is stateful and treats ambiguity as dialogue
+    - symbol resolution is stateful and treats ambiguity as dialogue
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue/answer
+    title: Answer
+    breadcrumbs:
+    - Symbol resolution is stateful and treats ambiguity as dialogue
+    - Answer
+    about:
+    - Symbol resolution is stateful and treats ambiguity as dialogue
+    - symbol resolution is stateful and treats ambiguity as dialogue
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-unanchored-symbols-fail-with-an-explicit-semantic-error
+  sections:
+  - path: unanchored-symbols-fail-with-an-explicit-semantic-error
+    title: Unanchored symbols fail with an explicit semantic error
+    breadcrumbs:
+    - Unanchored symbols fail with an explicit semantic error
+    about:
+    - Unanchored symbols fail with an explicit semantic error
+    - unanchored symbols fail with an explicit semantic error
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: unanchored-symbols-fail-with-an-explicit-semantic-error
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: unanchored-symbols-fail-with-an-explicit-semantic-error/answer
+    title: Answer
+    breadcrumbs:
+    - Unanchored symbols fail with an explicit semantic error
+    - Answer
+    about:
+    - Unanchored symbols fail with an explicit semantic error
+    - unanchored symbols fail with an explicit semantic error
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-write-operations-record-provenance-of-the-command-that-produced-them
+  sections:
+  - path: write-operations-record-provenance-of-the-command-that-produced-them
+    title: Write operations record provenance of the command that produced them
+    breadcrumbs:
+    - Write operations record provenance of the command that produced them
+    about:
+    - Write operations record provenance of the command that produced them
+    - write operations record provenance of the command that produced them
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: write-operations-record-provenance-of-the-command-that-produced-them
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: write-operations-record-provenance-of-the-command-that-produced-them/answer
+    title: Answer
+    breadcrumbs:
+    - Write operations record provenance of the command that produced them
+    - Answer
+    about:
+    - Write operations record provenance of the command that produced them
+    - write operations record provenance of the command that produced them
+    - Answer
+    - answer
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-the-canonical-operations-are-check-next-assert-create-ingest-return
+  sections:
+  - path: the-canonical-operations-are-check-next-assert-create-ingest-return
+    title: The canonical operations are check, next, assert, create, ingest, return
+    breadcrumbs:
+    - The canonical operations are check, next, assert, create, ingest, return
+    about:
+    - The canonical operations are check, next, assert, create, ingest, return
+    - the canonical operations are check next assert create ingest return
+    - domain:knowledge_representation
+    - entity:cli_command
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:cli_command
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-canonical-operations-are-check-next-assert-create-ingest-return
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: the-canonical-operations-are-check-next-assert-create-ingest-return/answer
+    title: Answer
+    breadcrumbs:
+    - The canonical operations are check, next, assert, create, ingest, return
+    - Answer
+    about:
+    - The canonical operations are check, next, assert, create, ingest, return
+    - the canonical operations are check next assert create ingest return
+    - Answer
+    - answer
+    - domain:knowledge_representation
+    - entity:cli_command
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:cli_command
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-the-infra-layer-serves-the-anchoring-core-not-the-reverse
+  sections:
+  - path: the-infra-layer-serves-the-anchoring-core-not-the-reverse
+    title: The infra layer serves the anchoring core, not the reverse
+    breadcrumbs:
+    - The infra layer serves the anchoring core, not the reverse
+    about:
+    - The infra layer serves the anchoring core, not the reverse
+    - the infra layer serves the anchoring core not the reverse
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-infra-layer-serves-the-anchoring-core-not-the-reverse
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: the-infra-layer-serves-the-anchoring-core-not-the-reverse/answer
+    title: Answer
+    breadcrumbs:
+    - The infra layer serves the anchoring core, not the reverse
+    - Answer
+    about:
+    - The infra layer serves the anchoring core, not the reverse
+    - the infra layer serves the anchoring core not the reverse
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-commands-follow-the-smg-model-surface-meaning-graph
+  sections:
+  - path: commands-follow-the-smg-model-surface-meaning-graph
+    title: 'Commands follow the SMG model: surface, meaning, graph'
+    breadcrumbs:
+    - 'Commands follow the SMG model: surface, meaning, graph'
+    about:
+    - 'Commands follow the SMG model: surface, meaning, graph'
+    - commands follow the smg model surface meaning graph
+    - cross:smg_command_layer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:composition
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:smg_command_layer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:composition
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: commands-follow-the-smg-model-surface-meaning-graph
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: commands-follow-the-smg-model-surface-meaning-graph/answer
+    title: Answer
+    breadcrumbs:
+    - 'Commands follow the SMG model: surface, meaning, graph'
+    - Answer
+    about:
+    - 'Commands follow the SMG model: surface, meaning, graph'
+    - commands follow the smg model surface meaning graph
+    - Answer
+    - answer
+    - cross:smg_command_layer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:composition
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:smg_command_layer
+    - domain:knowledge_representation
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:composition
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
