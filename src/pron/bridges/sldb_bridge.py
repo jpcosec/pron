@@ -47,6 +47,23 @@ class SldbBridge:
         index = yaml.safe_load((self.store / "core" / "store_index.yaml").read_text())
         return [m["name"] for m in index.get("models", [])]
 
+    def filter_where(self, docs: list, expression: str) -> list:
+        """Filter documents with sldb's real where engine.
+
+        Supports: has(field) | "needle" in field | field ~ "regex" |
+        field = value | field != value (DocumentFilter grammar).
+        """
+        from sldb.store.query_engine.filter import _where_matches
+
+        return [
+            d for d in docs
+            if _where_matches(d, expression, resolve_model_ref, self.pythonpath)
+        ]
+
+    def by_semantic_tag(self, tag: str) -> list:
+        """Documents carrying a semantic tag, via the semantic index."""
+        return [d for d in self.documents() if tag in (d.semantic_tags or [])]
+
 
 @lru_cache(maxsize=4)
 def bridge_for(root: str, pythonpath: str | None = None) -> SldbBridge:

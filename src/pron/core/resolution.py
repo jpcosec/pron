@@ -34,14 +34,37 @@ def resolve_noun(
     if len(prefix) == 1:
         return _resolved(prefix[0])
     if len(prefix) > 1:
-        names = sorted(d.name for d in prefix)
-        return Ambiguous(
-            question=f"Ambiguo: ¿{' o '.join(repr(n) for n in names[:5])}?",
-            candidates=names,
-        )
+        return _ambiguous(prefix)
+
+    # semantic tag: a namespaced selector matches docs tagged with it
+    if ":" in selector:
+        tagged = [d for d in docs if selector in (d.semantic_tags or [])]
+        if len(tagged) == 1:
+            return _resolved(tagged[0])
+        if len(tagged) > 1:
+            return _ambiguous(tagged)
+
+    # substring over name and title (sldb-style physical match)
+    loose = [
+        d for d in docs
+        if selector.lower() in d.name.lower()
+        or selector.lower() in str(d.payload.get("title", "")).lower()
+    ]
+    if len(loose) == 1:
+        return _resolved(loose[0])
+    if len(loose) > 1:
+        return _ambiguous(loose)
 
     nearest = get_close_matches(selector, [d.name for d in docs], n=3, cutoff=0.5)
     return Missing(motive=motive, nearest=nearest)
+
+
+def _ambiguous(docs: list) -> Ambiguous:
+    names = sorted(d.name for d in docs)
+    return Ambiguous(
+        question=f"Ambiguo: ¿{' o '.join(repr(n) for n in names[:5])}?",
+        candidates=names,
+    )
 
 
 def _resolved(doc) -> Resolved:

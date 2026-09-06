@@ -13,7 +13,7 @@ from knowledge.core.sexpr import Keyword, SExpr, Symbol
 
 def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticError:
     """Deterministically translate surface tokens into one s-expression."""
-    words, projection = _split_projection(tokens)
+    words, projection, where = _split_projection(tokens)
     if not words:
         return SemanticError(symbol="", message="comando vacío.")
 
@@ -48,17 +48,27 @@ def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticErro
         ref = [Symbol("rel"), Symbol(relations[0][0]), ref]
 
     expr: SExpr = [Symbol(verb), ref]
+    if where:
+        expr += [Keyword("where"), where]
     if projection:
         expr += [Keyword("project"), Symbol(projection)]
     return expr
 
 
-def _split_projection(tokens: list[str]) -> tuple[list[str], str | None]:
-    """Strip a trailing --<projection> flag."""
-    words, projection = [], None
-    for t in tokens:
-        if t.startswith("--"):
+def _split_projection(tokens: list[str]) -> tuple[list[str], str | None, str | None]:
+    """Strip trailing --<projection> and --where "<expr>" flags."""
+    words: list[str] = []
+    projection = where = None
+    i = 0
+    while i < len(tokens):
+        t = tokens[i]
+        if t == "--where" and i + 1 < len(tokens):
+            where = tokens[i + 1]
+            i += 2
+        elif t.startswith("--"):
             projection = t[2:]
+            i += 1
         else:
             words.append(t)
-    return words, projection
+            i += 1
+    return words, projection, where

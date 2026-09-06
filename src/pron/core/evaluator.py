@@ -38,26 +38,38 @@ class Evaluator:
                 symbol=anchor.symbol,
                 message=f"'{anchor.symbol}' no es una operación (es {anchor.kind}: {anchor.motive}).",
             )
-        args, projection = self._split_options(expr[1:])
+        args, projection, where = self._split_options(expr[1:])
         grounded = [self._ground(a) for a in args]
         for g in grounded:
             if isinstance(g, (Ambiguous, Missing, SemanticError)):
                 return g
+        if where:
+            grounded = [self._apply_where(g, where) for g in grounded]
         op_name = anchor.ref.removeprefix("op:")
         return self._dispatch(op_name, grounded, projection)
 
-    def _split_options(self, args: list) -> tuple[list, Anchor | None]:
-        """Trailing :project <symbol> pair -> projection anchor."""
-        projection = None
+    def _apply_where(self, grounded, where: str):
+        """Filter a docs set with sldb's real where engine."""
+        if isinstance(grounded, dict) and grounded.get("kind") == "docs":
+            return {**grounded, "docs": self.sldb.filter_where(grounded["docs"], where)}
+        return grounded
+
+    def _split_options(self, args: list) -> tuple[list, Anchor | None, str | None]:
+        """Trailing :project <symbol> and :where "expr" pairs."""
+        projection, where = None, None
         out = list(args)
-        if len(out) >= 2 and isinstance(out[-2], Keyword) and out[-2].name == "project":
-            sym = out[-1]
-            anchor = self.registry.lookup(sym.name if isinstance(sym, Symbol) else str(sym))
-            if isinstance(anchor, SemanticError):
-                return out, None
-            projection = anchor
+        while len(out) >= 2 and isinstance(out[-2], Keyword):
+            key, val = out[-2].name, out[-1]
+            if key == "project":
+                anchor = self.registry.lookup(val.name if isinstance(val, Symbol) else str(val))
+                if not isinstance(anchor, SemanticError):
+                    projection = anchor
+            elif key == "where":
+                where = str(val)
+            else:
+                break
             out = out[:-2]
-        return out, projection
+        return out, projection, where
 
     def _ground(self, arg):
         """Ground one argument: refs become world values, literals pass through."""

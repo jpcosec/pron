@@ -87,3 +87,27 @@ def test_anchors_lists_living_grammar():
     assert code == 0
     symbols = {a["symbol"] for a in out["payload"]}
     assert {"check", "next", "atom", "summary"} <= symbols
+
+
+def test_where_uses_sldb_filter_engine():
+    code, out = run("list", "atom", "--where", 'title ~ "SearchVector"', "--title")
+    assert code == 0
+    assert out["payload"] == [{"title": "SearchVector"}]
+
+
+def test_selector_by_semantic_tag():
+    code, out = run("show", "atom", "practice:styling", "--title")
+    assert code == 0
+    assert "styling" in out["payload"]["title"].lower()
+
+
+def test_selector_by_title_substring():
+    code, out = run("show", "atom", "SearchVector", "--title")
+    assert code == 0
+    assert out["payload"] == {"title": "SearchVector"}
+
+
+def test_where_contains_on_tags():
+    code, out = run("list", "atom", "--where", '"impl:here" in tags')
+    assert code == 0
+    assert len(out["payload"]) > 10
