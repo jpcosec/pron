@@ -15290,3 +15290,930 @@ documents:
     level: 2
     line_start: 18
     line_end: 19
+- doc_name: atom-surface-grammar-is-positional-and-order-agnostic
+  sections:
+  - path: surface-grammar-is-positional-and-order-agnostic
+    title: Surface grammar is positional and order-agnostic
+    breadcrumbs:
+    - Surface grammar is positional and order-agnostic
+    about:
+    - Surface grammar is positional and order-agnostic
+    - surface grammar is positional and order agnostic
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: surface-grammar-is-positional-and-order-agnostic
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: surface-grammar-is-positional-and-order-agnostic/answer
+    title: Answer
+    breadcrumbs:
+    - Surface grammar is positional and order-agnostic
+    - Answer
+    about:
+    - Surface grammar is positional and order-agnostic
+    - surface grammar is positional and order agnostic
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:authoring_workflow
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-the-meaning-layer-is-directly-usable-via-eval
+  sections:
+  - path: the-meaning-layer-is-directly-usable-via-eval
+    title: The meaning layer is directly usable via eval
+    breadcrumbs:
+    - The meaning layer is directly usable via eval
+    about:
+    - The meaning layer is directly usable via eval
+    - the meaning layer is directly usable via eval
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-meaning-layer-is-directly-usable-via-eval
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: the-meaning-layer-is-directly-usable-via-eval/answer
+    title: Answer
+    breadcrumbs:
+    - The meaning layer is directly usable via eval
+    - Answer
+    about:
+    - The meaning layer is directly usable via eval
+    - the meaning layer is directly usable via eval
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-clarification-state-persists-across-cli-invocations
+  sections:
+  - path: clarification-state-persists-across-cli-invocations
+    title: Clarification state persists across CLI invocations
+    breadcrumbs:
+    - Clarification state persists across CLI invocations
+    about:
+    - Clarification state persists across CLI invocations
+    - clarification state persists across cli invocations
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: clarification-state-persists-across-cli-invocations
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: clarification-state-persists-across-cli-invocations/answer
+    title: Answer
+    breadcrumbs:
+    - Clarification state persists across CLI invocations
+    - Answer
+    about:
+    - Clarification state persists across CLI invocations
+    - clarification state persists across cli invocations
+    - Answer
+    - answer
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:retrieval
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:query
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-semantic-errors-answer-symbol-motive-and-next-action
+  sections:
+  - path: semantic-errors-answer-symbol-motive-and-next-action
+    title: Semantic errors answer symbol, motive, and next action
+    breadcrumbs:
+    - Semantic errors answer symbol, motive, and next action
+    about:
+    - Semantic errors answer symbol, motive, and next action
+    - semantic errors answer symbol motive and next action
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: semantic-errors-answer-symbol-motive-and-next-action
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: semantic-errors-answer-symbol-motive-and-next-action/answer
+    title: Answer
+    breadcrumbs:
+    - Semantic errors answer symbol, motive, and next action
+    - Answer
+    about:
+    - Semantic errors answer symbol, motive, and next action
+    - semantic errors answer symbol motive and next action
+    - Answer
+    - answer
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - topic:validation
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-every-read-response-carries-refs-for-auditability
+  sections:
+  - path: every-read-response-carries-refs-for-auditability
+    title: Every read response carries refs for auditability
+    breadcrumbs:
+    - Every read response carries refs for auditability
+    about:
+    - Every read response carries refs for auditability
+    - every read response carries refs for auditability
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: every-read-response-carries-refs-for-auditability
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: every-read-response-carries-refs-for-auditability/answer
+    title: Answer
+    breadcrumbs:
+    - Every read response carries refs for auditability
+    - Answer
+    about:
+    - Every read response carries refs for auditability
+    - every read response carries refs for auditability
+    - Answer
+    - answer
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:provenance
+    - graph:lineage
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-help-is-a-projection-of-the-living-grammar
+  sections:
+  - path: help-is-a-projection-of-the-living-grammar
+    title: Help is a projection of the living grammar
+    breadcrumbs:
+    - Help is a projection of the living grammar
+    about:
+    - Help is a projection of the living grammar
+    - help is a projection of the living grammar
+    - domain:governance
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: help-is-a-projection-of-the-living-grammar
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: help-is-a-projection-of-the-living-grammar/answer
+    title: Answer
+    breadcrumbs:
+    - Help is a projection of the living grammar
+    - Answer
+    about:
+    - Help is a projection of the living grammar
+    - help is a projection of the living grammar
+    - Answer
+    - answer
+    - domain:governance
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:governance
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-knowledge-decomposes-into-ten-single-motive-components
+  sections:
+  - path: knowledge-decomposes-into-ten-single-motive-components
+    title: Knowledge decomposes into ten single-motive components
+    breadcrumbs:
+    - Knowledge decomposes into ten single-motive components
+    about:
+    - Knowledge decomposes into ten single-motive components
+    - knowledge decomposes into ten single motive components
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: knowledge-decomposes-into-ten-single-motive-components
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: knowledge-decomposes-into-ten-single-motive-components/answer
+    title: Answer
+    breadcrumbs:
+    - Knowledge decomposes into ten single-motive components
+    - Answer
+    about:
+    - Knowledge decomposes into ten single-motive components
+    - knowledge decomposes into ten single motive components
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-resolution-outcomes-are-typed-values-not-exceptions
+  sections:
+  - path: resolution-outcomes-are-typed-values-not-exceptions
+    title: Resolution outcomes are typed values, not exceptions
+    breadcrumbs:
+    - Resolution outcomes are typed values, not exceptions
+    about:
+    - Resolution outcomes are typed values, not exceptions
+    - resolution outcomes are typed values not exceptions
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: resolution-outcomes-are-typed-values-not-exceptions
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: resolution-outcomes-are-typed-values-not-exceptions/answer
+    title: Answer
+    breadcrumbs:
+    - Resolution outcomes are typed values, not exceptions
+    - Answer
+    about:
+    - Resolution outcomes are typed values, not exceptions
+    - resolution outcomes are typed values not exceptions
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 16
+    line_end: 17
+- doc_name: atom-bridges-are-the-only-doors-to-sldb-and-kgdb
+  sections:
+  - path: bridges-are-the-only-doors-to-sldb-and-kgdb
+    title: Bridges are the only doors to sldb and kgdb
+    breadcrumbs:
+    - Bridges are the only doors to sldb and kgdb
+    about:
+    - Bridges are the only doors to sldb and kgdb
+    - bridges are the only doors to sldb and kgdb
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: bridges-are-the-only-doors-to-sldb-and-kgdb
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: bridges-are-the-only-doors-to-sldb-and-kgdb/answer
+    title: Answer
+    breadcrumbs:
+    - Bridges are the only doors to sldb and kgdb
+    - Answer
+    about:
+    - Bridges are the only doors to sldb and kgdb
+    - bridges are the only doors to sldb and kgdb
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+  sections:
+  - path: anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+    title: AnchorDoc lives in sldb beside the CLI knowledge models
+    breadcrumbs:
+    - AnchorDoc lives in sldb beside the CLI knowledge models
+    about:
+    - AnchorDoc lives in sldb beside the CLI knowledge models
+    - anchordoc lives in sldb beside the cli knowledge models
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - system:sldb
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - system:sldb
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: anchordoc-lives-in-sldb-beside-the-cli-knowledge-models
+    level: 1
+    line_start: 17
+    line_end: 18
+  - path: anchordoc-lives-in-sldb-beside-the-cli-knowledge-models/answer
+    title: Answer
+    breadcrumbs:
+    - AnchorDoc lives in sldb beside the CLI knowledge models
+    - Answer
+    about:
+    - AnchorDoc lives in sldb beside the CLI knowledge models
+    - anchordoc lives in sldb beside the cli knowledge models
+    - Answer
+    - answer
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - system:sldb
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_sldb
+    - domain:system_architecture
+    - entity:anchor
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - system:sldb
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 19
+    line_end: 20
+- doc_name: atom-the-projector-gives-the-evaluator-a-world
+  sections:
+  - path: the-projector-gives-the-evaluator-a-world
+    title: The projector gives the evaluator a world
+    breadcrumbs:
+    - The projector gives the evaluator a world
+    about:
+    - The projector gives the evaluator a world
+    - the projector gives the evaluator a world
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-projector-gives-the-evaluator-a-world
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: the-projector-gives-the-evaluator-a-world/answer
+    title: Answer
+    breadcrumbs:
+    - The projector gives the evaluator a world
+    - Answer
+    about:
+    - The projector gives the evaluator a world
+    - the projector gives the evaluator a world
+    - Answer
+    - answer
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - cross:knowledge_kgdb
+    - domain:system_architecture
+    - impl:pending
+    - kind:concept
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: atom-code-materializes-specs-and-never-decides-design
+  sections:
+  - path: code-materializes-specs-and-never-decides-design
+    title: Code materializes specs and never decides design
+    breadcrumbs:
+    - Code materializes specs and never decides design
+    about:
+    - Code materializes specs and never decides design
+    - code materializes specs and never decides design
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: code-materializes-specs-and-never-decides-design
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: code-materializes-specs-and-never-decides-design/answer
+    title: Answer
+    breadcrumbs:
+    - Code materializes specs and never decides design
+    - Answer
+    about:
+    - Code materializes specs and never decides design
+    - code materializes specs and never decides design
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:clean_code
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-one-file-one-component-one-motive
+  sections:
+  - path: one-file-one-component-one-motive
+    title: One file, one component, one motive
+    breadcrumbs:
+    - One file, one component, one motive
+    about:
+    - One file, one component, one motive
+    - one file one component one motive
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: one-file-one-component-one-motive
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: one-file-one-component-one-motive/answer
+    title: Answer
+    breadcrumbs:
+    - One file, one component, one motive
+    - Answer
+    about:
+    - One file, one component, one motive
+    - one file one component one motive
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:patterns
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-canonical-commands-are-acceptance-tests-from-day-one
+  sections:
+  - path: canonical-commands-are-acceptance-tests-from-day-one
+    title: Canonical commands are acceptance tests from day one
+    breadcrumbs:
+    - Canonical commands are acceptance tests from day one
+    about:
+    - Canonical commands are acceptance tests from day one
+    - canonical commands are acceptance tests from day one
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: canonical-commands-are-acceptance-tests-from-day-one
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: canonical-commands-are-acceptance-tests-from-day-one/answer
+    title: Answer
+    breadcrumbs:
+    - Canonical commands are acceptance tests from day one
+    - Answer
+    about:
+    - Canonical commands are acceptance tests from day one
+    - canonical commands are acceptance tests from day one
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:python
+    - practice:testing
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
+- doc_name: atom-component-done-means-spec-tests-atoms-docs-and-store-pass
+  sections:
+  - path: component-done-means-spec-tests-atoms-docs-and-store-pass
+    title: Component done means spec, tests, atoms, docs, and store pass
+    breadcrumbs:
+    - Component done means spec, tests, atoms, docs, and store pass
+    about:
+    - Component done means spec, tests, atoms, docs, and store pass
+    - component done means spec tests atoms docs and store pass
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: component-done-means-spec-tests-atoms-docs-and-store-pass
+    level: 1
+    line_start: 16
+    line_end: 17
+  - path: component-done-means-spec-tests-atoms-docs-and-store-pass/answer
+    title: Answer
+    breadcrumbs:
+    - Component done means spec, tests, atoms, docs, and store pass
+    - Answer
+    about:
+    - Component done means spec, tests, atoms, docs, and store pass
+    - component done means spec tests atoms docs and store pass
+    - Answer
+    - answer
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:code_craft
+    - impl:pending
+    - kind:concept
+    - lang:generic
+    - practice:traceability
+    - system:knowledge
+    - topic:semantic_anchoring
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 18
+    line_end: 19
