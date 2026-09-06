@@ -8,7 +8,7 @@ tags:
 - topic:atom_metadata
 - cross:deskops_kb
 provenance: Derived from `desk/atoms/tag-namespaces.yaml`, `source/spec/ATOM_METADATA_DOC.md`,
-  and `desk/atoms/kb/bootstrap/query/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md`.
+  and `knowledge/atoms/atom-cross-tags-should-mark-bridge-knowledge-between-systems-and-projects.md`.
 ---
 
 # Cross tags belong on atoms only when the bridge is part of the claim itself
