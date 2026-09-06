@@ -3122,8 +3122,8 @@ documents:
   - workspace.desk.atoms
 - name: atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue
   path: knowledge/atoms/atom-symbol-resolution-is-stateful-and-treats-ambiguity-as-dialogue.md
-  hash_c: e1937821830e8f31691abe54de59a7d0cc6defde431b6aa7c6bca702645f68a9
-  hash_d: fed1f96ba9cc3c80792a33c430f2118c57ea4a5101ad2a2405b774f84c11cbcd
+  hash_c: 27faa1952bb0b0fb5940e64c68a238b65d665add1f91cfd5dc04bc9145b1788f
+  hash_d: 45469aafb06ba6e4645a487bbcd243e183de2e1a05a00d58d4dd17973f0f0289
   semantic_tags:
   - domain:knowledge_representation
   - impl:here
