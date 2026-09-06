@@ -34,6 +34,15 @@ def check(evaluator, args: list, projection):
     if isinstance(target, dict) and target.get("kind") == "rel":
         return _check_rel(evaluator, target, projection)
 
+    if isinstance(target, dict) and target.get("kind") == "nodes":
+        payloads, refs = [], []
+        for nid in target["node_ids"]:
+            schema = evaluator.kgdb.node(nid) or {}
+            semantics = schema.get("semantics") or {}
+            payloads.append(project_payload(dict(semantics), projection) or {"node_id": nid})
+            refs.append(nid)
+        return OperationResult(status="ok", payload=payloads, refs=refs)
+
     return OperationResult(status="error", payload=f"check no sabe leer {type(target).__name__}")
 
 

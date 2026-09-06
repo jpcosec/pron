@@ -82,7 +82,60 @@ class Evaluator:
             return self._ground_doc(arg)
         if head == "rel":
             return self._ground_rel(arg)
+        if head in ("related", "common", "also"):
+            return self._ground_setop(head, arg)
+        expanded = self._expand_macro(head, arg)
+        if expanded is not None:
+            return self._ground(expanded)
         return self.eval(arg)
+
+    def _expand_macro(self, head: str, arg: list):
+        """Expand a kind=expr anchor: substitute _ holes with the arguments.
+
+        This is the derived-relation layer: a symbol whose referent is itself
+        an s-expression over sldb+kgdb, declared as knowledge, not code.
+        """
+        anchor = self.registry.lookup(head)
+        if isinstance(anchor, SemanticError) or anchor.kind != "expr":
+            return None
+        from knowledge.core.sexpr import parse
+        template = parse(anchor.ref.removeprefix("expr:"))
+        holes = iter(arg[1:])
+        return _fill(template, holes)
+
+    def _ground_setop(self, op: str, arg: list):
+        """Set combinators over grounded node/doc sets.
+
+        (related X)   -> everything one hop from X in the graph, any relation.
+        (common X Y)  -> targets shared by X and Y (intersection of hops).
+        (also X Y)    -> union of the grounded sets.
+        """
+        grounded = [self._ground(a) for a in arg[1:]]
+        for g in grounded:
+            if isinstance(g, (Ambiguous, Missing, SemanticError)):
+                return g
+        hops = [self._hop_targets(g) for g in grounded]
+        for h in hops:
+            if isinstance(h, SemanticError):
+                return h
+        if op == "related":
+            ids = hops[0]
+        elif op == "common":
+            ids = set.intersection(*[set(h) for h in hops]) if hops else set()
+        else:
+            ids = set.union(*[set(h) for h in hops]) if hops else set()
+        return {"kind": "nodes", "node_ids": sorted(ids)}
+
+    def _hop_targets(self, grounded) -> list[str] | SemanticError:
+        """All graph neighbors (out + in) of a grounded doc, any relation."""
+        if not isinstance(grounded, Resolved):
+            return SemanticError(symbol="related", message="los combinadores requieren docs resueltos.")
+        if not self.kgdb.available():
+            return SemanticError(symbol="related", message="no hay grafo; corre: knowledge project")
+        nid = self.kgdb.document_node_id(grounded.model, grounded.name)
+        out = [e["target_id"] for e in self.kgdb.edges_from(nid)]
+        inc = self.kgdb.edges_to(nid)
+        return sorted(set(out) | set(inc))
 
     def _model_anchor(self, sym) -> Anchor | SemanticError:
         anchor = self.registry.lookup(sym.name if isinstance(sym, Symbol) else str(sym))
@@ -124,6 +177,18 @@ class Evaluator:
         if fn is None:
             return SemanticError(symbol=op, message=f"operación 'op:{op}' aún no implementada.")
         return fn(self, args, projection)
+
+
+def _fill(item, holes):
+    """Replace _ symbols in a template with successive arguments."""
+    if isinstance(item, list):
+        return [_fill(x, holes) for x in item]
+    if isinstance(item, Symbol) and item.name == "_":
+        try:
+            return next(holes)
+        except StopIteration:
+            return item
+    return item
 
 
 def project_payload(payload: dict, projection: Anchor | None) -> dict:

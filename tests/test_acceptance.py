@@ -111,3 +111,23 @@ def test_where_contains_on_tags():
     code, out = run("list", "atom", "--where", '"impl:here" in tags')
     assert code == 0
     assert len(out["payload"]) > 10
+
+
+def test_derived_relation_overlap():
+    """A relation that exists in neither store, declared as an expr anchor."""
+    code, out = run("eval", '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))')
+    assert code == 0
+    tags = [p.get("tag") for p in out["payload"] if "tag" in p]
+    assert "domain:knowledge_representation" in tags
+
+
+def test_derived_relation_kin():
+    code, out = run("eval", '(check (kin "atom-searchvector"))')
+    assert code == 0
+    assert len(out["payload"]) >= 3  # tags + model at minimum
+
+
+def test_setop_common_is_intersection():
+    code_a, a = run("eval", '(check (kin "atom-searchvector"))')
+    code_o, o = run("eval", '(check (overlap "atom-searchvector" "atom-wigame-as-local-language-game"))')
+    assert len(o["refs"]) <= len(a["refs"])  # intersection can't exceed one side
