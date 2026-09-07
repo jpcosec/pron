@@ -1,0 +1,12 @@
+Task: task-auto-refresh-indexes-and-graph-after-writes
+Title: Auto-refresh indexes and graph after writes
+Status: draft
+Current node: checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
+Task type: implementation
+Routine: routine-task-auto-refresh-indexes-and-graph-after-writes
+Effective atoms:
+- atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+Checklist status:
+- checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready: complete
+- checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready: complete
+- checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready: pending
