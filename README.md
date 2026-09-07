@@ -8,7 +8,7 @@ La operan dos herramientas, ninguna vive aquí:
 
 | herramienta | qué hace con esta KB | repo |
 |---|---|---|
-| `knowledge` (v1, Python) | evaluador anclado s-expr y ops de escritura sobre `.sldb/` v1 + kgdb; se corre con `cd` en este directorio (`python -m knowledge …`, `knowledge-cli …`) | `jpcosec/knowledge` (`~/proyectos/legos/knowledge`) |
+| `knowledge` (v1, Python) | evaluador anclado s-expr y ops de escritura sobre `.sldb/` v1 + kgdb; se corre con `cd` en este directorio (`python -m knowledge …`, `knowledge-cli …`) | `jpcosec/knowledge` (`hum-ecosystem/tools/knowledge`) |
 | `kimun` (v2, Clojure/bb) | sucesor: `kimun migrate --from-v1 .sldb` la convierte a un store `.kimun/` (hito S2) | `jpcosec/kimun` (`~/proyectos/kimun`) |
 
 ## Layout
