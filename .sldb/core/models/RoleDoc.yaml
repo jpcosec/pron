@@ -1,0 +1,13 @@
+name: RoleDoc
+model_ref: deskops.models:RoleDoc
+path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/role.py
+documents_index: .sldb/core/documents/RoleDoc.yaml
+sections_index: ''
+hash_b: ''
+version: 1
+canonical: false
+family: null
+semantics:
+- type.workflow.role
+- workspace.desk.roles
+base_models: []

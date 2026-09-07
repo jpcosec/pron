@@ -1,0 +1,28 @@
+documents:
+- name: routine-task-implement-knowledge-anchor-add
+  path: desk/routines/routine-task-implement-knowledge-anchor-add.md
+  hash_c: 41d4c753dddd3eae9a93da1619bf258409071d0c8147b04e384b47b51fc9fb30
+  hash_d: 269b2606a49784343a80ae4f13aa4eb5cb72b4dc1a5a7ba789fbb1c2652a5033
+  semantic_tags:
+  - primitive:routine
+  - type.workflow.routine
+  - workspace.desk.routines
+  - workspace:desk
+- name: routine-task-implement-canonical-write-ops-create-assert-ingest
+  path: desk/routines/routine-task-implement-canonical-write-ops-create-assert-ingest.md
+  hash_c: b58fa28980844cda538688143c384c1461ee71e62ad14a938803fd4b7c5a689d
+  hash_d: d3b681c4b9fe8fac66fa900592fa36c2d7735988ab7774d5073e2947f3c88dbc
+  semantic_tags:
+  - primitive:routine
+  - type.workflow.routine
+  - workspace.desk.routines
+  - workspace:desk
+- name: routine-task-auto-refresh-indexes-and-graph-after-writes
+  path: desk/routines/routine-task-auto-refresh-indexes-and-graph-after-writes.md
+  hash_c: e191cd46c849f8588ad52f30a8aee9edfb7f02c0d038ae991f7cab60b98ff3dc
+  hash_d: 626be31604b2ff54bdf0e334f856a4bc6b038b51825930841cb1c48dc5376818
+  semantic_tags:
+  - primitive:routine
+  - type.workflow.routine
+  - workspace.desk.routines
+  - workspace:desk

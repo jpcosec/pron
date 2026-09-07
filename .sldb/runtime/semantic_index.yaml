@@ -1,4 +1,8 @@
 tags:
+  artifact:task:
+  - task-auto-refresh-indexes-and-graph-after-writes
+  - task-implement-canonical-write-ops-create-assert-ingest
+  - task-implement-knowledge-anchor-add
   cross:code_knowledge:
   - atom-clean-code-reduces-knowledge-drift
   - atom-repo-artifacts-need-atom-traceability
@@ -1235,6 +1239,65 @@ tags:
   practice:traceability:
   - atom-component-done-means-spec-tests-atoms-docs-and-store-pass
   - atom-repo-artifacts-need-atom-traceability
+  primitive:checklist:
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-closeout-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-testing-ready
+  - checklist-task-implement-knowledge-anchor-add-closeout-ready
+  - checklist-task-implement-knowledge-anchor-add-execution-ready
+  - checklist-task-implement-knowledge-anchor-add-testing-ready
+  primitive:condition:
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout
+  - condition-task-implement-knowledge-anchor-add-has-closeout-evidence
+  - condition-task-implement-knowledge-anchor-add-has-implementation-path
+  - condition-task-implement-knowledge-anchor-add-has-validation
+  - condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated
+  - condition-task-implement-knowledge-anchor-add-ready-for-closeout
+  primitive:edge:
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-activate-to-testing
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-close-to-complete
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-closeout-to-close
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-execution-to-activate
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-ready-to-closeout
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-testing-to-ready
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-activate-to-testing
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-close-to-complete
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-closeout-to-close
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-execution-to-activate
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-ready-to-closeout
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-testing-to-ready
+  - edge-task-implement-knowledge-anchor-add-activate-to-testing
+  - edge-task-implement-knowledge-anchor-add-close-to-complete
+  - edge-task-implement-knowledge-anchor-add-closeout-to-close
+  - edge-task-implement-knowledge-anchor-add-execution-to-activate
+  - edge-task-implement-knowledge-anchor-add-ready-to-closeout
+  - edge-task-implement-knowledge-anchor-add-testing-to-ready
+  primitive:operator:
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-activate
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-close
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-activate
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-close
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing
+  - operator-task-implement-knowledge-anchor-add-activate
+  - operator-task-implement-knowledge-anchor-add-close
+  - operator-task-implement-knowledge-anchor-add-ready-for-testing
+  primitive:routine:
+  - routine-task-auto-refresh-indexes-and-graph-after-writes
+  - routine-task-implement-canonical-write-ops-create-assert-ingest
+  - routine-task-implement-knowledge-anchor-add
   system:deskops:
   - atom-bootstrap-kb-must-preserve-current-atom-ids-and-five-wh-one-plus-discipline
   - atom-bootstrap-kb-should-treat-deskops-atoms-as-the-canonical-bootstrap-surface
@@ -2234,6 +2297,73 @@ tags:
   - atom-where-values-must-be-quoted-or-numeric
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
+  type.workflow.checklist:
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-closeout-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-testing-ready
+  - checklist-task-implement-knowledge-anchor-add-closeout-ready
+  - checklist-task-implement-knowledge-anchor-add-execution-ready
+  - checklist-task-implement-knowledge-anchor-add-testing-ready
+  type.workflow.condition:
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout
+  - condition-task-implement-knowledge-anchor-add-has-closeout-evidence
+  - condition-task-implement-knowledge-anchor-add-has-implementation-path
+  - condition-task-implement-knowledge-anchor-add-has-validation
+  - condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated
+  - condition-task-implement-knowledge-anchor-add-ready-for-closeout
+  type.workflow.edge:
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-activate-to-testing
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-close-to-complete
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-closeout-to-close
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-execution-to-activate
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-ready-to-closeout
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-testing-to-ready
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-activate-to-testing
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-close-to-complete
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-closeout-to-close
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-execution-to-activate
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-ready-to-closeout
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-testing-to-ready
+  - edge-task-implement-knowledge-anchor-add-activate-to-testing
+  - edge-task-implement-knowledge-anchor-add-close-to-complete
+  - edge-task-implement-knowledge-anchor-add-closeout-to-close
+  - edge-task-implement-knowledge-anchor-add-execution-to-activate
+  - edge-task-implement-knowledge-anchor-add-ready-to-closeout
+  - edge-task-implement-knowledge-anchor-add-testing-to-ready
+  type.workflow.operator:
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-activate
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-close
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-activate
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-close
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing
+  - operator-task-implement-knowledge-anchor-add-activate
+  - operator-task-implement-knowledge-anchor-add-close
+  - operator-task-implement-knowledge-anchor-add-ready-for-testing
+  type.workflow.routine:
+  - routine-task-auto-refresh-indexes-and-graph-after-writes
+  - routine-task-implement-canonical-write-ops-create-assert-ingest
+  - routine-task-implement-knowledge-anchor-add
+  type.workflow.task:
+  - task-auto-refresh-indexes-and-graph-after-writes
+  - task-implement-canonical-write-ops-create-assert-ingest
+  - task-implement-knowledge-anchor-add
+  workspace.desk:
+  - task-auto-refresh-indexes-and-graph-after-writes
+  - task-implement-canonical-write-ops-create-assert-ingest
+  - task-implement-knowledge-anchor-add
   workspace.desk.atoms:
   - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
@@ -2531,6 +2661,62 @@ tags:
   - atom-where-values-must-be-quoted-or-numeric
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
+  workspace.desk.primitives:
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
+  - checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-closeout-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready
+  - checklist-task-implement-canonical-write-ops-create-assert-ingest-testing-ready
+  - checklist-task-implement-knowledge-anchor-add-closeout-ready
+  - checklist-task-implement-knowledge-anchor-add-execution-ready
+  - checklist-task-implement-knowledge-anchor-add-testing-ready
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated
+  - condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated
+  - condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout
+  - condition-task-implement-knowledge-anchor-add-has-closeout-evidence
+  - condition-task-implement-knowledge-anchor-add-has-implementation-path
+  - condition-task-implement-knowledge-anchor-add-has-validation
+  - condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated
+  - condition-task-implement-knowledge-anchor-add-ready-for-closeout
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-activate-to-testing
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-close-to-complete
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-closeout-to-close
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-execution-to-activate
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-ready-to-closeout
+  - edge-task-auto-refresh-indexes-and-graph-after-writes-testing-to-ready
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-activate-to-testing
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-close-to-complete
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-closeout-to-close
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-execution-to-activate
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-ready-to-closeout
+  - edge-task-implement-canonical-write-ops-create-assert-ingest-testing-to-ready
+  - edge-task-implement-knowledge-anchor-add-activate-to-testing
+  - edge-task-implement-knowledge-anchor-add-close-to-complete
+  - edge-task-implement-knowledge-anchor-add-closeout-to-close
+  - edge-task-implement-knowledge-anchor-add-execution-to-activate
+  - edge-task-implement-knowledge-anchor-add-ready-to-closeout
+  - edge-task-implement-knowledge-anchor-add-testing-to-ready
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-activate
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-close
+  - operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-activate
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-close
+  - operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing
+  - operator-task-implement-knowledge-anchor-add-activate
+  - operator-task-implement-knowledge-anchor-add-close
+  - operator-task-implement-knowledge-anchor-add-ready-for-testing
+  workspace.desk.routines:
+  - routine-task-auto-refresh-indexes-and-graph-after-writes
+  - routine-task-implement-canonical-write-ops-create-assert-ingest
+  - routine-task-implement-knowledge-anchor-add
   workspace.knowledge.anchors:
   - anchor-anchor
   - anchor-atom
@@ -2545,7 +2731,38 @@ tags:
   - anchor-tagged
   - anchor-tags
   - anchor-title
+  workspace:desk:
+  - routine-task-auto-refresh-indexes-and-graph-after-writes
+  - routine-task-implement-canonical-write-ops-create-assert-ingest
+  - routine-task-implement-knowledge-anchor-add
+  - task-auto-refresh-indexes-and-graph-after-writes
+  - task-implement-canonical-write-ops-create-assert-ingest
+  - task-implement-knowledge-anchor-add
 documents:
+  task-implement-knowledge-anchor-add:
+    model: TaskDoc
+    path: desk/tasks/task-implement-knowledge-anchor-add.md
+    tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+  task-implement-canonical-write-ops-create-assert-ingest:
+    model: TaskDoc
+    path: desk/tasks/task-implement-canonical-write-ops-create-assert-ingest.md
+    tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+  task-auto-refresh-indexes-and-graph-after-writes:
+    model: TaskDoc
+    path: desk/tasks/task-auto-refresh-indexes-and-graph-after-writes.md
+    tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
   atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
     model: AtomDoc
     path: knowledge/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md
@@ -6172,3 +6389,384 @@ documents:
     - system:knowledge
     - type.knowledge.anchor
     - workspace.knowledge.anchors
+  routine-task-implement-knowledge-anchor-add:
+    model: RoutineDoc
+    path: desk/routines/routine-task-implement-knowledge-anchor-add.md
+    tags:
+    - primitive:routine
+    - type.workflow.routine
+    - workspace.desk.routines
+    - workspace:desk
+  routine-task-implement-canonical-write-ops-create-assert-ingest:
+    model: RoutineDoc
+    path: desk/routines/routine-task-implement-canonical-write-ops-create-assert-ingest.md
+    tags:
+    - primitive:routine
+    - type.workflow.routine
+    - workspace.desk.routines
+    - workspace:desk
+  routine-task-auto-refresh-indexes-and-graph-after-writes:
+    model: RoutineDoc
+    path: desk/routines/routine-task-auto-refresh-indexes-and-graph-after-writes.md
+    tags:
+    - primitive:routine
+    - type.workflow.routine
+    - workspace.desk.routines
+    - workspace:desk
+  condition-task-implement-knowledge-anchor-add-has-implementation-path:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-implementation-path.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-knowledge-anchor-add-has-validation:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-validation.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-knowledge-anchor-add-has-closeout-evidence:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-closeout-evidence.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-knowledge-anchor-add-ready-for-closeout:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-ready-for-closeout.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout:
+    model: ConditionDoc
+    path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout.md
+    tags:
+    - primitive:condition
+    - type.workflow.condition
+    - workspace.desk.primitives
+  checklist-task-implement-knowledge-anchor-add-execution-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-knowledge-anchor-add-execution-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-implement-knowledge-anchor-add-testing-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-knowledge-anchor-add-testing-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-implement-knowledge-anchor-add-closeout-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-knowledge-anchor-add-closeout-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-implement-canonical-write-ops-create-assert-ingest-testing-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-canonical-write-ops-create-assert-ingest-testing-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-implement-canonical-write-ops-create-assert-ingest-closeout-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-implement-canonical-write-ops-create-assert-ingest-closeout-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready:
+    model: ChecklistDoc
+    path: desk/primitives/checklists/checklist-task-auto-refresh-indexes-and-graph-after-writes-closeout-ready.md
+    tags:
+    - primitive:checklist
+    - type.workflow.checklist
+    - workspace.desk.primitives
+  operator-task-implement-knowledge-anchor-add-activate:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-activate.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-implement-knowledge-anchor-add-ready-for-testing:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-ready-for-testing.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-implement-knowledge-anchor-add-close:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-close.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-implement-canonical-write-ops-create-assert-ingest-activate:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-activate.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-implement-canonical-write-ops-create-assert-ingest-close:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-close.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-auto-refresh-indexes-and-graph-after-writes-activate:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-activate.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  operator-task-auto-refresh-indexes-and-graph-after-writes-close:
+    model: OperatorDoc
+    path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-close.md
+    tags:
+    - primitive:operator
+    - type.workflow.operator
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-execution-to-activate:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-execution-to-activate.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-activate-to-testing:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-activate-to-testing.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-testing-to-ready:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-testing-to-ready.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-ready-to-closeout:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-ready-to-closeout.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-closeout-to-close:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-closeout-to-close.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-knowledge-anchor-add-close-to-complete:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-knowledge-anchor-add-close-to-complete.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-execution-to-activate:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-execution-to-activate.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-activate-to-testing:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-activate-to-testing.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-testing-to-ready:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-testing-to-ready.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-ready-to-closeout:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-ready-to-closeout.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-closeout-to-close:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-closeout-to-close.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-implement-canonical-write-ops-create-assert-ingest-close-to-complete:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-implement-canonical-write-ops-create-assert-ingest-close-to-complete.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-execution-to-activate:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-execution-to-activate.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-activate-to-testing:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-activate-to-testing.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-testing-to-ready:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-testing-to-ready.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-ready-to-closeout:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-ready-to-closeout.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-closeout-to-close:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-closeout-to-close.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives
+  edge-task-auto-refresh-indexes-and-graph-after-writes-close-to-complete:
+    model: EdgeDoc
+    path: desk/primitives/edges/edge-task-auto-refresh-indexes-and-graph-after-writes-close-to-complete.md
+    tags:
+    - primitive:edge
+    - type.workflow.edge
+    - workspace.desk.primitives

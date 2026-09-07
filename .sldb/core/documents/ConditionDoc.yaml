@@ -1,0 +1,121 @@
+documents:
+- name: condition-task-implement-knowledge-anchor-add-has-implementation-path
+  path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-implementation-path.md
+  hash_c: 6c26ce25d7f568157140b2fd8ae3babd716d1cc798f6e752b2e2bbd58e6e15c0
+  hash_d: ad699bed2b7e5d8d33951555482ee0dfd4190f8bee27dbeaa9018ccac755319d
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-knowledge-anchor-add-has-validation
+  path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-validation.md
+  hash_c: b2dc2246d4de109aaf08023ab8d7bbdc7b0e40afdbc29d8bd0f8e949ccc3f392
+  hash_d: aac78f73fee5468305c5b22977c751051b7f976ab21fab2d8bb70285c51a7ca2
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-knowledge-anchor-add-has-closeout-evidence
+  path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-has-closeout-evidence.md
+  hash_c: 59aaa095252c74f7c42c7b5f32ec534264a5fe5dc8f12a12d68c4c4bff0ae00e
+  hash_d: f346b23c4a2ab9270a005e9a23407d5cb7b869a2a9ed73a4233054c8d57e5d0f
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated
+  path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-pill-knowledge-graduated.md
+  hash_c: a2e3f5c01a592992911dadfad5e5b7a768f1486ddb91bb25c8390550bd91f59d
+  hash_d: f64c1d3425b97d64b6c1c3e1017ba2561bd28fa4042357660fe90f7da6f1877f
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-knowledge-anchor-add-ready-for-closeout
+  path: desk/primitives/conditions/condition-task-implement-knowledge-anchor-add-ready-for-closeout.md
+  hash_c: 6950112dc9817ebc991e1cead211356901b99f57cb3ed1ed7776eac43fc5f4b2
+  hash_d: 0a947ff3dd9690017689263b820ec8ac96f7b5cfdb225005447587edb764690e
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path
+  path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-implementation-path.md
+  hash_c: 55280ec5e1f9dacf92cb500a01eb88c7b522398a05f3e16c0ddd618c9eef1388
+  hash_d: 5b3acc9d6d8849def9931ff2c93033715d2cd8c86ec5503bb402e6f8d9b4292c
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation
+  path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-validation.md
+  hash_c: f3d3da515ca8ecbb810cb8907dc8776b098411d7b62cd7ec0734f80bca243da4
+  hash_d: abdaccc61cb561b693cb1784647f7dee6b0ef459797c87142cf53ba67ce4029d
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence
+  path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-has-closeout-evidence.md
+  hash_c: bd1e7db03aad12d30cfe2fca7abbe361b5c22409068ef6794845a50c9744b332
+  hash_d: 694432b60562d16e333edfb123589fb7b6a8f20884b63ba00ca1cbb631c4ee29
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated
+  path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-pill-knowledge-graduated.md
+  hash_c: a9a87099ca77a366f04ab2e6527e8d91a0ec1fd5275c1a7ccee63f1d416c6de3
+  hash_d: a5bc9b7b3df84c9bc3e1a6068c49e9304d9697f833a90fecbe32235cf52be97c
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout
+  path: desk/primitives/conditions/condition-task-implement-canonical-write-ops-create-assert-ingest-ready-for-closeout.md
+  hash_c: 5bfe78910a50852480891b5333f983f9ead07f3532f3fb3889342610629fdaef
+  hash_d: d464a1d98165f6cf99d54431d29ddb740fe9c4ecf555e8636896142e668b2b31
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path
+  path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-implementation-path.md
+  hash_c: ff72f57a53a09f52c8edb4811147ccc7e1b1968808a1aeb276d8c31445df368b
+  hash_d: ffcabf0dff81c4518df7229b4dc042af635c3ed4611286deb17ee40d0810acbc
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation
+  path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-validation.md
+  hash_c: 6c15c94037118185548aa2b3cc9d55be6042ffcddbd051e0063207f8f5265eeb
+  hash_d: 5e5e060e8af1cf7ae2778675968c18ca2e79187db411a89b9f66fb2893264f91
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence
+  path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-has-closeout-evidence.md
+  hash_c: 1e4093d96907fee4392b44591052d36191e490a0bb79bc9f57efd059a81de831
+  hash_d: 816a29c353f3cd92784d229c7fb87599b3f1305666911968d87727052dcf4cec
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated
+  path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-pill-knowledge-graduated.md
+  hash_c: c3daf8bc3a9c6b0b8db4564b647aa9943450c0bcb48b94ed5ddca779f610549a
+  hash_d: 282c4766eb8c9c0b410f455eea970f9352be34e04f790c704f0637f17a219deb
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives
+- name: condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout
+  path: desk/primitives/conditions/condition-task-auto-refresh-indexes-and-graph-after-writes-ready-for-closeout.md
+  hash_c: 2dcab3ad6ecf01035f6979635767b50354c12c22c98fbedd7697193f9dcfd226
+  hash_d: 34de2929d24690410adec23c512a24582a47d7f04ad2362fe191a9accdaaf17e
+  semantic_tags:
+  - primitive:condition
+  - type.workflow.condition
+  - workspace.desk.primitives

@@ -1,0 +1,73 @@
+documents:
+- name: operator-task-implement-knowledge-anchor-add-activate
+  path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-activate.md
+  hash_c: 512caab05503b0c6b4de120067047cea7aa33039aaf4476dac41e9b1c8810d53
+  hash_d: 81fc792b1367e9b00553e72ff199038dcfe47a902b5f9f96335d9eb1af2dc49d
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-implement-knowledge-anchor-add-ready-for-testing
+  path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-ready-for-testing.md
+  hash_c: ed79965b05eed29733f9ac25a6031b499cdf2d2b1d3bb3dbe5ab80cc69ab01b7
+  hash_d: 525c3c31f47935630ea8038e0ce8d1513d81f78accf53c123dd1fd98436d47f6
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-implement-knowledge-anchor-add-close
+  path: desk/primitives/operators/operator-task-implement-knowledge-anchor-add-close.md
+  hash_c: e2fe3c28cd402fa9abed665b9a1a80c6d0967d1c236e2dfe86dc0bda31554228
+  hash_d: b97513913a2ae807914b5168ab1d7fdc75c5984858e12e6e3b05f86a0c976192
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-implement-canonical-write-ops-create-assert-ingest-activate
+  path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-activate.md
+  hash_c: e36e5e96e97b35eb84f5c5eac14b04d43838b2dc306974f7dff0034fcdd789f3
+  hash_d: 4950823a0245a626f0c5438df73c0f4dd5675b4e8e40ea5c332515bb6b27d824
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing
+  path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-ready-for-testing.md
+  hash_c: 349ae96edaf3264e308fd585698d91629aaef3ccab0dfd1e193dea973d650e4d
+  hash_d: 07bdf01fb527b3689dce088b733a8b3262e81d37d131e3895295c46ab7424cc9
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-implement-canonical-write-ops-create-assert-ingest-close
+  path: desk/primitives/operators/operator-task-implement-canonical-write-ops-create-assert-ingest-close.md
+  hash_c: 841a52aaec2bacdfd09ebea1ceb3f4ae125dad4fef59e0bae5fd13faa865b0a8
+  hash_d: 55ceda24f9c1d1f883e230e676088cf332e9e9bbfe3f1f18559028585d3e19dd
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-auto-refresh-indexes-and-graph-after-writes-activate
+  path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-activate.md
+  hash_c: a7559b72c5353caa47f4f7678ff9af01f4bb120dd46020cc2ef7ef3817d6b46b
+  hash_d: 1f673c422fdd03987683c552da541e6435b5bc5627ade74262d7f0e717513dd7
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing
+  path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-ready-for-testing.md
+  hash_c: bf2f5bb736382d8b7e4d02a1e4be992b8c7bd9ae0de072aa2a4b8cb1f18d511f
+  hash_d: 06dd1632e5500af1236ceafbacc7b9accf24b409f9b2725f5e3ece8a89dd8fe3
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives
+- name: operator-task-auto-refresh-indexes-and-graph-after-writes-close
+  path: desk/primitives/operators/operator-task-auto-refresh-indexes-and-graph-after-writes-close.md
+  hash_c: 12479fb543945379a15e1a9e9b5999afc2029bd161abdf86afa38da134098176
+  hash_d: e21342590e26e6f26ee9539daca3638477e604dd39d07bfa73dba9b478b8bb9e
+  semantic_tags:
+  - primitive:operator
+  - type.workflow.operator
+  - workspace.desk.primitives

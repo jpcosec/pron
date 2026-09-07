@@ -84,5 +84,53 @@ models:
   canonical: false
   family: null
   semantics: []
+- name: RoleDoc
+  model_ref: deskops.models:RoleDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/role.py
+  models_index: .sldb/core/models/RoleDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: RoutineDoc
+  model_ref: deskops.models:RoutineDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/routine.py
+  models_index: .sldb/core/models/RoutineDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: ConditionDoc
+  model_ref: deskops.models:ConditionDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/condition.py
+  models_index: .sldb/core/models/ConditionDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: ChecklistDoc
+  model_ref: deskops.models:ChecklistDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/checklist.py
+  models_index: .sldb/core/models/ChecklistDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: OperatorDoc
+  model_ref: deskops.models:OperatorDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/operator.py
+  models_index: .sldb/core/models/OperatorDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: EdgeDoc
+  model_ref: deskops.models:EdgeDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/edge.py
+  models_index: .sldb/core/models/EdgeDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
 predicates: []
-hash_a: d6e593c08f4a688404d858e31dcef106e395e85d2c1425718d4a63a6c6788dc3
+hash_a: 7fbe1828e1b4c86a59d8acb0cb207f714bac204822de73cb4e14c188dd422f8e

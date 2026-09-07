@@ -1,1 +1,28 @@
-documents: []
+documents:
+- name: task-implement-knowledge-anchor-add
+  path: desk/tasks/task-implement-knowledge-anchor-add.md
+  hash_c: 063d080d6cc671895c5102a6fc71cac1309adadececc885df2f3f143780ab31c
+  hash_d: b895008b4fc1e09ecc52a1f2c090c20b9414506af3d7c2bb3be227e389752653
+  semantic_tags:
+  - artifact:task
+  - type.workflow.task
+  - workspace.desk
+  - workspace:desk
+- name: task-implement-canonical-write-ops-create-assert-ingest
+  path: desk/tasks/task-implement-canonical-write-ops-create-assert-ingest.md
+  hash_c: 023ae2770c4b1d9be5cfc7a76d394036756f6c2b8024db7baf8884755565a496
+  hash_d: 33808c4d8a42bc1268cdaeec1f180b435436077266e37bc49c7967e79a8141d0
+  semantic_tags:
+  - artifact:task
+  - type.workflow.task
+  - workspace.desk
+  - workspace:desk
+- name: task-auto-refresh-indexes-and-graph-after-writes
+  path: desk/tasks/task-auto-refresh-indexes-and-graph-after-writes.md
+  hash_c: cd2f5e2dfc5d41b3b6fd35663e6da3c1892f9d579ad964fe98e73bae5899f5f6
+  hash_d: e30775c34c30b5e59ba2bee8df2b1f200beba6c6fe04f066e87db0f30c3595b3
+  semantic_tags:
+  - artifact:task
+  - type.workflow.task
+  - workspace.desk
+  - workspace:desk
