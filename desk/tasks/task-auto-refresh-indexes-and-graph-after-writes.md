@@ -1,13 +1,14 @@
 ---
 id: task-auto-refresh-indexes-and-graph-after-writes
-status: draft
+status: active
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 routine: routine-task-auto-refresh-indexes-and-graph-after-writes
-current_node: checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
-history: []
+current_node: checklist-task-auto-refresh-indexes-and-graph-after-writes-testing-ready
+history:
+- operator-task-auto-refresh-indexes-and-graph-after-writes-activate
 references:
 - 004019b
 - tests/test_anchor_add.py
@@ -27,6 +28,8 @@ inherits_from: []
 inherit_acceptance_context: false
 atoms:
 - atom-a-zero-edge-graph-snapshot-should-be-treated-as-an-incomplete-provenance-build-rather-than-a-healthy-graph
+closeout_evidence_verified: true
+pill_graduation_verified: true
 ---
 
 # Auto-refresh indexes and graph after writes
