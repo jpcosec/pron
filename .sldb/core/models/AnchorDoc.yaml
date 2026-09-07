@@ -3,7 +3,7 @@ model_ref: sldb.models.knowledge_surface:AnchorDoc
 path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
 documents_index: .sldb/core/documents/AnchorDoc.yaml
 sections_index: .sldb/runtime/sections/AnchorDoc.yaml
-hash_b: 7fd21db19843249dce9a45cdacb836fb3200e57dfcd438035d9498c0aeb174d4
+hash_b: 5b0eb2e68baf37fff060890afb9053c231cf525da2ad0b6dcef9807124764265
 version: 1
 canonical: false
 family: null

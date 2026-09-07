@@ -132,5 +132,21 @@ models:
   canonical: false
   family: null
   semantics: []
+- name: FactDoc
+  model_ref: knowledge.bridges.write_models:FactDoc
+  path: src/knowledge/bridges/write_models.py
+  models_index: .sldb/core/models/FactDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: PropositionDoc
+  model_ref: knowledge.bridges.write_models:PropositionDoc
+  path: src/knowledge/bridges/write_models.py
+  models_index: .sldb/core/models/PropositionDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
 predicates: []
-hash_a: 126baa2246398d6c5e165aacf2f3bc8f37d4e2d85f3cfbe04fc2c2652b3b35b6
+hash_a: 365fa4ec87acc59ac156bf2cb186cbb07b0c7166b516fe74e74b0f1442ff9046

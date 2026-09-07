@@ -167,3 +167,63 @@ documents:
   - system:knowledge
   - type.knowledge.anchor
   - workspace.knowledge.anchors
+- name: anchor-create
+  path: knowledge/anchors/anchor-create.md
+  hash_c: 99a806b8ba0c013a8bfaa1d365b3402cb6935603cc6b90f5f92d0589f36dc50a
+  hash_d: d2bae60ee88fecad935868fc4907ad40565ed381e629dfb0699a38f1ac050745
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-assert
+  path: knowledge/anchors/anchor-assert.md
+  hash_c: a27eddd5b9b2c4b8dc213284e58d34c06a1e1db320c37c0b07bf16ec6dd3a1d1
+  hash_d: 3032d2c013ec0c06ba32fb696556dd6405eee3503093e9dda20a142bf18394d4
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-ingest
+  path: knowledge/anchors/anchor-ingest.md
+  hash_c: 79199871fa4a84fc5ee6d046df2f8890a7dec682ba996aa795902041d196dd80
+  hash_d: b8b09e6b02b678fb05ffdedb47bf28e49e5d871dcfb5c83932e26f3a10c8b998
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-fact
+  path: knowledge/anchors/anchor-fact.md
+  hash_c: 72d9b913df868379a4136ed5080dda072e0a65408f457c9c0030a652367ae27e
+  hash_d: 02c22ce44fd05360bfde7e4944c1f20f72f7cc79c7b9e66bdd6100c63401cb6c
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-proposition
+  path: knowledge/anchors/anchor-proposition.md
+  hash_c: 59f64ef1d23ec74dc2c713af27c488ef45ca7ea72c146443b108fd305d3d0a00
+  hash_d: acef6c0720722e3364b0b76f98c1b13d9a4721355aa4ee0f955b1808cd0e67f3
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors

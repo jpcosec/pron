@@ -126,12 +126,17 @@ tags:
   domain:knowledge_representation:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -367,12 +372,17 @@ tags:
   entity:anchor:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -545,12 +555,17 @@ tags:
   impl:here:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -602,6 +617,7 @@ tags:
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-unanchored-symbols-fail-with-an-explicit-semantic-error
   - atom-where-values-must-be-quoted-or-numeric
+  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   impl:pending:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators
@@ -812,7 +828,6 @@ tags:
   - atom-webpage-sources-should-be-snapshot-bound-before-they-are-sampled
   - atom-when-semantic-linting-is-required-beyond-mechanical
   - atom-wigame-as-local-language-game
-  - atom-write-operations-record-provenance-of-the-command-that-produced-them
   kind:concept:
   - atom-about-concept-should-express-the-primary-semantic-target-of-an-atom
   - atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
@@ -1018,12 +1033,17 @@ tags:
   kind:software:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -1497,12 +1517,17 @@ tags:
   system:knowledge:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -1994,12 +2019,17 @@ tags:
   type.knowledge.anchor:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -2726,12 +2756,17 @@ tags:
   workspace.knowledge.anchors:
   - anchor-add
   - anchor-anchor
+  - anchor-assert
   - anchor-atom
   - anchor-check
+  - anchor-create
+  - anchor-fact
+  - anchor-ingest
   - anchor-kin
   - anchor-list
   - anchor-next
   - anchor-overlap
+  - anchor-proposition
   - anchor-return
   - anchor-show
   - anchor-summary
@@ -5676,7 +5711,7 @@ documents:
     tags:
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -6399,6 +6434,61 @@ documents:
   anchor-add:
     model: AnchorDoc
     path: knowledge/anchors/anchor-add.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-create:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-create.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-assert:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-assert.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-ingest:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-ingest.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-fact:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-fact.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-proposition:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-proposition.md
     tags:
     - domain:knowledge_representation
     - entity:anchor

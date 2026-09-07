@@ -3153,7 +3153,7 @@ documents:
   semantic_tags:
   - domain:provenance
   - graph:lineage
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring

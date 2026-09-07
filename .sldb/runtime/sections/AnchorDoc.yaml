@@ -769,3 +769,278 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: anchor-create
+  sections:
+  - path: create
+    title: create
+    breadcrumbs:
+    - create
+    about:
+    - create
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: create
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: create/motive
+    title: Motive
+    breadcrumbs:
+    - create
+    - Motive
+    about:
+    - create
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: anchor-assert
+  sections:
+  - path: assert
+    title: assert
+    breadcrumbs:
+    - assert
+    about:
+    - assert
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: assert
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: assert/motive
+    title: Motive
+    breadcrumbs:
+    - assert
+    - Motive
+    about:
+    - assert
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: anchor-ingest
+  sections:
+  - path: ingest
+    title: ingest
+    breadcrumbs:
+    - ingest
+    about:
+    - ingest
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: ingest
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: ingest/motive
+    title: Motive
+    breadcrumbs:
+    - ingest
+    - Motive
+    about:
+    - ingest
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: anchor-fact
+  sections:
+  - path: fact
+    title: fact
+    breadcrumbs:
+    - fact
+    about:
+    - fact
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: fact
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: fact/motive
+    title: Motive
+    breadcrumbs:
+    - fact
+    - Motive
+    about:
+    - fact
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18
+- doc_name: anchor-proposition
+  sections:
+  - path: proposition
+    title: proposition
+    breadcrumbs:
+    - proposition
+    about:
+    - proposition
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: proposition
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: proposition/motive
+    title: Motive
+    breadcrumbs:
+    - proposition
+    - Motive
+    about:
+    - proposition
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18

@@ -1,0 +1,27 @@
+## master...origin/master [ahead 25]
+ M .sldb/core/documents/AnchorDoc.yaml
+ M .sldb/core/documents/AtomDoc.yaml
+ M .sldb/core/models/AnchorDoc.yaml
+ M .sldb/core/store_index.yaml
+ M .sldb/runtime/knowledge.nx.json
+ M .sldb/runtime/sections/AnchorDoc.yaml
+ M .sldb/runtime/sections/AtomDoc.yaml
+ M .sldb/runtime/semantic_index.yaml
+ M knowledge/atoms/atom-write-operations-record-provenance-of-the-command-that-produced-them.md
+ M src/knowledge/bridges/__pycache__/sldb_bridge.cpython-313.pyc
+ M src/knowledge/bridges/sldb_bridge.py
+ M src/knowledge/cli/__pycache__/main.cpython-313.pyc
+ M src/knowledge/core/__pycache__/evaluator.cpython-313.pyc
+ M src/knowledge/core/evaluator.py
+?? .sldb/core/documents/FactDoc.yaml
+?? .sldb/core/documents/PropositionDoc.yaml
+?? .sldb/core/models/FactDoc.yaml
+?? .sldb/core/models/PropositionDoc.yaml
+?? knowledge/anchors/anchor-assert.md
+?? knowledge/anchors/anchor-create.md
+?? knowledge/anchors/anchor-fact.md
+?? knowledge/anchors/anchor-ingest.md
+?? knowledge/anchors/anchor-proposition.md
+?? src/knowledge/bridges/write_models.py
+?? src/knowledge/ops/write.py
+?? tests/test_write_ops.py

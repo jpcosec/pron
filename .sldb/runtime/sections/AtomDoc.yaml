@@ -15053,7 +15053,7 @@ documents:
     - write operations record provenance of the command that produced them
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15062,7 +15062,7 @@ documents:
     semantic_tags:
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15084,7 +15084,7 @@ documents:
     - answer
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15093,7 +15093,7 @@ documents:
     semantic_tags:
     - domain:provenance
     - graph:lineage
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
