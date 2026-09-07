@@ -14,3 +14,7 @@ human_feedback/.obsidian/
 # OS
 Thumbs.db
 .knowledge/
+runs/
+__pycache__/
+*.egg-info/
+*.pyc
