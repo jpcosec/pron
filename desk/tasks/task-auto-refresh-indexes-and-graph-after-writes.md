@@ -8,7 +8,12 @@ tags:
 routine: routine-task-auto-refresh-indexes-and-graph-after-writes
 current_node: checklist-task-auto-refresh-indexes-and-graph-after-writes-execution-ready
 history: []
-references: []
+references:
+- 004019b
+- tests/test_anchor_add.py
+- tests/test_write_ops.py
+- tests/test_refresh.py
+- atom-write-operations-record-provenance-of-the-command-that-produced-them
 depends_on:
 - task-implement-knowledge-anchor-add
 pills: []

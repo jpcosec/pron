@@ -8,7 +8,12 @@ tags:
 routine: routine-task-implement-canonical-write-ops-create-assert-ingest
 current_node: checklist-task-implement-canonical-write-ops-create-assert-ingest-execution-ready
 history: []
-references: []
+references:
+- 71da4bd
+- tests/test_anchor_add.py
+- tests/test_write_ops.py
+- tests/test_refresh.py
+- atom-write-operations-record-provenance-of-the-command-that-produced-them
 depends_on:
 - task-implement-knowledge-anchor-add
 pills: []
