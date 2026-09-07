@@ -1953,6 +1953,11 @@ tags:
   - atom-knar-workflow-derivado
   topic:workflow_separation:
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
+  type.desk.inbox-note:
+  - 20260907-125920-suggestion-terminal-node-complete-borra-el-task-bundle-sin-commit-previo-ni-limpieza-de-store
+  type.desk.repository:
+  - repo-Upla
+  - repo-deskops
   type.knowledge.anchor:
   - anchor-add
   - anchor-anchor
@@ -2567,6 +2572,11 @@ tags:
   - atom-where-values-must-be-quoted-or-numeric
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
+  workspace.desk.inbox:
+  - 20260907-125920-suggestion-terminal-node-complete-borra-el-task-bundle-sin-commit-previo-ni-limpieza-de-store
+  workspace.desk.registry:
+  - repo-Upla
+  - repo-deskops
   workspace.knowledge.anchors:
   - anchor-add
   - anchor-anchor
@@ -2588,6 +2598,24 @@ tags:
   - anchor-tags
   - anchor-title
 documents:
+  20260907-125920-suggestion-terminal-node-complete-borra-el-task-bundle-sin-commit-previo-ni-limpieza-de-store:
+    model: InboxNoteDoc
+    path: /home/jp/proyectos/hum-ecosystem/tools/deskops/desk/inbox/20260907-125920-suggestion-terminal-node-complete-borra-el-task-bundle-sin-commit-previo-ni-limpieza-de-store.md
+    tags:
+    - type.desk.inbox-note
+    - workspace.desk.inbox
+  repo-deskops:
+    model: RepositoryDoc
+    path: desk/registry/repo-deskops.md
+    tags:
+    - type.desk.repository
+    - workspace.desk.registry
+  repo-Upla:
+    model: RepositoryDoc
+    path: desk/registry/repo-Upla.md
+    tags:
+    - type.desk.repository
+    - workspace.desk.registry
   atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators:
     model: AtomDoc
     path: knowledge/atoms/atom-anchor-bundles-should-combine-structural-textual-and-contextual-locators.md

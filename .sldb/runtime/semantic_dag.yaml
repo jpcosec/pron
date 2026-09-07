@@ -1,6 +1,15 @@
 nodes:
 - id: type
   parents: []
+- id: type.desk
+  parents:
+  - type
+- id: type.desk.inbox-note
+  parents:
+  - type.desk
+- id: type.desk.repository
+  parents:
+  - type.desk
 - id: type.knowledge
   parents:
   - type
@@ -16,6 +25,12 @@ nodes:
   parents:
   - workspace
 - id: workspace.desk.atoms
+  parents:
+  - workspace.desk
+- id: workspace.desk.inbox
+  parents:
+  - workspace.desk
+- id: workspace.desk.registry
   parents:
   - workspace.desk
 - id: workspace.knowledge

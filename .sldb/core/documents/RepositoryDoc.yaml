@@ -1,1 +1,29 @@
-documents: []
+documents:
+- name: repo-deskops
+  path: desk/registry/repo-deskops.md
+  hash_c: 3d91fc2aa7bedd3a29f9d9ef163a63b44f7822b51d56294c954a9d71d604c670
+  hash_d: d4afce662e63729b7dc1307b9d19d3ba92537039df74524a725fa59038fd0a1e
+  semantic_tags:
+  - type.desk.repository
+  - workspace.desk.registry
+- name: repo-knowledge
+  path: desk/registry/repo-knowledge.md
+  hash_c: da944043ae82e784b9938819f916b6c73f43543e65eeacb9409b4d179a69bc75
+  hash_d: aabb9b6b55b429bbaa733d08df1aee2eb5d229bd2840ed99a70f8160ff60f4cb
+  semantic_tags:
+  - type.desk.repository
+  - workspace.desk.registry
+- name: repo-upla
+  path: desk/registry/repo-upla.md
+  hash_c: 209c921463fa6e9f0ce25d1a48aba57059d951dd86cb5b1e2ac5393847c61fb7
+  hash_d: 3b6eaed91b1e327af151c7eaee155f4c566d3d0d70f5503dcf1f6217dd7c7c44
+  semantic_tags:
+  - type.desk.repository
+  - workspace.desk.registry
+- name: repo-Upla
+  path: desk/registry/repo-Upla.md
+  hash_c: 9b76e698efea63e7b5dad2de3ed387ca05d8fa6a558d7a6dabf23bcd3f234eb1
+  hash_d: c0722803e12d7f45d3a293bc6931d0a934041492dabd63b5642e155291003c45
+  semantic_tags:
+  - type.desk.repository
+  - workspace.desk.registry
