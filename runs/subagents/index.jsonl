@@ -1,2 +1,3 @@
 {"task_id": "task-implement-knowledge-anchor-add", "run_id": null, "run_dir": "runs/subagents/task-anchor-add-exec-20260906-2120", "commit": "8253770449903c1c623e9cce0ce7289e518afe16", "session_sha256": null}
 {"task_id": "task-implement-canonical-write-ops-create-assert-ingest", "run_id": null, "run_dir": "runs/subagents/task-implement-canonical-write-ops-create-assert-ingest-exec-20260906-2144", "commit": "71da4bde214d8fd121e0bd55c7601cf39072bc7f", "session_sha256": null}
+{"task_id": "task-auto-refresh-indexes-and-graph-after-writes", "run_id": null, "run_dir": "runs/subagents/task-auto-refresh-indexes-and-graph-after-writes-exec-20260906-2216", "commit": "004019b8259c5f4ee327b2a760c0c3b250416f1f", "session_sha256": null}
