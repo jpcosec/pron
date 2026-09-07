@@ -16,6 +16,9 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
+# $KNOWLEDGE_KB or the sibling directory ../pron.
+KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
 ENV = {**os.environ, "PYTHONPATH": str(ROOT / "src")}
 
 
@@ -55,7 +58,7 @@ def _bootstrap(tmp: Path):
     ):
         r = subprocess.run(cmd, capture_output=True, text=True, env=ENV)
         assert r.returncode == 0, r.stdout + r.stderr
-    anchors_src = ROOT / "knowledge" / "anchors"
+    anchors_src = KB / "knowledge" / "anchors"
     anchors_dst = tmp / "knowledge" / "anchors"
     anchors_dst.mkdir(parents=True)
     for f in anchors_src.glob("*.md"):

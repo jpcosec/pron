@@ -16,8 +16,8 @@ dependencies = [
 knowledge-cli = "knowledge.cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/jp-proyectos/knowledge"
-Repository = "https://github.com/jp-proyectos/knowledge"
+Homepage = "https://github.com/jpcosec/knowledge"
+Repository = "https://github.com/jpcosec/knowledge"
 
 [tool.setuptools.packages.find]
 where = ["src"]

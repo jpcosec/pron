@@ -11,14 +11,18 @@ from __future__ import annotations
 
 import ast
 import sys
+import os
 from pathlib import Path
 
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
+# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
+# $KNOWLEDGE_KB or the sibling directory ../pron.
+KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
 sys.path.insert(0, str(ROOT / "src"))
 
-ATOMS = ROOT / "knowledge" / "atoms"
+ATOMS = KB / "knowledge" / "atoms"
 
 
 def atom_exists(atom_id: str) -> None:
@@ -364,5 +368,5 @@ def test_atom_the_anchor_table_is_declared_as_sldb_documents_not_code():
             f"hardcoded anchor table in {py}"
         )
     # and the repo's grammar exists as tracked documents
-    anchors_dir = ROOT / "knowledge" / "anchors"
+    anchors_dir = KB / "knowledge" / "anchors"
     assert len(list(anchors_dir.glob("anchor-*.md"))) >= 10

@@ -7,11 +7,15 @@ Run from the repo root: PYTHONPATH=src pytest tests/ -x -q
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
+# $KNOWLEDGE_KB or the sibling directory ../pron.
+KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
 ENV = {"PYTHONPATH": str(ROOT / "src")}
 
 
@@ -22,7 +26,7 @@ def run(*args: str) -> tuple[int, dict | str]:
         [sys.executable, "-m", "knowledge", *args],
         capture_output=True,
         text=True,
-        cwd=ROOT,
+        cwd=KB,
         env={**os.environ, **ENV},
     )
     try:
