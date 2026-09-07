@@ -2,7 +2,7 @@
   "metadata": {
     "edge_count": 278,
     "extractor": "deskops_kgdb_snapshot_v1",
-    "node_count": 310,
+    "node_count": 313,
     "runtime_output_path": ".sldb/runtime/graphs/deskops.kg.json",
     "schema": "deskops_kgdb_graph_snapshot_v1",
     "source_extractors": [
@@ -17835,8 +17835,8 @@
           "knowledge_representation",
           "kind:concept",
           "concept",
-          "impl:pending",
-          "pending",
+          "impl:here",
+          "here",
           "topic:semantic_anchoring",
           "semantic_anchoring",
           "entity:cli_command",
@@ -17854,7 +17854,7 @@
           "system:knowledge",
           "domain:knowledge_representation",
           "kind:concept",
-          "impl:pending",
+          "impl:here",
           "topic:semantic_anchoring",
           "entity:cli_command"
         ],
@@ -20140,8 +20140,8 @@
           "provenance",
           "kind:concept",
           "concept",
-          "impl:pending",
-          "pending",
+          "impl:here",
+          "here",
           "topic:semantic_anchoring",
           "semantic_anchoring",
           "graph:lineage",
@@ -20159,7 +20159,7 @@
           "system:knowledge",
           "domain:provenance",
           "kind:concept",
-          "impl:pending",
+          "impl:here",
           "topic:semantic_anchoring",
           "graph:lineage"
         ],
@@ -20449,6 +20449,28 @@
     {
       "edges": [],
       "identity": {
+        "node_id": "test_file:tests/test_anchor_add.py",
+        "node_type": "test_file"
+      },
+      "semantics": {
+        "file_kind": "test",
+        "identity": "tests/test_anchor_add.py",
+        "path": "tests/test_anchor_add.py"
+      },
+      "source": {
+        "extractor": "deskops_kgdb_snapshot_v1",
+        "provenance": [
+          {
+            "extractor": "desk_source_file_nodes_v1",
+            "path": "tests/test_anchor_add.py",
+            "source_kind": "path_rule"
+          }
+        ]
+      }
+    },
+    {
+      "edges": [],
+      "identity": {
         "node_id": "test_file:tests/test_atom_compliance.py",
         "node_type": "test_file"
       },
@@ -20471,6 +20493,28 @@
     {
       "edges": [],
       "identity": {
+        "node_id": "test_file:tests/test_refresh.py",
+        "node_type": "test_file"
+      },
+      "semantics": {
+        "file_kind": "test",
+        "identity": "tests/test_refresh.py",
+        "path": "tests/test_refresh.py"
+      },
+      "source": {
+        "extractor": "deskops_kgdb_snapshot_v1",
+        "provenance": [
+          {
+            "extractor": "desk_source_file_nodes_v1",
+            "path": "tests/test_refresh.py",
+            "source_kind": "path_rule"
+          }
+        ]
+      }
+    },
+    {
+      "edges": [],
+      "identity": {
         "node_id": "test_file:tests/test_wrapper.py",
         "node_type": "test_file"
       },
@@ -20485,6 +20529,28 @@
           {
             "extractor": "desk_source_file_nodes_v1",
             "path": "tests/test_wrapper.py",
+            "source_kind": "path_rule"
+          }
+        ]
+      }
+    },
+    {
+      "edges": [],
+      "identity": {
+        "node_id": "test_file:tests/test_write_ops.py",
+        "node_type": "test_file"
+      },
+      "semantics": {
+        "file_kind": "test",
+        "identity": "tests/test_write_ops.py",
+        "path": "tests/test_write_ops.py"
+      },
+      "source": {
+        "extractor": "deskops_kgdb_snapshot_v1",
+        "provenance": [
+          {
+            "extractor": "desk_source_file_nodes_v1",
+            "path": "tests/test_write_ops.py",
             "source_kind": "path_rule"
           }
         ]
