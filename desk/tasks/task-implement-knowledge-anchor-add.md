@@ -1,13 +1,15 @@
 ---
 id: task-implement-knowledge-anchor-add
-status: draft
+status: ready_for_testing
 summary: ''
 tags:
 - workspace:desk
 - artifact:task
 routine: routine-task-implement-knowledge-anchor-add
-current_node: checklist-task-implement-knowledge-anchor-add-execution-ready
-history: []
+current_node: checklist-task-implement-knowledge-anchor-add-closeout-ready
+history:
+- operator-task-implement-knowledge-anchor-add-activate
+- operator-task-implement-knowledge-anchor-add-ready-for-testing
 references: []
 depends_on: []
 pills: []
@@ -25,6 +27,8 @@ atoms:
 - atom-anchor-kinds-partition-what-a-symbol-can-refer-to
 - atom-the-anchor-table-is-declared-as-sldb-documents-not-code
 - atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
+closeout_evidence_verified: false
+pill_graduation_verified: true
 ---
 
 # Implement knowledge anchor add

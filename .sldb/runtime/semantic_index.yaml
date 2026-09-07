@@ -124,6 +124,7 @@ tags:
   - atom-the-kb-needs-three-connected-graph-strata
   - atom-the-sldb-export-ingest-pipeline-is-the-operative-graph-route
   domain:knowledge_representation:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -364,6 +365,7 @@ tags:
   - atom-the-projector-gives-the-evaluator-a-world
   - atom-the-universal-knowledge-loop-contributes-a-process-view-not-a-storage-model
   entity:anchor:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -541,6 +543,7 @@ tags:
   - atom-validation-diagnostics-use-structured-codes
   - atom-validation-proceeds-through-5-layered-levels
   impl:here:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -1013,6 +1016,7 @@ tags:
   - atom-wigame-as-local-language-game
   - atom-write-operations-record-provenance-of-the-command-that-produced-them
   kind:software:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -1491,6 +1495,7 @@ tags:
   - atom-selfdoc-and-anchor-motive-share-one-principle-of-discoverability
   - atom-the-knar-orchestrator-is-the-evaluator-one-level-up
   system:knowledge:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -1987,6 +1992,7 @@ tags:
   topic:workflow_separation:
   - atom-knowledge-cli-should-separate-knowledge-operations-from-operational-workflow
   type.knowledge.anchor:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -2718,6 +2724,7 @@ tags:
   - routine-task-implement-canonical-write-ops-create-assert-ingest
   - routine-task-implement-knowledge-anchor-add
   workspace.knowledge.anchors:
+  - anchor-add
   - anchor-anchor
   - anchor-atom
   - anchor-check
@@ -6381,6 +6388,17 @@ documents:
   anchor-overlap:
     model: AnchorDoc
     path: knowledge/anchors/anchor-overlap.md
+    tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-add:
+    model: AnchorDoc
+    path: knowledge/anchors/anchor-add.md
     tags:
     - domain:knowledge_representation
     - entity:anchor

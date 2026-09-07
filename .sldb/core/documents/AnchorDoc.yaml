@@ -155,3 +155,15 @@ documents:
   - system:knowledge
   - type.knowledge.anchor
   - workspace.knowledge.anchors
+- name: anchor-add
+  path: knowledge/anchors/anchor-add.md
+  hash_c: 3d6393bb1bb93cf4fd88c0eb4c591fe8d0e659d1411eff806523c63f02881e53
+  hash_d: 3962c19fb29259fcb26ec33329bb29d43816dc14b3913796fe0fc01b3bc2d0e2
+  semantic_tags:
+  - domain:knowledge_representation
+  - entity:anchor
+  - impl:here
+  - kind:software
+  - system:knowledge
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors

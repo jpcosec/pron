@@ -1,0 +1,16 @@
+Task: task-implement-knowledge-anchor-add
+Title: Implement knowledge anchor add
+Status: ready_for_testing
+Current node: checklist-task-implement-knowledge-anchor-add-closeout-ready
+Task type: implementation
+Routine: routine-task-implement-knowledge-anchor-add
+Effective atoms:
+- atom-an-anchor-binds-a-symbol-to-a-semantic-motive-and-a-resolvable-referent
+- atom-anchor-ref-is-a-typed-string-with-a-scheme-per-kind
+- atom-anchor-kinds-partition-what-a-symbol-can-refer-to
+- atom-the-anchor-table-is-declared-as-sldb-documents-not-code
+- atom-anchors-py-loads-the-grammar-from-tracked-anchordocs
+Checklist status:
+- checklist-task-implement-knowledge-anchor-add-execution-ready: complete
+- checklist-task-implement-knowledge-anchor-add-testing-ready: complete
+- checklist-task-implement-knowledge-anchor-add-closeout-ready: pending

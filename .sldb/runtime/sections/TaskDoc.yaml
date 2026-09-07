@@ -1,0 +1,481 @@
+documents:
+- doc_name: task-implement-knowledge-anchor-add
+  sections:
+  - path: implement-knowledge-anchor-add
+    title: Implement knowledge anchor add
+    breadcrumbs:
+    - Implement knowledge anchor add
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: implement-knowledge-anchor-add
+    level: 1
+    line_start: 34
+    line_end: 35
+  - path: implement-knowledge-anchor-add/rationale
+    title: Rationale
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Rationale
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Rationale
+    - rationale
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: rationale
+    level: 2
+    line_start: 36
+    line_end: 37
+  - path: implement-knowledge-anchor-add/goal
+    title: Goal
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Goal
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Goal
+    - goal
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: goal
+    level: 2
+    line_start: 42
+    line_end: 43
+  - path: implement-knowledge-anchor-add/scope
+    title: Scope
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Scope
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Scope
+    - scope
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: scope
+    level: 2
+    line_start: 48
+    line_end: 49
+  - path: implement-knowledge-anchor-add/implementation-path
+    title: Implementation Path
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Implementation Path
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Implementation Path
+    - implementation path
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: implementation-path
+    level: 2
+    line_start: 54
+    line_end: 55
+  - path: implement-knowledge-anchor-add/validation
+    title: Validation
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Validation
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Validation
+    - validation
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: validation
+    level: 2
+    line_start: 60
+    line_end: 61
+  - path: implement-knowledge-anchor-add/done-when
+    title: Done When
+    breadcrumbs:
+    - Implement knowledge anchor add
+    - Done When
+    about:
+    - Implement knowledge anchor add
+    - implement knowledge anchor add
+    - Done When
+    - done when
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: done-when
+    level: 2
+    line_start: 67
+    line_end: 68
+- doc_name: task-implement-canonical-write-ops-create-assert-ingest
+  sections:
+  - path: implement-canonical-write-ops-create-assert-ingest
+    title: Implement canonical write ops (create, assert, ingest)
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: implement-canonical-write-ops-create-assert-ingest
+    level: 1
+    line_start: 28
+    line_end: 29
+  - path: implement-canonical-write-ops-create-assert-ingest/rationale
+    title: Rationale
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Rationale
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Rationale
+    - rationale
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: rationale
+    level: 2
+    line_start: 30
+    line_end: 31
+  - path: implement-canonical-write-ops-create-assert-ingest/goal
+    title: Goal
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Goal
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Goal
+    - goal
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: goal
+    level: 2
+    line_start: 36
+    line_end: 37
+  - path: implement-canonical-write-ops-create-assert-ingest/scope
+    title: Scope
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Scope
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Scope
+    - scope
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: scope
+    level: 2
+    line_start: 42
+    line_end: 43
+  - path: implement-canonical-write-ops-create-assert-ingest/implementation-path
+    title: Implementation Path
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Implementation Path
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Implementation Path
+    - implementation path
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: implementation-path
+    level: 2
+    line_start: 48
+    line_end: 49
+  - path: implement-canonical-write-ops-create-assert-ingest/validation
+    title: Validation
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Validation
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Validation
+    - validation
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: validation
+    level: 2
+    line_start: 54
+    line_end: 55
+  - path: implement-canonical-write-ops-create-assert-ingest/done-when
+    title: Done When
+    breadcrumbs:
+    - Implement canonical write ops (create, assert, ingest)
+    - Done When
+    about:
+    - Implement canonical write ops (create, assert, ingest)
+    - implement canonical write ops create assert ingest
+    - Done When
+    - done when
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: done-when
+    level: 2
+    line_start: 60
+    line_end: 61
+- doc_name: task-auto-refresh-indexes-and-graph-after-writes
+  sections:
+  - path: auto-refresh-indexes-and-graph-after-writes
+    title: Auto-refresh indexes and graph after writes
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: auto-refresh-indexes-and-graph-after-writes
+    level: 1
+    line_start: 27
+    line_end: 28
+  - path: auto-refresh-indexes-and-graph-after-writes/rationale
+    title: Rationale
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Rationale
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Rationale
+    - rationale
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: rationale
+    level: 2
+    line_start: 29
+    line_end: 30
+  - path: auto-refresh-indexes-and-graph-after-writes/goal
+    title: Goal
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Goal
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Goal
+    - goal
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: goal
+    level: 2
+    line_start: 35
+    line_end: 36
+  - path: auto-refresh-indexes-and-graph-after-writes/scope
+    title: Scope
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Scope
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Scope
+    - scope
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: scope
+    level: 2
+    line_start: 41
+    line_end: 42
+  - path: auto-refresh-indexes-and-graph-after-writes/implementation-path
+    title: Implementation Path
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Implementation Path
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Implementation Path
+    - implementation path
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: implementation-path
+    level: 2
+    line_start: 47
+    line_end: 48
+  - path: auto-refresh-indexes-and-graph-after-writes/validation
+    title: Validation
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Validation
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Validation
+    - validation
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: validation
+    level: 2
+    line_start: 53
+    line_end: 54
+  - path: auto-refresh-indexes-and-graph-after-writes/done-when
+    title: Done When
+    breadcrumbs:
+    - Auto-refresh indexes and graph after writes
+    - Done When
+    about:
+    - Auto-refresh indexes and graph after writes
+    - auto refresh indexes and graph after writes
+    - Done When
+    - done when
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    semantic_tags:
+    - artifact:task
+    - type.workflow.task
+    - workspace.desk
+    - workspace:desk
+    slug: done-when
+    level: 2
+    line_start: 59
+    line_end: 60

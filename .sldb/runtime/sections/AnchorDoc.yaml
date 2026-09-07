@@ -714,3 +714,58 @@ documents:
     level: 2
     line_start: 17
     line_end: 18
+- doc_name: anchor-add
+  sections:
+  - path: add
+    title: add
+    breadcrumbs:
+    - add
+    about:
+    - add
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: add
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: add/motive
+    title: Motive
+    breadcrumbs:
+    - add
+    - Motive
+    about:
+    - add
+    - Motive
+    - motive
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - domain:knowledge_representation
+    - entity:anchor
+    - impl:here
+    - kind:software
+    - system:knowledge
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 17
+    line_end: 18

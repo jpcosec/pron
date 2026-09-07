@@ -2,7 +2,7 @@ name: RoutineDoc
 model_ref: deskops.models:RoutineDoc
 path: /home/jp/proyectos/hum-ecosystem/tools/deskops/deskops/models/routine.py
 documents_index: .sldb/core/documents/RoutineDoc.yaml
-sections_index: ''
+sections_index: .sldb/runtime/sections/RoutineDoc.yaml
 hash_b: 994b4cb64e296aa2b0410c567ad4c6b036cbe63f55c0080735ca5d4f0df45221
 version: 1
 canonical: false
