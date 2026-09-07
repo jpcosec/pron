@@ -41,6 +41,8 @@ def main(argv: list[str] | None = None) -> int:
     registry = AnchorRegistry(sldb)
 
     # infra / meta commands first
+    if args[0] == "anchor" and len(args) >= 2 and args[1] == "add":
+        return _cmd_anchor_add(root, args[2:])
     if args[0] == "anchors":
         return _cmd_anchors(registry, args[1:], fmt)
     if args[0] == "model" and len(args) >= 3 and args[1] == "add":
@@ -60,6 +62,32 @@ def main(argv: list[str] | None = None) -> int:
 
     # surface command (possibly a clarification answer)
     return _run_surface(args, root, sldb, registry, fmt)
+
+
+def _cmd_anchor_add(root: Path, rest: list[str]) -> int:
+    """knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>."""
+    from knowledge.ops.anchor_add import anchor_add
+
+    flags: dict[str, str | None] = {"--kind": None, "--ref": None, "--motive": None}
+    positional: list[str] = []
+    i = 0
+    while i < len(rest):
+        t = rest[i]
+        if t in flags and i + 1 < len(rest):
+            flags[t] = rest[i + 1]
+            i += 2
+        else:
+            positional.append(t)
+            i += 1
+    if not positional:
+        print("uso: knowledge anchor add <symbol> --kind <model|doc|relation|operation|projection> --ref <typed-ref> --motive <text>")
+        return 1
+    if flags["--kind"] is None or flags["--ref"] is None or flags["--motive"] is None:
+        print("error: se requieren --kind, --ref y --motive")
+        return 1
+    ok, msg = anchor_add(root, positional[0], flags["--kind"], flags["--ref"], flags["--motive"])
+    print(msg)
+    return 0 if ok else 1
 
 
 def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
@@ -155,6 +183,7 @@ def _help() -> str:
         "  knowledge <tokens...> [--<projection>]   comando surface\n"
         "  knowledge eval '<s-expr>'                capa Meaning directa\n"
         "  knowledge anchors [symbol]               gramática viva\n"
+        "  knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>\n"
         "  knowledge model add <module:Class>       declara un modelo\n"
         "  knowledge project                        materializa el grafo kgdb\n\n"
         "Opciones: --kb <root>  --format json|text\n"
