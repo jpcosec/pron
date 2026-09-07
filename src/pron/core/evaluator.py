@@ -19,6 +19,9 @@ from knowledge.core.results import (
 )
 from knowledge.core.sexpr import Keyword, SExpr, Symbol, serialize
 from knowledge.ops import read as read_ops
+from knowledge.ops import write as write_ops
+
+WRITE_OPS = ("create", "assert", "ingest")
 
 
 class Evaluator:
@@ -54,7 +57,7 @@ class Evaluator:
         if where:
             grounded = [self._apply_where(g, where) for g in grounded]
         op_name = anchor.ref.removeprefix("op:")
-        return self._dispatch(op_name, grounded, projection)
+        return self._dispatch(op_name, grounded, projection, command=serialize(expr))
 
     def _apply_where(self, grounded, where: str):
         """Filter a docs set with sldb's real where engine."""
@@ -231,17 +234,22 @@ class Evaluator:
             return inner
         return {"kind": "rel", "anchor": anchor, "source": inner}
 
-    def _dispatch(self, op: str, args: list, projection: Anchor | None):
+    def _dispatch(self, op: str, args: list, projection: Anchor | None, command: str = ""):
         ops = {
             "check": read_ops.check,
             "next": read_ops.next_,
             "return": read_ops.return_,
+            "create": write_ops.create,
+            "assert": write_ops.assert_,
+            "ingest": write_ops.ingest,
         }
         fn = ops.get(op)
         if fn is None:
             return SemanticError(
                 symbol=op, message=f"operación 'op:{op}' aún no implementada."
             )
+        if op in WRITE_OPS:
+            return fn(self, args, projection, command=command)
         return fn(self, args, projection)
 
 

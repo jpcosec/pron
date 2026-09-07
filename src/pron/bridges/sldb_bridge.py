@@ -67,6 +67,21 @@ class SldbBridge:
         """Documents carrying a semantic tag, via the semantic index."""
         return [d for d in self.documents() if tag in (d.semantic_tags or [])]
 
+    def registered_model_ref(self, model_name: str) -> str | None:
+        """Map a registered model name to its module:Class ref, via the store index."""
+        import yaml
+
+        index = yaml.safe_load((self.store / "core" / "store_index.yaml").read_text())
+        for m in index.get("models", []):
+            if m.get("name") == model_name:
+                return m.get("model_ref")
+        return None
+
+    def resolve_model(self, ref: str):
+        """Resolve a module:Class model ref at the bridge door."""
+        from sldb.cli.model_utils import resolve_model_ref
+
+        return resolve_model_ref(ref, self.pythonpath)
 
 @lru_cache(maxsize=4)
 def bridge_for(root: str, pythonpath: str | None = None) -> SldbBridge:
