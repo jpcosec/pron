@@ -3161,12 +3161,12 @@ documents:
   - workspace.desk.atoms
 - name: atom-the-canonical-operations-are-check-next-assert-create-ingest-return
   path: knowledge/atoms/atom-the-canonical-operations-are-check-next-assert-create-ingest-return.md
-  hash_c: b10338520a84c4922e983c133f6478a5579f393541777ce4108d10d515a53adb
-  hash_d: 20c9c722d57a69d8b44ba0761e7d5bd2f4e854751ff05cfb3e5fcfb4d3efcc52
+  hash_c: ded38096cf40b87d51c58545fa676681e693ad877e1116eac24f5c738a287e2c
+  hash_d: b7152256992238686880512e85d8a7d34af89db3151c7a39d3de104f06fdc97d
   semantic_tags:
   - domain:knowledge_representation
   - entity:cli_command
-  - impl:pending
+  - impl:here
   - kind:concept
   - system:knowledge
   - topic:semantic_anchoring

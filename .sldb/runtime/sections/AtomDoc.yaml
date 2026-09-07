@@ -15114,7 +15114,7 @@ documents:
     - the canonical operations are check next assert create ingest return
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15123,7 +15123,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15145,7 +15145,7 @@ documents:
     - answer
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
@@ -15154,7 +15154,7 @@ documents:
     semantic_tags:
     - domain:knowledge_representation
     - entity:cli_command
-    - impl:pending
+    - impl:here
     - kind:concept
     - system:knowledge
     - topic:semantic_anchoring
