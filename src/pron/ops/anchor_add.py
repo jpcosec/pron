@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 from knowledge.core.anchors import KINDS
-from knowledge.infra.projector import project
+from knowledge.infra.projector import refresh
 
 # atom-anchor-kinds-partition-what-a-symbol-can-refer-to: the closed kind
 # partition, each with its typed-ref scheme.
@@ -112,7 +112,7 @@ def anchor_add(root: Path, symbol: str, kind: str, ref: str, motive: str) -> tup
         out = (r.stderr or r.stdout).strip().splitlines()
         return False, out[-1] if out else "sldb docs track falló"
 
-    ok, msg = project(root)
+    ok, msg = refresh(root)
     if not ok:
-        return False, f"anchor escrito pero el rebuild del grafo falló: {msg}"
+        return False, f"anchor escrito pero el rebuild de índices/grafo falló: {msg}"
     return True, f"anchor '{symbol}' declarado ({kind} {ref}) y grafo regenerado."

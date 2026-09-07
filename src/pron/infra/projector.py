@@ -34,6 +34,34 @@ def model_add(
     return r.returncode == 0, out[-1] if out else ""
 
 
+def refresh(root: Path, pythonpath: str | None = None) -> tuple[bool, str]:
+    """Single post-write hook: reindex sldb (semantic + sections) and rebuild graph.
+
+    Every write operation (create, assert, ingest, anchor add) must call this
+    so evaluators and kgdb never read stale indexes or a stale snapshot.
+    """
+    root = Path(root)
+    r = subprocess.run(
+        [
+            "python",
+            "-m",
+            "sldb",
+            "stores",
+            "update",
+            "--store",
+            str(root / ".sldb"),
+            "--pythonpath",
+            pythonpath or str(root),
+        ],
+        capture_output=True,
+        text=True,
+    )
+    if r.returncode != 0:
+        out = (r.stderr or r.stdout).strip().splitlines()
+        return False, out[-1] if out else "sldb stores update falló"
+    return project(root, pythonpath)
+
+
 def project(root: Path, pythonpath: str | None = None) -> tuple[bool, str]:
     """Materialize the graph: semantic-export then ingest-sldb."""
     root = Path(root)

@@ -126,11 +126,11 @@ def _write_doc(
         out = (r.stderr or r.stdout).strip().splitlines()
         return OperationResult(status="error", payload=out[-1] if out else "sldb docs create falló")
 
-    # fresh reads must see the new doc; the graph must follow the store
+    # fresh reads must see the new doc; indexes and graph must follow the store
     evaluator.sldb._docs = None
-    from knowledge.infra.projector import project
+    from knowledge.infra.projector import refresh
 
-    ok, msg = project(root)
+    ok, msg = refresh(root)
     if not ok:
         return OperationResult(
             status="error", payload=f"doc escrito pero el rebuild del grafo falló: {msg}"

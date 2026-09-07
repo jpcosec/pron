@@ -52,9 +52,9 @@ def main(argv: list[str] | None = None) -> int:
         print(msg)
         return 0 if ok else 1
     if args[0] == "project":
-        from knowledge.infra.projector import project
+        from knowledge.infra.projector import refresh
 
-        ok, msg = project(root)
+        ok, msg = refresh(root)
         print(msg)
         return 0 if ok else 1
     if args[0] == "eval" and len(args) >= 2:
