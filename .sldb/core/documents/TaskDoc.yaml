@@ -1,8 +1,8 @@
 documents:
 - name: task-implement-knowledge-anchor-add
   path: desk/tasks/task-implement-knowledge-anchor-add.md
-  hash_c: 063d080d6cc671895c5102a6fc71cac1309adadececc885df2f3f143780ab31c
-  hash_d: b895008b4fc1e09ecc52a1f2c090c20b9414506af3d7c2bb3be227e389752653
+  hash_c: de3f25f4157d4005df02a3d617811fed96f107504dd569138ada58725c52676c
+  hash_d: a0fbfce7644bfadc431ac6ce384efc46da55a83f292519ccc37c2e46cbdd96aa
   semantic_tags:
   - artifact:task
   - type.workflow.task

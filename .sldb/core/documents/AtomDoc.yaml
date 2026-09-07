@@ -3148,8 +3148,8 @@ documents:
   - workspace.desk.atoms
 - name: atom-write-operations-record-provenance-of-the-command-that-produced-them
   path: knowledge/atoms/atom-write-operations-record-provenance-of-the-command-that-produced-them.md
-  hash_c: f025f42ea551838a215bac1a50a40db2e97a4755b5c0547878e1d34f14b373e7
-  hash_d: 5ddeb658895a1d0ba087e548766245432481233fe84a5d56f8c691b183e1fb1d
+  hash_c: e355912634ff9b4f50d552873a1d983eaf5b48eb6c4dc4a6b823e268fde34b94
+  hash_d: cf6cafba1a0d563cd4e97a342690e1e16aa37faf01da76c6bd37f228b978b9f9
   semantic_tags:
   - domain:provenance
   - graph:lineage
