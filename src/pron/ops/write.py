@@ -8,10 +8,7 @@ s-expression (plus a UTC timestamp) as the provenance of the produced doc.
 
 from __future__ import annotations
 
-import json
 import re
-import subprocess
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -116,15 +113,10 @@ def _write_doc(
         payload.setdefault("provenance_at", _utc_now())
 
     doc_path = _doc_path(root, model_type, name)
-    cmd = [
-        sys.executable, "-m", "sldb", "docs", "create", json.dumps(payload, ensure_ascii=False),
-        "--model", model_name, "--name", name, "-o", str(doc_path),
-        "--store", str(root / ".sldb"), "--pythonpath", str(root),
-    ]
-    r = subprocess.run(cmd, capture_output=True, text=True)
-    if r.returncode != 0:
-        out = (r.stderr or r.stdout).strip().splitlines()
-        return OperationResult(status="error", payload=out[-1] if out else "sldb docs create falló")
+    try:
+        evaluator.sldb.create_doc(payload, model_type, name, doc_path)
+    except Exception as e:  # noqa: BLE001 - surfaced as explicit result, not crash
+        return OperationResult(status="error", payload=f"sldb docs create falló: {e}")
 
     # fresh reads must see the new doc; indexes and graph must follow the store
     evaluator.sldb._docs = None

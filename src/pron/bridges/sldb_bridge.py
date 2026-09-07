@@ -11,7 +11,13 @@ from pathlib import Path
 
 import yaml
 
-from sldb.cli.model_utils import resolve_model_ref
+from sldb.cli.model_utils import registered_model, resolve_model_ref
+from sldb.cli.store_context import get_store_context
+from sldb.runtime.validation import (
+    render_model_markdown,
+    validate_model_input_roundtrip,
+)
+from sldb.store.ops import track_document
 from sldb.store.query import load_runtime_documents
 
 
@@ -79,9 +85,22 @@ class SldbBridge:
 
     def resolve_model(self, ref: str):
         """Resolve a module:Class model ref at the bridge door."""
-        from sldb.cli.model_utils import resolve_model_ref
-
         return resolve_model_ref(ref, self.pythonpath)
+
+    def create_doc(self, payload: dict, model_type: type, name: str, doc_path: Path) -> None:
+        """Render, validate and track one new document (library-level docs create)."""
+        sp, root = get_store_context(str(self.store))
+        _, entry, idx = registered_model(sp, model_type.__name__, self.pythonpath)
+        rendered = render_model_markdown(model_type, payload)
+        ok, errs = validate_model_input_roundtrip(model_type, rendered)
+        if not ok:
+            raise ValueError(f"render no idempotente para '{name}': {errs}")
+        doc_path.parent.mkdir(parents=True, exist_ok=True)
+        doc_path.write_text(rendered + "\n", encoding="utf-8")
+        track_document(
+            sp, root, idx, model_type, entry, doc_path, name,
+            resolve_model_ref, self.pythonpath,
+        )
 
 @lru_cache(maxsize=4)
 def bridge_for(root: str, pythonpath: str | None = None) -> SldbBridge:

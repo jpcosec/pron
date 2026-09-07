@@ -185,7 +185,7 @@ def _help() -> str:
         "  knowledge anchors [symbol]               gramática viva\n"
         "  knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>\n"
         "  knowledge model add <module:Class>       declara un modelo\n"
-        "  knowledge project                        materializa el grafo kgdb\n\n"
+        "  knowledge project                        refresca índices sldb + grafo kgdb\n\n"
         "Opciones: --kb <root>  --format json|text\n"
     )
 
