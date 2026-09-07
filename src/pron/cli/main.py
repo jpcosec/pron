@@ -9,15 +9,15 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from knowledge.bridges.kgdb_bridge import KgdbBridge
-from knowledge.bridges.sldb_bridge import SldbBridge
-from knowledge.core.anchors import AnchorRegistry
-from knowledge.core.evaluator import Evaluator
-from knowledge.core.results import Ambiguous, SemanticError
-from knowledge.core.sexpr import SexprError, parse, serialize
-from knowledge.core.session import Session
-from knowledge.cli.render import render
-from knowledge.cli.surface import desugar
+from pron.bridges.kgdb_bridge import KgdbBridge
+from pron.bridges.sldb_bridge import SldbBridge
+from pron.core.anchors import AnchorRegistry
+from pron.core.evaluator import Evaluator
+from pron.core.results import Ambiguous, SemanticError
+from pron.core.sexpr import SexprError, parse, serialize
+from pron.core.session import Session
+from pron.cli.render import render
+from pron.cli.surface import desugar
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -46,13 +46,13 @@ def main(argv: list[str] | None = None) -> int:
     if args[0] == "anchors":
         return _cmd_anchors(registry, args[1:], fmt)
     if args[0] == "model" and len(args) >= 3 and args[1] == "add":
-        from knowledge.infra.projector import model_add
+        from pron.infra.projector import model_add
 
         ok, msg = model_add(root, args[2])
         print(msg)
         return 0 if ok else 1
     if args[0] == "project":
-        from knowledge.infra.projector import refresh
+        from pron.infra.projector import refresh
 
         ok, msg = refresh(root)
         print(msg)
@@ -66,7 +66,7 @@ def main(argv: list[str] | None = None) -> int:
 
 def _cmd_anchor_add(root: Path, rest: list[str]) -> int:
     """knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>."""
-    from knowledge.ops.anchor_add import anchor_add
+    from pron.ops.anchor_add import anchor_add
 
     flags: dict[str, str | None] = {"--kind": None, "--ref": None, "--motive": None}
     positional: list[str] = []
@@ -103,7 +103,7 @@ def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
         {"symbol": a.symbol, "kind": a.kind, "ref": a.ref, "motive": a.motive}
         for a in registry.all()
     ]
-    from knowledge.core.results import OperationResult
+    from pron.core.results import OperationResult
 
     text, code = render(OperationResult(status="ok", payload=rows), fmt)
     print(text)
@@ -111,7 +111,7 @@ def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
 
 
 def _anchor_result(anchor):
-    from knowledge.core.results import OperationResult
+    from pron.core.results import OperationResult
 
     return OperationResult(
         status="ok",

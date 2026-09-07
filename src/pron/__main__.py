@@ -1,7 +1,7 @@
-"""knowledge CLI entry point."""
+"""pron CLI entry point."""
 
 import sys
 
-from knowledge.cli.main import main
+from pron.cli.main import main
 
 sys.exit(main())

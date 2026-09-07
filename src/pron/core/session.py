@@ -1,6 +1,6 @@
 """Clarification session. Implements atom-session-expires-by-ttl-and-store-hash.
 
-One pending expression at a time, persisted in .knowledge/session.json under
+One pending expression at a time, persisted in .pron/session.json under
 the cwd, discarded after 15 minutes or when the store's hash_a changes.
 """
 
@@ -11,7 +11,7 @@ import time
 from pathlib import Path
 
 TTL_SECONDS = 15 * 60
-SESSION_RELPATH = ".knowledge/session.json"
+SESSION_RELPATH = ".pron/session.json"
 
 
 class Session:

@@ -3,21 +3,26 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "knowledge"
-version = "0.1.0"
-description = "Knowledge management system for conversational agents"
+name = "pron"
+version = "0.2.0"
+description = "pron: provenance knowledge base + semantically anchored s-expression evaluator over sldb v1 and kgdb"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 dependencies = [
     "PyYAML>=6.0",
+    "sldb",
+    "kgdb",
 ]
 
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
 [project.scripts]
-knowledge-cli = "knowledge.cli.main:main"
+pron = "pron.cli.main:main"
 
 [project.urls]
-Homepage = "https://github.com/jpcosec/knowledge"
-Repository = "https://github.com/jpcosec/knowledge"
+Homepage = "https://github.com/jpcosec/pron"
+Repository = "https://github.com/jpcosec/pron"
 
 [tool.setuptools.packages.find]
 where = ["src"]

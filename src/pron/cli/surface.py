@@ -7,9 +7,9 @@ against the anchor table.
 
 from __future__ import annotations
 
-from knowledge.core.anchors import AnchorRegistry
-from knowledge.core.results import SemanticError
-from knowledge.core.sexpr import Keyword, SExpr, Symbol
+from pron.core.anchors import AnchorRegistry
+from pron.core.results import SemanticError
+from pron.core.sexpr import Keyword, SExpr, Symbol
 
 
 def desugar(tokens: list[str], registry: AnchorRegistry) -> SExpr | SemanticError:

@@ -13,9 +13,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
-# $KNOWLEDGE_KB or the sibling directory ../pron.
-KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
+KB = ROOT  # the knowledge base (knowledge/atoms, knowledge/anchors, .sldb) is this repo
 ENV = {"PYTHONPATH": str(ROOT / "src")}
 
 
@@ -23,7 +21,7 @@ def run(*args: str) -> tuple[int, dict | str]:
     import os
 
     r = subprocess.run(
-        [sys.executable, "-m", "knowledge", *args],
+        [sys.executable, "-m", "pron", *args],
         capture_output=True,
         text=True,
         cwd=KB,
@@ -37,7 +35,7 @@ def run(*args: str) -> tuple[int, dict | str]:
 
 def test_sexpr_roundtrip():
     sys.path.insert(0, str(ROOT / "src"))
-    from knowledge.core.sexpr import parse, serialize
+    from pron.core.sexpr import parse, serialize
 
     text = '(check (rel preferences (doc user "juanito")) :project summary)'
     assert serialize(parse(text)) == text
@@ -163,7 +161,7 @@ def test_foreign_kb_full_flow(tmp_path=None):
 
     def krun(*args):
         r = subprocess.run(
-            [sys.executable, "-m", "knowledge", *args],
+            [sys.executable, "-m", "pron", *args],
             capture_output=True,
             text=True,
             cwd=kb,

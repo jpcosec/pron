@@ -6,12 +6,12 @@ Implements atom-the-canonical-operations-are-check-next-assert-create-ingest-ret
 
 from __future__ import annotations
 
-from knowledge.core.results import OperationResult, Resolved
+from pron.core.results import OperationResult, Resolved
 
 
 def check(evaluator, args: list, projection):
     """Read without mutation: docs sets, single docs, or rel traversals."""
-    from knowledge.core.evaluator import project_payload
+    from pron.core.evaluator import project_payload
 
     if not args:
         return OperationResult(status="error", payload="check requiere un argumento")
@@ -53,7 +53,7 @@ def check(evaluator, args: list, projection):
 
 def _check_rel(evaluator, rel: dict, projection):
     """Traverse a kgdb relation from a resolved source document."""
-    from knowledge.core.evaluator import project_payload
+    from pron.core.evaluator import project_payload
 
     anchor, source = rel["anchor"], rel["source"]
     if not isinstance(source, Resolved):
@@ -63,12 +63,12 @@ def _check_rel(evaluator, rel: dict, projection):
     if not evaluator.kgdb.available():
         return OperationResult(
             status="error",
-            payload="no hay grafo materializado; corre: knowledge project",
+            payload="no hay grafo materializado; corre: pron project",
         )
     if evaluator.kgdb.is_stale(evaluator.sldb.store_hash()):
         return OperationResult(
             status="error",
-            payload="el grafo está desactualizado respecto al store; corre: knowledge project",
+            payload="el grafo está desactualizado respecto al store; corre: pron project",
         )
 
     ref = anchor.ref.removeprefix("edge:")
@@ -93,7 +93,7 @@ def _check_rel(evaluator, rel: dict, projection):
 
 def next_(evaluator, args: list, projection):
     """The next document by state order (model-defined; default: name order)."""
-    from knowledge.core.evaluator import project_payload
+    from pron.core.evaluator import project_payload
 
     if not args or not (isinstance(args[0], dict) and args[0].get("kind") == "docs"):
         return OperationResult(status="error", payload="next requiere (docs <model>)")

@@ -133,16 +133,16 @@ models:
   family: null
   semantics: []
 - name: FactDoc
-  model_ref: knowledge.bridges.write_models:FactDoc
-  path: src/knowledge/bridges/write_models.py
+  model_ref: pron.bridges.write_models:FactDoc
+  path: src/pron/bridges/write_models.py
   models_index: .sldb/core/models/FactDoc.yaml
   version: 1
   canonical: false
   family: null
   semantics: []
 - name: PropositionDoc
-  model_ref: knowledge.bridges.write_models:PropositionDoc
-  path: src/knowledge/bridges/write_models.py
+  model_ref: pron.bridges.write_models:PropositionDoc
+  path: src/pron/bridges/write_models.py
   models_index: .sldb/core/models/PropositionDoc.yaml
   version: 1
   canonical: false

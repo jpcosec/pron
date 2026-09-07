@@ -2461,8 +2461,8 @@
         ],
         "semantics": {
           "name": "FactDoc",
-          "model_ref": "knowledge.bridges.write_models:FactDoc",
-          "path": "src/knowledge/bridges/write_models.py",
+          "model_ref": "pron.bridges.write_models:FactDoc",
+          "path": "src/pron/bridges/write_models.py",
           "version": 1,
           "canonical": false,
           "family": null,
@@ -2520,8 +2520,8 @@
           },
           "model": {
             "name": "FactDoc",
-            "model_ref": "knowledge.bridges.write_models:FactDoc",
-            "path": "src/knowledge/bridges/write_models.py",
+            "model_ref": "pron.bridges.write_models:FactDoc",
+            "path": "src/pron/bridges/write_models.py",
             "models_index": ".sldb/core/models/FactDoc.yaml",
             "documents_index": ".sldb/core/documents/FactDoc.yaml",
             "sections_index": "",
@@ -2870,8 +2870,8 @@
         ],
         "semantics": {
           "name": "PropositionDoc",
-          "model_ref": "knowledge.bridges.write_models:PropositionDoc",
-          "path": "src/knowledge/bridges/write_models.py",
+          "model_ref": "pron.bridges.write_models:PropositionDoc",
+          "path": "src/pron/bridges/write_models.py",
           "version": 1,
           "canonical": false,
           "family": null,
@@ -2929,8 +2929,8 @@
           },
           "model": {
             "name": "PropositionDoc",
-            "model_ref": "knowledge.bridges.write_models:PropositionDoc",
-            "path": "src/knowledge/bridges/write_models.py",
+            "model_ref": "pron.bridges.write_models:PropositionDoc",
+            "path": "src/pron/bridges/write_models.py",
             "models_index": ".sldb/core/models/PropositionDoc.yaml",
             "documents_index": ".sldb/core/documents/PropositionDoc.yaml",
             "sections_index": "",

@@ -17,9 +17,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
-# $KNOWLEDGE_KB or the sibling directory ../pron.
-KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
+KB = ROOT  # the knowledge base (knowledge/atoms, knowledge/anchors, .sldb) is this repo
 sys.path.insert(0, str(ROOT / "src"))
 
 ATOMS = KB / "knowledge" / "atoms"
@@ -38,7 +36,7 @@ def atom_exists(atom_id: str) -> None:
 
 def test_atom_sexpr_serialization_quotes_selectors_and_roundtrips():
     atom_exists("atom-sexpr-serialization-quotes-selectors-and-roundtrips")
-    from knowledge.core.sexpr import parse, serialize
+    from pron.core.sexpr import parse, serialize
 
     cases = [
         '(check (doc atom "atom-x") :project title)',
@@ -55,7 +53,7 @@ def test_atom_sexpr_serialization_quotes_selectors_and_roundtrips():
 
 def test_atom_sexpr_py_is_the_dependency_free_meaning_kernel():
     atom_exists("atom-sexpr-py-is-the-dependency-free-meaning-kernel")
-    source = (ROOT / "src/knowledge/core/sexpr.py").read_text()
+    source = (ROOT / "src/pron/core/sexpr.py").read_text()
     tree = ast.parse(source)
     imports = [
         node.module if isinstance(node, ast.ImportFrom) else alias.name
@@ -63,7 +61,7 @@ def test_atom_sexpr_py_is_the_dependency_free_meaning_kernel():
         if isinstance(node, (ast.Import, ast.ImportFrom))
         for alias in (node.names if isinstance(node, ast.Import) else [None])
     ]
-    project_imports = [i for i in imports if i and "knowledge" in str(i)]
+    project_imports = [i for i in imports if i and "pron" in str(i)]
     assert not project_imports, (
         f"sexpr.py must import nothing from the project: {project_imports}"
     )
@@ -74,8 +72,8 @@ def test_atom_sexpr_py_is_the_dependency_free_meaning_kernel():
 
 def test_atom_resolution_outcomes_are_typed_values_not_exceptions():
     atom_exists("atom-resolution-outcomes-are-typed-values-not-exceptions")
-    from knowledge.core.results import Ambiguous, Missing, Resolved
-    from knowledge.core.resolution import resolve_noun
+    from pron.core.results import Ambiguous, Missing, Resolved
+    from pron.core.resolution import resolve_noun
 
     class FakeDoc:
         def __init__(self, name, title=""):
@@ -102,7 +100,7 @@ def test_atom_resolution_outcomes_are_typed_values_not_exceptions():
 
 def test_atom_resolution_py_implements_the_selector_cascade():
     atom_exists("atom-resolution-py-implements-the-selector-cascade")
-    from knowledge.core.resolution import resolve_noun
+    from pron.core.resolution import resolve_noun
 
     class FakeDoc:
         def __init__(self, name, title="", tags=()):
@@ -136,8 +134,8 @@ def test_atom_resolution_py_implements_the_selector_cascade():
 def test_atom_session_expires_by_ttl_and_store_hash(tmp_path):
     atom_exists("atom-session-expires-by-ttl-and-store-hash")
     import time
-    from knowledge.core import session as mod
-    from knowledge.core.session import Session
+    from pron.core import session as mod
+    from pron.core.session import Session
 
     s = Session(tmp_path, store_hash="h1")
     s.save("(check _)", ["a", "b"])
@@ -164,7 +162,7 @@ def test_atom_session_expires_by_ttl_and_store_hash(tmp_path):
 def test_atom_bridges_are_the_only_doors_to_sldb_and_kgdb():
     atom_exists("atom-bridges-are-the-only-doors-to-sldb-and-kgdb")
     offenders = []
-    for py in (ROOT / "src/knowledge").rglob("*.py"):
+    for py in (ROOT / "src/pron").rglob("*.py"):
         if "bridges" in py.parts:
             continue
         tree = ast.parse(py.read_text())
@@ -200,7 +198,7 @@ def test_atom_one_file_one_component_one_motive():
         "cli/render.py",
         "cli/main.py",
     }
-    src = ROOT / "src/knowledge"
+    src = ROOT / "src/pron"
     actual = {
         str(p.relative_to(src))
         for p in src.rglob("*.py")
@@ -217,8 +215,8 @@ def test_atom_one_file_one_component_one_motive():
 
 def test_atom_unanchored_symbols_fail_with_an_explicit_semantic_error():
     atom_exists("atom-unanchored-symbols-fail-with-an-explicit-semantic-error")
-    from knowledge.core.anchors import AnchorRegistry
-    from knowledge.core.results import SemanticError
+    from pron.core.anchors import AnchorRegistry
+    from pron.core.results import SemanticError
 
     class EmptyBridge:
         def documents_of_model(self, m):
@@ -261,8 +259,8 @@ def test_atom_anchor_ref_is_a_typed_string_with_a_scheme_per_kind():
 
 def test_atom_expr_anchors_declare_derived_relations():
     atom_exists("atom-expr-anchors-declare-derived-relations-neither-store-can-hold")
-    from knowledge.core.evaluator import _fill
-    from knowledge.core.sexpr import parse, serialize
+    from pron.core.evaluator import _fill
+    from pron.core.sexpr import parse, serialize
 
     template = parse("(common (doc atom _) (doc atom _))")
     filled = _fill(template, iter(["a", "b"]))
@@ -274,8 +272,8 @@ def test_atom_expr_anchors_declare_derived_relations():
 
 def test_atom_render_py_maps_result_values_to_output_and_exit_codes():
     atom_exists("atom-render-py-maps-result-values-to-output-and-exit-codes")
-    from knowledge.cli.render import render
-    from knowledge.core.results import (
+    from pron.cli.render import render
+    from pron.core.results import (
         Ambiguous,
         Missing,
         OperationResult,
@@ -294,8 +292,8 @@ def test_atom_render_py_maps_result_values_to_output_and_exit_codes():
 
 def test_atom_every_read_response_carries_refs_for_auditability():
     atom_exists("atom-every-read-response-carries-refs-for-auditability")
-    from knowledge.core.results import OperationResult, Resolved
-    from knowledge.ops import read
+    from pron.core.results import OperationResult, Resolved
+    from pron.ops import read
 
     doc = Resolved(name="d", model="M", path="p.md", payload={"title": "T"})
 
@@ -319,7 +317,7 @@ def test_atom_every_read_response_carries_refs_for_auditability():
 def test_atom_kgdb_bridge_guards_staleness(tmp_path):
     atom_exists("atom-kgdb-bridge-py-guards-staleness-before-serving-graph-reads")
     import json
-    from knowledge.bridges.kgdb_bridge import GRAPH_RELPATH, KgdbBridge
+    from pron.bridges.kgdb_bridge import GRAPH_RELPATH, KgdbBridge
 
     graph = tmp_path / GRAPH_RELPATH
     graph.parent.mkdir(parents=True)
@@ -362,7 +360,7 @@ def test_atom_where_values_must_be_quoted_or_numeric():
 def test_atom_the_anchor_table_is_declared_as_sldb_documents_not_code():
     atom_exists("atom-the-anchor-table-is-declared-as-sldb-documents-not-code")
     # no hardcoded grammar table anywhere in src/
-    for py in (ROOT / "src/knowledge").rglob("*.py"):
+    for py in (ROOT / "src/pron").rglob("*.py"):
         text = py.read_text()
         assert "ANCHORS = [" not in text and "ANCHORS=[" not in text, (
             f"hardcoded anchor table in {py}"

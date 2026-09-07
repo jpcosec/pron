@@ -12,14 +12,14 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from knowledge.core.results import OperationResult, SemanticError
+from pron.core.results import OperationResult, SemanticError
 
 
 def create(evaluator, args: list, projection, command: str = ""):
     """(create <model-sym> "name" <key> <value> ...): define a tracked doc.
 
     Entity creation for symbols/relations/models is the anchor/model infra
-    (knowledge anchor add / model add); create here defines doc entities of
+    (pron anchor add / model add); create here defines doc entities of
     any registered model.
     """
     if len(args) < 2:
@@ -54,7 +54,7 @@ def assert_(evaluator, args: list, projection, command: str = ""):
         return OperationResult(status="error", payload=error)
     extra["fact"] = fact
     name = f"fact-{_slug(fact)}-{_stamp()}"
-    return _write_doc(evaluator, extra, name, "knowledge.bridges.write_models:FactDoc", command)
+    return _write_doc(evaluator, extra, name, "pron.bridges.write_models:FactDoc", command)
 
 
 def ingest(evaluator, args: list, projection, command: str = ""):
@@ -71,12 +71,12 @@ def ingest(evaluator, args: list, projection, command: str = ""):
     extra["title"] = title
     extra["proposition"] = body
     name = f"proposition-{_stamp()}"
-    return _write_doc(evaluator, extra, name, "knowledge.bridges.write_models:PropositionDoc", command)
+    return _write_doc(evaluator, extra, name, "pron.bridges.write_models:PropositionDoc", command)
 
 
 def _pairs(args: list) -> tuple[dict, str | None]:
     """Consume trailing key value pairs (Symbol key, literal value)."""
-    from knowledge.core.sexpr import Symbol
+    from pron.core.sexpr import Symbol
 
     if len(args) % 2 != 0:
         return {}, "los pares clave-valor deben venir en pares"
@@ -120,7 +120,7 @@ def _write_doc(
 
     # fresh reads must see the new doc; indexes and graph must follow the store
     evaluator.sldb._docs = None
-    from knowledge.infra.projector import refresh
+    from pron.infra.projector import refresh
 
     ok, msg = refresh(root)
     if not ok:

@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from difflib import get_close_matches
 
-from knowledge.bridges.sldb_bridge import SldbBridge
-from knowledge.core.results import Ambiguous, Missing, Resolved
+from pron.bridges.sldb_bridge import SldbBridge
+from pron.core.results import Ambiguous, Missing, Resolved
 
 
 def resolve_noun(

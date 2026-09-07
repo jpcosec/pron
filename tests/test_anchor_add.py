@@ -1,4 +1,4 @@
-"""Tests for `knowledge anchor add`: declare grammar symbols as AnchorDocs."""
+"""Tests for `pron anchor add`: declare grammar symbols as AnchorDocs."""
 
 from __future__ import annotations
 
@@ -11,14 +11,12 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# The knowledge base (atoms, anchors, .sldb) lives in its own repo, `pron`:
-# $KNOWLEDGE_KB or the sibling directory ../pron.
-KB = Path(os.environ.get("KNOWLEDGE_KB", str(ROOT.parent / "pron")))
+KB = ROOT  # the knowledge base (knowledge/atoms, knowledge/anchors, .sldb) is this repo
 
 
 def _run(cwd: Path, *args: str) -> tuple[int, dict | str]:
     r = subprocess.run(
-        [sys.executable, "-m", "knowledge", *args],
+        [sys.executable, "-m", "pron", *args],
         capture_output=True,
         text=True,
         cwd=cwd,

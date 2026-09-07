@@ -12,8 +12,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from knowledge.core.anchors import KINDS
-from knowledge.infra.projector import refresh
+from pron.core.anchors import KINDS
+from pron.infra.projector import refresh
 
 # atom-anchor-kinds-partition-what-a-symbol-can-refer-to: the closed kind
 # partition, each with its typed-ref scheme.
@@ -82,7 +82,7 @@ def anchor_add(root: Path, symbol: str, kind: str, ref: str, motive: str) -> tup
         f"ref: {ref}\n"
         "tags:\n"
         f"{tags_block}\n"
-        f"provenance: knowledge anchor add ({symbol})\n"
+        f"provenance: pron anchor add ({symbol})\n"
         "---\n\n"
         f"# {symbol}\n\n"
         "## Motive\n\n"

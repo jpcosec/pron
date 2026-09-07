@@ -1,1 +1,1 @@
-"""knowledge: semantically anchored s-expression evaluator over sldb+kgdb."""
+"""pron: semantically anchored s-expression evaluator over sldb+kgdb."""

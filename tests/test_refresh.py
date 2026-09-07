@@ -68,7 +68,7 @@ def test_cli_project_runs_refresh():
         tmp = Path(td)
         _bootstrap(tmp)
         r = subprocess.run(
-            [sys.executable, "-m", "knowledge", "project"],
+            [sys.executable, "-m", "pron", "project"],
             capture_output=True, text=True, cwd=tmp, env=ENV,
         )
         assert r.returncode == 0, r.stdout + r.stderr

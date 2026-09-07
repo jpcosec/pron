@@ -7,19 +7,19 @@ Grounds (docs m), (doc m "sel"), (rel r expr) and dispatches operations.
 from __future__ import annotations
 
 
-from knowledge.bridges.kgdb_bridge import KgdbBridge
-from knowledge.bridges.sldb_bridge import SldbBridge
-from knowledge.core.anchors import Anchor, AnchorRegistry
-from knowledge.core.resolution import resolve_noun
-from knowledge.core.results import (
+from pron.bridges.kgdb_bridge import KgdbBridge
+from pron.bridges.sldb_bridge import SldbBridge
+from pron.core.anchors import Anchor, AnchorRegistry
+from pron.core.resolution import resolve_noun
+from pron.core.results import (
     Ambiguous,
     Missing,
     Resolved,
     SemanticError,
 )
-from knowledge.core.sexpr import Keyword, SExpr, Symbol, serialize
-from knowledge.ops import read as read_ops
-from knowledge.ops import write as write_ops
+from pron.core.sexpr import Keyword, SExpr, Symbol, serialize
+from pron.ops import read as read_ops
+from pron.ops import write as write_ops
 
 WRITE_OPS = ("create", "assert", "ingest")
 
@@ -113,7 +113,7 @@ class Evaluator:
         anchor = self.registry.lookup(head)
         if isinstance(anchor, SemanticError) or anchor.kind != "expr":
             return None
-        from knowledge.core.sexpr import parse
+        from pron.core.sexpr import parse
 
         template = parse(anchor.ref.removeprefix("expr:"))
         holes = iter(arg[1:])
@@ -181,7 +181,7 @@ class Evaluator:
             )
         if not self.kgdb.available():
             return SemanticError(
-                symbol="related", message="no hay grafo; corre: knowledge project"
+                symbol="related", message="no hay grafo; corre: pron project"
             )
         nid = self.kgdb.document_node_id(grounded.model, grounded.name)
         out = [e["target_id"] for e in self.kgdb.edges_from(nid)]

@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from knowledge.bridges.sldb_bridge import SldbBridge
-from knowledge.core.results import SemanticError
+from pron.bridges.sldb_bridge import SldbBridge
+from pron.core.results import SemanticError
 
 KINDS = ("model", "doc", "relation", "operation", "projection")
 

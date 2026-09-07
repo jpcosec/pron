@@ -10,7 +10,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from knowledge.bridges.kgdb_bridge import GRAPH_RELPATH
+from pron.bridges.kgdb_bridge import GRAPH_RELPATH
 
 
 def model_add(

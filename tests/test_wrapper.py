@@ -162,7 +162,7 @@ def sh(cwd: Path, *args: str) -> tuple[int, str]:
 
 
 def krun(kb: Path, *args: str) -> tuple[int, dict | str]:
-    code, out = sh(kb, sys.executable, "-m", "knowledge", *args)
+    code, out = sh(kb, sys.executable, "-m", "pron", *args)
     try:
         return code, json.loads(out)
     except json.JSONDecodeError:
@@ -294,7 +294,7 @@ def kb(tmp_path_factory) -> Path:
 
 
 def _clear_session(kb: Path) -> None:
-    (kb / ".knowledge" / "session.json").unlink(missing_ok=True)
+    (kb / ".pron" / "session.json").unlink(missing_ok=True)
 
 
 def test_grammar_is_declared_data(kb):

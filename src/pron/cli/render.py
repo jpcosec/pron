@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from knowledge.core.results import (
+from pron.core.results import (
     Ambiguous,
     Missing,
     OperationResult,

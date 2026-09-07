@@ -17,3 +17,5 @@ Thumbs.db
 __pycache__/
 *.egg-info/
 *.pyc
+.pron/
+src/*.egg-info/
