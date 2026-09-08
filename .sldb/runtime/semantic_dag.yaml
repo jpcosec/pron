@@ -19,6 +19,12 @@ nodes:
 - id: type.knowledge.atom
   parents:
   - type.knowledge
+- id: type.knowledge.cli_command
+  parents:
+  - type.knowledge
+- id: type.knowledge.surface
+  parents:
+  - type.knowledge
 - id: workspace
   parents: []
 - id: workspace.desk
@@ -37,6 +43,12 @@ nodes:
   parents:
   - workspace
 - id: workspace.knowledge.anchors
+  parents:
+  - workspace.knowledge
+- id: workspace.knowledge.commands
+  parents:
+  - workspace.knowledge
+- id: workspace.knowledge.surfaces
   parents:
   - workspace.knowledge
 equivalences: {}

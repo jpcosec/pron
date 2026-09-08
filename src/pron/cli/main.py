@@ -57,6 +57,12 @@ def main(argv: list[str] | None = None) -> int:
         ok, msg = refresh(root)
         print(msg)
         return 0 if ok else 1
+    if args[0] == "docs":
+        from pron.bridges.documentation_bridge import synchronize_documentation
+
+        ok, msg = synchronize_documentation(root, check="--check" in args[1:])
+        print(msg)
+        return 0 if ok else 1
     if args[0] == "eval" and len(args) >= 2:
         return _run_expr_text(args[1], root, sldb, registry, fmt)
 
@@ -179,13 +185,14 @@ def _mark_pending(item):
 
 def _help() -> str:
     return (
-        "knowledge — evaluador semánticamente anclado sobre sldb+kgdb\n\n"
-        "  knowledge <tokens...> [--<projection>]   comando surface\n"
-        "  knowledge eval '<s-expr>'                capa Meaning directa\n"
-        "  knowledge anchors [symbol]               gramática viva\n"
-        "  knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>\n"
-        "  knowledge model add <module:Class>       declara un modelo\n"
-        "  knowledge project                        refresca índices sldb + grafo kgdb\n\n"
+        "pron — evaluador semánticamente anclado sobre sldb+kgdb\n\n"
+        "  pron <tokens...> [--<projection>]   comando surface\n"
+        "  pron eval '<s-expr>'                capa Meaning directa\n"
+        "  pron anchors [symbol]               gramática viva\n"
+        "  pron anchor add <symbol> --kind <k> --ref <r> --motive <text>\n"
+        "  pron model add <module:Class>       declara un modelo\n"
+        "  pron project                        refresca índices sldb + grafo kgdb\n"
+        "  pron docs [--check]                 deriva/verifica docs de CLI y módulos\n\n"
         "Opciones: --kb <root>  --format json|text\n"
     )
 

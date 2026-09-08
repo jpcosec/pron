@@ -1,0 +1,67 @@
+documents:
+- name: cmd-pron-anchors
+  path: knowledge/commands/cmd-pron-anchors.md
+  hash_c: 0949b51d10986bca2f5fdf5e3ce900a437dfa1f45fa4b45f9ceb8fce8f01c68f
+  hash_d: d73b83a9ea87908e193ea13636069c386887e0ea9d43181b3a7fab409d0c6ac5
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-eval
+  path: knowledge/commands/cmd-pron-eval.md
+  hash_c: 1975ade62e732be7ac046635a04bb392d2eb8e97770fff50e623493e207fc9b5
+  hash_d: d9752f29a3de8fee895fec0bc8eb1da1fad2233bf6396c49658d2d703bb794bd
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-anchor-add
+  path: knowledge/commands/cmd-pron-anchor-add.md
+  hash_c: b7b3b903766a3ab28e2a11e5580fa9525a11cc58547f621555fbbb4f7e9443da
+  hash_d: 8f19081d910c2b094336d86fb6afe156b51db208008834002a94535ef005cc39
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-model-add
+  path: knowledge/commands/cmd-pron-model-add.md
+  hash_c: 23e64e9d444a26096f7551119cfa159b2765633d9d2bd8e8f471b94bf83a940e
+  hash_d: fd84eccda3490a116c6fecc2c1a8d218a7a0cb65cf64761165905a69f4757e3e
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-project
+  path: knowledge/commands/cmd-pron-project.md
+  hash_c: baa77076740a2190db3ab292a67acc37b965c4ca1a487a2dc0498fdd4fd5cdff
+  hash_d: fab0266070646e96000b171c55e1a3e91caa7125e4be6b33ec10150992750bd7
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-docs
+  path: knowledge/commands/cmd-pron-docs.md
+  hash_c: b5b80a33447dddb01f330c84deeb778b1043ec4b9123b88aee6a822b6c30f3db
+  hash_d: f709dd190387399ce0710e2a04c8ad84511f108d080953ece8a560eab107fbae
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands

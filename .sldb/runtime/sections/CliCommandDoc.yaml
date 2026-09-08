@@ -1,0 +1,931 @@
+documents:
+- doc_name: cmd-pron-anchors
+  sections:
+  - path: pron-anchors
+    title: pron anchors
+    breadcrumbs:
+    - pron anchors
+    about:
+    - pron anchors
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-anchors
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-anchors/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron anchors
+    - Synopsis
+    about:
+    - pron anchors
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-anchors/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron anchors
+    - Purpose
+    about:
+    - pron anchors
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-anchors/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron anchors
+    - How It Works
+    about:
+    - pron anchors
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-anchors/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron anchors
+    - Arguments
+    about:
+    - pron anchors
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-anchors/usage
+    title: Usage
+    breadcrumbs:
+    - pron anchors
+    - Usage
+    about:
+    - pron anchors
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 34
+    line_end: 35
+- doc_name: cmd-pron-eval
+  sections:
+  - path: pron-eval
+    title: pron eval
+    breadcrumbs:
+    - pron eval
+    about:
+    - pron eval
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-eval
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-eval/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron eval
+    - Synopsis
+    about:
+    - pron eval
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-eval/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron eval
+    - Purpose
+    about:
+    - pron eval
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-eval/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron eval
+    - How It Works
+    about:
+    - pron eval
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-eval/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron eval
+    - Arguments
+    about:
+    - pron eval
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-eval/usage
+    title: Usage
+    breadcrumbs:
+    - pron eval
+    - Usage
+    about:
+    - pron eval
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 34
+    line_end: 35
+- doc_name: cmd-pron-anchor-add
+  sections:
+  - path: pron-anchor-add
+    title: pron anchor add
+    breadcrumbs:
+    - pron anchor add
+    about:
+    - pron anchor add
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-anchor-add
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-anchor-add/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron anchor add
+    - Synopsis
+    about:
+    - pron anchor add
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-anchor-add/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron anchor add
+    - Purpose
+    about:
+    - pron anchor add
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-anchor-add/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron anchor add
+    - How It Works
+    about:
+    - pron anchor add
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-anchor-add/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron anchor add
+    - Arguments
+    about:
+    - pron anchor add
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-anchor-add/usage
+    title: Usage
+    breadcrumbs:
+    - pron anchor add
+    - Usage
+    about:
+    - pron anchor add
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 37
+    line_end: 38
+- doc_name: cmd-pron-model-add
+  sections:
+  - path: pron-model-add
+    title: pron model add
+    breadcrumbs:
+    - pron model add
+    about:
+    - pron model add
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-model-add
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-model-add/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron model add
+    - Synopsis
+    about:
+    - pron model add
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-model-add/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron model add
+    - Purpose
+    about:
+    - pron model add
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-model-add/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron model add
+    - How It Works
+    about:
+    - pron model add
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-model-add/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron model add
+    - Arguments
+    about:
+    - pron model add
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-model-add/usage
+    title: Usage
+    breadcrumbs:
+    - pron model add
+    - Usage
+    about:
+    - pron model add
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 33
+    line_end: 34
+- doc_name: cmd-pron-project
+  sections:
+  - path: pron-project
+    title: pron project
+    breadcrumbs:
+    - pron project
+    about:
+    - pron project
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-project
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-project/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron project
+    - Synopsis
+    about:
+    - pron project
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-project/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron project
+    - Purpose
+    about:
+    - pron project
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-project/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron project
+    - How It Works
+    about:
+    - pron project
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-project/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron project
+    - Arguments
+    about:
+    - pron project
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-project/usage
+    title: Usage
+    breadcrumbs:
+    - pron project
+    - Usage
+    about:
+    - pron project
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 32
+    line_end: 33
+- doc_name: cmd-pron-docs
+  sections:
+  - path: pron-docs
+    title: pron docs
+    breadcrumbs:
+    - pron docs
+    about:
+    - pron docs
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: pron-docs
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: pron-docs/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - pron docs
+    - Synopsis
+    about:
+    - pron docs
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: pron-docs/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron docs
+    - Purpose
+    about:
+    - pron docs
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: pron-docs/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron docs
+    - How It Works
+    about:
+    - pron docs
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 24
+    line_end: 25
+  - path: pron-docs/arguments
+    title: Arguments
+    breadcrumbs:
+    - pron docs
+    - Arguments
+    about:
+    - pron docs
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 28
+    line_end: 29
+  - path: pron-docs/usage
+    title: Usage
+    breadcrumbs:
+    - pron docs
+    - Usage
+    about:
+    - pron docs
+    - Usage
+    - usage
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 33
+    line_end: 34

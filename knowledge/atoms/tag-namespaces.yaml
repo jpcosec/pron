@@ -101,7 +101,7 @@ namespaces:
   cross:
     meaning: Explicit cross-system or cross-project synthesis that is part of the claim.
     use_when: The atom's knowledge claim is inherently about a bridge across systems, repos, or graph layers.
-    do_not_use_when: The atom is about one system only; use system: instead.
+    do_not_use_when: "The atom is about one system only; use system: instead."
     examples:
       - cross:deskops_kb
       - cross:sldb_kgdb

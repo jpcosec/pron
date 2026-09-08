@@ -148,5 +148,21 @@ models:
   canonical: false
   family: null
   semantics: []
+- name: CliCommandDoc
+  model_ref: sldb.models.knowledge_surface:CliCommandDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
+  models_index: .sldb/core/models/CliCommandDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
+- name: SurfaceDoc
+  model_ref: sldb.models.knowledge_surface:SurfaceDoc
+  path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
+  models_index: .sldb/core/models/SurfaceDoc.yaml
+  version: 1
+  canonical: false
+  family: null
+  semantics: []
 predicates: []
-hash_a: f8bee55be0e3a285dfd4ceb2b2313e33d05f32b4cc90f79c58f0d752997da32f
+hash_a: 30d8c26743305aecd489ac2f3656693a4797e6bd43cd190baf61133d515f225e
