@@ -3526,3 +3526,14 @@ documents:
   - system:pron
   - type.knowledge.atom
   - workspace.desk.atoms
+- name: atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
+  path: knowledge/atoms/atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory.md
+  hash_c: b976a55bb08587a44b32a6a4e5cdc086c208fb9ea2eb61b2ab2de61da9d87485
+  hash_d: 6878eb2c12fd281338e5849611fa15d970cbcf693a718b2f3212b539a6eebaa0
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.atom
+  - workspace.desk.atoms

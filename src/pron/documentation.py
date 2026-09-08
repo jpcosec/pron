@@ -1,4 +1,11 @@
-"""Describe public surfaces from source contracts; atom-pron-cli-and-modules-are-documented-from-source."""
+"""Describe public surfaces from source contracts; atom-pron-cli-and-modules-are-documented-from-source.
+
+CliCommandDoc content comes from each command handler's own docstring in
+cli/main.py (synopsis, how it works, and a trailing Usage: block), not a
+parallel hand-maintained description — the same principle SurfaceDoc already
+applies to every other module. Only the argument list is still hand-kept
+here, since pron's CLI parses tokens by hand instead of through argparse.
+"""
 
 from __future__ import annotations
 
@@ -23,7 +30,7 @@ def describe_public_surfaces(
     root: Path, atoms: Mapping[str, str]
 ) -> tuple[DocumentSpec, ...]:
     """Derive command contracts and Python surfaces from the current source tree."""
-    commands = _command_specs()
+    commands = _command_specs(root)
     surfaces = [
         _module_spec(path, root, atoms)
         for path in sorted((root / "src/pron").rglob("*.py"))
@@ -32,49 +39,40 @@ def describe_public_surfaces(
     return (*commands, *surfaces)
 
 
-_GUIDES: dict[str, dict[str, str]] = {
-    "anchors": {
-        "synopsis": "List the live grammar: anchors bound to models, expressions and operations.",
-        "how_it_works": "Reads AnchorDoc documents tracked in the store through AnchorRegistry and renders each symbol's kind, ref and motive. With a symbol argument, resolves and renders that one anchor.",
-        "arguments": '[symbol] | optional | Filter to a single anchor symbol.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.',
-        "usage": "pron anchors\npron anchors atom --format text",
-    },
-    "eval": {
-        "synopsis": "Evaluate an s-expression directly against the Meaning layer.",
-        "how_it_works": "Parses the expression with pron.core.sexpr, resolves nouns and anchors through AnchorRegistry, and evaluates it with Evaluator against SLDB and KGDB. Ambiguous resolutions are persisted as a pending clarification in .pron/session.json.",
-        "arguments": "<s-expr> | required | The s-expression to evaluate, e.g. '(check (doc atom \"x\") :project title)'.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.",
-        "usage": 'pron eval \'(check (doc atom "atom-x") :project title)\'',
-    },
-    "anchor add": {
-        "synopsis": "Declare a new grammar symbol: writes an AnchorDoc and tracks it.",
-        "how_it_works": "Validates symbol, kind, ref and motive, writes the AnchorDoc through the sldb bridge, tracks it and refreshes the store so the symbol resolves on the next call.",
-        "arguments": "<symbol> | required | The grammar symbol being declared.\n--kind model|expr|operation | required | The anchor's kind.\n--ref <typed-ref> | required | The referent, e.g. model:AtomDoc or 'expr:(related (doc atom _))'.\n--motive <text> | required | The semantic motive for the symbol.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.",
-        "usage": 'pron anchor add tagged --kind expr --ref "expr:(rel tagged _)" --motive "..."',
-    },
-    "model add": {
-        "synopsis": "Register a StructuredNLDoc model contract in the local store.",
-        "how_it_works": "Delegates to `sldb models add` against the local .sldb store, given a module:Class reference, so the evaluator and write ops can resolve and validate documents of that model.",
-        "arguments": "<module:Class> | required | The model reference to register, e.g. pron.bridges.write_models:FactDoc.\n--kb <root> | optional | KB root; defaults to the current working directory.",
-        "usage": "pron model add pron.bridges.write_models:FactDoc",
-    },
-    "project": {
-        "synopsis": "Refresh SLDB indexes and rebuild the KGDB graph.",
-        "how_it_works": "Runs `sldb stores update` to reindex every tracked document (semantic index, sections), then semantic-exports the store and ingests it into the KGDB snapshot at .sldb/runtime/knowledge.nx.json.",
-        "arguments": "--kb <root> | optional | KB root; defaults to the current working directory.",
-        "usage": "pron project",
-    },
-    "docs": {
-        "synopsis": "Derive CLI command docs and module surface docs from the source tree.",
-        "how_it_works": "Describes every base CLI command from a hand-authored guide (kept next to the command's implementation) and every public module under src/pron from its AST, registers CliCommandDoc/SurfaceDoc if needed, writes and tracks the documents, and refreshes the store. --check instead verifies there is no drift, that every generated document is tracked, that every authored document is tracked, and that tags/provenance/roundtrip/store integrity all hold, without writing anything.",
-        "arguments": "--check | optional | Verify instead of regenerating; exits non-zero on drift.\n--kb <root> | optional | KB root; defaults to the current working directory.",
-        "usage": "pron docs\npron docs --check",
-    },
+# name -> handler function in cli/main.py that implements it
+_HANDLERS: dict[str, str] = {
+    "anchors": "_cmd_anchors",
+    "anchor add": "_cmd_anchor_add",
+    "model add": "_cmd_model_add",
+    "project": "_cmd_project",
+    "docs": "_cmd_docs",
+    "repl": "_cmd_repl",
+    "eval": "_cmd_eval",
+}
+
+# irreducible without argparse: pron's CLI parses tokens by hand, so there is
+# no parser object to introspect for flags the way kinesis does.
+_ARGUMENTS: dict[str, str] = {
+    "anchors": "[symbol] | optional | Filter to a single anchor symbol.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.",
+    "anchor add": "<symbol> | required | The grammar symbol being declared.\n--kind model|expr|operation | required | The anchor's kind.\n--ref <typed-ref> | required | The referent, e.g. model:AtomDoc or 'expr:(related (doc atom _))'.\n--motive <text> | required | The semantic motive for the symbol.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.",
+    "model add": "<module:Class> | required | The model reference to register, e.g. pron.bridges.write_models:FactDoc.\n--kb <root> | optional | KB root; defaults to the current working directory.",
+    "project": "--kb <root> | optional | KB root; defaults to the current working directory.",
+    "docs": "--check | optional | Verify instead of regenerating; exits non-zero on drift.\n--kb <root> | optional | KB root; defaults to the current working directory.",
+    "repl": "--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to text for repl (json everywhere else).",
+    "eval": '<s-expr> | required | The s-expression to evaluate, e.g. \'(check (doc atom "x") :project title)\'.\n--kb <root> | optional | KB root; defaults to the current working directory.\n--format json|text | optional | Output projection; defaults to json.',
 }
 
 
-def _command_specs() -> list[DocumentSpec]:
+def _command_specs(root: Path) -> list[DocumentSpec]:
+    tree = ast.parse((root / "src/pron/cli/main.py").read_text(encoding="utf-8"))
+    docstrings = {
+        node.name: ast.get_docstring(node) or ""
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef)
+    }
     specs = []
-    for name, guide in _GUIDES.items():
+    for name, handler in _HANDLERS.items():
+        synopsis, how_it_works, usage = _parse_doc(docstrings[handler])
         identity = f"cmd-pron-{name.replace(' ', '-')}"
         specs.append(
             DocumentSpec(
@@ -85,22 +83,41 @@ def _command_specs() -> list[DocumentSpec]:
                     "id": identity,
                     "system": "pron",
                     "command_path": f"pron {name}",
-                    "synopsis": guide["synopsis"],
-                    "purpose": guide["synopsis"],
-                    "how_it_works": guide["how_it_works"],
-                    "arguments": guide["arguments"],
-                    "usage": guide["usage"],
+                    "synopsis": synopsis,
+                    "purpose": synopsis,
+                    "how_it_works": how_it_works,
+                    "arguments": _ARGUMENTS[name],
+                    "usage": usage,
                     "tags": [
                         "system:pron",
                         "domain:system_architecture",
                         "kind:software",
                         "impl:here",
                     ],
-                    "provenance": "src/pron/cli/main.py:main",
+                    "provenance": f"src/pron/cli/main.py:{handler}",
                 },
             )
         )
     return specs
+
+
+def _parse_doc(doc: str) -> tuple[str, str, str]:
+    """Split a handler's docstring into (synopsis, how_it_works, usage).
+
+    The first paragraph is the synopsis; a trailing paragraph starting with
+    'Usage:' becomes the usage block (its indentation preserved by
+    ast.get_docstring's cleaning, then stripped back per line); everything
+    in between is how_it_works.
+    """
+    paragraphs = [p for p in doc.strip().split("\n\n") if p.strip()]
+    synopsis = paragraphs[0].strip() if paragraphs else ""
+    body = paragraphs[1:]
+    usage = ""
+    if body and body[-1].lstrip().startswith("Usage:"):
+        _, _, rest = body.pop().partition("Usage:")
+        usage = "\n".join(line.strip() for line in rest.strip().splitlines())
+    how_it_works = "\n\n".join(p.strip() for p in body) or synopsis
+    return synopsis, how_it_works, usage
 
 
 def _module_spec(path: Path, root: Path, atoms: Mapping[str, str]) -> DocumentSpec:

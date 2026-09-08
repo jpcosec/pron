@@ -1925,3 +1925,110 @@ documents:
     level: 2
     line_start: 25
     line_end: 26
+- doc_name: surface-pron-cli-repl
+  sections:
+  - path: pron-cli-repl
+    title: pron.cli.repl
+    breadcrumbs:
+    - pron.cli.repl
+    about:
+    - pron.cli.repl
+    - pron cli repl
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: pron-cli-repl
+    level: 1
+    line_start: 13
+    line_end: 14
+  - path: pron-cli-repl/purpose
+    title: Purpose
+    breadcrumbs:
+    - pron.cli.repl
+    - Purpose
+    about:
+    - pron.cli.repl
+    - pron cli repl
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 15
+    line_end: 16
+  - path: pron-cli-repl/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - pron.cli.repl
+    - How It Works
+    about:
+    - pron.cli.repl
+    - pron cli repl
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 19
+    line_end: 20
+  - path: pron-cli-repl/commands
+    title: Commands
+    breadcrumbs:
+    - pron.cli.repl
+    - Commands
+    about:
+    - pron.cli.repl
+    - pron cli repl
+    - Commands
+    - commands
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 23
+    line_end: 24

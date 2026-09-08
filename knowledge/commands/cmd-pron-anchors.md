@@ -8,7 +8,7 @@ tags:
 - domain:system_architecture
 - kind:software
 - impl:here
-provenance: src/pron/cli/main.py:main
+provenance: src/pron/cli/main.py:_cmd_anchors
 ---
 
 # pron anchors
@@ -23,7 +23,9 @@ List the live grammar: anchors bound to models, expressions and operations.
 
 ## How It Works
 
-Reads AnchorDoc documents tracked in the store through AnchorRegistry and renders each symbol's kind, ref and motive. With a symbol argument, resolves and renders that one anchor.
+Reads AnchorDoc documents tracked in the store through AnchorRegistry and
+renders each symbol's kind, ref and motive. With a symbol argument,
+resolves and renders that one anchor.
 
 ## Arguments
 

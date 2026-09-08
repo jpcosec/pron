@@ -16794,3 +16794,63 @@ documents:
     level: 2
     line_start: 15
     line_end: 16
+- doc_name: atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
+  sections:
+  - path: the-repl-is-a-loop-over-the-same-evaluator-answering-ambiguity-in-memory-instead-of-a-file
+    title: The REPL is a loop over the same evaluator, answering ambiguity in memory
+      instead of a file
+    breadcrumbs:
+    - The REPL is a loop over the same evaluator, answering ambiguity in memory instead
+      of a file
+    about:
+    - The REPL is a loop over the same evaluator, answering ambiguity in memory instead
+      of a file
+    - the repl is a loop over the same evaluator answering ambiguity in memory instead
+      of a file
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: the-repl-is-a-loop-over-the-same-evaluator-answering-ambiguity-in-memory-instead-of-a-file
+    level: 1
+    line_start: 13
+    line_end: 14
+  - path: the-repl-is-a-loop-over-the-same-evaluator-answering-ambiguity-in-memory-instead-of-a-file/answer
+    title: Answer
+    breadcrumbs:
+    - The REPL is a loop over the same evaluator, answering ambiguity in memory instead
+      of a file
+    - Answer
+    about:
+    - The REPL is a loop over the same evaluator, answering ambiguity in memory instead
+      of a file
+    - the repl is a loop over the same evaluator answering ambiguity in memory instead
+      of a file
+    - Answer
+    - answer
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    semantic_tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.atom
+    - workspace.desk.atoms
+    slug: answer
+    level: 2
+    line_start: 15
+    line_end: 16

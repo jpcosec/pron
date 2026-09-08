@@ -8,7 +8,7 @@ tags:
 - domain:system_architecture
 - kind:software
 - impl:here
-provenance: src/pron/cli/main.py:main
+provenance: src/pron/cli/main.py:_cmd_anchor_add
 ---
 
 # pron anchor add
@@ -23,7 +23,9 @@ Declare a new grammar symbol: writes an AnchorDoc and tracks it.
 
 ## How It Works
 
-Validates symbol, kind, ref and motive, writes the AnchorDoc through the sldb bridge, tracks it and refreshes the store so the symbol resolves on the next call.
+Validates symbol, kind, ref and motive, writes the AnchorDoc through the
+sldb bridge, tracks it and refreshes the store so the symbol resolves on
+the next call.
 
 ## Arguments
 

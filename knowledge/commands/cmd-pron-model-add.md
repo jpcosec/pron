@@ -8,7 +8,7 @@ tags:
 - domain:system_architecture
 - kind:software
 - impl:here
-provenance: src/pron/cli/main.py:main
+provenance: src/pron/cli/main.py:_cmd_model_add
 ---
 
 # pron model add
@@ -23,7 +23,9 @@ Register a StructuredNLDoc model contract in the local store.
 
 ## How It Works
 
-Delegates to `sldb models add` against the local .sldb store, given a module:Class reference, so the evaluator and write ops can resolve and validate documents of that model.
+Delegates to `sldb models add` against the local .sldb store, given a
+module:Class reference, so the evaluator and write ops can resolve and
+validate documents of that model.
 
 ## Arguments
 

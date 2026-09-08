@@ -330,6 +330,7 @@ tags:
   - atom-main-py-routes-surface-eval-anchors-and-infra
   - atom-projector-py-materializes-the-world-via-the-verified-pipeline
   - atom-pron-cli-and-modules-are-documented-from-source
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-results-py-defines-the-typed-outcome-values
   - atom-sldb-bridge-py-wraps-the-real-library-layer
@@ -347,12 +348,14 @@ tags:
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
   - surface-pron-bridges-sldb-bridge
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -592,6 +595,7 @@ tags:
   - atom-pron-cli-and-modules-are-documented-from-source
   - atom-read-py-implements-check-next-return-with-refs
   - atom-render-py-maps-result-values-to-output-and-exit-codes
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - atom-resolution-outcomes-are-typed-values-not-exceptions
   - atom-resolution-py-implements-the-selector-cascade
   - atom-results-py-defines-the-typed-outcome-values
@@ -619,12 +623,14 @@ tags:
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
   - surface-pron-bridges-sldb-bridge
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -1091,6 +1097,7 @@ tags:
   - atom-question-type-should-remain-an-explicit-governance-dimension
   - atom-read-py-implements-check-next-return-with-refs
   - atom-render-py-maps-result-values-to-output-and-exit-codes
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-resolution-py-implements-the-selector-cascade
   - atom-results-py-defines-the-typed-outcome-values
@@ -1121,12 +1128,14 @@ tags:
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
   - surface-pron-bridges-sldb-bridge
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -1560,18 +1569,21 @@ tags:
   - atom-ontomap-should-curate-explicit-concept-mappings-across-knowledge-regions
   system:pron:
   - atom-pron-cli-and-modules-are-documented-from-source
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - cmd-pron-anchor-add
   - cmd-pron-anchors
   - cmd-pron-docs
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
   - surface-pron-bridges-sldb-bridge
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -2188,6 +2200,7 @@ tags:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
   - atom-render-py-maps-result-values-to-output-and-exit-codes
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
@@ -2271,6 +2284,7 @@ tags:
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   type.knowledge.surface:
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
@@ -2278,6 +2292,7 @@ tags:
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -2487,6 +2502,7 @@ tags:
   - atom-regex-valid-metadata-namespaces-should-still-be-excluded-from-atom-tags
   - atom-relation-mapping-should-drive-the-discovery-of-missing-entities-in-the-ontology
   - atom-render-py-maps-result-values-to-output-and-exit-codes
+  - atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory
   - atom-repo-artifacts-need-atom-traceability
   - atom-repopackage-can-help-model-repository-structure-as-a-source-projection
   - atom-reports-should-be-treated-as-compositions-rather-than-as-primary-knowledge-atoms
@@ -2595,6 +2611,7 @@ tags:
   - cmd-pron-eval
   - cmd-pron-model-add
   - cmd-pron-project
+  - cmd-pron-repl
   workspace.knowledge.surfaces:
   - surface-pron-bridges-documentation-bridge
   - surface-pron-bridges-kgdb-bridge
@@ -2602,6 +2619,7 @@ tags:
   - surface-pron-bridges-write-models
   - surface-pron-cli-main
   - surface-pron-cli-render
+  - surface-pron-cli-repl
   - surface-pron-cli-surface
   - surface-pron-core-anchors
   - surface-pron-core-evaluator
@@ -5888,6 +5906,16 @@ documents:
     - system:pron
     - type.knowledge.atom
     - workspace.desk.atoms
+  atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory:
+    model: AtomDoc
+    path: knowledge/atoms/atom-repl-shares-the-evaluator-and-answers-ambiguity-in-memory.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.atom
+    - workspace.desk.atoms
   anchor-check:
     model: AnchorDoc
     path: knowledge/anchors/anchor-check.md
@@ -6157,6 +6185,16 @@ documents:
     - system:pron
     - type.knowledge.cli_command
     - workspace.knowledge.commands
+  cmd-pron-repl:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-repl.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
   surface-pron-bridges-documentation-bridge:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-bridges-documentation-bridge.md
@@ -6330,6 +6368,16 @@ documents:
   surface-pron-ops-write:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-ops-write.md
+    tags:
+    - domain:system_architecture
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-cli-repl:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-cli-repl.md
     tags:
     - domain:system_architecture
     - impl:here

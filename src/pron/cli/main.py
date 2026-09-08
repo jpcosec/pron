@@ -22,7 +22,7 @@ from pron.cli.surface import desugar
 
 def main(argv: list[str] | None = None) -> int:
     args = list(sys.argv[1:] if argv is None else argv)
-    fmt = "json"
+    fmt = "text" if args[:1] == ["repl"] else "json"
     if "--format" in args:
         i = args.index("--format")
         fmt = args[i + 1]
@@ -46,32 +46,30 @@ def main(argv: list[str] | None = None) -> int:
     if args[0] == "anchors":
         return _cmd_anchors(registry, args[1:], fmt)
     if args[0] == "model" and len(args) >= 3 and args[1] == "add":
-        from pron.infra.projector import model_add
-
-        ok, msg = model_add(root, args[2])
-        print(msg)
-        return 0 if ok else 1
+        return _cmd_model_add(root, args[2])
     if args[0] == "project":
-        from pron.infra.projector import refresh
-
-        ok, msg = refresh(root)
-        print(msg)
-        return 0 if ok else 1
+        return _cmd_project(root)
     if args[0] == "docs":
-        from pron.bridges.documentation_bridge import synchronize_documentation
-
-        ok, msg = synchronize_documentation(root, check="--check" in args[1:])
-        print(msg)
-        return 0 if ok else 1
+        return _cmd_docs(root, check="--check" in args[1:])
+    if args[0] == "repl":
+        return _cmd_repl(root, fmt)
     if args[0] == "eval" and len(args) >= 2:
-        return _run_expr_text(args[1], root, sldb, registry, fmt)
+        return _cmd_eval(args[1], root, sldb, registry, fmt)
 
     # surface command (possibly a clarification answer)
     return _run_surface(args, root, sldb, registry, fmt)
 
 
 def _cmd_anchor_add(root: Path, rest: list[str]) -> int:
-    """knowledge anchor add <symbol> --kind <k> --ref <r> --motive <text>."""
+    """Declare a new grammar symbol: writes an AnchorDoc and tracks it.
+
+    Validates symbol, kind, ref and motive, writes the AnchorDoc through the
+    sldb bridge, tracks it and refreshes the store so the symbol resolves on
+    the next call.
+
+    Usage:
+        pron anchor add tagged --kind expr --ref "expr:(rel tagged _)" --motive "..."
+    """
     from pron.ops.anchor_add import anchor_add
 
     flags: dict[str, str | None] = {"--kind": None, "--ref": None, "--motive": None}
@@ -86,7 +84,7 @@ def _cmd_anchor_add(root: Path, rest: list[str]) -> int:
             positional.append(t)
             i += 1
     if not positional:
-        print("uso: knowledge anchor add <symbol> --kind <model|doc|relation|operation|projection> --ref <typed-ref> --motive <text>")
+        print("uso: pron anchor add <symbol> --kind <model|expr|operation> --ref <typed-ref> --motive <text>")
         return 1
     if flags["--kind"] is None or flags["--ref"] is None or flags["--motive"] is None:
         print("error: se requieren --kind, --ref y --motive")
@@ -97,7 +95,16 @@ def _cmd_anchor_add(root: Path, rest: list[str]) -> int:
 
 
 def _cmd_anchors(registry: AnchorRegistry, rest: list[str], fmt: str) -> int:
-    """The living grammar: all anchors, or one symbol's motive."""
+    """List the live grammar: anchors bound to models, expressions and operations.
+
+    Reads AnchorDoc documents tracked in the store through AnchorRegistry and
+    renders each symbol's kind, ref and motive. With a symbol argument,
+    resolves and renders that one anchor.
+
+    Usage:
+        pron anchors
+        pron anchors atom --format text
+    """
     if rest:
         anchor = registry.lookup(rest[0])
         text, code = render(
@@ -128,6 +135,95 @@ def _anchor_result(anchor):
             "motive": anchor.motive,
         },
     )
+
+
+def _cmd_model_add(root: Path, ref: str) -> int:
+    """Register a StructuredNLDoc model contract in the local store.
+
+    Delegates to `sldb models add` against the local .sldb store, given a
+    module:Class reference, so the evaluator and write ops can resolve and
+    validate documents of that model.
+
+    Usage:
+        pron model add pron.bridges.write_models:FactDoc
+    """
+    from pron.infra.projector import model_add
+
+    ok, msg = model_add(root, ref)
+    print(msg)
+    return 0 if ok else 1
+
+
+def _cmd_project(root: Path) -> int:
+    """Refresh SLDB indexes and rebuild the KGDB graph.
+
+    Runs `sldb stores update` to reindex every tracked document (semantic
+    index, sections), then semantic-exports the store and ingests it into
+    the KGDB snapshot at .sldb/runtime/knowledge.nx.json.
+
+    Usage:
+        pron project
+    """
+    from pron.infra.projector import refresh
+
+    ok, msg = refresh(root)
+    print(msg)
+    return 0 if ok else 1
+
+
+def _cmd_docs(root: Path, check: bool) -> int:
+    """Derive CLI command docs and module surface docs from the source tree.
+
+    Describes every base command from its handler's own docstring (kept
+    next to the implementation, not a parallel file) and every public
+    module under src/pron from its AST, registers CliCommandDoc/SurfaceDoc
+    if needed, writes and tracks the documents, and refreshes the store.
+    --check instead verifies there is no drift, that every generated and
+    every authored document is tracked, and that tags, provenance,
+    roundtrip and store integrity all hold, without writing anything.
+
+    Usage:
+        pron docs
+        pron docs --check
+    """
+    from pron.bridges.documentation_bridge import synchronize_documentation
+
+    ok, msg = synchronize_documentation(root, check=check)
+    print(msg)
+    return 0 if ok else 1
+
+
+def _cmd_repl(root: Path, fmt: str) -> int:
+    """Interactive read-eval-print loop over the same Meaning layer as eval and the surface command.
+
+    Reads a line at a time: a parenthesized line is direct Meaning, anything
+    else is surface tokens desugared through the anchor table, both
+    evaluated by the same Evaluator as `eval`. An ambiguous result opens a
+    pending question held in memory; typing one of its candidates on the
+    next line answers it in place of the ambiguous selector. `:internals`
+    toggles a grounding trace showing which anchor resolves each symbol;
+    `:help` lists the live grammar; `:quit` exits.
+
+    Usage:
+        pron repl
+    """
+    from pron.cli.repl import run as run_repl
+
+    return run_repl(root, fmt)
+
+
+def _cmd_eval(text: str, root: Path, sldb: SldbBridge, registry: AnchorRegistry, fmt: str) -> int:
+    """Evaluate an s-expression directly against the Meaning layer.
+
+    Parses the expression, resolves nouns and anchors through
+    AnchorRegistry, and evaluates it with Evaluator against SLDB and KGDB.
+    Ambiguous resolutions are persisted as a pending clarification in
+    .pron/session.json.
+
+    Usage:
+        pron eval '(check (doc atom "atom-x") :project title)'
+    """
+    return _run_expr_text(text, root, sldb, registry, fmt)
 
 
 def _run_surface(tokens: list[str], root, sldb, registry, fmt: str) -> int:
@@ -188,6 +284,7 @@ def _help() -> str:
         "pron — evaluador semánticamente anclado sobre sldb+kgdb\n\n"
         "  pron <tokens...> [--<projection>]   comando surface\n"
         "  pron eval '<s-expr>'                capa Meaning directa\n"
+        "  pron repl                           loop interactivo (texto por defecto)\n"
         "  pron anchors [symbol]               gramática viva\n"
         "  pron anchor add <symbol> --kind <k> --ref <r> --motive <text>\n"
         "  pron model add <module:Class>       declara un modelo\n"

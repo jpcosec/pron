@@ -55,6 +55,8 @@ def _text(data: dict[str, Any]) -> str:
             lines.append(f"  {data['hint']}")
     elif status == "ambiguous":
         lines.append(f"? {data.get('question', '')}")
+        if data.get("candidates"):
+            lines.append("  " + ", ".join(data["candidates"]))
     elif status == "missing":
         lines.append(f"✗ {data.get('message', '')}")
         if data.get("nearest"):

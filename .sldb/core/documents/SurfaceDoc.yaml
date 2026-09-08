@@ -197,3 +197,14 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
+- name: surface-pron-cli-repl
+  path: knowledge/surfaces/surface-pron-cli-repl.md
+  hash_c: 908c88b7d9086c1d71077e362bf613951ba398bda382c5093dc6c0c16f3afafb
+  hash_d: af6109f2a0d67c7e27a9cb73934f410780ce2a3329bad63b6bebd86b7607e94d
+  semantic_tags:
+  - domain:system_architecture
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces

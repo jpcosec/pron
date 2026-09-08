@@ -8,7 +8,7 @@ tags:
 - domain:system_architecture
 - kind:software
 - impl:here
-provenance: src/pron/cli/main.py:main
+provenance: src/pron/cli/main.py:_cmd_eval
 ---
 
 # pron eval
@@ -23,7 +23,10 @@ Evaluate an s-expression directly against the Meaning layer.
 
 ## How It Works
 
-Parses the expression with pron.core.sexpr, resolves nouns and anchors through AnchorRegistry, and evaluates it with Evaluator against SLDB and KGDB. Ambiguous resolutions are persisted as a pending clarification in .pron/session.json.
+Parses the expression, resolves nouns and anchors through
+AnchorRegistry, and evaluates it with Evaluator against SLDB and KGDB.
+Ambiguous resolutions are persisted as a pending clarification in
+.pron/session.json.
 
 ## Arguments
 

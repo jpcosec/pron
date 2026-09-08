@@ -8,7 +8,7 @@ tags:
 - domain:system_architecture
 - kind:software
 - impl:here
-provenance: src/pron/cli/main.py:main
+provenance: src/pron/cli/main.py:_cmd_docs
 ---
 
 # pron docs
@@ -23,7 +23,13 @@ Derive CLI command docs and module surface docs from the source tree.
 
 ## How It Works
 
-Describes every base CLI command from a hand-authored guide (kept next to the command's implementation) and every public module under src/pron from its AST, registers CliCommandDoc/SurfaceDoc if needed, writes and tracks the documents, and refreshes the store. --check instead verifies there is no drift, that every generated document is tracked, that every authored document is tracked, and that tags/provenance/roundtrip/store integrity all hold, without writing anything.
+Describes every base command from its handler's own docstring (kept
+next to the implementation, not a parallel file) and every public
+module under src/pron from its AST, registers CliCommandDoc/SurfaceDoc
+if needed, writes and tracks the documents, and refreshes the store.
+--check instead verifies there is no drift, that every generated and
+every authored document is tracked, and that tags, provenance,
+roundtrip and store integrity all hold, without writing anything.
 
 ## Arguments
 
