@@ -91,6 +91,22 @@ class World:
     def graph_is_fresh(self) -> bool:
         return self.graph.is_fresh(self.model_hashes())
 
+    @property
+    def derived_dir(self) -> Path:
+        """Where a consumer keeps what it derives from this world (vectors, indexes): .pron/,
+        outside git like the graph (spec 11 §2)."""
+        d = self.root / ".pron"
+        d.mkdir(exist_ok=True)
+        return d
+
+    def refresh_if_stale(self, exclude_tags: tuple[str, ...] = ("type.pron.move",)) -> bool:
+        """Refresh only when the graph is missing or was built from other model hashes.
+        Returns whether it refreshed."""
+        if self.graph_is_fresh():
+            return False
+        self.refresh(exclude_tags)
+        return True
+
     def refresh(self, exclude_tags: tuple[str, ...] = ("type.pron.move",)) -> dict[str, Any]:
         """stores update, then kgdb's typed ingest into .pron/graph.nx.json. Library calls only.
         kgdb and networkx are imported here, not at module load: a session that only reads
