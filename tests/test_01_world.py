@@ -73,3 +73,14 @@ def test_hash_mundo_ignores_the_ledger_but_sees_a_schema_change(world: World):
     assert not world.graph_is_fresh()
     world.refresh()
     assert world.graph_is_fresh()
+
+
+def test_create_with_relative_path_lands_under_the_world_root(world: World, tmp_path, monkeypatch):
+    """A relative path is relative to the world, not to the process cwd: sldb records paths
+    relative to the root, so a cwd-relative file would be tracked as missing."""
+    monkeypatch.chdir(tmp_path)
+    world.store.create("Client", "client-rel", {"name": "Rel", "phone": "1", "notes": ""}, Path("clients") / "rel.md")
+    assert (world.root / "clients" / "rel.md").exists()
+    assert not (tmp_path / "clients").exists()
+    assert world.store.doc("Client", "client-rel") is not None
+    assert world.store.doc_path("Client", "client-rel") == world.root / "clients" / "rel.md"

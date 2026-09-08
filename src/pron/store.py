@@ -150,11 +150,18 @@ class Store:
         ok, details = validate_model_input_roundtrip(model_type, rendered)
         if not ok:
             raise StoreError(f"{model} '{name}' would not round-trip: {json.dumps(details.get('extracted_payload'), default=str)[:200]}")
+        path = self._under_root(path)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(rendered + "\n", encoding="utf-8")
         track_document(self.sp, self.project_root, idx, model_type, entry, path, name, resolve_model_ref, self.pythonpath)
         self.invalidate()
         return f"{model}:{name}"
+
+    def _under_root(self, path: Path) -> Path:
+        """A relative document path is relative to the world's root, never to the process cwd:
+        sldb records paths relative to the root, so a cwd-relative file would be tracked as missing."""
+        path = Path(path)
+        return path if path.is_absolute() else self.project_root / path
 
     def _save(self, model: str, name: str, payload: dict) -> None:
         d = self.doc(model, name)
@@ -217,5 +224,5 @@ class Store:
 
     def track(self, path: Path, model: str, name: str) -> None:
         model_type, entry, idx = registered_model(self.sp, model, self.pythonpath)
-        track_document(self.sp, self.project_root, idx, model_type, entry, path, name, resolve_model_ref, self.pythonpath)
+        track_document(self.sp, self.project_root, idx, model_type, entry, self._under_root(path), name, resolve_model_ref, self.pythonpath)
         self.invalidate()
