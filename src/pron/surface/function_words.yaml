@@ -1,0 +1,56 @@
+# pron's function words, one table per language. These are pron's, not the world's:
+# a world adds words through models, relation types and aliases (spec 05, 11 §0).
+language: en
+
+determiners:
+  singular: [the, this, that, a, an, one, any]
+  plural: [the, these, those, all, every, all the]
+  # "the" is listed in both: number is decided by the noun form that follows
+
+referents:
+  singular: [it, that one, the same, the previous one, the last one, this one, her, him]
+  plural: [them, those, all of them, these]
+  speaker: [me, my, myself, i]
+  user: [the user]
+
+interrogatives:
+  what: [what, which]
+  who: [who, whom, whose]
+  where: [where]
+  when: [when]
+  why: [why]
+  how: [how]
+  how_many: [how many, how much]
+  yes_no: [is, are, does, do, can, has, have, did]
+
+conjunction: [and]
+negation: [not, "no", never, "don't", doesn't]
+literal_markers: ["to:", "saying:", "saying", "called", "named", '"']
+preposition_of: [of]
+
+designation:
+  none: [none, neither, "no"]
+  ordinal: {first: 0, second: 1, third: 2, fourth: 3, fifth: 4, last: -1}
+  the_x_one: "the X one"
+
+confirmation:
+  yes: [yes, ok, okay, sure, do it, go ahead]
+  no: [no, cancel, forget it]
+
+kernel:
+  create:  {forms: [create, make, new, add a new, register], motive: "make a new object of a class"}
+  change:  {forms: [change, set, update, edit, rename, move, put], motive: "set one field of an object"}
+  add:     {forms: [add, append, tag with, give], motive: "add an item to a list field"}
+  clean:   {forms: [clean, dedupe, tidy], motive: "drop empty and duplicate items of a list field"}
+  remove:  {forms: [remove, clear, drop, delete], motive: "remove a field or an item"}
+  forget:  {forms: [forget, untrack, discard], motive: "take a document out of the world"}
+  refresh: {forms: [refresh, rebuild, reindex], motive: "rebuild the indexes and the graph"}
+  undo:    {forms: [undo, undo that, undo the last move, revert], motive: "reverse the last move that wrote"}
+
+numbers:
+  words: {zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12}
+
+dates:
+  weekdays: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+  relative: {today: 0, tomorrow: 1, "the day after tomorrow": 2, yesterday: -1}
+  time_markers: [at]
