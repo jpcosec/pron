@@ -191,18 +191,6 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
-- name: surface-pron-surface-nouns
-  path: knowledge/surfaces/surface-pron-surface-nouns.md
-  hash_c: 680ff0da1b29bdbf4865202f11c03e2990f4435ce2766b6d32644c1bc4f19e06
-  hash_d: e580fcc08ccf107bdc6ab68d3e741c558722dc2d511bc62d280ece03a4b95250
-  semantic_tags:
-  - domain:system_architecture
-  - entity:module
-  - impl:here
-  - kind:software
-  - system:pron
-  - type.knowledge.surface
-  - workspace.knowledge.surfaces
 - name: surface-pron-surface-interpret
   path: knowledge/surfaces/surface-pron-surface-interpret.md
   hash_c: e47eb2829dc4489a74a6acc7cbb21b914c7eb3e20fad74585bd9ad92276e8460
@@ -231,6 +219,18 @@ documents:
   path: knowledge/surfaces/surface-pron-cli-repl.md
   hash_c: ad773b76bd08b65bf3a10fdf1da15d4e1c68941a9a52fb4cd2aba3ba588aeba8
   hash_d: 12f82aaa268c5df853532b9ba98e66d14b30073954f30c286a255441a7ba3f0a
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-surface-nouns
+  path: knowledge/surfaces/surface-pron-surface-nouns.md
+  hash_c: 0fc16bfee16116de12e6930ee9837366d9d349c8b9b7c32c7b4f7f4ebbea6389
+  hash_d: a030becf9588036308191d95590dc5998f1121678ffc564beb080f5fd8594469
   semantic_tags:
   - domain:system_architecture
   - entity:module

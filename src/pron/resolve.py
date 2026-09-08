@@ -53,16 +53,61 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
     scope = np.scope
     queries: list[str] = []
     result: list[str] | None = None
+    # complements: the edges of a relation to what "of X" names, crossed with the predicates (spec 02)
+    for comp in np.complements:
+        linked = _linked(np, comp, lex, queries)
+        if linked is None:
+            if isinstance(comp, NounPhrase):
+                return Resolution(np, [], "missing", queries, note=f"no relation joins {np.model} and {comp.describe()}")
+            np.proper += comp   # not a related document: a proper name of the head
+            continue
+        result = linked if result is None else [a for a in result if a in set(linked)]
     predicates = list(np.predicates) + _proper_predicates(np, lex)
     for where in predicates:
-        found = store.find(scope, where)
+        found = _normalize_addresses(store.find(scope, where))   # st.{M+}.doc and st.{M}.doc are the same address
         queries.append(f"find '{scope}' --where '{where}' → {len(found)}")
         result = found if result is None else [a for a in result if a in set(found)]
     if result is None:
         result = [f"{scope}.{name}" for name in store.list(scope)]
         queries.append(f"ls '{scope}' → {len(result)}")
+    elif len(predicates) + len(np.complements) > 1:
+        queries.append(f"∩ → {len(result)}")
     result = _normalize_addresses(result)
     return _decide(np, result, queries, lex)
+
+
+def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str]) -> list[str] | None:
+    """The heads related to what the complement names: for each relation type between the head's
+    family and another class, resolve the complement in that class and read the edges (kgdb, or
+    the RelationDocs in sldb). None when no relation and class take the complement."""
+    from pron.verbs import Verbs
+
+    family = set(lex.world.family_of(np.model))
+    verbs = Verbs(lex)
+    for rel, rt in lex.relation_types.items():
+        sides = []
+        if family & set(rt.get("source_types") or []):
+            sides.append(("to", rt.get("target_types") or []))
+        if family & set(rt.get("target_types") or []):
+            sides.append(("from", rt.get("source_types") or []))
+        for direction, others in sides:
+            for other in others:
+                if isinstance(comp, NounPhrase):
+                    if other not in lex.world.family_of(comp.model):
+                        continue
+                    inner = resolve(comp, lex)
+                else:
+                    inner = resolve(NounPhrase(other, "all", "plural", proper=list(comp)), lex)
+                queries.extend("  " + q for q in inner.queries)
+                if inner.outcome != "unico" or not inner.addresses:
+                    continue
+                heads: list[str] = []
+                for eid in inner.export_ids():
+                    read = verbs.edges_to(eid, rel) if direction == "to" else verbs.edges_from(eid, rel)
+                    queries.extend(read.queries)
+                    heads += [e["source"] if direction == "to" else e["target"] for e in read.edges]
+                return sorted({f"st.{{{h.split(':', 1)[0]}}}.{h.split(':', 1)[1]}" for h in heads})
+    return None
 
 
 def _proper_predicates(np: NounPhrase, lex: Lexicon) -> list[str]:

@@ -280,8 +280,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 56
-    line_end: 57
+    line_start: 58
+    line_end: 59
 - doc_name: spec-03
   sections:
   - path: 03-verbos-transitivos

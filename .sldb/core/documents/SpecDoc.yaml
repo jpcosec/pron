@@ -8,15 +8,15 @@ documents:
   - workspace.source.spec
 - name: spec-02
   path: source/spec/02-sustantivos.md
-  hash_c: 00dc0d0a59b9f4ccb6283eaea6de6d3de077ba77c6b468b48a8d845958fddf9e
-  hash_d: a6ffaff357c2cd965e11d09ca28020c0a66e1432b683f0f98c150554bef1f0ed
+  hash_c: 5d6911b784b0fb6d7f1f87e3e0ddacbe684a8c72dc478d7fe84f9413e3bf1abe
+  hash_d: e439ee05b2fba444d31cd1f5f0267e0ff63753a729e11ee741876279101a0d75
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-03
   path: source/spec/03-verbos-transitivos.md
-  hash_c: 931fe1499b1c0a31407c165ad9c7519316092f84fc799e41dbe5ede393c22b4c
-  hash_d: d943ff3c6ae7b29d5104dddc584d83e3fb9c8248720f9b5623014658d58c7c76
+  hash_c: 3ad507ee7b134124ebe41904464a28a5f902d418e7d996035e145f38ea3195f0
+  hash_d: ccbda7913751e2e7686ccd7fa5db9eaee2e9accee75c3f759b138209417663cb
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

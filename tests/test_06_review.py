@@ -108,3 +108,21 @@ def test_hash_mundo_is_read_again_before_executing(world: World, monkeypatch):
 def test_a_model_identifier_is_also_known_split_into_words(world: World):
     lex = Lexicon(world, {"models": ["RelationTypeDoc"], "relations": [], "actions": [], "aliases": []})
     assert [w.ref for w in lex.lookup("relation type doc")] == ["model:RelationTypeDoc"]
+
+
+def test_a_complement_names_a_related_document_and_crosses_its_edges(world: World):
+    s = Session(world, projection="all", speaker="jp", now=NOW)
+    r = s.turn("the reservations of Luis Soto")
+    assert r.outcome == "unico" and "20:00" in r.text, r.text + " / " + " | ".join(r.trace)
+    assert any("booked_by" in q for q in r.trace), r.trace
+    r = s.turn("Luis Soto's reservations for Friday")
+    assert r.outcome == "unico" and "20:00" in r.text and any('date = "2026-09-11"' in q for q in r.trace), r.text + " / " + " | ".join(r.trace)
+    r = s.turn("Luis Soto's reservations for Saturday")
+    assert r.outcome == "unico" and r.text == "None.", r.text
+    r = s.turn("the tables of the reservations of Luis Soto")
+    assert r.outcome == "unico" and r.text == "table 3.", r.text + " / " + " | ".join(r.trace)
+    r = s.turn("confirm the reservation of Luis Soto")
+    assert r.outcome == "unico" and "Done" in r.text, r.text + " / " + " | ".join(r.trace)
+    assert world.store.payload("Reservation", "reservation-2026-09-11-luis-soto")["status"] == "confirmed"
+    r = s.turn("the reservations of Nadie Nunca")
+    assert r.outcome == "unico" and r.text == "None.", r.text

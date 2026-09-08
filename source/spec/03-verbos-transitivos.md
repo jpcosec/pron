@@ -2,7 +2,7 @@
 
 ## Qué es un verbo
 
-Un verbo transitivo es un tipo de relación entre dos sustantivos. Lo declara kgdb con su modelo `RelationTypeDoc`:
+Un verbo transitivo es un tipo de relación entre dos sustantivos. Lo declara kgdb con su modelo `RelationTypeDoc`, en un documento cuyo nombre en el store es `rt-<name>` (`rt-booked_by`, `rt-implements`): en sldb el nombre de un documento es único en todo el store, no por modelo, y el prefijo evita que un tipo de relación choque con cualquier otro documento que se llame como él. El campo `name` va sin prefijo, y es el que dice el hablante:
 
 | campo | significado gramatical |
 |---|---|

@@ -128,6 +128,8 @@ def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: 
     if not gitignore.exists():
         gitignore.write_text("*\n", encoding="utf-8")
     types_added = _knowledge_relation_types(store) if with_knowledge else []
+    # a model registered without documents leaves its index hash behind until the next update
+    update_store(SimpleNamespace(store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False))
     return {"kgdb": kgdb_report.summary(), "pron_models_added": added, "relation_types_added": types_added}
 
 

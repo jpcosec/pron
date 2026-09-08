@@ -903,17 +903,6 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-surface-nouns:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-surface-nouns.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-surface-interpret:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-surface-interpret.md
@@ -939,6 +928,17 @@ documents:
   surface-pron-cli-repl:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-cli-repl.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-nouns:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-nouns.md
     tags:
     - domain:system_architecture
     - entity:module

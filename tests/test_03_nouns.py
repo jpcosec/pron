@@ -50,7 +50,7 @@ def test_plural_phrase_with_two_predicates_is_two_queries_and_an_intersection(cl
     assert np.predicates == ["capacity >= 6", 'zone = "terrace"']
     r = resolve(np, lex)
     assert r.outcome == "unico" and r.addresses == ["st.{Table}.table-12", "st.{Table}.table-14"]
-    assert len(r.queries) == 2 and r.queries[0].startswith("find 'st.{Table+}' --where 'capacity >= 6'")
+    assert len(r.queries) == 3 and r.queries[0].startswith("find 'st.{Table+}' --where 'capacity >= 6'") and r.queries[2] == "∩ → 2"
 
 
 def test_a_modifier_of_another_model_is_left_for_the_sentence(clf, lex):

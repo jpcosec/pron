@@ -3,7 +3,7 @@ model_ref: sldb.models.knowledge_surface:SurfaceDoc
 path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
 documents_index: .sldb/core/documents/SurfaceDoc.yaml
 sections_index: .sldb/runtime/sections/SurfaceDoc.yaml
-hash_b: 30f54d163bebe8c4e7412b66956583ab9de65d2af536666839787a684be72777
+hash_b: 09f9a2d9f8ab02f7fd9b30477d3f1545734de83b705cf0707964063408237fe8
 version: 1
 canonical: false
 family: null

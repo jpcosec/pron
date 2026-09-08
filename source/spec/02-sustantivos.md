@@ -51,6 +51,8 @@ find 'st.{Atom+}' --where 'has(provenance)'   → 260
 
 La misma intersección sirve cuando una lista viene de kgdb y otra de sldb: "Ana's reservations for Friday" cruza `edges_to(Ana, booked_by)` con `find st.{Reservation} --where date = …`.
 
+Lo que trae ese cruce es un **complemento**: "of X" después del término, o "X's" antes. Qué es X se decide al resolver, en este orden: un valor de un campo del término ("the atoms of pron"), un documento de otra clase con la que el término tiene un tipo de relación ("the reservations of Ana": `booked_by` va de `Reservation` a `Client`, y "Ana" resuelve en `Client`), o un nombre propio del término mismo ("the atom of X"). En el segundo caso la lista del término son los extremos de las aristas de esa relación, leídas de kgdb o de los `RelationDoc`, y se cruza con los demás predicados. Un complemento puede ser a su vez una frase nominal ("the tables of the reservations of Ana"), y se resuelve primero.
+
 Si sldb incorpora conjunción en `--where`, pron la usa y borra la intersección.
 
 ## Invariantes
