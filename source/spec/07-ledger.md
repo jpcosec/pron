@@ -12,7 +12,7 @@ Cada turno deja un movimiento con:
 - la salida del grounding: único, ambiguo o missing, con los candidatos o los cercanos;
 - el `hash_mundo` antes y después (ver abajo).
 
-El ledger es un documento del mundo, una instancia de `MoveDoc` por movimiento, trackeada en el store como cualquier otra. Así se consulta por dirección: "los movimientos de hoy sobre el repl" es `st.{MoveDoc}` con un `--where`.
+El ledger es un documento del mundo, una instancia de `MoveDoc` por movimiento, trackeada en el store como cualquier otra. Así se consulta por dirección: "today's moves on the repl" es `st.{MoveDoc}` con un `--where`.
 
 ## Frescura: tres huellas, no una
 
@@ -26,7 +26,7 @@ Escribir un `MoveDoc` cambia el `hash_a` del store. Si el léxico y el grafo dep
 
 El snapshot de kgdb registra el `hash_mundo` con que se construyó. Los `MoveDoc` llevan el tag `type.pron.move` y el ingest de kgdb los excluye, así que registrar no desfasa el grafo.
 
-El ledger sí está en el léxico como **modelo**: `MoveDoc` tiene alias ("movimiento", "movimientos") y sus campos se preguntan como los de cualquier otro (10 §1), por eso "los movimientos de hoy sobre el repl" funciona. Lo que queda fuera de la frescura es su contenido: escribir un movimiento nuevo no agrega palabras, no cambia el esquema y no crea aristas, así que no invalida nada.
+El ledger sí está en el léxico como **modelo**: `MoveDoc` tiene alias ("move", "moves") y sus campos se preguntan como los de cualquier otro (10 §1), por eso "today's moves on the repl" funciona. Lo que queda fuera de la frescura es su contenido: escribir un movimiento nuevo no agrega palabras, no cambia el esquema y no crea aristas, así que no invalida nada.
 
 ## Orden dentro de un turno
 
@@ -38,14 +38,14 @@ El ledger sí está en el léxico como **modelo**: `MoveDoc` tiene alias ("movim
 
 Un turno de lectura no hace refresh. El `MoveDoc` se escribe antes de responder y después del refresh, y no dispara otro refresh.
 
-## Cómo se contesta "¿por qué?"
+## Cómo se contesta "why?"
 
-"¿Por qué X?" combina dos fuentes, en este orden:
+"why X?" combina dos fuentes, en este orden:
 
 1. **el ledger**: el último movimiento que escribió sobre la dirección de X: quién, cuándo, con qué oración;
 2. **el grafo**: las aristas de X cuyo verbo tiene eje WHY o PROVENANCE (`grounded_by`, `explains_failure_of`, …), y los links con predicado de esos ejes dentro del documento.
 
-"¿Cómo?" usa el eje HOW; "¿qué es?" usa WHAT y la descripción del modelo. La respuesta cita ambas fuentes por separado: lo que dice el registro y lo que dice el mundo.
+"how?" usa el eje HOW; "what is it?" usa WHAT y la descripción del modelo. La respuesta cita ambas fuentes por separado: lo que dice el registro y lo que dice el mundo.
 
 ## Provenance de lo escrito
 

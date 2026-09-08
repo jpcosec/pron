@@ -36,7 +36,7 @@ data:
       label: "Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural"
       kind: surface
     proyeccion:
-      label: "Proyección · ProjectionDoc · stores, modelos, relaciones con modo leer / afirmar, acciones, alias, naming, display, key"
+      label: "Proyección · ProjectionDoc · stores, modelos, relaciones con modo read / assert, acciones, alias, naming, display, key"
       kind: core
     dialogo:
       label: "Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)"
@@ -116,7 +116,7 @@ data:
     - {from: superficie, to: addr, relation: pide, label: "sustantivo = st.{Modelo+} + where · un campo = .campo.sub"}
     - {from: addr, to: docs, relation: reads}
     - {from: superficie, to: reltypes, relation: verifica, label: "¿el verbo aplica al sujeto y al objeto? · source_types, target_types"}
-    - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿existe pasa_a desde el estado actual?"}
+    - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?"}
     - {from: superficie, to: addr, relation: pide, label: "condición de la arista evaluada por sldb sobre el sujeto · find … --where"}
     - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
     - {from: kernel, to: writes, relation: uses, label: "crear doc · cambiar campo · escribir RelationDoc"}

@@ -30,7 +30,9 @@ El `kgdb ingest` unificado que pide 10 §2.3, en un solo comando sobre el `seman
 
 ### pron mismo
 
-- Un modelo `Atom` propio. Los 273 átomos de v1 están tipados con el `AtomDoc` de deskops; se migran al modelo nuevo desde la rama `v1-code-and-kb` con `sldb extract` y `docs create`.
+- Un modelo `Atom` propio, `pron.models:Atom`, con estos campos: `id` (str), `title` (str), `question` (`Literal[what, why, how, how_not, when, where, for_whom]`), `answer` (str, markdown), `tags` (`list[str]`, `namespace:value`), `provenance` (str, vacío por defecto). El template es el del `AtomDoc` de deskops con `five_wh_one_plus` renombrado a `question`, así los 273 archivos de v1 se extraen con el modelo viejo y se crean con el nuevo sin tocar su markdown salvo esa clave del frontmatter.
+
+  Migración, desde la rama `v1-code-and-kb`, por átomo: `sldb extract deskops.models:AtomDoc <archivo>` → payload; renombrar `five_wh_one_plus` → `question`; en `tags`, reemplazar `system:knowledge` por `system:pron` y quitar los `impl:` (ese dato se vuelve una arista `implements` en el paso 9, no un tag); `provenance` `null` → `""`; `sldb docs create --model Atom` con el mismo nombre de documento. El script de migración vive en el repo de pron, corre en el paso 1 y su test compara: 273 documentos creados, cada uno con `answer` idéntico al original.
 - El store v1 registra trece modelos de deskops sin documentos. El store nuevo se inicializa de cero.
 
 ## Orden de construcción

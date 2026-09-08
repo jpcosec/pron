@@ -1,16 +1,17 @@
 id: pron.target.turno
 title: pron — arquitectura objetivo · una conversación sobre un mundo externo
 type: sequence
-version: '3.0'
+version: '3.1'
 metadata:
   description: >
     Cinco turnos de la conversación de source/spec/09 sobre el mundo del
-    restaurante (09a). Crear un cliente con payload; "reservale una mesa"
-    que crea la reserva y afirma dos verbos, con dos predicados cruzados
-    por intersección de direcciones; una frase ambigua y su respuesta;
-    "confirmala" como transición guardada por una arista pasa_a y una
-    condición evaluada por sldb sobre el sujeto; y "¿por qué?" desde el
-    ledger y las condiciones. Cada mensaje es la llamada real.
+    restaurante (09a), declarado en inglés. Crear un cliente con payload;
+    "book her a table", un alias compose que crea la reserva y afirma dos
+    verbos, con dos predicados cruzados por intersección de direcciones;
+    una frase ambigua y su respuesta; "confirm it" como transición guardada
+    por una arista transitions_to y una condición, ambas verificadas en
+    sldb; y "why?" desde el ledger y las condiciones. Cada mensaje es la
+    llamada real.
 data:
   participants:
     - {id: hablante, kind: actor}
@@ -24,54 +25,55 @@ data:
     - {id: proyector, kind: component}
     - {id: ledger, kind: boundary}
   messages:
-    - {from: hablante, to: superficie, message: "crea un cliente que se llame Ana Rojas, teléfono 9 5555 1234"}
-    - {from: superficie, to: lexico, message: "crea → acción crear · cliente → Cliente · se llame → nombre · teléfono → telefono · literales", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "fields show models/Cliente · obligatorios nombre, telefono", kind: sync}
-    - {from: superficie, to: kernel, message: "crear Cliente {nombre, telefono}"}
-    - {from: kernel, to: sldb_write, message: "docs create --model Cliente --name cliente-ana-rojas (naming del ProjectionDoc)", kind: sync}
+    - {from: hablante, to: superficie, message: "create a client named Ana Rojas, phone 9 5555 1234"}
+    - {from: superficie, to: lexico, message: "create → acción create · client → Client · named → name · phone → phone · literales", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "fields show models/Client · obligatorios name, phone", kind: sync}
+    - {from: superficie, to: kernel, message: "create Client {name, phone}"}
+    - {from: kernel, to: sldb_write, message: "docs create --model Client --name client-ana-rojas (naming del ProjectionDoc)", kind: sync}
     - {from: sldb_write, to: kernel, message: "tracked · hashes"}
-    - {from: kernel, to: proyector, message: refrescar}
+    - {from: kernel, to: proyector, message: refresh}
     - {from: proyector, to: kgdb, message: "stores update · semantic-export · kgdb ingest", kind: sync}
     - {from: superficie, to: ledger, message: "MoveDoc · payload · dirección creada · hash_mundo antes y después"}
-    - {from: superficie, to: hablante, message: "Creado el cliente Ana Rojas."}
-    - {from: hablante, to: superficie, message: "reservale una mesa en la terraza para 6 personas el viernes a las 21"}
-    - {from: superficie, to: lexico, message: "reservale → relación de + crea_sujeto Reserva · le → referente · terraza → zona · para 6 → personas y capacidad >= 6", kind: sync}
-    - {from: superficie, to: dialogo, message: "le → último singular de clase Cliente · cliente-ana-rojas", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'zona = \"terraza\"' → 12, 14, 20", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'capacidad >= 6' → 12, 14", kind: sync}
-    - {from: superficie, to: superficie, message: "∩ → mesa-12, mesa-14 · determinante una → mesa-12"}
-    - {from: superficie, to: sldb_addr, message: "get st.{RelationTypeDoc}.de y .asignada_a · tipos y condición capacidad >= {personas}", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'capacidad >= 6' contiene mesa-12 · condición ok", kind: sync}
-    - {from: superficie, to: kernel, message: "crear Reserva · afirmar de → Ana · afirmar asignada_a → mesa-12"}
-    - {from: kernel, to: sldb_write, message: "docs create Reserva · docs create RelationDoc de · docs create RelationDoc asignada_a", kind: sync}
-    - {from: kernel, to: proyector, message: "refrescar (una vez)"}
+    - {from: superficie, to: hablante, message: "Created client Ana Rojas."}
+    - {from: hablante, to: superficie, message: "book her a table on the terrace for 6 people on Friday at 9pm"}
+    - {from: superficie, to: lexico, message: "book her → alias compose (create Reservation · assert booked_by · assert assigned_to) · her → referente · terrace → zone · for 6 → party_size y capacity >= 6", kind: sync}
+    - {from: superficie, to: dialogo, message: "her → último singular de clase Client · client-ana-rojas", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Table} --where 'zone = \"terrace\"' → 12, 14, 20", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Table} --where 'capacity >= 6' → 12, 14", kind: sync}
+    - {from: superficie, to: superficie, message: "∩ → table-12, table-14 · determinante a → table-12"}
+    - {from: superficie, to: sldb_addr, message: "get st.{RelationTypeDoc}.booked_by y .assigned_to · tipos y condición capacity >= {party_size}", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Table} --where 'capacity >= 6' contiene table-12 · condición ok", kind: sync}
+    - {from: superficie, to: kernel, message: "create Reservation · assert booked_by → Ana · assert assigned_to → table-12"}
+    - {from: kernel, to: sldb_write, message: "docs create Reservation · docs create RelationDoc booked_by · docs create RelationDoc assigned_to", kind: sync}
+    - {from: kernel, to: proyector, message: "refresh (una vez)"}
     - {from: proyector, to: kgdb, message: "kgdb ingest · nodos + aristas desde los RelationDoc", kind: sync}
-    - {from: superficie, to: ledger, message: "MoveDoc · dos consultas y su intersección · alternativa mesa-14 · tres documentos"}
-    - {from: superficie, to: hablante, message: "Reserva para Ana Rojas el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente. También servía la 14."}
-    - {from: hablante, to: superficie, message: "¿qué reservas tiene Ana para el viernes?"}
-    - {from: superficie, to: sldb_addr, message: "find st.{Cliente} --where 'nombre ~ \"Ana\"' → ana-perez, ana-rojas", kind: sync}
+    - {from: superficie, to: ledger, message: "MoveDoc · dos consultas y su intersección · alternativa table-14 · tres documentos"}
+    - {from: superficie, to: hablante, message: "Reservation for Ana Rojas on Friday the 11th at 21:00, 6 people, table 12, pending. Table 14 would also work."}
+    - {from: hablante, to: superficie, message: "what reservations does Ana have for Friday?"}
+    - {from: superficie, to: sldb_addr, message: "find st.{Client} --where 'name ~ \"Ana\"' → ana-perez, ana-rojas", kind: sync}
     - {from: superficie, to: dialogo, message: "[ambiguo] pendiente de elección · dos candidatos", condition: ambiguo}
     - {from: superficie, to: ledger, message: "[ambiguo] MoveDoc · libre → pendiente", condition: ambiguo}
-    - {from: superficie, to: hablante, message: "[ambiguo] ¿Cuál? (1) Ana Pérez · (2) Ana Rojas", condition: ambiguo}
+    - {from: superficie, to: hablante, message: "[ambiguo] Which one? (1) Ana Pérez · (2) Ana Rojas", condition: ambiguo}
     - {from: hablante, to: superficie, message: "Rojas"}
     - {from: superficie, to: dialogo, message: "designación contra los candidatos · calce único → ana-rojas", kind: sync}
-    - {from: superficie, to: kgdb, message: "edges_to(Cliente:cliente-ana-rojas, de) → reserva-2026-09-11-ana-rojas", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{Reserva} --where 'fecha = \"2026-09-11\"' → ana-rojas, luis-soto", kind: sync}
+    - {from: superficie, to: kgdb, message: "edges_to(Client:client-ana-rojas, booked_by) → reservation-2026-09-11-ana-rojas", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Reservation} --where 'date = \"2026-09-11\"' → ana-rojas, luis-soto", kind: sync}
     - {from: superficie, to: superficie, message: "∩ → una dirección · conjunto de uno = antecedente singular"}
     - {from: superficie, to: ledger, message: "MoveDoc · pendiente → libre"}
-    - {from: superficie, to: hablante, message: "Una · el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente."}
-    - {from: hablante, to: superficie, message: "confirmala"}
-    - {from: superficie, to: lexico, message: "confirmala → alias action cambiar estado=confirmada · la → referente Reserva", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "get st.{Reserva}.reserva-….estado → pendiente", kind: sync}
-    - {from: superficie, to: kgdb, message: "edges_from(Estado:pendiente, pasa_a) → confirmada (condition personas <= 8), cancelada", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{Reserva} --where 'personas <= 8' contiene la reserva · transición legal", kind: sync}
-    - {from: superficie, to: kernel, message: "cambiar estado"}
-    - {from: kernel, to: sldb_write, message: "fields update docs/reserva-…/estado '\"confirmada\"'", kind: sync}
-    - {from: kernel, to: proyector, message: refrescar}
+    - {from: superficie, to: hablante, message: "One · Friday the 11th at 21:00, 6 people, table 12, pending."}
+    - {from: hablante, to: superficie, message: "confirm it"}
+    - {from: superficie, to: lexico, message: "confirm it → alias action change status=confirmed · it → referente Reservation", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "get st.{Reservation}.reservation-….status → pending", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{State} machine = Reservation.status ∩ name = pending → state-reservation-pending", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{RelationDoc} source_id = State:… ∩ relation_type = transitions_to → confirmed (condition party_size <= 8), cancelled", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Reservation} --where 'party_size <= 8' contiene la reserva · transición legal", kind: sync}
+    - {from: superficie, to: kernel, message: "change status"}
+    - {from: kernel, to: sldb_write, message: "fields update docs/reservation-…/status '\"confirmed\"'", kind: sync}
+    - {from: kernel, to: proyector, message: refresh}
     - {from: superficie, to: ledger, message: "MoveDoc · estado anterior y nuevo · arista y condición evaluada"}
-    - {from: superficie, to: hablante, message: "Confirmada."}
-    - {from: hablante, to: superficie, message: "¿por qué?"}
+    - {from: superficie, to: hablante, message: "Confirmed."}
+    - {from: hablante, to: superficie, message: "why?"}
     - {from: superficie, to: ledger, message: "último MoveDoc con escritura sobre la reserva", kind: sync}
-    - {from: ledger, to: superficie, message: "oración · arista pasa_a · condición personas <= 8 · quién · cuándo"}
-    - {from: superficie, to: kgdb, message: "edges_from(reserva, eje WHY / PROVENANCE)", kind: sync}
-    - {from: superficie, to: hablante, message: "Porque lo pediste y la transición pendiente → confirmada era legal · 6 personas, límite 8."}
+    - {from: ledger, to: superficie, message: "oración · arista transitions_to · condición party_size <= 8 · quién · cuándo"}
+    - {from: superficie, to: kgdb, message: "edges_from(reservation, eje WHY / PROVENANCE)", kind: sync}
+    - {from: superficie, to: hablante, message: "Because you asked, and pending → confirmed was legal · 6 people, limit 8."}

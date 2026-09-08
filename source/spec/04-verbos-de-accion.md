@@ -6,16 +6,16 @@ Los verbos de acción cambian el mundo sin relacionar dos cosas. Son exactamente
 
 | verbo | operación de sldb | ejemplo de oración |
 |---|---|---|
-| crear | `docs create --model M -o ruta payload` | "crea un átomo que diga…" |
-| cambiar | `fields update docs/<doc>/<campo>[/<sub>] valor` | "cambia la sinopsis del repl a…" |
-| agregar | `fields append docs/<doc>/<lista> valor` | "agrégale el tag system:pron" |
-| limpiar | `fields clean docs/<doc>/<lista> --dedupe` | "sácale los tags repetidos" |
-| quitar campo | `fields remove docs/<doc>/<campo>` | "bórrale la provenance" |
-| olvidar | `docs untrack <doc>` | "olvida ese átomo" |
-| refrescar | `stores update` + `semantic-export` + `kgdb ingest` | "refresca" |
-| deshacer | las escrituras inversas registradas en el último `MoveDoc` con escritura (11 §7) | "deshacé lo último" |
+| `create` | `docs create --model M -o ruta payload` | "create an atom saying…" |
+| `change` | `fields update docs/<doc>/<campo>[/<sub>] valor` | "change the synopsis of the repl to…" |
+| `add` | `fields append docs/<doc>/<lista> valor` | "add the tag system:pron" |
+| `clean` | `fields clean docs/<doc>/<lista> --dedupe` | "drop the duplicate tags" |
+| `remove` | `fields remove docs/<doc>/<campo>` | "remove its provenance" |
+| `forget` | `docs untrack <doc>` | "forget that atom" |
+| `refresh` | `stores update` + `semantic-export` + `kgdb ingest` | "refresh" |
+| `undo` | las escrituras inversas registradas en el último `MoveDoc` con escritura (11 §7) | "undo the last move" |
 
-Afirmar un verbo transitivo (03) es "crear" con modelo `RelationDoc`. Una transición de máquina de estados es solo "cambiar" el campo de estado, permitida porque ya existe una arista `pasa_a` desde el estado actual y su condición se cumple (03); no crea ninguna arista.
+Afirmar un verbo transitivo (03) es `create` con modelo `RelationDoc`. Una transición de máquina de estados es solo `change` del campo de estado, permitida porque ya existe una arista `transitions_to` desde el estado actual y su condición se cumple (03); no crea ninguna arista.
 
 ## Qué garantiza sldb
 
@@ -32,11 +32,11 @@ Después de cualquier escritura el mundo está desfasado del grafo. El refresh e
 
 Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron compara el `hash_mundo` del store con el del snapshot antes de leer kgdb y avisa si el grafo está viejo, en vez de servirlo como verdad. El ledger (07) queda fuera de esa huella, así que registrar un movimiento no desfasa nada.
 
-Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto y de las que entran a él (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "la mesa 12 es para 6 y ahora son 9" es información, y qué hacer con eso es la próxima oración.
+Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto y de las que entran a él (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "table 12 seats 6 and the party is now 9" es información, y qué hacer con eso es la próxima oración.
 
-Dos verbos de acción coordinados sobre el mismo sujeto ("cámbiala a 9 y ponle una nota") son un movimiento con dos escrituras y un refresh.
+Dos verbos de acción coordinados sobre el mismo sujeto ("change it to 9 and add a note") son un movimiento con dos escrituras y un refresh.
 
-Un verbo de acción con sujeto plural escribe una vez por dirección y hace un solo refresh al final. Antes de la primera escritura pron valida todas con el roundtrip de sldb sin escribir (11 §7). Si aun así una falla, las anteriores quedan hechas: pron informa cuáles se escribieron y cuáles no, y no deshace por su cuenta; "deshacer" existe como verbo explícito.
+Un verbo de acción con sujeto plural escribe una vez por dirección y hace un solo refresh al final. Antes de la primera escritura pron valida todas con el roundtrip de sldb sin escribir (11 §7). Si aun así una falla, las anteriores quedan hechas: pron informa cuáles se escribieron y cuáles no, y no deshace por su cuenta; `undo` existe como verbo explícito.
 
 ## Lo que no es un verbo de acción
 

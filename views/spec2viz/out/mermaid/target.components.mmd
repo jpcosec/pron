@@ -5,7 +5,7 @@ graph TD
     end
     subgraph pron ["pron · el SHRDLU"]
         superficie["Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural"]
-        proyeccion["Proyección · ProjectionDoc · stores, modelos, relaciones con modo leer / afirmar, acciones, alias, naming, display, key"]
+        proyeccion["Proyección · ProjectionDoc · stores, modelos, relaciones con modo read / assert, acciones, alias, naming, display, key"]
         dialogo["Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)"]
         kernel["Kernel · verbos de acción · crear · cambiar · agregar · limpiar · quitar · olvidar · refrescar · lee antes de escribir · reevalúa condiciones"]
         embeddings["Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos"]
@@ -44,7 +44,7 @@ graph TD
     superficie -->|"sustantivo = st.{Modelo+} + where · un campo = .campo.sub"| addr
     addr -->|"reads"| docs
     superficie -->|"¿el verbo aplica al sujeto y al objeto? · source_types, target_types"| reltypes
-    superficie -->|"verbo transitivo leído · ¿quién implementa X? · ¿existe pasa_a desde el estado actual?"| traversal
+    superficie -->|"verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?"| traversal
     superficie -->|"condición de la arista evaluada por sldb sobre el sujeto · find … --where"| addr
     superficie -->|"verbo de acción"| kernel
     kernel -->|"crear doc · cambiar campo · escribir RelationDoc"| writes

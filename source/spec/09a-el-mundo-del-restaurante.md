@@ -2,9 +2,11 @@
 
 Los modelos y documentos que sustentan la conversación de 09. Es *una* declaración posible, escrita para que el lector distinga qué está declarado en ese mundo y qué comportamiento pone pron encima. Nada de esto es una exigencia general: otro restaurante podría declarar otros campos, otros verbos y otros alias. Cuando el orden de construcción (08) pida el segundo mundo de prueba, estos archivos son el fixture, montados de cero en un directorio temporal.
 
+Todo lo declarado está en inglés, identificadores, descripciones, motivos y formas de alias, por decisión del 2026-09-08 (11 §0): permite modelos de embeddings chicos y una sola tabla de palabras funcionales. El español es una capa de alias que se agrega después, sin tocar los modelos.
+
 Todo lo que sigue es sintaxis real de sldb v1 y de los modelos de relación de kgdb, salvo dos cosas marcadas como prerrequisito: el campo `condition` en `RelationTypeDoc` y `RelationDoc`, y el modelo `ProjectionDoc`, que es de pron y todavía no existe.
 
-## Los modelos de contenido · `restaurante/models.py`
+## Los modelos de contenido · `restaurant/models.py`
 
 ```python
 from typing import Literal
@@ -12,274 +14,287 @@ from pydantic import Field
 from sldb import StructuredNLDoc
 
 
-class Cliente(StructuredNLDoc):
-    """Una persona que reserva. Se identifica por nombre; el teléfono es obligatorio."""
-    __family__ = "restaurante"
-    __semantics__ = {"type": ["restaurante", "cliente"]}
+class Client(StructuredNLDoc):
+    """A person who books. Identified by name; the phone number is mandatory."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "client"]}
     __template__ = """---
-nombre: ⸢rev•nombre⸥
-telefono: ⸢rev•telefono⸥
+name: ⸢rev•name⸥
+phone: ⸢rev•phone⸥
 ---
 
-# ⸢render•nombre⸥
+# ⸢render•name⸥
 
-## Notas
+## Notes
 
-⸢rev•notas⸥
+⸢rev•notes⸥
 """.strip()
 
-    nombre: str = Field(description="Nombre y apellido tal como el cliente lo da.")
-    telefono: str = Field(description="Teléfono de contacto, con el formato que el cliente use.")
-    notas: str = Field(default="", description="Observaciones libres sobre el cliente: alergias, preferencias, incidentes.")
+    name: str = Field(description="Full name as the client gives it.")
+    phone: str = Field(description="Contact phone number, in whatever format the client uses.")
+    notes: str = Field(default="", description="Free-form remarks about the client: allergies, preferences, incidents.")
 
 
-class Mesa(StructuredNLDoc):
-    """Una mesa física del local. Su capacidad es fija; la zona es una de dos."""
-    __family__ = "restaurante"
-    __semantics__ = {"type": ["restaurante", "mesa"]}
+class Table(StructuredNLDoc):
+    """A physical table in the venue. Capacity is fixed; the zone is one of two."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "table"]}
     __template__ = """---
-numero: ⸢rev•numero⸥
-capacidad: ⸢rev•capacidad⸥
-zona: ⸢rev•zona⸥
+number: ⸢rev•number⸥
+capacity: ⸢rev•capacity⸥
+zone: ⸢rev•zone⸥
 ---
 
-# Mesa ⸢render•numero⸥
+# Table ⸢render•number⸥
 """.strip()
 
-    numero: int = Field(description="Número de la mesa tal como está en el salón.")
-    capacidad: int = Field(description="Cantidad máxima de personas que se sientan cómodas.")
-    zona: Literal["terraza", "salon"] = Field(description="Dónde está la mesa: terraza al aire libre o salón interior.")
+    number: int = Field(description="Table number as marked on the floor.")
+    capacity: int = Field(description="Maximum number of people seated comfortably.")
+    zone: Literal["terrace", "indoor"] = Field(description="Where the table is: the open-air terrace or the indoor room.")
 
 
-class Reserva(StructuredNLDoc):
-    """Una reserva para una fecha y hora. A quién es y en qué mesa va son relaciones, no campos."""
-    __family__ = "restaurante"
-    __semantics__ = {"type": ["restaurante", "reserva"]}
+class Reservation(StructuredNLDoc):
+    """A booking for a date and time. Who it is for and which table it gets are relations, not fields."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "reservation"]}
     __template__ = """---
-fecha: ⸢rev•fecha⸥
-hora: ⸢rev•hora⸥
-personas: ⸢rev•personas⸥
-estado: ⸢rev•estado⸥
+date: ⸢rev•date⸥
+time: ⸢rev•time⸥
+party_size: ⸢rev•party_size⸥
+status: ⸢rev•status⸥
 ---
 
-# Reserva ⸢render•fecha⸥ ⸢render•hora⸥
+# Reservation ⸢render•date⸥ ⸢render•time⸥
 
-## Notas
+## Notes
 
-⸢rev•notas⸥
+⸢rev•notes⸥
 """.strip()
 
-    fecha: str = Field(description="Fecha de la reserva en ISO, AAAA-MM-DD.")
-    hora: str = Field(description="Hora de llegada, HH:MM en 24 horas.")
-    personas: int = Field(description="Cantidad de personas que vienen.")
-    estado: Literal["pendiente", "confirmada", "sentada", "cancelada"] = Field(
-        default="pendiente",
-        description="En qué punto está la reserva. Cambia solo por las transiciones declaradas entre estados.",
+    date: str = Field(description="Reservation date in ISO form, YYYY-MM-DD.")
+    time: str = Field(description="Arrival time, HH:MM in 24-hour form.")
+    party_size: int = Field(description="Number of people coming.")
+    status: Literal["pending", "confirmed", "seated", "cancelled"] = Field(
+        default="pending",
+        description="Where the reservation stands. Changes only through the transitions declared between states.",
     )
-    notas: str = Field(default="", description="Observaciones libres: ocasión, pedidos especiales.")
+    notes: str = Field(default="", description="Free-form remarks: occasion, special requests.")
 
 
-class Estado(StructuredNLDoc):
-    """Un estado posible de una reserva. Existe como documento para que las transiciones sean aristas entre estados."""
-    __family__ = "restaurante"
-    __semantics__ = {"type": ["restaurante", "estado"]}
+class State(StructuredNLDoc):
+    """One possible state of a status field. Exists as a document so that transitions are edges between states."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "state"]}
     __template__ = """---
 machine: ⸢rev•machine⸥
-nombre: ⸢rev•nombre⸥
+name: ⸢rev•name⸥
 ---
 
-# ⸢render•machine⸥ · ⸢render•nombre⸥
+# ⸢render•machine⸥ · ⸢render•name⸥
 
-⸢rev•descripcion⸥
+⸢rev•description⸥
 """.strip()
 
-    machine: str = Field(description="Qué campo de qué modelo gobierna esta máquina, como Modelo.campo; por ejemplo Reserva.estado.")
-    nombre: str = Field(description="El valor del campo al que corresponde este documento.")
-    descripcion: str = Field(description="Qué significa estar en este estado.")
+    machine: str = Field(description="Which field of which model this machine governs, as Model.field; for example Reservation.status.")
+    name: str = Field(description="The field value this document stands for.")
+    description: str = Field(description="What being in this state means.")
 ```
 
-La convención que une `Reserva.estado` con `Estado` es el par `(machine, nombre)`: el valor `confirmada` es el documento de `Estado` con `machine = "Reserva.estado"` y `nombre = "confirmada"`, acá `estado-reserva-confirmada` (10 §2.5).
+La convención que une `Reservation.status` con `State` es el par `(machine, name)`: el valor `confirmed` es el documento de `State` con `machine = "Reservation.status"` y `name = "confirmed"`, acá `state-reservation-confirmed` (10 §2.5).
 
 ## Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
 
-`relations/types/de.md`
+`relations/types/booked_by.md`
 
 ```markdown
 ---
-name: de
+name: booked_by
 direction: directed
 cardinality: many_to_one
 source_types:
-- Reserva
+- Reservation
 target_types:
-- Cliente
+- Client
 condition: ""
 ---
 
-# de
+# booked_by
 
 ## Description
 
-A quién pertenece una reserva. Toda reserva es de exactamente un cliente.
+Who a reservation belongs to. Every reservation is booked by exactly one client.
 ```
 
-`relations/types/asignada_a.md`
+`relations/types/assigned_to.md`
 
 ```markdown
 ---
-name: asignada_a
+name: assigned_to
 direction: directed
 cardinality: many_to_one
 source_types:
-- Reserva
+- Reservation
 target_types:
-- Mesa
-condition: "capacidad >= {personas}"
+- Table
+condition: "capacity >= {party_size}"
 ---
 
-# asignada_a
+# assigned_to
 
 ## Description
 
-En qué mesa va una reserva. La condición se evalúa sobre la mesa con las personas de la reserva: la mesa tiene que tener capacidad para todos. Es la condición de todas las aristas de este tipo salvo que una instancia la reemplace.
+Which table a reservation gets. The condition is evaluated on the table with the reservation's party size: the table must seat everyone. It applies to every edge of this type unless an instance overrides it.
 ```
 
-`relations/types/pasa_a.md`
+`relations/types/transitions_to.md`
 
 ```markdown
 ---
-name: pasa_a
+name: transitions_to
 direction: directed
 cardinality: many_to_many
 source_types:
-- Estado
+- State
 target_types:
-- Estado
+- State
 condition: ""
 ---
 
-# pasa_a
+# transitions_to
 
 ## Description
 
-Transición permitida entre dos estados de una reserva. La condición de cada arista se evalúa sobre la reserva que quiere transicionar.
+An allowed move between two states of a status field. Each edge's condition is evaluated on the object that wants to move.
 ```
 
 Los tres nombres se registran además como predicados del store, para que los links en prosa compartan vocabulario:
 
 ```
-sldb predicates add de --axis WHAT
-sldb predicates add asignada_a --axis WHERE
-sldb predicates add pasa_a --axis WHEN
+sldb predicates add booked_by --axis WHAT
+sldb predicates add assigned_to --axis WHERE
+sldb predicates add transitions_to --axis WHEN
 ```
 
 ## Las transiciones · documentos de `RelationDoc`
 
-`relations/pasa_a--pendiente--confirmada.md`
+`relations/transitions_to--state-reservation-pending--state-reservation-confirmed.md`
 
 ```markdown
 ---
-source_id: Estado:estado-reserva-pendiente
-target_id: Estado:estado-reserva-confirmada
-relation_type: pasa_a
-condition: "personas <= 8"
+source_id: State:state-reservation-pending
+target_id: State:state-reservation-confirmed
+relation_type: transitions_to
+condition: "party_size <= 8"
 ---
 
-# pendiente pasa_a confirmada
+# pending transitions_to confirmed
 
 ## Notes
 
-Grupos de más de 8 los confirma el encargado a mano.
+Parties larger than 8 are confirmed by the manager by hand.
 ```
 
-Y sin condición, con el mismo formato: `pasa_a--pendiente--cancelada`, `pasa_a--confirmada--sentada`, `pasa_a--confirmada--cancelada`.
+Y sin condición, con el mismo formato: `pending → cancelled`, `confirmed → seated`, `confirmed → cancelled`.
 
 ## Los documentos iniciales
 
-Cuatro `Estado` con `machine: Reserva.estado`: `estado-reserva-pendiente`, `estado-reserva-confirmada`, `estado-reserva-sentada`, `estado-reserva-cancelada`. Cinco `Mesa`:
+Cuatro `State` con `machine: Reservation.status`: `state-reservation-pending`, `state-reservation-confirmed`, `state-reservation-seated`, `state-reservation-cancelled`. Cinco `Table`:
 
-| documento | numero | capacidad | zona |
+| documento | number | capacity | zone |
 |---|---|---|---|
-| `mesa-3` | 3 | 4 | salon |
-| `mesa-5` | 5 | 4 | salon |
-| `mesa-12` | 12 | 6 | terraza |
-| `mesa-14` | 14 | 8 | terraza |
-| `mesa-20` | 20 | 2 | terraza |
+| `table-3` | 3 | 4 | indoor |
+| `table-5` | 5 | 4 | indoor |
+| `table-12` | 12 | 6 | terrace |
+| `table-14` | 14 | 8 | terrace |
+| `table-20` | 20 | 2 | terrace |
 
-Dos `Cliente`: `cliente-ana-perez`, `cliente-luis-soto`. Una `Reserva` previa de Luis Soto para el 2026-09-11, `reserva-2026-09-11-luis-soto`, con sus dos `RelationDoc` `de` y `asignada_a` hacia `mesa-3`.
+Dos `Client`: `client-ana-perez`, `client-luis-soto`. Una `Reservation` previa de Luis Soto para el 2026-09-11, `reservation-2026-09-11-luis-soto`, con sus dos `RelationDoc` `booked_by` y `assigned_to` hacia `table-3`.
 
 ## El store
 
 ```
-sldb stores init --path ~/mundos/restaurante
-sldb models add restaurante.models:Cliente  --store .sldb --pythonpath .
-sldb models add restaurante.models:Mesa     --store .sldb --pythonpath .
-sldb models add restaurante.models:Reserva  --store .sldb --pythonpath .
-sldb models add restaurante.models:Estado   --store .sldb --pythonpath .
-sldb models add kgdb.models:RelationTypeDoc --store .sldb
-sldb models add kgdb.models:RelationDoc     --store .sldb
-sldb models add pron.models:AnchorDoc       --store .sldb
-sldb models add pron.models:ProjectionDoc   --store .sldb
-sldb models add pron.models:MoveDoc         --store .sldb
+sldb stores init --path ~/worlds/restaurant
+sldb models add restaurant.models:Client      --store .sldb --pythonpath .
+sldb models add restaurant.models:Table       --store .sldb --pythonpath .
+sldb models add restaurant.models:Reservation --store .sldb --pythonpath .
+sldb models add restaurant.models:State       --store .sldb --pythonpath .
+sldb models add kgdb.models:RelationTypeDoc   --store .sldb
+sldb models add kgdb.models:RelationDoc       --store .sldb
+sldb models add pron.models:AnchorDoc         --store .sldb
+sldb models add pron.models:ProjectionDoc     --store .sldb
+sldb models add pron.models:MoveDoc           --store .sldb
 ```
 
 Los modelos de kgdb y de pron son de esos paquetes; el restaurante solo los registra.
 
 ## La proyección · `ProjectionDoc` (modelo de pron)
 
-`proyecciones/todo.md`
+`projections/all.md`
 
 ```yaml
-name: todo
+name: all
 stores: [local]
-models: [Cliente, Mesa, Reserva, Estado]
+models: [Client, Table, Reservation, State]
 relations:
-  - {name: de, mode: leer y afirmar}
-  - {name: asignada_a, mode: leer y afirmar}
-  - {name: pasa_a, mode: leer}
-actions: [crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar, deshacer]
-matching: {cercanos: 3, umbral: 0.55}
-aliases: [todos]
+  - {name: booked_by, mode: read and assert}
+  - {name: assigned_to, mode: read and assert}
+  - {name: transitions_to, mode: read}
+actions: [create, change, add, clean, remove, forget, refresh, undo]
+aliases: [all]
 naming:
-  Cliente: "cliente-{nombre}"
-  Reserva: "reserva-{fecha}-{de.nombre}"
+  Client: "client-{name}"
+  Reservation: "reservation-{date}-{booked_by.name}"
   RelationDoc: "{relation_type}--{source_id}--{target_id}"
 display:
-  Cliente: "{nombre}"
-  Mesa: "mesa {numero}"
-  Reserva: "{fecha} {hora}, {personas} personas, mesa {asignada_a.numero}, {estado}"
+  Client: "{name}"
+  Table: "table {number}"
+  Reservation: "{date} {time}, {party_size} people, table {assigned_to.number}, {status}"
 key:
-  Mesa: numero
+  Table: number
+matching: {neighbors: 3, threshold: 0.55}
 ```
 
-`pasa_a` está en modo `leer`: nadie declara transiciones nuevas por oración en esta sesión. `{de.nombre}` y `{asignada_a.numero}` en las plantillas siguen una arista y leen un campo del destino; sin arista, la plantilla deja el hueco vacío.
+`transitions_to` está en modo `read`: nadie declara transiciones nuevas por oración en esta sesión. `{booked_by.name}` y `{assigned_to.number}` en las plantillas siguen una arista y leen un campo del destino; sin arista, la plantilla deja el hueco vacío.
 
 ## Los alias · documentos de `AnchorDoc`
 
-| symbol | ref | motive |
-|---|---|---|
-| cliente, clientes | `model:Cliente` | una persona que reserva |
-| mesa, mesas | `model:Mesa` | una mesa del local |
-| reserva, reservas | `model:Reserva` | una reserva para una fecha y hora |
-| se llama, que se llame | `field:Cliente.nombre` | el nombre del cliente |
-| teléfono | `field:Cliente.telefono` | el teléfono de contacto |
-| para N, para N personas | `field:Reserva.personas` y `predicate:Mesa:capacidad >= N` | cuántas personas; como adjetivo de mesa, que quepan |
-| en la Z, de la Z | `predicate:Mesa:zona = Z` | dónde está la mesa |
-| el viernes, a las H | `field:Reserva.fecha`, `field:Reserva.hora` | cuándo; la superficie normaliza fechas relativas |
-| reservale, reserva para | `compose` · crear Reserva con `$literales` · afirmar `de` `$creado` → `$referente:Cliente` · afirmar `asignada_a` `$creado` → `$objeto:Mesa` (05) | crear una reserva de alguien y ponerla en una mesa |
-| asignale, en la mesa | `relation:asignada_a` | poner una reserva en una mesa |
-| tiene, de | `relation:de` leído desde el cliente | las reservas de alguien |
-| confirmar, confirmala | `action:cambiar Reserva.estado=confirmada` | pasar la reserva a confirmada |
-| cancelar | `action:cambiar Reserva.estado=cancelada` | cancelar la reserva |
-| sentar | `action:cambiar Reserva.estado=sentada` | marcar que llegaron |
-| cabe | `predicate:Mesa:capacidad >= {personas}` | si la mesa tiene lugar para la reserva |
-| grande | `predicate:Mesa:capacidad >= 6` | mesas para seis o más |
-| nota, ponle una nota | `field:Reserva.notas` | observaciones de la reserva |
+| symbol | forms | ref | motive |
+|---|---|---|---|
+| client | client, clients | `model:Client` | a person who books |
+| table | table, tables | `model:Table` | a table in the venue |
+| reservation | reservation, reservations, booking, bookings | `model:Reservation` | a booking for a date and time |
+| named | named, called, whose name is | `field:Client.name` | the client's name |
+| phone | phone, phone number, number | `field:Client.phone` | the contact phone number |
+| for N | for N, for N people, party of N | `field:Reservation.party_size` y `predicate:Table:capacity >= N` | how many people; as a table adjective, that they fit |
+| on the Z | on the Z, in the Z | `predicate:Table:zone = Z` | where the table is |
+| on DAY, at TIME | on DAY, this DAY, next DAY, at TIME | `field:Reservation.date`, `field:Reservation.time` | when; the surface normalizes relative dates (11 §3) |
+| book | book her, book him, book them, make a reservation for | `compose` (abajo) | create a reservation for someone and put it at a table |
+| assign | assign, put it at table, seat at | `relation:assigned_to` | put a reservation at a table |
+| has | has, have, of | `relation:booked_by` leída desde el cliente | someone's reservations |
+| confirm | confirm, confirm it | `action:change Reservation.status=confirmed` | move the reservation to confirmed |
+| cancel | cancel, cancel it | `action:change Reservation.status=cancelled` | cancel the reservation |
+| seat | seat, seat them, they arrived | `action:change Reservation.status=seated` | mark that they arrived |
+| fits | fits, fit, fits at | `predicate:Table:capacity >= {party_size}` | whether the table has room for the reservation |
+| large | large, big | `predicate:Table:capacity >= 6` | tables for six or more |
+| note | note, add a note, note saying | `field:Reservation.notes` | remarks on the reservation |
 
-Las formas `ref:` de alias (`model:`, `field:`, `predicate:`, `relation:`, `action:`, `doc:`, `compose`) son las que 05 y 10 describen; cada fila lista además sus `forms`, omitidas acá por espacio; el `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza.
+El alias compuesto `book`, completo:
+
+```yaml
+symbol: book
+forms: [book her, book him, book them, make a reservation for]
+ref: compose
+motive: create a reservation for someone and put it at a table
+steps:
+  - {do: create, model: Reservation, fields: $literals}
+  - {do: assert, relation: booked_by,   source: $created, target: $referent:Client}
+  - {do: assert, relation: assigned_to, source: $created, target: $object:Table}
+```
+
+Las formas de `ref` (`model:`, `field:`, `predicate:`, `relation:`, `action:`, `doc:`, `compose`) son las que 05 y 10 describen. El `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza.
 
 ## Lo que este mundo no declara
 
-- Ningún verbo en código. "Confirmar" es un alias sobre "cambiar"; "cabe" es un alias sobre un predicado.
-- Ningún campo de referencia entre objetos: la reserva no tiene `cliente` ni `mesa` como campos; son aristas.
+- Ningún verbo en código. "confirm" es un alias sobre "change"; "fits" es un alias sobre un predicado; "book" es una secuencia de tres pasos.
+- Ningún campo de referencia entre objetos: la reserva no tiene `client` ni `table` como campos; son aristas.
 - Ninguna regla de negocio fuera de las condiciones de las aristas: la capacidad y el límite de 8 son texto en un `RelationTypeDoc` y en un `RelationDoc`.

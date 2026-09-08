@@ -30,7 +30,7 @@ diagram_store:
     - El kgdb ingest unificado (nodos, nodos relation_type, aristas desde RelationDoc y links, ledger excluido, hash_mundo, integridad como error) es el prerrequisito de source/spec/08; hoy sus dos mitades existen por separado.
   - id: target-turno
     title: Objetivo · una conversación
-    desc: 'Cinco turnos de source/spec/09 sobre el mundo del restaurante (09a): crear con payload, un verbo transitivo que crea su sujeto con dos predicados cruzados, una ambigüedad y su respuesta, una transición guardada por pasa_a y una condición evaluada por sldb, y el por qué.'
+    desc: 'Cinco turnos de source/spec/09 sobre el mundo del restaurante (09a): crear con payload, un verbo transitivo que crea su sujeto con dos predicados cruzados, una ambigüedad y su respuesta, una transición guardada por transitions_to y una condición evaluada por sldb, y el por qué.'
     category: pron · objetivo
     nav: Objetivo · una conversación
     type: sequence
@@ -43,7 +43,7 @@ diagram_store:
     - Dos restricciones son dos consultas y una intersección de direcciones; también cuando una lista viene de kgdb (edges_to) y otra de sldb (find).
     - Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc de kgdb, por dirección en sldb. Verificar que la arista existe es kgdb. Verificar la condición es sldb, con find --where sobre el sujeto.
     - 'Afirmar un verbo transitivo es docs create de un RelationDoc; si el sujeto no existe, se crea en el mismo movimiento. kgdb nunca recibe una orden: su ingest reensambla.'
-    - Una transición es cambiar el campo estado, permitida porque existe pasa_a desde el estado actual y su condición se cumple. No crea aristas.
+    - Una transición es cambiar el campo estado, permitida porque existe transitions_to desde el estado actual y su condición se cumple. No crea aristas.
     - Una pendiente de elección se contesta con una designación contra los candidatos ya mostrados; un conjunto de exactamente uno vale como antecedente singular.
     - 'El MoveDoc se escribe después del refresh y no lo desfasa: el ledger queda fuera de hash_mundo y del grafo.'
     - 'El mundo del restaurante está declarado entero en source/spec/09a: modelos, tipos de relación con su condición, transiciones, ProjectionDoc y alias.'

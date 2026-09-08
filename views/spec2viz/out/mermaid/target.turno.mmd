@@ -9,54 +9,55 @@ sequenceDiagram
     participant kernel
     participant proyector
     participant ledger
-    hablante->>superficie: crea un cliente que se llame Ana Rojas, teléfono 9 5555 1234
-    superficie->>lexico: crea → acción crear · cliente → Cliente · se llame → nombre · teléfono → telefono · literales
-    superficie->>sldb_addr: fields show models/Cliente · obligatorios nombre, telefono
-    superficie->>kernel: crear Cliente {nombre, telefono}
-    kernel->>sldb_write: docs create --model Cliente --name cliente-ana-rojas (naming del ProjectionDoc)
+    hablante->>superficie: create a client named Ana Rojas, phone 9 5555 1234
+    superficie->>lexico: create → acción create · client → Client · named → name · phone → phone · literales
+    superficie->>sldb_addr: fields show models/Client · obligatorios name, phone
+    superficie->>kernel: create Client {name, phone}
+    kernel->>sldb_write: docs create --model Client --name client-ana-rojas (naming del ProjectionDoc)
     sldb_write->>kernel: tracked · hashes
-    kernel->>proyector: refrescar
+    kernel->>proyector: refresh
     proyector->>kgdb: stores update · semantic-export · kgdb ingest
     superficie->>ledger: MoveDoc · payload · dirección creada · hash_mundo antes y después
-    superficie->>hablante: Creado el cliente Ana Rojas.
-    hablante->>superficie: reservale una mesa en la terraza para 6 personas el viernes a las 21
-    superficie->>lexico: reservale → relación de + crea_sujeto Reserva · le → referente · terraza → zona · para 6 → personas y capacidad #gt;= 6
-    superficie->>dialogo: le → último singular de clase Cliente · cliente-ana-rojas
-    superficie->>sldb_addr: find st.{Mesa} --where 'zona = "terraza"' → 12, 14, 20
-    superficie->>sldb_addr: find st.{Mesa} --where 'capacidad #gt;= 6' → 12, 14
-    superficie->>superficie: ∩ → mesa-12, mesa-14 · determinante una → mesa-12
-    superficie->>sldb_addr: get st.{RelationTypeDoc}.de y .asignada_a · tipos y condición capacidad #gt;= {personas}
-    superficie->>sldb_addr: find st.{Mesa} --where 'capacidad #gt;= 6' contiene mesa-12 · condición ok
-    superficie->>kernel: crear Reserva · afirmar de → Ana · afirmar asignada_a → mesa-12
-    kernel->>sldb_write: docs create Reserva · docs create RelationDoc de · docs create RelationDoc asignada_a
-    kernel->>proyector: refrescar (una vez)
+    superficie->>hablante: Created client Ana Rojas.
+    hablante->>superficie: book her a table on the terrace for 6 people on Friday at 9pm
+    superficie->>lexico: book her → alias compose (create Reservation · assert booked_by · assert assigned_to) · her → referente · terrace → zone · for 6 → party_size y capacity #gt;= 6
+    superficie->>dialogo: her → último singular de clase Client · client-ana-rojas
+    superficie->>sldb_addr: find st.{Table} --where 'zone = "terrace"' → 12, 14, 20
+    superficie->>sldb_addr: find st.{Table} --where 'capacity #gt;= 6' → 12, 14
+    superficie->>superficie: ∩ → table-12, table-14 · determinante a → table-12
+    superficie->>sldb_addr: get st.{RelationTypeDoc}.booked_by y .assigned_to · tipos y condición capacity #gt;= {party_size}
+    superficie->>sldb_addr: find st.{Table} --where 'capacity #gt;= 6' contiene table-12 · condición ok
+    superficie->>kernel: create Reservation · assert booked_by → Ana · assert assigned_to → table-12
+    kernel->>sldb_write: docs create Reservation · docs create RelationDoc booked_by · docs create RelationDoc assigned_to
+    kernel->>proyector: refresh (una vez)
     proyector->>kgdb: kgdb ingest · nodos + aristas desde los RelationDoc
-    superficie->>ledger: MoveDoc · dos consultas y su intersección · alternativa mesa-14 · tres documentos
-    superficie->>hablante: Reserva para Ana Rojas el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente. También servía la 14.
-    hablante->>superficie: ¿qué reservas tiene Ana para el viernes?
-    superficie->>sldb_addr: find st.{Cliente} --where 'nombre ~ "Ana"' → ana-perez, ana-rojas
+    superficie->>ledger: MoveDoc · dos consultas y su intersección · alternativa table-14 · tres documentos
+    superficie->>hablante: Reservation for Ana Rojas on Friday the 11th at 21:00, 6 people, table 12, pending. Table 14 would also work.
+    hablante->>superficie: what reservations does Ana have for Friday?
+    superficie->>sldb_addr: find st.{Client} --where 'name ~ "Ana"' → ana-perez, ana-rojas
     superficie->>dialogo: [ambiguo] pendiente de elección · dos candidatos
     superficie->>ledger: [ambiguo] MoveDoc · libre → pendiente
-    superficie->>hablante: [ambiguo] ¿Cuál? (1) Ana Pérez · (2) Ana Rojas
+    superficie->>hablante: [ambiguo] Which one? (1) Ana Pérez · (2) Ana Rojas
     hablante->>superficie: Rojas
     superficie->>dialogo: designación contra los candidatos · calce único → ana-rojas
-    superficie->>kgdb: edges_to(Cliente:cliente-ana-rojas, de) → reserva-2026-09-11-ana-rojas
-    superficie->>sldb_addr: find st.{Reserva} --where 'fecha = "2026-09-11"' → ana-rojas, luis-soto
+    superficie->>kgdb: edges_to(Client:client-ana-rojas, booked_by) → reservation-2026-09-11-ana-rojas
+    superficie->>sldb_addr: find st.{Reservation} --where 'date = "2026-09-11"' → ana-rojas, luis-soto
     superficie->>superficie: ∩ → una dirección · conjunto de uno = antecedente singular
     superficie->>ledger: MoveDoc · pendiente → libre
-    superficie->>hablante: Una · el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente.
-    hablante->>superficie: confirmala
-    superficie->>lexico: confirmala → alias action cambiar estado=confirmada · la → referente Reserva
-    superficie->>sldb_addr: get st.{Reserva}.reserva-….estado → pendiente
-    superficie->>kgdb: edges_from(Estado:pendiente, pasa_a) → confirmada (condition personas #lt;= 8), cancelada
-    superficie->>sldb_addr: find st.{Reserva} --where 'personas #lt;= 8' contiene la reserva · transición legal
-    superficie->>kernel: cambiar estado
-    kernel->>sldb_write: fields update docs/reserva-…/estado '"confirmada"'
-    kernel->>proyector: refrescar
+    superficie->>hablante: One · Friday the 11th at 21:00, 6 people, table 12, pending.
+    hablante->>superficie: confirm it
+    superficie->>lexico: confirm it → alias action change status=confirmed · it → referente Reservation
+    superficie->>sldb_addr: get st.{Reservation}.reservation-….status → pending
+    superficie->>sldb_addr: find st.{State} machine = Reservation.status ∩ name = pending → state-reservation-pending
+    superficie->>sldb_addr: find st.{RelationDoc} source_id = State:… ∩ relation_type = transitions_to → confirmed (condition party_size #lt;= 8), cancelled
+    superficie->>sldb_addr: find st.{Reservation} --where 'party_size #lt;= 8' contiene la reserva · transición legal
+    superficie->>kernel: change status
+    kernel->>sldb_write: fields update docs/reservation-…/status '"confirmed"'
+    kernel->>proyector: refresh
     superficie->>ledger: MoveDoc · estado anterior y nuevo · arista y condición evaluada
-    superficie->>hablante: Confirmada.
-    hablante->>superficie: ¿por qué?
+    superficie->>hablante: Confirmed.
+    hablante->>superficie: why?
     superficie->>ledger: último MoveDoc con escritura sobre la reserva
-    ledger->>superficie: oración · arista pasa_a · condición personas #lt;= 8 · quién · cuándo
-    superficie->>kgdb: edges_from(reserva, eje WHY / PROVENANCE)
-    superficie->>hablante: Porque lo pediste y la transición pendiente → confirmada era legal · 6 personas, límite 8.
+    ledger->>superficie: oración · arista transitions_to · condición party_size #lt;= 8 · quién · cuándo
+    superficie->>kgdb: edges_from(reservation, eje WHY / PROVENANCE)
+    superficie->>hablante: Because you asked, and pending → confirmed was legal · 6 people, limit 8.

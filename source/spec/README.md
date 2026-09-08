@@ -14,13 +14,11 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 04 | [Verbos de acción](04-verbos-de-accion.md) | el kernel: las cuatro escrituras y el refresh |
 | 05 | [Léxico y proyección](05-lexico-y-proyeccion.md) | de dónde salen las palabras, qué son los anchors, qué hacen los embeddings |
 | 06 | [Superficie y diálogo](06-superficie-y-dialogo.md) | la oración, sus tres salidas, la pendiente y los referentes |
-| 07 | [Ledger](07-ledger.md) | qué se registra y cómo se contesta "¿por qué?" |
+| 07 | [Ledger](07-ledger.md) | qué se registra y cómo se contesta "why?" |
 | 08 | [Prerrequisitos y orden](08-prerequisitos-y-orden.md) | qué falta en sldb y kgdb, en qué orden se construye, qué lints lo cuidan |
-| 09 | [Una conversación, paso a paso](09-una-conversacion.md) | ocho oraciones sobre un mundo externo (reservas de un restaurante): creación, asignación, transición con condición, ambigüedad, missing, "¿por qué?" |
-
+| 09 | [Una conversación, paso a paso](09-una-conversacion.md) | ocho oraciones sobre un mundo externo (reservas de un restaurante): creación, asignación, transición con condición, ambigüedad, missing, "why?" |
 | 09a | [El mundo del restaurante, declarado](09a-el-mundo-del-restaurante.md) | los modelos, tipos de relación, transiciones, proyección y alias que sustentan 09; una declaración posible, no una exigencia |
 | 10 | [El SHRDLU sobre el modelo](10-el-shrdlu-sobre-el-modelo.md) | cómo los campos se vuelven propiedades por tipo, cómo una relación llega a kgdb en bytes, cómo conviven pron y el editor |
-
 | 11 | [Decisiones de implementación](11-decisiones-de-implementacion.md) | parser, embeddings, fechas, el ingest de kgdb, cambios durante el turno, identidad, fallo parcial: qué decide pron y qué aporta la aplicación |
 
 Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 y el 11 se leen antes de implementar.

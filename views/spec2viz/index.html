@@ -511,7 +511,7 @@
           end
           subgraph pron [&quot;pron · el SHRDLU&quot;]
               superficie[&quot;Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural&quot;]
-              proyeccion[&quot;Proyección · ProjectionDoc · stores, modelos, relaciones con modo leer / afirmar, acciones, alias, naming, display, key&quot;]
+              proyeccion[&quot;Proyección · ProjectionDoc · stores, modelos, relaciones con modo read / assert, acciones, alias, naming, display, key&quot;]
               dialogo[&quot;Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)&quot;]
               kernel[&quot;Kernel · verbos de acción · crear · cambiar · agregar · limpiar · quitar · olvidar · refrescar · lee antes de escribir · reevalúa condiciones&quot;]
               embeddings[&quot;Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos&quot;]
@@ -550,7 +550,7 @@
           superficie --&gt;|&quot;sustantivo = st.{Modelo+} + where · un campo = .campo.sub&quot;| addr
           addr --&gt;|&quot;reads&quot;| docs
           superficie --&gt;|&quot;¿el verbo aplica al sujeto y al objeto? · source_types, target_types&quot;| reltypes
-          superficie --&gt;|&quot;verbo transitivo leído · ¿quién implementa X? · ¿existe pasa_a desde el estado actual?&quot;| traversal
+          superficie --&gt;|&quot;verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?&quot;| traversal
           superficie --&gt;|&quot;condición de la arista evaluada por sldb sobre el sujeto · find … --where&quot;| addr
           superficie --&gt;|&quot;verbo de acción&quot;| kernel
           kernel --&gt;|&quot;crear doc · cambiar campo · escribir RelationDoc&quot;| writes
@@ -572,7 +572,7 @@
 </section><section id="target-turno-06f8124e" data-spec="specs/target.turno.yml" data-type="sequence" data-project="" data-category="pron · objetivo" data-tags="type:sequence" data-view-id="target-turno" class="catalog-item">
   <div class="lbl"></div>
   <h2>Objetivo · una conversación</h2>
-  <p class="desc">Cinco turnos de source/spec/09 sobre el mundo del restaurante (09a): crear con payload, un verbo transitivo que crea su sujeto con dos predicados cruzados, una ambigüedad y su respuesta, una transición guardada por pasa_a y una condición evaluada por sldb, y el por qué.</p>
+  <p class="desc">Cinco turnos de source/spec/09 sobre el mundo del restaurante (09a): crear con payload, un verbo transitivo que crea su sujeto con dos predicados cruzados, una ambigüedad y su respuesta, una transición guardada por transitions_to y una condición evaluada por sldb, y el por qué.</p>
   <div class="section-meta"><span class="meta-badge">sequence</span><span class="meta-badge subtle">type:sequence</span></div>
   <div class="board">
     <pre class="mermaid">
@@ -587,60 +587,61 @@
           participant kernel
           participant proyector
           participant ledger
-          hablante-&gt;&gt;superficie: crea un cliente que se llame Ana Rojas, teléfono 9 5555 1234
-          superficie-&gt;&gt;lexico: crea → acción crear · cliente → Cliente · se llame → nombre · teléfono → telefono · literales
-          superficie-&gt;&gt;sldb_addr: fields show models/Cliente · obligatorios nombre, telefono
-          superficie-&gt;&gt;kernel: crear Cliente {nombre, telefono}
-          kernel-&gt;&gt;sldb_write: docs create --model Cliente --name cliente-ana-rojas (naming del ProjectionDoc)
+          hablante-&gt;&gt;superficie: create a client named Ana Rojas, phone 9 5555 1234
+          superficie-&gt;&gt;lexico: create → acción create · client → Client · named → name · phone → phone · literales
+          superficie-&gt;&gt;sldb_addr: fields show models/Client · obligatorios name, phone
+          superficie-&gt;&gt;kernel: create Client {name, phone}
+          kernel-&gt;&gt;sldb_write: docs create --model Client --name client-ana-rojas (naming del ProjectionDoc)
           sldb_write-&gt;&gt;kernel: tracked · hashes
-          kernel-&gt;&gt;proyector: refrescar
+          kernel-&gt;&gt;proyector: refresh
           proyector-&gt;&gt;kgdb: stores update · semantic-export · kgdb ingest
           superficie-&gt;&gt;ledger: MoveDoc · payload · dirección creada · hash_mundo antes y después
-          superficie-&gt;&gt;hablante: Creado el cliente Ana Rojas.
-          hablante-&gt;&gt;superficie: reservale una mesa en la terraza para 6 personas el viernes a las 21
-          superficie-&gt;&gt;lexico: reservale → relación de + crea_sujeto Reserva · le → referente · terraza → zona · para 6 → personas y capacidad #gt;= 6
-          superficie-&gt;&gt;dialogo: le → último singular de clase Cliente · cliente-ana-rojas
-          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;zona = &quot;terraza&quot;&#x27; → 12, 14, 20
-          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;capacidad #gt;= 6&#x27; → 12, 14
-          superficie-&gt;&gt;superficie: ∩ → mesa-12, mesa-14 · determinante una → mesa-12
-          superficie-&gt;&gt;sldb_addr: get st.{RelationTypeDoc}.de y .asignada_a · tipos y condición capacidad #gt;= {personas}
-          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;capacidad #gt;= 6&#x27; contiene mesa-12 · condición ok
-          superficie-&gt;&gt;kernel: crear Reserva · afirmar de → Ana · afirmar asignada_a → mesa-12
-          kernel-&gt;&gt;sldb_write: docs create Reserva · docs create RelationDoc de · docs create RelationDoc asignada_a
-          kernel-&gt;&gt;proyector: refrescar (una vez)
+          superficie-&gt;&gt;hablante: Created client Ana Rojas.
+          hablante-&gt;&gt;superficie: book her a table on the terrace for 6 people on Friday at 9pm
+          superficie-&gt;&gt;lexico: book her → alias compose (create Reservation · assert booked_by · assert assigned_to) · her → referente · terrace → zone · for 6 → party_size y capacity #gt;= 6
+          superficie-&gt;&gt;dialogo: her → último singular de clase Client · client-ana-rojas
+          superficie-&gt;&gt;sldb_addr: find st.{Table} --where &#x27;zone = &quot;terrace&quot;&#x27; → 12, 14, 20
+          superficie-&gt;&gt;sldb_addr: find st.{Table} --where &#x27;capacity #gt;= 6&#x27; → 12, 14
+          superficie-&gt;&gt;superficie: ∩ → table-12, table-14 · determinante a → table-12
+          superficie-&gt;&gt;sldb_addr: get st.{RelationTypeDoc}.booked_by y .assigned_to · tipos y condición capacity #gt;= {party_size}
+          superficie-&gt;&gt;sldb_addr: find st.{Table} --where &#x27;capacity #gt;= 6&#x27; contiene table-12 · condición ok
+          superficie-&gt;&gt;kernel: create Reservation · assert booked_by → Ana · assert assigned_to → table-12
+          kernel-&gt;&gt;sldb_write: docs create Reservation · docs create RelationDoc booked_by · docs create RelationDoc assigned_to
+          kernel-&gt;&gt;proyector: refresh (una vez)
           proyector-&gt;&gt;kgdb: kgdb ingest · nodos + aristas desde los RelationDoc
-          superficie-&gt;&gt;ledger: MoveDoc · dos consultas y su intersección · alternativa mesa-14 · tres documentos
-          superficie-&gt;&gt;hablante: Reserva para Ana Rojas el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente. También servía la 14.
-          hablante-&gt;&gt;superficie: ¿qué reservas tiene Ana para el viernes?
-          superficie-&gt;&gt;sldb_addr: find st.{Cliente} --where &#x27;nombre ~ &quot;Ana&quot;&#x27; → ana-perez, ana-rojas
+          superficie-&gt;&gt;ledger: MoveDoc · dos consultas y su intersección · alternativa table-14 · tres documentos
+          superficie-&gt;&gt;hablante: Reservation for Ana Rojas on Friday the 11th at 21:00, 6 people, table 12, pending. Table 14 would also work.
+          hablante-&gt;&gt;superficie: what reservations does Ana have for Friday?
+          superficie-&gt;&gt;sldb_addr: find st.{Client} --where &#x27;name ~ &quot;Ana&quot;&#x27; → ana-perez, ana-rojas
           superficie-&gt;&gt;dialogo: [ambiguo] pendiente de elección · dos candidatos
           superficie-&gt;&gt;ledger: [ambiguo] MoveDoc · libre → pendiente
-          superficie-&gt;&gt;hablante: [ambiguo] ¿Cuál? (1) Ana Pérez · (2) Ana Rojas
+          superficie-&gt;&gt;hablante: [ambiguo] Which one? (1) Ana Pérez · (2) Ana Rojas
           hablante-&gt;&gt;superficie: Rojas
           superficie-&gt;&gt;dialogo: designación contra los candidatos · calce único → ana-rojas
-          superficie-&gt;&gt;kgdb: edges_to(Cliente:cliente-ana-rojas, de) → reserva-2026-09-11-ana-rojas
-          superficie-&gt;&gt;sldb_addr: find st.{Reserva} --where &#x27;fecha = &quot;2026-09-11&quot;&#x27; → ana-rojas, luis-soto
+          superficie-&gt;&gt;kgdb: edges_to(Client:client-ana-rojas, booked_by) → reservation-2026-09-11-ana-rojas
+          superficie-&gt;&gt;sldb_addr: find st.{Reservation} --where &#x27;date = &quot;2026-09-11&quot;&#x27; → ana-rojas, luis-soto
           superficie-&gt;&gt;superficie: ∩ → una dirección · conjunto de uno = antecedente singular
           superficie-&gt;&gt;ledger: MoveDoc · pendiente → libre
-          superficie-&gt;&gt;hablante: Una · el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente.
-          hablante-&gt;&gt;superficie: confirmala
-          superficie-&gt;&gt;lexico: confirmala → alias action cambiar estado=confirmada · la → referente Reserva
-          superficie-&gt;&gt;sldb_addr: get st.{Reserva}.reserva-….estado → pendiente
-          superficie-&gt;&gt;kgdb: edges_from(Estado:pendiente, pasa_a) → confirmada (condition personas #lt;= 8), cancelada
-          superficie-&gt;&gt;sldb_addr: find st.{Reserva} --where &#x27;personas #lt;= 8&#x27; contiene la reserva · transición legal
-          superficie-&gt;&gt;kernel: cambiar estado
-          kernel-&gt;&gt;sldb_write: fields update docs/reserva-…/estado &#x27;&quot;confirmada&quot;&#x27;
-          kernel-&gt;&gt;proyector: refrescar
+          superficie-&gt;&gt;hablante: One · Friday the 11th at 21:00, 6 people, table 12, pending.
+          hablante-&gt;&gt;superficie: confirm it
+          superficie-&gt;&gt;lexico: confirm it → alias action change status=confirmed · it → referente Reservation
+          superficie-&gt;&gt;sldb_addr: get st.{Reservation}.reservation-….status → pending
+          superficie-&gt;&gt;sldb_addr: find st.{State} machine = Reservation.status ∩ name = pending → state-reservation-pending
+          superficie-&gt;&gt;sldb_addr: find st.{RelationDoc} source_id = State:… ∩ relation_type = transitions_to → confirmed (condition party_size #lt;= 8), cancelled
+          superficie-&gt;&gt;sldb_addr: find st.{Reservation} --where &#x27;party_size #lt;= 8&#x27; contiene la reserva · transición legal
+          superficie-&gt;&gt;kernel: change status
+          kernel-&gt;&gt;sldb_write: fields update docs/reservation-…/status &#x27;&quot;confirmed&quot;&#x27;
+          kernel-&gt;&gt;proyector: refresh
           superficie-&gt;&gt;ledger: MoveDoc · estado anterior y nuevo · arista y condición evaluada
-          superficie-&gt;&gt;hablante: Confirmada.
-          hablante-&gt;&gt;superficie: ¿por qué?
+          superficie-&gt;&gt;hablante: Confirmed.
+          hablante-&gt;&gt;superficie: why?
           superficie-&gt;&gt;ledger: último MoveDoc con escritura sobre la reserva
-          ledger-&gt;&gt;superficie: oración · arista pasa_a · condición personas #lt;= 8 · quién · cuándo
-          superficie-&gt;&gt;kgdb: edges_from(reserva, eje WHY / PROVENANCE)
-          superficie-&gt;&gt;hablante: Porque lo pediste y la transición pendiente → confirmada era legal · 6 personas, límite 8.
+          ledger-&gt;&gt;superficie: oración · arista transitions_to · condición party_size #lt;= 8 · quién · cuándo
+          superficie-&gt;&gt;kgdb: edges_from(reservation, eje WHY / PROVENANCE)
+          superficie-&gt;&gt;hablante: Because you asked, and pending → confirmed was legal · 6 people, limit 8.
     </pre>
   </div>
-  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>Cada mensaje es la llamada real de sldb o kgdb; correrlas en la shell da el mismo resultado que el turno.</li><li>Dos restricciones son dos consultas y una intersección de direcciones; también cuando una lista viene de kgdb (edges_to) y otra de sldb (find).</li><li>Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc de kgdb, por dirección en sldb. Verificar que la arista existe es kgdb. Verificar la condición es sldb, con find --where sobre el sujeto.</li><li>Afirmar un verbo transitivo es docs create de un RelationDoc; si el sujeto no existe, se crea en el mismo movimiento. kgdb nunca recibe una orden: su ingest reensambla.</li><li>Una transición es cambiar el campo estado, permitida porque existe pasa_a desde el estado actual y su condición se cumple. No crea aristas.</li><li>Una pendiente de elección se contesta con una designación contra los candidatos ya mostrados; un conjunto de exactamente uno vale como antecedente singular.</li><li>El MoveDoc se escribe después del refresh y no lo desfasa: el ledger queda fuera de hash_mundo y del grafo.</li><li>El mundo del restaurante está declarado entero en source/spec/09a: modelos, tipos de relación con su condición, transiciones, ProjectionDoc y alias.</li></ul></div>
+  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>Cada mensaje es la llamada real de sldb o kgdb; correrlas en la shell da el mismo resultado que el turno.</li><li>Dos restricciones son dos consultas y una intersección de direcciones; también cuando una lista viene de kgdb (edges_to) y otra de sldb (find).</li><li>Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc de kgdb, por dirección en sldb. Verificar que la arista existe es kgdb. Verificar la condición es sldb, con find --where sobre el sujeto.</li><li>Afirmar un verbo transitivo es docs create de un RelationDoc; si el sujeto no existe, se crea en el mismo movimiento. kgdb nunca recibe una orden: su ingest reensambla.</li><li>Una transición es cambiar el campo estado, permitida porque existe transitions_to desde el estado actual y su condición se cumple. No crea aristas.</li><li>Una pendiente de elección se contesta con una designación contra los candidatos ya mostrados; un conjunto de exactamente uno vale como antecedente singular.</li><li>El MoveDoc se escribe después del refresh y no lo desfasa: el ledger queda fuera de hash_mundo y del grafo.</li><li>El mundo del restaurante está declarado entero en source/spec/09a: modelos, tipos de relación con su condición, transiciones, ProjectionDoc y alias.</li></ul></div>
 </section><section id="target-dialogo-06f8124e" data-spec="specs/target.dialogo.yml" data-type="state" data-project="" data-category="pron · objetivo" data-tags="type:state" data-view-id="target-dialogo" class="catalog-item">
   <div class="lbl"></div>
   <h2>Objetivo · el diálogo</h2>

@@ -37,14 +37,14 @@ Una proyección es la parte de un mundo que una sesión puede nombrar. Se declar
 |---|---|
 | `stores` | qué stores del mundo entran (el local y cuáles de los enlazados) |
 | `models` | qué modelos se pueden nombrar; `{Modelo+}` incluye la familia |
-| `relations` | qué tipos de relación, cada uno con modo `leer` o `leer y afirmar` |
-| `actions` | qué verbos de acción del kernel están permitidos: crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar |
+| `relations` | qué tipos de relación, cada uno con modo `read` o `read and assert` |
+| `actions` | qué verbos de acción del kernel están permitidos: `create`, `change`, `add`, `clean`, `remove`, `forget`, `refresh`, `undo` |
 | `aliases` | qué `AnchorDoc` entran |
-| `naming` | cómo se nombra un documento nuevo por modelo, por ejemplo `cliente-{nombre}`; sin regla, pron pide el nombre |
-| `display` | cómo se muestra un objeto por modelo, por ejemplo `Mesa: "mesa {numero}"`; sin plantilla, `title` o el nombre del documento |
-| `key` | qué campo identifica un objeto por modelo, por ejemplo `Mesa: numero`, para que "la mesa 12" sea `numero = 12` |
+| `naming` | cómo se nombra un documento nuevo por modelo, por ejemplo `client-{name}`; sin regla, pron pide el nombre |
+| `display` | cómo se muestra un objeto por modelo, por ejemplo `Table: "table {number}"`; sin plantilla, `title` o el nombre del documento |
+| `key` | qué campo identifica un objeto por modelo, por ejemplo `Table: number`, para que "table 12" sea `number = 12` |
 
-Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "no tengo esa palabra" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `leer`.
+Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "I don't have that word" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `read`.
 
 ## Expansión del mundo
 

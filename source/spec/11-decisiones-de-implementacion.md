@@ -1,25 +1,35 @@
 # 11 · Decisiones de implementación
 
-Siete preguntas que los documentos anteriores dejan abiertas a propósito, porque no son del *qué* sino del *cómo*. Se cierran acá para que no las cierre el primer commit. Cada una dice qué decide pron, qué queda a cargo de la aplicación que monta a pron sobre un mundo, y por qué.
+Las preguntas que los documentos anteriores dejan abiertas a propósito, porque no son del *qué* sino del *cómo*. Se cierran acá para que no las cierre el primer commit. Cada una dice qué decide pron, qué queda a cargo de la aplicación que monta a pron sobre un mundo, y por qué.
+
+## 0. Por ahora, todo lo declarado va en inglés
+
+**Decisión** (2026-09-08). Identificadores de modelos y campos, descripciones, nombres de relación, motivos y formas de alias se escriben en inglés. Las palabras funcionales de pron (determinantes, interrogativos, pronombres, conjunciones, preposiciones de los patrones) viven en una tabla por idioma, y por ahora hay una: inglés. El ejemplo de 09 y 09a está en inglés por eso. La prosa del spec sigue en español.
+
+**Por qué.** Los motivos y descripciones son lo que se embebe para el calce aproximado; en inglés alcanza con modelos de embeddings chicos y locales. Y una sola tabla de palabras funcionales es un parser que se prueba entero.
+
+**Qué cambia después.** El español entra como capa: una segunda tabla de palabras funcionales y alias con `forms` en español sobre los mismos `ref`. Ningún modelo se toca. Un mundo puede tener alias en los dos idiomas a la vez; la sesión declara en cuál habla.
 
 ## 1. La gramática es artesanal, determinista y dirigida por el léxico
 
 **Decisión.** La superficie es un parser de patrones escrito en pron, sin spaCy, sin CFG generada, sin LLM. Trabaja así:
 
 1. tokeniza por espacios y puntuación, conservando comillas y dos puntos como marcas de literal;
-2. clasifica cada token contra el léxico de la proyección (05) por **formas listadas**, no por morfología: el alias de "reserva" lista `reserva, reservas`; el de "confirmar" lista `confirma, confirmá, confirmala, confirmarla`. Un token sin forma listada es desconocido y va al calce aproximado;
-3. aplica un conjunto pequeño y fijo de patrones de constituyente, los mismos para todo mundo: `det + término [+ "de" + nombre propio]`, `término + preposición + valor`, `verbo + objeto`, `referente + verbo`, `verbo + campo + literal`, coordinación con "y". Cuando dos patrones calzan, se mantienen las dos lecturas hasta el paso 4 (09);
+2. clasifica cada token contra el léxico de la proyección (05) por **formas listadas**, no por morfología: el alias de "reserva" lista `reservation, reservations`; el de "confirmar" lista `confirma, confirmá, confirm it, confirmarla`. Un token sin forma listada es desconocido y va al calce aproximado;
+3. aplica un conjunto pequeño y fijo de patrones de constituyente, los mismos para todo mundo: `det + término [+ "de" + name propio]`, `término + preposición + valor`, `verbo + objeto`, `referente + verbo`, `verbo + campo + literal`, coordinación con "and". Cuando dos patrones calzan, se mantienen las dos lecturas hasta el paso 4 (09);
 4. no hay puntuación de probabilidad: una oración calza con uno, varios o ningún patrón, y eso es único, ambiguo o missing.
 
 **Por qué.** La traza de un turno tiene que ser reproducible: correr las mismas direcciones en la shell da lo mismo. Un parser estadístico rompe eso, y un LLM en la superficie convierte a pron en otro operador. La morfología automática del español ahorra listar formas, pero mete errores que nadie puede auditar; listar formas en el alias es trabajo que se ve y se corrige.
 
 **A cargo de la aplicación.** Nada. Un mundo agrega palabras por alias; no toca el parser.
 
-**Límite declarado.** Oraciones que no calzan con los patrones fijos son missing con la lista de patrones como pista ("puedo entender: *crea un X que…*, *cambia el Y de X a…*"). Si un mundo necesita construcciones nuevas, se agregan patrones generales a pron, nunca patrones por mundo.
+**Límite declarado.** Oraciones que no calzan con los patrones fijos son missing con la lista de patrones como pista ("I can understand: *create a X named …*, *change the Y of X to …*"). Si un mundo necesita construcciones nuevas, se agregan patrones generales a pron, nunca patrones por mundo.
+
+**Cómo se agrega un patrón.** Los patrones son datos de pron, no del mundo: un archivo `patterns.yaml` dentro del paquete, versionado con pron, con un patrón por entrada: una secuencia de clases de constituyente (`det`, `term:model`, `term:field`, `literal`, `referent`, `verb:action`, `verb:relation`, `proper`, `conj`) y la forma de interpretación que produce. Agregar un patrón es un cambio de pron con su test sobre los dos mundos de prueba, y así tiene que ser: el mundo declara palabras, pron declara sintaxis. Un mundo que quiere una construcción nueva sin esperar a pron tiene el alias `compose`, que cubre la mayoría de los casos reales ("book her a table") sin sintaxis nueva. Lo mismo vale para las palabras funcionales: una tabla por idioma en `function_words.yaml`, dentro de pron.
 
 ## 2. El calce aproximado es un puerto, con un fallback sin red
 
-**Decisión.** pron define un puerto `Embedder` con una sola operación, `embed(textos) → vectores`, y usa similitud coseno. La aplicación inyecta la implementación al abrir la sesión. Sin implementación inyectada, pron usa similitud de cadenas (`difflib`, sobre formas normalizadas sin acentos) y lo dice en la traza. Así "no tengo *patio*, ¿querías *terraza*?" funciona siempre, mejor con embeddings, peor sin ellos, nunca nada.
+**Decisión.** pron define un puerto `Embedder` con una sola operación, `embed(textos) → vectores`, y usa similitud coseno. La aplicación inyecta la implementación al abrir la sesión. Sin implementación inyectada, pron usa similitud de cadenas (`difflib`, sobre formas normalizadas sin acentos) y lo dice en la traza. Así "I don't have *patio*, did you mean *terrace*?" funciona siempre, mejor con embeddings, peor sin ellos, nunca nada.
 
 Los vectores del léxico se calculan una vez por combinación de `hash_mundo`, nombre de proyección e identificador del `Embedder` (el puerto expone `id()`, por ejemplo `difflib` o `e5-small-v2`), y se guardan en `.pron/lexicon.<hash_mundo>.<proyeccion>.<embedder>.json` en la raíz del mundo: un artefacto derivado, ignorado por git, reconstruible, fuera del store de sldb porque no es un documento. Umbral de sugerencia y cantidad de cercanos (por defecto tres) van en el `ProjectionDoc`, campo `matching`, para que un mundo estricto sugiera menos.
 
@@ -29,7 +39,7 @@ Los vectores del léxico se calculan una vez por combinación de `hash_mundo`, n
 
 ## 3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesión
 
-**Decisión.** En el paso 2, un literal en posición de campo de tipo fecha u hora pasa por un normalizador determinista de pron: nombres de día → la próxima ocurrencia desde la fecha de la sesión, "hoy", "mañana", "pasado mañana", "el 11", "11/9", "a las 21" → `21:00`, "y media" → `:30`. La sesión recibe `now` y zona horaria al abrirse; sin eso, usa el reloj del sistema y lo registra. La interpretación guarda el texto original y el valor normalizado, y el `MoveDoc` los dos. Un caso ambiguo ("el viernes" siendo viernes: ¿hoy o el próximo?) es una pendiente de dato con las dos opciones.
+**Decisión.** En el paso 2, un literal en posición de campo de tipo fecha u hora pasa por un normalizador determinista de pron: nombres de día → la próxima ocurrencia desde la fecha de la sesión, "today", "tomorrow", "the day after tomorrow", "the 11th", "9/11" (orden según la tabla del idioma), "at 9pm" → `21:00`, "half past nine" → `21:30` según el contexto de "pm". La sesión recibe `now` y zona horaria al abrirse; sin eso, usa el reloj del sistema y lo registra. La interpretación guarda el texto original y el valor normalizado, y el `MoveDoc` los dos. Un caso ambiguo ("on Friday" siendo viernes: ¿hoy o el próximo?) es una pendiente de dato con las dos opciones.
 
 Qué campos son fecha u hora lo dice el alias del campo (`kind: date | time`) o el tipo Python si el modelo usa `date`/`time`; un `str` sin alias de tipo no se normaliza.
 
@@ -51,7 +61,7 @@ Mientras no exista, pron construye y prueba los pasos 1 a 5 sin kgdb, y buena pa
 
 **Decisión.** El turno toma `hash_mundo` al empezar (antes del paso 2) y lo vuelve a leer justo antes de ejecutar (después del paso 6). Si cambió, el turno no ejecuta: recarga léxico y proyección, registra un movimiento externo, y repite la comprensión una vez desde el paso 2 con la misma oración. Si vuelve a cambiar, responde "el mundo está cambiando, repetí la oración" y registra.
 
-Además, cada escritura por campo compara el `hash_c` esperado del documento con el actual antes de escribir; si difiere, esa escritura no se hace y se reporta con el valor que encontró. El esperado es el `hash_c` leído en el paso 4, y **después de cada escritura propia se reemplaza por el que sldb deja en el índice** al terminar `save_payload`; así "cambiá personas y ponele una nota" hace dos escrituras sobre el mismo documento sin rechazarse a sí misma. Es la única protección; no hay bloqueo de documentos.
+Además, cada escritura por campo compara el `hash_c` esperado del documento con el actual antes de escribir; si difiere, esa escritura no se hace y se reporta con el valor que encontró. El esperado es el `hash_c` leído en el paso 4, y **después de cada escritura propia se reemplaza por el que sldb deja en el índice** al terminar `save_payload`; así "change the party size and add a note" hace dos escrituras sobre el mismo documento sin rechazarse a sí misma. Es la única protección; no hay bloqueo de documentos.
 
 **Por qué.** Un mundo con editor y agente expansor tiene escritores concurrentes de verdad. La ventana entre comprender y ejecutar es corta, pero existe, y el costo de dos lecturas de índice es nulo.
 
@@ -59,17 +69,33 @@ Además, cada escritura por campo compara el `hash_c` esperado del documento con
 
 ## 6. La identidad la trae la aplicación; pron solo la usa y la registra
 
-**Decisión.** Al abrir una sesión, la aplicación pasa `speaker`: un identificador opaco y, si el hablante es un objeto del mundo, su dirección (`Cliente:cliente-ana-rojas`, `Usuario:jp`). pron no autentica ni verifica. "yo", "mi", "al usuario" resuelven a esa dirección; sin dirección, son missing con "no sé quién sos en este mundo". Todo `MoveDoc` lleva `speaker`, y el `ProjectionDoc` se elige por sesión, así que quién puede afirmar o crear es una decisión de la aplicación al elegir la proyección del hablante.
+**Decisión.** Al abrir una sesión, la aplicación pasa `speaker`: un identificador opaco y, si el hablante es un objeto del mundo, su dirección (`Client:client-ana-rojas`, `Usuario:jp`). pron no autentica ni verifica. "yo", "mi", "al usuario" resuelven a esa dirección; sin dirección, son missing con "no sé quién sos en este mundo". Todo `MoveDoc` lleva `speaker`, y el `ProjectionDoc` se elige por sesión, así que quién puede afirmar o crear es una decisión de la aplicación al elegir la proyección del hablante.
 
 **Por qué.** pron es una superficie; la identidad y los permisos de personas son del producto que la monta.
 
-## 7. Sin rollback: validación previa, registro por dirección y un verbo "deshacer" explícito
+## 7. Sin rollback: validación previa, registro por dirección y un verbo `undo` explícito
 
 **Decisión.** Tres cosas en vez de una transacción:
 
 - **Validación previa.** Antes de la primera escritura de un movimiento con varias, pron valida todas: para cada dirección calcula el payload nuevo y corre el roundtrip de sldb (`validate_model_data_roundtrip`) sin escribir. Lo que fallaría por forma falla antes de tocar nada. Lo que puede fallar después es solo el disco o un cambio concurrente (§5).
 - **Registro por dirección.** El `MoveDoc` lleva, por escritura, `hecha | no hecha` y el valor anterior. La respuesta dice cuáles quedaron.
-- **Deshacer, como verbo.** "deshacé el último movimiento" es un verbo de acción del kernel que aplica las escrituras inversas registradas en ese `MoveDoc`. Las inversas son: de "cambiar", el valor anterior por campo; de "crear", `docs untrack` (el archivo queda en disco, fuera del store); de "olvidar" y de negar una relación, `docs track` del mismo archivo con el mismo nombre, que el `MoveDoc` guardó; de "agregar", quitar el ítem; de "limpiar", la lista anterior. Restaurar un campo de estado **no** pasa por una transición inversa: deshacer no es una transición nueva, es volver al estado que el mundo tenía, y se registra como `deshacer` referenciando al movimiento original (07). Un mundo que no quiera eso quita `deshacer` de `actions`. Solo deshace el último movimiento con escritura del mismo `speaker`, y solo si los documentos no cambiaron después (mismo `hash_c` que dejó el movimiento); si cambiaron, dice cuáles y no toca esos. Un refresh no se deshace: se vuelve a correr.
+- **Deshacer, como verbo.** "undo the last move" es un verbo de acción del kernel que aplica las escrituras inversas registradas en ese `MoveDoc`. Qué guarda el `MoveDoc` por escritura y cuál es la inversa:
+
+  | escritura | qué guarda el `MoveDoc` | inversa |
+  |---|---|---|
+  | `change` (fields update) | valor anterior | `fields update` al valor anterior |
+  | `change` que creó el campo (fields create) | que no existía | `fields remove` |
+  | `remove` (fields remove) | valor anterior | `fields create` con ese valor |
+  | `add` (fields append) | el ítem y su índice | `fields remove` de ese ítem por valor exacto; si el índice ya no coincide, por valor |
+  | `clean` | la lista anterior | `fields update` con la lista anterior |
+  | `create` (docs create) | nombre, ruta, payload | `docs untrack`; el archivo queda en disco, fuera del store |
+  | `forget` (docs untrack) | nombre, ruta, payload y `hash_c` en ese momento | `docs track` de la misma ruta con el mismo nombre, solo si el archivo sigue ahí con el mismo `hash_c`; si no, `docs create` con el payload guardado |
+  | `assert` (create RelationDoc) | como `create` | `docs untrack` del `RelationDoc` |
+  | negar (untrack RelationDoc) | como `forget` | como `forget` |
+  | transición (change del campo de estado) | valor anterior | `fields update` al estado anterior, **sin** exigir una transición inversa: deshacer no es una transición, es volver a lo que había |
+  | `refresh` | nada | no se deshace; se vuelve a correr al final del undo |
+
+  Antes de aplicar nada, el undo corre la misma validación previa que cualquier movimiento y además un **chequeo de integridad**: si una inversa haría `untrack` de un documento que otro `RelationDoc` posterior referencia como `source_id` o `target_id` (consulta a `st.{RelationDoc}` en sldb), el undo entero se rechaza y lista esas aristas; el hablante puede negarlas primero. Se registra como `undo` referenciando al movimiento original (07). Un mundo que no quiera esto quita `undo` de `actions`. Solo deshace el último movimiento con escritura del mismo `speaker`, y solo si los documentos no cambiaron después (mismo `hash_c` que dejó el movimiento); si cambiaron, dice cuáles y no toca esos.
 
 **Por qué.** sldb escribe documentos independientes y no tiene transacciones; simularlas en pron sería otra capa de verdad. Compensar de forma explícita y visible es coherente con "pron no deshace": no deshace solo, deshace cuando se lo piden y muestra qué hizo.
 
@@ -85,4 +111,4 @@ Además, cada escritura por campo compara el `hash_c` esperado del documento con
 | ingest de kgdb | esperar a kgdb; pasos 1–5 sin grafo; nunca ensamblar en pron | — |
 | cambio durante el turno | `hash_mundo` al inicio y antes de ejecutar; `hash_c` por escritura | serializar escritores si quiere más |
 | identidad | `speaker` opaco más dirección opcional; se registra, no se verifica | quién habla y con qué proyección |
-| fallo parcial | validación previa, registro por dirección, verbo "deshacer" | — |
+| fallo parcial | validación previa, registro por dirección, verbo `undo` | — |
