@@ -9,14 +9,13 @@ from __future__ import annotations
 from functools import lru_cache
 from pathlib import Path
 
-import yaml
-
 from sldb.cli.model_utils import registered_model, resolve_model_ref
 from sldb.cli.store_context import get_store_context
 from sldb.runtime.validation import (
     render_model_markdown,
     validate_model_input_roundtrip,
 )
+from sldb.store.io import load_store_index
 from sldb.store.ops import track_document
 from sldb.store.query import load_runtime_documents
 
@@ -47,13 +46,11 @@ class SldbBridge:
 
     def store_hash(self) -> str:
         """Current hash_a of the store (freshness token for session/graph)."""
-        index = yaml.safe_load((self.store / "core" / "store_index.yaml").read_text())
-        return index.get("hash_a", "")
+        return load_store_index(self.store).hash_a
 
     def model_names(self) -> list[str]:
         """Names of all registered models."""
-        index = yaml.safe_load((self.store / "core" / "store_index.yaml").read_text())
-        return [m["name"] for m in index.get("models", [])]
+        return [m.name for m in load_store_index(self.store).models]
 
     def filter_where(self, docs: list, expression: str) -> list:
         """Filter documents with sldb's real where engine.
@@ -75,13 +72,10 @@ class SldbBridge:
 
     def registered_model_ref(self, model_name: str) -> str | None:
         """Map a registered model name to its module:Class ref, via the store index."""
-        import yaml
-
-        index = yaml.safe_load((self.store / "core" / "store_index.yaml").read_text())
-        for m in index.get("models", []):
-            if m.get("name") == model_name:
-                return m.get("model_ref")
-        return None
+        return next(
+            (m.model_ref for m in load_store_index(self.store).models if m.name == model_name),
+            None,
+        )
 
     def resolve_model(self, ref: str):
         """Resolve a module:Class model ref at the bridge door."""
