@@ -36,9 +36,12 @@ class Response:
 
 class Session:
     def __init__(self, world: World, projection: str = "all", speaker: str = "", speaker_address: str | None = None,
-                 now: str | datetime | None = None, embedder: Embedder | None = None):
+                 now: str | datetime | None = None, embedder: Embedder | None = None, read_only: bool = False):
+        """read_only: the projection's actions are dropped and every relation is in mode read, so
+        nothing said in this session writes; the application decides that per session (spec 05)."""
         self.world = world
         self.projection_name = projection
+        self.read_only = read_only
         self.now = now
         self.dialogue = Dialogue(speaker=speaker, speaker_address=speaker_address)
         self.ledger = Ledger(world)
@@ -48,6 +51,9 @@ class Session:
 
     def _load(self) -> None:
         self.projection = self.world.projection(self.projection_name)
+        if self.read_only:
+            names = [r["name"] for r in self.projection.get("relations") or []] or list(self.world.relation_types())
+            self.projection = dict(self.projection, actions=[], relations=[{"name": n, "mode": "read"} for n in names])
         if self.matcher.embedder is not None:
             self.matcher.bind_cache(self.world.root / ".pron" / f"lexicon.{self.hash}.{self.projection_name}.{self.matcher.id()}.json")
         self.lex = Lexicon(self.world, self.projection, self.matcher)

@@ -126,3 +126,13 @@ def test_a_complement_names_a_related_document_and_crosses_its_edges(world: Worl
     assert world.store.payload("Reservation", "reservation-2026-09-11-luis-soto")["status"] == "confirmed"
     r = s.turn("the reservations of Nadie Nunca")
     assert r.outcome == "unico" and r.text == "None.", r.text
+
+
+def test_a_read_only_session_writes_nothing_whatever_the_projection_allows(world: World):
+    s = Session(world, projection="all", speaker="viewer", now=NOW, read_only=True)
+    assert s.turn("the clients").outcome == "unico"
+    r = s.turn("create a client named Zoe Lee, phone 1")
+    assert r.outcome == "missing" and world.store.doc("Client", "client-zoe-lee") is None, r.text
+    r = s.turn("confirm the reservation of Luis Soto")
+    assert r.outcome == "missing", r.text
+    assert all(not m["record"].get("writes") for m in (s.ledger.get(mid) for mid in [r.move_id]))

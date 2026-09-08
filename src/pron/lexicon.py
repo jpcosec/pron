@@ -112,13 +112,13 @@ class Lexicon:
             head = ref.split(":", 1)[0]
             payload = {"symbol": p["symbol"], "ref": ref, "steps": p.get("steps") or []}
             model, fname, rel = self._ref_targets(ref)
-            if not self._alias_in_projection(model, rel, payload["steps"]):
+            if not self._alias_in_projection(model, rel, payload["steps"], ref):
                 continue   # its target is outside this projection: the word does not exist here (spec 01, 05)
             for form in p.get("forms") or [p["symbol"]]:
                 self.words.append(Word(form, f"alias-{head}", ref, p.get("motive", ""), f"AnchorDoc {d.name}", model=model, field_name=fname, relation=rel, payload=payload))
 
-    def _alias_in_projection(self, model: str | None, rel: str | None, steps: list[Any]) -> bool:
-        """An alias enters only if every model and relation it points at is in the projection."""
+    def _alias_in_projection(self, model: str | None, rel: str | None, steps: list[Any], ref: str = "") -> bool:
+        """An alias enters only if every model, relation and action verb it points at is in the projection."""
         def model_ok(m: str | None) -> bool:
             return m is None or m in self.models or bool(set(self.world.family_of(m)) & set(self.models))
 
@@ -127,8 +127,10 @@ class Lexicon:
 
         if not model_ok(model) or not rel_ok(rel):
             return False
+        if ref.startswith("action:") and ref[7:].split(" ", 1)[0] not in self.actions:
+            return False
         for s in steps:
-            if isinstance(s, dict) and (not model_ok(s.get("model")) or not rel_ok(s.get("relation"))):
+            if isinstance(s, dict) and (not model_ok(s.get("model")) or not rel_ok(s.get("relation")) or (s.get("do") in ("create", "change") and s["do"] not in self.actions)):
                 return False
         return True
 
