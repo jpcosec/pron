@@ -78,8 +78,8 @@ documents:
   - workspace.source.spec
 - name: spec-11
   path: source/spec/11-decisiones-de-implementacion.md
-  hash_c: 95fde708d3fc6c7ed44bc959e0cb8b2d14db52b657f6ecd75769b0cdeda38474
-  hash_d: 1f1e99be358c4be2ee6e2da34994e0100716b4476532892f166f94f6c6750bbd
+  hash_c: 598f398af7a91d17443525e60bb4cc36d18190950cc702714ab427247f515827
+  hash_d: 360ce442e83d496b715eed8eedeca8adcfab9ae26ecb3a038ab9088f3984a969
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

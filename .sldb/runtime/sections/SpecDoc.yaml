@@ -2,11 +2,11 @@ documents:
 - doc_name: spec-01
   sections:
   - path: 01-el-mundo
-    title: "01 \xB7 El mundo"
+    title: 01 · El mundo
     breadcrumbs:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
     - type.knowledge.spec
     - workspace.source.spec
@@ -18,14 +18,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 01-el-mundo/qu-es
-    title: "Qu\xE9 es"
+    title: Qué es
     breadcrumbs:
-    - "01 \xB7 El mundo"
-    - "Qu\xE9 es"
+    - 01 · El mundo
+    - Qué es
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
-    - "Qu\xE9 es"
+    - Qué es
     - qu es
     - type.knowledge.spec
     - workspace.source.spec
@@ -39,10 +39,10 @@ documents:
   - path: 01-el-mundo/modelo-clase-documento-instancia
     title: Modelo = clase, documento = instancia
     breadcrumbs:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - Modelo = clase, documento = instancia
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
     - Modelo = clase, documento = instancia
     - modelo clase documento instancia
@@ -58,10 +58,10 @@ documents:
   - path: 01-el-mundo/los-modelos-del-mundo-de-pron
     title: Los modelos del mundo de pron
     breadcrumbs:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - Los modelos del mundo de pron
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
     - Los modelos del mundo de pron
     - los modelos del mundo de pron
@@ -75,14 +75,14 @@ documents:
     line_start: 22
     line_end: 23
   - path: 01-el-mundo/proyecci-n
-    title: "Proyecci\xF3n"
+    title: Proyección
     breadcrumbs:
-    - "01 \xB7 El mundo"
-    - "Proyecci\xF3n"
+    - 01 · El mundo
+    - Proyección
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
-    - "Proyecci\xF3n"
+    - Proyección
     - proyecci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -94,14 +94,14 @@ documents:
     line_start: 33
     line_end: 34
   - path: 01-el-mundo/expansi-n-del-mundo
-    title: "Expansi\xF3n del mundo"
+    title: Expansión del mundo
     breadcrumbs:
-    - "01 \xB7 El mundo"
-    - "Expansi\xF3n del mundo"
+    - 01 · El mundo
+    - Expansión del mundo
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
-    - "Expansi\xF3n del mundo"
+    - Expansión del mundo
     - expansi n del mundo
     - type.knowledge.spec
     - workspace.source.spec
@@ -115,10 +115,10 @@ documents:
   - path: 01-el-mundo/invariantes
     title: Invariantes
     breadcrumbs:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - Invariantes
     about:
-    - "01 \xB7 El mundo"
+    - 01 · El mundo
     - 01 el mundo
     - Invariantes
     - invariantes
@@ -134,11 +134,11 @@ documents:
 - doc_name: spec-02
   sections:
   - path: 02-sustantivos
-    title: "02 \xB7 Sustantivos"
+    title: 02 · Sustantivos
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
     - type.knowledge.spec
     - workspace.source.spec
@@ -152,10 +152,10 @@ documents:
   - path: 02-sustantivos/la-regla
     title: La regla
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - La regla
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
     - La regla
     - la regla
@@ -169,14 +169,14 @@ documents:
     line_start: 3
     line_end: 4
   - path: 02-sustantivos/de-la-frase-a-la-direcci-n
-    title: "De la frase a la direcci\xF3n"
+    title: De la frase a la dirección
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
-    - "De la frase a la direcci\xF3n"
+    - 02 · Sustantivos
+    - De la frase a la dirección
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
-    - "De la frase a la direcci\xF3n"
+    - De la frase a la dirección
     - de la frase a la direcci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -190,10 +190,10 @@ documents:
   - path: 02-sustantivos/el-determinante-decide-la-cardinalidad
     title: El determinante decide la cardinalidad
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - El determinante decide la cardinalidad
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
     - El determinante decide la cardinalidad
     - el determinante decide la cardinalidad
@@ -209,10 +209,10 @@ documents:
   - path: 02-sustantivos/lo-que-sldb-devuelve-y-pron-muestra
     title: Lo que sldb devuelve y pron muestra
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - Lo que sldb devuelve y pron muestra
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
     - Lo que sldb devuelve y pron muestra
     - lo que sldb devuelve y pron muestra
@@ -226,14 +226,14 @@ documents:
     line_start: 27
     line_end: 28
   - path: 02-sustantivos/t-rmino-nombre-propio-literal
-    title: "T\xE9rmino, nombre propio, literal"
+    title: Término, nombre propio, literal
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
-    - "T\xE9rmino, nombre propio, literal"
+    - 02 · Sustantivos
+    - Término, nombre propio, literal
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
-    - "T\xE9rmino, nombre propio, literal"
+    - Término, nombre propio, literal
     - t rmino nombre propio literal
     - type.knowledge.spec
     - workspace.source.spec
@@ -245,14 +245,14 @@ documents:
     line_start: 31
     line_end: 32
   - path: 02-sustantivos/dos-predicados-dos-consultas-una-intersecci-n
-    title: "Dos predicados, dos consultas, una intersecci\xF3n"
+    title: Dos predicados, dos consultas, una intersección
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
-    - "Dos predicados, dos consultas, una intersecci\xF3n"
+    - 02 · Sustantivos
+    - Dos predicados, dos consultas, una intersección
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
-    - "Dos predicados, dos consultas, una intersecci\xF3n"
+    - Dos predicados, dos consultas, una intersección
     - dos predicados dos consultas una intersecci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -266,10 +266,10 @@ documents:
   - path: 02-sustantivos/invariantes
     title: Invariantes
     breadcrumbs:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - Invariantes
     about:
-    - "02 \xB7 Sustantivos"
+    - 02 · Sustantivos
     - 02 sustantivos
     - Invariantes
     - invariantes
@@ -285,11 +285,11 @@ documents:
 - doc_name: spec-03
   sections:
   - path: 03-verbos-transitivos
-    title: "03 \xB7 Verbos transitivos"
+    title: 03 · Verbos transitivos
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - type.knowledge.spec
     - workspace.source.spec
@@ -301,14 +301,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 03-verbos-transitivos/qu-es-un-verbo
-    title: "Qu\xE9 es un verbo"
+    title: Qué es un verbo
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
-    - "Qu\xE9 es un verbo"
+    - 03 · Verbos transitivos
+    - Qué es un verbo
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
-    - "Qu\xE9 es un verbo"
+    - Qué es un verbo
     - qu es un verbo
     - type.knowledge.spec
     - workspace.source.spec
@@ -322,10 +322,10 @@ documents:
   - path: 03-verbos-transitivos/leer-un-verbo
     title: Leer un verbo
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Leer un verbo
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Leer un verbo
     - leer un verbo
@@ -341,10 +341,10 @@ documents:
   - path: 03-verbos-transitivos/condiciones
     title: Condiciones
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Condiciones
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Condiciones
     - condiciones
@@ -360,10 +360,10 @@ documents:
   - path: 03-verbos-transitivos/afirmar-un-verbo
     title: Afirmar un verbo
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Afirmar un verbo
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Afirmar un verbo
     - afirmar un verbo
@@ -377,14 +377,14 @@ documents:
     line_start: 39
     line_end: 40
   - path: 03-verbos-transitivos/qu-se-verifica-d-nde
-    title: "Qu\xE9 se verifica d\xF3nde"
+    title: Qué se verifica dónde
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
-    - "Qu\xE9 se verifica d\xF3nde"
+    - 03 · Verbos transitivos
+    - Qué se verifica dónde
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
-    - "Qu\xE9 se verifica d\xF3nde"
+    - Qué se verifica dónde
     - qu se verifica d nde
     - type.knowledge.spec
     - workspace.source.spec
@@ -398,10 +398,10 @@ documents:
   - path: 03-verbos-transitivos/los-verbos-que-ya-existen-sin-declararse
     title: Los verbos que ya existen sin declararse
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Los verbos que ya existen sin declararse
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Los verbos que ya existen sin declararse
     - los verbos que ya existen sin declararse
@@ -417,10 +417,10 @@ documents:
   - path: 03-verbos-transitivos/leer-y-afirmar-son-dos-permisos
     title: Leer y afirmar son dos permisos
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Leer y afirmar son dos permisos
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Leer y afirmar son dos permisos
     - leer y afirmar son dos permisos
@@ -436,10 +436,10 @@ documents:
   - path: 03-verbos-transitivos/el-eje-es-lo-que-contesta-las-preguntas
     title: El eje es lo que contesta las preguntas
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - El eje es lo que contesta las preguntas
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - El eje es lo que contesta las preguntas
     - el eje es lo que contesta las preguntas
@@ -455,10 +455,10 @@ documents:
   - path: 03-verbos-transitivos/invariantes
     title: Invariantes
     breadcrumbs:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - Invariantes
     about:
-    - "03 \xB7 Verbos transitivos"
+    - 03 · Verbos transitivos
     - 03 verbos transitivos
     - Invariantes
     - invariantes
@@ -474,11 +474,11 @@ documents:
 - doc_name: spec-04
   sections:
   - path: 04-verbos-de-acci-n
-    title: "04 \xB7 Verbos de acci\xF3n"
+    title: 04 · Verbos de acción
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -492,10 +492,10 @@ documents:
   - path: 04-verbos-de-acci-n/el-kernel
     title: El kernel
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - El kernel
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
     - El kernel
     - el kernel
@@ -509,14 +509,14 @@ documents:
     line_start: 3
     line_end: 4
   - path: 04-verbos-de-acci-n/qu-garantiza-sldb
-    title: "Qu\xE9 garantiza sldb"
+    title: Qué garantiza sldb
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
-    - "Qu\xE9 garantiza sldb"
+    - 04 · Verbos de acción
+    - Qué garantiza sldb
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
-    - "Qu\xE9 garantiza sldb"
+    - Qué garantiza sldb
     - qu garantiza sldb
     - type.knowledge.spec
     - workspace.source.spec
@@ -530,10 +530,10 @@ documents:
   - path: 04-verbos-de-acci-n/refresh
     title: Refresh
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - Refresh
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
     - Refresh
     - refresh
@@ -547,14 +547,14 @@ documents:
     line_start: 24
     line_end: 25
   - path: 04-verbos-de-acci-n/lo-que-no-es-un-verbo-de-acci-n
-    title: "Lo que no es un verbo de acci\xF3n"
+    title: Lo que no es un verbo de acción
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
-    - "Lo que no es un verbo de acci\xF3n"
+    - 04 · Verbos de acción
+    - Lo que no es un verbo de acción
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
-    - "Lo que no es un verbo de acci\xF3n"
+    - Lo que no es un verbo de acción
     - lo que no es un verbo de acci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -568,10 +568,10 @@ documents:
   - path: 04-verbos-de-acci-n/invariantes
     title: Invariantes
     breadcrumbs:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - Invariantes
     about:
-    - "04 \xB7 Verbos de acci\xF3n"
+    - 04 · Verbos de acción
     - 04 verbos de acci n
     - Invariantes
     - invariantes
@@ -587,11 +587,11 @@ documents:
 - doc_name: spec-05
   sections:
   - path: 05-l-xico-y-proyecci-n
-    title: "05 \xB7 L\xE9xico y proyecci\xF3n"
+    title: 05 · Léxico y proyección
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -603,14 +603,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 05-l-xico-y-proyecci-n/de-d-nde-salen-las-palabras
-    title: "De d\xF3nde salen las palabras"
+    title: De dónde salen las palabras
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
-    - "De d\xF3nde salen las palabras"
+    - 05 · Léxico y proyección
+    - De dónde salen las palabras
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
-    - "De d\xF3nde salen las palabras"
+    - De dónde salen las palabras
     - de d nde salen las palabras
     - type.knowledge.spec
     - workspace.source.spec
@@ -622,14 +622,14 @@ documents:
     line_start: 3
     line_end: 4
   - path: 05-l-xico-y-proyecci-n/de-d-nde-se-lee-el-l-xico
-    title: "De d\xF3nde se lee el l\xE9xico"
+    title: De dónde se lee el léxico
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
-    - "De d\xF3nde se lee el l\xE9xico"
+    - 05 · Léxico y proyección
+    - De dónde se lee el léxico
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
-    - "De d\xF3nde se lee el l\xE9xico"
+    - De dónde se lee el léxico
     - de d nde se lee el l xico
     - type.knowledge.spec
     - workspace.source.spec
@@ -643,10 +643,10 @@ documents:
   - path: 05-l-xico-y-proyecci-n/anchors-la-forma-en-lengua-natural
     title: 'Anchors: la forma en lengua natural'
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 'Anchors: la forma en lengua natural'
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
     - 'Anchors: la forma en lengua natural'
     - anchors la forma en lengua natural
@@ -660,14 +660,14 @@ documents:
     line_start: 25
     line_end: 26
   - path: 05-l-xico-y-proyecci-n/proyecci-n
-    title: "Proyecci\xF3n"
+    title: Proyección
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
-    - "Proyecci\xF3n"
+    - 05 · Léxico y proyección
+    - Proyección
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
-    - "Proyecci\xF3n"
+    - Proyección
     - proyecci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -681,10 +681,10 @@ documents:
   - path: 05-l-xico-y-proyecci-n/calce-aproximado
     title: Calce aproximado
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - Calce aproximado
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
     - Calce aproximado
     - calce aproximado
@@ -700,10 +700,10 @@ documents:
   - path: 05-l-xico-y-proyecci-n/invariantes
     title: Invariantes
     breadcrumbs:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - Invariantes
     about:
-    - "05 \xB7 L\xE9xico y proyecci\xF3n"
+    - 05 · Léxico y proyección
     - 05 l xico y proyecci n
     - Invariantes
     - invariantes
@@ -719,11 +719,11 @@ documents:
 - doc_name: spec-06
   sections:
   - path: 06-superficie-y-di-logo
-    title: "06 \xB7 Superficie y di\xE1logo"
+    title: 06 · Superficie y diálogo
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
     - type.knowledge.spec
     - workspace.source.spec
@@ -737,10 +737,10 @@ documents:
   - path: 06-superficie-y-di-logo/la-superficie
     title: La superficie
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - La superficie
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
     - La superficie
     - la superficie
@@ -754,14 +754,14 @@ documents:
     line_start: 3
     line_end: 4
   - path: 06-superficie-y-di-logo/coordinaci-n
-    title: "Coordinaci\xF3n"
+    title: Coordinación
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
-    - "Coordinaci\xF3n"
+    - 06 · Superficie y diálogo
+    - Coordinación
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
-    - "Coordinaci\xF3n"
+    - Coordinación
     - coordinaci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -775,10 +775,10 @@ documents:
   - path: 06-superficie-y-di-logo/las-tres-salidas-del-grounding
     title: Las tres salidas del grounding
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - Las tres salidas del grounding
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
     - Las tres salidas del grounding
     - las tres salidas del grounding
@@ -792,14 +792,14 @@ documents:
     line_start: 46
     line_end: 47
   - path: 06-superficie-y-di-logo/el-di-logo
-    title: "El di\xE1logo"
+    title: El diálogo
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
-    - "El di\xE1logo"
+    - 06 · Superficie y diálogo
+    - El diálogo
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
-    - "El di\xE1logo"
+    - El diálogo
     - el di logo
     - type.knowledge.spec
     - workspace.source.spec
@@ -813,10 +813,10 @@ documents:
   - path: 06-superficie-y-di-logo/lo-que-la-superficie-no-hace
     title: Lo que la superficie no hace
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - Lo que la superficie no hace
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
     - Lo que la superficie no hace
     - lo que la superficie no hace
@@ -832,10 +832,10 @@ documents:
   - path: 06-superficie-y-di-logo/invariantes
     title: Invariantes
     breadcrumbs:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - Invariantes
     about:
-    - "06 \xB7 Superficie y di\xE1logo"
+    - 06 · Superficie y diálogo
     - 06 superficie y di logo
     - Invariantes
     - invariantes
@@ -851,11 +851,11 @@ documents:
 - doc_name: spec-07
   sections:
   - path: 07-ledger
-    title: "07 \xB7 Ledger"
+    title: 07 · Ledger
     breadcrumbs:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
     - type.knowledge.spec
     - workspace.source.spec
@@ -867,14 +867,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 07-ledger/qu-se-registra
-    title: "Qu\xE9 se registra"
+    title: Qué se registra
     breadcrumbs:
-    - "07 \xB7 Ledger"
-    - "Qu\xE9 se registra"
+    - 07 · Ledger
+    - Qué se registra
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
-    - "Qu\xE9 se registra"
+    - Qué se registra
     - qu se registra
     - type.knowledge.spec
     - workspace.source.spec
@@ -888,10 +888,10 @@ documents:
   - path: 07-ledger/frescura-tres-huellas-no-una
     title: 'Frescura: tres huellas, no una'
     breadcrumbs:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 'Frescura: tres huellas, no una'
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
     - 'Frescura: tres huellas, no una'
     - frescura tres huellas no una
@@ -907,10 +907,10 @@ documents:
   - path: 07-ledger/orden-dentro-de-un-turno
     title: Orden dentro de un turno
     breadcrumbs:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - Orden dentro de un turno
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
     - Orden dentro de un turno
     - orden dentro de un turno
@@ -924,14 +924,14 @@ documents:
     line_start: 31
     line_end: 32
   - path: 07-ledger/c-mo-se-contesta-why
-    title: "C\xF3mo se contesta \"why?\""
+    title: Cómo se contesta "why?"
     breadcrumbs:
-    - "07 \xB7 Ledger"
-    - "C\xF3mo se contesta \"why?\""
+    - 07 · Ledger
+    - Cómo se contesta "why?"
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
-    - "C\xF3mo se contesta \"why?\""
+    - Cómo se contesta "why?"
     - c mo se contesta why
     - type.knowledge.spec
     - workspace.source.spec
@@ -945,10 +945,10 @@ documents:
   - path: 07-ledger/provenance-de-lo-escrito
     title: Provenance de lo escrito
     breadcrumbs:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - Provenance de lo escrito
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
     - Provenance de lo escrito
     - provenance de lo escrito
@@ -964,10 +964,10 @@ documents:
   - path: 07-ledger/invariantes
     title: Invariantes
     breadcrumbs:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - Invariantes
     about:
-    - "07 \xB7 Ledger"
+    - 07 · Ledger
     - 07 ledger
     - Invariantes
     - invariantes
@@ -983,11 +983,11 @@ documents:
 - doc_name: spec-08
   sections:
   - path: 08-prerrequisitos-y-orden
-    title: "08 \xB7 Prerrequisitos y orden"
+    title: 08 · Prerrequisitos y orden
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - type.knowledge.spec
     - workspace.source.spec
@@ -1001,10 +1001,10 @@ documents:
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron
     title: Lo que falta fuera de pron
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
@@ -1020,11 +1020,11 @@ documents:
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron/kgdb
     title: kgdb
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
     - kgdb
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
@@ -1041,11 +1041,11 @@ documents:
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron/sldb
     title: sldb
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
     - sldb
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
@@ -1060,17 +1060,17 @@ documents:
     line_start: 14
     line_end: 15
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron/kgdb-el-upgrade-relaciones-tipadas-por-sldb
-    title: "kgdb: el upgrade \xB7 relaciones tipadas por sldb"
+    title: 'kgdb: el upgrade · relaciones tipadas por sldb'
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
-    - "kgdb: el upgrade \xB7 relaciones tipadas por sldb"
+    - 'kgdb: el upgrade · relaciones tipadas por sldb'
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
-    - "kgdb: el upgrade \xB7 relaciones tipadas por sldb"
+    - 'kgdb: el upgrade · relaciones tipadas por sldb'
     - kgdb el upgrade relaciones tipadas por sldb
     - type.knowledge.spec
     - workspace.source.spec
@@ -1082,17 +1082,17 @@ documents:
     line_start: 20
     line_end: 21
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron/kgdb-adem-s
-    title: "kgdb, adem\xE1s"
+    title: kgdb, además
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
-    - "kgdb, adem\xE1s"
+    - kgdb, además
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
-    - "kgdb, adem\xE1s"
+    - kgdb, además
     - kgdb adem s
     - type.knowledge.spec
     - workspace.source.spec
@@ -1106,11 +1106,11 @@ documents:
   - path: 08-prerrequisitos-y-orden/lo-que-falta-fuera-de-pron/pron-mismo
     title: pron mismo
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que falta fuera de pron
     - pron mismo
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que falta fuera de pron
     - lo que falta fuera de pron
@@ -1125,14 +1125,14 @@ documents:
     line_start: 46
     line_end: 47
   - path: 08-prerrequisitos-y-orden/orden-de-construcci-n
-    title: "Orden de construcci\xF3n"
+    title: Orden de construcción
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
-    - "Orden de construcci\xF3n"
+    - 08 · Prerrequisitos y orden
+    - Orden de construcción
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
-    - "Orden de construcci\xF3n"
+    - Orden de construcción
     - orden de construcci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -1146,10 +1146,10 @@ documents:
   - path: 08-prerrequisitos-y-orden/lints
     title: Lints
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lints
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lints
     - lints
@@ -1165,10 +1165,10 @@ documents:
   - path: 08-prerrequisitos-y-orden/lo-que-no-se-construye
     title: Lo que no se construye
     breadcrumbs:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - Lo que no se construye
     about:
-    - "08 \xB7 Prerrequisitos y orden"
+    - 08 · Prerrequisitos y orden
     - 08 prerrequisitos y orden
     - Lo que no se construye
     - lo que no se construye
@@ -1184,11 +1184,11 @@ documents:
 - doc_name: spec-09
   sections:
   - path: 09-una-conversaci-n-paso-a-paso
-    title: "09 \xB7 Una conversaci\xF3n, paso a paso"
+    title: 09 · Una conversación, paso a paso
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
     - type.knowledge.spec
     - workspace.source.spec
@@ -1202,10 +1202,10 @@ documents:
   - path: 09-una-conversaci-n-paso-a-paso/el-mundo
     title: El mundo
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - El mundo
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
     - El mundo
     - el mundo
@@ -1219,14 +1219,14 @@ documents:
     line_start: 5
     line_end: 6
   - path: 09-una-conversaci-n-paso-a-paso/el-procedimiento-de-comprensi-n
-    title: "El procedimiento de comprensi\xF3n"
+    title: El procedimiento de comprensión
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "El procedimiento de comprensi\xF3n"
+    - 09 · Una conversación, paso a paso
+    - El procedimiento de comprensión
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "El procedimiento de comprensi\xF3n"
+    - El procedimiento de comprensión
     - el procedimiento de comprensi n
     - type.knowledge.spec
     - workspace.source.spec
@@ -1238,14 +1238,14 @@ documents:
     line_start: 26
     line_end: 27
   - path: 09-una-conversaci-n-paso-a-paso/turno-1-create-a-client-named-ana-rojas-phone-9-5555-1234
-    title: "Turno 1 \xB7 \"create a client named Ana Rojas, phone 9 5555 1234\""
+    title: Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 1 \xB7 \"create a client named Ana Rojas, phone 9 5555 1234\""
+    - 09 · Una conversación, paso a paso
+    - Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 1 \xB7 \"create a client named Ana Rojas, phone 9 5555 1234\""
+    - Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
     - turno 1 create a client named ana rojas phone 9 5555 1234
     - type.knowledge.spec
     - workspace.source.spec
@@ -1257,15 +1257,14 @@ documents:
     line_start: 52
     line_end: 53
   - path: 09-una-conversaci-n-paso-a-paso/turno-2-book-her-a-table-on-the-patio-for-6-people-on-friday-at-9pm
-    title: "Turno 2 \xB7 \"book her a table on the patio for 6 people on Friday at\
-      \ 9pm\""
+    title: Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 2 \xB7 \"book her a table on the patio for 6 people on Friday at 9pm\""
+    - 09 · Una conversación, paso a paso
+    - Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 2 \xB7 \"book her a table on the patio for 6 people on Friday at 9pm\""
+    - Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
     - turno 2 book her a table on the patio for 6 people on friday at 9pm
     - type.knowledge.spec
     - workspace.source.spec
@@ -1277,14 +1276,14 @@ documents:
     line_start: 94
     line_end: 95
   - path: 09-una-conversaci-n-paso-a-paso/turno-3-on-the-terrace
-    title: "Turno 3 \xB7 \"on the terrace\""
+    title: Turno 3 · "on the terrace"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 3 \xB7 \"on the terrace\""
+    - 09 · Una conversación, paso a paso
+    - Turno 3 · "on the terrace"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 3 \xB7 \"on the terrace\""
+    - Turno 3 · "on the terrace"
     - turno 3 on the terrace
     - type.knowledge.spec
     - workspace.source.spec
@@ -1296,14 +1295,14 @@ documents:
     line_start: 106
     line_end: 107
   - path: 09-una-conversaci-n-paso-a-paso/turno-4-what-reservations-does-ana-have-for-friday
-    title: "Turno 4 \xB7 \"what reservations does Ana have for Friday?\""
+    title: Turno 4 · "what reservations does Ana have for Friday?"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 4 \xB7 \"what reservations does Ana have for Friday?\""
+    - 09 · Una conversación, paso a paso
+    - Turno 4 · "what reservations does Ana have for Friday?"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 4 \xB7 \"what reservations does Ana have for Friday?\""
+    - Turno 4 · "what reservations does Ana have for Friday?"
     - turno 4 what reservations does ana have for friday
     - type.knowledge.spec
     - workspace.source.spec
@@ -1315,14 +1314,14 @@ documents:
     line_start: 156
     line_end: 157
   - path: 09-una-conversaci-n-paso-a-paso/turno-5-rojas
-    title: "Turno 5 \xB7 \"Rojas\""
+    title: Turno 5 · "Rojas"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 5 \xB7 \"Rojas\""
+    - 09 · Una conversación, paso a paso
+    - Turno 5 · "Rojas"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 5 \xB7 \"Rojas\""
+    - Turno 5 · "Rojas"
     - turno 5 rojas
     - type.knowledge.spec
     - workspace.source.spec
@@ -1334,14 +1333,14 @@ documents:
     line_start: 174
     line_end: 175
   - path: 09-una-conversaci-n-paso-a-paso/turno-6-confirm-it
-    title: "Turno 6 \xB7 \"confirm it\""
+    title: Turno 6 · "confirm it"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 6 \xB7 \"confirm it\""
+    - 09 · Una conversación, paso a paso
+    - Turno 6 · "confirm it"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 6 \xB7 \"confirm it\""
+    - Turno 6 · "confirm it"
     - turno 6 confirm it
     - type.knowledge.spec
     - workspace.source.spec
@@ -1353,14 +1352,14 @@ documents:
     line_start: 194
     line_end: 195
   - path: 09-una-conversaci-n-paso-a-paso/turno-7-change-it-to-9-people-and-add-a-note-saying-birthday
-    title: "Turno 7 \xB7 \"change it to 9 people and add a note saying: birthday\""
+    title: 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 7 \xB7 \"change it to 9 people and add a note saying: birthday\""
+    - 09 · Una conversación, paso a paso
+    - 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 7 \xB7 \"change it to 9 people and add a note saying: birthday\""
+    - 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
     - turno 7 change it to 9 people and add a note saying birthday
     - type.knowledge.spec
     - workspace.source.spec
@@ -1372,14 +1371,14 @@ documents:
     line_start: 232
     line_end: 233
   - path: 09-una-conversaci-n-paso-a-paso/turno-8-why-did-you-warn-me-about-the-table
-    title: "Turno 8 \xB7 \"why did you warn me about the table?\""
+    title: Turno 8 · "why did you warn me about the table?"
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Turno 8 \xB7 \"why did you warn me about the table?\""
+    - 09 · Una conversación, paso a paso
+    - Turno 8 · "why did you warn me about the table?"
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Turno 8 \xB7 \"why did you warn me about the table?\""
+    - Turno 8 · "why did you warn me about the table?"
     - turno 8 why did you warn me about the table
     - type.knowledge.spec
     - workspace.source.spec
@@ -1391,14 +1390,14 @@ documents:
     line_start: 253
     line_end: 254
   - path: 09-una-conversaci-n-paso-a-paso/lo-que-esta-conversaci-n-fija
-    title: "Lo que esta conversaci\xF3n fija"
+    title: Lo que esta conversación fija
     breadcrumbs:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
-    - "Lo que esta conversaci\xF3n fija"
+    - 09 · Una conversación, paso a paso
+    - Lo que esta conversación fija
     about:
-    - "09 \xB7 Una conversaci\xF3n, paso a paso"
+    - 09 · Una conversación, paso a paso
     - 09 una conversaci n paso a paso
-    - "Lo que esta conversaci\xF3n fija"
+    - Lo que esta conversación fija
     - lo que esta conversaci n fija
     - type.knowledge.spec
     - workspace.source.spec
@@ -1412,11 +1411,11 @@ documents:
 - doc_name: spec-09a
   sections:
   - path: 09a-el-mundo-del-restaurante-declarado
-    title: "09a \xB7 El mundo del restaurante, declarado"
+    title: 09a · El mundo del restaurante, declarado
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
     - type.knowledge.spec
     - workspace.source.spec
@@ -1428,14 +1427,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 09a-el-mundo-del-restaurante-declarado/los-modelos-de-contenido-restaurant-models-py
-    title: "Los modelos de contenido \xB7 `restaurant/models.py`"
+    title: Los modelos de contenido · `restaurant/models.py`
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
-    - "Los modelos de contenido \xB7 `restaurant/models.py`"
+    - 09a · El mundo del restaurante, declarado
+    - Los modelos de contenido · `restaurant/models.py`
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
-    - "Los modelos de contenido \xB7 `restaurant/models.py`"
+    - Los modelos de contenido · `restaurant/models.py`
     - los modelos de contenido restaurant models py
     - type.knowledge.spec
     - workspace.source.spec
@@ -1447,15 +1446,14 @@ documents:
     line_start: 9
     line_end: 10
   - path: 09a-el-mundo-del-restaurante-declarado/los-tipos-de-relaci-n-documentos-de-relationtypedoc-modelo-de-kgdb
-    title: "Los tipos de relaci\xF3n \xB7 documentos de `RelationTypeDoc` (modelo\
-      \ de kgdb)"
+    title: Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
-    - "Los tipos de relaci\xF3n \xB7 documentos de `RelationTypeDoc` (modelo de kgdb)"
+    - 09a · El mundo del restaurante, declarado
+    - Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
-    - "Los tipos de relaci\xF3n \xB7 documentos de `RelationTypeDoc` (modelo de kgdb)"
+    - Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
     - los tipos de relaci n documentos de relationtypedoc modelo de kgdb
     - type.knowledge.spec
     - workspace.source.spec
@@ -1467,14 +1465,14 @@ documents:
     line_start: 105
     line_end: 106
   - path: 09a-el-mundo-del-restaurante-declarado/las-transiciones-documentos-de-relationdoc
-    title: "Las transiciones \xB7 documentos de `RelationDoc`"
+    title: Las transiciones · documentos de `RelationDoc`
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
-    - "Las transiciones \xB7 documentos de `RelationDoc`"
+    - 09a · El mundo del restaurante, declarado
+    - Las transiciones · documentos de `RelationDoc`
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
-    - "Las transiciones \xB7 documentos de `RelationDoc`"
+    - Las transiciones · documentos de `RelationDoc`
     - las transiciones documentos de relationdoc
     - type.knowledge.spec
     - workspace.source.spec
@@ -1488,10 +1486,10 @@ documents:
   - path: 09a-el-mundo-del-restaurante-declarado/los-documentos-iniciales
     title: Los documentos iniciales
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - Los documentos iniciales
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
     - Los documentos iniciales
     - los documentos iniciales
@@ -1507,10 +1505,10 @@ documents:
   - path: 09a-el-mundo-del-restaurante-declarado/el-store
     title: El store
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - El store
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
     - El store
     - el store
@@ -1524,14 +1522,14 @@ documents:
     line_start: 213
     line_end: 214
   - path: 09a-el-mundo-del-restaurante-declarado/la-proyecci-n-projectiondoc-modelo-de-pron
-    title: "La proyecci\xF3n \xB7 `ProjectionDoc` (modelo de pron)"
+    title: La proyección · `ProjectionDoc` (modelo de pron)
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
-    - "La proyecci\xF3n \xB7 `ProjectionDoc` (modelo de pron)"
+    - 09a · El mundo del restaurante, declarado
+    - La proyección · `ProjectionDoc` (modelo de pron)
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
-    - "La proyecci\xF3n \xB7 `ProjectionDoc` (modelo de pron)"
+    - La proyección · `ProjectionDoc` (modelo de pron)
     - la proyecci n projectiondoc modelo de pron
     - type.knowledge.spec
     - workspace.source.spec
@@ -1543,14 +1541,14 @@ documents:
     line_start: 230
     line_end: 231
   - path: 09a-el-mundo-del-restaurante-declarado/los-alias-documentos-de-anchordoc
-    title: "Los alias \xB7 documentos de `AnchorDoc`"
+    title: Los alias · documentos de `AnchorDoc`
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
-    - "Los alias \xB7 documentos de `AnchorDoc`"
+    - 09a · El mundo del restaurante, declarado
+    - Los alias · documentos de `AnchorDoc`
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
-    - "Los alias \xB7 documentos de `AnchorDoc`"
+    - Los alias · documentos de `AnchorDoc`
     - los alias documentos de anchordoc
     - type.knowledge.spec
     - workspace.source.spec
@@ -1564,10 +1562,10 @@ documents:
   - path: 09a-el-mundo-del-restaurante-declarado/lo-que-este-mundo-no-declara
     title: Lo que este mundo no declara
     breadcrumbs:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - Lo que este mundo no declara
     about:
-    - "09a \xB7 El mundo del restaurante, declarado"
+    - 09a · El mundo del restaurante, declarado
     - 09a el mundo del restaurante declarado
     - Lo que este mundo no declara
     - lo que este mundo no declara
@@ -1583,11 +1581,11 @@ documents:
 - doc_name: spec-10
   sections:
   - path: 10-el-shrdlu-sobre-el-modelo
-    title: "10 \xB7 El SHRDLU sobre el modelo"
+    title: 10 · El SHRDLU sobre el modelo
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
     - type.knowledge.spec
     - workspace.source.spec
@@ -1601,10 +1599,10 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/1-los-campos-son-las-propiedades-del-objeto
     title: 1. Los campos son las propiedades del objeto
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 1. Los campos son las propiedades del objeto
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
     - 1. Los campos son las propiedades del objeto
     - 1 los campos son las propiedades del objeto
@@ -1618,14 +1616,14 @@ documents:
     line_start: 5
     line_end: 6
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb
-    title: "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    title: 2. Cómo una relación llega a kgdb
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
     - type.knowledge.spec
     - workspace.source.spec
@@ -1639,13 +1637,13 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-1-el-tipo-una-vez-por-mundo
     title: 2.1 El tipo, una vez por mundo
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
     - 2.1 El tipo, una vez por mundo
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
     - 2.1 El tipo, una vez por mundo
     - 2 1 el tipo una vez por mundo
@@ -1661,13 +1659,13 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-2-la-instancia-una-por-arista
     title: 2.2 La instancia, una por arista
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
     - 2.2 La instancia, una por arista
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
     - 2.2 La instancia, una por arista
     - 2 2 la instancia una por arista
@@ -1683,13 +1681,13 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-3-del-store-al-grafo
     title: 2.3 Del store al grafo
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
     - 2.3 Del store al grafo
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
     - 2.3 Del store al grafo
     - 2 3 del store al grafo
@@ -1703,17 +1701,17 @@ documents:
     line_start: 66
     line_end: 67
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-4-c-mo-pron-lo-lee
-    title: "2.4 C\xF3mo pron lo lee"
+    title: 2.4 Cómo pron lo lee
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
-    - "2.4 C\xF3mo pron lo lee"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
+    - 2.4 Cómo pron lo lee
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
-    - "2.4 C\xF3mo pron lo lee"
+    - 2.4 Cómo pron lo lee
     - 2 4 c mo pron lo lee
     - type.knowledge.spec
     - workspace.source.spec
@@ -1727,13 +1725,13 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-5-estados
     title: 2.5 Estados
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 10 · El SHRDLU sobre el modelo
+    - 2. Cómo una relación llega a kgdb
     - 2.5 Estados
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - "2. C\xF3mo una relaci\xF3n llega a kgdb"
+    - 2. Cómo una relación llega a kgdb
     - 2 c mo una relaci n llega a kgdb
     - 2.5 Estados
     - 2 5 estados
@@ -1749,10 +1747,10 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/3-el-editor-y-pron-sobre-el-mismo-mundo
     title: 3. El editor y pron sobre el mismo mundo
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 3. El editor y pron sobre el mismo mundo
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
     - 3. El editor y pron sobre el mismo mundo
     - 3 el editor y pron sobre el mismo mundo
@@ -1768,10 +1766,10 @@ documents:
   - path: 10-el-shrdlu-sobre-el-modelo/4-lo-que-hay-que-construir-en-orden
     title: 4. Lo que hay que construir, en orden
     breadcrumbs:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 4. Lo que hay que construir, en orden
     about:
-    - "10 \xB7 El SHRDLU sobre el modelo"
+    - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
     - 4. Lo que hay que construir, en orden
     - 4 lo que hay que construir en orden
@@ -1787,11 +1785,11 @@ documents:
 - doc_name: spec-11
   sections:
   - path: 11-decisiones-de-implementaci-n
-    title: "11 \xB7 Decisiones de implementaci\xF3n"
+    title: 11 · Decisiones de implementación
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
     - type.knowledge.spec
     - workspace.source.spec
@@ -1803,14 +1801,14 @@ documents:
     line_start: 1
     line_end: 2
   - path: 11-decisiones-de-implementaci-n/0-por-ahora-todo-lo-declarado-va-en-ingl-s
-    title: "0. Por ahora, todo lo declarado va en ingl\xE9s"
+    title: 0. Por ahora, todo lo declarado va en inglés
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
-    - "0. Por ahora, todo lo declarado va en ingl\xE9s"
+    - 11 · Decisiones de implementación
+    - 0. Por ahora, todo lo declarado va en inglés
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
-    - "0. Por ahora, todo lo declarado va en ingl\xE9s"
+    - 0. Por ahora, todo lo declarado va en inglés
     - 0 por ahora todo lo declarado va en ingl s
     - type.knowledge.spec
     - workspace.source.spec
@@ -1822,15 +1820,14 @@ documents:
     line_start: 5
     line_end: 6
   - path: 11-decisiones-de-implementaci-n/1-la-gram-tica-es-artesanal-determinista-y-dirigida-por-el-l-xico
-    title: "1. La gram\xE1tica es artesanal, determinista y dirigida por el l\xE9\
-      xico"
+    title: 1. La gramática es artesanal, determinista y dirigida por el léxico
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
-    - "1. La gram\xE1tica es artesanal, determinista y dirigida por el l\xE9xico"
+    - 11 · Decisiones de implementación
+    - 1. La gramática es artesanal, determinista y dirigida por el léxico
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
-    - "1. La gram\xE1tica es artesanal, determinista y dirigida por el l\xE9xico"
+    - 1. La gramática es artesanal, determinista y dirigida por el léxico
     - 1 la gram tica es artesanal determinista y dirigida por el l xico
     - type.knowledge.spec
     - workspace.source.spec
@@ -1844,10 +1841,10 @@ documents:
   - path: 11-decisiones-de-implementaci-n/2-el-calce-aproximado-es-un-puerto-con-un-fallback-sin-red
     title: 2. El calce aproximado es un puerto, con un fallback sin red
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 2. El calce aproximado es un puerto, con un fallback sin red
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
     - 2. El calce aproximado es un puerto, con un fallback sin red
     - 2 el calce aproximado es un puerto con un fallback sin red
@@ -1861,17 +1858,15 @@ documents:
     line_start: 30
     line_end: 31
   - path: 11-decisiones-de-implementaci-n/3-las-fechas-y-horas-relativas-las-normaliza-la-superficie-con-reloj-de-sesi-n
-    title: "3. Las fechas y horas relativas las normaliza la superficie, con reloj\
-      \ de sesi\xF3n"
+    title: 3. Las fechas y horas relativas las normaliza la superficie, con reloj
+      de sesión
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
-    - "3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesi\xF3\
-      n"
+    - 11 · Decisiones de implementación
+    - 3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesión
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
-    - "3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesi\xF3\
-      n"
+    - 3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesión
     - 3 las fechas y horas relativas las normaliza la superficie con reloj de sesi
       n
     - type.knowledge.spec
@@ -1886,10 +1881,10 @@ documents:
   - path: 11-decisiones-de-implementaci-n/4-el-ingest-unificado-de-kgdb-es-previo-y-es-de-kgdb
     title: 4. El ingest unificado de kgdb es previo y es de kgdb
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 4. El ingest unificado de kgdb es previo y es de kgdb
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
     - 4. El ingest unificado de kgdb es previo y es de kgdb
     - 4 el ingest unificado de kgdb es previo y es de kgdb
@@ -1905,10 +1900,10 @@ documents:
   - path: 11-decisiones-de-implementaci-n/5-un-turno-lee-hash-mundo-dos-veces-y-cada-escritura-verifica-su-documento
     title: 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
     - 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
     - 5 un turno lee hash mundo dos veces y cada escritura verifica su documento
@@ -1922,14 +1917,14 @@ documents:
     line_start: 60
     line_end: 61
   - path: 11-decisiones-de-implementaci-n/6-la-identidad-la-trae-la-aplicaci-n-pron-solo-la-usa-y-la-registra
-    title: "6. La identidad la trae la aplicaci\xF3n; pron solo la usa y la registra"
+    title: 6. La identidad la trae la aplicación; pron solo la usa y la registra
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
-    - "6. La identidad la trae la aplicaci\xF3n; pron solo la usa y la registra"
+    - 11 · Decisiones de implementación
+    - 6. La identidad la trae la aplicación; pron solo la usa y la registra
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
-    - "6. La identidad la trae la aplicaci\xF3n; pron solo la usa y la registra"
+    - 6. La identidad la trae la aplicación; pron solo la usa y la registra
     - 6 la identidad la trae la aplicaci n pron solo la usa y la registra
     - type.knowledge.spec
     - workspace.source.spec
@@ -1941,17 +1936,17 @@ documents:
     line_start: 70
     line_end: 71
   - path: 11-decisiones-de-implementaci-n/7-sin-rollback-validaci-n-previa-registro-por-direcci-n-y-un-verbo-undo-expl-cito
-    title: "7. Sin rollback: validaci\xF3n previa, registro por direcci\xF3n y un\
-      \ verbo `undo` expl\xEDcito"
+    title: '7. Sin rollback: validación previa, registro por dirección y un verbo
+      `undo` explícito'
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
-    - "7. Sin rollback: validaci\xF3n previa, registro por direcci\xF3n y un verbo\
-      \ `undo` expl\xEDcito"
+    - 11 · Decisiones de implementación
+    - '7. Sin rollback: validación previa, registro por dirección y un verbo `undo`
+      explícito'
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
-    - "7. Sin rollback: validaci\xF3n previa, registro por direcci\xF3n y un verbo\
-      \ `undo` expl\xEDcito"
+    - '7. Sin rollback: validación previa, registro por dirección y un verbo `undo`
+      explícito'
     - 7 sin rollback validaci n previa registro por direcci n y un verbo undo expl
       cito
     - type.knowledge.spec
@@ -1963,13 +1958,36 @@ documents:
     level: 2
     line_start: 76
     line_end: 77
+  - path: 11-decisiones-de-implementaci-n/8-servir-el-mundo-un-proceso-lo-mantiene-abierto-y-los-dem-s-le-hablan-por-un-socket
+    title: '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan
+      por un socket'
+    breadcrumbs:
+    - 11 · Decisiones de implementación
+    - '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan por
+      un socket'
+    about:
+    - 11 · Decisiones de implementación
+    - 11 decisiones de implementaci n
+    - '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan por
+      un socket'
+    - 8 servir el mundo un proceso lo mantiene abierto y los dem s le hablan por un
+      socket
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 8-servir-el-mundo-un-proceso-lo-mantiene-abierto-y-los-dem-s-le-hablan-por-un-socket
+    level: 2
+    line_start: 104
+    line_end: 105
   - path: 11-decisiones-de-implementaci-n/resumen
     title: Resumen
     breadcrumbs:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - Resumen
     about:
-    - "11 \xB7 Decisiones de implementaci\xF3n"
+    - 11 · Decisiones de implementación
     - 11 decisiones de implementaci n
     - Resumen
     - resumen
@@ -1980,5 +1998,5 @@ documents:
     - workspace.source.spec
     slug: resumen
     level: 2
-    line_start: 104
-    line_end: 105
+    line_start: 114
+    line_end: 115

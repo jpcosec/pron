@@ -37,8 +37,8 @@ documents:
   - workspace.knowledge.commands
 - name: cmd-pron-say
   path: knowledge/commands/cmd-pron-say.md
-  hash_c: 4e1473ee63a6501274d3486387c1e29aa09321d6aa539a1ae8ff587e6382d555
-  hash_d: fbe184ace0df272d3be738ba2442c584de39d42bdd837e345bd9dff757a609e4
+  hash_c: e58aa2683b2a02195efd9193860427de660f16d9441f17fbceb721b1a8ffa16a
+  hash_d: ca3d511e34e300207c0b236d5680615b01f72ccc725ad0d5ddfd53180f480ca3
   semantic_tags:
   - domain:system_architecture
   - entity:cli_command
@@ -49,8 +49,8 @@ documents:
   - workspace.knowledge.commands
 - name: cmd-pron-repl
   path: knowledge/commands/cmd-pron-repl.md
-  hash_c: 2ab0200c407f46a81d07c052cd3bca74c9f1d654d264b5fffe8bc76db81d9577
-  hash_d: ce60b2bab0d7ca34351571a63c5119a39ebc9bc93e23e32cab3b1352f6a19471
+  hash_c: 35f02e14acc36897dc38d4586d2c99c033fb8216654e2aab7088ccf05c8d0a22
+  hash_d: b3143d39874dc89702d9403b8752bc00af32265b648b9ca7d176faa43c2648f8
   semantic_tags:
   - domain:system_architecture
   - entity:cli_command
@@ -75,6 +75,18 @@ documents:
   path: knowledge/commands/cmd-pron-docs.md
   hash_c: 42b566f563e091674ebbfa571a47f7424ee83b356a0c018d2b3b51242efb0ff1
   hash_d: 51f32c95dec051411a4a1e27d71e60cbed74081dfb1e5e38d603e0c242c6b992
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+- name: cmd-pron-serve
+  path: knowledge/commands/cmd-pron-serve.md
+  hash_c: e06bae71449446d8c7a3a0026e7d97140ca743d2ea50cc8174fc85872119a4c9
+  hash_d: 08f4a4bd8379e4fd61ae5d39698e37f39638aa8986d2f39d347c3c66014eeef9
   semantic_tags:
   - domain:system_architecture
   - entity:cli_command

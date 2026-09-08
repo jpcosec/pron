@@ -6,10 +6,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
-
-from pron.world import World, init_world
 
 
 def _cmd_init(args: argparse.Namespace) -> int:
@@ -22,6 +21,8 @@ def _cmd_init(args: argparse.Namespace) -> int:
     Usage:
       pron init --world . [--pythonpath .] [--knowledge]
     """
+    from pron.world import init_world
+
     report = init_world(args.world, args.pythonpath, with_knowledge=args.knowledge)
     print(json.dumps(report, indent=2))
     return 0
@@ -35,6 +36,8 @@ def _cmd_refresh(args: argparse.Namespace) -> int:
     Usage:
       pron refresh --world .
     """
+    from pron.world import World
+
     report = World(args.world, args.pythonpath).refresh()
     print(f"graph: {report['nodes']} nodes, {report['edges']} edges, {len(report['relation_types'])} relation types")
     return 0
@@ -50,6 +53,7 @@ def _cmd_lexicon(args: argparse.Namespace) -> int:
       pron lexicon --world . [--projection all] [MODEL] [--json]
     """
     from pron.lexicon import Lexicon
+    from pron.world import World
 
     world = World(args.world, args.pythonpath)
     lex = Lexicon(world, world.projection(args.projection))
@@ -63,19 +67,32 @@ def _cmd_lexicon(args: argparse.Namespace) -> int:
     return 0
 
 
+def _session_for(args: argparse.Namespace):
+    """A live session: through the running server when one listens at the world's socket
+    (and --local was not asked), else opened here."""
+    from pron.client import RemoteSession, alive, socket_path
+
+    sock = socket_path(args.world)
+    if not getattr(args, "local", False) and alive(sock):
+        return RemoteSession(sock, projection=args.projection, speaker=args.speaker, now=args.now)
+    from pron.session import Session
+    from pron.world import World
+
+    return Session(World(args.world, args.pythonpath), projection=args.projection, speaker=args.speaker, now=args.now)
+
+
 def _cmd_say(args: argparse.Namespace) -> int:
     """Say one sentence to a world and print the answer, with the trace on request.
 
     Opens a session with the projection and speaker given, runs one turn, prints the
-    answer in natural language; --trace adds the addresses, edges and writes.
+    answer in natural language; --trace adds the addresses, edges and writes. When a
+    `pron serve` listens at the world's socket the sentence goes there and nothing is
+    opened here; --local forces opening the world in this process.
 
     Usage:
-      pron say "what tables are on the terrace?" --world . [--projection all] [--speaker me] [--trace]
+      pron say "what tables are on the terrace?" --world . [--projection all] [--speaker me] [--trace] [--local]
     """
-    from pron.session import Session
-
-    session = Session(World(args.world, args.pythonpath), projection=args.projection, speaker=args.speaker, now=args.now)
-    response = session.turn(args.sentence)
+    response = _session_for(args).turn(args.sentence)
     print(response.text)
     if args.trace:
         print("\n".join(f"  · {line}" for line in response.trace))
@@ -87,13 +104,40 @@ def _cmd_repl(args: argparse.Namespace) -> int:
 
     The same session as `say`, kept open: pending questions and referents survive between
     lines. `:trace` toggles the trace, `:lexicon [MODEL]` lists words, `:quit` leaves.
+    Through the running server when one listens; --local opens the world here.
 
     Usage:
-      pron repl --world . [--projection all] [--speaker me]
+      pron repl --world . [--projection all] [--speaker me] [--local]
     """
     from pron.cli.repl import run
 
-    return run(World(args.world, args.pythonpath), args.projection, args.speaker, args.now)
+    return run(_session_for(args), Path(args.world).resolve().name, args.projection)
+
+
+def _cmd_serve(args: argparse.Namespace) -> int:
+    """Keep a world open and answer sentences over a Unix socket (spec 11 §8).
+
+    Imports, caches and sessions are paid once; `say`, `repl` and kinesis use the socket
+    at <world>/.pron/serve.sock while it listens. Runs in the foreground until --stop is
+    sent from another shell or the process is interrupted.
+
+    Usage:
+      pron serve --world . [--pythonpath .] [--socket PATH]
+      pron serve --world . --stop
+    """
+    from pron.client import alive, request, socket_path
+
+    sock = Path(args.socket) if args.socket else socket_path(args.world)
+    if args.stop:
+        if not alive(sock):
+            print(f"no server at {sock}"); return 1
+        request(sock, {"op": "stop"}); print("stopped"); return 0
+    from pron.serve import Server
+
+    server = Server(args.world, args.pythonpath, sock)
+    print(f"pron serve · world {server.world.root} · socket {sock} · pid {os.getpid()}", flush=True)
+    server.serve_forever()
+    return 0
 
 
 def _cmd_check(args: argparse.Namespace) -> int:
@@ -103,6 +147,7 @@ def _cmd_check(args: argparse.Namespace) -> int:
       pron check --world .
     """
     from pron.lints import run_lints
+    from pron.world import World
 
     problems = run_lints(World(args.world, args.pythonpath))
     for p in problems:
@@ -120,9 +165,13 @@ def _cmd_docs(args: argparse.Namespace) -> int:
       pron docs --world . [--check]
     """
     from pron.docs import synchronize_docs
+    from pron.world import World
 
-    changed = synchronize_docs(World(args.world, args.pythonpath), check=args.check)
+    world = World(args.world, args.pythonpath)
+    changed = synchronize_docs(world, check=args.check)
     print("\n".join(changed) if changed else "up to date")
+    if changed and not args.check:
+        world.refresh()   # the indexes and the graph follow the documents just written
     return 1 if (args.check and changed) else 0
 
 
@@ -139,9 +188,11 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("lexicon", help="List what this projection can say"); common(s)
     s.add_argument("model", nargs="?", default=None); s.add_argument("--projection", default="all"); s.add_argument("--json", action="store_true"); s.set_defaults(fn=_cmd_lexicon)
     s = sub.add_parser("say", help="Say one sentence"); common(s)
-    s.add_argument("sentence"); s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--trace", action="store_true"); s.set_defaults(fn=_cmd_say)
+    s.add_argument("sentence"); s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--trace", action="store_true"); s.add_argument("--local", action="store_true", help="Open the world here even if a server listens"); s.set_defaults(fn=_cmd_say)
     s = sub.add_parser("repl", help="Talk to a world"); common(s)
-    s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.set_defaults(fn=_cmd_repl)
+    s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--local", action="store_true", help="Open the world here even if a server listens"); s.set_defaults(fn=_cmd_repl)
+    s = sub.add_parser("serve", help="Keep a world open behind a Unix socket"); common(s)
+    s.add_argument("--socket", default=None, help="Socket path (default <world>/.pron/serve.sock)"); s.add_argument("--stop", action="store_true", help="Stop the server listening at the socket"); s.set_defaults(fn=_cmd_serve)
     s = sub.add_parser("check", help="Run pron's lints"); common(s); s.set_defaults(fn=_cmd_check)
     s = sub.add_parser("docs", help="Regenerate pron's command docs"); common(s); s.add_argument("--check", action="store_true"); s.set_defaults(fn=_cmd_docs)
     return p

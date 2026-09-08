@@ -25,7 +25,9 @@ Say one sentence to a world and print the answer, with the trace on request.
 ## How It Works
 
 Opens a session with the projection and speaker given, runs one turn, prints the
-answer in natural language; --trace adds the addresses, edges and writes.
+answer in natural language; --trace adds the addresses, edges and writes. When a
+`pron serve` listens at the world's socket the sentence goes there and nothing is
+opened here; --local forces opening the world in this process.
 
 ## Arguments
 
@@ -36,7 +38,8 @@ sentence | required |
 --speaker | optional | 
 --now | optional | 
 --trace | optional | 
+--local | optional | Open the world here even if a server listens
 
 ## Usage
 
-pron say "what tables are on the terrace?" --world . [--projection all] [--speaker me] [--trace]
+pron say "what tables are on the terrace?" --world . [--projection all] [--speaker me] [--trace] [--local]

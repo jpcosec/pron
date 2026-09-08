@@ -18,20 +18,12 @@ from pron.kernel import Kernel
 from pron.ledger import Ledger
 from pron.lexicon import Lexicon
 from pron.resolve import Resolution, address_to_export_id, resolve
+from pron.response import Response  # noqa: F401 - re-exported: session.Response is the public name
 from pron.store import StoreError
 from pron.surface.interpret import Interpretation, Interpreter, Part, examples
 from pron.surface.nouns import NounPhrase
 from pron.verbs import Verbs
 from pron.world import World
-
-
-@dataclass
-class Response:
-    text: str
-    outcome: str
-    trace: list[str] = field(default_factory=list)
-    move_id: str = ""
-    record: dict[str, Any] = field(default_factory=dict)
 
 
 class Session:

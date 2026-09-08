@@ -28,8 +28,12 @@ pron refresh --world .                      # índices de sldb + grafo tipado de
 pron lexicon --world . [Model]              # qué se puede decir · los verbos de una clase
 pron say "the large tables on the terrace" --world . --trace
 pron repl --world . --speaker me
+pron serve --world .                        # mantiene el mundo abierto tras .pron/serve.sock; say, repl y kinesis lo usan
+pron serve --world . --stop
 pron check --world .                        # los lints
 ```
+
+Un turno frío cuesta medio segundo, casi todo imports y la primera carga del store; con `pron serve` corriendo, `pron say` lee en 0,12 s y escribe en medio segundo, y el proceso que pregunta no importa ni sldb: el cliente es `pron.client`, solo biblioteca estándar.
 
 Un mundo se declara con documentos, nunca con código de pron: modelos `StructuredNLDoc`, `RelationTypeDoc` de kgdb para los verbos, `RelationDoc` para las aristas, `AnchorDoc` para las palabras, `ProjectionDoc` para lo que una sesión puede nombrar. El ejemplo completo está en [`source/spec/09a`](source/spec/09a-el-mundo-del-restaurante.md) y montado como fixture en `tests/worlds/restaurant.py`.
 

@@ -29,7 +29,8 @@ def world(tmp_path_factory) -> World:
 def test_repl_keeps_the_dialogue_between_lines(world: World):
     out = io.StringIO()
     lines = "create a client named Ana Rojas, phone 9 5555 1234\nwhat reservations does Ana have?\n1\n:state\n:quit\n"
-    repl(world, projection="all", speaker="jp", now=NOW, stdin=io.StringIO(lines), stdout=out)
+    from pron.session import Session
+    repl(Session(world, projection="all", speaker="jp", now=NOW), world.root.name, "all", stdin=io.StringIO(lines), stdout=out)
     text = out.getvalue()
     assert "Created client Ana Rojas" in text
     assert "Which one?" in text

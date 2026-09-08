@@ -26,6 +26,7 @@ Talk to a world, one sentence per line.
 
 The same session as `say`, kept open: pending questions and referents survive between
 lines. `:trace` toggles the trace, `:lexicon [MODEL]` lists words, `:quit` leaves.
+Through the running server when one listens; --local opens the world here.
 
 ## Arguments
 
@@ -34,7 +35,8 @@ lines. `:trace` toggles the trace, `:lexicon [MODEL]` lists words, `:quit` leave
 --projection | optional | 
 --speaker | optional | 
 --now | optional | 
+--local | optional | Open the world here even if a server listens
 
 ## Usage
 
-pron repl --world . [--projection all] [--speaker me]
+pron repl --world . [--projection all] [--speaker me] [--local]

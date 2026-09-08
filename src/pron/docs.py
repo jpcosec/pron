@@ -20,7 +20,7 @@ PACKAGE = Path(__file__).parent
 TAGS = ["system:pron", "domain:system_architecture", "kind:software", "impl:here", "entity:cli_command"]
 SURFACE_TAGS = ["system:pron", "domain:system_architecture", "kind:software", "impl:here", "entity:module"]
 MODULES = ["world", "store", "graph", "lexicon", "embedder", "resolve", "verbs", "kernel", "dialogue", "ledger", "display", "session",
-           "docs", "lints", "surface.tokens", "surface.dates", "surface.nouns", "surface.interpret", "cli.main", "cli.repl"]
+           "docs", "lints", "surface.tokens", "surface.dates", "surface.nouns", "surface.interpret", "cli.main", "cli.repl", "response", "client", "serve"]
 SPEC_DIR = Path("source") / "spec"
 SPEC_REF = re.compile(r"\bspec\s+(\d{2}[a-z]?)\b", re.I)
 

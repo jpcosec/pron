@@ -25,5 +25,4 @@ trace; every trace line is a real call.
 
 ## Commands
 
-Response
 Session

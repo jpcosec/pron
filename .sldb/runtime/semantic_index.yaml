@@ -7,8 +7,10 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -19,6 +21,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -35,9 +39,11 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   entity:module:
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -48,6 +54,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -64,8 +72,10 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -76,6 +86,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -92,8 +104,10 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -104,6 +118,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -113,8 +129,10 @@ tags:
   - surface-pron-verbs
   - surface-pron-world
   layer.topology:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-client--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
@@ -128,6 +146,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
   - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -157,8 +177,10 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -169,6 +191,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -191,6 +215,7 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   type.knowledge.projection:
   - projection-all
   type.knowledge.spec:
@@ -209,6 +234,7 @@ tags:
   type.knowledge.surface:
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -219,6 +245,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -230,8 +258,10 @@ tags:
   type.pron.move:
   - move-20260908T062556-001
   type.relation.instance:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-client--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
@@ -245,6 +275,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
   - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -281,6 +313,7 @@ tags:
   - cmd-pron-refresh
   - cmd-pron-repl
   - cmd-pron-say
+  - cmd-pron-serve
   workspace.knowledge.ledger:
   - move-20260908T062556-001
   workspace.knowledge.projections:
@@ -288,6 +321,7 @@ tags:
   workspace.knowledge.surfaces:
   - surface-pron-cli-main
   - surface-pron-cli-repl
+  - surface-pron-client
   - surface-pron-dialogue
   - surface-pron-display
   - surface-pron-docs
@@ -298,6 +332,8 @@ tags:
   - surface-pron-lexicon
   - surface-pron-lints
   - surface-pron-resolve
+  - surface-pron-response
+  - surface-pron-serve
   - surface-pron-session
   - surface-pron-store
   - surface-pron-surface-dates
@@ -536,6 +572,30 @@ documents:
     tags:
     - layer.topology
     - type.relation.instance
+  implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-client--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-client--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
   anchor-chapter:
     model: AnchorDoc
     path: knowledge/anchors/chapter.md
@@ -727,6 +787,17 @@ documents:
     - system:pron
     - type.knowledge.cli_command
     - workspace.knowledge.commands
+  cmd-pron-serve:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-serve.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
   surface-pron-world:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-world.md
@@ -848,17 +919,6 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-session:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-session.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-docs:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-docs.md
@@ -939,6 +999,50 @@ documents:
   surface-pron-surface-nouns:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-surface-nouns.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-session:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-session.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-response:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-response.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-client:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-client.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-serve:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-serve.md
     tags:
     - domain:system_architecture
     - entity:module

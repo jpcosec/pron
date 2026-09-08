@@ -637,8 +637,8 @@ documents:
     - workspace.knowledge.commands
     slug: arguments
     level: 2
-    line_start: 30
-    line_end: 31
+    line_start: 32
+    line_end: 33
   - path: say/usage
     title: Usage
     breadcrumbs:
@@ -665,8 +665,8 @@ documents:
     - workspace.knowledge.commands
     slug: usage
     level: 2
-    line_start: 40
-    line_end: 41
+    line_start: 43
+    line_end: 44
 - doc_name: cmd-pron-repl
   sections:
   - path: repl
@@ -804,8 +804,8 @@ documents:
     - workspace.knowledge.commands
     slug: arguments
     level: 2
-    line_start: 30
-    line_end: 31
+    line_start: 31
+    line_end: 32
   - path: repl/usage
     title: Usage
     breadcrumbs:
@@ -832,8 +832,8 @@ documents:
     - workspace.knowledge.commands
     slug: usage
     level: 2
-    line_start: 38
-    line_end: 39
+    line_start: 40
+    line_end: 41
 - doc_name: cmd-pron-check
   sections:
   - path: check
@@ -1168,3 +1168,170 @@ documents:
     level: 2
     line_start: 37
     line_end: 38
+- doc_name: cmd-pron-serve
+  sections:
+  - path: serve
+    title: serve
+    breadcrumbs:
+    - serve
+    about:
+    - serve
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: serve
+    level: 1
+    line_start: 15
+    line_end: 16
+  - path: serve/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - serve
+    - Synopsis
+    about:
+    - serve
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 17
+    line_end: 18
+  - path: serve/purpose
+    title: Purpose
+    breadcrumbs:
+    - serve
+    - Purpose
+    about:
+    - serve
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 21
+    line_end: 22
+  - path: serve/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - serve
+    - How It Works
+    about:
+    - serve
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 25
+    line_end: 26
+  - path: serve/arguments
+    title: Arguments
+    breadcrumbs:
+    - serve
+    - Arguments
+    about:
+    - serve
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 31
+    line_end: 32
+  - path: serve/usage
+    title: Usage
+    breadcrumbs:
+    - serve
+    - Usage
+    about:
+    - serve
+    - Usage
+    - usage
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 38
+    line_end: 39
