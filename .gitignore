@@ -1,21 +1,5 @@
-# System
-.DS_Store
-*.swp
-*~
-
-# Editor
-.vscode/
-.idea/
-human_feedback/.obsidian/
-
-# Logs
-*.log
-
-# OS
-Thumbs.db
-.knowledge/
 __pycache__/
-*.egg-info/
 *.pyc
+*.egg-info/
+.pytest_cache/
 .pron/
-src/*.egg-info/

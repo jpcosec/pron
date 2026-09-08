@@ -4,11 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pron"
-version = "1.0.0.dev0"
+version = "1.0.0.dev1"
 description = "pron: a SHRDLU over an sldb world — nouns by address in sldb, transitive verbs as kgdb relation models, action verbs as sldb writes"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "pydantic>=2",
+    "PyYAML>=6",
     "sldb",
     "kgdb",
 ]
@@ -16,11 +18,19 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8"]
 
+[project.scripts]
+pron = "pron.cli.main:main"
+
 [project.urls]
 Homepage = "https://github.com/jpcosec/pron"
 Repository = "https://github.com/jpcosec/pron"
 
-# No package yet: master holds the specification and the views. The v1 package lives on
-# the branch v1-code-and-kb (tag v1-frozen).
-[tool.setuptools]
-packages = []
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pron = ["surface/*.yaml"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
