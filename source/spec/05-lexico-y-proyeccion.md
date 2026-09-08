@@ -20,7 +20,9 @@ Los **valores** también son léxico cuando el campo los acota: los miembros de 
 
 ## Anchors: la forma en español
 
-Un `AnchorDoc` es un alias: `symbol` es la palabra, `ref` es la dirección, el campo, el tag o el verbo que nombra, `motive` es lo que se muestra al preguntar qué significa. No declara operaciones, no contiene semántica, no es la fuente del léxico.
+Un `AnchorDoc` es un alias: `symbol` es la palabra, `ref` es lo que nombra, `motive` es lo que se muestra al preguntar qué significa. Lo que puede nombrar está acotado a cinco formas de `ref`: un modelo, un campo, un predicado sobre un modelo (`grande → predicate:Mesa:capacidad >= 6`), un tipo de relación, y un verbo de acción con campo y valor fijos (`confirmar → action:cambiar Reserva.estado=confirmada`).
+
+Un alias sí aporta significado a una expresión: "grande" significa algo porque alguien decidió que es capacidad mayor o igual a seis. Lo que no hace es agregar capacidades: todo `ref` apunta a algo que el mundo ya puede hacer sin el alias, con la dirección o el comando completo. Por eso no es la fuente del léxico, sino su forma en español, y por eso se puede listar, revisar y borrar sin que nada deje de ser posible.
 
 Un alias puede nombrar también un **verbo de acción con campo y valor fijos**: `confirmar → action:cambiar estado=confirmada`. Es la única forma en que un mundo agrega verbos sin código, y sigue siendo un alias: el verbo real es "cambiar" y pasa por las mismas verificaciones, incluida la transición (03).
 
@@ -38,6 +40,6 @@ El resultado del calce aproximado sobre el mundo nunca se ejecuta solo. Se ofrec
 
 ## Invariantes
 
-- Todo lo que el léxico sabe se puede reconstruir desde el store: no hay palabras en código.
+- Todo lo que el léxico sabe de un mundo se puede reconstruir desde su store: ninguna palabra de un mundo vive en código. Las palabras generales (determinantes, interrogativos, los verbos del kernel, las construcciones por tipo de campo) sí son de pron y valen para todo mundo.
 - Un cambio de `hash_mundo` invalida el léxico y sus embeddings; escribir en el ledger no.
 - El léxico se puede listar: "¿qué puedo decir?" imprime las palabras de la proyección con su motivo.

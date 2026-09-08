@@ -40,4 +40,4 @@ Las vistas spec2viz en [`views/spec2viz`](../../views/spec2viz) son la proyecci�
 2. pron no tiene cascada de resolución. Un sustantivo lo responde sldb con una dirección y un `--where`.
 3. pron no declara verbos. Los declara kgdb; sldb los guarda; el ingest de kgdb los ensambla.
 4. pron no escribe en kgdb. kgdb es derivado y de solo lectura; cambia cuando el proyector lo reconstruye.
-5. Todo lo que pron sabe de su mundo está en documentos de su propio store. No hay conocimiento en código.
+5. Todo lo que pron sabe **del mundo** está en documentos del store: qué modelos hay, qué palabras los nombran, qué verbos existen, qué permite una proyección. En código está solo lo general: la gramática, la tabla de oraciones por tipo de campo, el kernel. Si un `if` distingue un modelo o un mundo, está en el lugar equivocado.
