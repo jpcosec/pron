@@ -3,51 +3,54 @@ graph TD
         hablante["Quien habla · persona, LLM u otro producto"]
     end
     subgraph capa0 ["Capa 0 · Mundo"]
-        mundo["Declaración del mundo · stores, modelos, anchors, proyecciones"]
+        mundo["Declaración del mundo · qué stores y grafo, qué léxico, qué proyecciones"]
     end
     subgraph capa1 ["Capa 1 · Superficie"]
         superficie["Superficie · natural → Meaning · Meaning → natural"]
     end
     subgraph capa2 ["Capa 2 · Meaning"]
-        gramatica["Gramática viva · anchors · qué hay · qué puedo hacer con X"]
-        proyeccion["Proyección · lo que esta sesión ve y puede"]
+        lexico["Léxico · anchors · palabra → entidad del mundo · motivo"]
+        proyeccion["Proyección · lo que esta sesión puede nombrar"]
         dialogo["Diálogo · pendiente y referentes (ese, la anterior)"]
-        evaluador["Evaluador · grounding · resolución · expansión · dispatch · traza"]
-        operaciones["Operaciones · leer / escribir / operar / declarar · abiertas"]
+        evaluador["Evaluador · grounding · resolución · interpreta verbos del grafo · traza"]
+        kernel["Kernel de primitivas · leer doc · escribir doc · recorrer arista · disparar transición"]
     end
     subgraph capa3 ["Capa 3 · Bridges"]
         bridge_sldb["Bridge sldb · documentos, campos, secciones"]
-        bridge_kgdb["Bridge kgdb · grafo, relaciones, estados"]
-        bridge_emb["Bridge embeddings · parecido a · cercanos"]
+        bridge_kgdb["Bridge kgdb · aristas, transiciones, estados"]
+        bridge_emb["Bridge embeddings · oración ↔ motivos · cercanos"]
         bridge_otros["Bridge lo-que-venga · SQL, APIs, ..."]
     end
     subgraph transversal ["Transversal"]
         proyector["Proyector · reindexa · reconstruye grafo · recalcula embeddings"]
         ledger["Ledger · oración + Meaning + refs + motivos + resultado · provenance"]
     end
-    subgraph backends ["Backends"]
-        sldb["sldb"]
-        kgdb["kgdb"]
+    subgraph backends ["Backends · el mundo"]
+        sldb["sldb · SUSTANTIVOS · documentos, modelos, recetas, el léxico mismo"]
+        kgdb["kgdb · VERBOS · acciones, transiciones, relaciones"]
         embeddings["embeddings"]
         otros["SQL · APIs · lo que venga"]
     end
-    mundo -->|"carga los anchors"| gramatica
+    mundo -->|"carga el léxico"| lexico
     mundo -->|"define"| proyeccion
     mundo -->|"qué puertas existen"| capa3
     hablante -->|"una oración"| superficie
     superficie -->|"referentes"| dialogo
-    superficie -->|"cada símbolo es anchor"| gramatica
-    proyeccion -->|"acota"| gramatica
+    superficie -->|"oración ↔ motivos del léxico"| bridge_emb
+    superficie -->|"cada palabra está en la proyección"| lexico
+    proyeccion -->|"acota"| lexico
+    lexico -->|"se carga de AnchorDocs"| bridge_sldb
     superficie -->|"un Meaning"| evaluador
-    evaluador -->|"grounds"| gramatica
-    evaluador -->|"pendiente si ambiguo"| dialogo
+    evaluador -->|"palabra → entidad"| lexico
+    evaluador -->|"el sustantivo · cascada"| bridge_sldb
+    evaluador -->|"el verbo · aplica a este sustantivo · transición legal"| bridge_kgdb
     evaluador -->|"missing → cercanos por similitud"| bridge_emb
-    evaluador -->|"dispatches"| operaciones
-    operaciones -->|"consulta / escribe"| bridge_sldb
-    operaciones -->|"relaciones / opera estados"| bridge_kgdb
-    operaciones -->|"parecido a"| bridge_emb
-    operaciones -->|"lo que declaren"| bridge_otros
-    operaciones -->|"refresca tras escribir"| proyector
+    evaluador -->|"pendiente si ambiguo"| dialogo
+    evaluador -->|"primitivas"| kernel
+    kernel -->|"leer / escribir documento"| bridge_sldb
+    kernel -->|"recorrer arista · disparar transición"| bridge_kgdb
+    kernel -->|"lo que declaren"| bridge_otros
+    kernel -->|"refresca tras escribir"| proyector
     proyector -->|"reindexa · reconstruye · recalcula"| capa3
     bridge_sldb -->|"serves"| sldb
     bridge_kgdb -->|"serves"| kgdb

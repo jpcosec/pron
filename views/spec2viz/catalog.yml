@@ -3,7 +3,7 @@ diagram_store:
   template: template.html
   title: Arquitectura de pron
   brand_name: pron
-  brand_subtitle: "Actual: derivado del código. Objetivo: el SHRDLU sobre un mundo declarado. La diferencia entre ambos es la lista de trabajo."
+  brand_subtitle: "Actual: derivado del código. Objetivo: el SHRDLU sobre el mundo — sustantivos en sldb, verbos en kgdb, el léxico como puente. La diferencia entre ambos es la lista de trabajo."
   project_name: legos/pron
   items:
   - id: architecture
@@ -23,7 +23,7 @@ diagram_store:
     - El generador de docs (pron docs) deriva CliCommandDoc de los docstrings de los handlers _cmd_* y SurfaceDoc del AST de cada módulo público.
   - id: target-components
     title: Objetivo · componentes
-    desc: Un SHRDLU sobre un mundo declarado. Quien habla es un solo actor externo; una única superficie natural ↔ Meaning; evaluador que grounda contra la gramática viva acotada por la proyección; operaciones abiertas; una puerta por backend; ledger transversal.
+    desc: Un SHRDLU montado sobre el mundo tal como los dos stores lo reparten. Sustantivos en sldb (documentos, modelos, recetas, el léxico mismo). Verbos en kgdb (acciones, transiciones, relaciones). Pron no tiene operaciones — las lee del grafo y las interpreta — y lo único que es código es un kernel de cuatro primitivas.
     category: pron · objetivo
     nav: Objetivo · componentes
     type: component
@@ -32,13 +32,15 @@ diagram_store:
     specs:
     - specs/target.components.yml
     notes:
-    - El vocabulario base no tiene palabras de dominio. Las de dominio (regla, paso, herramienta) se declaran por mundo como anchors.
-    - Un símbolo que no es anchor de la proyección vuelve como pregunta desde la superficie; nunca llega al evaluador.
-    - Un missing usa el bridge de embeddings para ofrecer cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
-    - El ledger guarda por movimiento la oración, su Meaning, los refs y los motivos. "¿Por qué?" lo lee. La traducción puede ser difusa porque el grounding es estricto.
+    - Los anchors son el léxico. Nombran cosas que ya existen en el mundo, por proyección, con un motivo. No declaran operaciones ni contienen semántica. Su kind se deriva de a qué apuntan — modelo = sustantivo, arista/transición/acción = verbo.
+    - Lo que un operador puede decir es lo que puede hacer. Una entidad del grafo sin anchor en tu proyección es invisible desde la superficie.
+    - La pregunta qué puedo hacer con un paso la responde el grafo — las aristas, transiciones y acciones incidentes a ese tipo — y el léxico lo traduce a palabras.
+    - La superficie traduce comparando la oración con los motivos del léxico (embeddings). Un missing ofrece cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
+    - Las recetas (contexto, seguridad) son documentos del mundo. El anchor solo las nombra.
+    - "El _dispatch con seis verbos fijos en Python es lo que desaparece: los verbos se declaran en kgdb."
   - id: target-turno
     title: Objetivo · un turno
-    desc: Desde que entra una oración hasta que sale una respuesta en natural, con las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
+    desc: Desde que entra una oración hasta que sale una respuesta en natural. La superficie compara la oración con los motivos del léxico; el evaluador resuelve el sustantivo en sldb y lee el verbo en kgdb; las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
     category: pron · objetivo
     nav: Objetivo · un turno
     type: sequence
@@ -48,9 +50,10 @@ diagram_store:
     - specs/target.turno.yml
     notes:
     - Los referentes (al usuario, ese, la anterior) se resuelven en el diálogo antes de groundear.
-    - Ambiguo abre una pendiente; la próxima oración entra como respuesta.
-    - Missing consulta embeddings para cercanos, registra el hueco y termina el turno.
-    - El proyector refresca solo después de una escritura.
+    - Sin palabra en la proyección, la oración vuelve desde la superficie sin llegar al evaluador.
+    - Leer el verbo en kgdb incluye si aplica a este sustantivo y si la transición es legal desde el estado actual.
+    - Ambiguo abre una pendiente; la próxima oración entra como respuesta. Missing consulta embeddings, registra el hueco y termina el turno.
+    - El kernel solo ejecuta primitivas; el proyector refresca solo después de una escritura.
   - id: target-dialogo
     title: Objetivo · el diálogo
     desc: El único estado propio de pron por sesión — si hay o no una pregunta pendiente — y sus cuatro salidas.

@@ -1,6 +1,6 @@
 # Arquitectura de pron
 
-Actual: derivado del código. Objetivo: el SHRDLU sobre un mundo declarado. La diferencia entre ambos es la lista de trabajo.
+Actual: derivado del código. Objetivo: el SHRDLU sobre el mundo — sustantivos en sldb, verbos en kgdb, el léxico como puente. La diferencia entre ambos es la lista de trabajo.
 
 ## Arquitectura actual
 
@@ -67,12 +67,14 @@ graph TD
 
 ## Objetivo · componentes
 
-Un SHRDLU sobre un mundo declarado. Quien habla es un solo actor externo; una única superficie natural ↔ Meaning; evaluador que grounda contra la gramática viva acotada por la proyección; operaciones abiertas; una puerta por backend; ledger transversal.
+Un SHRDLU montado sobre el mundo tal como los dos stores lo reparten. Sustantivos en sldb (documentos, modelos, recetas, el léxico mismo). Verbos en kgdb (acciones, transiciones, relaciones). Pron no tiene operaciones — las lee del grafo y las interpreta — y lo único que es código es un kernel de cuatro primitivas.
 
-- El vocabulario base no tiene palabras de dominio. Las de dominio (regla, paso, herramienta) se declaran por mundo como anchors.
-- Un símbolo que no es anchor de la proyección vuelve como pregunta desde la superficie; nunca llega al evaluador.
-- Un missing usa el bridge de embeddings para ofrecer cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
-- El ledger guarda por movimiento la oración, su Meaning, los refs y los motivos. "¿Por qué?" lo lee. La traducción puede ser difusa porque el grounding es estricto.
+- Los anchors son el léxico. Nombran cosas que ya existen en el mundo, por proyección, con un motivo. No declaran operaciones ni contienen semántica. Su kind se deriva de a qué apuntan — modelo = sustantivo, arista/transición/acción = verbo.
+- Lo que un operador puede decir es lo que puede hacer. Una entidad del grafo sin anchor en tu proyección es invisible desde la superficie.
+- La pregunta qué puedo hacer con un paso la responde el grafo — las aristas, transiciones y acciones incidentes a ese tipo — y el léxico lo traduce a palabras.
+- La superficie traduce comparando la oración con los motivos del léxico (embeddings). Un missing ofrece cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
+- Las recetas (contexto, seguridad) son documentos del mundo. El anchor solo las nombra.
+- El _dispatch con seis verbos fijos en Python es lo que desaparece: los verbos se declaran en kgdb.
 
 ```mermaid
 graph TD
@@ -80,51 +82,54 @@ graph TD
         hablante["Quien habla · persona, LLM u otro producto"]
     end
     subgraph capa0 ["Capa 0 · Mundo"]
-        mundo["Declaración del mundo · stores, modelos, anchors, proyecciones"]
+        mundo["Declaración del mundo · qué stores y grafo, qué léxico, qué proyecciones"]
     end
     subgraph capa1 ["Capa 1 · Superficie"]
         superficie["Superficie · natural → Meaning · Meaning → natural"]
     end
     subgraph capa2 ["Capa 2 · Meaning"]
-        gramatica["Gramática viva · anchors · qué hay · qué puedo hacer con X"]
-        proyeccion["Proyección · lo que esta sesión ve y puede"]
+        lexico["Léxico · anchors · palabra → entidad del mundo · motivo"]
+        proyeccion["Proyección · lo que esta sesión puede nombrar"]
         dialogo["Diálogo · pendiente y referentes (ese, la anterior)"]
-        evaluador["Evaluador · grounding · resolución · expansión · dispatch · traza"]
-        operaciones["Operaciones · leer / escribir / operar / declarar · abiertas"]
+        evaluador["Evaluador · grounding · resolución · interpreta verbos del grafo · traza"]
+        kernel["Kernel de primitivas · leer doc · escribir doc · recorrer arista · disparar transición"]
     end
     subgraph capa3 ["Capa 3 · Bridges"]
         bridge_sldb["Bridge sldb · documentos, campos, secciones"]
-        bridge_kgdb["Bridge kgdb · grafo, relaciones, estados"]
-        bridge_emb["Bridge embeddings · parecido a · cercanos"]
+        bridge_kgdb["Bridge kgdb · aristas, transiciones, estados"]
+        bridge_emb["Bridge embeddings · oración ↔ motivos · cercanos"]
         bridge_otros["Bridge lo-que-venga · SQL, APIs, ..."]
     end
     subgraph transversal ["Transversal"]
         proyector["Proyector · reindexa · reconstruye grafo · recalcula embeddings"]
         ledger["Ledger · oración + Meaning + refs + motivos + resultado · provenance"]
     end
-    subgraph backends ["Backends"]
-        sldb["sldb"]
-        kgdb["kgdb"]
+    subgraph backends ["Backends · el mundo"]
+        sldb["sldb · SUSTANTIVOS · documentos, modelos, recetas, el léxico mismo"]
+        kgdb["kgdb · VERBOS · acciones, transiciones, relaciones"]
         embeddings["embeddings"]
         otros["SQL · APIs · lo que venga"]
     end
-    mundo -->|"carga los anchors"| gramatica
+    mundo -->|"carga el léxico"| lexico
     mundo -->|"define"| proyeccion
     mundo -->|"qué puertas existen"| capa3
     hablante -->|"una oración"| superficie
     superficie -->|"referentes"| dialogo
-    superficie -->|"cada símbolo es anchor"| gramatica
-    proyeccion -->|"acota"| gramatica
+    superficie -->|"oración ↔ motivos del léxico"| bridge_emb
+    superficie -->|"cada palabra está en la proyección"| lexico
+    proyeccion -->|"acota"| lexico
+    lexico -->|"se carga de AnchorDocs"| bridge_sldb
     superficie -->|"un Meaning"| evaluador
-    evaluador -->|"grounds"| gramatica
-    evaluador -->|"pendiente si ambiguo"| dialogo
+    evaluador -->|"palabra → entidad"| lexico
+    evaluador -->|"el sustantivo · cascada"| bridge_sldb
+    evaluador -->|"el verbo · aplica a este sustantivo · transición legal"| bridge_kgdb
     evaluador -->|"missing → cercanos por similitud"| bridge_emb
-    evaluador -->|"dispatches"| operaciones
-    operaciones -->|"consulta / escribe"| bridge_sldb
-    operaciones -->|"relaciones / opera estados"| bridge_kgdb
-    operaciones -->|"parecido a"| bridge_emb
-    operaciones -->|"lo que declaren"| bridge_otros
-    operaciones -->|"refresca tras escribir"| proyector
+    evaluador -->|"pendiente si ambiguo"| dialogo
+    evaluador -->|"primitivas"| kernel
+    kernel -->|"leer / escribir documento"| bridge_sldb
+    kernel -->|"recorrer arista · disparar transición"| bridge_kgdb
+    kernel -->|"lo que declaren"| bridge_otros
+    kernel -->|"refresca tras escribir"| proyector
     proyector -->|"reindexa · reconstruye · recalcula"| capa3
     bridge_sldb -->|"serves"| sldb
     bridge_kgdb -->|"serves"| kgdb
@@ -138,33 +143,39 @@ graph TD
 
 ## Objetivo · un turno
 
-Desde que entra una oración hasta que sale una respuesta en natural, con las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
+Desde que entra una oración hasta que sale una respuesta en natural. La superficie compara la oración con los motivos del léxico; el evaluador resuelve el sustantivo en sldb y lee el verbo en kgdb; las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
 
 - Los referentes (al usuario, ese, la anterior) se resuelven en el diálogo antes de groundear.
-- Ambiguo abre una pendiente; la próxima oración entra como respuesta.
-- Missing consulta embeddings para cercanos, registra el hueco y termina el turno.
-- El proyector refresca solo después de una escritura.
+- Sin palabra en la proyección, la oración vuelve desde la superficie sin llegar al evaluador.
+- Leer el verbo en kgdb incluye si aplica a este sustantivo y si la transición es legal desde el estado actual.
+- Ambiguo abre una pendiente; la próxima oración entra como respuesta. Missing consulta embeddings, registra el hueco y termina el turno.
+- El kernel solo ejecuta primitivas; el proyector refresca solo después de una escritura.
 
 ```mermaid
 sequenceDiagram
     actor hablante
     participant superficie
     participant dialogo
-    participant gramatica
+    participant lexico
     participant evaluador
-    participant operaciones
-    participant bridge
+    participant kernel
+    participant sldb
+    participant kgdb
     participant embeddings
     participant proyector
     participant ledger
     hablante->>superficie: agrega cita al usuario a las 16:00
     superficie->>dialogo: ¿a quién refiere 'al usuario'?
     dialogo->>superficie: el usuario de esta sesión
-    superficie->>gramatica: ¿cada símbolo es anchor de la proyección?
-    gramatica->>superficie: [símbolo sin anchor] 'cita' no es anchor
-    superficie->>hablante: [símbolo sin anchor] no tengo 'cita' como palabra · sí tengo ...
+    superficie->>embeddings: oración ↔ motivos del léxico de esta proyección
+    embeddings->>superficie: palabras candidatas por similitud
+    superficie->>lexico: ¿cada palabra está en la proyección?
+    lexico->>superficie: [sin palabra] 'cita' no está en tu léxico
+    superficie->>hablante: [sin palabra] no tengo 'cita' · sí tengo ...
     superficie->>evaluador: Meaning
-    evaluador->>gramatica: groundar cada símbolo
+    evaluador->>lexico: cada palabra → su entidad del mundo
+    evaluador->>sldb: resolver el sustantivo · cascada
+    evaluador->>kgdb: leer el verbo · ¿aplica a este sustantivo? · ¿transición legal desde aquí?
     evaluador->>dialogo: [ambiguo] guardar candidatos y Meaning con hueco
     evaluador->>superficie: [ambiguo] ¿cuál?
     superficie->>hablante: [ambiguo] ¿cuál? A o B
@@ -172,10 +183,12 @@ sequenceDiagram
     evaluador->>ledger: [missing] registrar el hueco con motivo y cercanos
     evaluador->>superficie: [missing] no existe · cercanos · esto buscaba
     superficie->>hablante: [missing] no existe X · ¿querías Y o Z?
-    evaluador->>operaciones: [único] despachar
-    operaciones->>bridge: escribir
-    bridge->>operaciones: ok + refs
-    operaciones->>proyector: refrescar tras escribir
+    evaluador->>kernel: [único] escribir documento · disparar transición
+    kernel->>sldb: escribir el documento
+    sldb->>kernel: ok + refs
+    kernel->>kgdb: disparar la transición
+    kgdb->>kernel: nuevo estado
+    kernel->>proyector: refrescar tras escribir
     evaluador->>ledger: oración + Meaning + refs + motivos + resultado
     evaluador->>superficie: resultado + traza
     superficie->>hablante: Listo. Queda registrado.

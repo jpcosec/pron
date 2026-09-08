@@ -2,21 +2,26 @@ sequenceDiagram
     actor hablante
     participant superficie
     participant dialogo
-    participant gramatica
+    participant lexico
     participant evaluador
-    participant operaciones
-    participant bridge
+    participant kernel
+    participant sldb
+    participant kgdb
     participant embeddings
     participant proyector
     participant ledger
     hablante->>superficie: agrega cita al usuario a las 16:00
     superficie->>dialogo: ¿a quién refiere 'al usuario'?
     dialogo->>superficie: el usuario de esta sesión
-    superficie->>gramatica: ¿cada símbolo es anchor de la proyección?
-    gramatica->>superficie: [símbolo sin anchor] 'cita' no es anchor
-    superficie->>hablante: [símbolo sin anchor] no tengo 'cita' como palabra · sí tengo ...
+    superficie->>embeddings: oración ↔ motivos del léxico de esta proyección
+    embeddings->>superficie: palabras candidatas por similitud
+    superficie->>lexico: ¿cada palabra está en la proyección?
+    lexico->>superficie: [sin palabra] 'cita' no está en tu léxico
+    superficie->>hablante: [sin palabra] no tengo 'cita' · sí tengo ...
     superficie->>evaluador: Meaning
-    evaluador->>gramatica: groundar cada símbolo
+    evaluador->>lexico: cada palabra → su entidad del mundo
+    evaluador->>sldb: resolver el sustantivo · cascada
+    evaluador->>kgdb: leer el verbo · ¿aplica a este sustantivo? · ¿transición legal desde aquí?
     evaluador->>dialogo: [ambiguo] guardar candidatos y Meaning con hueco
     evaluador->>superficie: [ambiguo] ¿cuál?
     superficie->>hablante: [ambiguo] ¿cuál? A o B
@@ -24,10 +29,12 @@ sequenceDiagram
     evaluador->>ledger: [missing] registrar el hueco con motivo y cercanos
     evaluador->>superficie: [missing] no existe · cercanos · esto buscaba
     superficie->>hablante: [missing] no existe X · ¿querías Y o Z?
-    evaluador->>operaciones: [único] despachar
-    operaciones->>bridge: escribir
-    bridge->>operaciones: ok + refs
-    operaciones->>proyector: refrescar tras escribir
+    evaluador->>kernel: [único] escribir documento · disparar transición
+    kernel->>sldb: escribir el documento
+    sldb->>kernel: ok + refs
+    kernel->>kgdb: disparar la transición
+    kgdb->>kernel: nuevo estado
+    kernel->>proyector: refrescar tras escribir
     evaluador->>ledger: oración + Meaning + refs + motivos + resultado
     evaluador->>superficie: resultado + traza
     superficie->>hablante: Listo. Queda registrado.
