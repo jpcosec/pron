@@ -71,7 +71,9 @@ El refresh (04) corre tres cosas:
 2. `sldb stores semantic-export`: cada documento trackeado, incluidos los `RelationDoc` y `RelationTypeDoc`, sale como entrada con id, modelo, tags y hashes.
 3. `kgdb ingest`: **un solo comando** que construye el snapshot con:
    - un nodo `sldb://document/Modelo:nombre` por documento de contenido, con `node_type` = el modelo, sus tags y sus secciones, como hoy;
-   - un nodo `sldb://relation_type/<name>` por `RelationTypeDoc`, con `source_types`, `target_types`, cardinalidad y eje, para que el grafo se describa a sí mismo;
+   - un nodo `sldb://relation_type/<name>` por `RelationTypeDoc`, con `source_types`, `target_types`, cardinalidad y eje, y **aristas `applies_to_source` y `applies_to_target`** desde ese nodo a cada `sldb://model/<M>` que nombra: así los verbos de una clase son sus aristas entrantes;
+   - un nodo `sldb://field/<M>.<f>` por campo de cada modelo, con tipo y descripción, y una arista `has_field` desde el modelo; una arista `extends` de cada modelo a sus `base_models`;
+   - un nodo `sldb://anchor/<symbol>` por `AnchorDoc` y una arista `names` a lo que su `ref` nombra (modelo, campo, tipo de relación; un `compose`, una por paso). Con esto el grafo contesta "¿qué puedo hacer con una reserva?" con `edges_to(sldb://model/Reservation)` filtrado por `applies_to_*` y `names`, más las aristas de sus ancestros por `extends`, sin que nadie registre verbos por sustantivo;
    - **una arista por `RelationDoc`**, colgada del nodo origen: `relation_type`, y en `metadata` el id del `RelationDoc`, la condición y `origin: relation_doc`. El `RelationDoc` no es nodo;
    - una arista por link con predicado en prosa, con `origin: link`, documento y sección de donde salió;
    - los documentos con tag `type.pron.move` excluidos;

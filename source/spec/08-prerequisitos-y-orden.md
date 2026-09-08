@@ -21,7 +21,8 @@ Pendiente, no bloqueante: toda lectura por dirección carga el store entero ante
 El `kgdb ingest` unificado que pide 10 §2.3, en un solo comando sobre el `semantic-export`:
 
 - nodos `sldb://document/Modelo:nombre` por documento de contenido, como hoy;
-- nodos `sldb://relation_type/<name>` por `RelationTypeDoc`;
+- nodos `sldb://relation_type/<name>` por `RelationTypeDoc`, con aristas `applies_to_source` y `applies_to_target` hacia los nodos modelo que nombran;
+- nodos `sldb://field/<M>.<f>` con tipo y descripción y aristas `has_field`; aristas `extends` por `base_models`; nodos `sldb://anchor/<symbol>` con aristas `names` hacia lo que el `ref` nombra (10 §2.3);
 - una arista por `RelationDoc`, colgada del origen, con `metadata: {relation_doc, condition, origin: relation_doc}`; el `RelationDoc` no es nodo. Los ids `Modelo:nombre` del documento se mapean a `sldb://document/…`. Hoy `assemble_authored_graph` compara ids desnudos de `serve /graph`; hay que alinearlo con los ids del export;
 - una arista por link con predicado en prosa, con `origin: link` y la sección de origen; sldb ya los recupera con `docs recover`, falta que el export los lleve;
 - exclusión de los documentos con tag `type.pron.move` (el ledger, 07), o una lista de tags a excluir;

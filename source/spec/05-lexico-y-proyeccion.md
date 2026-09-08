@@ -18,6 +18,10 @@ Las descripciones obligatorias de los campos son el motivo de cada palabra: lo q
 
 Los **valores** también son léxico cuando el campo los acota: los miembros de un `Literal` o `Enum`, y los valores ya usados de campos como `system` y de `tags`. Por eso "de pron" en "los átomos de pron" es un predicado `system = "pron"` y no un nombre propio (02). Los valores libres de texto no entran al léxico.
 
+## De dónde se lee el léxico
+
+Las fuentes de arriba son documentos y esquemas de sldb, y el ingest de kgdb las materializa como aristas: `has_field`, `extends`, `applies_to_source`, `applies_to_target`, `names` (10 §2.3). Con el grafo fresco, el léxico de una clase es una sola consulta, sus aristas entrantes y las de sus ancestros; sin grafo o con grafo viejo, pron lo deriva desde sldb con las consultas de la tabla, y la traza lo dice. Nunca se registra un verbo por sustantivo: la pregunta "¿qué puedo hacer con X?" se contesta recorriendo, no leyendo una lista.
+
 ## Anchors: la forma en lengua natural
 
 Un `AnchorDoc` es un alias. Su contrato:
