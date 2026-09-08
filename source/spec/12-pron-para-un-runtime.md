@@ -42,7 +42,9 @@ Las dos devuelven lo mismo y la sesión se usa igual. Un runtime que quiere las 
 | `read_only` | la proyección sin acciones y toda relación en modo `read`: nada dicho en esta sesión escribe, permita lo que permita la proyección (01, 05) | el runtime |
 | `embedder` | el puerto de embeddings (11 §2); solo en proceso | el runtime |
 
-`session.turn(sentence) -> Response`. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Un runtime que quiere que dos ejecuciones no se contesten la pregunta entre sí abre una sesión por ejecución. Las sesiones no son seguras entre hilos; una sesión, un hilo.
+`session.turn(sentence) -> Response`. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Las sesiones no son seguras entre hilos; una sesión, un hilo.
+
+**Identidad de una sesión remota.** El servidor guarda una sesión por la tupla `(projection, speaker, read_only, speaker_address, now)`. Dos `RemoteSession` que envían los mismos cinco valores comparten el mismo diálogo, aunque sean dos objetos o dos procesos: uno pregunta, el otro puede contestar. Un valor distinto en cualquiera de los cinco es otra sesión. Para que dos ejecuciones no se contesten entre sí, el hablante lleva la ejecución (`agent.zero/run-1`). `RemoteSession.close()` descarta el diálogo en el servidor; el turno siguiente empieza de cero con la misma clave. En proceso no hay clave: cada `Session` es su propio diálogo.
 
 Lo que la sesión no hace: no autentica, no autoriza más allá de la proyección, no decide qué hacer con una respuesta.
 
@@ -63,33 +65,60 @@ Qué significa cada `outcome` para un runtime:
 - `unico`: la oración se resolvió y, si escribía, escribió. `record["writes"]` lista cada escritura con `address`, `field`, `before`, `after`, `done`. Una lectura tiene `writes` vacío.
 - `ambiguo`: pron preguntó y la sesión quedó pendiente. La siguiente oración de la misma sesión se prueba primero como respuesta (un número, un nombre, "none"). Es una respuesta legítima, no un error: el runtime debe mostrar `text` y dejar que el hablante conteste.
 - `missing`: una palabra o un valor no existe en la proyección, o un nombre propio no dio nada. El turno terminó; `text` trae cercanos si los hay. Un fragmento que calce con el hueco en la oración siguiente se lee como corrección (06).
-- `error`: el mundo rechazó la oración: una transición ilegal, una condición que no se cumple, un documento que cambió entre leer y escribir, un permiso. Nada se escribió salvo lo que `record["writes"]` diga con `done: true`, y con la prevalidación de 11 §7 eso es nada en un movimiento con varias escrituras.
+- `error`: el mundo rechazó la oración: una transición ilegal, una condición que no se cumple, un documento que cambió entre leer y escribir, un permiso. Lo que la prevalidación de 11 §7 detecta falla antes de tocar nada; lo que falla después (disco, un escritor concurrente) puede dejar escrituras hechas. Por eso `record["writes"]` es la verdad: cada entrada dice `done: true` o `false`, y un runtime que quiere revertir lo hecho dice `undo` (04, 11 §7).
 
-Un runtime que necesita saber si un turno escribió mira `record["writes"]`, no `outcome`.
+Un runtime mira `record["writes"]` para saber qué escribió un turno, no `outcome`. Y distingue dos cosas que no son una `Response`: en proceso, `turn` solo atrapa `StoreError`; otra excepción es un defecto y sube. Por socket, `ConnectionError` es que nadie escucha, `RuntimeError` es que el servidor rechazó la petición (una operación desconocida, un modelo fuera de la proyección, un fallo interno) y su mensaje lo dice; ninguna de las dos es un `outcome == "error"`, que siempre viene dentro de una `Response` con su `MoveDoc`.
 
 ## 4. Documentos por dirección
 
 Cuando el runtime ya sabe qué documento quiere, no necesita una oración:
 
-- en proceso, `world.store.payload(model, name) -> dict`, una copia del payload extraído por sldb; `StoreError` si no existe;
-- por socket, `RemoteSession.payload(model, name)`, lo mismo.
+- en proceso, `world.store.payload(model, name) -> dict`, una copia del payload extraído por sldb; `StoreError` si no existe. **No pasa por ninguna proyección**: lee del store lo que se le pida. El runtime autoriza la referencia antes de leerla.
+- por socket, `RemoteSession.payload(model, name)`, lo mismo, salvo que el modelo tiene que estar en la proyección de la sesión: fuera de ella el servidor rechaza (`RuntimeError`, "not in projection"). `all` sin `models` declarados cubre todo modelo del mundo salvo los internos de pron.
 
 `world.store` es la puerta a sldb entera (`find(scope, where)`, `list`, `get`, `glob`, `schema`, `matches`, y las escrituras `create`, `update_field`, `append`, `remove_field`, `clean`, `untrack`), pero un runtime que escribe por ahí está escribiendo por debajo de pron: sin verificación de verbos, sin prevalidación, sin `MoveDoc`. Es legítimo para un editor; no para un agente que quiere que sus cambios queden registrados como movimientos.
 
-## 5. El mundo
+Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero cada turno sigue dejando su `MoveDoc` en `ledger/` (07): el ledger no es el dominio, y una sesión de solo lectura también deja rastro.
+
+## 5. El mundo y el grafo
 
 `World(root, pythonpath)`:
 
-| método | qué da |
-|---|---|
-| `model_names()`, `family_of(name)`, `relation_types()` | qué declara el mundo |
-| `projection(name)` | el payload de un `ProjectionDoc`, o `all` sintetizada |
-| `hash_mundo()` | la huella de lo que el léxico y el grafo dependen (11 §5); cambia con cualquier escritura fuera del ledger |
-| `graph_is_fresh()`, `refresh()`, `refresh_if_stale()` | si el grafo tipado corresponde al store; reconstruirlo (siempre, o solo si no corresponde) |
-| `graph` | el grafo tipado leído de `.pron/graph.nx.json`, sin networkx: `edges_from`, `edges_to`, `targets`, `sources`, `nodes_of_type`, `roots`, `children`, `parent`, `descendants`, `neighbors_via`, todo por nombre de relación |
-| `derived_dir` | `.pron/`, fuera de git, para lo que el runtime derive |
+| método | firma | qué da |
+|---|---|---|
+| `model_names()` | `-> list[str]` | los modelos registrados |
+| `family_of(name)` | `-> list[str]` | el modelo y sus bases, el más cercano primero |
+| `relation_types()` | `-> dict[str, dict]` | los `RelationTypeDoc` por `name`, con `source_types`, `target_types`, `cardinality`, `condition`, `axis`, `description` |
+| `projection(name="all")` | `-> dict` | el payload de un `ProjectionDoc`, o `all` sintetizada |
+| `hash_mundo()` | `-> str` | la huella de lo que el léxico y el grafo dependen (11 §5); cambia con cualquier escritura fuera del ledger |
+| `model_hashes()` | `-> dict[str, str]` | modelo → `hash_b` |
+| `graph_is_fresh()` | `-> bool` | si el grafo tipado corresponde a los `hash_b` actuales |
+| `refresh()`, `refresh_if_stale()` | `-> dict`, `-> bool` | reconstruir el grafo (siempre; solo si no corresponde). Importan kgdb y networkx; nada más lo hace |
+| `derived_dir` | `Path` | `.pron/`, fuera de git, para lo que el runtime derive |
 
-`refresh()` importa kgdb y networkx; nada más lo hace. Un runtime que solo lee nunca los paga.
+**Identificadores de nodo.** El grafo usa los ids de la exportación de sldb, y `pron.graph` da las funciones que los arman: `doc_id("Reservation:reservation-x") == "sldb://document/Reservation:reservation-x"`, `model_id("Reservation") == "sldb://model/Reservation"`, `relation_type_id("booked_by") == "sldb://relation_type/booked_by"`, `field_id("Reservation", "status") == "sldb://field/Reservation.status"`. Un `export_id` es `Modelo:nombre`. Todo método del grafo recibe y devuelve estos ids completos.
+
+**`World.graph` (`Graph`)**, leído de `.pron/graph.nx.json` sin networkx. Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que kgdb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
+
+| método | firma | devuelve |
+|---|---|---|
+| `available()` | `-> bool` | si hay archivo de grafo |
+| `built_from()` | `-> dict[str, str]` | modelo → `hash_b` con que se construyó |
+| `has_node(node_id)` | `-> bool` | |
+| `node(node_id)` | `-> dict` | el nodo como kgdb lo exportó (`identity`, `schema`…), `{}` si no existe |
+| `node_type(node_id)` | `-> str \| None` | `identity.node_type`; para un documento, su modelo |
+| `nodes_of_type(node_type)` | `-> list[str]` | ids, ordenados |
+| `edges_from(node_id, relation=None)`, `edges_to(node_id, relation=None)` | `-> list[dict]` | aristas salientes / entrantes, filtradas por relación si se da |
+| `exists(source, target, relation)` | `-> dict \| None` | la arista, o nada |
+| `targets(node_id, relation)`, `sources(node_id, relation)` | `-> list[str]` | ids únicos, ordenados |
+| `roots(node_type, relation)` | `-> list[str]` | nodos del tipo sin arista saliente de esa relación |
+| `children(node_id, relation="semantic_parent")`, `parent(node_id, relation="semantic_parent")` | `-> list[str]`, `-> str \| None` | los que apuntan a `node_id`; el primero al que `node_id` apunta |
+| `descendants(node_id, relation="semantic_parent", depth=None)` | `-> list[str]` | alcanzables siguiendo la relación hacia atrás, sin `node_id` |
+| `neighbors_via(node_id, out_relation, in_relation=None, exclude_prefixes=(), same_kind=True)` | `-> list[str]` | los que comparten un destino de `out_relation` con `node_id` |
+
+Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametriza por nombre de relación. Las estructurales de kgdb (`semantic_parent`, `tagged_as`, `has_document`, `has_model`, …) son argumentos como cualquier otro.
+
+**Por socket**, `RemoteSession.world` y `RemoteSession.graph` exponen los mismos métodos con los mismos nombres y resultados, con argumentos por nombre: `session.graph.targets(node_id=..., relation=...)`, `session.world.relation_types()`. Un método fuera de la lista es `RuntimeError`. `refresh` es una operación aparte del socket, no un método de `world`.
 
 ## 6. Permisos: lo que pron decide y lo que no
 
@@ -101,13 +130,13 @@ pron no decide quién es el hablante ni qué proyección le toca. Eso lo elige e
 
 `pron serve --world <root>` escucha en `socket_path(root)`: `<root>/.pron/serve.sock`, o una ruta corta en el directorio temporal, nombrada por un hash de `root`, cuando la del mundo excede el límite de un socket Unix. Servidor y clientes calculan la misma ruta con la misma función.
 
-Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `payload`, `lexicon`, `state`, `refresh`, `ping`, `stop`. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
+Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `payload`, `lexicon`, `state`, `close` (descartar el diálogo de esa clave), `graph` y `world` (`method` de la lista de §5 más `args` por nombre), `refresh`, `ping`, `stop`. Las que hablan de una sesión llevan los cinco parámetros de §2. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
 
 El servidor atiende de a una petición. No autentica: habla como el hablante que el cliente dice ser. Quién puede tocar el socket es del sistema de archivos y del runtime.
 
 ## 8. Qué es estable
 
-Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, `world.store.payload`, los métodos de `World` y `Graph` listados, las funciones de `pron.client`, las operaciones del socket y `socket_path`.
+Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las cuatro funciones de id de `pron.graph`, las funciones y clases de `pron.client`, las operaciones del socket y `socket_path`.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 

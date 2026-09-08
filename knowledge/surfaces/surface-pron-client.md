@@ -31,3 +31,5 @@ socket_path
 request
 alive
 RemoteSession
+RemoteGraph
+RemoteWorld

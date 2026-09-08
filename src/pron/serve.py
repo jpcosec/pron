@@ -23,6 +23,26 @@ from pron.session import Session
 from pron.world import World
 
 
+GRAPH_METHODS = ("has_node", "node", "node_type", "edges_from", "edges_to", "exists", "nodes_of_type", "targets", "sources",
+                 "roots", "children", "parent", "descendants", "neighbors_via", "built_from", "available")
+WORLD_METHODS = ("model_names", "family_of", "relation_types", "projection", "hash_mundo", "model_hashes", "graph_is_fresh")
+
+
+def _key(req: dict[str, Any]) -> tuple:
+    return (req.get("projection", "all"), req.get("speaker", ""), bool(req.get("read_only", False)), req.get("speaker_address"), req.get("now"))
+
+
+def _call(target: Any, allowed: tuple[str, ...], req: dict[str, Any]) -> Any:
+    """One method of the world or the graph, by name, from the allowed list, with json args."""
+    method = req.get("method", "")
+    if method not in allowed:
+        raise ValueError(f"unknown method {method!r}; one of {', '.join(allowed)}")
+    args = req.get("args") or {}
+    if "exclude_prefixes" in args:
+        args["exclude_prefixes"] = tuple(args["exclude_prefixes"])
+    return getattr(target, method)(**args)
+
+
 class Server:
     def __init__(self, root: str | Path, pythonpath: str | None = None, sock: str | Path | None = None):
         self.world = World(root, pythonpath)
@@ -46,7 +66,14 @@ class Server:
             r = self._session(req).turn(req["sentence"])
             return {"ok": True, "text": r.text, "outcome": r.outcome, "move": r.move_id, "trace": r.trace, "record": r.record}
         if op == "payload":
+            self._in_projection(req, req["model"])
             return {"ok": True, "payload": self.world.store.payload(req["model"], req["doc"])}
+        if op == "graph":
+            return {"ok": True, "result": _call(self.world.graph, GRAPH_METHODS, req)}
+        if op == "world":
+            return {"ok": True, "result": _call(self.world, WORLD_METHODS, req)}
+        if op == "close":
+            return {"ok": True, "closed": self.sessions.pop(_key(req), None) is not None}
         if op == "lexicon":
             return {"ok": True, "rows": self._session(req).lex.table(req.get("model"))}
         if op == "state":
@@ -60,10 +87,22 @@ class Server:
         return {"ok": False, "error": f"unknown op {op!r}"}
 
     def _session(self, req: dict[str, Any]) -> Session:
-        key = (req.get("projection", "all"), req.get("speaker", ""), bool(req.get("read_only", False)))
+        """One session per (projection, speaker, read_only, speaker_address, now): two clients
+        that send the same five share one dialogue; a different value in any of them is
+        another session."""
+        key = _key(req)
         if key not in self.sessions:
-            self.sessions[key] = Session(self.world, projection=key[0], speaker=key[1], speaker_address=req.get("speaker_address"), now=req.get("now"), read_only=key[2])
+            self.sessions[key] = Session(self.world, projection=key[0], speaker=key[1], speaker_address=key[3], now=key[4], read_only=key[2])
         return self.sessions[key]
+
+    def _in_projection(self, req: dict[str, Any], model: str) -> None:
+        """A payload read names a projection or none; with one, the model must be in it (01)."""
+        name = req.get("projection")
+        if not name:
+            return
+        from pron.lexicon import projection_models
+        if model not in projection_models(self.world, self.world.projection(name)):
+            raise PermissionError(f"{model} is not in projection {name!r}")
 
     def serve_forever(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)

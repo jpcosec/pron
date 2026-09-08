@@ -84,4 +84,46 @@ class RemoteSession:
         return self._ask("state")
 
     def payload(self, model: str, doc: str) -> dict[str, Any]:
+        """A document by address, refused when its model is outside this session's projection."""
         return dict(self._ask("payload", model=model, doc=doc)["payload"])
+
+    def close(self) -> bool:
+        """Drop this dialogue in the server; the next turn starts a fresh one."""
+        return bool(self._ask("close")["closed"])
+
+    @property
+    def graph(self) -> "RemoteGraph":
+        return RemoteGraph(self.path)
+
+    @property
+    def world(self) -> "RemoteWorld":
+        return RemoteWorld(self.path)
+
+
+class _Remote:
+    """Methods of the server's World or Graph, by name, over the socket (spec 12 §5, §7)."""
+
+    op = ""
+
+    def __init__(self, path: str | Path):
+        self.path = Path(path)
+
+    def call(self, method: str, **args: Any) -> Any:
+        return request(self.path, {"op": self.op, "method": method, "args": args})["result"]
+
+    def __getattr__(self, method: str) -> Any:
+        if method.startswith("_"):
+            raise AttributeError(method)
+        return lambda **args: self.call(method, **args)
+
+
+class RemoteGraph(_Remote):
+    """The Graph methods of spec 12 §5 (`edges_from(node_id=...)`, `targets(node_id=..., relation=...)`, ...), keyword arguments only."""
+
+    op = "graph"
+
+
+class RemoteWorld(_Remote):
+    """`model_names()`, `family_of(name=...)`, `relation_types()`, `projection(name=...)`, `hash_mundo()`, `model_hashes()`, `graph_is_fresh()`."""
+
+    op = "world"

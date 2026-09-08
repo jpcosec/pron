@@ -90,3 +90,38 @@ def test_socket_path_is_under_the_world_unless_too_long(world: World, tmp_path):
     assert socket_path(short) == short.resolve() / ".pron" / "serve.sock"
     deep = tmp_path / ("x" * 120) / "world"
     assert len(str(socket_path(deep))) < 60 and socket_path(deep).name.startswith("pron-")
+
+
+def test_the_session_key_is_the_five_parameters_and_close_starts_over(server: Server):
+    a = RemoteSession(server.path, projection="all", speaker="pair", now=NOW)
+    b = RemoteSession(server.path, projection="all", speaker="pair", now=NOW)          # same five: same dialogue
+    c = RemoteSession(server.path, projection="all", speaker="pair", now="2026-09-10")  # another now: another session
+    before = request(server.path, {"op": "ping"})["sessions"]
+    assert a.turn("the large table").outcome == "ambiguo"
+    assert b.turn("1").outcome == "unico"                        # b answered a's question
+    assert c.turn("1").outcome != "unico" or "table" not in c.turn("the clients").text   # c has no pending question
+    assert request(server.path, {"op": "ping"})["sessions"] == before + 2
+    assert a.turn("the large table").outcome == "ambiguo" and a.close() and a.turn("the clients").outcome == "unico"
+
+
+def test_payload_respects_the_session_projection(server: Server):
+    proj = dict(server.world.projection("all"), name="tables-only", models=["Table"])
+    server.world.store.create("ProjectionDoc", "projection-tables-only", proj, server.world.root / "knowledge" / "projections" / "tables-only.md")
+    s = RemoteSession(server.path, projection="tables-only", speaker="narrow", now=NOW)
+    assert s.payload("Table", "table-12")["number"] == 12
+    with pytest.raises(RuntimeError, match="not in projection"):
+        s.payload("Client", "client-luis-soto")
+
+
+def test_graph_and_world_navigation_over_the_socket(server: Server):
+    from pron.graph import doc_id
+    s = RemoteSession(server.path, projection="all", speaker="nav", now=NOW)
+    assert "Reservation" in s.world.model_names()
+    assert "booked_by" in s.world.relation_types()
+    res = doc_id("Reservation:reservation-2026-09-11-luis-soto")
+    assert s.graph.targets(node_id=res, relation="booked_by") == [doc_id("Client:client-luis-soto")]
+    edges = s.graph.edges_from(node_id=res, relation="assigned_to")
+    assert edges and set(edges[0]) == {"source", "target", "relation", "metadata"}
+    assert res in s.graph.nodes_of_type(node_type="Reservation")
+    with pytest.raises(RuntimeError, match="unknown method"):
+        s.graph.call("load")
