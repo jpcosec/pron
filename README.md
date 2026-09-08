@@ -62,7 +62,7 @@ Los átomos de v1 se quedan en la rama `v1-code-and-kb`, como material históric
 
 ## Depende de
 
-- [sldb](https://github.com/jpcosec/hum-ecosystem) con el surface de direcciones y el `hash_b` móvil (commits `e7a2c0c`, `cf0073d`).
+- [sldb](https://github.com/jpcosec/hum-ecosystem) con el surface de direcciones, el `hash_b` móvil y las cachés de runtime (commits `e7a2c0c`, `cf0073d`, `1c39c2b`).
 - [kgdb](https://github.com/jpcosec/hum-ecosystem) con relaciones tipadas (`kgdb init`, `kgdb ingest --store`, commit `1247139`).
 
 ## Quién lo usa
