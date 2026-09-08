@@ -2,7 +2,8 @@
 id: cmd-pron-serve
 system: pron
 command_path: serve
-synopsis: Keep a world open and answer sentences over a Unix socket (spec 11 §8).
+synopsis: Keep one or more worlds open and answer sentences over a Unix socket (spec
+  11 §8, 12 §7).
 tags:
 - system:pron
 - domain:system_architecture
@@ -16,26 +17,32 @@ provenance: src/pron/cli/main.py:_cmd_serve
 
 ## Synopsis
 
-Keep a world open and answer sentences over a Unix socket (spec 11 §8).
+Keep one or more worlds open and answer sentences over a Unix socket (spec 11 §8, 12 §7).
 
 ## Purpose
 
-Keep a world open and answer sentences over a Unix socket (spec 11 §8).
+Keep one or more worlds open and answer sentences over a Unix socket (spec 11 §8, 12 §7).
 
 ## How It Works
 
-Imports, caches and sessions are paid once; `say`, `repl` and kinesis use the socket
-at <world>/.pron/serve.sock while it listens. Runs in the foreground until --stop is
-sent from another shell or the process is interrupted.
+Imports, caches and sessions are paid once; `say`, `repl` and runtimes use the socket
+while it listens. --world is repeatable, as PATH or NAME=PATH; the first is the default
+and its .pron/serve.sock is the daemon's socket unless --socket says otherwise; every
+other world gets a .pron/serve.sock pointing at it. A caller from another world may
+open only the projections a world exposes. Runs in the foreground until --stop is
+sent from another shell or the process is interrupted; --mount NAME=PATH adds a world
+to a running daemon.
 
 ## Arguments
 
---world | optional | World root (contains .sldb)
---pythonpath | optional | Project path where the world's models import from
---socket | optional | Socket path (default <world>/.pron/serve.sock)
+--world | required | World root, or NAME=PATH; repeatable, the first is the default
+--pythonpath | optional | Project path where the worlds' models import from
+--socket | optional | Socket path (default: the first world's .pron/serve.sock)
 --stop | optional | Stop the server listening at the socket
+--mount | optional | NAME=PATH to add a world to the running daemon
 
 ## Usage
 
-pron serve --world . [--pythonpath .] [--socket PATH]
+pron serve --world . [--world other=../other] [--pythonpath .] [--socket PATH]
+  pron serve --world . --mount other=../other
   pron serve --world . --stop

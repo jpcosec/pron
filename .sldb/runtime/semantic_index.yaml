@@ -148,6 +148,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -278,6 +279,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -598,6 +600,12 @@ documents:
     tags:
     - layer.topology
     - type.relation.instance
+  implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12.md
+    tags:
+    - layer.topology
+    - type.relation.instance
   anchor-chapter:
     model: AnchorDoc
     path: knowledge/anchors/chapter.md
@@ -718,17 +726,6 @@ documents:
     tags:
     - type.knowledge.spec
     - workspace.source.spec
-  cmd-pron-init:
-    model: CliCommandDoc
-    path: knowledge/commands/cmd-pron-init.md
-    tags:
-    - domain:system_architecture
-    - entity:cli_command
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.cli_command
-    - workspace.knowledge.commands
   cmd-pron-refresh:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-refresh.md
@@ -743,28 +740,6 @@ documents:
   cmd-pron-lexicon:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-lexicon.md
-    tags:
-    - domain:system_architecture
-    - entity:cli_command
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.cli_command
-    - workspace.knowledge.commands
-  cmd-pron-say:
-    model: CliCommandDoc
-    path: knowledge/commands/cmd-pron-say.md
-    tags:
-    - domain:system_architecture
-    - entity:cli_command
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.cli_command
-    - workspace.knowledge.commands
-  cmd-pron-repl:
-    model: CliCommandDoc
-    path: knowledge/commands/cmd-pron-repl.md
     tags:
     - domain:system_architecture
     - entity:cli_command
@@ -795,6 +770,39 @@ documents:
     - system:pron
     - type.knowledge.cli_command
     - workspace.knowledge.commands
+  cmd-pron-init:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-init.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-say:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-say.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-repl:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-repl.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
   cmd-pron-serve:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-serve.md
@@ -806,28 +814,6 @@ documents:
     - system:pron
     - type.knowledge.cli_command
     - workspace.knowledge.commands
-  surface-pron-world:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-world.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-  surface-pron-store:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-store.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-lexicon:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-lexicon.md
@@ -1015,17 +1001,6 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-serve:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-serve.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-graph:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-graph.md
@@ -1051,6 +1026,39 @@ documents:
   surface-pron-client:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-client.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-world:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-world.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-store:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-store.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-serve:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-serve.md
     tags:
     - domain:system_architecture
     - entity:module

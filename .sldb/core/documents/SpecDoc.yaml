@@ -1,8 +1,8 @@
 documents:
 - name: spec-01
   path: source/spec/01-mundo.md
-  hash_c: 2fe7f97350cf8d4c2daf6a4dd76e16cbf136cf0a92637aee56a072c5127da70f
-  hash_d: 36ff216b4daf4321a6120e6cf6f648282e76596f4ed8c59ee2d9b27271e37dae
+  hash_c: e81e14562158f14ee24b236fd329938ee9940ded39b3ffc16d13490799b4c954
+  hash_d: b6e80d844635fe6a3cf24eb1526e74ee0b5cb87bebcab510b684d4df6e95f8f1
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -43,8 +43,8 @@ documents:
   - workspace.source.spec
 - name: spec-07
   path: source/spec/07-ledger.md
-  hash_c: 20ca4375d5679c7c9b5c0c7f35dfdbd7b4b0d8e7bc0c59aa9bf792410f96100c
-  hash_d: 37988c4f57c9cc9e0940bfa6e1b503e085fe0a722aac1f5629650e2fe00e8a2d
+  hash_c: f067a6a049a4b1f6f2de675f8b890f9f4a4b0cbab19416a2e10e505c6b26e9ce
+  hash_d: 77ee0f14097e6968ae8d62bfc8f759bbf3b99a2d419d695fed045ae1831b34ab
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,8 +85,8 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: 00619d0af02fefc8db4cf6e9cff6799c44c9e2fe05a306cf7e0ca544d73e9eb5
-  hash_d: c23016318e18877a5bd1de444725831fe40133925fb0ac9f4939372e9974a3c4
+  hash_c: 4a8a19f2dba700c8269bc1595b01fe34eb36c1e10019a26b7eea055b82199579
+  hash_d: 24b2e0a9e7bbf1d745300bc35a29f328b04e49d84a42c5cf510bdcac1ca3263e
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

@@ -3,7 +3,7 @@ model_ref: sldb.models.knowledge_surface:CliCommandDoc
 path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
 documents_index: .sldb/core/documents/CliCommandDoc.yaml
 sections_index: .sldb/runtime/sections/CliCommandDoc.yaml
-hash_b: a8fa0726abf099bd02e68b5a6a4a93880e90975279f72b58c20eee7932d854d2
+hash_b: 49de1e7da823dc48360731ee25b6ca0aa614f7a09b3486c8c00cf0ead697e66a
 version: 1
 canonical: false
 family: null

@@ -20,6 +20,7 @@ class Resolution:
     queries: list[str] = field(default_factory=list)   # the exact calls, copyable
     candidates: list[str] = field(default_factory=list)
     note: str = ""
+    also_read: list[str] = field(default_factory=list)  # documents a complement resolved on the way (spec 07: reads)
 
     @property
     def cardinality(self) -> str:
@@ -54,8 +55,9 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
     queries: list[str] = []
     result: list[str] | None = None
     # complements: the edges of a relation to what "of X" names, crossed with the predicates (spec 02)
+    also_read: list[str] = []
     for comp in np.complements:
-        linked = _linked(np, comp, lex, queries)
+        linked = _linked(np, comp, lex, queries, also_read)
         if linked is None:
             if isinstance(comp, NounPhrase):
                 return Resolution(np, [], "missing", queries, note=f"no relation joins {np.model} and {comp.describe()}")
@@ -73,10 +75,12 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
     elif len(predicates) + len(np.complements) > 1:
         queries.append(f"∩ → {len(result)}")
     result = _normalize_addresses(result)
-    return _decide(np, result, queries, lex)
+    decided = _decide(np, result, queries, lex)
+    decided.also_read = also_read
+    return decided
 
 
-def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str]) -> list[str] | None:
+def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str], also_read: list[str]) -> list[str] | None:
     """The heads related to what the complement names: for each relation type between the head's
     family and another class, resolve the complement in that class and read the edges (kgdb, or
     the RelationDocs in sldb). None when no relation and class take the complement."""
@@ -101,6 +105,7 @@ def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str]) -> list
                 queries.extend("  " + q for q in inner.queries)
                 if inner.outcome != "unico" or not inner.addresses:
                     continue
+                also_read.extend(inner.addresses + inner.also_read)
                 heads: list[str] = []
                 for eid in inner.export_ids():
                     read = verbs.edges_to(eid, rel) if direction == "to" else verbs.edges_from(eid, rel)

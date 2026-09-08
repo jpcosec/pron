@@ -15,17 +15,20 @@ provenance: src/pron/serve.py
 
 ## Purpose
 
-Serve a world: one process keeps the world, its caches and its sessions open behind a
-Unix socket, and every local caller (the CLI, the REPL, kinesis) says its sentences
-through it instead of opening the world again (spec 11 §8).
+Serve worlds: one process keeps one or more worlds, their caches and their sessions open
+behind a Unix socket, and every local caller (the CLI, the REPL, an agent runtime) says its
+sentences through it instead of opening a world again (spec 11 §8, 12 §7).
 
 ## How It Works
 
 One request per connection, one JSON object per line. Requests are handled one at a
-time: a world has one writer, and a turn is short. The server speaks as whoever the
-client says it is; identity is the application's (spec 11 §6). The socket lives at
-<world>/.pron/serve.sock; a client that finds no listener there opens the world itself.
-The client side is pron.client, stdlib only.
+time: a world has one writer, and a turn is short. Each request names the world it
+speaks to and the caller's own world, `home`; a caller whose home is another world may
+open only the projections that world exposes, its interface lexicon, and nothing else
+(spec 12 §6): talking to another world is semantic, never access to its store. The
+server speaks as whoever the client says it is; identity is the application's (11 §6).
+Every mounted world gets `<world>/.pron/serve.sock` pointing at the daemon's socket, so a
+client that only knows the world finds the daemon. The client side is pron.client.
 
 ## Commands
 

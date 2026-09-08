@@ -18,12 +18,15 @@ def _cmd_init(args: argparse.Namespace) -> int:
     MoveDoc; with --knowledge also SpecDoc, the command and module docs, and the relation
     type implements, for pron's own knowledge base. Idempotent.
 
+    With --template DIR, the world is born with the words, projections and relation
+    types the template holds (anchors/, projections/, relations/types/, relations/).
+
     Usage:
-      pron init --world . [--pythonpath .] [--knowledge]
+      pron init --world . [--pythonpath .] [--knowledge] [--template DIR]
     """
     from pron.world import init_world
 
-    report = init_world(args.world, args.pythonpath, with_knowledge=args.knowledge)
+    report = init_world(args.world, args.pythonpath, with_knowledge=args.knowledge, template=args.template)
     print(json.dumps(report, indent=2))
     return 0
 
@@ -72,9 +75,9 @@ def _session_for(args: argparse.Namespace):
     (and --local was not asked), else opened here."""
     from pron.client import RemoteSession, alive, socket_path
 
-    sock = socket_path(args.world)
+    sock = Path(args.socket) if getattr(args, "socket", None) else socket_path(args.world)
     if not getattr(args, "local", False) and alive(sock):
-        return RemoteSession(sock, projection=args.projection, speaker=args.speaker, now=args.now)
+        return RemoteSession(sock, projection=args.projection, speaker=args.speaker, now=args.now, world=str(Path(args.world).resolve()), home=getattr(args, "home", None))
     from pron.session import Session
     from pron.world import World
 
@@ -115,27 +118,39 @@ def _cmd_repl(args: argparse.Namespace) -> int:
 
 
 def _cmd_serve(args: argparse.Namespace) -> int:
-    """Keep a world open and answer sentences over a Unix socket (spec 11 §8).
+    """Keep one or more worlds open and answer sentences over a Unix socket (spec 11 §8, 12 §7).
 
-    Imports, caches and sessions are paid once; `say`, `repl` and kinesis use the socket
-    at <world>/.pron/serve.sock while it listens. Runs in the foreground until --stop is
-    sent from another shell or the process is interrupted.
+    Imports, caches and sessions are paid once; `say`, `repl` and runtimes use the socket
+    while it listens. --world is repeatable, as PATH or NAME=PATH; the first is the default
+    and its .pron/serve.sock is the daemon's socket unless --socket says otherwise; every
+    other world gets a .pron/serve.sock pointing at it. A caller from another world may
+    open only the projections a world exposes. Runs in the foreground until --stop is
+    sent from another shell or the process is interrupted; --mount NAME=PATH adds a world
+    to a running daemon.
 
     Usage:
-      pron serve --world . [--pythonpath .] [--socket PATH]
+      pron serve --world . [--world other=../other] [--pythonpath .] [--socket PATH]
+      pron serve --world . --mount other=../other
       pron serve --world . --stop
     """
     from pron.client import alive, request, socket_path
 
-    sock = Path(args.socket) if args.socket else socket_path(args.world)
+    entries = []
+    for spec in args.world if isinstance(args.world, list) else [args.world]:
+        name, _, path = spec.partition("=") if "=" in spec and not Path(spec).exists() else ("", "", spec)
+        entries.append((name or Path(path).resolve().name, path, args.pythonpath))
+    sock = Path(args.socket) if args.socket else socket_path(entries[0][1])
     if args.stop:
         if not alive(sock):
             print(f"no server at {sock}"); return 1
         request(sock, {"op": "stop"}); print("stopped"); return 0
+    if args.mount:
+        name, _, path = args.mount.partition("=") if "=" in args.mount else (Path(args.mount).resolve().name, "", args.mount)
+        print(request(sock, {"op": "mount", "name": name, "root": str(Path(path).resolve()), "pythonpath": args.pythonpath})["world"]); return 0
     from pron.serve import Server
 
-    server = Server(args.world, args.pythonpath, sock)
-    print(f"pron serve · world {server.world.root} · socket {sock} · pid {os.getpid()}", flush=True)
+    server = Server(sock=sock, worlds=entries)
+    print(f"pron serve · worlds {', '.join(f'{n}={w.root}' for n, w in server.worlds.items())} · socket {sock} · pid {os.getpid()}", flush=True)
     server.serve_forever()
     return 0
 
@@ -183,16 +198,24 @@ def build_parser() -> argparse.ArgumentParser:
         sp.add_argument("--world", default=".", help="World root (contains .sldb)")
         sp.add_argument("--pythonpath", default=None, help="Project path where the world's models import from")
 
-    s = sub.add_parser("init", help="Make a store a pron world"); common(s); s.add_argument("--knowledge", action="store_true", help="Also what pron's own knowledge base needs"); s.set_defaults(fn=_cmd_init)
+    s = sub.add_parser("init", help="Make a store a pron world"); common(s); s.add_argument("--knowledge", action="store_true", help="Also what pron's own knowledge base needs"); s.add_argument("--template", default=None, help="World template directory: anchors/, projections/, relations/types/, relations/"); s.set_defaults(fn=_cmd_init)
     s = sub.add_parser("refresh", help="Rebuild indexes and the typed graph"); common(s); s.set_defaults(fn=_cmd_refresh)
     s = sub.add_parser("lexicon", help="List what this projection can say"); common(s)
     s.add_argument("model", nargs="?", default=None); s.add_argument("--projection", default="all"); s.add_argument("--json", action="store_true"); s.set_defaults(fn=_cmd_lexicon)
     s = sub.add_parser("say", help="Say one sentence"); common(s)
-    s.add_argument("sentence"); s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--trace", action="store_true"); s.add_argument("--local", action="store_true", help="Open the world here even if a server listens"); s.set_defaults(fn=_cmd_say)
+    def remote(sp):
+        sp.add_argument("--local", action="store_true", help="Open the world here even if a server listens")
+        sp.add_argument("--socket", default=None, help="The daemon's socket, when the world's .pron/serve.sock is not it")
+        sp.add_argument("--home", default=None, help="The caller's own world (name or path); another world opens only its exposed projections")
+
+    s.add_argument("sentence"); s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--trace", action="store_true"); remote(s); s.set_defaults(fn=_cmd_say)
     s = sub.add_parser("repl", help="Talk to a world"); common(s)
-    s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.add_argument("--local", action="store_true", help="Open the world here even if a server listens"); s.set_defaults(fn=_cmd_repl)
-    s = sub.add_parser("serve", help="Keep a world open behind a Unix socket"); common(s)
-    s.add_argument("--socket", default=None, help="Socket path (default <world>/.pron/serve.sock)"); s.add_argument("--stop", action="store_true", help="Stop the server listening at the socket"); s.set_defaults(fn=_cmd_serve)
+    s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); remote(s); s.set_defaults(fn=_cmd_repl)
+    s = sub.add_parser("serve", help="Keep worlds open behind a Unix socket")
+    s.add_argument("--world", action="append", required=True, help="World root, or NAME=PATH; repeatable, the first is the default")
+    s.add_argument("--pythonpath", default=None, help="Project path where the worlds' models import from")
+    s.add_argument("--socket", default=None, help="Socket path (default: the first world's .pron/serve.sock)"); s.add_argument("--stop", action="store_true", help="Stop the server listening at the socket")
+    s.add_argument("--mount", default=None, help="NAME=PATH to add a world to the running daemon"); s.set_defaults(fn=_cmd_serve)
     s = sub.add_parser("check", help="Run pron's lints"); common(s); s.set_defaults(fn=_cmd_check)
     s = sub.add_parser("docs", help="Regenerate pron's command docs"); common(s); s.add_argument("--check", action="store_true"); s.set_defaults(fn=_cmd_docs)
     return p

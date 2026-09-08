@@ -212,7 +212,25 @@ class Session:
         record["queries"].extend(res.queries)
         if res.note:
             trace.append(res.note)
+        self._note_reads(res.addresses + res.also_read, record)
         return res
+
+    def _note_reads(self, addresses: list[str], record: dict[str, Any]) -> None:
+        """Spec 07: every document a turn resolved, with the hash_c it had when read."""
+        reads = record.setdefault("reads", [])
+        seen = {r["address"] for r in reads}
+        for a in addresses:
+            eid = address_to_export_id(a)
+            if eid in seen or ":" not in eid:
+                continue
+            model, doc = eid.split(":", 1)
+            try:
+                reads.append({"address": eid, "hash_c": self.store_hash(model, doc)})
+            except StoreError:
+                continue
+
+    def store_hash(self, model: str, doc: str) -> str:
+        return self.world.store.hash_c(model, doc)
 
     def _plan_compose(self, part: Part, trace: list[str], record: dict[str, Any]) -> dict[str, Any] | Response:
         plan: dict[str, Any] = {"steps": []}
@@ -460,6 +478,7 @@ class Session:
         if asked_np is not None and part.leftovers:
             found = self._filter_by_leftovers(found, asked_np, part.leftovers, trace, record)
         addresses = [f"st.{{{e.split(':', 1)[0]}}}.{e.split(':', 1)[1]}" for e in dict.fromkeys(found)]
+        self._note_reads(addresses, record)
         model = asked_np.model if asked_np else None
         self.dialogue.remember(addresses, model)
         if not addresses:

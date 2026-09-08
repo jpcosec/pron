@@ -26,4 +26,5 @@ refreshes its derived graph. Nothing here is knowledge of any particular world.
 ## Commands
 
 World
+apply_template
 init_world

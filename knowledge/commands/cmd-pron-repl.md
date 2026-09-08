@@ -36,6 +36,8 @@ Through the running server when one listens; --local opens the world here.
 --speaker | optional | 
 --now | optional | 
 --local | optional | Open the world here even if a server listens
+--socket | optional | The daemon's socket, when the world's .pron/serve.sock is not it
+--home | optional | The caller's own world (name or path); another world opens only its exposed projections
 
 ## Usage
 

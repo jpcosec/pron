@@ -93,6 +93,44 @@ documents:
     level: 2
     line_start: 33
     line_end: 34
+  - path: 01-el-mundo/interfaz-entre-mundos
+    title: Interfaz entre mundos
+    breadcrumbs:
+    - 01 · El mundo
+    - Interfaz entre mundos
+    about:
+    - 01 · El mundo
+    - 01 el mundo
+    - Interfaz entre mundos
+    - interfaz entre mundos
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: interfaz-entre-mundos
+    level: 2
+    line_start: 51
+    line_end: 52
+  - path: 01-el-mundo/plantilla-de-un-mundo
+    title: Plantilla de un mundo
+    breadcrumbs:
+    - 01 · El mundo
+    - Plantilla de un mundo
+    about:
+    - 01 · El mundo
+    - 01 el mundo
+    - Plantilla de un mundo
+    - plantilla de un mundo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: plantilla-de-un-mundo
+    level: 2
+    line_start: 55
+    line_end: 56
   - path: 01-el-mundo/expansi-n-del-mundo
     title: Expansión del mundo
     breadcrumbs:
@@ -110,8 +148,8 @@ documents:
     - workspace.source.spec
     slug: expansi-n-del-mundo
     level: 2
-    line_start: 50
-    line_end: 51
+    line_start: 59
+    line_end: 60
   - path: 01-el-mundo/invariantes
     title: Invariantes
     breadcrumbs:
@@ -129,8 +167,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 54
-    line_end: 55
+    line_start: 63
+    line_end: 64
 - doc_name: spec-02
   sections:
   - path: 02-sustantivos
@@ -902,8 +940,8 @@ documents:
     - workspace.source.spec
     slug: frescura-tres-huellas-no-una
     level: 2
-    line_start: 17
-    line_end: 18
+    line_start: 19
+    line_end: 20
   - path: 07-ledger/orden-dentro-de-un-turno
     title: Orden dentro de un turno
     breadcrumbs:
@@ -921,8 +959,8 @@ documents:
     - workspace.source.spec
     slug: orden-dentro-de-un-turno
     level: 2
-    line_start: 31
-    line_end: 32
+    line_start: 33
+    line_end: 34
   - path: 07-ledger/c-mo-se-contesta-why
     title: Cómo se contesta "why?"
     breadcrumbs:
@@ -940,8 +978,8 @@ documents:
     - workspace.source.spec
     slug: c-mo-se-contesta-why
     level: 2
-    line_start: 41
-    line_end: 42
+    line_start: 43
+    line_end: 44
   - path: 07-ledger/provenance-de-lo-escrito
     title: Provenance de lo escrito
     breadcrumbs:
@@ -959,8 +997,8 @@ documents:
     - workspace.source.spec
     slug: provenance-de-lo-escrito
     level: 2
-    line_start: 50
-    line_end: 51
+    line_start: 52
+    line_end: 53
   - path: 07-ledger/invariantes
     title: Invariantes
     breadcrumbs:
@@ -978,8 +1016,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 54
-    line_end: 55
+    line_start: 56
+    line_end: 57
 - doc_name: spec-08
   sections:
   - path: 08-prerrequisitos-y-orden
@@ -2073,8 +2111,8 @@ documents:
     - workspace.source.spec
     slug: 3-la-respuesta
     level: 2
-    line_start: 51
-    line_end: 52
+    line_start: 53
+    line_end: 54
   - path: 12-pron-para-un-runtime-externo/4-documentos-por-direcci-n
     title: 4. Documentos por dirección
     breadcrumbs:
@@ -2092,8 +2130,8 @@ documents:
     - workspace.source.spec
     slug: 4-documentos-por-direcci-n
     level: 2
-    line_start: 72
-    line_end: 73
+    line_start: 74
+    line_end: 75
   - path: 12-pron-para-un-runtime-externo/5-el-mundo-y-el-grafo
     title: 5. El mundo y el grafo
     breadcrumbs:
@@ -2111,8 +2149,8 @@ documents:
     - workspace.source.spec
     slug: 5-el-mundo-y-el-grafo
     level: 2
-    line_start: 83
-    line_end: 84
+    line_start: 85
+    line_end: 86
   - path: 12-pron-para-un-runtime-externo/6-permisos-lo-que-pron-decide-y-lo-que-no
     title: '6. Permisos: lo que pron decide y lo que no'
     breadcrumbs:
@@ -2130,8 +2168,8 @@ documents:
     - workspace.source.spec
     slug: 6-permisos-lo-que-pron-decide-y-lo-que-no
     level: 2
-    line_start: 123
-    line_end: 124
+    line_start: 125
+    line_end: 126
   - path: 12-pron-para-un-runtime-externo/7-el-socket
     title: 7. El socket
     breadcrumbs:
@@ -2149,24 +2187,43 @@ documents:
     - workspace.source.spec
     slug: 7-el-socket
     level: 2
-    line_start: 129
-    line_end: 130
-  - path: 12-pron-para-un-runtime-externo/8-qu-es-estable
-    title: 8. Qué es estable
+    line_start: 133
+    line_end: 134
+  - path: 12-pron-para-un-runtime-externo/8-plantilla-de-mundo
+    title: 8. Plantilla de mundo
     breadcrumbs:
     - 12 · pron para un runtime externo
-    - 8. Qué es estable
+    - 8. Plantilla de mundo
     about:
     - 12 · pron para un runtime externo
     - 12 pron para un runtime externo
-    - 8. Qué es estable
-    - 8 qu es estable
+    - 8. Plantilla de mundo
+    - 8 plantilla de mundo
     - type.knowledge.spec
     - workspace.source.spec
     semantic_tags:
     - type.knowledge.spec
     - workspace.source.spec
-    slug: 8-qu-es-estable
+    slug: 8-plantilla-de-mundo
     level: 2
-    line_start: 137
-    line_end: 138
+    line_start: 141
+    line_end: 142
+  - path: 12-pron-para-un-runtime-externo/9-qu-es-estable
+    title: 9. Qué es estable
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 9. Qué es estable
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 9. Qué es estable
+    - 9 qu es estable
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 9-qu-es-estable
+    level: 2
+    line_start: 145
+    line_end: 146

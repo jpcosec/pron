@@ -14,6 +14,8 @@ Cada turno deja un movimiento con:
 
 El ledger es un documento del mundo, una instancia de `MoveDoc` por movimiento, trackeada en el store como cualquier otra. Así se consulta por dirección: "today's moves on the repl" es `st.{MoveDoc}` con un `--where`.
 
+El `record` guarda además **lo que el turno leyó**: `reads`, una entrada por documento que una frase nominal resolvió, incluidos los complementos ("of Luis Soto" lee al cliente) y los extremos de las aristas que una lectura devolvió, cada una con la dirección `Modelo:doc` y el `hash_c` que el documento tenía en ese momento. Es la revisión observada por lectura que un runtime necesita para saber sobre qué versión decidió (12 §3); no es una copia del documento.
+
 ## Frescura: tres huellas, no una
 
 Escribir un `MoveDoc` cambia el `hash_a` del store. Si el léxico y el grafo dependieran de `hash_a`, registrar una consulta los invalidaría. Por eso pron distingue:

@@ -28,8 +28,10 @@ pron refresh --world .                      # índices de sldb + grafo tipado de
 pron lexicon --world . [Model]              # qué se puede decir · los verbos de una clase
 pron say "the large tables on the terrace" --world . --trace
 pron repl --world . --speaker me
-pron serve --world .                        # mantiene el mundo abierto tras .pron/serve.sock; say, repl y kinesis lo usan
+pron serve --world . [--world otro=../otro]  # mantiene mundos abiertos tras .pron/serve.sock; say, repl y los runtimes lo usan
+pron serve --world . --mount tercero=../tercero   # agrega un mundo a un daemon corriendo
 pron serve --world . --stop
+pron init --world . --template DIR          # un mundo nuevo con las palabras, proyecciones y relaciones de la plantilla
 pron check --world .                        # los lints
 ```
 

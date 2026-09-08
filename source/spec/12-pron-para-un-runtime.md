@@ -41,6 +41,8 @@ Las dos devuelven lo mismo y la sesión se usa igual. Un runtime que quiere las 
 | `now` | fecha de la sesión para "Friday", "tomorrow" (11 §3) | el runtime; sin ella, el reloj |
 | `read_only` | la proyección sin acciones y toda relación en modo `read`: nada dicho en esta sesión escribe, permita lo que permita la proyección (01, 05) | el runtime |
 | `embedder` | el puerto de embeddings (11 §2); solo en proceso | el runtime |
+| `world` | a cuál de los mundos del daemon habla la sesión, por nombre o raíz; solo por socket, y por defecto el primero montado | el runtime |
+| `home` | el mundo propio del que habla; cuando difiere de `world`, solo abren las proyecciones expuestas de ese mundo (§6) | el runtime |
 
 `session.turn(sentence) -> Response`. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Las sesiones no son seguras entre hilos; una sesión, un hilo.
 
@@ -124,19 +126,25 @@ Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametri
 
 pron decide con la proyección: qué modelos se pueden nombrar, qué relaciones y en qué modo, qué verbos de acción. Una sesión `read_only` es esa misma proyección sin escritura. Lo que no está en la proyección no existe para la sesión: la oración vuelve con "I don't have that word" sin tocar sldb (01).
 
+**Entre mundos.** Un cliente cuyo `home` es otro mundo solo abre las proyecciones que el mundo destino marca `exposed: true` (01 §Interfaz entre mundos): su léxico de interfaz. Por ellas dice oraciones, pide el léxico y el estado, y nada más: `payload`, `graph`, `world` y `refresh` se rechazan (`RuntimeError`, "may only speak"). Hablarle a otro mundo es semántico; su store no se toca. Dentro de la proyección expuesta rigen las reglas de cualquier sesión, y el `MoveDoc` queda en el mundo destino con el hablante que el cliente declaró.
+
 pron no decide quién es el hablante ni qué proyección le toca. Eso lo elige el runtime al abrir la sesión, y el `MoveDoc` registra lo que el runtime dijo. Un runtime con permisos propios los aplica antes de abrir la sesión, y elige `read_only` para toda lectura, de modo que un permiso de lectura no pueda escribir aunque la proyección lo permita.
 
 ## 7. El socket
 
-`pron serve --world <root>` escucha en `socket_path(root)`: `<root>/.pron/serve.sock`, o una ruta corta en el directorio temporal, nombrada por un hash de `root`, cuando la del mundo excede el límite de un socket Unix. Servidor y clientes calculan la misma ruta con la misma función.
+`pron serve --world <root> [--world name=<root2> ...]` mantiene uno o más mundos; el primero es el de defecto y su socket es el del daemon; cada otro mundo montado recibe un `<root>/.pron/serve.sock` que apunta al daemon, así un cliente que solo conoce su mundo lo encuentra. `mount` agrega un mundo a un daemon corriendo; `worlds` los lista. Cada petición lleva `world` y `home` (§2). El daemon escucha en `socket_path(root)`: `<root>/.pron/serve.sock`, o una ruta corta en el directorio temporal, nombrada por un hash de `root`, cuando la del mundo excede el límite de un socket Unix. Servidor y clientes calculan la misma ruta con la misma función.
 
-Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `payload`, `lexicon`, `state`, `close` (descartar el diálogo de esa clave), `graph` y `world` (`method` de la lista de §5 más `args` por nombre), `refresh`, `ping`, `stop`. Las que hablan de una sesión llevan los cinco parámetros de §2. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
+Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `payload`, `lexicon`, `state`, `close` (descartar el diálogo de esa clave), `graph` y `world` (`method` de la lista de §5 más `args` por nombre), `refresh`, `ping`, `worlds`, `mount`, `stop`. Un cliente de otro mundo solo puede `say`, `lexicon`, `state`, `close`, `ping`, `worlds`. Las que hablan de una sesión llevan los cinco parámetros de §2. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
 
 El servidor atiende de a una petición. No autentica: habla como el hablante que el cliente dice ser. Quién puede tocar el socket es del sistema de archivos y del runtime.
 
-## 8. Qué es estable
+## 8. Plantilla de mundo
 
-Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las cuatro funciones de id de `pron.graph`, las funciones y clases de `pron.client`, las operaciones del socket y `socket_path`.
+Un runtime que crea muchos mundos de la misma clase les da su vocabulario con una plantilla (01 §Plantilla de un mundo): `init_world(root, pythonpath, template=DIR)` o `pron init --template DIR`; `apply_template(root, DIR)` sobre un mundo que ya existe. La plantilla trae los `AnchorDoc`, los `ProjectionDoc` (incluida la interfaz expuesta) y los `RelationTypeDoc` que la clase de nodo necesita. Es del runtime; pron la aplica y no la interpreta.
+
+## 9. Qué es estable
+
+Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las cuatro funciones de id de `pron.graph`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 

@@ -11,6 +11,8 @@ from types import SimpleNamespace
 from typing import Any
 
 from sldb.cli.commands.store_update import update_store
+from sldb.cli.model_utils import registered_model, resolve_model_ref
+from sldb.store.ops import track_document
 
 from pron.graph import GRAPH_RELPATH, Graph
 from pron.store import Store, StoreError
@@ -127,10 +129,47 @@ class World:
         return report
 
 
-def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: bool = False) -> dict[str, Any]:
+TEMPLATE_DIRS = {"anchors": ("AnchorDoc", "anchor-"), "projections": ("ProjectionDoc", "projection-"),
+                 "relations/types": ("RelationTypeDoc", "rt-"), "relations": ("RelationDoc", "")}
+
+
+def apply_template(root: str | Path, template: str | Path, pythonpath: str | None = None) -> list[str]:
+    """Copy a world template into a world and track its documents (spec 01 §Plantilla):
+    `anchors/*.md` as AnchorDoc, `projections/*.md` as ProjectionDoc, `relations/types/*.md`
+    as RelationTypeDoc, `relations/*.md` as RelationDoc, each under <root>/knowledge/.
+    A document whose name the world already has is left alone. Returns the export ids
+    added."""
+    import shutil
+
+    root = Path(root).resolve()
+    template = Path(template).resolve()
+    store = Store(root, pythonpath)
+    added: list[str] = []
+    for sub, (model, prefix) in TEMPLATE_DIRS.items():
+        src_dir = template / sub
+        if not src_dir.is_dir() or model not in store.model_names():
+            continue
+        for src in sorted(src_dir.glob("*.md")):
+            name = prefix + src.stem
+            if store.doc(model, name) is not None:
+                continue
+            dst = root / "knowledge" / sub / src.name
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, dst)
+            model_type, entry, idx = registered_model(store.sp, model, store.pythonpath)
+            track_document(store.sp, store.project_root, idx, model_type, entry, dst, name, resolve_model_ref, store.pythonpath)
+            store.invalidate()
+            added.append(f"{model}:{name}")
+    if added:
+        update_store(SimpleNamespace(store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False))
+    return added
+
+
+def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: bool = False, template: str | Path | None = None) -> dict[str, Any]:
     """Make a store a pron world: kgdb's typed relations plus pron's own models. With
     with_knowledge, also what pron's own knowledge base needs: SpecDoc and the relation
-    type `implements` (a module or command implements a spec chapter)."""
+    type `implements` (a module or command implements a spec chapter). With a template,
+    the world is born with the words, projections and relation types the template holds."""
     from kgdb.world import init_world as kgdb_init
 
     root = Path(root).resolve()
@@ -149,7 +188,8 @@ def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: 
     types_added = _knowledge_relation_types(store) if with_knowledge else []
     # a model registered without documents leaves its index hash behind until the next update
     update_store(SimpleNamespace(store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False))
-    return {"kgdb": kgdb_report.summary(), "pron_models_added": added, "relation_types_added": types_added}
+    from_template = apply_template(root, template, pythonpath) if template else []
+    return {"kgdb": kgdb_report.summary(), "pron_models_added": added, "relation_types_added": types_added, "template_added": from_template}
 
 
 KNOWLEDGE_RELATION_TYPES = [

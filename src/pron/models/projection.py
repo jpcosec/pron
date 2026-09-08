@@ -34,6 +34,7 @@ naming: ⸢rev•naming⸥
 display: ⸢rev•display⸥
 key: ⸢rev•key⸥
 matching: ⸢rev•matching⸥
+exposed: ⸢optrev•exposed⸥
 ---
 
 # ⸢render•name⸥
@@ -54,4 +55,5 @@ matching: ⸢rev•matching⸥
     display: dict[str, str] = Field(default_factory=dict, description="Per model, how an object is shown, e.g. 'table {number}'; {rel.field} follows an edge.")
     key: dict[str, str] = Field(default_factory=dict, description="Per model, the field that identifies an object by value, so 'table 12' is number = 12.")
     matching: dict[str, Any] = Field(default_factory=lambda: {"neighbors": 3, "threshold": 0.55}, description="Approximate matching: how many neighbors to offer and the minimum similarity.")
+    exposed: bool = Field(default=False, description="Whether sessions from other worlds may open this projection: the world's interface lexicon (spec 01, 12). Off, only the world's own clients can.")
     description: str = Field(default="", description="Who this projection is for and what it leaves out.")

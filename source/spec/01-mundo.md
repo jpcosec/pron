@@ -44,8 +44,17 @@ Una proyección es la parte de un mundo que una sesión puede nombrar. Se declar
 | `naming` | cómo se nombra un documento nuevo por modelo, por ejemplo `client-{name}`; sin regla, pron pide el nombre |
 | `display` | cómo se muestra un objeto por modelo, por ejemplo `Table: "table {number}"`; sin plantilla, `title` o el nombre del documento |
 | `key` | qué campo identifica un objeto por modelo, por ejemplo `Table: number`, para que "table 12" sea `number = 12` |
+| `exposed` | si sesiones de **otros mundos** pueden abrir esta proyección: es el léxico de interfaz del mundo (12 §6). Apagado, solo los clientes del mundo propio |
 
 Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "I don't have that word" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `read`. La aplicación puede pedir eso mismo por sesión sin declarar otra proyección: una sesión abierta como **solo lectura** usa la proyección con `actions` vacío y toda relación en modo `read`, y los alias de acción y los compuestos que crean o cambian no entran a su léxico.
+
+## Interfaz entre mundos
+
+Un mundo le habla a otro por su léxico, nunca por su store. El mundo que quiere ser hablado marca una proyección con `exposed: true`: esa es su interfaz, y lo que dice su `pron lexicon` es todo lo que un cliente de otro mundo puede decir. Un cliente de otro mundo abre sesiones solo sobre proyecciones expuestas, y por ellas solo dice oraciones: no lee documentos por dirección, no navega el grafo, no refresca. Dentro de la proyección expuesta rigen las mismas reglas que para cualquier sesión: modelos, relaciones con su modo, acciones. Un mundo sin proyección expuesta es mudo hacia afuera. Montar una interfaz "sobre la marcha" es crear o cambiar un `ProjectionDoc`, una escritura de sldb como cualquier otra (04); no hay que enlazar stores ni copiar documentos.
+
+## Plantilla de un mundo
+
+Un mundo nace sin palabras: sus modelos entran al léxico por su identificador y nada más. Una **plantilla** es un directorio con `anchors/`, `projections/`, `relations/types/` y `relations/`, cada archivo un documento renderizado de `AnchorDoc`, `ProjectionDoc`, `RelationTypeDoc` o `RelationDoc`; `pron init --template DIR` los copia bajo `knowledge/` del mundo nuevo y los trackea (`anchor-<archivo>`, `projection-<archivo>`, `rt-<archivo>`, `<archivo>`), sin tocar los que el mundo ya tenga. Así un runtime que crea muchos mundos de la misma clase les da a todos el mismo vocabulario, la misma interfaz y los mismos verbos desde el primer turno. La plantilla es del runtime; pron solo la aplica.
 
 ## Expansión del mundo
 

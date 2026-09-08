@@ -1,8 +1,7 @@
 """The only door to sldb: read by address (spec 02), write by address (spec 04), never open Markdown.
 
-Every method is a call into sldb's library. The address engine loads every document
-of the store before selecting (an sldb cost, not pron's), so the runtime documents
-are cached here and invalidated on every write.
+Every method is a call into sldb's library. sldb caches the runtime documents by the
+store's hash chain, so reading them here costs nothing and is never stale.
 """
 
 from __future__ import annotations
@@ -43,12 +42,12 @@ class Store:
     # -- reading ---------------------------------------------------------------
 
     def docs(self) -> list:
-        if self._docs is None:
-            self._docs = load_runtime_documents(self.sp, resolve_model_ref, self.pythonpath)
-        return self._docs
+        """The runtime documents, from sldb's cache: keyed on the store's hash chain and the
+        leaves' file state, so another process's write is seen on the next call."""
+        return load_runtime_documents(self.sp, resolve_model_ref, self.pythonpath)
 
     def invalidate(self) -> None:
-        self._docs = None
+        """Kept for callers; sldb's cache invalidates itself by the hash chain."""
 
     def docs_of(self, model: str) -> list:
         return [d for d in self.docs() if d.model_name == model]

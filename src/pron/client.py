@@ -66,9 +66,13 @@ class RemoteSession:
     Response, plus the lexicon, the dialogue state and documents by address."""
 
     def __init__(self, path: str | Path, projection: str = "all", speaker: str = "", speaker_address: str | None = None,
-                 now: str | None = None, read_only: bool = False):
+                 now: str | None = None, read_only: bool = False, world: str | Path | None = None, home: str | Path | None = None):
+        """world: which of the server's worlds to speak to (name or root; the server's default
+        when None). home: the caller's own world; when it differs from `world`, only that
+        world's exposed projections open (spec 12 §6)."""
         self.path = Path(path)
-        self.base = {"projection": projection, "speaker": speaker, "speaker_address": speaker_address, "now": now, "read_only": read_only}
+        self.base = {"projection": projection, "speaker": speaker, "speaker_address": speaker_address, "now": now, "read_only": read_only,
+                     "world": str(world) if world is not None else None, "home": str(home) if home is not None else None}
 
     def _ask(self, op: str, **fields: Any) -> dict[str, Any]:
         return request(self.path, {"op": op, **self.base, **fields})
@@ -93,11 +97,11 @@ class RemoteSession:
 
     @property
     def graph(self) -> "RemoteGraph":
-        return RemoteGraph(self.path)
+        return RemoteGraph(self.path, self.base)
 
     @property
     def world(self) -> "RemoteWorld":
-        return RemoteWorld(self.path)
+        return RemoteWorld(self.path, self.base)
 
 
 class _Remote:
@@ -105,11 +109,12 @@ class _Remote:
 
     op = ""
 
-    def __init__(self, path: str | Path):
+    def __init__(self, path: str | Path, base: dict[str, Any] | None = None):
         self.path = Path(path)
+        self.base = dict(base or {})
 
     def call(self, method: str, **args: Any) -> Any:
-        return request(self.path, {"op": self.op, "method": method, "args": args})["result"]
+        return request(self.path, {"op": self.op, **self.base, "method": method, "args": args})["result"]
 
     def __getattr__(self, method: str) -> Any:
         if method.startswith("_"):
