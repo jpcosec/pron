@@ -31,9 +31,18 @@ Y registra los modelos de relación de kgdb (`RelationTypeDoc`, `RelationDoc`) p
 
 ## Proyección
 
-Una proyección es la parte de un mundo que una sesión puede nombrar: un subconjunto de stores, de modelos, de tipos de relación y de alias. Se declara como documento del mundo (un `ProjectionDoc` con listas de nombres) y se elige al abrir la sesión. Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "no tengo esa palabra" sin llegar a sldb.
+Una proyección es la parte de un mundo que una sesión puede nombrar. Se declara como documento del mundo, un `ProjectionDoc`, y se elige al abrir la sesión:
 
-Distintos operadores tienen distintas proyecciones. Un operador que solo lee no tiene verbos de acción en su proyección.
+| campo | contenido |
+|---|---|
+| `stores` | qué stores del mundo entran (el local y cuáles de los enlazados) |
+| `models` | qué modelos se pueden nombrar; `{Modelo+}` incluye la familia |
+| `relations` | qué tipos de relación, cada uno con modo `leer` o `leer y afirmar` |
+| `actions` | qué verbos de acción del kernel están permitidos: crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar |
+| `aliases` | qué `AnchorDoc` entran |
+| `naming` | cómo se nombra un documento nuevo por modelo, por ejemplo `cliente-{nombre}`; sin regla, pron pide el nombre |
+
+Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "no tengo esa palabra" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `leer`.
 
 ## Expansión del mundo
 
@@ -42,5 +51,5 @@ Expandir el mundo es registrar un modelo, trackear documentos, declarar un `Rela
 ## Invariantes
 
 - El mundo se lee desde `store_index.yaml` y los índices del store, nunca desde un archivo de configuración propio de pron.
-- El `hash_a` del store es el token de frescura: una sesión que lo vio cambiar debe recargar léxico y proyección.
+- El `hash_mundo` (07) es el token de frescura: una sesión que lo vio cambiar debe recargar léxico y proyección.
 - Ningún modelo del mundo de pron vive fuera del repo de pron o de kgdb.

@@ -16,6 +16,9 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 06 | [Superficie y diálogo](06-superficie-y-dialogo.md) | la oración, sus tres salidas, la pendiente y los referentes |
 | 07 | [Ledger](07-ledger.md) | qué se registra y cómo se contesta "¿por qué?" |
 | 08 | [Prerrequisitos y orden](08-prerequisitos-y-orden.md) | qué falta en sldb y kgdb, en qué orden se construye, qué lints lo cuidan |
+| 09 | [Una conversación, paso a paso](09-una-conversacion.md) | ocho oraciones sobre un mundo externo (reservas de un restaurante): creación, asignación, transición con condición, ambigüedad, missing, "¿por qué?" |
+
+Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian.
 
 Las vistas spec2viz en [`views/spec2viz`](../../views/spec2viz) son la proyección gráfica de estos documentos. Cuando difieran, manda el spec.
 

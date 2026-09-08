@@ -20,7 +20,7 @@ Las direcciones y la gramática de predicados son las de sldb y se documentan al
 ## El determinante decide la cardinalidad
 
 - "el / la": se espera exactamente una dirección. Cero es *missing* (ver 06). Dos o más es *ambiguo*: pron guarda los candidatos y pregunta "¿cuál?".
-- "los / las / todos": el conjunto. Cero no es error, es un conjunto vacío.
+- "los / las / todos": el conjunto. Cero no es error, es un conjunto vacío, y la salida sigue siendo *único*: la cardinalidad que el determinante permite se cumplió.
 - "un / alguno": cualquiera; pron toma la primera y lo dice.
 - "ese / la anterior / el mismo": un referente del diálogo (06), que ya es una dirección.
 
@@ -28,9 +28,30 @@ Las direcciones y la gramática de predicados son las de sldb y se documentan al
 
 sldb devuelve direcciones `st.{Modelo}.doc` o valores. pron los muestra con su nombre natural: el campo `title` o `summary` del documento si existe, si no el nombre del doc. Nunca inventa un nombre.
 
-## Un predicado por frase
+## Término, nombre propio, literal
 
-`--where` acepta un predicado. Una frase con dos adjetivos se traduce a dos consultas encadenadas sobre el mismo alcance, y pron lo dice en la traza. Si sldb incorpora conjunción, pron la usa y borra el encadenado.
+Qué es cada palabra lo decide su posición en la frase, no su forma:
+
+- **término**: una palabra del léxico de la proyección (05): modelo, campo, tag, valor enumerado, verbo, alias. Si una palabra en posición de término no está en el léxico, es *missing*.
+- **nombre propio**: lo que ocupa la posición de nombre después de un término: "el átomo de X", "el comando X", "la superficie llamada X". No tiene que estar en el léxico. Se busca en el mundo con `doc ~ "X"` y, si el modelo tiene `title`, también `title ~ "X"`. Cero resultados es *missing* con cercanos por título.
+- **literal**: lo que va entre comillas, después de "a:" o "que diga", o después de un verbo de acción que fija un valor. Nunca se busca; se escribe.
+- **valor de campo**: "de pron" tras "los átomos" es `system = "pron"` si `pron` es un valor conocido del campo `system` (los valores de campos enumerados y de tags entran al léxico). Si no, es nombre propio.
+
+La forma en español de un término sale de su alias (05). Un modelo sin alias se nombra por su identificador tal cual, `CliCommandDoc`, y pron lo dice así hasta que alguien le dé alias.
+
+## Dos predicados, dos consultas, una intersección
+
+`--where` acepta un predicado. Una frase con dos restricciones produce dos consultas sobre el mismo alcance y pron se queda con las direcciones que aparecen en ambas. Cruza listas de direcciones; no lee payloads. La traza muestra las dos consultas, los dos conteos y el conteo final:
+
+```
+find 'st.{Atom+}' --where 'system = "pron"'   → 41
+find 'st.{Atom+}' --where 'has(provenance)'   → 260
+∩                                              → 38
+```
+
+La misma intersección sirve cuando una lista viene de kgdb y otra de sldb: "las reservas de Ana para el viernes" cruza `edges_to(Ana, de)` con `find st.{Reserva} --where fecha = …`.
+
+Si sldb incorpora conjunción en `--where`, pron la usa y borra la intersección.
 
 ## Invariantes
 

@@ -2,10 +2,36 @@
 
 ## La superficie
 
-La superficie recibe una oración en lenguaje natural y produce una de dos formas:
+La superficie recibe una oración en lenguaje natural y produce una **interpretación**: un registro con esta forma, que es también lo que va al ledger.
 
-- `(alcance, predicado)` para una frase nominal: una dirección de sldb (02);
-- `(verbo, sujeto, objeto)` para una oración con verbo: transitivo (03) o de acción (04), con sujeto y objeto ya resueltos a direcciones.
+```yaml
+forma: nominal | transitiva | accion
+sujeto:  {alcance, predicados: [], determinante, direcciones: [], cardinalidad: una | conjunto}
+verbo:   {nombre, tipo: transitivo | accion, eje, modo: leer | afirmar}   # si hay verbo
+objeto:  {alcance, predicados: [], determinante, direcciones: [], cardinalidad}   # si hay objeto
+campo:   nombre de campo                     # verbos de acción sobre un campo
+valor:   literal | payload                   # lo que un verbo de acción escribe
+huecos:  []                                  # constituyentes sin resolver
+salida:  unico | ambiguo | missing
+```
+
+Cómo se llega ahí son seis pasos fijos, desarrollados con una conversación entera en 09: segmentar; clasificar cada palabra contra el léxico (término, referente, literal, nombre propio, desconocida); armar interpretaciones parciales; consultar el mundo por cada frase nominal; verificar tipos contra el `RelationTypeDoc` o el esquema del modelo; decidir la salida. El mundo interviene en los pasos 2, 4 y 5 y en ningún otro.
+
+Qué contiene cada construcción admitida:
+
+| construcción | forma | qué lleva |
+|---|---|---|
+| "los átomos de pron" | nominal | sujeto con alcance y predicados; verbo de lectura implícito |
+| "¿qué implementa X?" | transitiva, modo leer | sujeto resuelto, verbo, objeto interrogado |
+| "X implementa Y" | transitiva, modo afirmar | sujeto y objeto resueltos, verbo |
+| "cambia la sinopsis de X a …" | acción | sujeto resuelto, `campo: synopsis`, `valor: literal` |
+| "crea un átomo que diga …" | acción | `alcance: Atom`, `valor: payload` con los campos capturados; los obligatorios que falten son huecos y abren una pendiente por campo |
+| "agrégales el tag T" | acción | sujeto = referente plural con N direcciones, `campo: tags`, `valor: T` |
+| "cámbiala a 9 y ponle una nota" | acción, dos escrituras | mismo sujeto, dos pares `campo`/`valor`, un movimiento |
+| "reservale una mesa a Ana" | transitiva, modo afirmar, `crea_sujeto` | el sujeto no existe: se crea con los campos capturados y se afirma el verbo |
+| "confirmala" | acción por alias | `campo: estado`, `valor: confirmada`, verificada como transición (03) |
+
+Un sujeto plural en un verbo de acción es N escrituras en un solo movimiento y un solo refresh.
 
 Y devuelve la respuesta en natural, con la traza disponible: las direcciones exactas, el verbo, las aristas o la escritura. La traza es corta porque cada paso es una llamada a sldb o kgdb, no un razonamiento.
 
@@ -15,20 +41,35 @@ Quien habla puede ser una persona, un LLM operador u otro producto. Para todos l
 
 | salida | condición | qué hace pron |
 |---|---|---|
-| único | cada sustantivo dio una dirección | ejecuta el verbo, responde, registra |
-| ambiguo | un sustantivo con "el" dio más de una | guarda candidatos y la oración con hueco, pregunta "¿cuál?", registra |
-| missing | una palabra no está en la proyección, o el sustantivo dio cero | busca cercanos (05), registra el hueco, responde "no existe, ¿querías…?", termina el turno |
+| único | cada frase nominal tiene la cardinalidad que su determinante permite: una dirección para "el", un conjunto (incluso vacío) para "los" | ejecuta el verbo, responde, registra |
+| ambiguo | una frase nominal con "el" dio más de una dirección, o un referente no tiene un antecedente único | guarda candidatos y la interpretación con hueco, pregunta "¿cuál?", registra |
+| missing | un término no está en la proyección, o un nombre propio dio cero direcciones | busca cercanos (05), registra el hueco, responde "no existe, ¿querías…?", termina el turno |
 
-Qué pasa después de un missing no es de pron. Puede ser que el hablante reformule, o que un agente expansor agregue lo que falta al mundo.
+Con dos frases ambiguas en la misma oración se pregunta por la primera en orden de aparición; la segunda queda como hueco y se pregunta después, en la misma pendiente.
+
+Qué pasa después de un missing no es de pron. Puede ser que el hablante reformule, o que un agente expansor agregue lo que falta al mundo. Una excepción chica: si la oración siguiente es un fragmento sin verbo que calza con el hueco registrado ("en la terraza" tras un missing en `zona`), se lee como corrección y la oración anterior se reinterpreta entera con el hueco relleno. No es una pendiente: el turno missing ya terminó y quedó registrado.
 
 ## El diálogo
 
 El único estado propio de pron por sesión es si hay una pregunta pendiente. Es la conversación estilo SHRDLU:
 
 - **libre**: sin pendiente. Una oración única o missing vuelve a libre. Una ambigua pasa a pendiente.
-- **pendiente**: hay candidatos guardados y una oración con hueco. La próxima oración se interpreta primero como respuesta: si calza con un candidato, se rellena el hueco y se completa el turno original; si no calza, sigue pendiente y pron lo dice; si es una orden nueva, se descarta la pendiente y se registra el descarte.
+- **pendiente**: hay candidatos guardados y una interpretación con hueco. La próxima oración se prueba primero como respuesta.
 
-Los referentes ("ese", "la anterior", "el mismo", "al usuario") se resuelven en el diálogo antes de armar direcciones: apuntan a direcciones de turnos anteriores o a la identidad de la sesión.
+Reglas de continuación, en este orden:
+
+1. Es **respuesta** si es una designación de candidato: un número, un nombre, "el primero", "el de X", "ninguno". Se resuelve contra los candidatos, no contra el mundo: "X" se compara con los títulos de los candidatos con los mismos embeddings del léxico. Un calce único rellena el hueco y completa el turno original; "ninguno" cancela la pendiente.
+2. Es **orden nueva** si tiene verbo, o si es una frase nominal con determinante. Se descarta la pendiente, se registra el descarte, y la oración se interpreta desde cero.
+3. Si no es ninguna de las dos, o la designación calza con más de un candidato, **sigue pendiente**: pron repite los candidatos y lo dice.
+
+Una pendiente dura hasta que se contesta, se cancela o se descarta por una orden nueva. No caduca sola.
+
+Los referentes se resuelven en el diálogo antes de armar direcciones, por número y por clase:
+
+- "ese X", "el mismo", "la anterior": la última dirección **singular** cuya clase es X, o la clase que pide el verbo. Un conjunto no califica como antecedente singular.
+- "esos", "les", "todos ellos": el último **conjunto**. Una dirección sola no califica.
+- Si el turno anterior dejó varias direcciones singulares de la misma clase (por ejemplo, los dos targets de un verbo leído), "ese X" es ambiguo y se pregunta.
+- "al usuario", "yo", "mi": la identidad de la sesión.
 
 ## Lo que la superficie no hace
 
@@ -40,5 +81,5 @@ Los referentes ("ese", "la anterior", "el mismo", "al usuario") se resuelven en 
 ## Invariantes
 
 - Toda oración termina en un movimiento registrado (07), incluidas las ambiguas y las missing.
-- Una pendiente sobrevive solo hasta la siguiente oración.
+- Hay a lo sumo una pendiente por sesión; una orden nueva la reemplaza.
 - La traza de un turno es reproducible: correr sus direcciones y su escritura en la shell da el mismo resultado.

@@ -27,9 +27,15 @@ Después de cualquier escritura el mundo está desfasado del grafo. El refresh e
 1. `sldb stores update` (índices semánticos y de secciones);
 2. `sldb stores semantic-export` (nodos, tags, secciones, DAG);
 3. `kgdb ingest` sobre ese export **y** sobre los `RelationDoc` del store (aristas autoradas, integridad referencial);
-4. registrar el `hash_a` nuevo en el snapshot.
+4. registrar el `hash_mundo` nuevo en el snapshot (07).
 
-Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron compara `hash_a` del store con el del snapshot antes de leer kgdb y avisa si el grafo está viejo, en vez de servirlo como verdad.
+Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron compara el `hash_mundo` del store con el del snapshot antes de leer kgdb y avisa si el grafo está viejo, en vez de servirlo como verdad. El ledger (07) queda fuera de esa huella, así que registrar un movimiento no desfasa nada.
+
+Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "la mesa 12 es para 6 y ahora son 9" es información, y qué hacer con eso es la próxima oración.
+
+Dos verbos de acción coordinados sobre el mismo sujeto ("cámbiala a 9 y ponle una nota") son un movimiento con dos escrituras y un refresh.
+
+Un verbo de acción con sujeto plural escribe una vez por dirección y hace un solo refresh al final. Si una escritura falla, las anteriores quedan hechas: pron informa cuáles se escribieron y cuáles no, y no deshace, porque cada documento es independiente.
 
 ## Lo que no es un verbo de acción
 

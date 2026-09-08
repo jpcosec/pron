@@ -14,7 +14,11 @@ Verificado contra el código el 2026-09-08. Sin esto, pron no puede cumplir el s
 
 Resuelto el 2026-09-08 (commit `e7a2c0c` en sldb): el surface de direcciones estaba muerto y ahora funciona, las familias `{Base+}` resuelven sin registrar la base, `model <= Base` funciona en `find`, `models add` graba `family` y `base_models`, y el contrato está escrito en `docs/addressability_model.md`.
 
-Pendiente, no bloqueante: toda lectura por dirección carga el store entero antes de seleccionar. Cuando duela, la optimización es interna a sldb.
+Pendiente, no bloqueante: toda lectura por dirección carga el store entero antes de seleccionar. Cuando duela, la optimización es interna a sldb. También no bloqueante: `--where` acepta un solo predicado, y pron cruza direcciones de dos consultas (02); una conjunción en sldb lo borraría.
+
+### kgdb, además
+
+- El ingest debe excluir los documentos con tag `type.pron.move` (el ledger, 07), o aceptar una lista de tags a excluir.
 
 ### pron mismo
 
@@ -28,6 +32,7 @@ Cada paso termina con un test que corre contra un store real, no con fixtures fa
 1. **Mundo y proyección.** Inicializar el store de pron, registrar `Atom`, `CliCommandDoc`, `SurfaceDoc`, `AnchorDoc`, `ProjectionDoc`, `MoveDoc`, y los dos modelos de kgdb. Migrar los átomos. Un `ProjectionDoc` "todo". Test: `sldb stores check` pasa y `st` lista exactamente esos modelos.
 2. **Léxico.** Derivar el léxico del store y listarlo. Test: cada palabra listada tiene una fuente en el store y un motivo no vacío.
 3. **Sustantivos.** Frase nominal → dirección + predicado → sldb. Las tres salidas. Test: las oraciones del turno de spec2viz producen las direcciones que dicen.
+   A partir de aquí los tests corren también contra un segundo mundo, el restaurante de 09, montado desde cero en un directorio temporal: pron tiene que funcionar sobre un mundo que no es el suyo antes de que su propia KB importe.
 4. **Ledger.** `MoveDoc` por turno. Test: todo turno de los tests anteriores deja un documento trackeado.
 5. **Verbos de acción.** El kernel sobre la librería de sldb, con refresh. Test: cambiar un campo por oración y leerlo por dirección.
 6. **Verbos transitivos.** Requiere kgdb. Leer aristas, afirmar un `RelationDoc`, refresh, leer la arista nueva. Test: el turno dos de spec2viz.
@@ -46,7 +51,7 @@ Corren sobre el store de pron y fallan la build:
 - todo comando del CLI tiene su `CliCommandDoc` regenerado sin drift;
 - ningún `RelationDoc` huérfano (el ingest de kgdb lo reporta; el lint lo convierte en error);
 - ninguna palabra del léxico sin motivo;
-- ningún movimiento del ledger sin `hash_a` antes y después;
+- ningún movimiento del ledger sin `hash_mundo` antes y después;
 - ninguna referencia a `deskops` en el store de pron.
 
 ## Lo que no se construye

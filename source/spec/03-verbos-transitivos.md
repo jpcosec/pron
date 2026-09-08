@@ -28,6 +28,12 @@ Los dos modelos son de kgdb. pron los registra en su mundo para poder autorarlos
 
 "¿Quién implementa X?" es lo mismo con `edges_to`. "¿Puede X pasar a Y?" es si existe la arista `flows_to` de X a Y y, si trae condición, si la condición se cumple. kgdb no sabe qué es una transición; solo tiene la arista.
 
+## Condiciones
+
+Una condición es un predicado `--where` de sldb guardado en el campo `condition` del `RelationDoc`. Se evalúa con sldb, nunca en pron, sobre el **sujeto de la oración en su estado actual**: la arista es legal para ese sujeto si `find <alcance del sujeto> --where <condición>` devuelve su dirección. Una condición puede nombrar campos del sujeto entre llaves, `capacidad >= {personas}`, y entonces se evalúa sobre el objeto con los valores del sujeto sustituidos antes de llamar a sldb. Una arista sin condición es legal siempre que exista.
+
+Una **transición** es el caso en que el verbo es "cambiar el campo de estado": la oración "confirma la reserva" es `fields update …/estado "confirmada"`, permitida solo si existe una arista `pasa_a` desde el estado actual al nuevo y su condición se cumple sobre la reserva. Los estados son documentos de un modelo `Estado`, las transiciones son `RelationDoc` entre ellos, y el objeto que transiciona solo cambia un campo.
+
 ## Afirmar un verbo
 
 "X implementa Y" es:
@@ -37,11 +43,17 @@ Los dos modelos son de kgdb. pron los registra en su mundo para poder autorarlos
 3. `docs create --model RelationDoc` con `source_id`, `target_id`, `relation_type`;
 4. refresh (04). La arista aparece cuando el ingest de kgdb vuelve a correr.
 
-Negar un verbo, "X ya no implementa Y", es `docs untrack` del `RelationDoc` correspondiente y refresh.
+Si el sujeto no existe todavía y la oración trae sus campos ("reservale una mesa a Ana": la reserva no existe), el verbo transitivo se lee como *crear el sujeto y afirmar el verbo* en el mismo movimiento. Exige los dos permisos de la proyección: `crear` en `actions` y `afirmar` en la relación.
+
+Negar un verbo, "X ya no implementa Y", es `docs untrack` del `RelationDoc` correspondiente y refresh. Si la arista no viene de un `RelationDoc` sino de un link en prosa (abajo), pron no la niega: responde dónde está escrita, documento y sección, y que hay que editar ese texto.
 
 ## Los verbos que ya existen sin declararse
 
-Los links con predicado dentro del texto, `[implements:: [[x]]]`, son aristas autoradas en línea. sldb los recupera con `docs recover` y les da el eje del predicado registrado. pron los trata como verbos transitivos leídos, no escritos: para afirmar uno se escribe un `RelationDoc`, no se edita prosa.
+Los links con predicado dentro del texto, `[implements:: [[x]]]`, son aristas autoradas en línea. sldb los recupera con `docs recover` y les da el eje del predicado registrado. pron los trata como verbos transitivos leídos, no escritos: para afirmar uno se escribe un `RelationDoc`, no se edita prosa. Cada arista leída dice de dónde viene, `RelationDoc` o link, y eso decide si se puede negar por oración.
+
+## Leer y afirmar son dos permisos
+
+La proyección (01) lista cada tipo de relación con un modo: `leer` o `leer y afirmar`. Con `leer`, "¿qué implementa X?" funciona y "X implementa Y" responde "en esta sesión puedo decirte qué implementa, no afirmarlo". Ocultar los verbos de acción no es lo mismo: afirmar un verbo transitivo es una escritura propia, con su propio permiso.
 
 ## El eje es lo que contesta las preguntas
 
