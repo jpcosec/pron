@@ -30,4 +30,7 @@ doc_id
 model_id
 relation_type_id
 field_id
+tag_id
+kind
+bare
 Graph

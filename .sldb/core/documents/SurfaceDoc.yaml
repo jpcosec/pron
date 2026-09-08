@@ -23,34 +23,10 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
-- name: surface-pron-graph
-  path: knowledge/surfaces/surface-pron-graph.md
-  hash_c: 970b3a3946f48cb40d04d9da58b502c709702c63d4497a92a2eeb0b69a9bbb00
-  hash_d: ab4b2311a4ec0e5af58892ac2ce8cabf529840354bc4fb95a635f4e44c5079c1
-  semantic_tags:
-  - domain:system_architecture
-  - entity:module
-  - impl:here
-  - kind:software
-  - system:pron
-  - type.knowledge.surface
-  - workspace.knowledge.surfaces
 - name: surface-pron-lexicon
   path: knowledge/surfaces/surface-pron-lexicon.md
   hash_c: 96ee52c38acca89c34e4a7776098d02b6832a7f0a99de61de9834f17342831d0
   hash_d: 9bfdc474e502b0c14249e52f4ae4ea131efe4c55dce4d89875ac91b60936d026
-  semantic_tags:
-  - domain:system_architecture
-  - entity:module
-  - impl:here
-  - kind:software
-  - system:pron
-  - type.knowledge.surface
-  - workspace.knowledge.surfaces
-- name: surface-pron-embedder
-  path: knowledge/surfaces/surface-pron-embedder.md
-  hash_c: f9b4ca39892edfe670ba174768dd13a083ca0ff4878ca132b05a441d1bcda5a1
-  hash_d: 4e9407f9f81a9ab7b7f8c5122fa1cdb7a617827f8f430c612e3881d73626866b
   semantic_tags:
   - domain:system_architecture
   - entity:module
@@ -267,6 +243,30 @@ documents:
   path: knowledge/surfaces/surface-pron-serve.md
   hash_c: e5028b6906ab38777f133683992b3bab1690342685ea4138a0e85a6a45cef4e7
   hash_d: 7fae817e542abd7c23b1655ae9940245e8e1e4a63e67e5f7338be1cbfea9bd9b
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-graph
+  path: knowledge/surfaces/surface-pron-graph.md
+  hash_c: a964d41ade21a5167e491e1d156bb894430d5437f517a1917527b1525c34ba25
+  hash_d: a7cf08d945db192b6fd9b4b795e34c965e5ae0aa4a73031a42973ff9fb61471a
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-embedder
+  path: knowledge/surfaces/surface-pron-embedder.md
+  hash_c: 4e7b5a5ff12b0c130aa66d0475d5d2ab85812f3575d7af57235c5182cedef280
+  hash_d: ae59ff166a705b759a246fe46a75f7c5bfeabc528215377c13caf36118a6207c
   semantic_tags:
   - domain:system_architecture
   - entity:module

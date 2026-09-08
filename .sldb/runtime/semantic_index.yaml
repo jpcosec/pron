@@ -231,6 +231,7 @@ tags:
   - spec-09a
   - spec-10
   - spec-11
+  - spec-12
   type.knowledge.surface:
   - surface-pron-cli-main
   - surface-pron-cli-repl
@@ -355,6 +356,7 @@ tags:
   - spec-09a
   - spec-10
   - spec-11
+  - spec-12
 documents:
   reltype-has_model:
     model: RelationTypeDoc
@@ -710,6 +712,12 @@ documents:
     tags:
     - type.knowledge.spec
     - workspace.source.spec
+  spec-12:
+    model: SpecDoc
+    path: source/spec/12-pron-para-un-runtime.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
   cmd-pron-init:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-init.md
@@ -820,31 +828,9 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-graph:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-graph.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-lexicon:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-lexicon.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-  surface-pron-embedder:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-embedder.md
     tags:
     - domain:system_architecture
     - entity:module
@@ -1043,6 +1029,28 @@ documents:
   surface-pron-serve:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-serve.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-graph:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-graph.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-embedder:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-embedder.md
     tags:
     - domain:system_architecture
     - entity:module

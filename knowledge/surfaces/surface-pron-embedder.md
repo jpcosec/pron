@@ -30,3 +30,4 @@ normalize
 cosine
 DifflibMatcher
 Matcher
+DocumentIndex

@@ -2000,3 +2000,173 @@ documents:
     level: 2
     line_start: 114
     line_end: 115
+- doc_name: spec-12
+  sections:
+  - path: 12-pron-para-un-runtime-externo
+    title: 12 · pron para un runtime externo
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 12-pron-para-un-runtime-externo
+    level: 1
+    line_start: 1
+    line_end: 2
+  - path: 12-pron-para-un-runtime-externo/1-dos-formas-de-hablar-con-un-mundo
+    title: 1. Dos formas de hablar con un mundo
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 1. Dos formas de hablar con un mundo
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 1. Dos formas de hablar con un mundo
+    - 1 dos formas de hablar con un mundo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 1-dos-formas-de-hablar-con-un-mundo
+    level: 2
+    line_start: 7
+    line_end: 8
+  - path: 12-pron-para-un-runtime-externo/2-la-sesi-n
+    title: 2. La sesión
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 2. La sesión
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 2. La sesión
+    - 2 la sesi n
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 2-la-sesi-n
+    level: 2
+    line_start: 32
+    line_end: 33
+  - path: 12-pron-para-un-runtime-externo/3-la-respuesta
+    title: 3. La respuesta
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 3. La respuesta
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 3. La respuesta
+    - 3 la respuesta
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 3-la-respuesta
+    level: 2
+    line_start: 49
+    line_end: 50
+  - path: 12-pron-para-un-runtime-externo/4-documentos-por-direcci-n
+    title: 4. Documentos por dirección
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 4. Documentos por dirección
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 4. Documentos por dirección
+    - 4 documentos por direcci n
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 4-documentos-por-direcci-n
+    level: 2
+    line_start: 70
+    line_end: 71
+  - path: 12-pron-para-un-runtime-externo/5-el-mundo
+    title: 5. El mundo
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 5. El mundo
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 5. El mundo
+    - 5 el mundo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 5-el-mundo
+    level: 2
+    line_start: 79
+    line_end: 80
+  - path: 12-pron-para-un-runtime-externo/6-permisos-lo-que-pron-decide-y-lo-que-no
+    title: '6. Permisos: lo que pron decide y lo que no'
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - '6. Permisos: lo que pron decide y lo que no'
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - '6. Permisos: lo que pron decide y lo que no'
+    - 6 permisos lo que pron decide y lo que no
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 6-permisos-lo-que-pron-decide-y-lo-que-no
+    level: 2
+    line_start: 94
+    line_end: 95
+  - path: 12-pron-para-un-runtime-externo/7-el-socket
+    title: 7. El socket
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 7. El socket
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 7. El socket
+    - 7 el socket
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 7-el-socket
+    level: 2
+    line_start: 100
+    line_end: 101
+  - path: 12-pron-para-un-runtime-externo/8-qu-es-estable
+    title: 8. Qué es estable
+    breadcrumbs:
+    - 12 · pron para un runtime externo
+    - 8. Qué es estable
+    about:
+    - 12 · pron para un runtime externo
+    - 12 pron para un runtime externo
+    - 8. Qué es estable
+    - 8 qu es estable
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 8-qu-es-estable
+    level: 2
+    line_start: 108
+    line_end: 109
