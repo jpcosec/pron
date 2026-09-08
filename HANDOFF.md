@@ -48,21 +48,17 @@ python -m pytest -q tests
 
 Una advertencia: `pron say` sobre el repo de pron deja `MoveDoc`s en `ledger/` y mueve `.sldb/`. Para probar a mano usá un mundo aparte (`build_restaurant` en un directorio de scratch). Si limpiás, borrá por ruta explícita (`ledger/move-2026*.md`), nunca todo lo sin trackear.
 
-## Pendiente, por prioridad
+## Pendiente en pron y sldb, por prioridad
 
-1. **Extremo a extremo de kinesis con pron.** Los tests corren sobre copias del store; nunca se corrió `kinesis agent --knowledge-world .` con un replay ni con Gemini.
-2. **Palabras del mundo de kinesis.** Faltan `AnchorDoc` para state, machine, transition, agent, tool, port; sin ellos el agente solo nombra por identificador. Y un `ProjectionDoc` para el agente: hoy usa `all`, que en escritura permite todo.
-3. **El operador Gemini** sigue pidiendo referencias `Modelo/Documento`; debería recibir el léxico (`pron lexicon --json`) y decidir con oraciones.
-4. **Transiciones de kinesis como `RelationDoc`** en el mundo, no solo en `.kinesis/machine.json` (capítulo 7 de sus docs).
-5. **Sacar `AtomDoc` de deskops del store de kinesis**; `pron check` lo marca.
-6. **Embedder real**: el puerto existe, el fallback es difflib; falta inyectar uno desde la CLI de pron y de kinesis. La otra sesión está trabajando el índice por documento en `embedder.py`.
-7. **Enlaces de predicado en prosa** no entran al grafo tipado: la exportación de sldb no los expone.
-8. **Escrituras**: lo que queda es real (releer textos para mover la cadena, rearmar el grafo entero en kgdb, guardar el índice de secciones del ledger que crece por turno). Si hace falta bajar de 0,4 s, el candidato es un ingest incremental en kgdb.
-9. **Higiene**: lock de revisiones de sldb, kgdb, deskops y pron (hoy editables desde carpetas vecinas), CI que corra las cuatro suites, y pushear.
+1. **Embedder real**: el puerto existe, el fallback es difflib; falta inyectar uno desde la CLI de pron. La otra sesión está trabajando el índice por documento en `embedder.py`.
+2. **Enlaces de predicado en prosa** no entran al grafo tipado: la exportación de sldb no los expone.
+3. **Escrituras**: lo que queda es real (releer textos para mover la cadena, rearmar el grafo entero en kgdb, guardar el índice de secciones del ledger que crece por turno). Si hace falta bajar de 0,4 s, el candidato es un ingest incremental en kgdb.
+4. **Higiene**: lock de revisiones de sldb, kgdb y pron (hoy editables desde carpetas vecinas), CI que corra las suites, y pushear.
+
+Kinesis lo lleva otro agente. Lo que pron le ofrece y no debe cambiar sin avisarle: `Session(read_only=...)`, `Response` en `pron.response`, `pron.client` (`socket_path`, `alive`, `request`, `RemoteSession`), `World.store.payload`, y el socket en `<mundo>/.pron/serve.sock`. Sus cambios de hoy en kinesis (`9f6a423`, `f167bea`, `71f60f3`, y la documentación en `docs/configuracion-base-agente/10-conocimiento-via-pron.md`) quedaron comiteados ahí; lo que siga en ese repo es de ese agente.
 
 ## Decisiones abiertas
 
-- Lectura y escritura de una misma ejecución de kinesis usan sesiones distintas; una pregunta abierta en una lectura no la cierra una escritura.
 - `pron serve` atiende de a una petición y no autentica: el socket es local y habla como el hablante que el cliente dice ser (spec 11 §6). Quién puede tocar el socket es de la aplicación.
 - El barrido de `stat` por documento en sldb es la concesión al Markdown editado a mano; si un store solo se escribe por sldb, `SLDB_TRUST_CHAIN=1`.
 
