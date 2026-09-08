@@ -3,24 +3,9 @@ diagram_store:
   template: template.html
   title: Arquitectura de pron
   brand_name: pron
-  brand_subtitle: 'Actual: derivado del código. Objetivo: un SHRDLU sobre el mundo que sldb y kgdb ya reparten — sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb.'
+  brand_subtitle: La arquitectura objetivo de pron, proyección gráfica de source/spec. Sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb. La v1 está en la rama v1-code-and-kb.
   project_name: legos/pron
   items:
-  - id: architecture
-    title: Arquitectura actual
-    desc: CLI/REPL sobre un kernel de Meaning (s-expresiones ancladas por gramática viva), operaciones que despachan a los bridges — la única puerta a sldb y kgdb — y un generador de docs que deriva del propio código.
-    category: pron · actual
-    nav: Actual · componentes
-    type: component
-    src: out/mermaid/architecture.mmd
-    mmd: out/mermaid/architecture.mmd
-    specs:
-    - specs/architecture.yml
-    notes:
-    - CLI y REPL comparten el mismo Evaluator; no hay una segunda gramática.
-    - Session (.pron/session.json) solo persiste la desambiguación del CLI no interactivo; el REPL la mantiene en memoria.
-    - Los bridges (SldbBridge, KgdbBridge) son la única puerta a las librerías sldb/kgdb, por atom-bridges-are-the-only-doors-to-sldb-and-kgdb.
-    - El generador de docs (pron docs) deriva CliCommandDoc de los docstrings de los handlers _cmd_* y SurfaceDoc del AST de cada módulo público.
   - id: target-components
     title: Objetivo · componentes
     desc: Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.
