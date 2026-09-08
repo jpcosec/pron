@@ -66,4 +66,4 @@ Los átomos de v1 se quedan en la rama `v1-code-and-kb`, como material históric
 
 ## Quién lo usa
 
-`kinesis` declara `pron` como dependencia y su `KnowledgePort` importa la API de v1. Hasta que se adapte, kinesis tiene que apuntar a la rama `v1-code-and-kb`.
+`kinesis` declara `pron` como dependencia y habla con esta versión: su backend `PronKnowledge` abre un mundo con `World`, dice oraciones con `Session.turn` dentro de una proyección y lee documentos por dirección con `Store.payload`. Un permiso de kinesis es el nombre de una proyección; una escritura es una oración con verbo de acción dicha por la ejecución.
