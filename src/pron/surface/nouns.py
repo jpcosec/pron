@@ -94,7 +94,7 @@ def _phrase_at(items: list[Item], i: int, lex: Lexicon) -> tuple[NounPhrase | No
     interrogated = start > 0 and items[start - 1].kind == "wh"
     np = NounPhrase(head, det or ("the" if number == "singular" and not interrogated else "all"), number, interrogated=interrogated, items=[it])
     for adj in pre:
-        if not _word_modifier(adj, None, np, lex):
+        if not _word_modifier(adj, [], np, lex):
             return None, 0
     j = i + 1
     while j < len(items):
@@ -140,13 +140,13 @@ def _modifier(items: list[Item], j: int, np: NounPhrase, lex: Lexicon) -> int:
         return 2
     if it.kind != "word":
         return 0
-    nxt = items[j + 1] if j + 1 < len(items) else None
-    return _word_modifier(it, nxt, np, lex)
+    return _word_modifier(it, items[j + 1:], np, lex)
 
 
-def _word_modifier(it: Item, nxt: Item | None, np: NounPhrase, lex: Lexicon) -> int:
+def _word_modifier(it: Item, following: list[Item] | None, np: NounPhrase, lex: Lexicon) -> int:
     """One word item as a modifier of np: a value, a predicate alias, or a field with a value. Returns items used."""
     family = set(lex.world.family_of(np.model))
+    nxt = following[0] if following else None
     for w in it.words:
         if w.kind == "value" and w.model in family:
             np.predicates.append(f'{w.field_name} = "{w.payload["value"]}"'); np.items.append(it)
@@ -163,10 +163,36 @@ def _word_modifier(it: Item, nxt: Item | None, np: NounPhrase, lex: Lexicon) -> 
                 np.predicates.append(f"{w.field_name} = {_literal(value)}"); np.captures[w.field_name] = value; np.items.append(it)
                 return 1
             if nxt is not None and nxt.kind in ("number", "literal", "unknown"):
-                value = nxt.meta.get("value", nxt.text)
-                np.predicates.append(f"{w.field_name} = {_literal(value)}"); np.captures[w.field_name] = value; np.items += [it, nxt]
-                return 2
+                value, used = value_run(following, string_field=field_is_string(lex, w.model, w.field_name))
+                np.predicates.append(f"{w.field_name} = {_literal(value)}"); np.captures[w.field_name] = value; np.items += [it, *following[:used]]
+                return 1 + used
     return 0
+
+
+def field_is_string(lex: Lexicon, model: str | None, field_name: str | None) -> bool:
+    if not model or not field_name:
+        return False
+    for f in lex.world.store.schema(model):
+        if f["name"] == field_name:
+            return f["kind"] == "string"
+    return False
+
+
+def value_run(following: list[Item], string_field: bool) -> tuple[Any, int]:
+    """The value after a field word: one literal or number, or for a string field the whole run of
+    unknown and number items ("Ana Rojas", "9 5555 1234") up to the next known item."""
+    first = following[0]
+    if first.kind == "literal":
+        return first.meta.get("value", first.text), 1
+    if not string_field:
+        return first.meta.get("value", first.text), 1
+    parts, used = [], 0
+    for it in following:
+        if it.kind in ("unknown", "number") and it.text.lower() not in PREDICATE_STOP:
+            parts.append(it.text); used += 1
+        else:
+            break
+    return " ".join(parts), used
 
 
 def _fill_predicate(w: Word, it: Item, lex: Lexicon) -> tuple[str, tuple[str, str, str] | None]:

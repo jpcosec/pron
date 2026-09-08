@@ -21,7 +21,7 @@ interrogatives:
   why: [why]
   how: [how]
   how_many: [how many, how much]
-  yes_no: [is, are, does, do, can, has, have, did]
+  yes_no: [is, are, does, do, can, did]
 
 conjunction: [and]
 negation: [not, "no", never, "don't", doesn't]

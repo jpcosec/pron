@@ -30,11 +30,14 @@ class Resolution:
 
 
 def address_to_export_id(address: str) -> str:
-    """st.{Model}.doc → Model:doc (the store's export id)."""
-    a = address.split(":", 1)[1] if ":" in address and not address.startswith("st.") else address
+    """st.{Model}.doc → Model:doc (the store's export id); an export id passes through."""
+    a = address
     if a.startswith("st.{"):
         model, doc = a[4:].split("}.", 1)
         return f"{model.rstrip('+')}:{doc}"
+    if ":st.{" in a:  # store:st.{Model}.doc from a linked store
+        store, rest = a.split(":", 1)
+        return f"{store}:{address_to_export_id(rest)}"
     return a
 
 
@@ -44,8 +47,9 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
         return Resolution(np, [], "missing", note="a referent without an antecedent")
     if np.unknown_values:
         model, fld, text = np.unknown_values[0]
-        near = [w.form for w, _ in lex.near(text, kinds=("value",))]
-        return Resolution(np, [], "missing", candidates=near, note=f"'{text}' is not a value of {model}.{fld}")
+        near = [w.form for w, _ in lex.near(text, kinds=("value",)) if w.model == model and w.field_name == fld]
+        allowed = [w.form for w in lex.values_of(model, fld)]
+        return Resolution(np, [], "missing", candidates=near or allowed, note=f"'{text}' is not a value of {model}.{fld}")
     scope = np.scope
     queries: list[str] = []
     result: list[str] | None = None

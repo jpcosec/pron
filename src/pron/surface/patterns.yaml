@@ -1,0 +1,18 @@
+# The constructions pron understands, in the order they are tried (spec 11 §1).
+# These are pron's, not a world's: a world adds sentences through compose aliases.
+# Each entry names a construction implemented in pron.surface.interpret and gives
+# the example shown when a sentence matches nothing ("I can understand: …").
+constructions:
+  - {name: undo,             example: "undo the last move"}
+  - {name: refresh,          example: "refresh"}
+  - {name: why,              example: "why?"}
+  - {name: compose,          example: "book her a table on the terrace for 6 people on Friday at 9pm"}
+  - {name: action_alias,     example: "confirm it"}
+  - {name: create,           example: "create a client named Ana Rojas, phone 9 5555 1234"}
+  - {name: change_to,        example: "change it to 9 people"}
+  - {name: set_field,        example: "add a note saying: birthday"}
+  - {name: list_op,          example: "add the tag system:pron to them"}
+  - {name: forget,           example: "forget that reservation"}
+  - {name: assert_relation,  example: "assign it to table 12"}
+  - {name: read_relation,    example: "what reservations does Ana have for Friday?"}
+  - {name: nominal,          example: "the large tables on the terrace"}
