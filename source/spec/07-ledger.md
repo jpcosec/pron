@@ -22,9 +22,11 @@ Escribir un `MoveDoc` cambia el `hash_a` del store. Si el léxico y el grafo dep
 |---|---|---|---|
 | `hash_a` | todo el store | sldb | nada en pron; es la huella de integridad |
 | `hash_mundo` | los `hash_b` de todos los modelos menos `MoveDoc` | pron, desde los índices de modelos | el léxico, los embeddings y la frescura del snapshot de kgdb |
-| `hash_b` de `MoveDoc` | el ledger | sldb | nada; el ledger no está en el léxico ni en el grafo |
+| `hash_b` de `MoveDoc` | el ledger | sldb | nada: los movimientos no son nodos del grafo y sus valores no entran al léxico |
 
 El snapshot de kgdb registra el `hash_mundo` con que se construyó. Los `MoveDoc` llevan el tag `type.pron.move` y el ingest de kgdb los excluye, así que registrar no desfasa el grafo.
+
+El ledger sí está en el léxico como **modelo**: `MoveDoc` tiene alias ("movimiento", "movimientos") y sus campos se preguntan como los de cualquier otro (10 §1), por eso "los movimientos de hoy sobre el repl" funciona. Lo que queda fuera de la frescura es su contenido: escribir un movimiento nuevo no agrega palabras, no cambia el esquema y no crea aristas, así que no invalida nada.
 
 ## Orden dentro de un turno
 

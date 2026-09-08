@@ -34,7 +34,7 @@ La proyección (01) recorta el léxico: solo entran las palabras cuyas fuentes e
 
 Cuando una palabra no calza exactamente con el léxico, la superficie busca cercanos por similitud entre la palabra y los motivos del léxico: descripciones de campos, docstrings de modelos, descripciones de `RelationTypeDoc`, motivos de anchors. Los embeddings se calculan offline sobre el léxico, no sobre los documentos, y se recalculan cuando cambia `hash_mundo` (07).
 
-El resultado del calce aproximado nunca se ejecuta solo. Se ofrece: "no tengo *bridge*, ¿querías *bridges* o *puente*?".
+El resultado del calce aproximado sobre el mundo nunca se ejecuta solo. Se ofrece: "no tengo *bridge*, ¿querías *bridges* o *puente*?". La única excepción es contestar una pendiente de elección (06): ahí el conjunto de candidatos es cerrado y ya se mostró, y un calce único contra esos candidatos sí rellena el hueco.
 
 ## Invariantes
 

@@ -6,7 +6,7 @@ Verificado contra el código el 2026-09-08. Sin esto, pron no puede cumplir el s
 
 ### kgdb
 
-- **Los modelos de relación no están en el paquete.** `RelationTypeDoc` y `RelationDoc` existen como `sldb/docs/relation_models.py`, un fixture de tests de sldb. Van a `kgdb.models` como `StructuredNLDoc`, y kgdb los exporta.
+- **Los modelos de relación no están en el paquete.** `RelationTypeDoc` y `RelationDoc` existen como `sldb/docs/relation_models.py`, un fixture de tests de sldb. Van a `kgdb.models` como `StructuredNLDoc`, y kgdb los exporta. Los dos necesitan un campo `condition: str` (predicado `--where`, vacío por defecto): en el tipo vale para todas sus aristas, en la instancia reemplaza al del tipo (03).
 - **El ensamblado de aristas autoradas no está en el CLI.** `kgdb.ingest.assemble_authored_graph` existe y tiene tests, pero `kgdb ingest-sldb` no lo usa y no hay comando que lo corra. El ingest tiene que producir un solo snapshot con los nodos del `semantic-export` y las aristas de los `RelationDoc`, con integridad referencial. Cómo llegan los `RelationDoc` al ingest, dentro del export de sldb o leídos por librería, se decide en kgdb.
 - El `KnowledgeNode` arrastra facetas de wiki de código (`ast`, `git`, `test_map`, `compliance`, `adr`). No bloquean; se ignoran.
 

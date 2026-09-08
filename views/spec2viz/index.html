@@ -475,7 +475,7 @@
       <div class="sidebar-card">
         <div class="sidebar-card-title">Navegación</div>
         <nav>
-          <div class="nav-category"><span>pron · objetivo</span><a href="#target-components-06f8124e">Objetivo · componentes</a><a href="#target-turno-06f8124e">Objetivo · tres turnos</a><a href="#target-dialogo-06f8124e">Objetivo · el diálogo</a></div>
+          <div class="nav-category"><span>pron · objetivo</span><a href="#target-components-06f8124e">Objetivo · componentes</a><a href="#target-turno-06f8124e">Objetivo · una conversación</a><a href="#target-dialogo-06f8124e">Objetivo · el diálogo</a></div>
         </nav>
       </div>
     </div>
@@ -507,14 +507,15 @@
       graph TD
           subgraph afuera [&quot;Fuera de pron&quot;]
               hablante[&quot;Quien habla · persona, LLM u otro producto&quot;]
+              editor[&quot;Editor · sldb serve (/schema, /graph, POST /save) + graph_ui · formularios desde el esquema, relaciones como RelationDoc&quot;]
           end
           subgraph pron [&quot;pron · el SHRDLU&quot;]
               superficie[&quot;Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural&quot;]
-              proyeccion[&quot;Proyección · qué stores, modelos, tipos de relación y alias puede nombrar esta sesión&quot;]
+              proyeccion[&quot;Proyección · ProjectionDoc · stores, modelos, relaciones con modo leer / afirmar, acciones, alias, naming, display, key&quot;]
               dialogo[&quot;Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)&quot;]
-              kernel[&quot;Kernel · verbos de acción · crear doc · cambiar campo · escribir arista · refrescar&quot;]
+              kernel[&quot;Kernel · verbos de acción · crear · cambiar · agregar · limpiar · quitar · olvidar · refrescar · lee antes de escribir · reevalúa condiciones&quot;]
               embeddings[&quot;Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos&quot;]
-              ledger[&quot;Ledger · oración + direcciones + verbo + resultado · el por qué se lee de las aristas del eje WHY/HOW&quot;]
+              ledger[&quot;Ledger · MoveDoc por turno · interpretación, consultas, escritura, hash_mundo antes y después · movimientos externos detectados&quot;]
               proyector[&quot;Proyector · stores update · semantic-export · kgdb ingest&quot;]
           end
           subgraph mundo [&quot;Mundo · sldb · los sustantivos · almacena todo documento, incluidas las relaciones de kgdb&quot;]
@@ -529,13 +530,15 @@
               export[&quot;semantic-export · modelos, documentos, secciones, tags, DAG&quot;]
           end
           subgraph grafo [&quot;kgdb · dueño de los verbos transitivos · el grafo es derivado y de solo lectura&quot;]
-              reltypes[&quot;RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, eje del predicado (HOW, WHY, WHAT, PROVENANCE)&quot;]
-              relinst[&quot;RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source, target, relation_type, condition_ref&quot;]
-              ingest[&quot;kgdb ingest · nodos y tags desde semantic-export · aristas desde los RelationDoc · integridad referencial&quot;]
+              reltypes[&quot;RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, cardinality, condition, eje del predicado&quot;]
+              relinst[&quot;RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source_id, target_id, relation_type, condition&quot;]
+              ingest[&quot;kgdb ingest · nodos desde semantic-export · nodos relation_type · aristas desde los RelationDoc y los links con predicado · excluye el ledger · hash_mundo · integridad como error&quot;]
               snapshot[&quot;GraphSnapshot · nodos = documentos · aristas = tags, contención y relaciones autoradas&quot;]
-              traversal[&quot;edges_from · edges_to · scope · ¿existe la arista? · ¿legal desde aquí?&quot;]
+              traversal[&quot;edges_from · edges_to · ¿existe la arista? · cada arista trae origin y condition&quot;]
           end
           hablante --&gt;|&quot;una oración&quot;| superficie
+          editor --&gt;|&quot;POST /save · misma save_payload&quot;| writes
+          superficie --&gt;|&quot;movimiento externo si hash_mundo cambió sin pron&quot;| ledger
           superficie --&gt;|&quot;referentes&quot;| dialogo
           superficie --&gt;|&quot;cada palabra está en la proyección&quot;| proyeccion
           proyeccion --&gt;|&quot;qué mundo&quot;| store_index
@@ -547,7 +550,8 @@
           superficie --&gt;|&quot;sustantivo = st.{Modelo+} + where · un campo = .campo.sub&quot;| addr
           addr --&gt;|&quot;reads&quot;| docs
           superficie --&gt;|&quot;¿el verbo aplica al sujeto y al objeto? · source_types, target_types&quot;| reltypes
-          superficie --&gt;|&quot;verbo transitivo leído · ¿quién implementa X? · ¿legal desde aquí?&quot;| traversal
+          superficie --&gt;|&quot;verbo transitivo leído · ¿quién implementa X? · ¿existe pasa_a desde el estado actual?&quot;| traversal
+          superficie --&gt;|&quot;condición de la arista evaluada por sldb sobre el sujeto · find … --where&quot;| addr
           superficie --&gt;|&quot;verbo de acción&quot;| kernel
           kernel --&gt;|&quot;crear doc · cambiar campo · escribir RelationDoc&quot;| writes
           writes --&gt;|&quot;re-renderiza y valida&quot;| docs
@@ -564,11 +568,11 @@
           superficie --&gt;|&quot;resultado · ¿cuál? · no existe, cercanos&quot;| hablante
     </pre>
   </div>
-  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>El léxico sale de los modelos: nombre, campos con descripción, tags, familias ({Modelo+}). Los RelationTypeDoc dan los verbos transitivos con sus tipos válidos. Los AnchorDoc son alias, no la fuente.</li><li>Un sustantivo es una dirección más un predicado, y eso lo responde sldb (ls, get, glob, find, --where). Pron no tiene cascada de resolución propia.</li><li>Los modelos de relación son de kgdb: RelationTypeDoc declara el verbo con sus tipos válidos y su eje, RelationDoc es una arista autorada. Pron los registra en su store al declarar el mundo; sldb los guarda como documentos; el ingest de kgdb los vuelve aristas. kgdb sigue siendo derivado y de solo lectura.</li><li>El ingest de kgdb tiene que tomar los RelationDoc además del semantic-export. Hoy assemble_authored_graph existe en kgdb pero no está en su CLI ni corre en el proyector de pron, por eso el grafo de pron no tiene ninguna arista de dominio.</li><li>Una transición no se dispara en kgdb. Es una escritura en sldb, arista más campo de estado, seguida de un refresh que reensambla el grafo.</li><li>El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.</li><li>La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.</li><li>El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.</li><li>Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.</li></ul></div>
+  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>El léxico sale de los modelos: nombre, campos con descripción, tags, familias ({Modelo+}). Los RelationTypeDoc dan los verbos transitivos con sus tipos válidos. Los AnchorDoc son alias, no la fuente.</li><li>Un sustantivo es una dirección más un predicado, y eso lo responde sldb (ls, get, glob, find, --where). Pron no tiene cascada de resolución propia.</li><li>Los modelos de relación son de kgdb: RelationTypeDoc declara el verbo con sus tipos válidos y su eje, RelationDoc es una arista autorada. Pron los registra en su store al declarar el mundo; sldb los guarda como documentos; el ingest de kgdb los vuelve aristas. kgdb sigue siendo derivado y de solo lectura.</li><li>El editor (sldb serve + graph_ui) escribe por la misma save_payload que pron. pron detecta lo que no hizo comparando hash_mundo y hash_d, recarga léxico y registra un movimiento externo.</li><li>Las condiciones viven en el RelationTypeDoc (para todas sus aristas) o en un RelationDoc (que reemplaza la del tipo), y las evalúa sldb sobre el sujeto con find --where; pron solo las pasa.</li><li>Una transición no se dispara en kgdb. Es una escritura en sldb, arista más campo de estado, seguida de un refresh que reensambla el grafo.</li><li>El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.</li><li>La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.</li><li>El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.</li><li>Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.</li><li>El kgdb ingest unificado (nodos, nodos relation_type, aristas desde RelationDoc y links, ledger excluido, hash_mundo, integridad como error) es el prerrequisito de source/spec/08; hoy sus dos mitades existen por separado.</li></ul></div>
 </section><section id="target-turno-06f8124e" data-spec="specs/target.turno.yml" data-type="sequence" data-project="" data-category="pron · objetivo" data-tags="type:sequence" data-view-id="target-turno" class="catalog-item">
   <div class="lbl"></div>
-  <h2>Objetivo · tres turnos</h2>
-  <p class="desc">Tres oraciones, una por tipo de palabra. Un verbo transitivo leído (¿qué implementa X?), uno afirmado (X implementa Y, que se escribe como RelationDoc) y un verbo de acción (cambiar la sinopsis de un comando, que es un fields update). Las tres salidas del grounding se muestran sobre el primer turno.</p>
+  <h2>Objetivo · una conversación</h2>
+  <p class="desc">Cinco turnos de source/spec/09 sobre el mundo del restaurante (09a): crear con payload, un verbo transitivo que crea su sujeto con dos predicados cruzados, una ambigüedad y su respuesta, una transición guardada por pasa_a y una condición evaluada por sldb, y el por qué.</p>
   <div class="section-meta"><span class="meta-badge">sequence</span><span class="meta-badge subtle">type:sequence</span></div>
   <div class="board">
     <pre class="mermaid">
@@ -576,63 +580,67 @@
           actor hablante
           participant superficie
           participant dialogo
-          participant proyeccion
-          participant embeddings
+          participant lexico
           participant sldb_addr
           participant sldb_write
           participant kgdb
           participant kernel
           participant proyector
           participant ledger
-          hablante-&gt;&gt;superficie: ¿qué implementa el átomo de bridges?
-          superficie-&gt;&gt;dialogo: referentes · ninguno
-          superficie-&gt;&gt;proyeccion: ¿átomo, implementa están en la proyección?
-          proyeccion-&gt;&gt;superficie: átomo → st.{Atom} · implementa → RelationTypeDoc implements de kgdb (eje HOW)
-          superficie-&gt;&gt;embeddings: [missing] &#x27;bridges&#x27; sin calce → cercanos por descripciones
-          superficie-&gt;&gt;ledger: [missing] registrar el hueco y los cercanos
-          superficie-&gt;&gt;hablante: [missing] no existe · ¿querías Y o Z?
-          superficie-&gt;&gt;sldb_addr: find st.{Atom+} --where &#x27;doc ~ &quot;bridges&quot;&#x27;
-          sldb_addr-&gt;&gt;superficie: [ambiguo] dos direcciones
-          superficie-&gt;&gt;dialogo: [ambiguo] guardar candidatos y la oración con hueco
-          superficie-&gt;&gt;hablante: [ambiguo] ¿cuál? A o B
-          sldb_addr-&gt;&gt;superficie: [único] st.{Atom}.atom-bridges-are-the-only-doors
-          superficie-&gt;&gt;kgdb: edges_from(sldb://document/Atom:atom-bridges..., implements)
-          kgdb-&gt;&gt;superficie: targets · sldb://model/SldbBridge, sldb://model/KgdbBridge
-          superficie-&gt;&gt;ledger: oración · dirección · verbo · aristas
-          superficie-&gt;&gt;hablante: Implementa SldbBridge y KgdbBridge.
-          hablante-&gt;&gt;superficie: ese átomo también implementa el proyector
-          superficie-&gt;&gt;dialogo: ese átomo → la dirección del turno anterior
-          superficie-&gt;&gt;sldb_addr: find st.{SurfaceDoc+} --where &#x27;doc ~ &quot;proyector&quot;&#x27;
-          sldb_addr-&gt;&gt;superficie: st.{SurfaceDoc}.surface-pron-infra-projector
-          superficie-&gt;&gt;sldb_addr: get st.{RelationTypeDoc}.implements · source_types, target_types
-          sldb_addr-&gt;&gt;superficie: Atom → SurfaceDoc · aplica
-          superficie-&gt;&gt;kernel: escribir arista implements A → B
-          kernel-&gt;&gt;sldb_write: docs create --model RelationDoc · source_id, target_id, relation_type
-          sldb_write-&gt;&gt;kernel: tracked · hashes actualizados
+          hablante-&gt;&gt;superficie: crea un cliente que se llame Ana Rojas, teléfono 9 5555 1234
+          superficie-&gt;&gt;lexico: crea → acción crear · cliente → Cliente · se llame → nombre · teléfono → telefono · literales
+          superficie-&gt;&gt;sldb_addr: fields show models/Cliente · obligatorios nombre, telefono
+          superficie-&gt;&gt;kernel: crear Cliente {nombre, telefono}
+          kernel-&gt;&gt;sldb_write: docs create --model Cliente --name cliente-ana-rojas (naming del ProjectionDoc)
+          sldb_write-&gt;&gt;kernel: tracked · hashes
           kernel-&gt;&gt;proyector: refrescar
-          proyector-&gt;&gt;kgdb: kgdb ingest · nodos desde semantic-export · aristas desde los RelationDoc
-          kgdb-&gt;&gt;proyector: snapshot nuevo · la arista existe
-          superficie-&gt;&gt;ledger: oración · direcciones · RelationDoc escrito
-          superficie-&gt;&gt;hablante: Listo. Queda registrado.
-          hablante-&gt;&gt;superficie: cambia la sinopsis del comando repl a: bucle interactivo sobre el evaluador
-          superficie-&gt;&gt;proyeccion: cambiar → verbo de acción · sinopsis → campo synopsis de CliCommandDoc
-          superficie-&gt;&gt;sldb_addr: find st.{CliCommandDoc+} --where &#x27;command_path = &quot;repl&quot;&#x27;
-          sldb_addr-&gt;&gt;superficie: st.{CliCommandDoc}.cmd-pron-repl
-          superficie-&gt;&gt;kernel: cambiar campo
-          kernel-&gt;&gt;sldb_write: fields update docs/cmd-pron-repl/synopsis &#x27;&quot;bucle interactivo sobre el evaluador&quot;&#x27;
-          sldb_write-&gt;&gt;kernel: re-renderizado · roundtrip ok · hashes
+          proyector-&gt;&gt;kgdb: stores update · semantic-export · kgdb ingest
+          superficie-&gt;&gt;ledger: MoveDoc · payload · dirección creada · hash_mundo antes y después
+          superficie-&gt;&gt;hablante: Creado el cliente Ana Rojas.
+          hablante-&gt;&gt;superficie: reservale una mesa en la terraza para 6 personas el viernes a las 21
+          superficie-&gt;&gt;lexico: reservale → relación de + crea_sujeto Reserva · le → referente · terraza → zona · para 6 → personas y capacidad #gt;= 6
+          superficie-&gt;&gt;dialogo: le → último singular de clase Cliente · cliente-ana-rojas
+          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;zona = &quot;terraza&quot;&#x27; → 12, 14, 20
+          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;capacidad #gt;= 6&#x27; → 12, 14
+          superficie-&gt;&gt;superficie: ∩ → mesa-12, mesa-14 · determinante una → mesa-12
+          superficie-&gt;&gt;sldb_addr: get st.{RelationTypeDoc}.de y .asignada_a · tipos y condición capacidad #gt;= {personas}
+          superficie-&gt;&gt;sldb_addr: find st.{Mesa} --where &#x27;capacidad #gt;= 6&#x27; contiene mesa-12 · condición ok
+          superficie-&gt;&gt;kernel: crear Reserva · afirmar de → Ana · afirmar asignada_a → mesa-12
+          kernel-&gt;&gt;sldb_write: docs create Reserva · docs create RelationDoc de · docs create RelationDoc asignada_a
+          kernel-&gt;&gt;proyector: refrescar (una vez)
+          proyector-&gt;&gt;kgdb: kgdb ingest · nodos + aristas desde los RelationDoc
+          superficie-&gt;&gt;ledger: MoveDoc · dos consultas y su intersección · alternativa mesa-14 · tres documentos
+          superficie-&gt;&gt;hablante: Reserva para Ana Rojas el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente. También servía la 14.
+          hablante-&gt;&gt;superficie: ¿qué reservas tiene Ana para el viernes?
+          superficie-&gt;&gt;sldb_addr: find st.{Cliente} --where &#x27;nombre ~ &quot;Ana&quot;&#x27; → ana-perez, ana-rojas
+          superficie-&gt;&gt;dialogo: [ambiguo] pendiente de elección · dos candidatos
+          superficie-&gt;&gt;ledger: [ambiguo] MoveDoc · libre → pendiente
+          superficie-&gt;&gt;hablante: [ambiguo] ¿Cuál? (1) Ana Pérez · (2) Ana Rojas
+          hablante-&gt;&gt;superficie: Rojas
+          superficie-&gt;&gt;dialogo: designación contra los candidatos · calce único → ana-rojas
+          superficie-&gt;&gt;kgdb: edges_to(Cliente:cliente-ana-rojas, de) → reserva-2026-09-11-ana-rojas
+          superficie-&gt;&gt;sldb_addr: find st.{Reserva} --where &#x27;fecha = &quot;2026-09-11&quot;&#x27; → ana-rojas, luis-soto
+          superficie-&gt;&gt;superficie: ∩ → una dirección · conjunto de uno = antecedente singular
+          superficie-&gt;&gt;ledger: MoveDoc · pendiente → libre
+          superficie-&gt;&gt;hablante: Una · el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente.
+          hablante-&gt;&gt;superficie: confirmala
+          superficie-&gt;&gt;lexico: confirmala → alias action cambiar estado=confirmada · la → referente Reserva
+          superficie-&gt;&gt;sldb_addr: get st.{Reserva}.reserva-….estado → pendiente
+          superficie-&gt;&gt;kgdb: edges_from(Estado:pendiente, pasa_a) → confirmada (condition personas #lt;= 8), cancelada
+          superficie-&gt;&gt;sldb_addr: find st.{Reserva} --where &#x27;personas #lt;= 8&#x27; contiene la reserva · transición legal
+          superficie-&gt;&gt;kernel: cambiar estado
+          kernel-&gt;&gt;sldb_write: fields update docs/reserva-…/estado &#x27;&quot;confirmada&quot;&#x27;
           kernel-&gt;&gt;proyector: refrescar
-          superficie-&gt;&gt;ledger: oración · dirección · campo · valor anterior y nuevo
-          superficie-&gt;&gt;hablante: Hecho.
-          hablante-&gt;&gt;superficie: ¿por qué dice eso?
-          superficie-&gt;&gt;ledger: leer el último movimiento sobre esa dirección
-          ledger-&gt;&gt;superficie: oración · dirección · campo · quién · cuándo
-          superficie-&gt;&gt;kgdb: edges_from(cmd-pron-repl, eje WHY / PROVENANCE)
-          kgdb-&gt;&gt;superficie: grounded_by → el docstring de _cmd_repl
-          superficie-&gt;&gt;hablante: la traza en natural
+          superficie-&gt;&gt;ledger: MoveDoc · estado anterior y nuevo · arista y condición evaluada
+          superficie-&gt;&gt;hablante: Confirmada.
+          hablante-&gt;&gt;superficie: ¿por qué?
+          superficie-&gt;&gt;ledger: último MoveDoc con escritura sobre la reserva
+          ledger-&gt;&gt;superficie: oración · arista pasa_a · condición personas #lt;= 8 · quién · cuándo
+          superficie-&gt;&gt;kgdb: edges_from(reserva, eje WHY / PROVENANCE)
+          superficie-&gt;&gt;hablante: Porque lo pediste y la transición pendiente → confirmada era legal · 6 personas, límite 8.
     </pre>
   </div>
-  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>La superficie no resuelve el sustantivo: arma find st.{Modelo+} --where y sldb devuelve una dirección, dos (ambiguo) o ninguna (missing).</li><li>Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc, el modelo de kgdb, por dirección en sldb. Verificar que la arista existe o es legal desde aquí es kgdb.</li><li>Afirmar un verbo transitivo es docs create de un RelationDoc, el modelo de relación de kgdb guardado en sldb. kgdb nunca recibe una orden; su ingest reensambla y la arista aparece.</li><li>Un verbo de acción es una escritura de sldb: fields update re-renderiza el markdown, valida el roundtrip y actualiza la cascada de hashes.</li><li>Missing consulta embeddings sobre las descripciones de modelos y campos, registra el hueco y termina el turno. Ambiguo abre una pendiente; la próxima oración entra como respuesta.</li><li>El por qué combina el ledger (quién, cuándo, con qué oración) con las aristas del eje WHY y PROVENANCE.</li><li>Todos los sustantivos son del mundo de pron: st.{Atom+} es su modelo de átomo, no el AtomDoc de deskops, y el comando es un CliCommandDoc de la KB de pron.</li></ul></div>
+  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>Cada mensaje es la llamada real de sldb o kgdb; correrlas en la shell da el mismo resultado que el turno.</li><li>Dos restricciones son dos consultas y una intersección de direcciones; también cuando una lista viene de kgdb (edges_to) y otra de sldb (find).</li><li>Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc de kgdb, por dirección en sldb. Verificar que la arista existe es kgdb. Verificar la condición es sldb, con find --where sobre el sujeto.</li><li>Afirmar un verbo transitivo es docs create de un RelationDoc; si el sujeto no existe, se crea en el mismo movimiento. kgdb nunca recibe una orden: su ingest reensambla.</li><li>Una transición es cambiar el campo estado, permitida porque existe pasa_a desde el estado actual y su condición se cumple. No crea aristas.</li><li>Una pendiente de elección se contesta con una designación contra los candidatos ya mostrados; un conjunto de exactamente uno vale como antecedente singular.</li><li>El MoveDoc se escribe después del refresh y no lo desfasa: el ledger queda fuera de hash_mundo y del grafo.</li><li>El mundo del restaurante está declarado entero en source/spec/09a: modelos, tipos de relación con su condición, transiciones, ProjectionDoc y alias.</li></ul></div>
 </section><section id="target-dialogo-06f8124e" data-spec="specs/target.dialogo.yml" data-type="state" data-project="" data-category="pron · objetivo" data-tags="type:state" data-view-id="target-dialogo" class="catalog-item">
   <div class="lbl"></div>
   <h2>Objetivo · el diálogo</h2>
@@ -1309,6 +1317,6 @@
     });
   </script>
 
-<script>window.ATOMS_DB = {}; window.ATOMS_BY_VIEW = {"target-components-06f8124e": {}, "target-turno-06f8124e": {}, "target-dialogo-06f8124e": {}}; window.COVERAGE_BY_VIEW = {"target-components-06f8124e": {"view_id": "target-components-06f8124e", "view_node_id": null, "diagram_type": "component", "title": "Objetivo \u00b7 componentes", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-turno-06f8124e": {"view_id": "target-turno-06f8124e", "view_node_id": null, "diagram_type": "sequence", "title": "Objetivo \u00b7 tres turnos", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-dialogo-06f8124e": {"view_id": "target-dialogo-06f8124e", "view_node_id": null, "diagram_type": "state", "title": "Objetivo \u00b7 el di\u00e1logo", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}}; window.SPEC2VIZ_ATOM_WARNINGS = []; window.SPEC2VIZ_COVERAGE_WARNINGS = [{"scope": "kgdb", "message": "KGDB snapshot not found; coverage projection is empty."}]; window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 3};</script>
+<script>window.ATOMS_DB = {}; window.ATOMS_BY_VIEW = {"target-components-06f8124e": {}, "target-turno-06f8124e": {}, "target-dialogo-06f8124e": {}}; window.COVERAGE_BY_VIEW = {"target-components-06f8124e": {"view_id": "target-components-06f8124e", "view_node_id": null, "diagram_type": "component", "title": "Objetivo \u00b7 componentes", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-turno-06f8124e": {"view_id": "target-turno-06f8124e", "view_node_id": null, "diagram_type": "sequence", "title": "Objetivo \u00b7 una conversaci\u00f3n", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-dialogo-06f8124e": {"view_id": "target-dialogo-06f8124e", "view_node_id": null, "diagram_type": "state", "title": "Objetivo \u00b7 el di\u00e1logo", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}}; window.SPEC2VIZ_ATOM_WARNINGS = []; window.SPEC2VIZ_COVERAGE_WARNINGS = [{"scope": "kgdb", "message": "KGDB snapshot not found; coverage projection is empty."}]; window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 3};</script>
 </body>
 </html>

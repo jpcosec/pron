@@ -1,26 +1,22 @@
 id: pron.target.turno
-title: pron — arquitectura objetivo · tres turnos
+title: pron — arquitectura objetivo · una conversación sobre un mundo externo
 type: sequence
-version: '2.0'
+version: '3.0'
 metadata:
   description: >
-    Tres oraciones que cubren los tres tipos de palabra. Un sustantivo con
-    un verbo transitivo leído ("¿qué implementa el átomo de bridges?"): la
-    superficie arma la dirección, sldb la responde, kgdb da las aristas. Un
-    verbo transitivo afirmado ("ese átomo implementa el modelo SldbBridge"):
-    se verifica contra el RelationTypeDoc de kgdb y se escribe como RelationDoc,
-    un documento más del store; el ingest de kgdb lo vuelve arista. Un verbo de acción ("cambia la
-    sinopsis del comando repl"): un fields update. Las tres salidas del
-    grounding — único, ambiguo, missing — se muestran sobre el primer turno.
-    Los sustantivos son del mundo de pron: su modelo de átomo, sus comandos y
-    superficies documentadas.
+    Cinco turnos de la conversación de source/spec/09 sobre el mundo del
+    restaurante (09a). Crear un cliente con payload; "reservale una mesa"
+    que crea la reserva y afirma dos verbos, con dos predicados cruzados
+    por intersección de direcciones; una frase ambigua y su respuesta;
+    "confirmala" como transición guardada por una arista pasa_a y una
+    condición evaluada por sldb sobre el sujeto; y "¿por qué?" desde el
+    ledger y las condiciones. Cada mensaje es la llamada real.
 data:
   participants:
     - {id: hablante, kind: actor}
     - {id: superficie, kind: component}
     - {id: dialogo, kind: component}
-    - {id: proyeccion, kind: component}
-    - {id: embeddings, kind: boundary}
+    - {id: lexico, kind: component}
     - {id: sldb_addr, kind: boundary}
     - {id: sldb_write, kind: boundary}
     - {id: kgdb, kind: boundary}
@@ -28,49 +24,54 @@ data:
     - {id: proyector, kind: component}
     - {id: ledger, kind: boundary}
   messages:
-    - {from: hablante, to: superficie, message: "¿qué implementa el átomo de bridges?"}
-    - {from: superficie, to: dialogo, message: "referentes · ninguno", kind: sync}
-    - {from: superficie, to: proyeccion, message: "¿átomo, implementa están en la proyección?", kind: sync}
-    - {from: proyeccion, to: superficie, message: "átomo → st.{Atom} · implementa → RelationTypeDoc implements de kgdb (eje HOW)"}
-    - {from: superficie, to: embeddings, message: "[missing] 'bridges' sin calce → cercanos por descripciones", kind: sync, condition: missing}
-    - {from: superficie, to: ledger, message: "[missing] registrar el hueco y los cercanos", condition: missing}
-    - {from: superficie, to: hablante, message: "[missing] no existe · ¿querías Y o Z?", condition: missing}
-    - {from: superficie, to: sldb_addr, message: "find st.{Atom+} --where 'doc ~ \"bridges\"'", kind: sync}
-    - {from: sldb_addr, to: superficie, message: "[ambiguo] dos direcciones", condition: ambiguo}
-    - {from: superficie, to: dialogo, message: "[ambiguo] guardar candidatos y la oración con hueco", condition: ambiguo}
-    - {from: superficie, to: hablante, message: "[ambiguo] ¿cuál? A o B", condition: ambiguo}
-    - {from: sldb_addr, to: superficie, message: "[único] st.{Atom}.atom-bridges-are-the-only-doors", condition: único}
-    - {from: superficie, to: kgdb, message: "edges_from(sldb://document/Atom:atom-bridges..., implements)", kind: sync}
-    - {from: kgdb, to: superficie, message: "targets · sldb://model/SldbBridge, sldb://model/KgdbBridge"}
-    - {from: superficie, to: ledger, message: "oración · dirección · verbo · aristas"}
-    - {from: superficie, to: hablante, message: "Implementa SldbBridge y KgdbBridge."}
-    - {from: hablante, to: superficie, message: "ese átomo también implementa el proyector"}
-    - {from: superficie, to: dialogo, message: "ese átomo → la dirección del turno anterior", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{SurfaceDoc+} --where 'doc ~ \"proyector\"'", kind: sync}
-    - {from: sldb_addr, to: superficie, message: "st.{SurfaceDoc}.surface-pron-infra-projector"}
-    - {from: superficie, to: sldb_addr, message: "get st.{RelationTypeDoc}.implements · source_types, target_types", kind: sync}
-    - {from: sldb_addr, to: superficie, message: "Atom → SurfaceDoc · aplica"}
-    - {from: superficie, to: kernel, message: "escribir arista implements A → B"}
-    - {from: kernel, to: sldb_write, message: "docs create --model RelationDoc · source_id, target_id, relation_type", kind: sync}
-    - {from: sldb_write, to: kernel, message: "tracked · hashes actualizados"}
+    - {from: hablante, to: superficie, message: "crea un cliente que se llame Ana Rojas, teléfono 9 5555 1234"}
+    - {from: superficie, to: lexico, message: "crea → acción crear · cliente → Cliente · se llame → nombre · teléfono → telefono · literales", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "fields show models/Cliente · obligatorios nombre, telefono", kind: sync}
+    - {from: superficie, to: kernel, message: "crear Cliente {nombre, telefono}"}
+    - {from: kernel, to: sldb_write, message: "docs create --model Cliente --name cliente-ana-rojas (naming del ProjectionDoc)", kind: sync}
+    - {from: sldb_write, to: kernel, message: "tracked · hashes"}
     - {from: kernel, to: proyector, message: refrescar}
-    - {from: proyector, to: kgdb, message: "kgdb ingest · nodos desde semantic-export · aristas desde los RelationDoc", kind: sync}
-    - {from: kgdb, to: proyector, message: "snapshot nuevo · la arista existe"}
-    - {from: superficie, to: ledger, message: "oración · direcciones · RelationDoc escrito"}
-    - {from: superficie, to: hablante, message: "Listo. Queda registrado."}
-    - {from: hablante, to: superficie, message: "cambia la sinopsis del comando repl a: bucle interactivo sobre el evaluador"}
-    - {from: superficie, to: proyeccion, message: "cambiar → verbo de acción · sinopsis → campo synopsis de CliCommandDoc", kind: sync}
-    - {from: superficie, to: sldb_addr, message: "find st.{CliCommandDoc+} --where 'command_path = \"repl\"'", kind: sync}
-    - {from: sldb_addr, to: superficie, message: "st.{CliCommandDoc}.cmd-pron-repl"}
-    - {from: superficie, to: kernel, message: "cambiar campo"}
-    - {from: kernel, to: sldb_write, message: "fields update docs/cmd-pron-repl/synopsis '\"bucle interactivo sobre el evaluador\"'", kind: sync}
-    - {from: sldb_write, to: kernel, message: "re-renderizado · roundtrip ok · hashes"}
+    - {from: proyector, to: kgdb, message: "stores update · semantic-export · kgdb ingest", kind: sync}
+    - {from: superficie, to: ledger, message: "MoveDoc · payload · dirección creada · hash_mundo antes y después"}
+    - {from: superficie, to: hablante, message: "Creado el cliente Ana Rojas."}
+    - {from: hablante, to: superficie, message: "reservale una mesa en la terraza para 6 personas el viernes a las 21"}
+    - {from: superficie, to: lexico, message: "reservale → relación de + crea_sujeto Reserva · le → referente · terraza → zona · para 6 → personas y capacidad >= 6", kind: sync}
+    - {from: superficie, to: dialogo, message: "le → último singular de clase Cliente · cliente-ana-rojas", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'zona = \"terraza\"' → 12, 14, 20", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'capacidad >= 6' → 12, 14", kind: sync}
+    - {from: superficie, to: superficie, message: "∩ → mesa-12, mesa-14 · determinante una → mesa-12"}
+    - {from: superficie, to: sldb_addr, message: "get st.{RelationTypeDoc}.de y .asignada_a · tipos y condición capacidad >= {personas}", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Mesa} --where 'capacidad >= 6' contiene mesa-12 · condición ok", kind: sync}
+    - {from: superficie, to: kernel, message: "crear Reserva · afirmar de → Ana · afirmar asignada_a → mesa-12"}
+    - {from: kernel, to: sldb_write, message: "docs create Reserva · docs create RelationDoc de · docs create RelationDoc asignada_a", kind: sync}
+    - {from: kernel, to: proyector, message: "refrescar (una vez)"}
+    - {from: proyector, to: kgdb, message: "kgdb ingest · nodos + aristas desde los RelationDoc", kind: sync}
+    - {from: superficie, to: ledger, message: "MoveDoc · dos consultas y su intersección · alternativa mesa-14 · tres documentos"}
+    - {from: superficie, to: hablante, message: "Reserva para Ana Rojas el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente. También servía la 14."}
+    - {from: hablante, to: superficie, message: "¿qué reservas tiene Ana para el viernes?"}
+    - {from: superficie, to: sldb_addr, message: "find st.{Cliente} --where 'nombre ~ \"Ana\"' → ana-perez, ana-rojas", kind: sync}
+    - {from: superficie, to: dialogo, message: "[ambiguo] pendiente de elección · dos candidatos", condition: ambiguo}
+    - {from: superficie, to: ledger, message: "[ambiguo] MoveDoc · libre → pendiente", condition: ambiguo}
+    - {from: superficie, to: hablante, message: "[ambiguo] ¿Cuál? (1) Ana Pérez · (2) Ana Rojas", condition: ambiguo}
+    - {from: hablante, to: superficie, message: "Rojas"}
+    - {from: superficie, to: dialogo, message: "designación contra los candidatos · calce único → ana-rojas", kind: sync}
+    - {from: superficie, to: kgdb, message: "edges_to(Cliente:cliente-ana-rojas, de) → reserva-2026-09-11-ana-rojas", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Reserva} --where 'fecha = \"2026-09-11\"' → ana-rojas, luis-soto", kind: sync}
+    - {from: superficie, to: superficie, message: "∩ → una dirección · conjunto de uno = antecedente singular"}
+    - {from: superficie, to: ledger, message: "MoveDoc · pendiente → libre"}
+    - {from: superficie, to: hablante, message: "Una · el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente."}
+    - {from: hablante, to: superficie, message: "confirmala"}
+    - {from: superficie, to: lexico, message: "confirmala → alias action cambiar estado=confirmada · la → referente Reserva", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "get st.{Reserva}.reserva-….estado → pendiente", kind: sync}
+    - {from: superficie, to: kgdb, message: "edges_from(Estado:pendiente, pasa_a) → confirmada (condition personas <= 8), cancelada", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{Reserva} --where 'personas <= 8' contiene la reserva · transición legal", kind: sync}
+    - {from: superficie, to: kernel, message: "cambiar estado"}
+    - {from: kernel, to: sldb_write, message: "fields update docs/reserva-…/estado '\"confirmada\"'", kind: sync}
     - {from: kernel, to: proyector, message: refrescar}
-    - {from: superficie, to: ledger, message: "oración · dirección · campo · valor anterior y nuevo"}
-    - {from: superficie, to: hablante, message: "Hecho."}
-    - {from: hablante, to: superficie, message: "¿por qué dice eso?"}
-    - {from: superficie, to: ledger, message: "leer el último movimiento sobre esa dirección", kind: sync}
-    - {from: ledger, to: superficie, message: "oración · dirección · campo · quién · cuándo"}
-    - {from: superficie, to: kgdb, message: "edges_from(cmd-pron-repl, eje WHY / PROVENANCE)", kind: sync}
-    - {from: kgdb, to: superficie, message: "grounded_by → el docstring de _cmd_repl"}
-    - {from: superficie, to: hablante, message: "la traza en natural"}
+    - {from: superficie, to: ledger, message: "MoveDoc · estado anterior y nuevo · arista y condición evaluada"}
+    - {from: superficie, to: hablante, message: "Confirmada."}
+    - {from: hablante, to: superficie, message: "¿por qué?"}
+    - {from: superficie, to: ledger, message: "último MoveDoc con escritura sobre la reserva", kind: sync}
+    - {from: ledger, to: superficie, message: "oración · arista pasa_a · condición personas <= 8 · quién · cuándo"}
+    - {from: superficie, to: kgdb, message: "edges_from(reserva, eje WHY / PROVENANCE)", kind: sync}
+    - {from: superficie, to: hablante, message: "Porque lo pediste y la transición pendiente → confirmada era legal · 6 personas, límite 8."}

@@ -1,6 +1,6 @@
 # 09 · Una conversación, paso a paso
 
-Ocho oraciones sobre un mundo que no es pron: las reservas de un restaurante. Para cada una: cómo se clasifican las palabras, qué interpretación parcial queda, qué se le pregunta al mundo y qué contesta, qué se descarta con eso, qué operación se hace y qué se registra. Las llamadas a sldb y kgdb son las reales.
+Ocho oraciones sobre un mundo que no es pron: las reservas de un restaurante, declarado entero en 09a (modelos, tipos de relación, transiciones, proyección y alias). Para cada una: cómo se clasifican las palabras, qué interpretación parcial queda, qué se le pregunta al mundo y qué contesta, qué se descarta con eso, qué operación se hace y qué se registra. Las llamadas a sldb y kgdb son las reales.
 
 ## El mundo
 
@@ -18,7 +18,7 @@ Modelos de relación de kgdb, registrados en el store:
 | `RelationTypeDoc` | source → target | cardinalidad | eje | alias |
 |---|---|---|---|---|
 | `de` | Reserva → Cliente | many_to_one | WHAT | "de", "reservale" |
-| `asignada_a` | Reserva → Mesa | many_to_one | WHERE | "asignale", "en la mesa" |
+| `asignada_a` | Reserva → Mesa | many_to_one | WHERE | "asignale", "en la mesa" · condición del tipo: `capacidad >= {personas}` |
 | `pasa_a` | Estado → Estado | many_to_many | WHEN | transiciones |
 
 `RelationDoc` existentes de `pasa_a`: pendiente → confirmada con condición `personas <= 8`; pendiente → cancelada; confirmada → sentada; confirmada → cancelada. Mesas: 3 y 5 en el salón para 4; 12 y 14 en la terraza para 6 y 8; 20 en la terraza para 2. Clientes: Ana Pérez, Luis Soto. Proyección de la sesión: todo, con `leer y afirmar` en las tres relaciones y todos los verbos de acción.
@@ -72,7 +72,7 @@ valor: {nombre: "Ana Rojas", telefono: "9 5555 1234"}
 huecos: []
 ```
 
-**Verificar contra el esquema.** `fields show models/Cliente` dice que `nombre` y `telefono` son obligatorios y `notas` opcional. El payload cubre los obligatorios: no hay huecos. Si faltara `telefono`, la salida sería ambigua con una pendiente "¿teléfono?" y la próxima oración se leería como ese valor.
+**Verificar contra el esquema.** `fields show models/Cliente` dice que `nombre` y `telefono` son obligatorios y `notas` opcional. El payload cubre los obligatorios: no hay huecos. Si faltara `telefono`, la salida sería ambigua con una *pendiente de dato* (06): "¿teléfono?", y la próxima oración se leería primero como ese valor.
 
 **Operación.**
 
@@ -139,8 +139,10 @@ sldb docs create --model Reserva -o reservas/2026-09-11-ana-rojas.md --name rese
 sldb docs create --model RelationDoc -o relations/de--reserva-…--cliente-ana-rojas.md \
   '{"source_id": "Reserva:reserva-2026-09-11-ana-rojas", "target_id": "Cliente:cliente-ana-rojas", "relation_type": "de"}'
 sldb docs create --model RelationDoc -o relations/asignada_a--reserva-…--mesa-12.md \
-  '{"source_id": "Reserva:reserva-2026-09-11-ana-rojas", "target_id": "Mesa:mesa-12", "relation_type": "asignada_a"}'
+  '{"source_id": "Reserva:reserva-2026-09-11-ana-rojas", "target_id": "Mesa:mesa-12", "relation_type": "asignada_a", "condition": ""}'
 ```
+
+El `RelationDoc` de `asignada_a` no lleva condición propia: hereda la del tipo, `capacidad >= {personas}` (09a). Antes de crearlo pron la evaluó sobre mesa-12 con `personas = 6`: `find st.{Mesa} --where 'capacidad >= 6'` contiene mesa-12. Es la misma condición que vuelve en el turno 7.
 
 **Refresh**, una vez.
 
@@ -182,7 +184,7 @@ find 'st.{Reserva}' --where 'fecha = "2026-09-11"'                 → reserva-2
 
 La intersección cruza la lista que dio kgdb con la que dio sldb: direcciones, no payloads.
 
-**Respuesta.** "Una: el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente." La dirección queda como referente singular de clase `Reserva`.
+**Respuesta.** "Una: el viernes 11 a las 21:00, 6 personas, mesa 12, pendiente." El resultado es un conjunto de una dirección; un conjunto de exactamente un elemento califica también como antecedente singular (06), así que queda disponible para "la" y para "esa reserva".
 
 **Registro**, estado `pendiente → libre`.
 
@@ -237,7 +239,7 @@ sldb fields update docs/reserva-2026-09-11-ana-rojas/personas 9
 sldb fields update docs/reserva-2026-09-11-ana-rojas/notas '"cumpleaños"'
 ```
 
-**Refresh**, una vez. **Respuesta.** "Hecho: 9 personas, nota *cumpleaños*. Ojo: la mesa 12 es para 6." Esa advertencia sale de una regla del mundo, no de pron: `asignada_a` tiene condición `capacidad >= {personas}`, y después de cambiar `personas` pron reevalúa las condiciones de las aristas del sujeto y avisa de las que dejaron de cumplirse. No deshace nada.
+**Refresh**, una vez. **Respuesta.** "Hecho: 9 personas, nota *cumpleaños*. Ojo: la mesa 12 es para 6." Esa advertencia sale de una regla del mundo, no de pron: el tipo `asignada_a` declara la condición `capacidad >= {personas}` (09a) y la arista de esta reserva la hereda; después de cambiar `personas` pron reevalúa las condiciones de las aristas del sujeto y avisa de las que dejaron de cumplirse. No deshace nada.
 
 **Registro** con los dos valores anteriores y nuevos y la condición que dejó de cumplirse.
 
@@ -252,7 +254,9 @@ sldb fields update docs/reserva-2026-09-11-ana-rojas/notas '"cumpleaños"'
 1. El ledger: el `MoveDoc` del turno 7 tiene la condición reevaluada: `asignada_a → mesa-12`, `capacidad >= {personas}` con `capacidad = 6`, `personas = 9`, falsa.
 2. El mundo: las aristas del sujeto con eje WHEN o WHERE que tengan condición: la misma.
 
-**Respuesta.** "Porque la reserva está asignada a la mesa 12, y esa asignación exige capacidad >= personas: 6 >= 9 no se cumple desde que la cambiaste a 9. Puedo asignarle la 14, que es para 8, o dejarla así."
+Antes de ofrecer alternativas pron evalúa la misma condición sobre las otras mesas: `find st.{Mesa} --where 'capacidad >= 9'` devuelve vacío.
+
+**Respuesta.** "Porque la reserva está asignada a la mesa 12, y esa asignación exige capacidad >= personas: 6 >= 9 no se cumple desde que la cambiaste a 9. Ninguna mesa tiene capacidad para 9; la más grande es la 14, para 8. Puedo bajarla a 8 y pasarla a la 14, o dejarla como está."
 
 **Registro** de lectura, sin refresh.
 

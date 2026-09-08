@@ -14,7 +14,7 @@ Los verbos de acción cambian el mundo sin relacionar dos cosas. Son exactamente
 | olvidar | `docs untrack <doc>` | "olvida ese átomo" |
 | refrescar | `stores update` + `semantic-export` + `kgdb ingest` | "refresca" |
 
-Afirmar un verbo transitivo (03) es "crear" con modelo `RelationDoc`. Una transición de máquina de estados es "crear arista" más "cambiar campo de estado", y el refresh.
+Afirmar un verbo transitivo (03) es "crear" con modelo `RelationDoc`. Una transición de máquina de estados es solo "cambiar" el campo de estado, permitida porque ya existe una arista `pasa_a` desde el estado actual y su condición se cumple (03); no crea ninguna arista.
 
 ## Qué garantiza sldb
 

@@ -1,14 +1,15 @@
 graph TD
     subgraph afuera ["Fuera de pron"]
         hablante["Quien habla · persona, LLM u otro producto"]
+        editor["Editor · sldb serve (/schema, /graph, POST /save) + graph_ui · formularios desde el esquema, relaciones como RelationDoc"]
     end
     subgraph pron ["pron · el SHRDLU"]
         superficie["Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural"]
-        proyeccion["Proyección · qué stores, modelos, tipos de relación y alias puede nombrar esta sesión"]
+        proyeccion["Proyección · ProjectionDoc · stores, modelos, relaciones con modo leer / afirmar, acciones, alias, naming, display, key"]
         dialogo["Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)"]
-        kernel["Kernel · verbos de acción · crear doc · cambiar campo · escribir arista · refrescar"]
+        kernel["Kernel · verbos de acción · crear · cambiar · agregar · limpiar · quitar · olvidar · refrescar · lee antes de escribir · reevalúa condiciones"]
         embeddings["Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos"]
-        ledger["Ledger · oración + direcciones + verbo + resultado · el por qué se lee de las aristas del eje WHY/HOW"]
+        ledger["Ledger · MoveDoc por turno · interpretación, consultas, escritura, hash_mundo antes y después · movimientos externos detectados"]
         proyector["Proyector · stores update · semantic-export · kgdb ingest"]
     end
     subgraph mundo ["Mundo · sldb · los sustantivos · almacena todo documento, incluidas las relaciones de kgdb"]
@@ -23,13 +24,15 @@ graph TD
         export["semantic-export · modelos, documentos, secciones, tags, DAG"]
     end
     subgraph grafo ["kgdb · dueño de los verbos transitivos · el grafo es derivado y de solo lectura"]
-        reltypes["RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, eje del predicado (HOW, WHY, WHAT, PROVENANCE)"]
-        relinst["RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source, target, relation_type, condition_ref"]
-        ingest["kgdb ingest · nodos y tags desde semantic-export · aristas desde los RelationDoc · integridad referencial"]
+        reltypes["RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, cardinality, condition, eje del predicado"]
+        relinst["RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source_id, target_id, relation_type, condition"]
+        ingest["kgdb ingest · nodos desde semantic-export · nodos relation_type · aristas desde los RelationDoc y los links con predicado · excluye el ledger · hash_mundo · integridad como error"]
         snapshot["GraphSnapshot · nodos = documentos · aristas = tags, contención y relaciones autoradas"]
-        traversal["edges_from · edges_to · scope · ¿existe la arista? · ¿legal desde aquí?"]
+        traversal["edges_from · edges_to · ¿existe la arista? · cada arista trae origin y condition"]
     end
     hablante -->|"una oración"| superficie
+    editor -->|"POST /save · misma save_payload"| writes
+    superficie -->|"movimiento externo si hash_mundo cambió sin pron"| ledger
     superficie -->|"referentes"| dialogo
     superficie -->|"cada palabra está en la proyección"| proyeccion
     proyeccion -->|"qué mundo"| store_index
@@ -41,7 +44,8 @@ graph TD
     superficie -->|"sustantivo = st.{Modelo+} + where · un campo = .campo.sub"| addr
     addr -->|"reads"| docs
     superficie -->|"¿el verbo aplica al sujeto y al objeto? · source_types, target_types"| reltypes
-    superficie -->|"verbo transitivo leído · ¿quién implementa X? · ¿legal desde aquí?"| traversal
+    superficie -->|"verbo transitivo leído · ¿quién implementa X? · ¿existe pasa_a desde el estado actual?"| traversal
+    superficie -->|"condición de la arista evaluada por sldb sobre el sujeto · find … --where"| addr
     superficie -->|"verbo de acción"| kernel
     kernel -->|"crear doc · cambiar campo · escribir RelationDoc"| writes
     writes -->|"re-renderiza y valida"| docs

@@ -43,9 +43,10 @@ direction: directed
 cardinality: many_to_one
 source_types: [Reserva]
 target_types: [Mesa]
+condition: "capacidad >= {personas}"
 ```
 
-y en el cuerpo la descripción, que entra al léxico como motivo del verbo. El mismo nombre se registra como predicado del store con su eje, `sldb predicates add asignada_a --axis WHERE`, para que los links en prosa `[asignada_a:: [[mesa-12]]]` compartan vocabulario con las aristas autoradas.
+y en el cuerpo la descripción, que entra al léxico como motivo del verbo. La `condition` del tipo vale para todas sus aristas; una instancia puede traer la suya y reemplazarla. El mismo nombre se registra como predicado del store con su eje, `sldb predicates add asignada_a --axis WHERE`, para que los links en prosa `[asignada_a:: [[mesa-12]]]` compartan vocabulario con las aristas autoradas.
 
 ### 2.2 La instancia, una por arista
 
@@ -55,8 +56,10 @@ Un `RelationDoc`, por ejemplo `relations/asignada_a--reserva-2026-09-11-ana-roja
 source_id: Reserva:reserva-2026-09-11-ana-rojas
 target_id: Mesa:mesa-12
 relation_type: asignada_a
-condition: "capacidad >= {personas}"
+condition: ""
 ```
+
+`condition` vacía: hereda la del tipo. Se llena solo cuando esta arista tiene una regla distinta.
 
 Los ids son `Modelo:nombre`, el id de exportación de sldb, y son los mismos que kgdb usa dentro de `sldb://document/Modelo:nombre`. El nombre del documento es `<tipo>--<origen>--<destino>`, así una arista se puede buscar por dirección (`find 'st.{RelationDoc}' --where 'source_id = "…"'`) sin pasar por kgdb, y dos afirmaciones iguales chocan en el nombre en vez de duplicarse.
 

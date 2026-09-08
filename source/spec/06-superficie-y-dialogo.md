@@ -54,11 +54,13 @@ Qué pasa después de un missing no es de pron. Puede ser que el hablante reform
 El único estado propio de pron por sesión es si hay una pregunta pendiente. Es la conversación estilo SHRDLU:
 
 - **libre**: sin pendiente. Una oración única o missing vuelve a libre. Una ambigua pasa a pendiente.
-- **pendiente**: hay candidatos guardados y una interpretación con hueco. La próxima oración se prueba primero como respuesta.
+- **pendiente**: hay una interpretación con un hueco y la próxima oración se prueba primero como respuesta. Hay dos clases de pendiente:
+  - **de elección**: el hueco tiene candidatos guardados (una frase nominal ambigua, un referente con varios antecedentes);
+  - **de dato**: el hueco es un campo obligatorio sin valor (un "crear" al que le falta `telefono`), y lo que se espera es un literal del tipo de ese campo.
 
 Reglas de continuación, en este orden:
 
-1. Es **respuesta** si es una designación de candidato: un número, un nombre, "el primero", "el de X", "ninguno". Se resuelve contra los candidatos, no contra el mundo: "X" se compara con los títulos de los candidatos con los mismos embeddings del léxico. Un calce único rellena el hueco y completa el turno original; "ninguno" cancela la pendiente.
+1. Es **respuesta** si calza con la clase de la pendiente. Para una pendiente de elección, una designación de candidato: un número, un nombre, "el primero", "el de X", "ninguno"; "X" se compara con los nombres naturales de los candidatos con los mismos embeddings del léxico, y esto no contradice la regla de que un calce aproximado nunca se ejecuta (05): aquí el conjunto es cerrado y ya fue mostrado, y un calce que no es único deja la pendiente como está. Para una pendiente de dato, un literal que cabe en el tipo del campo. Un calce único rellena el hueco y completa el turno original; "ninguno" cancela la pendiente.
 2. Es **orden nueva** si tiene verbo, o si es una frase nominal con determinante. Se descarta la pendiente, se registra el descarte, y la oración se interpreta desde cero.
 3. Si no es ninguna de las dos, o la designación calza con más de un candidato, **sigue pendiente**: pron repite los candidatos y lo dice.
 
@@ -66,7 +68,7 @@ Una pendiente dura hasta que se contesta, se cancela o se descarta por una orden
 
 Los referentes se resuelven en el diálogo antes de armar direcciones, por número y por clase:
 
-- "ese X", "el mismo", "la anterior": la última dirección **singular** cuya clase es X, o la clase que pide el verbo. Un conjunto no califica como antecedente singular.
+- "ese X", "el mismo", "la anterior": la última dirección **singular** cuya clase es X, o la clase que pide el verbo. Un conjunto de más de un elemento no califica como antecedente singular; un conjunto de exactamente uno, sí.
 - "esos", "les", "todos ellos": el último **conjunto**. Una dirección sola no califica.
 - Si el turno anterior dejó varias direcciones singulares de la misma clase (por ejemplo, los dos targets de un verbo leído), "ese X" es ambiguo y se pregunta.
 - "al usuario", "yo", "mi": la identidad de la sesión.
