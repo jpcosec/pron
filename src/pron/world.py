@@ -10,11 +10,6 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
 
-import networkx as nx
-
-from kgdb.graph.utils import add_knowledge_node, save_graph
-from kgdb.ingest.typed import build_typed_snapshot
-from kgdb.world import init_world as kgdb_init
 from sldb.cli.commands.store_update import update_store
 
 from pron.graph import GRAPH_RELPATH, Graph
@@ -97,7 +92,13 @@ class World:
         return self.graph.is_fresh(self.model_hashes())
 
     def refresh(self, exclude_tags: tuple[str, ...] = ("type.pron.move",)) -> dict[str, Any]:
-        """stores update, then kgdb's typed ingest into .pron/graph.nx.json. Library calls only."""
+        """stores update, then kgdb's typed ingest into .pron/graph.nx.json. Library calls only.
+        kgdb and networkx are imported here, not at module load: a session that only reads
+        never pays for them."""
+        import networkx as nx
+        from kgdb.graph.utils import add_knowledge_node, save_graph
+        from kgdb.ingest.typed import build_typed_snapshot
+
         update_store(SimpleNamespace(store=str(self.store.sp), pythonpath=self.store.pythonpath, wait=False, verbose=False))
         snapshot, report = build_typed_snapshot(self.store.sp, self.store.pythonpath, exclude_tags)
         g = nx.MultiDiGraph()
@@ -114,6 +115,8 @@ def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: 
     """Make a store a pron world: kgdb's typed relations plus pron's own models. With
     with_knowledge, also what pron's own knowledge base needs: SpecDoc and the relation
     type `implements` (a module or command implements a spec chapter)."""
+    from kgdb.world import init_world as kgdb_init
+
     root = Path(root).resolve()
     store = Store(root, pythonpath)
     kgdb_report = kgdb_init(store.sp, store.pythonpath)

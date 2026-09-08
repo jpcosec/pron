@@ -12,10 +12,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-import networkx as nx
-
-from kgdb.graph.utils import load_graph
-
 GRAPH_RELPATH = Path(".pron") / "graph.nx.json"
 LEDGER_MODEL = "MoveDoc"
 
@@ -37,20 +33,31 @@ def field_id(model: str, field: str) -> str:
 
 
 class Graph:
+    """Reads the node-link JSON kgdb saved, without networkx: nodes by id, edges indexed by
+    source and by target. Reading a file format is not assembling a graph."""
+
     def __init__(self, root: str | Path) -> None:
         self.path = Path(root).resolve() / GRAPH_RELPATH
-        self._g: nx.MultiDiGraph | None = None
+        self._nodes: dict[str, dict[str, Any]] | None = None
+        self._out: dict[str, list[dict[str, Any]]] = {}
+        self._in: dict[str, list[dict[str, Any]]] = {}
 
     def available(self) -> bool:
         return self.path.exists()
 
-    def load(self) -> nx.MultiDiGraph:
-        if self._g is None:
-            self._g = load_graph(self.path)
-        return self._g
+    def load(self) -> dict[str, dict[str, Any]]:
+        if self._nodes is None:
+            data = json.loads(self.path.read_text(encoding="utf-8"))
+            self._nodes = {n["id"]: n for n in data.get("nodes", [])}
+            self._out, self._in = {}, {}
+            for link in data.get("links", data.get("edges", [])):
+                e = {"source": link["source"], "target": link["target"], "relation": link.get("relation", link.get("key")), "metadata": link.get("metadata", {}) or {}}
+                self._out.setdefault(e["source"], []).append(e)
+                self._in.setdefault(e["target"], []).append(e)
+        return self._nodes
 
     def reload(self) -> None:
-        self._g = None
+        self._nodes = None
 
     def metadata(self) -> dict[str, Any]:
         data = json.loads(self.path.read_text(encoding="utf-8"))
@@ -71,29 +78,16 @@ class Graph:
         return node_id in self.load()
 
     def node(self, node_id: str) -> dict[str, Any]:
-        g = self.load()
-        return g.nodes[node_id].get("schema", {}) if node_id in g else {}
+        return self.load().get(node_id, {}).get("schema", {}) or {}
 
     def edges_from(self, node_id: str, relation: str | None = None) -> list[dict[str, Any]]:
-        """Outgoing edges: [{target, relation, metadata}]."""
-        g = self.load()
-        if node_id not in g:
-            return []
-        out = []
-        for _, tgt, data in g.out_edges(node_id, data=True):
-            if relation is None or data.get("relation") == relation:
-                out.append({"source": node_id, "target": tgt, "relation": data.get("relation"), "metadata": data.get("metadata", {})})
-        return out
+        """Outgoing edges: [{source, target, relation, metadata}]."""
+        self.load()
+        return [dict(e) for e in self._out.get(node_id, []) if relation is None or e["relation"] == relation]
 
     def edges_to(self, node_id: str, relation: str | None = None) -> list[dict[str, Any]]:
-        g = self.load()
-        if node_id not in g:
-            return []
-        out = []
-        for src, _, data in g.in_edges(node_id, data=True):
-            if relation is None or data.get("relation") == relation:
-                out.append({"source": src, "target": node_id, "relation": data.get("relation"), "metadata": data.get("metadata", {})})
-        return out
+        self.load()
+        return [dict(e) for e in self._in.get(node_id, []) if relation is None or e["relation"] == relation]
 
     def exists(self, source: str, target: str, relation: str) -> dict[str, Any] | None:
         for e in self.edges_from(source, relation):
