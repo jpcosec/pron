@@ -1,8 +1,8 @@
 documents:
 - name: spec-01
   path: source/spec/01-mundo.md
-  hash_c: 10506d15b11e563afdfed1468b349269a38bba9857dd7bedf31df13610e80491
-  hash_d: 69d1e8e2b108b0b384ef46a63ecbb69bba8827f9a12090258e87b80c252dd85f
+  hash_c: 2fe7f97350cf8d4c2daf6a4dd76e16cbf136cf0a92637aee56a072c5127da70f
+  hash_d: 36ff216b4daf4321a6120e6cf6f648282e76596f4ed8c59ee2d9b27271e37dae
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

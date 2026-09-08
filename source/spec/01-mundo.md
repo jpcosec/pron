@@ -45,7 +45,7 @@ Una proyección es la parte de un mundo que una sesión puede nombrar. Se declar
 | `display` | cómo se muestra un objeto por modelo, por ejemplo `Table: "table {number}"`; sin plantilla, `title` o el nombre del documento |
 | `key` | qué campo identifica un objeto por modelo, por ejemplo `Table: number`, para que "table 12" sea `number = 12` |
 
-Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "I don't have that word" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `read`.
+Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "I don't have that word" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `read`. La aplicación puede pedir eso mismo por sesión sin declarar otra proyección: una sesión abierta como **solo lectura** usa la proyección con `actions` vacío y toda relación en modo `read`, y los alias de acción y los compuestos que crean o cambian no entran a su léxico.
 
 ## Expansión del mundo
 
