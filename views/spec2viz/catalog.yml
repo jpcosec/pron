@@ -1,0 +1,23 @@
+diagram_store:
+  kind: diagram-store
+  template: template.html
+  title: Arquitectura de pron
+  brand_name: pron
+  brand_subtitle: Estado real del código, derivado del código fuente — no el roadmap aspiracional del corpus de atoms.
+  project_name: legos/pron
+  items:
+  - id: architecture
+    title: Arquitectura actual
+    desc: CLI/REPL sobre un kernel de Meaning (s-expresiones ancladas por gramática viva), operaciones que despachan a los bridges — la única puerta a sldb y kgdb — y un generador de docs que deriva del propio código.
+    category: pron
+    nav: Arquitectura actual
+    type: component
+    src: out/mermaid/architecture.mmd
+    mmd: out/mermaid/architecture.mmd
+    specs:
+    - specs/architecture.yml
+    notes:
+    - CLI y REPL comparten el mismo Evaluator; no hay una segunda gramática.
+    - Session (.pron/session.json) solo persiste la desambiguación del CLI no interactivo; el REPL la mantiene en memoria.
+    - Los bridges (SldbBridge, KgdbBridge) son la única puerta a las librerías sldb/kgdb, por atom-bridges-are-the-only-doors-to-sldb-and-kgdb.
+    - El generador de docs (pron docs) deriva CliCommandDoc de los docstrings de los handlers _cmd_* y SurfaceDoc del AST de cada módulo público.
