@@ -1,0 +1,59 @@
+graph TD
+    subgraph afuera ["Fuera de pron"]
+        hablante["Quien habla · persona, LLM u otro producto"]
+    end
+    subgraph capa0 ["Capa 0 · Mundo"]
+        mundo["Declaración del mundo · stores, modelos, anchors, proyecciones"]
+    end
+    subgraph capa1 ["Capa 1 · Superficie"]
+        superficie["Superficie · natural → Meaning · Meaning → natural"]
+    end
+    subgraph capa2 ["Capa 2 · Meaning"]
+        gramatica["Gramática viva · anchors · qué hay · qué puedo hacer con X"]
+        proyeccion["Proyección · lo que esta sesión ve y puede"]
+        dialogo["Diálogo · pendiente y referentes (ese, la anterior)"]
+        evaluador["Evaluador · grounding · resolución · expansión · dispatch · traza"]
+        operaciones["Operaciones · leer / escribir / operar / declarar · abiertas"]
+    end
+    subgraph capa3 ["Capa 3 · Bridges"]
+        bridge_sldb["Bridge sldb · documentos, campos, secciones"]
+        bridge_kgdb["Bridge kgdb · grafo, relaciones, estados"]
+        bridge_emb["Bridge embeddings · parecido a · cercanos"]
+        bridge_otros["Bridge lo-que-venga · SQL, APIs, ..."]
+    end
+    subgraph transversal ["Transversal"]
+        proyector["Proyector · reindexa · reconstruye grafo · recalcula embeddings"]
+        ledger["Ledger · oración + Meaning + refs + motivos + resultado · provenance"]
+    end
+    subgraph backends ["Backends"]
+        sldb["sldb"]
+        kgdb["kgdb"]
+        embeddings["embeddings"]
+        otros["SQL · APIs · lo que venga"]
+    end
+    mundo -->|"carga los anchors"| gramatica
+    mundo -->|"define"| proyeccion
+    mundo -->|"qué puertas existen"| capa3
+    hablante -->|"una oración"| superficie
+    superficie -->|"referentes"| dialogo
+    superficie -->|"cada símbolo es anchor"| gramatica
+    proyeccion -->|"acota"| gramatica
+    superficie -->|"un Meaning"| evaluador
+    evaluador -->|"grounds"| gramatica
+    evaluador -->|"pendiente si ambiguo"| dialogo
+    evaluador -->|"missing → cercanos por similitud"| bridge_emb
+    evaluador -->|"dispatches"| operaciones
+    operaciones -->|"consulta / escribe"| bridge_sldb
+    operaciones -->|"relaciones / opera estados"| bridge_kgdb
+    operaciones -->|"parecido a"| bridge_emb
+    operaciones -->|"lo que declaren"| bridge_otros
+    operaciones -->|"refresca tras escribir"| proyector
+    proyector -->|"reindexa · reconstruye · recalcula"| capa3
+    bridge_sldb -->|"serves"| sldb
+    bridge_kgdb -->|"serves"| kgdb
+    bridge_emb -->|"serves"| embeddings
+    bridge_otros -->|"serves"| otros
+    evaluador -->|"el movimiento entero"| ledger
+    ledger -->|"por qué · cómo · de dónde"| evaluador
+    evaluador -->|"resultado · ¿cuál? · no existe, cercanos"| superficie
+    superficie -->|"en natural"| hablante

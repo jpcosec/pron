@@ -3,14 +3,14 @@ diagram_store:
   template: template.html
   title: Arquitectura de pron
   brand_name: pron
-  brand_subtitle: Estado real del código, derivado del código fuente — no el roadmap aspiracional del corpus de atoms.
+  brand_subtitle: "Actual: derivado del código. Objetivo: el SHRDLU sobre un mundo declarado. La diferencia entre ambos es la lista de trabajo."
   project_name: legos/pron
   items:
   - id: architecture
     title: Arquitectura actual
     desc: CLI/REPL sobre un kernel de Meaning (s-expresiones ancladas por gramática viva), operaciones que despachan a los bridges — la única puerta a sldb y kgdb — y un generador de docs que deriva del propio código.
-    category: pron
-    nav: Arquitectura actual
+    category: pron · actual
+    nav: Actual · componentes
     type: component
     src: out/mermaid/architecture.mmd
     mmd: out/mermaid/architecture.mmd
@@ -21,3 +21,46 @@ diagram_store:
     - Session (.pron/session.json) solo persiste la desambiguación del CLI no interactivo; el REPL la mantiene en memoria.
     - Los bridges (SldbBridge, KgdbBridge) son la única puerta a las librerías sldb/kgdb, por atom-bridges-are-the-only-doors-to-sldb-and-kgdb.
     - El generador de docs (pron docs) deriva CliCommandDoc de los docstrings de los handlers _cmd_* y SurfaceDoc del AST de cada módulo público.
+  - id: target-components
+    title: Objetivo · componentes
+    desc: Un SHRDLU sobre un mundo declarado. Quien habla es un solo actor externo; una única superficie natural ↔ Meaning; evaluador que grounda contra la gramática viva acotada por la proyección; operaciones abiertas; una puerta por backend; ledger transversal.
+    category: pron · objetivo
+    nav: Objetivo · componentes
+    type: component
+    src: out/mermaid/target.components.mmd
+    mmd: out/mermaid/target.components.mmd
+    specs:
+    - specs/target.components.yml
+    notes:
+    - El vocabulario base no tiene palabras de dominio. Las de dominio (regla, paso, herramienta) se declaran por mundo como anchors.
+    - Un símbolo que no es anchor de la proyección vuelve como pregunta desde la superficie; nunca llega al evaluador.
+    - Un missing usa el bridge de embeddings para ofrecer cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
+    - El ledger guarda por movimiento la oración, su Meaning, los refs y los motivos. "¿Por qué?" lo lee. La traducción puede ser difusa porque el grounding es estricto.
+  - id: target-turno
+    title: Objetivo · un turno
+    desc: Desde que entra una oración hasta que sale una respuesta en natural, con las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
+    category: pron · objetivo
+    nav: Objetivo · un turno
+    type: sequence
+    src: out/mermaid/target.turno.mmd
+    mmd: out/mermaid/target.turno.mmd
+    specs:
+    - specs/target.turno.yml
+    notes:
+    - Los referentes (al usuario, ese, la anterior) se resuelven en el diálogo antes de groundear.
+    - Ambiguo abre una pendiente; la próxima oración entra como respuesta.
+    - Missing consulta embeddings para cercanos, registra el hueco y termina el turno.
+    - El proyector refresca solo después de una escritura.
+  - id: target-dialogo
+    title: Objetivo · el diálogo
+    desc: El único estado propio de pron por sesión — si hay o no una pregunta pendiente — y sus cuatro salidas.
+    category: pron · objetivo
+    nav: Objetivo · el diálogo
+    type: state
+    src: out/mermaid/target.dialogo.mmd
+    mmd: out/mermaid/target.dialogo.mmd
+    specs:
+    - specs/target.dialogo.yml
+    notes:
+    - Es la conversación estilo SHRDLU. Una ambigüedad abre una pregunta; la siguiente oración la contesta, no la contesta, o la descarta.
+    - Todos los movimientos se registran, incluidos los que no cambian de estado.

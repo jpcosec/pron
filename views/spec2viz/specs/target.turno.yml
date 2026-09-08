@@ -1,0 +1,52 @@
+id: pron.target.turno
+title: pron — arquitectura objetivo · un turno
+type: sequence
+version: '1.0'
+metadata:
+  description: >
+    Un turno desde que entra una oración hasta que sale una respuesta en
+    natural. Tres salidas del grounding: único (sigue), ambiguo (pregunta y
+    espera), missing (cercanos por embeddings, registra el hueco y termina —
+    qué pasa después no es de pron). Todo queda en el ledger · "¿por qué?"
+    lo lee.
+data:
+  participants:
+    - {id: hablante, kind: actor}
+    - {id: superficie, kind: component}
+    - {id: dialogo, kind: component}
+    - {id: gramatica, kind: component}
+    - {id: evaluador, kind: component}
+    - {id: operaciones, kind: component}
+    - {id: bridge, kind: boundary}
+    - {id: embeddings, kind: boundary}
+    - {id: proyector, kind: component}
+    - {id: ledger, kind: boundary}
+  messages:
+    - {from: hablante, to: superficie, message: "agrega cita al usuario a las 16:00"}
+    - {from: superficie, to: dialogo, message: "¿a quién refiere 'al usuario'?", kind: sync}
+    - {from: dialogo, to: superficie, message: el usuario de esta sesión}
+    - {from: superficie, to: gramatica, message: "¿cada símbolo es anchor de la proyección?", kind: sync}
+    - {from: gramatica, to: superficie, message: "[símbolo sin anchor] 'cita' no es anchor", condition: símbolo sin anchor}
+    - {from: superficie, to: hablante, message: "[símbolo sin anchor] no tengo 'cita' como palabra · sí tengo ...", condition: símbolo sin anchor}
+    - {from: superficie, to: evaluador, message: Meaning}
+    - {from: evaluador, to: gramatica, message: groundar cada símbolo, kind: sync}
+    - {from: evaluador, to: dialogo, message: "[ambiguo] guardar candidatos y Meaning con hueco", condition: ambiguo}
+    - {from: evaluador, to: superficie, message: "[ambiguo] ¿cuál?", condition: ambiguo}
+    - {from: superficie, to: hablante, message: "[ambiguo] ¿cuál? A o B", condition: ambiguo}
+    - {from: evaluador, to: embeddings, message: "[missing] cercanos por similitud", kind: sync, condition: missing}
+    - {from: evaluador, to: ledger, message: "[missing] registrar el hueco con motivo y cercanos", condition: missing}
+    - {from: evaluador, to: superficie, message: "[missing] no existe · cercanos · esto buscaba", condition: missing}
+    - {from: superficie, to: hablante, message: "[missing] no existe X · ¿querías Y o Z?", condition: missing}
+    - {from: evaluador, to: operaciones, message: "[único] despachar", condition: único}
+    - {from: operaciones, to: bridge, message: escribir, kind: sync}
+    - {from: bridge, to: operaciones, message: ok + refs}
+    - {from: operaciones, to: proyector, message: refrescar tras escribir}
+    - {from: evaluador, to: ledger, message: "oración + Meaning + refs + motivos + resultado"}
+    - {from: evaluador, to: superficie, message: resultado + traza}
+    - {from: superficie, to: hablante, message: "Listo. Queda registrado."}
+    - {from: hablante, to: superficie, message: "¿por qué?"}
+    - {from: superficie, to: evaluador, message: explicar el último movimiento}
+    - {from: evaluador, to: ledger, message: leer la traza, kind: sync}
+    - {from: ledger, to: evaluador, message: oración · Meaning · refs · motivos}
+    - {from: evaluador, to: superficie, message: la traza}
+    - {from: superficie, to: hablante, message: la traza en natural}

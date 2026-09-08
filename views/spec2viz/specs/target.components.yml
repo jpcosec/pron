@@ -1,0 +1,126 @@
+id: pron.target.components
+title: pron — arquitectura objetivo · componentes
+type: component
+version: '1.0'
+metadata:
+  description: >
+    Hacia dónde va pron: un SHRDLU sobre un mundo declarado. Quien habla —
+    persona, LLM u otro producto — es un solo actor externo. Una única
+    superficie natural ↔ Meaning; un evaluador que grounda contra la
+    gramática viva acotada por la proyección; operaciones abiertas; una
+    puerta por backend. Un hueco (missing) usa embeddings para ofrecer
+    cercanos por similitud, no solo por texto. Todo movimiento queda en el
+    ledger con su oración, su Meaning, sus refs y sus motivos.
+style:
+  theme: default
+data:
+  nodes:
+    afuera:
+      label: Fuera de pron
+      kind: boundary
+      contains: [hablante]
+    hablante:
+      label: Quien habla · persona, LLM u otro producto
+      kind: actor
+    capa0:
+      label: Capa 0 · Mundo
+      kind: layer
+      contains: [mundo]
+    mundo:
+      label: "Declaración del mundo · stores, modelos, anchors, proyecciones"
+      kind: config
+    capa1:
+      label: Capa 1 · Superficie
+      kind: layer
+      contains: [superficie]
+    superficie:
+      label: "Superficie · natural → Meaning · Meaning → natural"
+      kind: surface
+    capa2:
+      label: Capa 2 · Meaning
+      kind: layer
+      contains: [gramatica, proyeccion, dialogo, evaluador, operaciones]
+    gramatica:
+      label: "Gramática viva · anchors · qué hay · qué puedo hacer con X"
+      kind: core
+    proyeccion:
+      label: "Proyección · lo que esta sesión ve y puede"
+      kind: core
+    dialogo:
+      label: "Diálogo · pendiente y referentes (ese, la anterior)"
+      kind: core
+    evaluador:
+      label: "Evaluador · grounding · resolución · expansión · dispatch · traza"
+      kind: core
+    operaciones:
+      label: "Operaciones · leer / escribir / operar / declarar · abiertas"
+      kind: core
+    capa3:
+      label: Capa 3 · Bridges
+      kind: layer
+      contains: [bridge_sldb, bridge_kgdb, bridge_emb, bridge_otros]
+    bridge_sldb:
+      label: "Bridge sldb · documentos, campos, secciones"
+      kind: bridge
+    bridge_kgdb:
+      label: "Bridge kgdb · grafo, relaciones, estados"
+      kind: bridge
+    bridge_emb:
+      label: "Bridge embeddings · parecido a · cercanos"
+      kind: bridge
+    bridge_otros:
+      label: "Bridge lo-que-venga · SQL, APIs, ..."
+      kind: bridge
+    transversal:
+      label: Transversal
+      kind: layer
+      contains: [proyector, ledger]
+    proyector:
+      label: "Proyector · reindexa · reconstruye grafo · recalcula embeddings"
+      kind: infra
+    ledger:
+      label: "Ledger · oración + Meaning + refs + motivos + resultado · provenance"
+      kind: infra
+    backends:
+      label: Backends
+      kind: boundary
+      contains: [sldb, kgdb, embeddings, otros]
+    sldb:
+      label: sldb
+      kind: external
+    kgdb:
+      label: kgdb
+      kind: external
+    embeddings:
+      label: embeddings
+      kind: external
+    otros:
+      label: "SQL · APIs · lo que venga"
+      kind: external
+  edges:
+    - {from: mundo, to: gramatica, relation: instancia, label: carga los anchors}
+    - {from: mundo, to: proyeccion, relation: define}
+    - {from: mundo, to: capa3, relation: declara, label: qué puertas existen}
+    - {from: hablante, to: superficie, relation: dice, label: una oración}
+    - {from: superficie, to: dialogo, relation: resuelve, label: referentes}
+    - {from: superficie, to: gramatica, relation: verifica, label: cada símbolo es anchor}
+    - {from: proyeccion, to: gramatica, relation: acota}
+    - {from: superficie, to: evaluador, relation: propone, label: un Meaning}
+    - {from: evaluador, to: gramatica, relation: grounds}
+    - {from: evaluador, to: dialogo, relation: guarda, label: pendiente si ambiguo}
+    - {from: evaluador, to: bridge_emb, relation: consulta, label: "missing → cercanos por similitud"}
+    - {from: evaluador, to: operaciones, relation: dispatches}
+    - {from: operaciones, to: bridge_sldb, relation: uses, label: consulta / escribe}
+    - {from: operaciones, to: bridge_kgdb, relation: uses, label: relaciones / opera estados}
+    - {from: operaciones, to: bridge_emb, relation: uses, label: parecido a}
+    - {from: operaciones, to: bridge_otros, relation: uses, label: lo que declaren}
+    - {from: operaciones, to: proyector, relation: triggers, label: refresca tras escribir}
+    - {from: proyector, to: capa3, relation: refreshes, label: reindexa · reconstruye · recalcula}
+    - {from: bridge_sldb, to: sldb, relation: serves}
+    - {from: bridge_kgdb, to: kgdb, relation: serves}
+    - {from: bridge_emb, to: embeddings, relation: serves}
+    - {from: bridge_otros, to: otros, relation: serves}
+    - {from: evaluador, to: ledger, relation: registra, label: el movimiento entero}
+    - {from: ledger, to: evaluador, relation: explica, label: "por qué · cómo · de dónde"}
+    - {from: evaluador, to: superficie, relation: responde, label: "resultado · ¿cuál? · no existe, cercanos"}
+    - {from: superficie, to: hablante, relation: responde, label: en natural, con la traza disponible}

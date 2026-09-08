@@ -1,0 +1,39 @@
+id: pron.target.dialogo
+title: pron — arquitectura objetivo · el diálogo
+type: state
+version: '1.0'
+metadata:
+  description: >
+    El único estado propio de pron por sesión: si hay o no una pregunta
+    pendiente. Es la conversación estilo SHRDLU — una ambigüedad abre una
+    pregunta · la próxima oración la contesta, no la contesta, o la descarta.
+    Todos los movimientos se registran en el ledger.
+data:
+  entity: Sesión de diálogo
+  initial: libre
+  states:
+    - id: libre
+      label: "Libre · sin pendiente"
+    - id: pendiente
+      label: "Pendiente · candidatos guardados, Meaning con hueco"
+  transitions:
+    - from: libre
+      to: libre
+      "on": "único o missing"
+      action: "registrar"
+    - from: libre
+      to: pendiente
+      "on": "ambiguo"
+      action: "guardar candidatos y Meaning con hueco · preguntar cuál · registrar"
+    - from: pendiente
+      to: libre
+      "on": "calza un candidato"
+      action: "rellenar el hueco y completar el turno · registrar"
+    - from: pendiente
+      to: pendiente
+      "on": "no calza"
+      action: "avisar que sigue pendiente"
+    - from: pendiente
+      to: libre
+      "on": "orden nueva"
+      action: "descartar la pendiente · registrar"

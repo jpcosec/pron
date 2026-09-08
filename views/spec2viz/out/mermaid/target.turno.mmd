@@ -1,0 +1,39 @@
+sequenceDiagram
+    actor hablante
+    participant superficie
+    participant dialogo
+    participant gramatica
+    participant evaluador
+    participant operaciones
+    participant bridge
+    participant embeddings
+    participant proyector
+    participant ledger
+    hablante->>superficie: agrega cita al usuario a las 16:00
+    superficie->>dialogo: ¿a quién refiere 'al usuario'?
+    dialogo->>superficie: el usuario de esta sesión
+    superficie->>gramatica: ¿cada símbolo es anchor de la proyección?
+    gramatica->>superficie: [símbolo sin anchor] 'cita' no es anchor
+    superficie->>hablante: [símbolo sin anchor] no tengo 'cita' como palabra · sí tengo ...
+    superficie->>evaluador: Meaning
+    evaluador->>gramatica: groundar cada símbolo
+    evaluador->>dialogo: [ambiguo] guardar candidatos y Meaning con hueco
+    evaluador->>superficie: [ambiguo] ¿cuál?
+    superficie->>hablante: [ambiguo] ¿cuál? A o B
+    evaluador->>embeddings: [missing] cercanos por similitud
+    evaluador->>ledger: [missing] registrar el hueco con motivo y cercanos
+    evaluador->>superficie: [missing] no existe · cercanos · esto buscaba
+    superficie->>hablante: [missing] no existe X · ¿querías Y o Z?
+    evaluador->>operaciones: [único] despachar
+    operaciones->>bridge: escribir
+    bridge->>operaciones: ok + refs
+    operaciones->>proyector: refrescar tras escribir
+    evaluador->>ledger: oración + Meaning + refs + motivos + resultado
+    evaluador->>superficie: resultado + traza
+    superficie->>hablante: Listo. Queda registrado.
+    hablante->>superficie: ¿por qué?
+    superficie->>evaluador: explicar el último movimiento
+    evaluador->>ledger: leer la traza
+    ledger->>evaluador: oración · Meaning · refs · motivos
+    evaluador->>superficie: la traza
+    superficie->>hablante: la traza en natural
