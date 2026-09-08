@@ -17,6 +17,12 @@ def run_lints(world: World) -> list[str]:
         if not w.motive.strip():
             problems.append(f"lexicon: '{w.form}' ({w.ref}) has no motive")
 
+    # the store's own integrity: every tracked document matches its index (sldb stores check)
+    from sldb.cli.model_utils import resolve_model_ref
+    from sldb.store.diagnostics import diagnose_store
+    if not diagnose_store(store.sp, resolve_model_ref, store.project_root, pythonpath=store.pythonpath).is_valid:
+        problems.append("store: integrity FAIL (sldb stores check); run `pron refresh`")
+
     # no model registered from deskops
     for m in store.store_index().models:
         if "deskops" in m.model_ref:

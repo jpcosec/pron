@@ -77,7 +77,7 @@ Además, cada escritura por campo compara el `hash_c` esperado del documento con
 
 **Decisión.** Tres cosas en vez de una transacción:
 
-- **Validación previa.** Antes de la primera escritura de un movimiento con varias, pron valida todas: para cada dirección calcula el payload nuevo y corre el roundtrip de sldb (`validate_model_data_roundtrip`) sin escribir. Lo que fallaría por forma falla antes de tocar nada. Lo que puede fallar después es solo el disco o un cambio concurrente (§5).
+- **Validación previa.** Antes de la primera escritura de un movimiento con varias, pron valida todas: para cada dirección calcula el payload nuevo y corre el roundtrip de sldb (`validate_model_data_roundtrip`) sin escribir. Las verificaciones de los verbos (coerción, transición y su condición, tipo de relación, cardinalidad, condición de la relación) corren en ese mismo pase, y cada una ve los payloads que las escrituras anteriores del mismo movimiento dejarían: "change it to 100 people and confirm it" rechaza la transición con `party_size = 100` antes de escribir el 100. Una condición sobre un payload todavía no escrito la evalúa el propio evaluador de `--where` de sldb (`DocumentFilter.where_matches`) sobre ese payload; pron no interpreta predicados. Lo que fallaría por forma o por regla falla antes de tocar nada. Lo que puede fallar después es solo el disco o un cambio concurrente (§5).
 - **Registro por dirección.** El `MoveDoc` lleva, por escritura, `hecha | no hecha` y el valor anterior. La respuesta dice cuáles quedaron.
 - **Deshacer, como verbo.** "undo the last move" es un verbo de acción del kernel que aplica las escrituras inversas registradas en ese `MoveDoc`. Qué guarda el `MoveDoc` por escritura y cuál es la inversa:
 

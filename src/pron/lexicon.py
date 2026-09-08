@@ -73,6 +73,9 @@ class Lexicon:
         doc = (model_type.__doc__ or "").strip().splitlines()
         motive = doc[0] if doc else f"a {m}"
         self.words.append(Word(m.lower(), "model", f"model:{m}", motive, f"model {m}", model=m))
+        split = " ".join(re.findall(r"[A-Z]+(?![a-z])|[A-Z]?[a-z0-9]+", m)).lower()
+        if split and split != m.lower():   # "cli command doc": the identifier split into words, until an alias says better (spec 05)
+            self.words.append(Word(split, "model", f"model:{m}", motive, f"model {m} (identifier split into words)", model=m))
         for f in self.world.store.schema(m):
             fname = f["name"]
             self.words.append(Word(fname.replace("_", " "), "field", f"field:{m}.{fname}", f["description"] or fname, f"field {m}.{fname}", model=m, field_name=fname, payload=f))
@@ -109,8 +112,25 @@ class Lexicon:
             head = ref.split(":", 1)[0]
             payload = {"symbol": p["symbol"], "ref": ref, "steps": p.get("steps") or []}
             model, fname, rel = self._ref_targets(ref)
+            if not self._alias_in_projection(model, rel, payload["steps"]):
+                continue   # its target is outside this projection: the word does not exist here (spec 01, 05)
             for form in p.get("forms") or [p["symbol"]]:
                 self.words.append(Word(form, f"alias-{head}", ref, p.get("motive", ""), f"AnchorDoc {d.name}", model=model, field_name=fname, relation=rel, payload=payload))
+
+    def _alias_in_projection(self, model: str | None, rel: str | None, steps: list[Any]) -> bool:
+        """An alias enters only if every model and relation it points at is in the projection."""
+        def model_ok(m: str | None) -> bool:
+            return m is None or m in self.models or bool(set(self.world.family_of(m)) & set(self.models))
+
+        def rel_ok(r: str | None) -> bool:
+            return r is None or r in self.relation_types
+
+        if not model_ok(model) or not rel_ok(rel):
+            return False
+        for s in steps:
+            if isinstance(s, dict) and (not model_ok(s.get("model")) or not rel_ok(s.get("relation"))):
+                return False
+        return True
 
     @staticmethod
     def _ref_targets(ref: str) -> tuple[str | None, str | None, str | None]:

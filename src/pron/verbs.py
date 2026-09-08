@@ -96,16 +96,22 @@ class Verbs:
                 return False, f"{target} already is {name} of {existing[0]['source']} and cardinality is {card}"
         return True, ""
 
-    def condition_holds(self, condition: str, subject: str, over: str | None = None) -> tuple[bool, str]:
+    def condition_holds(self, condition: str, subject: str, over: str | None = None, overlay: dict[str, dict[str, Any]] | None = None) -> tuple[bool, str]:
         """Evaluate an sldb predicate. `{field}` takes the subject's values; the predicate runs over
-        `over` (an export id) when given, else over the subject itself."""
+        `over` (an export id) when given, else over the subject itself. `overlay` maps export ids
+        to payloads a move has not written yet: those are read instead of the store, and the
+        predicate over one of them goes through sldb's evaluator on that payload (spec 11 §7)."""
         if not condition.strip():
             return True, ""
+        overlay = overlay or {}
         s_model, s_doc = subject.split(":", 1)
-        s_payload = self.store.payload(s_model, s_doc)
+        s_payload = overlay.get(subject) or self.store.payload(s_model, s_doc)
         where = BRACE_RE.sub(lambda m: str(s_payload.get(m.group(1), "")), condition)
         target = over or subject
         t_model, t_doc = target.split(":", 1)
+        if target in overlay:
+            ok = self.store.matches(t_model, t_doc, where, overlay[target]) if t_doc != "$created" else _pending_matches(self.store, t_model, where, overlay[target])
+            return ok, f"where '{where}' over the pending payload of {target} (dry run)"
         found = self.store.find(f"st.{{{t_model}+}}", where)
         query = f"find 'st.{{{t_model}+}}' --where '{where}'"
         ok = any(a.endswith("}." + t_doc) for a in found)
@@ -155,8 +161,9 @@ class Verbs:
                 out[str(d.payload.get("name"))] = f"State:{d.name}"
         return out
 
-    def transition(self, model: str, fld: str, subject: str, current: str, new: str) -> tuple[bool, str, list[str]]:
-        """Is changing Model.field from current to new legal for subject? (legal, reason, queries)."""
+    def transition(self, model: str, fld: str, subject: str, current: str, new: str, overlay: dict[str, dict[str, Any]] | None = None) -> tuple[bool, str, list[str]]:
+        """Is changing Model.field from current to new legal for subject? (legal, reason, queries).
+        With `overlay`, the condition is evaluated over the payload the move is about to leave."""
         states = self.machine(model, fld)
         if not states:
             return True, "no state machine on this field", []
@@ -170,7 +177,7 @@ class Verbs:
         if edge is None:
             return False, f"no transition {current} → {new} on {model}.{fld}", queries
         cond = edge["metadata"].get("condition", "")
-        ok, q = self.condition_holds(cond, subject)
+        ok, q = self.condition_holds(cond, subject, overlay=overlay)
         if q: queries.append(q)
         if not ok:
             return False, f"cannot go {current} → {new}: the condition is {cond}", queries
@@ -189,6 +196,20 @@ class Verbs:
             if not ok:
                 warnings.append(f"{e['relation']} → {e['target']} requires {cond}, which no longer holds")
         return warnings
+
+
+def _pending_matches(store, model: str, where: str, payload: dict[str, Any]) -> bool:
+    """sldb's evaluator over a document that does not exist yet: any document of the model
+    lends its runtime shape, the payload is the pending one."""
+    from dataclasses import replace
+
+    from sldb.store.query_engine.filter import DocumentFilter
+    from sldb.cli.model_utils import resolve_model_ref
+
+    sample = next(iter(store.docs_of(model)), None)
+    if sample is None:
+        return True   # nothing to compare the shape against; the write itself will validate
+    return DocumentFilter.where_matches(replace(sample, name="$created", payload=payload), where, resolve_model_ref, store.pythonpath)
 
 
 def _strip(e: dict[str, Any]) -> dict[str, Any]:

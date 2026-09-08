@@ -676,8 +676,8 @@ documents:
     - workspace.source.spec
     slug: proyecci-n
     level: 2
-    line_start: 70
-    line_end: 71
+    line_start: 72
+    line_end: 73
   - path: 05-l-xico-y-proyecci-n/calce-aproximado
     title: Calce aproximado
     breadcrumbs:
@@ -695,8 +695,8 @@ documents:
     - workspace.source.spec
     slug: calce-aproximado
     level: 2
-    line_start: 74
-    line_end: 75
+    line_start: 76
+    line_end: 77
   - path: 05-l-xico-y-proyecci-n/invariantes
     title: Invariantes
     breadcrumbs:
@@ -714,8 +714,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 80
-    line_end: 81
+    line_start: 82
+    line_end: 83
 - doc_name: spec-06
   sections:
   - path: 06-superficie-y-di-logo

@@ -65,7 +65,9 @@ Un alias sí aporta significado a una expresión: "large" significa algo porque 
 
 Un alias puede nombrar también un **verbo de acción con campo y valor fijos**: `confirm → action:change Reservation.status=confirmed`. Es la única forma en que un mundo agrega verbos sin código, y sigue siendo un alias: el verbo real es `change` y pasa por las mismas verificaciones, incluida la transición (03).
 
-Son la única fuente de la forma hablada. El identificador `CliCommandDoc` no se convierte en "command" por ninguna regla: alguien escribe el alias `command → model:CliCommandDoc`, con su plural en `forms`. `pron docs` genera un alias inicial por modelo y por campo a partir del identificador partido en palabras (`cli command doc`), que sirve de calce aproximado hasta que se corrige a mano. Un término sin alias se nombra y se reconoce por su identificador tal cual.
+Son la única fuente de la forma hablada. El identificador `CliCommandDoc` no se convierte en "command" por ninguna regla: alguien escribe el alias `command → model:CliCommandDoc`, con su plural en `forms`. Un término sin alias se nombra y se reconoce por su identificador tal cual y, además, partido en palabras (`cli command doc`, `party size`): esa forma la deriva el léxico del identificador, no es un `AnchorDoc`, y sirve de calce hasta que un alias diga algo mejor.
+
+Un alias entra a una sesión solo si todo lo que apunta está en la proyección: el modelo de su `ref`, la relación, y en un alias compuesto el modelo y la relación de cada paso. Un alias hacia un modelo fuera de `models` no existe para esa sesión, aunque la lista `aliases` lo nombre.
 
 ## Proyección
 

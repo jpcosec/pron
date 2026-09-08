@@ -48,6 +48,8 @@ class Session:
 
     def _load(self) -> None:
         self.projection = self.world.projection(self.projection_name)
+        if self.matcher.embedder is not None:
+            self.matcher.bind_cache(self.world.root / ".pron" / f"lexicon.{self.hash}.{self.projection_name}.{self.matcher.id()}.json")
         self.lex = Lexicon(self.world, self.projection, self.matcher)
         self.interpreter = Interpreter(self.lex, now=self.now)
         self.verbs = Verbs(self.lex)
@@ -68,10 +70,21 @@ class Session:
             if self.dialogue.pending is not None:
                 resp, refers_to = self._continue(sentence, trace, record)
             else:
-                resp = self._new_sentence(sentence, trace, record)
+                corrected = self._correction(sentence)
+                hole = self.dialogue.last_missing
+                self.dialogue.last_missing = None
+                if corrected is not None:
+                    refers_to = hole.get("move_id", "")
+                    record["corrects"] = {"move": refers_to, "fragment": sentence, "sentence": corrected}
+                    trace.append(f"correction of the last missing turn: {corrected!r}")
+                    resp = self._new_sentence(corrected, trace, record)
+                else:
+                    resp = self._new_sentence(sentence, trace, record)
         except StoreError as e:
             resp = Response(f"Could not do that: {e}", "error")
             record["error"] = str(e)
+        if resp.outcome == "missing" and self.dialogue.last_missing is not None:
+            self.dialogue.last_missing["move_id"] = move_id
         hash_after = self.world.hash_mundo() if record["writes"] else hash_before
         if record["writes"]:
             self.kernel.warnings = []
@@ -89,13 +102,14 @@ class Session:
         current = self.world.hash_mundo()
         if current != self.hash:
             trace.append("the world changed outside pron: lexicon and projection reloaded")
-            self._load()
             self.hash = current
+            self._load()
         return current
 
     # -- new sentence ------------------------------------------------------------------------
 
-    def _new_sentence(self, sentence: str, trace: list[str], record: dict[str, Any]) -> Response:
+    def _new_sentence(self, sentence: str, trace: list[str], record: dict[str, Any], retry: bool = False) -> Response:
+        self._sentence = sentence
         interp = self.interpreter.interpret(sentence)
         record["interpretation"] = interp.to_record()
         trace.append("interpretation: " + interp.forma)
@@ -110,6 +124,17 @@ class Session:
             if isinstance(plan, Response):
                 return plan
             plans.append(plan)
+        # every write of the move validated before the first one (spec 11 §7)
+        self._prevalidate(interp.parts, plans, trace, record)
+        # hash_mundo read again just before executing (spec 11 §5)
+        current = self.world.hash_mundo()
+        if current != self.hash:
+            if retry:
+                return Response("The world is changing under us; say it again.", "error")
+            trace.append("the world changed while understanding: lexicon and projection reloaded, understanding again")
+            self.hash = current
+            self._load()
+            return self._new_sentence(sentence, trace, record, retry=True)
         # execute in order, one refresh at the end
         texts = []
         wrote = False
@@ -217,8 +242,14 @@ class Session:
                     return self._missing(res, trace, record)
                 resolved[slot_key] = res
             plan["steps"].append(resolved)
-        if not self.kernel.allowed("create") and any(s.get("do") == "create" for s in part.verb.payload.get("steps", [])):
+        steps = part.verb.payload.get("steps", [])
+        if not self.kernel.allowed("create") and any(s.get("do") == "create" for s in steps):
             return Response("In this session I cannot create.", "missing")
+        if not self.kernel.allowed("change") and any(s.get("do") == "change" for s in steps):
+            return Response("In this session I cannot change.", "missing")
+        for s in steps:
+            if s.get("do") == "assert" and "assert" not in self.lex.relation_types.get(s.get("relation"), {}).get("mode", "read"):
+                return Response(f"In this session I can tell you about {s.get('relation')}, not assert it.", "missing")
         return plan
 
     # -- pending ----------------------------------------------------------------------------------
@@ -237,6 +268,9 @@ class Session:
 
     def _missing(self, res: Resolution, trace: list[str], record: dict[str, Any]) -> Response:
         record["missing"] = {"note": res.note, "candidates": res.candidates}
+        if res.phrase.unknown_values:
+            model, fld, text = res.phrase.unknown_values[0]
+            self.dialogue.last_missing = {"sentence": self._sentence, "model": model, "field": fld, "text": text}
         if res.candidates and res.phrase.unknown_values:
             names = " or ".join(f"*{c}*" for c in res.candidates)
             return Response(f"{res.note}. Did you mean {names}?", "missing")
@@ -244,6 +278,93 @@ class Session:
             names = " or ".join(self.display.names(res.candidates))
             return Response(f"{res.note}. Did you mean {names}?", "missing")
         return Response(res.note + ".", "missing")
+
+    def _correction(self, sentence: str) -> str | None:
+        """Spec 06: a verbless fragment that fits the hole of the last missing turn ("on the
+        terrace" after a missing in `zone`) is a correction; the previous sentence is said again
+        whole, with the hole filled. Not a pending: that turn ended and was recorded."""
+        hole = self.dialogue.last_missing
+        if not hole or not hole.get("field"):
+            return None
+        interp = self.interpreter.interpret(sentence)
+        if any(p.kind not in ("none", "nominal") for p in interp.parts):
+            return None
+        known = {w.form for w in self.lex.values_of(hole["model"], hole["field"])}
+        values: set[str] = set()
+        for it in interp.items:
+            for w in it.words:
+                if w.kind == "value" and w.model == hole["model"] and w.field_name == hole["field"]:
+                    values.add(w.form)
+                elif w.kind == "alias-predicate" and w.model == hole["model"]:   # "on the Z" with Z a value of the field
+                    values |= {str(v) for v in it.slots.values() if str(v) in known}
+        if len(values) != 1:
+            return None
+        return hole["sentence"].replace(hole["text"], values.pop())
+
+    def _prevalidate(self, parts: list[Part], plans: list[dict[str, Any]], trace: list[str], record: dict[str, Any]) -> None:
+        """Spec 11 §7: before the first write of a move, every write is computed and checked (coercion,
+        transition, relation type, cardinality, condition, sldb roundtrip) over the payloads the
+        earlier writes of the same move would leave. Raises StoreError; nothing was touched."""
+        overlay: dict[str, dict[str, Any]] = {}
+        try:
+            self._dry_parts(parts, plans, overlay)
+        finally:
+            if self.kernel.notes:
+                trace.extend("pre-validation: " + n for n in self.kernel.notes)
+                record["queries"].extend(self.kernel.notes)
+                self.kernel.notes = []
+
+    def _dry_parts(self, parts: list[Part], plans: list[dict[str, Any]], overlay: dict[str, dict[str, Any]]) -> None:
+        for part, plan in zip(parts, plans):
+            if part.kind == "action":
+                verb = part.payload.get("verb", part.verb.payload.get("verb") if part.verb else None)
+                if not self.kernel.allowed(verb):
+                    raise StoreError(f"in this session I cannot {verb}")
+                if verb == "create":
+                    self.kernel.dry_create(part.subject.model, part.payload["fields"], overlay)
+                else:
+                    for e in plan["subject"].export_ids():
+                        self.kernel.dry_run(verb, e, part.field_name, part.value, overlay)
+            elif part.kind == "assert":
+                self._dry_assert(part.verb.relation, plan["subject"].export_ids(), plan["object"].export_ids(), overlay)
+            elif part.kind == "compose":
+                created_model = None
+                literals = {k: v for k, v in part.payload.items() if not k.startswith("_")}
+                for step, resolved in zip(part.verb.payload.get("steps", []), plan["steps"]):
+                    do = step.get("do")
+                    if do == "create":
+                        created_model = step["model"]
+                        fields = {k: v for k, v in literals.items() if any(f["name"] == k for f in self.world.store.schema(created_model))}
+                        self.kernel.dry_create(created_model, fields, overlay)
+                    elif do == "assert":
+                        src = [f"{created_model}:$created"] if step.get("source") == "$created" else resolved["source"].export_ids()
+                        tgt = [f"{created_model}:$created"] if step.get("target") == "$created" else resolved["target"].export_ids()
+                        self._dry_assert(step["relation"], src, tgt, overlay)
+                    elif do == "change":
+                        tgt = f"{created_model}:$created" if step.get("target") == "$created" else resolved["target"].export_ids()[0]
+                        if not tgt.endswith(":$created"):
+                            self.kernel.dry_run("change", tgt, step["field"], step["value"], overlay)
+            elif part.kind == "undo" and not self.kernel.allowed("undo"):
+                raise StoreError("in this session I cannot undo")
+
+    def _dry_assert(self, rel: str, sources: list[str], targets: list[str], overlay: dict[str, dict[str, Any]]) -> None:
+        rt = self.verbs.relation_type(rel)
+        if "assert" not in self.lex.relation_types.get(rel, {}).get("mode", "read"):
+            raise StoreError(f"in this session I can tell you about {rel}, not assert it")
+        for s in sources:
+            for t in targets:
+                ok, why = self.verbs.applies(rel, s.split(":", 1)[0], t.split(":", 1)[0])
+                if not ok:
+                    raise StoreError(why)
+                if not s.endswith(":$created") and not t.endswith(":$created"):
+                    ok, why = self.verbs.cardinality_ok(rel, s, t)
+                    if not ok:
+                        raise StoreError(why)
+                if rt.get("condition"):
+                    holds, query = self.verbs.condition_holds(rt["condition"], s, over=t, overlay=overlay)
+                    self.kernel.notes.append(query)
+                    if not holds:
+                        raise StoreError(f"condition '{rt['condition']}' does not hold for {s} → {t} ({query})")
 
     def _continue(self, sentence: str, trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
         pending = self.dialogue.pending
@@ -283,6 +404,7 @@ class Session:
         plan = self._plan(part, trace, record)
         if isinstance(plan, Response):
             return plan
+        self._prevalidate([part], [plan], trace, record)
         text, wrote = self._execute(part, plan, trace, record)
         if wrote:
             self._refresh(trace)
@@ -456,7 +578,7 @@ class Session:
                 created = w.address
                 trace.append(f"docs create --model {model} {created} {w.after}")
                 record["writes"].append(w.record())
-                texts.append(f"{model.lower()} {self.display.name('st.{' + model + '}.' + created.split(':', 1)[1])}")
+                texts.append(model.lower())   # named at the end, once its relations exist
             elif do == "assert":
                 src = created if step.get("source") == "$created" else resolved["source"].export_ids()[0]
                 tgt = created if step.get("target") == "$created" else resolved["target"].export_ids()[0]
@@ -471,6 +593,7 @@ class Session:
         if created:
             model, doc = created.split(":", 1)
             addr = f"st.{{{model}}}.{doc}"
+            texts[0] = f"{model.lower()} {self.display.name(addr)}"
             self.dialogue.remember([addr], model)
             self.dialogue.last_written = created
             alt = [r for r in plan["steps"] for k, r in r.items() if k == "target" and r.candidates and r.note.startswith("any")]
@@ -489,7 +612,8 @@ class Session:
             trace.append(f"undo {w.address}" + (f".{w.field_name}" if w.field_name else "") + f": {w.before!r} → {w.after!r}" + ("" if w.done else f" ({w.note})"))
             record["writes"].append(w.record())
         record["undoes"] = move["id"]
-        return f"Undid {move['id']} ({len([w for w in writes if w.done])} write(s))."
+        skipped = [w.note for w in writes if not w.done]
+        return f"Undid {move['id']} ({len([w for w in writes if w.done])} write(s))." + (" Not touched: " + "; ".join(skipped) + "." if skipped else "")
 
     def _why(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
         target = self.dialogue.last_written or self.dialogue.last_singular and address_to_export_id(self.dialogue.last_singular)

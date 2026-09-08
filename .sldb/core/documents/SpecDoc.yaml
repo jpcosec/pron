@@ -29,8 +29,8 @@ documents:
   - workspace.source.spec
 - name: spec-05
   path: source/spec/05-lexico-y-proyeccion.md
-  hash_c: 8a5b147b2a89783a17864ebeec772e49fb6e1117237e2e125bc4b84c3d61cc1a
-  hash_d: 36131614704bc3d0bef5d8c80ed6d6eb1b1f205c8a64df10567a67c66cd9302a
+  hash_c: 295979b1bcc193e91127da1893f6fd0449f12890d542716bfd361487c710af47
+  hash_d: 39ccce3edae5e990073a4fe5912dcffb300df9d60ac257c658e2453e586d3502
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -78,8 +78,8 @@ documents:
   - workspace.source.spec
 - name: spec-11
   path: source/spec/11-decisiones-de-implementacion.md
-  hash_c: fca78a4362c716f950e0b6006ae7502e558125c031032632eaefe2347b1b7df8
-  hash_d: 227070addc4fdbeb6a8f265b5e2a112de8ef8c8bccc9040a4ec8c4c50144ac96
+  hash_c: 95fde708d3fc6c7ed44bc959e0cb8b2d14db52b657f6ecd75769b0cdeda38474
+  hash_d: 1f1e99be358c4be2ee6e2da34994e0100716b4476532892f166f94f6c6750bbd
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

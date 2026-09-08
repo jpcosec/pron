@@ -24,6 +24,7 @@ from sldb.runtime.validation import render_model_markdown, validate_model_data_r
 from sldb.store.io import load_documents_index, load_models_index, load_store_index
 from sldb.store.ops import track_document
 from sldb.store.query import find_structural, get_structural, glob_structural, list_structural, load_runtime_documents
+from sldb.store.query_engine.filter import DocumentFilter
 
 
 class StoreError(RuntimeError):
@@ -105,6 +106,19 @@ class Store:
             if d.name == name:
                 return d.hash_c
         return ""
+
+    def matches(self, model: str, name: str, where: str, payload: dict | None = None) -> bool:
+        """sldb's own `--where` evaluator over one document; with `payload`, over a payload that
+        is not saved yet (the pre-validation of a move, spec 11 §7). Still sldb's grammar, never
+        pron's."""
+        from dataclasses import replace
+
+        d = self.doc(model, name)
+        if d is None:
+            raise StoreError(f"no {model} named '{name}'")
+        if payload is not None:
+            d = replace(d, payload=payload)
+        return DocumentFilter.where_matches(d, where, resolve_model_ref, self.pythonpath)
 
     def doc_path(self, model: str, name: str) -> Path | None:
         m_idx = self.models_index(model)

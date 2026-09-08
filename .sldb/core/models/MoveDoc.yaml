@@ -2,7 +2,7 @@ name: MoveDoc
 model_ref: pron.models:MoveDoc
 path: src/pron/models/move.py
 documents_index: .sldb/core/documents/MoveDoc.yaml
-sections_index: ''
+sections_index: .sldb/runtime/sections/MoveDoc.yaml
 hash_b: 55d918dfb591184c7a3a26b2c9c710c9b7632e6180fce7c090dbd99e38ac6825
 version: 1
 canonical: false

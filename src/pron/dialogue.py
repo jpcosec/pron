@@ -33,6 +33,7 @@ class Dialogue:
     last_set: list[str] = field(default_factory=list)
     last_set_model: str | None = None
     last_written: str | None = None                           # last address written, for "why?"
+    last_missing: dict[str, Any] | None = None                # the hole a missing turn left, for a correction (spec 06)
 
     @property
     def state(self) -> str:
