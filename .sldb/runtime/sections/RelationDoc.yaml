@@ -1,0 +1,1729 @@
+documents:
+- doc_name: implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+  sections:
+  - path: source-id-surfacedoc-surface-pron-world-target-id-specdoc-spec-01-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-world
+
+      target_id: SpecDoc:spec-01
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-world
+
+      target_id: SpecDoc:spec-01
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-world
+
+      target_id: SpecDoc:spec-01
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron world target id specdoc spec 01 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-world-target-id-specdoc-spec-01-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-world-specdoc-spec-01
+    title: implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+    about:
+    - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+    - implements surfacedoc surface pron world specdoc spec 01
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-world-specdoc-spec-01
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-world-specdoc-spec-01/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+    - implements surfacedoc surface pron world specdoc spec 01
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+  sections:
+  - path: source-id-surfacedoc-surface-pron-store-target-id-specdoc-spec-02-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron store target id specdoc spec 02 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-store-target-id-specdoc-spec-02-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-store-specdoc-spec-02
+    title: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+    about:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+    - implements surfacedoc surface pron store specdoc spec 02
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-store-specdoc-spec-02
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-store-specdoc-spec-02/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+    - implements surfacedoc surface pron store specdoc spec 02
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  sections:
+  - path: source-id-surfacedoc-surface-pron-store-target-id-specdoc-spec-04-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-store
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron store target id specdoc spec 04 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-store-target-id-specdoc-spec-04-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-store-specdoc-spec-04
+    title: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+    about:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+    - implements surfacedoc surface pron store specdoc spec 04
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-store-specdoc-spec-04
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-store-specdoc-spec-04/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+    - implements surfacedoc surface pron store specdoc spec 04
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  sections:
+  - path: source-id-surfacedoc-surface-pron-graph-target-id-specdoc-spec-03-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-graph
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-graph
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-graph
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron graph target id specdoc spec 03 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-graph-target-id-specdoc-spec-03-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-graph-specdoc-spec-03
+    title: implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+    about:
+    - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+    - implements surfacedoc surface pron graph specdoc spec 03
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-graph-specdoc-spec-03
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-graph-specdoc-spec-03/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+    - implements surfacedoc surface pron graph specdoc spec 03
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  sections:
+  - path: source-id-surfacedoc-surface-pron-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-lexicon
+
+      target_id: SpecDoc:spec-05
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-lexicon
+
+      target_id: SpecDoc:spec-05
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-lexicon
+
+      target_id: SpecDoc:spec-05
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron lexicon target id specdoc spec 05 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05
+    title: implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+    about:
+    - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+    - implements surfacedoc surface pron lexicon specdoc spec 05
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+    - implements surfacedoc surface pron lexicon specdoc spec 05
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  sections:
+  - path: source-id-surfacedoc-surface-pron-embedder-target-id-specdoc-spec-11-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-embedder
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-embedder
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-embedder
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron embedder target id specdoc spec 11 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-embedder-target-id-specdoc-spec-11-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-embedder-specdoc-spec-11
+    title: implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+    about:
+    - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+    - implements surfacedoc surface pron embedder specdoc spec 11
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-embedder-specdoc-spec-11
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-embedder-specdoc-spec-11/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+    - implements surfacedoc surface pron embedder specdoc spec 11
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  sections:
+  - path: source-id-surfacedoc-surface-pron-resolve-target-id-specdoc-spec-02-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-resolve
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-resolve
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-resolve
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron resolve target id specdoc spec 02 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-resolve-target-id-specdoc-spec-02-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-resolve-specdoc-spec-02
+    title: implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+    about:
+    - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+    - implements surfacedoc surface pron resolve specdoc spec 02
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-resolve-specdoc-spec-02
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-resolve-specdoc-spec-02/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+    - implements surfacedoc surface pron resolve specdoc spec 02
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  sections:
+  - path: source-id-surfacedoc-surface-pron-verbs-target-id-specdoc-spec-03-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-verbs
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-verbs
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-verbs
+
+      target_id: SpecDoc:spec-03
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron verbs target id specdoc spec 03 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-verbs-target-id-specdoc-spec-03-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03
+    title: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+    about:
+    - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+    - implements surfacedoc surface pron verbs specdoc spec 03
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+    - implements surfacedoc surface pron verbs specdoc spec 03
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+  sections:
+  - path: source-id-surfacedoc-surface-pron-kernel-target-id-specdoc-spec-04-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-04
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron kernel target id specdoc spec 04 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-kernel-target-id-specdoc-spec-04-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-kernel-specdoc-spec-04
+    title: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+    about:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+    - implements surfacedoc surface pron kernel specdoc spec 04
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-kernel-specdoc-spec-04
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-kernel-specdoc-spec-04/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+    - implements surfacedoc surface pron kernel specdoc spec 04
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+  sections:
+  - path: source-id-surfacedoc-surface-pron-kernel-target-id-specdoc-spec-11-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-kernel
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron kernel target id specdoc spec 11 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-kernel-target-id-specdoc-spec-11-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-kernel-specdoc-spec-11
+    title: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+    about:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+    - implements surfacedoc surface pron kernel specdoc spec 11
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-kernel-specdoc-spec-11
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-kernel-specdoc-spec-11/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+    - implements surfacedoc surface pron kernel specdoc spec 11
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+  sections:
+  - path: source-id-surfacedoc-surface-pron-dialogue-target-id-specdoc-spec-06-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-dialogue
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-dialogue
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-dialogue
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron dialogue target id specdoc spec 06 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-dialogue-target-id-specdoc-spec-06-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-dialogue-specdoc-spec-06
+    title: implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+    about:
+    - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+    - implements surfacedoc surface pron dialogue specdoc spec 06
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-dialogue-specdoc-spec-06
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-dialogue-specdoc-spec-06/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+    - implements surfacedoc surface pron dialogue specdoc spec 06
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+  sections:
+  - path: source-id-surfacedoc-surface-pron-ledger-target-id-specdoc-spec-07-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-ledger
+
+      target_id: SpecDoc:spec-07
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-ledger
+
+      target_id: SpecDoc:spec-07
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-ledger
+
+      target_id: SpecDoc:spec-07
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron ledger target id specdoc spec 07 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-ledger-target-id-specdoc-spec-07-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-ledger-specdoc-spec-07
+    title: implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+    about:
+    - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+    - implements surfacedoc surface pron ledger specdoc spec 07
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-ledger-specdoc-spec-07
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-ledger-specdoc-spec-07/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+    - implements surfacedoc surface pron ledger specdoc spec 07
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+  sections:
+  - path: source-id-surfacedoc-surface-pron-display-target-id-specdoc-spec-10-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-display
+
+      target_id: SpecDoc:spec-10
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-display
+
+      target_id: SpecDoc:spec-10
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-display
+
+      target_id: SpecDoc:spec-10
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron display target id specdoc spec 10 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-display-target-id-specdoc-spec-10-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-display-specdoc-spec-10
+    title: implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+    about:
+    - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+    - implements surfacedoc surface pron display specdoc spec 10
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-display-specdoc-spec-10
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-display-specdoc-spec-10/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+    - implements surfacedoc surface pron display specdoc spec 10
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  sections:
+  - path: source-id-surfacedoc-surface-pron-session-target-id-specdoc-spec-06-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-session
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-session
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-session
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron session target id specdoc spec 06 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-session-target-id-specdoc-spec-06-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-session-specdoc-spec-06
+    title: implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+    about:
+    - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+    - implements surfacedoc surface pron session specdoc spec 06
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-session-specdoc-spec-06
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-session-specdoc-spec-06/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+    - implements surfacedoc surface pron session specdoc spec 06
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+  sections:
+  - path: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-06-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron docs target id specdoc spec 06 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-06-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-06
+    title: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+    - implements surfacedoc surface pron docs specdoc spec 06
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-docs-specdoc-spec-06
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-06/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+    - implements surfacedoc surface pron docs specdoc spec 06
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+  sections:
+  - path: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-08-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron docs target id specdoc spec 08 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-08-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-08
+    title: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+    - implements surfacedoc surface pron docs specdoc spec 08
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-docs-specdoc-spec-08
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-08/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+    - implements surfacedoc surface pron docs specdoc spec 08
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+  sections:
+  - path: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-11-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-docs
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron docs target id specdoc spec 11 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-docs-target-id-specdoc-spec-11-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-11
+    title: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+    - implements surfacedoc surface pron docs specdoc spec 11
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-docs-specdoc-spec-11
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-docs-specdoc-spec-11/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+    - implements surfacedoc surface pron docs specdoc spec 11
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+  sections:
+  - path: source-id-surfacedoc-surface-pron-lints-target-id-specdoc-spec-08-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-lints
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-lints
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-lints
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron lints target id specdoc spec 08 relation type
+      implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-lints-target-id-specdoc-spec-08-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-lints-specdoc-spec-08
+    title: implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+    about:
+    - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+    - implements surfacedoc surface pron lints specdoc spec 08
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-lints-specdoc-spec-08
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-lints-specdoc-spec-08/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+    - implements surfacedoc surface pron lints specdoc spec 08
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+  sections:
+  - path: source-id-surfacedoc-surface-pron-surface-tokens-target-id-specdoc-spec-06-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-surface-tokens
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-surface-tokens
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-surface-tokens
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron surface tokens target id specdoc spec 06 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-surface-tokens-target-id-specdoc-spec-06-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-surface-tokens-specdoc-spec-06
+    title: implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+    - implements surfacedoc surface pron surface tokens specdoc spec 06
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-surface-tokens-specdoc-spec-06
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-surface-tokens-specdoc-spec-06/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+    - implements surfacedoc surface pron surface tokens specdoc spec 06
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+  sections:
+  - path: source-id-surfacedoc-surface-pron-surface-dates-target-id-specdoc-spec-11-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-surface-dates
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-surface-dates
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-surface-dates
+
+      target_id: SpecDoc:spec-11
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron surface dates target id specdoc spec 11 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-surface-dates-target-id-specdoc-spec-11-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-surface-dates-specdoc-spec-11
+    title: implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+    - implements surfacedoc surface pron surface dates specdoc spec 11
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-surface-dates-specdoc-spec-11
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-surface-dates-specdoc-spec-11/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+    - implements surfacedoc surface pron surface dates specdoc spec 11
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+  sections:
+  - path: source-id-surfacedoc-surface-pron-surface-nouns-target-id-specdoc-spec-02-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-surface-nouns
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-surface-nouns
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-surface-nouns
+
+      target_id: SpecDoc:spec-02
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron surface nouns target id specdoc spec 02 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-surface-nouns-target-id-specdoc-spec-02-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-surface-nouns-specdoc-spec-02
+    title: implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+    - implements surfacedoc surface pron surface nouns specdoc spec 02
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-surface-nouns-specdoc-spec-02
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-surface-nouns-specdoc-spec-02/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+    - implements surfacedoc surface pron surface nouns specdoc spec 02
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+  sections:
+  - path: source-id-surfacedoc-surface-pron-surface-interpret-target-id-specdoc-spec-06-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-surface-interpret
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-surface-interpret
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-surface-interpret
+
+      target_id: SpecDoc:spec-06
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron surface interpret target id specdoc spec 06
+      relation type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-surface-interpret-target-id-specdoc-spec-06-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-surface-interpret-specdoc-spec-06
+    title: implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+    - implements surfacedoc surface pron surface interpret specdoc spec 06
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-surface-interpret-specdoc-spec-06
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-surface-interpret-specdoc-spec-06/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+    - implements surfacedoc surface pron surface interpret specdoc spec 06
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+  sections:
+  - path: source-id-surfacedoc-surface-pron-cli-main-target-id-specdoc-spec-08-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-cli-main
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-cli-main
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-cli-main
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron cli main target id specdoc spec 08 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-cli-main-target-id-specdoc-spec-08-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-cli-main-specdoc-spec-08
+    title: implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+    about:
+    - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+    - implements surfacedoc surface pron cli main specdoc spec 08
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-cli-main-specdoc-spec-08
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-cli-main-specdoc-spec-08/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+    - implements surfacedoc surface pron cli main specdoc spec 08
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11
+- doc_name: implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  sections:
+  - path: source-id-surfacedoc-surface-pron-cli-repl-target-id-specdoc-spec-08-relation-type-implements-condition
+    title: 'source_id: SurfaceDoc:surface-pron-cli-repl
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    breadcrumbs:
+    - 'source_id: SurfaceDoc:surface-pron-cli-repl
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    about:
+    - 'source_id: SurfaceDoc:surface-pron-cli-repl
+
+      target_id: SpecDoc:spec-08
+
+      relation_type: implements
+
+      condition: '''''
+    - source id surfacedoc surface pron cli repl target id specdoc spec 08 relation
+      type implements condition
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: source-id-surfacedoc-surface-pron-cli-repl-target-id-specdoc-spec-08-relation-type-implements-condition
+    level: 2
+    line_start: 2
+    line_end: 7
+  - path: implements-surfacedoc-surface-pron-cli-repl-specdoc-spec-08
+    title: implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+    about:
+    - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+    - implements surfacedoc surface pron cli repl specdoc spec 08
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: implements-surfacedoc-surface-pron-cli-repl-specdoc-spec-08
+    level: 1
+    line_start: 8
+    line_end: 9
+  - path: implements-surfacedoc-surface-pron-cli-repl-specdoc-spec-08/notes
+    title: Notes
+    breadcrumbs:
+    - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+    - Notes
+    about:
+    - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+    - implements surfacedoc surface pron cli repl specdoc spec 08
+    - Notes
+    - notes
+    - layer.topology
+    - type.relation.instance
+    semantic_tags:
+    - layer.topology
+    - type.relation.instance
+    slug: notes
+    level: 2
+    line_start: 10
+    line_end: 11

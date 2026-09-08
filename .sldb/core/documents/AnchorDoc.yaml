@@ -1,0 +1,36 @@
+documents:
+- name: anchor-chapter
+  path: knowledge/anchors/chapter.md
+  hash_c: c8f926420af5813e82d3884e8ca9b8fbad0a64908bcd5d15f6e6c3e0192dbee1
+  hash_d: 827701eb82c7bb8a9b59717abd0745a60d8f0ca1afb614017d44f14f15684874
+  semantic_tags:
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-command
+  path: knowledge/anchors/command.md
+  hash_c: 66b9954f9e9fa5500eeaa0438bce78e6bf84578c1870cefcb4256c449932fc34
+  hash_d: cac15796ffc238a075084cb9d3c414c2648fa743e23c5ebe8533d1fd7bd68782
+  semantic_tags:
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-module
+  path: knowledge/anchors/module.md
+  hash_c: 6de10a6ef1cfe79b447c99e76558df35ffe8b9b46f367fdf81599a8f8ec613f0
+  hash_d: c85f12dd1b59a4f5c6cebf985f0fb624d3efe2639177f869241cebb44811fa8f
+  semantic_tags:
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-move
+  path: knowledge/anchors/move.md
+  hash_c: a6fc6ffb59eb704c4270c0dfa1773934cee1f5c3685668d127dd20d82948bda4
+  hash_d: 351e4439ff9da7b95f2d780bad5e83f6b5a6e0dc33879b09f63800dc22faec96
+  semantic_tags:
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+- name: anchor-implements
+  path: knowledge/anchors/implements.md
+  hash_c: 2dad41a3bff78455de735824e58e98cc9f7d044f3648674f8b9a148016ae2755
+  hash_d: 955dfc8bb149f331779a00df86b131808c1615e1630347d23fb0bc15f5b7e1fb
+  semantic_tags:
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors

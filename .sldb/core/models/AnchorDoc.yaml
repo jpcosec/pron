@@ -1,0 +1,13 @@
+name: AnchorDoc
+model_ref: pron.models:AnchorDoc
+path: src/pron/models/anchor.py
+documents_index: .sldb/core/documents/AnchorDoc.yaml
+sections_index: .sldb/runtime/sections/AnchorDoc.yaml
+hash_b: a5c043243c7664de36942b6a3df79a533db3ebf06d9e6209b2e0894161f48ab3
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- type.knowledge.anchor
+- workspace.knowledge.anchors
+base_models: []

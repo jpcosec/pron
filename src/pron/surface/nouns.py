@@ -91,7 +91,7 @@ def _phrase_at(items: list[Item], i: int, lex: Lexicon) -> tuple[NounPhrase | No
     number = it.number or ("plural" if det in ("all",) else "singular")
     if det is None and number == "plural":
         det = "all"
-    interrogated = start > 0 and items[start - 1].kind == "wh"
+    interrogated = start > 0 and items[start - 1].kind == "wh" and items[start - 1].meta.get("question") in ("what", "who", "how_many")
     np = NounPhrase(head, det or ("the" if number == "singular" and not interrogated else "all"), number, interrogated=interrogated, items=[it])
     for adj in pre:
         if not _word_modifier(adj, [], np, lex):

@@ -1,0 +1,176 @@
+documents:
+- doc_name: anchor-chapter
+  sections:
+  - path: chapter
+    title: chapter
+    breadcrumbs:
+    - chapter
+    about:
+    - chapter
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: chapter
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: chapter/motive
+    title: Motive
+    breadcrumbs:
+    - chapter
+    - Motive
+    about:
+    - chapter
+    - Motive
+    - motive
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 13
+    line_end: 14
+- doc_name: anchor-command
+  sections:
+  - path: command
+    title: command
+    breadcrumbs:
+    - command
+    about:
+    - command
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: command
+    level: 1
+    line_start: 10
+    line_end: 11
+  - path: command/motive
+    title: Motive
+    breadcrumbs:
+    - command
+    - Motive
+    about:
+    - command
+    - Motive
+    - motive
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 12
+    line_end: 13
+- doc_name: anchor-module
+  sections:
+  - path: module
+    title: module
+    breadcrumbs:
+    - module
+    about:
+    - module
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: module
+    level: 1
+    line_start: 12
+    line_end: 13
+  - path: module/motive
+    title: Motive
+    breadcrumbs:
+    - module
+    - Motive
+    about:
+    - module
+    - Motive
+    - motive
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 14
+    line_end: 15
+- doc_name: anchor-move
+  sections:
+  - path: move
+    title: move
+    breadcrumbs:
+    - move
+    about:
+    - move
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: move
+    level: 1
+    line_start: 10
+    line_end: 11
+  - path: move/motive
+    title: Motive
+    breadcrumbs:
+    - move
+    - Motive
+    about:
+    - move
+    - Motive
+    - motive
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 12
+    line_end: 13
+- doc_name: anchor-implements
+  sections:
+  - path: implements
+    title: implements
+    breadcrumbs:
+    - implements
+    about:
+    - implements
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: implements
+    level: 1
+    line_start: 11
+    line_end: 12
+  - path: implements/motive
+    title: Motive
+    breadcrumbs:
+    - implements
+    - Motive
+    about:
+    - implements
+    - Motive
+    - motive
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    semantic_tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+    slug: motive
+    level: 2
+    line_start: 13
+    line_end: 14

@@ -1,4 +1,4 @@
-"""The only door to kgdb: read edges of the typed graph the projector built.
+"""The only door to kgdb: read edges of the typed graph the projector built (spec 03, 10).
 
 pron never writes to kgdb. The graph lives at <world>/.pron/graph.nx.json, built by
 `kgdb ingest --store` through its library (see pron.world.World.refresh). It is fresh

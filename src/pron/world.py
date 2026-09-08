@@ -1,4 +1,4 @@
-"""A world is an sldb store. This module opens one, reads its declaration, and
+"""A world is an sldb store (spec 01). This module opens one, reads its declaration, and
 refreshes its derived graph. Nothing here is knowledge of any particular world.
 """
 
@@ -110,17 +110,41 @@ class World:
         return report
 
 
-def init_world(root: str | Path, pythonpath: str | None = None, with_atoms: bool = False) -> dict[str, Any]:
-    """Make a store a pron world: kgdb's typed relations plus pron's own models."""
+def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: bool = False) -> dict[str, Any]:
+    """Make a store a pron world: kgdb's typed relations plus pron's own models. With
+    with_knowledge, also what pron's own knowledge base needs: SpecDoc and the relation
+    type `implements` (a module or command implements a spec chapter)."""
     root = Path(root).resolve()
     store = Store(root, pythonpath)
     kgdb_report = kgdb_init(store.sp, store.pythonpath)
     added = [ref for ref in PRON_MODELS if store.register_model(ref)]
-    if with_atoms and store.register_model("pron.models:Atom"):
-        added.append("pron.models:Atom")
+    if with_knowledge:
+        for ref in ("pron.models:SpecDoc", "sldb.models.knowledge_surface:CliCommandDoc", "sldb.models.knowledge_surface:SurfaceDoc"):
+            if store.register_model(ref):
+                added.append(ref)
     (root / LEDGER_DIR).mkdir(exist_ok=True)
     (root / ".pron").mkdir(exist_ok=True)
     gitignore = root / ".pron" / ".gitignore"
     if not gitignore.exists():
         gitignore.write_text("*\n", encoding="utf-8")
-    return {"kgdb": kgdb_report.summary(), "pron_models_added": added}
+    types_added = _knowledge_relation_types(store) if with_knowledge else []
+    return {"kgdb": kgdb_report.summary(), "pron_models_added": added, "relation_types_added": types_added}
+
+
+KNOWLEDGE_RELATION_TYPES = [
+    {"name": "implements", "axis": "HOW", "cardinality": "many_to_many", "source_types": ["SurfaceDoc", "CliCommandDoc"], "target_types": ["SpecDoc"],
+     "description": "This module or command implements that chapter of the specification: the direct branch from the code to what it is supposed to do, derived from the spec references in the module's docstring."},
+]
+
+
+def _knowledge_relation_types(store: Store) -> list[str]:
+    """The relation types pron's own knowledge base uses, declared as documents."""
+    added = []
+    for rt in KNOWLEDGE_RELATION_TYPES:
+        name = f"rt-{rt['name']}"
+        if store.doc("RelationTypeDoc", name) is not None:
+            continue
+        payload = {"title": rt["name"], "direction": "directed", "condition": "", **rt}
+        store.create("RelationTypeDoc", name, payload, store.root / "knowledge" / "relations" / "types" / f"{rt['name']}.md")
+        added.append(rt["name"])
+    return added

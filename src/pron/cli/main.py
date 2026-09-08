@@ -16,12 +16,13 @@ def _cmd_init(args: argparse.Namespace) -> int:
     """Make a store a pron world.
 
     Runs kgdb init (typed relations) and registers pron's models: AnchorDoc, ProjectionDoc,
-    MoveDoc, and Atom with --atoms. Idempotent.
+    MoveDoc; with --knowledge also SpecDoc, the command and module docs, and the relation
+    type implements, for pron's own knowledge base. Idempotent.
 
     Usage:
-      pron init --world . [--pythonpath .] [--atoms]
+      pron init --world . [--pythonpath .] [--knowledge]
     """
-    report = init_world(args.world, args.pythonpath, with_atoms=args.atoms)
+    report = init_world(args.world, args.pythonpath, with_knowledge=args.knowledge)
     print(json.dumps(report, indent=2))
     return 0
 
@@ -111,7 +112,9 @@ def _cmd_check(args: argparse.Namespace) -> int:
 
 
 def _cmd_docs(args: argparse.Namespace) -> int:
-    """Regenerate pron's own CliCommandDoc and SurfaceDoc documents from this code.
+    """Regenerate pron's own knowledge base from this repo: a CliCommandDoc per command, a
+    SurfaceDoc per module, a SpecDoc per chapter of source/spec, and the implements edges
+    from each module to the chapters its docstring cites.
 
     Usage:
       pron docs --world . [--check]
@@ -123,19 +126,6 @@ def _cmd_docs(args: argparse.Namespace) -> int:
     return 1 if (args.check and changed) else 0
 
 
-def _cmd_migrate_atoms(args: argparse.Namespace) -> int:
-    """Migrate v1 atoms (deskops AtomDoc markdown files) into this world's Atom model.
-
-    Usage:
-      pron migrate-atoms SRC_DIR --world .
-    """
-    from pron.migrate import migrate_atoms
-
-    report = migrate_atoms(World(args.world, args.pythonpath), Path(args.src))
-    print(json.dumps(report, indent=2))
-    return 0
-
-
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="pron", description="pron: a SHRDLU over an sldb world.")
     sub = p.add_subparsers(dest="command", required=True)
@@ -144,7 +134,7 @@ def build_parser() -> argparse.ArgumentParser:
         sp.add_argument("--world", default=".", help="World root (contains .sldb)")
         sp.add_argument("--pythonpath", default=None, help="Project path where the world's models import from")
 
-    s = sub.add_parser("init", help="Make a store a pron world"); common(s); s.add_argument("--atoms", action="store_true"); s.set_defaults(fn=_cmd_init)
+    s = sub.add_parser("init", help="Make a store a pron world"); common(s); s.add_argument("--knowledge", action="store_true", help="Also what pron's own knowledge base needs"); s.set_defaults(fn=_cmd_init)
     s = sub.add_parser("refresh", help="Rebuild indexes and the typed graph"); common(s); s.set_defaults(fn=_cmd_refresh)
     s = sub.add_parser("lexicon", help="List what this projection can say"); common(s)
     s.add_argument("model", nargs="?", default=None); s.add_argument("--projection", default="all"); s.add_argument("--json", action="store_true"); s.set_defaults(fn=_cmd_lexicon)
@@ -154,7 +144,6 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--projection", default="all"); s.add_argument("--speaker", default=""); s.add_argument("--now", default=None); s.set_defaults(fn=_cmd_repl)
     s = sub.add_parser("check", help="Run pron's lints"); common(s); s.set_defaults(fn=_cmd_check)
     s = sub.add_parser("docs", help="Regenerate pron's command docs"); common(s); s.add_argument("--check", action="store_true"); s.set_defaults(fn=_cmd_docs)
-    s = sub.add_parser("migrate-atoms", help="Migrate v1 atoms into Atom"); common(s); s.add_argument("src"); s.set_defaults(fn=_cmd_migrate_atoms)
     return p
 
 

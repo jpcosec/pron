@@ -1,0 +1,949 @@
+tags:
+  domain:system_architecture:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  entity:cli_command:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  entity:module:
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  impl:here:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  kind:software:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  layer.topology:
+  - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+  - reltype-applies_to_source
+  - reltype-applies_to_target
+  - reltype-extends
+  - reltype-has_document
+  - reltype-has_field
+  - reltype-has_model
+  - reltype-has_section
+  - reltype-names
+  - reltype-semantic_equivalent
+  - reltype-semantic_parent
+  - reltype-tagged_as
+  - rt-implements
+  system:pron:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  type.knowledge.anchor:
+  - anchor-chapter
+  - anchor-command
+  - anchor-implements
+  - anchor-module
+  - anchor-move
+  type.knowledge.cli_command:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  type.knowledge.projection:
+  - projection-all
+  type.knowledge.spec:
+  - spec-01
+  - spec-02
+  - spec-03
+  - spec-04
+  - spec-05
+  - spec-06
+  - spec-07
+  - spec-08
+  - spec-09
+  - spec-09a
+  - spec-10
+  - spec-11
+  type.knowledge.surface:
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  type.pron.move:
+  - move-20260908T062556-001
+  type.relation.instance:
+  - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+  - implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+  type.relation.type:
+  - reltype-applies_to_source
+  - reltype-applies_to_target
+  - reltype-extends
+  - reltype-has_document
+  - reltype-has_field
+  - reltype-has_model
+  - reltype-has_section
+  - reltype-names
+  - reltype-semantic_equivalent
+  - reltype-semantic_parent
+  - reltype-tagged_as
+  - rt-implements
+  workspace.knowledge.anchors:
+  - anchor-chapter
+  - anchor-command
+  - anchor-implements
+  - anchor-module
+  - anchor-move
+  workspace.knowledge.commands:
+  - cmd-pron-check
+  - cmd-pron-docs
+  - cmd-pron-init
+  - cmd-pron-lexicon
+  - cmd-pron-refresh
+  - cmd-pron-repl
+  - cmd-pron-say
+  workspace.knowledge.ledger:
+  - move-20260908T062556-001
+  workspace.knowledge.projections:
+  - projection-all
+  workspace.knowledge.surfaces:
+  - surface-pron-cli-main
+  - surface-pron-cli-repl
+  - surface-pron-dialogue
+  - surface-pron-display
+  - surface-pron-docs
+  - surface-pron-embedder
+  - surface-pron-graph
+  - surface-pron-kernel
+  - surface-pron-ledger
+  - surface-pron-lexicon
+  - surface-pron-lints
+  - surface-pron-resolve
+  - surface-pron-session
+  - surface-pron-store
+  - surface-pron-surface-dates
+  - surface-pron-surface-interpret
+  - surface-pron-surface-nouns
+  - surface-pron-surface-tokens
+  - surface-pron-verbs
+  - surface-pron-world
+  workspace.source.spec:
+  - spec-01
+  - spec-02
+  - spec-03
+  - spec-04
+  - spec-05
+  - spec-06
+  - spec-07
+  - spec-08
+  - spec-09
+  - spec-09a
+  - spec-10
+  - spec-11
+documents:
+  reltype-has_model:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/has_model.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-has_document:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/has_document.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-has_section:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/has_section.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-tagged_as:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/tagged_as.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-semantic_parent:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/semantic_parent.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-semantic_equivalent:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/semantic_equivalent.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-has_field:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/has_field.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-extends:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/extends.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-applies_to_source:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/applies_to_source.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-applies_to_target:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/applies_to_target.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  reltype-names:
+    model: RelationTypeDoc
+    path: kgdb/relation_types/names.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  rt-implements:
+    model: RelationTypeDoc
+    path: knowledge/relations/types/implements.md
+    tags:
+    - layer.topology
+    - type.relation.type
+  implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  anchor-chapter:
+    model: AnchorDoc
+    path: knowledge/anchors/chapter.md
+    tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-command:
+    model: AnchorDoc
+    path: knowledge/anchors/command.md
+    tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-module:
+    model: AnchorDoc
+    path: knowledge/anchors/module.md
+    tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-move:
+    model: AnchorDoc
+    path: knowledge/anchors/move.md
+    tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  anchor-implements:
+    model: AnchorDoc
+    path: knowledge/anchors/implements.md
+    tags:
+    - type.knowledge.anchor
+    - workspace.knowledge.anchors
+  projection-all:
+    model: ProjectionDoc
+    path: knowledge/projections/all.md
+    tags:
+    - type.knowledge.projection
+    - workspace.knowledge.projections
+  move-20260908T062556-001:
+    model: MoveDoc
+    path: ledger/move-20260908T062556-001.md
+    tags:
+    - type.pron.move
+    - workspace.knowledge.ledger
+  spec-01:
+    model: SpecDoc
+    path: source/spec/01-mundo.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-02:
+    model: SpecDoc
+    path: source/spec/02-sustantivos.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-03:
+    model: SpecDoc
+    path: source/spec/03-verbos-transitivos.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-04:
+    model: SpecDoc
+    path: source/spec/04-verbos-de-accion.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-05:
+    model: SpecDoc
+    path: source/spec/05-lexico-y-proyeccion.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-06:
+    model: SpecDoc
+    path: source/spec/06-superficie-y-dialogo.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-07:
+    model: SpecDoc
+    path: source/spec/07-ledger.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-08:
+    model: SpecDoc
+    path: source/spec/08-prerequisitos-y-orden.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-09:
+    model: SpecDoc
+    path: source/spec/09-una-conversacion.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-09a:
+    model: SpecDoc
+    path: source/spec/09a-el-mundo-del-restaurante.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-10:
+    model: SpecDoc
+    path: source/spec/10-el-shrdlu-sobre-el-modelo.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  spec-11:
+    model: SpecDoc
+    path: source/spec/11-decisiones-de-implementacion.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+  cmd-pron-init:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-init.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-refresh:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-refresh.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-lexicon:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-lexicon.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-say:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-say.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-repl:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-repl.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-check:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-check.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-docs:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-docs.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  surface-pron-world:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-world.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-store:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-store.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-graph:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-graph.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-lexicon:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-lexicon.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-embedder:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-embedder.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-resolve:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-resolve.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-verbs:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-verbs.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-kernel:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-kernel.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-dialogue:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-dialogue.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-ledger:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-ledger.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-display:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-display.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-session:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-session.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-docs:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-docs.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-lints:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-lints.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-tokens:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-tokens.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-dates:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-dates.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-nouns:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-nouns.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-interpret:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-interpret.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-cli-main:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-cli-main.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-cli-repl:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-cli-repl.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces

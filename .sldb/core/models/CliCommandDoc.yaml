@@ -1,0 +1,13 @@
+name: CliCommandDoc
+model_ref: sldb.models.knowledge_surface:CliCommandDoc
+path: /home/jp/proyectos/hum-ecosystem/tools/sldb/src/sldb/models/knowledge_surface.py
+documents_index: .sldb/core/documents/CliCommandDoc.yaml
+sections_index: .sldb/runtime/sections/CliCommandDoc.yaml
+hash_b: 0cecd68cc542b89a971cc158187d21415a2a6e90ae93f9387cbbb2265ff1980a
+version: 1
+canonical: false
+family: null
+semantics:
+- type.knowledge.cli_command
+- workspace.knowledge.commands
+base_models: []

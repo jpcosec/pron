@@ -1,4 +1,4 @@
-"""The only door to sldb: read by address, write by address, never open Markdown.
+"""The only door to sldb: read by address (spec 02), write by address (spec 04), never open Markdown.
 
 Every method is a call into sldb's library. The address engine loads every document
 of the store before selecting (an sldb cost, not pron's), so the runtime documents

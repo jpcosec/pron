@@ -1,0 +1,13 @@
+name: RelationTypeDoc
+model_ref: kgdb.models:RelationTypeDoc
+path: /home/jp/proyectos/hum-ecosystem/tools/kgdb/src/kgdb/models/relation_type_doc.py
+documents_index: .sldb/core/documents/RelationTypeDoc.yaml
+sections_index: .sldb/runtime/sections/RelationTypeDoc.yaml
+hash_b: d72f299ad1354f187d5ecfc1aa3c2583764d06c7708f090a34c9d7094d3ead3d
+version: 1
+canonical: false
+family: relation
+semantics:
+- layer.topology
+- type.relation.type
+base_models: []

@@ -1,0 +1,85 @@
+documents:
+- name: spec-01
+  path: source/spec/01-mundo.md
+  hash_c: 10506d15b11e563afdfed1468b349269a38bba9857dd7bedf31df13610e80491
+  hash_d: 69d1e8e2b108b0b384ef46a63ecbb69bba8827f9a12090258e87b80c252dd85f
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-02
+  path: source/spec/02-sustantivos.md
+  hash_c: 00dc0d0a59b9f4ccb6283eaea6de6d3de077ba77c6b468b48a8d845958fddf9e
+  hash_d: a6ffaff357c2cd965e11d09ca28020c0a66e1432b683f0f98c150554bef1f0ed
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-03
+  path: source/spec/03-verbos-transitivos.md
+  hash_c: 931fe1499b1c0a31407c165ad9c7519316092f84fc799e41dbe5ede393c22b4c
+  hash_d: d943ff3c6ae7b29d5104dddc584d83e3fb9c8248720f9b5623014658d58c7c76
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-04
+  path: source/spec/04-verbos-de-accion.md
+  hash_c: e3f334244c595dbc707cede315dac5d78dfbfbac05981fec1b7d4f9303aed2f4
+  hash_d: 148225950073f351488ca83ebd7c7aa08409f0170f7283e4c8ca3bc6bef8f616
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-05
+  path: source/spec/05-lexico-y-proyeccion.md
+  hash_c: 8a5b147b2a89783a17864ebeec772e49fb6e1117237e2e125bc4b84c3d61cc1a
+  hash_d: 36131614704bc3d0bef5d8c80ed6d6eb1b1f205c8a64df10567a67c66cd9302a
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-06
+  path: source/spec/06-superficie-y-dialogo.md
+  hash_c: f535cd2fd30b1ee8170cdb3964a9786f3f0b7b498038575db2f04a38aa23f07a
+  hash_d: 0ef8d379f161a104e7ef0fbaf8467e96b9482710c6553df1461820d748f202f2
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-07
+  path: source/spec/07-ledger.md
+  hash_c: 20ca4375d5679c7c9b5c0c7f35dfdbd7b4b0d8e7bc0c59aa9bf792410f96100c
+  hash_d: 37988c4f57c9cc9e0940bfa6e1b503e085fe0a722aac1f5629650e2fe00e8a2d
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-08
+  path: source/spec/08-prerequisitos-y-orden.md
+  hash_c: f011473714202dedf797acc3c3769b9c2c7acf692ae6526d7c8302aba62653f4
+  hash_d: e3998d059ee4454af816b8d3154adf72de8ad7ce29886161ab81d87d39032ab4
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-09
+  path: source/spec/09-una-conversacion.md
+  hash_c: 29202b60e583da586dcd2a2139b07a7ae90868101a1245cdc83d8fc5d653e1c3
+  hash_d: e3ee17f0af02fd35f8e5ad9990e04f75c2912cc0ec58f230ef2932190fdd6aab
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-09a
+  path: source/spec/09a-el-mundo-del-restaurante.md
+  hash_c: 5fd5220f03a877ee86a2b43dc2f0707bc9e5fdaec098dd2ec83805cb47fef7b4
+  hash_d: 405898b1476ad57f95cb5f180170f4c532aa99158a3fb6d3dcea3d3c4c62c92e
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-10
+  path: source/spec/10-el-shrdlu-sobre-el-modelo.md
+  hash_c: 95d29316da26c42a300c942a3e3dc8b1ad8930518d768891d6011b6c5ada8c1f
+  hash_d: 8f617c847c98f8b79011882245ee729aa2473c01664da38876b7de2da0d12adf
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-11
+  path: source/spec/11-decisiones-de-implementacion.md
+  hash_c: fca78a4362c716f950e0b6006ae7502e558125c031032632eaefe2347b1b7df8
+  hash_d: 227070addc4fdbeb6a8f265b5e2a112de8ef8c8bccc9040a4ec8c4c50144ac96
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec

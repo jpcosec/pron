@@ -1,9 +1,10 @@
-"""Steps 8–9 and the lints: the REPL over a session, `pron say`, the self-documentation, the lints, the atom migration."""
+"""Steps 8–9 and the lints: the REPL over a session, `pron say`, pron's own knowledge base derived
+from the repo (command and module docs, spec chapters, implements edges), the lints."""
 
 from __future__ import annotations
 
 import io
-import subprocess
+import shutil
 from pathlib import Path
 
 import pytest
@@ -12,8 +13,8 @@ from pron.cli.main import main as pron_main
 from pron.cli.repl import run as repl
 from pron.docs import synchronize_docs
 from pron.lints import run_lints
-from pron.migrate import migrate_atoms
-from pron.world import World
+from pron.session import Session
+from pron.world import World, init_world
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"
@@ -47,28 +48,43 @@ def test_lexicon_command_lists_words(world: World, capsys):
     assert "booked_by" in out and "party size" in out
 
 
-def test_docs_are_generated_from_code_and_lints_pass(world: World):
-    changed = synchronize_docs(world)
+def test_lints_pass_on_a_declared_world(world: World):
+    assert run_lints(world) == []
+
+
+@pytest.fixture(scope="module")
+def own(tmp_path_factory) -> World:
+    """A copy of pron's own knowledge base: the spec chapters, built from scratch."""
+    root = tmp_path_factory.mktemp("pron-own") / "world"
+    shutil.copytree(PRON_REPO / "source", root / "source")
+    from sldb.cli import main as sldb_main
+    assert sldb_main(["stores", "init", "--path", str(root)]) == 0
+    init_world(root, str(PRON_REPO), with_knowledge=True)
+    return World(root, str(PRON_REPO))
+
+
+def test_own_knowledge_base_is_derived_from_the_repo(own: World):
+    changed = synchronize_docs(own)
+    assert any(c == "SpecDoc spec-02" for c in changed)
     assert any(c.endswith("cmd-pron-say") for c in changed) and any("surface-pron-session" in c for c in changed)
-    assert synchronize_docs(world, check=True) == []
-    doc = world.store.doc("CliCommandDoc", "cmd-pron-say")
-    assert doc.payload["synopsis"].startswith("Say one sentence")
-    assert "--trace" in doc.payload["arguments"]
-    problems = run_lints(world)
-    assert problems == [], problems
+    assert any(c.startswith("RelationDoc implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02") for c in changed)
+    assert synchronize_docs(own, check=True) == []
+    # the spec chapter is tracked where it lives and its sections are addressable
+    doc = own.store.doc("SpecDoc", "spec-02")
+    assert doc is not None and doc.path.endswith("source/spec/02-sustantivos.md")
+    assert own.store.doc("CliCommandDoc", "cmd-pron-say").payload["synopsis"].startswith("Say one sentence")
+    assert run_lints(own) == [], run_lints(own)
 
 
-def test_v1_atoms_migrate_into_atom(world: World, tmp_path: Path):
-    src = tmp_path / "v1atoms"
-    src.mkdir()
-    names = subprocess.run(["git", "ls-tree", "--name-only", "v1-code-and-kb", "knowledge/atoms/"], cwd=PRON_REPO, capture_output=True, text=True, check=True).stdout.split()
-    picked = [n for n in names if n.endswith(".md")][:5]
-    for n in picked:
-        content = subprocess.run(["git", "show", f"v1-code-and-kb:{n}"], cwd=PRON_REPO, capture_output=True, text=True, check=True).stdout
-        (src / Path(n).name).write_text(content, encoding="utf-8")
-    report = migrate_atoms(world, src)
-    assert report["migrated"] == 5 and report["failed"] == [], report
-    atom = world.store.docs_of("Atom")[0]
-    assert atom.payload["question"] in ("what", "why", "how", "how_not", "when", "where", "for_whom")
-    assert not any(t.startswith("impl:") for t in atom.payload["tags"])
-    assert "system:pron" in atom.payload["tags"] or not any(t.startswith("system:") for t in atom.payload["tags"])
+def test_a_question_over_the_own_knowledge_base(own: World):
+    own.store.create("AnchorDoc", "anchor-module", {"symbol": "module", "forms": ["module", "modules"], "ref": "model:SurfaceDoc", "steps": [], "motive": "a module of pron"},
+                     own.root / "knowledge" / "anchors" / "module.md")
+    own.store.create("AnchorDoc", "anchor-chapter", {"symbol": "chapter", "forms": ["chapter", "chapters"], "ref": "model:SpecDoc", "steps": [], "motive": "a chapter of the spec"},
+                     own.root / "knowledge" / "anchors" / "chapter.md")
+    own.store.create("AnchorDoc", "anchor-implements", {"symbol": "implements", "forms": ["implements", "implement", "implemented by"], "ref": "relation:implements", "steps": [], "motive": "which chapter a module carries out"},
+                     own.root / "knowledge" / "anchors" / "implements.md")
+    own.refresh()
+    s = Session(own, now=NOW)
+    r = s.turn("what does the module resolve implement?")
+    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
+    assert "Sustantivos" in r.text

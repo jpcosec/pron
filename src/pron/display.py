@@ -1,4 +1,4 @@
-"""How objects are shown: the projection's display templates, `{rel.field}` following an edge."""
+"""How objects are shown (spec 10): the projection's display templates, `{rel.field}` following an edge."""
 
 from __future__ import annotations
 

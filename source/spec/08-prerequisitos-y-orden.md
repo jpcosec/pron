@@ -45,16 +45,16 @@ El `kgdb ingest` unificado que pide 10 §2.3, en un solo comando sobre el `seman
 
 ### pron mismo
 
-- Un modelo `Atom` propio, `pron.models:Atom`, con estos campos: `id` (str), `title` (str), `question` (`Literal[what, why, how, how_not, when, where, for_whom]`), `answer` (str, markdown), `tags` (`list[str]`, `namespace:value`), `provenance` (str, vacío por defecto). El template es el del `AtomDoc` de deskops con `five_wh_one_plus` renombrado a `question`, así los 273 archivos de v1 se extraen con el modelo viejo y se crean con el nuevo sin tocar su markdown salvo esa clave del frontmatter.
-
-  Migración, desde la rama `v1-code-and-kb`, por átomo: `sldb extract deskops.models:AtomDoc <archivo>` → payload; renombrar `five_wh_one_plus` → `question`; en `tags`, reemplazar `system:knowledge` por `system:pron` y quitar los `impl:` (ese dato se vuelve una arista `implements` en el paso 9, no un tag); `provenance` `null` → `""`; `sldb docs create --model Atom` con el mismo nombre de documento. El script de migración vive en el repo de pron, corre en el paso 1 y su test compara: 273 documentos creados, cada uno con `answer` idéntico al original.
+- Ningún modelo de "átomo". Decidido el 2026-09-09: los átomos de v1 se quedan en la rama, como material histórico. El conocimiento de pron sobre sí mismo son los capítulos del spec (`SpecDoc`, trackeados donde viven, con sus secciones indexadas por sldb), los docs de comandos y módulos generados del código, y las aristas `implements` derivadas de los docstrings. sldb es más expresivo que una lista de afirmaciones sueltas, y no hay que aplanarlo.
 - El store v1 registra trece modelos de deskops sin documentos. El store nuevo se inicializa de cero.
 
 ## Orden de construcción
 
 Cada paso termina con un test que corre contra un store real, no con fixtures fabricados.
 
-1. **Mundo y proyección.** Inicializar el store de pron, registrar `Atom`, `CliCommandDoc`, `SurfaceDoc`, `AnchorDoc`, `ProjectionDoc`, `MoveDoc`, y los dos modelos de kgdb. Migrar los átomos. Un `ProjectionDoc` "todo". Test: `sldb stores check` pasa y `st` lista exactamente esos modelos.
+**Hecho el 2026-09-09**, los nueve pasos, en `src/pron/` con `tests/test_01…05`: el mundo y la proyección (`world`, `store`, `graph`), el léxico (`lexicon`, `embedder`), los sustantivos (`surface/tokens`, `surface/nouns`, `resolve`), el ledger (`ledger`, `MoveDoc`), los verbos de acción (`kernel`), los transitivos (`verbs`), el diálogo (`dialogue`), la superficie y el REPL (`surface/interpret`, `session`, `cli/repl`), y `pron docs` con los lints (`docs`, `lints`). La conversación de 09 corre entera en `tests/test_04_conversation.py`. La KB de pron son sus capítulos de spec, sus docs generados y las aristas `implements` derivadas de los docstrings.
+
+1. **Mundo y proyección.** Inicializar el store de pron, registrar `SpecDoc`, `CliCommandDoc`, `SurfaceDoc`, `AnchorDoc`, `ProjectionDoc`, `MoveDoc`, y los dos modelos de kgdb. Un `ProjectionDoc` "todo". Test: `sldb stores check` pasa y `st` lista exactamente esos modelos.
 2. **Léxico.** Derivar el léxico del store y listarlo. Test: cada palabra listada tiene una fuente en el store y un motivo no vacío.
 3. **Sustantivos.** Frase nominal → dirección + predicado → sldb. Las tres salidas. Test: las oraciones del turno de spec2viz producen las direcciones que dicen.
    A partir de aquí los tests corren también contra un segundo mundo, el restaurante de 09, montado desde cero en un directorio temporal: pron tiene que funcionar sobre un mundo que no es el suyo antes de que su propia KB importe.
@@ -63,7 +63,7 @@ Cada paso termina con un test que corre contra un store real, no con fixtures fa
 6. **Verbos transitivos.** Requiere el `kgdb ingest` unificado (11 §4); hasta entonces, los transitivos leídos responden que el grafo no está disponible y los afirmados escriben el `RelationDoc` igual. Leer aristas, afirmar un `RelationDoc`, refresh, leer la arista nueva. Test: el turno dos de spec2viz.
 7. **Diálogo.** Pendiente y referentes. Test: el diagrama de estados de spec2viz, cada transición.
 8. **Superficie natural y REPL.** Recién ahora un REPL, y recién ahora un operador LLM.
-9. **`pron docs`.** Regenerar `CliCommandDoc` y `SurfaceDoc` desde el código, como en v1, y el `implements` de cada átomo `impl:here` hacia su modelo o módulo.
+9. **`pron docs`.** Regenerar `CliCommandDoc` y `SurfaceDoc` desde el código, trackear cada capítulo del spec como `SpecDoc`, y derivar el `implements` de cada módulo hacia los capítulos que su docstring cita.
 
 Nada del paso 8 se empieza antes de que el 3 y el 5 tengan tests verdes.
 
@@ -71,8 +71,7 @@ Nada del paso 8 se empieza antes de que el 3 y el 5 tengan tests verdes.
 
 Corren sobre el store de pron y fallan la build:
 
-- todo átomo `impl:here` tiene una arista `implements` hacia un `sldb://model/…` o un `SurfaceDoc`;
-- todo modelo registrado tiene al menos un átomo que lo menciona;
+- todo módulo de pron cita al menos un capítulo del spec en su docstring, y esa cita es una arista `implements`;
 - todo comando del CLI tiene su `CliCommandDoc` regenerado sin drift;
 - ningún `RelationDoc` huérfano (el ingest de kgdb lo reporta; el lint lo convierte en error);
 - ninguna palabra del léxico sin motivo;

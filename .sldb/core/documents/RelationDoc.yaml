@@ -1,0 +1,169 @@
+documents:
+- name: implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01.md
+  hash_c: fea0980ea1b6ef6213a03793d01382a46811d350d1f11f0f7db0bf2c216f47a4
+  hash_d: 8249ed7317a600a7b0411418cee65cde1ad4a89315dc1b0238a4e03cd54c768c
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02.md
+  hash_c: ef84c8bf9eb5f94e04c888f25c591a67b23f5842bc9f6994c91be83b7719578e
+  hash_d: e0215ada9dc48b3f14c118eb03d8af57b8f7dbef4f4fc21d3893184794ddc0d3
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04.md
+  hash_c: 8543abe38201d4914ca5725782dd4ce8ab7458d546e10a384bf4c6133dc66422
+  hash_d: 502705501d03fca1ceee5357777c87e48d5999d94da1c1455bfc0ab276fac10b
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03.md
+  hash_c: 38b54102a2bbb7c8fda6df72c7f6f254a1e9b8424ab9da089003f880b772d412
+  hash_d: 8fac656d5213ba7b11b58930bdf88c8d163b28b40d4c94f15940456df049037c
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05.md
+  hash_c: c66b5f7a0a760d10315f0615d11763659c53768c148716c99a3d435b66a9b6c3
+  hash_d: 08ab51e3ba935a7872ab2420b78319348daaade2401f5ea8cdd928cbba677ada
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11.md
+  hash_c: ab8709d3e483b149174a4184fe4108baf014268488ebd6aceb20f8ff40fd3f41
+  hash_d: 1386868cb5b76b80b9f7730a50f984080236818e81f46dc037d3db0924d10597
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02.md
+  hash_c: 7def8ca3a695cd7abe0efba0353cfa558d56aa585dffc2359d259aacc6a545d6
+  hash_d: 07944b12dc7e06038ec871841f39dfda13e0c0de3bb5bda52df227353ec3d77e
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03.md
+  hash_c: 53386dcdc41b1573df1e8bfcfd5dbe1893046c2eb84d196c9f757cab1dc04c18
+  hash_d: d4a27411f4770f096bad678e1a4be57c7f2a9ffe9a8872acd3209752695fc421
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04.md
+  hash_c: 3589d037ac8f369632680dd8f8fe86e633fdaf0a8cdd86ddb1f5b6615a1c5e2c
+  hash_d: 17f55d7cf3e56539740379d0738bffcaaf5449608be11c30d5831dea5d6cd9fb
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11.md
+  hash_c: a3f0c63b0a98eb3e1a8d9c83bebff603354a9dfa7cfbf34a831582e9959c997c
+  hash_d: 564b1946c6d9d7568067f8dde2f59ae23918b06d008d9e10d67d3b7a40ac4be7
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06.md
+  hash_c: c30b7d0a0cc135d7a916ed80470b178087ec1ed774abcb28bb3bb16c09fc1bc6
+  hash_d: 7a7cf49a808d47e3244cfd7c974cc0b22d08f97d6971b48ac58d1dcbca89c0dc
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07.md
+  hash_c: 7b2401b0defd8e6dd3a6af06fe9d8f705f6f3df8a3f2e39596ee08715ad7a5b2
+  hash_d: 961bbe1e69db7607c5713cd435a026906ae65fc836d1f400be38afa94d273ac1
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-display--SpecDoc:spec-10.md
+  hash_c: e6a6b30c6bd1e09de99e11c6ee1968093bc209f2cfe76889d5c0c2d214042eaf
+  hash_d: 8f1b926f3dacec94b079d591db1be4d1e9287a71a2a92c7871ce39dfd301ed46
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06.md
+  hash_c: 59de037dd54bdb3ecec2a1fe679ff41c0abb4672dd5cb3d0fadace1f5bf8082f
+  hash_d: 1db37d424c8614f2d1d134928cb13d97c5643dea91398de78c82170a5b5e5611
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-06.md
+  hash_c: 23908efa1d81017215074afb25b7a8faac1bcd27b8faee88a0e058e89ef5251a
+  hash_d: be3d9e27ec5ab2a5b1e9242dfe546e563a22f60976c62c754257b37324af9cc7
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08.md
+  hash_c: 8bf9179a29348a445dcf55a60d34b85f59d7ee5edcdc782658cf1b8160245b44
+  hash_d: bee24cb9eeeae2d282131097d19e226be6bbb2c9c119a425dc691446b037b608
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11.md
+  hash_c: 6e8df0f1dce66f5a2d6ba228544d36df2605348b95f6ceae1ded51a5c9f57d2e
+  hash_d: 5e6c5c0092bbb22e5016f7e35dd6308767fd89e6986386a73dc11abd5f1e9e04
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08.md
+  hash_c: 9c04258f2236429fce7cb8983876a133c3f03b533a2c01562b3c41190e2d77f1
+  hash_d: df5bd9e89bf2eb2828354c3306d58cbe9dea1952dad55896a1d93c1942b9036c
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06.md
+  hash_c: c3be7e094ec9918b01ab9973449fa306a012df13721ff1cc6703838c03493edc
+  hash_d: 73c37c97a55327bb7e910cc1c7bf8f6169eae5fd3af6dc7c10308ec18019afa9
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11.md
+  hash_c: 10208ffece5e949aa6263887a6ab7c4432bf4dcf9f3940b267865a07de08d6f6
+  hash_d: 58dc95ad408bbd15fd797b936e0a4b31d804f209b5f605e2b71b4da759bda758
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02.md
+  hash_c: 361228972527937c78cb55d9c07c1f311899e31c313e041315d852a5557fabc8
+  hash_d: 476c73d32abfd019e4c1b61766e053323bd0e2e39912f06d20731af2d360993e
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06.md
+  hash_c: b04ebb774fcc84f59368d376c08cddacc0790345eab8fa1803a8f07a34e44fd3
+  hash_d: 098b0472cb2d9be0f378072cd8c3e1baa066b6f8fb907bee0192eb537620b851
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08.md
+  hash_c: d5624b8c5526516df0d335d6780eeeb7c7a453ce7503da34f84a2ed790daf07b
+  hash_d: ff3f9ccce6bd0892cd62db7d4aea7a95a992857a948b10f91004aef9a15cf1d8
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08.md
+  hash_c: 1a53f09899c433fd47d39a435de4ba19df0bfe709585eaaf7eb71a63ba8248ce
+  hash_d: 9d0f7fa6891cf4f6c60d6fb129045fd171671b0d363a70fc7bc3d94d36508142
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
