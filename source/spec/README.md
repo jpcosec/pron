@@ -21,7 +21,9 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 09a | [El mundo del restaurante, declarado](09a-el-mundo-del-restaurante.md) | los modelos, tipos de relación, transiciones, proyección y alias que sustentan 09; una declaración posible, no una exigencia |
 | 10 | [El SHRDLU sobre el modelo](10-el-shrdlu-sobre-el-modelo.md) | cómo los campos se vuelven propiedades por tipo, cómo una relación llega a kgdb en bytes, cómo conviven pron y el editor |
 
-Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 es el que se lee antes de implementar.
+| 11 | [Decisiones de implementación](11-decisiones-de-implementacion.md) | parser, embeddings, fechas, el ingest de kgdb, cambios durante el turno, identidad, fallo parcial: qué decide pron y qué aporta la aplicación |
+
+Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 y el 11 se leen antes de implementar.
 
 Las vistas spec2viz en [`views/spec2viz`](../../views/spec2viz) son la proyección gráfica de estos documentos. Cuando difieran, manda el spec.
 

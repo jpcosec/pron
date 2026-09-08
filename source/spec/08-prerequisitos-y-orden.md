@@ -43,7 +43,7 @@ Cada paso termina con un test que corre contra un store real, no con fixtures fa
    A partir de aquí los tests corren también contra un segundo mundo, el restaurante de 09, montado desde cero en un directorio temporal: pron tiene que funcionar sobre un mundo que no es el suyo antes de que su propia KB importe.
 4. **Ledger.** `MoveDoc` por turno. Test: todo turno de los tests anteriores deja un documento trackeado.
 5. **Verbos de acción.** El kernel sobre la librería de sldb, con refresh. Test: cambiar un campo por oración y leerlo por dirección.
-6. **Verbos transitivos.** Requiere kgdb. Leer aristas, afirmar un `RelationDoc`, refresh, leer la arista nueva. Test: el turno dos de spec2viz.
+6. **Verbos transitivos.** Requiere el `kgdb ingest` unificado (11 §4); hasta entonces, los transitivos leídos responden que el grafo no está disponible y los afirmados escriben el `RelationDoc` igual. Leer aristas, afirmar un `RelationDoc`, refresh, leer la arista nueva. Test: el turno dos de spec2viz.
 7. **Diálogo.** Pendiente y referentes. Test: el diagrama de estados de spec2viz, cada transición.
 8. **Superficie natural y REPL.** Recién ahora un REPL, y recién ahora un operador LLM.
 9. **`pron docs`.** Regenerar `CliCommandDoc` y `SurfaceDoc` desde el código, como en v1, y el `implements` de cada átomo `impl:here` hacia su modelo o módulo.

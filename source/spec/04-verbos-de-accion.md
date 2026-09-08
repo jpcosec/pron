@@ -13,6 +13,7 @@ Los verbos de acción cambian el mundo sin relacionar dos cosas. Son exactamente
 | quitar campo | `fields remove docs/<doc>/<campo>` | "bórrale la provenance" |
 | olvidar | `docs untrack <doc>` | "olvida ese átomo" |
 | refrescar | `stores update` + `semantic-export` + `kgdb ingest` | "refresca" |
+| deshacer | las escrituras inversas registradas en el último `MoveDoc` con escritura (11 §7) | "deshacé lo último" |
 
 Afirmar un verbo transitivo (03) es "crear" con modelo `RelationDoc`. Una transición de máquina de estados es solo "cambiar" el campo de estado, permitida porque ya existe una arista `pasa_a` desde el estado actual y su condición se cumple (03); no crea ninguna arista.
 
@@ -35,7 +36,7 @@ Después de escribir, pron reevalúa las condiciones de las aristas que salen de
 
 Dos verbos de acción coordinados sobre el mismo sujeto ("cámbiala a 9 y ponle una nota") son un movimiento con dos escrituras y un refresh.
 
-Un verbo de acción con sujeto plural escribe una vez por dirección y hace un solo refresh al final. Si una escritura falla, las anteriores quedan hechas: pron informa cuáles se escribieron y cuáles no, y no deshace, porque cada documento es independiente.
+Un verbo de acción con sujeto plural escribe una vez por dirección y hace un solo refresh al final. Antes de la primera escritura pron valida todas con el roundtrip de sldb sin escribir (11 §7). Si aun así una falla, las anteriores quedan hechas: pron informa cuáles se escribieron y cuáles no, y no deshace por su cuenta; "deshacer" existe como verbo explícito.
 
 ## Lo que no es un verbo de acción
 
