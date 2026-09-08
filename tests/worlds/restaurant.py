@@ -137,6 +137,7 @@ ALIASES = [
     ("named", ["named", "called", "whose name is"], "field:Client.name", "the client's name", []),
     ("phone", ["phone", "phone number"], "field:Client.phone", "the contact phone number", []),
     ("for N people", ["for N people", "for N", "party of N"], "field:Reservation.party_size", "how many people", []),
+    ("seats N", ["for N people", "for N", "seats N", "that seats N"], "predicate:Table:capacity >= N", "a table with room for N people", []),
     ("on the Z", ["on the Z", "in the Z"], "predicate:Table:zone = Z", "where the table is", []),
     ("on DAY", ["on DAY", "this DAY", "next DAY"], "field:Reservation.date", "when, as a date", []),
     ("at TIME", ["at TIME"], "field:Reservation.time", "when, as a time", []),

@@ -1,0 +1,128 @@
+"""A noun phrase becomes addresses (spec 02): scope + one predicate per query, the
+intersection of the address lists, and the determiner deciding what counts as unique,
+ambiguous or missing. pron never reads a payload to filter.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any
+
+from pron.lexicon import Lexicon
+from pron.surface.nouns import NounPhrase
+
+
+@dataclass
+class Resolution:
+    phrase: NounPhrase
+    addresses: list[str]                # st.{Model}.doc
+    outcome: str                        # unico | ambiguo | missing
+    queries: list[str] = field(default_factory=list)   # the exact calls, copyable
+    candidates: list[str] = field(default_factory=list)
+    note: str = ""
+
+    @property
+    def cardinality(self) -> str:
+        return "una" if self.phrase.number == "singular" else "conjunto"
+
+    def export_ids(self) -> list[str]:
+        return [address_to_export_id(a) for a in self.addresses]
+
+
+def address_to_export_id(address: str) -> str:
+    """st.{Model}.doc → Model:doc (the store's export id)."""
+    a = address.split(":", 1)[1] if ":" in address and not address.startswith("st.") else address
+    if a.startswith("st.{"):
+        model, doc = a[4:].split("}.", 1)
+        return f"{model.rstrip('+')}:{doc}"
+    return a
+
+
+def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
+    store = lex.world.store
+    if np.model is None:
+        return Resolution(np, [], "missing", note="a referent without an antecedent")
+    if np.unknown_values:
+        model, fld, text = np.unknown_values[0]
+        near = [w.form for w, _ in lex.near(text, kinds=("value",))]
+        return Resolution(np, [], "missing", candidates=near, note=f"'{text}' is not a value of {model}.{fld}")
+    scope = np.scope
+    queries: list[str] = []
+    result: list[str] | None = None
+    predicates = list(np.predicates) + _proper_predicates(np, lex)
+    for where in predicates:
+        found = store.find(scope, where)
+        queries.append(f"find '{scope}' --where '{where}' → {len(found)}")
+        result = found if result is None else [a for a in result if a in set(found)]
+    if result is None:
+        result = [f"{scope}.{name}" for name in store.list(scope)]
+        queries.append(f"ls '{scope}' → {len(result)}")
+    result = _normalize_addresses(result)
+    return _decide(np, result, queries, lex)
+
+
+def _proper_predicates(np: NounPhrase, lex: Lexicon) -> list[str]:
+    """A proper name in name position: the model's key field when the name looks like a
+    key value, else the document name, else a name/title field."""
+    out = []
+    key = (lex.projection.get("key") or {}).get(np.model)
+    for name in np.proper:
+        if key and (name.isdigit() or _field_kind(lex, np.model, key) == "string"):
+            out.append(f'{key} = {name if name.isdigit() else chr(34) + name + chr(34)}')
+        else:
+            out.append(f'doc ~ "{_slug(name)}"')
+    return out
+
+
+def _decide(np: NounPhrase, result: list[str], queries: list[str], lex: Lexicon) -> Resolution:
+    if not result and np.proper:
+        # a proper name that is not the doc name: try name/title fields, then offer neighbors
+        for fld in ("name", "title"):
+            if any(f["name"] == fld for f in lex.world.store.schema(np.model)):
+                alt = None
+                for name in np.proper:
+                    found = lex.world.store.find(np.scope, f'{fld} ~ "{name}"')
+                    queries.append(f"find '{np.scope}' --where '{fld} ~ \"{name}\"' → {len(found)}")
+                    alt = found if alt is None else [a for a in alt if a in set(found)]
+                if alt:
+                    result = _normalize_addresses(alt)
+                    break
+    if np.number == "singular":
+        if len(result) == 1:
+            return Resolution(np, result, "unico", queries)
+        if len(result) > 1 and np.determiner == "any":
+            return Resolution(np, result[:1], "unico", queries, candidates=result[1:], note=f"any: took {result[0]}; also {', '.join(result[1:])}")
+        if len(result) > 1:
+            return Resolution(np, [], "ambiguo", queries, candidates=result)
+        near = _near_names(np, lex)
+        return Resolution(np, [], "missing", queries, candidates=near, note=f"no {np.model} matches {np.describe()}")
+    return Resolution(np, result, "unico", queries)
+
+
+def _near_names(np: NounPhrase, lex: Lexicon) -> list[str]:
+    if not np.proper:
+        return []
+    docs = lex.world.store.docs_of(np.model)
+    candidates = [(f"st.{{{np.model}}}.{d.name}", f"{d.name} {d.payload.get('name', '')} {d.payload.get('title', '')}") for d in docs]
+    return [key for key, _ in lex.matcher.rank(" ".join(np.proper), candidates, k=3, threshold=float((lex.projection.get('matching') or {}).get('threshold', 0.55)))]
+
+
+def _normalize_addresses(addresses: list[str]) -> list[str]:
+    """st.{Model+}.doc → st.{Model}.doc with the document's own model, read from the store list."""
+    out = []
+    for a in addresses:
+        if "+}" in a:
+            a = a.replace("+}", "}")
+        out.append(a)
+    return sorted(set(out))
+
+
+def _field_kind(lex: Lexicon, model: str, fld: str) -> str:
+    for f in lex.world.store.schema(model):
+        if f["name"] == fld:
+            return f["kind"]
+    return "string"
+
+
+def _slug(text: str) -> str:
+    return "".join(c.lower() if c.isalnum() else "-" for c in text).strip("-")
