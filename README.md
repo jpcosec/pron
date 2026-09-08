@@ -24,6 +24,7 @@ Un mundo es un store de sldb. Sobre cualquier store:
 ```bash
 pron init --world . --pythonpath .          # kgdb init + los modelos de pron
 pron refresh --world .                      # índices de sldb + grafo tipado de kgdb en .pron/
+# Derivados, fuera de git: .pron/ (grafo, vectores) y .sldb/runtime/cache/ (payloads extraídos por sldb)
 pron lexicon --world . [Model]              # qué se puede decir · los verbos de una clase
 pron say "the large tables on the terrace" --world . --trace
 pron repl --world . --speaker me

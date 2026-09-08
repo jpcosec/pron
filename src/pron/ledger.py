@@ -13,11 +13,20 @@ from pron.world import LEDGER_DIR, World
 class Ledger:
     def __init__(self, world: World):
         self.world = world
+        self._prefix = ""
         self._n = 0
 
     def new_id(self, at: datetime) -> str:
+        """move-<second>-<n>: n counts within the second and skips ids already in the store,
+        so two sessions in the same second, or a restarted one, never collide."""
+        prefix = f"move-{at.strftime('%Y%m%dT%H%M%S')}"
+        if prefix != self._prefix:
+            self._prefix, self._n = prefix, 0
+        taken = {d.name for d in self.world.store.docs_of("MoveDoc") if d.name.startswith(prefix)} if "MoveDoc" in self.world.model_names() else set()
         self._n += 1
-        return f"move-{at.strftime('%Y%m%dT%H%M%S')}-{self._n:03d}"
+        while f"{prefix}-{self._n:03d}" in taken:
+            self._n += 1
+        return f"{prefix}-{self._n:03d}"
 
     def write(self, *, move_id: str, at: datetime, speaker: str, sentence: str, outcome: str, state_before: str, state_after: str,
               hash_before: str, hash_after: str, refers_to: str = "", record: dict[str, Any] | None = None) -> str:
