@@ -17,6 +17,19 @@ Resuelto el 2026-09-08 (commit `e7a2c0c` en sldb): el surface de direcciones est
 
 Pendiente, no bloqueante: toda lectura por dirección carga el store entero antes de seleccionar. Cuando duela, la optimización es interna a sldb. También no bloqueante: `--where` acepta un solo predicado, y pron cruza direcciones de dos consultas (02); una conjunción en sldb lo borraría.
 
+### kgdb: el upgrade · relaciones tipadas por sldb
+
+Decidido el 2026-09-09. kgdb pasa de grafo de tokens a grafo tipado, y el tipo es un documento de sldb:
+
+- `kgdb.models` exporta `RelationTypeDoc` y `RelationDoc` (con `condition`) como `StructuredNLDoc`; un mundo los registra en su store.
+- **Ninguna arista sin tipo.** El ingest rechaza toda arista cuyo `relation_type` no tenga un `RelationTypeDoc` trackeado. Las relaciones estructurales que kgdb mismo produce (`has_model`, `has_document`, `has_section`, `tagged_as`, `semantic_parent`, `semantic_equivalent`, `has_field`, `extends`, `applies_to_source`, `applies_to_target`, `names`) se declaran como `RelationTypeDoc` embarcados en el paquete y se registran al inicializar. El grafo queda descrito entero por documentos.
+- **Validación en el ensamblado**, por `RelationDoc`: los extremos existen; la clase del origen está en `source_types` y la del destino en `target_types`, con herencia por `base_models`; la cardinalidad se respeta contando; `direction` decide si se materializa la inversa. Es la segunda puerta de RELATION_MODEL_LAYER_SPEC §5: pron previene al autorar, kgdb detecta al ensamblar, y lo que entró por el editor sin pasar por pron se valida igual.
+- Cada arista referencia su nodo `sldb://relation_type/<name>` (eje, cardinalidad, condición); `kgdb query` filtra por eje.
+- `MultiDiGraph`, arista identificada por `(source, target, relation_type)`.
+- kgdb sigue sin autorar: valida y ensambla, y sabe qué es válido leyendo sldb.
+
+Este trabajo va antes de la primera línea de pron.
+
 ### kgdb, además
 
 El `kgdb ingest` unificado que pide 10 §2.3, en un solo comando sobre el `semantic-export`:
