@@ -28,7 +28,7 @@ Qué contiene cada construcción admitida:
 | "crea un átomo que diga …" | acción | `alcance: Atom`, `valor: payload` con los campos capturados; los obligatorios que falten son huecos y abren una pendiente por campo |
 | "agrégales el tag T" | acción | sujeto = referente plural con N direcciones, `campo: tags`, `valor: T` |
 | "cámbiala a 9 y ponle una nota" | acción, dos escrituras | mismo sujeto, dos pares `campo`/`valor`, un movimiento |
-| "reservale una mesa a Ana" | transitiva, modo afirmar, `crea_sujeto` | el sujeto no existe: se crea con los campos capturados y se afirma el verbo |
+| "reservale una mesa a Ana" | compuesta, por alias `compose` (05) | pasos declarados en el alias: crear la reserva con los literales, afirmar `de`, afirmar `asignada_a`; cada paso con sus ranuras resueltas |
 | "confirmala" | acción por alias | `campo: estado`, `valor: confirmada`, verificada como transición (03) |
 
 Un sujeto plural en un verbo de acción es N escrituras en un solo movimiento y un solo refresh.

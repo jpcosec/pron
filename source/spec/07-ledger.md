@@ -21,7 +21,7 @@ Escribir un `MoveDoc` cambia el `hash_a` del store. Si el léxico y el grafo dep
 | huella | qué cubre | quién la calcula | qué invalida |
 |---|---|---|---|
 | `hash_a` | todo el store | sldb | nada en pron; es la huella de integridad |
-| `hash_mundo` | los `hash_b` de todos los modelos menos `MoveDoc` | pron, desde los índices de modelos | el léxico, los embeddings y la frescura del snapshot de kgdb |
+| `hash_mundo` | por cada modelo menos `MoveDoc`: nombre, versión, `hash_b` y su esquema (campos, tipos, descripciones, como los da `serve /schema`); la lista de predicados; la lista de stores enlazados con el `hash_mundo` de cada uno | pron, desde los índices del store y el esquema de los modelos | el léxico, los embeddings y la frescura del snapshot de kgdb |
 | `hash_b` de `MoveDoc` | el ledger | sldb | nada: los movimientos no son nodos del grafo y sus valores no entran al léxico |
 
 El snapshot de kgdb registra el `hash_mundo` con que se construyó. Los `MoveDoc` llevan el tag `type.pron.move` y el ingest de kgdb los excluye, así que registrar no desfasa el grafo.

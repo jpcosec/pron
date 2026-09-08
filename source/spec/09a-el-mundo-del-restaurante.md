@@ -84,19 +84,21 @@ class Estado(StructuredNLDoc):
     __family__ = "restaurante"
     __semantics__ = {"type": ["restaurante", "estado"]}
     __template__ = """---
+machine: ⸢rev•machine⸥
 nombre: ⸢rev•nombre⸥
 ---
 
-# ⸢render•nombre⸥
+# ⸢render•machine⸥ · ⸢render•nombre⸥
 
 ⸢rev•descripcion⸥
 """.strip()
 
-    nombre: str = Field(description="El valor del campo estado de Reserva al que corresponde este documento.")
+    machine: str = Field(description="Qué campo de qué modelo gobierna esta máquina, como Modelo.campo; por ejemplo Reserva.estado.")
+    nombre: str = Field(description="El valor del campo al que corresponde este documento.")
     descripcion: str = Field(description="Qué significa estar en este estado.")
 ```
 
-La convención que une `Reserva.estado` con `Estado` es el nombre: el valor `confirmada` es el documento `Estado:confirmada` (10 §2.5).
+La convención que une `Reserva.estado` con `Estado` es el par `(machine, nombre)`: el valor `confirmada` es el documento de `Estado` con `machine = "Reserva.estado"` y `nombre = "confirmada"`, acá `estado-reserva-confirmada` (10 §2.5).
 
 ## Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
 
@@ -177,8 +179,8 @@ sldb predicates add pasa_a --axis WHEN
 
 ```markdown
 ---
-source_id: Estado:pendiente
-target_id: Estado:confirmada
+source_id: Estado:estado-reserva-pendiente
+target_id: Estado:estado-reserva-confirmada
 relation_type: pasa_a
 condition: "personas <= 8"
 ---
@@ -194,7 +196,7 @@ Y sin condición, con el mismo formato: `pasa_a--pendiente--cancelada`, `pasa_a-
 
 ## Los documentos iniciales
 
-Cuatro `Estado`: `pendiente`, `confirmada`, `sentada`, `cancelada`. Cinco `Mesa`:
+Cuatro `Estado` con `machine: Reserva.estado`: `estado-reserva-pendiente`, `estado-reserva-confirmada`, `estado-reserva-sentada`, `estado-reserva-cancelada`. Cinco `Mesa`:
 
 | documento | numero | capacidad | zona |
 |---|---|---|---|
@@ -235,7 +237,8 @@ relations:
   - {name: de, mode: leer y afirmar}
   - {name: asignada_a, mode: leer y afirmar}
   - {name: pasa_a, mode: leer}
-actions: [crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar]
+actions: [crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar, deshacer]
+matching: {cercanos: 3, umbral: 0.55}
 aliases: [todos]
 naming:
   Cliente: "cliente-{nombre}"
@@ -263,7 +266,7 @@ key:
 | para N, para N personas | `field:Reserva.personas` y `predicate:Mesa:capacidad >= N` | cuántas personas; como adjetivo de mesa, que quepan |
 | en la Z, de la Z | `predicate:Mesa:zona = Z` | dónde está la mesa |
 | el viernes, a las H | `field:Reserva.fecha`, `field:Reserva.hora` | cuándo; la superficie normaliza fechas relativas |
-| reservale, reserva para | `relation:de` con `crea_sujeto: Reserva` | crear una reserva de alguien |
+| reservale, reserva para | `compose` · crear Reserva con `$literales` · afirmar `de` `$creado` → `$referente:Cliente` · afirmar `asignada_a` `$creado` → `$objeto:Mesa` (05) | crear una reserva de alguien y ponerla en una mesa |
 | asignale, en la mesa | `relation:asignada_a` | poner una reserva en una mesa |
 | tiene, de | `relation:de` leído desde el cliente | las reservas de alguien |
 | confirmar, confirmala | `action:cambiar Reserva.estado=confirmada` | pasar la reserva a confirmada |
@@ -273,7 +276,7 @@ key:
 | grande | `predicate:Mesa:capacidad >= 6` | mesas para seis o más |
 | nota, ponle una nota | `field:Reserva.notas` | observaciones de la reserva |
 
-Las formas `ref:` de alias (`model:`, `field:`, `predicate:`, `relation:`, `action:`) son las que 05 y 10 describen; el `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza.
+Las formas `ref:` de alias (`model:`, `field:`, `predicate:`, `relation:`, `action:`, `doc:`, `compose`) son las que 05 y 10 describen; cada fila lista además sus `forms`, omitidas acá por espacio; el `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza.
 
 ## Lo que este mundo no declara
 

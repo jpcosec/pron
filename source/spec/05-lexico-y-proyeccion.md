@@ -20,7 +20,42 @@ Los **valores** también son léxico cuando el campo los acota: los miembros de 
 
 ## Anchors: la forma en español
 
-Un `AnchorDoc` es un alias: `symbol` es la palabra, `ref` es lo que nombra, `motive` es lo que se muestra al preguntar qué significa. Lo que puede nombrar está acotado a cinco formas de `ref`: un modelo, un campo, un predicado sobre un modelo (`grande → predicate:Mesa:capacidad >= 6`), un tipo de relación, y un verbo de acción con campo y valor fijos (`confirmar → action:cambiar Reserva.estado=confirmada`).
+Un `AnchorDoc` es un alias. Su contrato:
+
+| campo | contenido |
+|---|---|
+| `symbol` | la palabra canónica |
+| `forms` | todas las formas que la superficie reconoce, listadas: `reserva, reservas`; `confirma, confirmá, confirmala` (11 §1) |
+| `ref` | lo que nombra, en una de las siete formas de abajo |
+| `motive` | lo que se muestra al preguntar qué significa |
+| `steps` | solo para `ref: compose`: la lista de pasos |
+
+Las formas de `ref`:
+
+| forma | ejemplo | qué es |
+|---|---|---|
+| `model:M` | `cliente → model:Cliente` | un sustantivo |
+| `field:M.f` | `se llama → field:Cliente.nombre` | un atributo, con sus preposiciones en `forms` |
+| `predicate:M:<where>` | `grande → predicate:Mesa:capacidad >= 6` | un adjetivo; `<where>` puede usar `{campo}` del sujeto |
+| `relation:R` | `asignale → relation:asignada_a` | un verbo transitivo; `forms` puede marcar la lectura inversa (`tiene ← relation:de`) |
+| `action:<verbo> M.f=v` | `confirmar → action:cambiar Reserva.estado=confirmada` | un verbo de acción con campo y valor fijos |
+| `doc:M:nombre` | `el proyector → doc:SurfaceDoc:surface-pron-infra-projector` | un nombre propio fijo para un objeto |
+| `compose` | `reservale`, abajo | una oración compuesta |
+
+**Oraciones compuestas.** Un alias `compose` declara, en `steps`, una secuencia de pasos con ranuras que la oración llena. "Reservale una mesa a Ana para 6 el viernes a las 21":
+
+```yaml
+symbol: reservale
+forms: [reservale, reserva para, hacele una reserva a]
+ref: compose
+motive: crear una reserva para alguien y ponerla en una mesa
+steps:
+  - {do: crear,   model: Reserva, fields: $literales}
+  - {do: afirmar, relation: de,          source: $creado, target: $referente:Cliente}
+  - {do: afirmar, relation: asignada_a,  source: $creado, target: $objeto:Mesa}
+```
+
+Las ranuras son cuatro y fijas: `$literales`, los literales de la oración asignados a campos del modelo por sus alias; `$creado`, el documento que dejó un paso `crear`; `$referente:M`, el referente de la oración con esa clase ("le"); `$objeto:M`, la frase nominal de la oración con esa clase ("una mesa en la terraza para 6"). Un paso puede ser `crear`, `afirmar` o `cambiar`. Cada paso pasa por las mismas verificaciones y permisos que si fuera una oración sola; si un paso no se puede resolver, la oración entera es ambigua o missing antes de ejecutar nada; los pasos se ejecutan en orden en un solo movimiento con un solo refresh. No hay condicionales ni repeticiones: lo que no cabe en una secuencia fija de tres tipos de paso no es un alias, es un patrón general de pron o no existe.
 
 Un alias sí aporta significado a una expresión: "grande" significa algo porque alguien decidió que es capacidad mayor o igual a seis. Lo que no hace es agregar capacidades: todo `ref` apunta a algo que el mundo ya puede hacer sin el alias, con la dirección o el comando completo. Por eso no es la fuente del léxico, sino su forma en español, y por eso se puede listar, revisar y borrar sin que nada deje de ser posible.
 

@@ -32,6 +32,8 @@ Los dos modelos son de kgdb. pron los registra en su mundo para poder autorarlos
 
 Una condición es un predicado `--where` de sldb. Se declara en el `RelationTypeDoc`, campo `condition`, y vale para todas las aristas de ese tipo; un `RelationDoc` puede traer la suya y entonces reemplaza a la del tipo. Los dos campos son un prerrequisito sobre los modelos de kgdb (08). Se evalúa con sldb, nunca en pron, sobre el **sujeto de la oración en su estado actual**: la arista es legal para ese sujeto si `find <alcance del sujeto> --where <condición>` devuelve su dirección. Una condición puede nombrar campos del sujeto entre llaves, `capacidad >= {personas}`, y entonces se evalúa sobre el objeto con los valores del sujeto sustituidos antes de llamar a sldb. Una arista sin condición es legal siempre que exista.
 
+Después de una escritura, pron reevalúa las condiciones de las aristas que salen del documento escrito **y de las que entran a él**: bajar la capacidad de una mesa afecta la `asignada_a` que apunta a esa mesa, aunque la condición la lea la reserva. El costo está acotado por las aristas del documento; el resultado es un aviso, nunca una acción (04).
+
 Una **transición** es el caso en que el verbo es "cambiar el campo de estado": la oración "confirma la reserva" es `fields update …/estado "confirmada"`, permitida solo si existe una arista `pasa_a` desde el estado actual al nuevo y su condición se cumple sobre la reserva. Los estados son documentos de un modelo `Estado`, las transiciones son `RelationDoc` entre ellos, y el objeto que transiciona solo cambia un campo.
 
 ## Afirmar un verbo
@@ -43,9 +45,25 @@ Una **transición** es el caso en que el verbo es "cambiar el campo de estado": 
 3. `docs create --model RelationDoc` con `source_id`, `target_id`, `relation_type`;
 4. refresh (04). La arista aparece cuando el ingest de kgdb vuelve a correr.
 
-Si el sujeto no existe todavía y la oración trae sus campos ("reservale una mesa a Ana": la reserva no existe), el verbo transitivo se lee como *crear el sujeto y afirmar el verbo* en el mismo movimiento. Exige los dos permisos de la proyección: `crear` en `actions` y `afirmar` en la relación.
+Crear el sujeto y afirmar el verbo en un mismo movimiento ("reservale una mesa a Ana") no es un comportamiento implícito del verbo: lo declara un alias `compose` con sus pasos y ranuras (05). Cada paso exige su permiso: `crear` en `actions`, `afirmar` en la relación.
 
 Negar un verbo, "X ya no implementa Y", es `docs untrack` del `RelationDoc` correspondiente y refresh. Si la arista no viene de un `RelationDoc` sino de un link en prosa (abajo), pron no la niega: responde dónde está escrita, documento y sección, y que hay que editar ese texto.
+
+## Qué se verifica dónde
+
+Las relaciones autoradas son documentos, así que su verdad está en sldb y ahí se verifica; kgdb es la vista derivada con la que se lee y se recorre.
+
+| pregunta | dónde | cómo |
+|---|---|---|
+| ¿aplica el verbo a estas clases? | sldb | `get st.{RelationTypeDoc}.<verbo>` · `source_types`, `target_types` |
+| ¿existe ya esta arista? | sldb | `find st.{RelationDoc} --where 'source_id = "…"'` ∩ `--where 'relation_type = "…"'` ∩ target |
+| ¿la cardinalidad lo permite? | sldb | la misma consulta, contando |
+| ¿es legal la transición? | sldb | la arista `pasa_a` como `RelationDoc` desde el estado actual, y su condición sobre el sujeto |
+| ¿se cumple la condición? | sldb | `find <alcance> --where <condición>` |
+| ¿qué implementa X? ¿quién? | kgdb | `edges_from`, `edges_to`; cae a sldb si el grafo no está o está viejo, y la traza lo dice |
+| aristas de links en prosa, recorridos por tags o alcance | kgdb | solo con grafo fresco |
+
+Con el grafo viejo, pron lee aristas autoradas desde sldb y marca la respuesta; las aristas de prosa y los recorridos quedan como "no disponible hasta refrescar". Ninguna escritura queda bloqueada por un grafo viejo, porque ninguna escritura depende del grafo.
 
 ## Los verbos que ya existen sin declararse
 
@@ -62,5 +80,5 @@ Un verbo con eje WHY o PROVENANCE responde "¿por qué?"; uno con eje HOW respon
 ## Invariantes
 
 - Ninguna arista de dominio existe en kgdb sin un `RelationDoc` o un link con predicado que la origine.
-- pron nunca ensambla aristas. Si el grafo no tiene la arista, la respuesta es "no está registrado", y la traza dice cuándo fue el último refresh.
+- pron nunca ensambla aristas. Si el grafo no está o está viejo, las aristas autoradas se leen desde los `RelationDoc` en sldb y la traza lo dice; las de prosa y los recorridos esperan al refresh.
 - Un verbo no verificado contra `source_types` y `target_types` no se escribe.

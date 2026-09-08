@@ -93,7 +93,7 @@ El nombre del documento sale de una regla del mundo, `cliente-<slug del nombre>`
 
 ## Turno 2 · "reservale una mesa en el patio para 6 personas el viernes a las 21"
 
-**Clasificar.** "reservale" es el alias del verbo transitivo `de` más el referente "le"; también implica crear una `Reserva`, porque `de` tiene `source_types: [Reserva]` y no hay reserva todavía: el verbo transitivo con un sujeto que no existe se lee como *crear el sujeto y afirmar el verbo*. "una mesa" es determinante + término. "en el patio" es un predicado sobre `zona`, pero "patio" no es un valor de `zona`. "para 6 personas" es `personas = 6` de la reserva, y por el alias de `capacidad` también un predicado `capacidad >= 6` sobre la mesa. "el viernes" y "a las 21" son literales de `fecha` y `hora`; la superficie los normaliza a `2026-09-11` y `21:00` con la fecha de la sesión.
+**Clasificar.** "reservale" es un alias `compose` (05, 09a): crear una `Reserva` con los literales, afirmar `de` hacia el referente de clase `Cliente` ("le"), afirmar `asignada_a` hacia la frase nominal de clase `Mesa`. "una mesa" es determinante + término. "en el patio" es un predicado sobre `zona`, pero "patio" no es un valor de `zona`. "para 6 personas" es `personas = 6` de la reserva, y por el alias de `capacidad` también un predicado `capacidad >= 6` sobre la mesa. "el viernes" y "a las 21" son literales de `fecha` y `hora`; la superficie los normaliza a `2026-09-11` y `21:00` con la fecha de la sesión.
 
 **Salida: missing**, en el paso 2. "patio" está en posición de valor de un campo enumerado y no está en el léxico. Cercanos por embeddings sobre los valores de `zona`:
 
@@ -111,13 +111,15 @@ No hay pendiente, porque missing termina el turno. Es una frase nominal sin verb
 
 ```yaml
 forma: transitiva
-verbo: {nombre: de, tipo: transitivo, eje: WHAT, modo: afirmar, crea_sujeto: true}
-sujeto: {alcance: Reserva, cardinalidad: una, valor: {fecha: "2026-09-11", hora: "21:00", personas: 6, estado: pendiente}}
-objeto: {direcciones: ["st.{Cliente}.cliente-ana-rojas"], cardinalidad: una}      # "le"
-mesa:   {alcance: "st.{Mesa}", predicados: ['zona = "terraza"', 'capacidad >= 6'], determinante: una}
+forma: compuesta
+alias: reservale
+pasos:
+  - {do: crear, model: Reserva, $literales: {fecha: "2026-09-11", hora: "21:00", personas: 6, estado: pendiente}}
+  - {do: afirmar, relation: de, source: $creado, target: {$referente:Cliente: ["st.{Cliente}.cliente-ana-rojas"]}}
+  - {do: afirmar, relation: asignada_a, source: $creado, target: {$objeto:Mesa: {alcance: "st.{Mesa}", predicados: ['zona = "terraza"', 'capacidad >= 6'], determinante: una}}}
 ```
 
-"le" es referente singular; el verbo pide `Cliente` en target; el último singular de clase `Cliente` es Ana Rojas. "una mesa" es un segundo objeto, del verbo `asignada_a` implícito por el alias "reservale una mesa".
+Las ranuras del alias se llenan desde la oración: `$literales` con los campos que los alias de `Reserva` reconocen; `$referente:Cliente` con "le", el último singular de clase `Cliente`, Ana Rojas; `$objeto:Mesa` con la frase nominal "una mesa en la terraza para 6". Nada es implícito: los tres pasos están escritos en el alias (09a).
 
 **Consulta al mundo.**
 
@@ -210,7 +212,8 @@ valor: confirmada
 
 ```
 get 'st.{Reserva}.reserva-2026-09-11-ana-rojas.estado'                  → pendiente
-kgdb edges_from("sldb://document/Estado:pendiente", "pasa_a")             → Estado:confirmada (condition: "personas <= 8"), Estado:cancelada
+find st.{Estado} --where 'machine = "Reserva.estado"' ∩ --where 'nombre = "pendiente"' → estado-reserva-pendiente
+kgdb edges_from("sldb://document/Estado:estado-reserva-pendiente", "pasa_a") → estado-reserva-confirmada (condition: "personas <= 8"), estado-reserva-cancelada
 find 'st.{Reserva}' --where 'personas <= 8'                                → contiene reserva-2026-09-11-ana-rojas
 ```
 

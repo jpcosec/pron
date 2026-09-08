@@ -32,7 +32,7 @@ Después de cualquier escritura el mundo está desfasado del grafo. El refresh e
 
 Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron compara el `hash_mundo` del store con el del snapshot antes de leer kgdb y avisa si el grafo está viejo, en vez de servirlo como verdad. El ledger (07) queda fuera de esa huella, así que registrar un movimiento no desfasa nada.
 
-Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "la mesa 12 es para 6 y ahora son 9" es información, y qué hacer con eso es la próxima oración.
+Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto y de las que entran a él (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "la mesa 12 es para 6 y ahora son 9" es información, y qué hacer con eso es la próxima oración.
 
 Dos verbos de acción coordinados sobre el mismo sujeto ("cámbiala a 9 y ponle una nota") son un movimiento con dos escrituras y un refresh.
 

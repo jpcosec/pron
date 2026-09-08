@@ -26,7 +26,7 @@ Las direcciones y la gramática de predicados son las de sldb y se documentan al
 
 ## Lo que sldb devuelve y pron muestra
 
-sldb devuelve direcciones `st.{Modelo}.doc` o valores. pron los muestra con su nombre natural: el campo `title` o `summary` del documento si existe, si no el nombre del doc. Nunca inventa un nombre.
+sldb devuelve direcciones `st.{Modelo}.doc` o valores; con stores enlazados, `store:st.{Modelo}.doc`, y pron conserva el store como parte de la identidad del objeto (10 §2.2). pron los muestra con su nombre natural: el campo `title` o `summary` del documento si existe, si no el nombre del doc. Nunca inventa un nombre.
 
 ## Término, nombre propio, literal
 

@@ -61,7 +61,7 @@ condition: ""
 
 `condition` vacía: hereda la del tipo. Se llena solo cuando esta arista tiene una regla distinta.
 
-Los ids son `Modelo:nombre`, el id de exportación de sldb, y son los mismos que kgdb usa dentro de `sldb://document/Modelo:nombre`. El nombre del documento es `<tipo>--<origen>--<destino>`, así una arista se puede buscar por dirección (`find 'st.{RelationDoc}' --where 'source_id = "…"'`) sin pasar por kgdb, y dos afirmaciones iguales chocan en el nombre en vez de duplicarse.
+Los ids son `Modelo:nombre`, el id de exportación de sldb, y son los mismos que kgdb usa dentro de `sldb://document/Modelo:nombre`. Cuando el mundo tiene stores enlazados, el id completo es `store:Modelo:nombre` con el nombre del store tal como está en `store_index.stores`, y `local:` se omite: `Modelo:nombre` siempre es del store propio. Dos documentos con el mismo modelo y nombre en stores distintos son dos objetos distintos, y pron los distingue en referentes, intersecciones y aristas por ese prefijo; en la respuesta en natural, cuando hay choque, agrega el store ("la mesa 12 del store *sucursal-norte*"). Un `RelationDoc` puede apuntar a otro store con el prefijo; su ingest lo resuelve contra el snapshot de ese store. El nombre del documento es `<tipo>--<origen>--<destino>`, así una arista se puede buscar por dirección (`find 'st.{RelationDoc}' --where 'source_id = "…"'`) sin pasar por kgdb, y dos afirmaciones iguales chocan en el nombre en vez de duplicarse.
 
 ### 2.3 Del store al grafo
 
@@ -85,7 +85,7 @@ Solo con tres preguntas al grafo: `edges_from(nodo, tipo)`, `edges_to(nodo, tipo
 
 ### 2.5 Estados
 
-Un campo `estado: Literal[...]` se vuelve una máquina cuando el mundo tiene un modelo `Estado` con un documento por valor y aristas `pasa_a` entre ellos. La convención que los une es el nombre: el valor `confirmada` del campo es el documento `Estado:confirmada`. pron no necesita declarar nada más: al ver un campo `Literal` cuyo modelo `Estado` existe con esos nombres, cambiar ese campo pasa a ser una transición (03).
+Un campo `Literal` se vuelve una máquina cuando el mundo tiene un modelo `Estado` con documentos que declaran `machine: Modelo.campo` y `nombre: <valor>`, y aristas `pasa_a` entre ellos. La convención que une campo y documento es el par `(machine, nombre)`: el valor `confirmada` de `Reserva.estado` es el documento de `Estado` con `machine = "Reserva.estado"` y `nombre = "confirmada"`, que se encuentra con dos predicados y una intersección (02). Así dos modelos pueden tener estados con el mismo nombre y transiciones distintas: `Pedido.estado` y `Reserva.estado` tienen cada uno su `confirmada`. pron no necesita declarar nada más: al ver un campo `Literal` para el que existen documentos `Estado` con esa `machine`, cambiar ese campo pasa a ser una transición (03). Un `Literal` sin documentos `Estado` es un campo común.
 
 ## 3. El editor y pron sobre el mismo mundo
 
