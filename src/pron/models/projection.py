@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from sldb import StructuredNLDoc
 
@@ -57,3 +57,9 @@ exposed: ⸢optrev•exposed⸥
     matching: dict[str, Any] = Field(default_factory=lambda: {"neighbors": 3, "threshold": 0.55}, description="Approximate matching: how many neighbors to offer and the minimum similarity.")
     exposed: bool = Field(default=False, description="Whether sessions from other worlds may open this projection: the world's interface lexicon (spec 01, 12). Off, only the world's own clients can.")
     description: str = Field(default="", description="Who this projection is for and what it leaves out.")
+
+    @field_validator("exposed", mode="before")
+    @classmethod
+    def _absent_is_off(cls, v: Any) -> Any:
+        """A projection written before the field existed has no `exposed` line: off."""
+        return False if v is None or v == "" else v
