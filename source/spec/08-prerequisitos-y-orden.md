@@ -18,7 +18,15 @@ Pendiente, no bloqueante: toda lectura por dirección carga el store entero ante
 
 ### kgdb, además
 
-- El ingest debe excluir los documentos con tag `type.pron.move` (el ledger, 07), o aceptar una lista de tags a excluir.
+El `kgdb ingest` unificado que pide 10 §2.3, en un solo comando sobre el `semantic-export`:
+
+- nodos `sldb://document/Modelo:nombre` por documento de contenido, como hoy;
+- nodos `sldb://relation_type/<name>` por `RelationTypeDoc`;
+- una arista por `RelationDoc`, colgada del origen, con `metadata: {relation_doc, condition, origin: relation_doc}`; el `RelationDoc` no es nodo. Los ids `Modelo:nombre` del documento se mapean a `sldb://document/…`. Hoy `assemble_authored_graph` compara ids desnudos de `serve /graph`; hay que alinearlo con los ids del export;
+- una arista por link con predicado en prosa, con `origin: link` y la sección de origen; sldb ya los recupera con `docs recover`, falta que el export los lleve;
+- exclusión de los documentos con tag `type.pron.move` (el ledger, 07), o una lista de tags a excluir;
+- `hash_mundo` en `metadata` del snapshot;
+- integridad referencial como error, no como warning.
 
 ### pron mismo
 

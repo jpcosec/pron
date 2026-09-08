@@ -41,6 +41,8 @@ Una proyección es la parte de un mundo que una sesión puede nombrar. Se declar
 | `actions` | qué verbos de acción del kernel están permitidos: crear, cambiar, agregar, limpiar, quitar, olvidar, refrescar |
 | `aliases` | qué `AnchorDoc` entran |
 | `naming` | cómo se nombra un documento nuevo por modelo, por ejemplo `cliente-{nombre}`; sin regla, pron pide el nombre |
+| `display` | cómo se muestra un objeto por modelo, por ejemplo `Mesa: "mesa {numero}"`; sin plantilla, `title` o el nombre del documento |
+| `key` | qué campo identifica un objeto por modelo, por ejemplo `Mesa: numero`, para que "la mesa 12" sea `numero = 12` |
 
 Lo que no está en la proyección no existe para esa sesión: la oración vuelve desde la superficie con "no tengo esa palabra" sin llegar a sldb. Distintos operadores tienen distintas proyecciones: uno que solo lee tiene `actions` vacío y todas sus relaciones en modo `leer`.
 

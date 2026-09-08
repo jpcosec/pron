@@ -18,7 +18,9 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 08 | [Prerrequisitos y orden](08-prerequisitos-y-orden.md) | qué falta en sldb y kgdb, en qué orden se construye, qué lints lo cuidan |
 | 09 | [Una conversación, paso a paso](09-una-conversacion.md) | ocho oraciones sobre un mundo externo (reservas de un restaurante): creación, asignación, transición con condición, ambigüedad, missing, "¿por qué?" |
 
-Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian.
+| 10 | [El SHRDLU sobre el modelo](10-el-shrdlu-sobre-el-modelo.md) | cómo los campos se vuelven propiedades por tipo, cómo una relación llega a kgdb en bytes, cómo conviven pron y el editor |
+
+Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 es el que se lee antes de implementar.
 
 Las vistas spec2viz en [`views/spec2viz`](../../views/spec2viz) son la proyección gráfica de estos documentos. Cuando difieran, manda el spec.
 
