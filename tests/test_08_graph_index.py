@@ -153,3 +153,15 @@ def test_refresh_if_stale_only_refreshes_when_needed(world: World, tmp_path: Pat
     assert not world.graph_is_fresh()
     assert world.refresh_if_stale() is True
     assert world.graph_is_fresh() and world.graph.has_node(doc_id("Client:client-stale"))
+
+
+def test_document_index_exposes_its_vectors(tmp_path):
+    from pron.embedder import DocumentIndex, Matcher
+    idx = DocumentIndex(Matcher(CharBag()), tmp_path / "docs.json")
+    idx.index([("a", "h1", "alpha"), ("b", "h2", "beta")])
+    vectors = idx.vectors()
+    assert set(vectors) == {"a", "b"}
+    assert all(isinstance(v, list) and v for v in vectors.values())
+    bare = DocumentIndex(Matcher(None), tmp_path / "difflib.json")
+    bare.index([("a", "h1", "alpha")])
+    assert bare.vectors() == {}

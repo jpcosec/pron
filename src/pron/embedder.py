@@ -160,6 +160,11 @@ class DocumentIndex:
     def keys(self) -> list[str]:
         return sorted(self._entries)
 
+    def vectors(self) -> dict[str, list[float]]:
+        """key -> vector for every indexed document that has one (none without an Embedder).
+        For consumers that project or compare the vectors themselves, e.g. a 2D map of a world."""
+        return {k: list(e["vector"]) for k, e in self._entries.items() if "vector" in e}
+
     def rank(self, query: str, k: int | None = None, threshold: float = 0.0) -> list[tuple[str, float]]:
         """[(key, score)] best first, above threshold; cosine over the vectors, or difflib
         over the kept texts when there is no Embedder."""
