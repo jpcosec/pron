@@ -1,63 +1,76 @@
 id: pron.target.turno
-title: pron — arquitectura objetivo · un turno
+title: pron — arquitectura objetivo · tres turnos
 type: sequence
-version: '1.1'
+version: '2.0'
 metadata:
   description: >
-    Un turno desde que entra una oración hasta que sale una respuesta en
-    natural. La superficie compara la oración con los motivos del léxico
-    (embeddings) y verifica que cada palabra esté en la proyección. El
-    evaluador grounda cada palabra a su entidad, resuelve el sustantivo en
-    sldb y lee el verbo en kgdb (si aplica a este sustantivo, si la
-    transición es legal desde aquí). Tres salidas del grounding: único
-    (el kernel ejecuta primitivas), ambiguo (pregunta y espera), missing
-    (cercanos por embeddings, registra el hueco y termina — qué pasa después
-    no es de pron). Todo queda en el ledger · "¿por qué?" lo lee.
+    Tres oraciones que cubren los tres tipos de palabra. Un sustantivo con
+    un verbo transitivo leído ("¿qué implementa el átomo de bridges?"): la
+    superficie arma la dirección, sldb la responde, kgdb da las aristas. Un
+    verbo transitivo afirmado ("ese átomo implementa el modelo SldbBridge"):
+    se verifica contra el RelationTypeDoc de kgdb y se escribe como RelationDoc,
+    un documento más del store; el ingest de kgdb lo vuelve arista. Un verbo de acción ("cambia la
+    sinopsis del comando repl"): un fields update. Las tres salidas del
+    grounding — único, ambiguo, missing — se muestran sobre el primer turno.
+    Los sustantivos son del mundo de pron: su modelo de átomo, sus comandos y
+    superficies documentadas.
 data:
   participants:
     - {id: hablante, kind: actor}
     - {id: superficie, kind: component}
     - {id: dialogo, kind: component}
-    - {id: lexico, kind: component}
-    - {id: evaluador, kind: component}
-    - {id: kernel, kind: component}
-    - {id: sldb, kind: boundary}
-    - {id: kgdb, kind: boundary}
+    - {id: proyeccion, kind: component}
     - {id: embeddings, kind: boundary}
+    - {id: sldb_addr, kind: boundary}
+    - {id: sldb_write, kind: boundary}
+    - {id: kgdb, kind: boundary}
+    - {id: kernel, kind: component}
     - {id: proyector, kind: component}
     - {id: ledger, kind: boundary}
   messages:
-    - {from: hablante, to: superficie, message: "agrega cita al usuario a las 16:00"}
-    - {from: superficie, to: dialogo, message: "¿a quién refiere 'al usuario'?", kind: sync}
-    - {from: dialogo, to: superficie, message: el usuario de esta sesión}
-    - {from: superficie, to: embeddings, message: "oración ↔ motivos del léxico de esta proyección", kind: sync}
-    - {from: embeddings, to: superficie, message: palabras candidatas por similitud}
-    - {from: superficie, to: lexico, message: "¿cada palabra está en la proyección?", kind: sync}
-    - {from: lexico, to: superficie, message: "[sin palabra] 'cita' no está en tu léxico", condition: sin palabra}
-    - {from: superficie, to: hablante, message: "[sin palabra] no tengo 'cita' · sí tengo ...", condition: sin palabra}
-    - {from: superficie, to: evaluador, message: Meaning}
-    - {from: evaluador, to: lexico, message: "cada palabra → su entidad del mundo", kind: sync}
-    - {from: evaluador, to: sldb, message: resolver el sustantivo · cascada, kind: sync}
-    - {from: evaluador, to: kgdb, message: "leer el verbo · ¿aplica a este sustantivo? · ¿transición legal desde aquí?", kind: sync}
-    - {from: evaluador, to: dialogo, message: "[ambiguo] guardar candidatos y Meaning con hueco", condition: ambiguo}
-    - {from: evaluador, to: superficie, message: "[ambiguo] ¿cuál?", condition: ambiguo}
+    - {from: hablante, to: superficie, message: "¿qué implementa el átomo de bridges?"}
+    - {from: superficie, to: dialogo, message: "referentes · ninguno", kind: sync}
+    - {from: superficie, to: proyeccion, message: "¿átomo, implementa están en la proyección?", kind: sync}
+    - {from: proyeccion, to: superficie, message: "átomo → st.{Atom} · implementa → RelationTypeDoc implements de kgdb (eje HOW)"}
+    - {from: superficie, to: embeddings, message: "[missing] 'bridges' sin calce → cercanos por descripciones", kind: sync, condition: missing}
+    - {from: superficie, to: ledger, message: "[missing] registrar el hueco y los cercanos", condition: missing}
+    - {from: superficie, to: hablante, message: "[missing] no existe · ¿querías Y o Z?", condition: missing}
+    - {from: superficie, to: sldb_addr, message: "find st.{Atom+} --where 'doc ~ \"bridges\"'", kind: sync}
+    - {from: sldb_addr, to: superficie, message: "[ambiguo] dos direcciones", condition: ambiguo}
+    - {from: superficie, to: dialogo, message: "[ambiguo] guardar candidatos y la oración con hueco", condition: ambiguo}
     - {from: superficie, to: hablante, message: "[ambiguo] ¿cuál? A o B", condition: ambiguo}
-    - {from: evaluador, to: embeddings, message: "[missing] cercanos por similitud", kind: sync, condition: missing}
-    - {from: evaluador, to: ledger, message: "[missing] registrar el hueco con motivo y cercanos", condition: missing}
-    - {from: evaluador, to: superficie, message: "[missing] no existe · cercanos · esto buscaba", condition: missing}
-    - {from: superficie, to: hablante, message: "[missing] no existe X · ¿querías Y o Z?", condition: missing}
-    - {from: evaluador, to: kernel, message: "[único] escribir documento · disparar transición", condition: único}
-    - {from: kernel, to: sldb, message: escribir el documento, kind: sync}
-    - {from: sldb, to: kernel, message: ok + refs}
-    - {from: kernel, to: kgdb, message: disparar la transición, kind: sync}
-    - {from: kgdb, to: kernel, message: nuevo estado}
-    - {from: kernel, to: proyector, message: refrescar tras escribir}
-    - {from: evaluador, to: ledger, message: "oración + Meaning + refs + motivos + resultado"}
-    - {from: evaluador, to: superficie, message: resultado + traza}
+    - {from: sldb_addr, to: superficie, message: "[único] st.{Atom}.atom-bridges-are-the-only-doors", condition: único}
+    - {from: superficie, to: kgdb, message: "edges_from(sldb://document/Atom:atom-bridges..., implements)", kind: sync}
+    - {from: kgdb, to: superficie, message: "targets · sldb://model/SldbBridge, sldb://model/KgdbBridge"}
+    - {from: superficie, to: ledger, message: "oración · dirección · verbo · aristas"}
+    - {from: superficie, to: hablante, message: "Implementa SldbBridge y KgdbBridge."}
+    - {from: hablante, to: superficie, message: "ese átomo también implementa el proyector"}
+    - {from: superficie, to: dialogo, message: "ese átomo → la dirección del turno anterior", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{SurfaceDoc+} --where 'doc ~ \"proyector\"'", kind: sync}
+    - {from: sldb_addr, to: superficie, message: "st.{SurfaceDoc}.surface-pron-infra-projector"}
+    - {from: superficie, to: sldb_addr, message: "get st.{RelationTypeDoc}.implements · source_types, target_types", kind: sync}
+    - {from: sldb_addr, to: superficie, message: "Atom → SurfaceDoc · aplica"}
+    - {from: superficie, to: kernel, message: "escribir arista implements A → B"}
+    - {from: kernel, to: sldb_write, message: "docs create --model RelationDoc · source_id, target_id, relation_type", kind: sync}
+    - {from: sldb_write, to: kernel, message: "tracked · hashes actualizados"}
+    - {from: kernel, to: proyector, message: refrescar}
+    - {from: proyector, to: kgdb, message: "kgdb ingest · nodos desde semantic-export · aristas desde los RelationDoc", kind: sync}
+    - {from: kgdb, to: proyector, message: "snapshot nuevo · la arista existe"}
+    - {from: superficie, to: ledger, message: "oración · direcciones · RelationDoc escrito"}
     - {from: superficie, to: hablante, message: "Listo. Queda registrado."}
-    - {from: hablante, to: superficie, message: "¿por qué?"}
-    - {from: superficie, to: evaluador, message: explicar el último movimiento}
-    - {from: evaluador, to: ledger, message: leer la traza, kind: sync}
-    - {from: ledger, to: evaluador, message: oración · Meaning · refs · motivos}
-    - {from: evaluador, to: superficie, message: la traza}
-    - {from: superficie, to: hablante, message: la traza en natural}
+    - {from: hablante, to: superficie, message: "cambia la sinopsis del comando repl a: bucle interactivo sobre el evaluador"}
+    - {from: superficie, to: proyeccion, message: "cambiar → verbo de acción · sinopsis → campo synopsis de CliCommandDoc", kind: sync}
+    - {from: superficie, to: sldb_addr, message: "find st.{CliCommandDoc+} --where 'command_path = \"repl\"'", kind: sync}
+    - {from: sldb_addr, to: superficie, message: "st.{CliCommandDoc}.cmd-pron-repl"}
+    - {from: superficie, to: kernel, message: "cambiar campo"}
+    - {from: kernel, to: sldb_write, message: "fields update docs/cmd-pron-repl/synopsis '\"bucle interactivo sobre el evaluador\"'", kind: sync}
+    - {from: sldb_write, to: kernel, message: "re-renderizado · roundtrip ok · hashes"}
+    - {from: kernel, to: proyector, message: refrescar}
+    - {from: superficie, to: ledger, message: "oración · dirección · campo · valor anterior y nuevo"}
+    - {from: superficie, to: hablante, message: "Hecho."}
+    - {from: hablante, to: superficie, message: "¿por qué dice eso?"}
+    - {from: superficie, to: ledger, message: "leer el último movimiento sobre esa dirección", kind: sync}
+    - {from: ledger, to: superficie, message: "oración · dirección · campo · quién · cuándo"}
+    - {from: superficie, to: kgdb, message: "edges_from(cmd-pron-repl, eje WHY / PROVENANCE)", kind: sync}
+    - {from: kgdb, to: superficie, message: "grounded_by → el docstring de _cmd_repl"}
+    - {from: superficie, to: hablante, message: "la traza en natural"}

@@ -1,19 +1,19 @@
 id: pron.target.components
 title: pron — arquitectura objetivo · componentes
 type: component
-version: '1.1'
+version: '2.0'
 metadata:
   description: >
-    Hacia dónde va pron: un SHRDLU montado sobre el mundo tal como los dos
-    stores lo reparten. Los sustantivos — los objetos del mundo — son
-    documentos de sldb. Los verbos — acciones, transiciones, relaciones —
-    son el grafo de kgdb. Pron no tiene operaciones: las lee del grafo y las
-    interpreta; lo único que es código es un kernel de primitivas (leer y
-    escribir un documento, recorrer una arista, disparar una transición).
-    Los anchors son el léxico: palabras que nombran cosas que ya existen,
-    por proyección, con un motivo que sirve al humano, a los errores y a la
-    traducción de la superficie (similitud entre la oración y los motivos).
-    El léxico mismo son documentos sldb.
+    Pron es un SHRDLU sobre el mundo que sldb y kgdb ya reparten. Los
+    sustantivos son documentos de sldb y se nombran por dirección
+    (st.{Modelo+}.doc.campo más un predicado). Los verbos transitivos son los
+    modelos de relación de kgdb (RelationTypeDoc declara el verbo, RelationDoc
+    es una arista autorada); sldb los almacena como documentos y el ingest de
+    kgdb los ensambla en el grafo. Los verbos de acción son las escrituras de
+    sldb (crear doc, cambiar campo, refrescar). El léxico sale de los modelos:
+    nombre, campos con descripción, tags, familias; los AnchorDoc son alias.
+    Pron no resuelve, no filtra y no declara verbos: registra los modelos de
+    kgdb en su mundo, pide por dirección, recorre aristas y escribe documentos.
 style:
   theme: default
 data:
@@ -25,108 +25,104 @@ data:
     hablante:
       label: Quien habla · persona, LLM u otro producto
       kind: actor
-    capa0:
-      label: Capa 0 · Mundo
+    pron:
+      label: pron · el SHRDLU
       kind: layer
-      contains: [mundo]
-    mundo:
-      label: "Declaración del mundo · qué stores y grafo, qué léxico, qué proyecciones"
-      kind: config
-    capa1:
-      label: Capa 1 · Superficie
-      kind: layer
-      contains: [superficie]
+      contains: [superficie, proyeccion, dialogo, kernel, embeddings, ledger, proyector]
     superficie:
-      label: "Superficie · natural → Meaning · Meaning → natural"
+      label: "Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural"
       kind: surface
-    capa2:
-      label: Capa 2 · Meaning
-      kind: layer
-      contains: [lexico, proyeccion, dialogo, evaluador, kernel]
-    lexico:
-      label: "Léxico · anchors · palabra → entidad del mundo · motivo"
-      kind: core
     proyeccion:
-      label: "Proyección · lo que esta sesión puede nombrar"
+      label: "Proyección · qué stores, modelos, tipos de relación y alias puede nombrar esta sesión"
       kind: core
     dialogo:
-      label: "Diálogo · pendiente y referentes (ese, la anterior)"
-      kind: core
-    evaluador:
-      label: "Evaluador · grounding · resolución · interpreta verbos del grafo · traza"
+      label: "Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)"
       kind: core
     kernel:
-      label: "Kernel de primitivas · leer doc · escribir doc · recorrer arista · disparar transición"
+      label: "Kernel · verbos de acción · crear doc · cambiar campo · escribir arista · refrescar"
       kind: core
-    capa3:
-      label: Capa 3 · Bridges
-      kind: layer
-      contains: [bridge_sldb, bridge_kgdb, bridge_emb, bridge_otros]
-    bridge_sldb:
-      label: "Bridge sldb · documentos, campos, secciones"
-      kind: bridge
-    bridge_kgdb:
-      label: "Bridge kgdb · aristas, transiciones, estados"
-      kind: bridge
-    bridge_emb:
-      label: "Bridge embeddings · oración ↔ motivos · cercanos"
-      kind: bridge
-    bridge_otros:
-      label: "Bridge lo-que-venga · SQL, APIs, ..."
-      kind: bridge
-    transversal:
-      label: Transversal
-      kind: layer
-      contains: [proyector, ledger]
-    proyector:
-      label: "Proyector · reindexa · reconstruye grafo · recalcula embeddings"
+    embeddings:
+      label: "Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos"
       kind: infra
     ledger:
-      label: "Ledger · oración + Meaning + refs + motivos + resultado · provenance"
+      label: "Ledger · oración + direcciones + verbo + resultado · el por qué se lee de las aristas del eje WHY/HOW"
       kind: infra
-    backends:
-      label: Backends · el mundo
+    proyector:
+      label: "Proyector · stores update · semantic-export · kgdb ingest"
+      kind: infra
+    mundo:
+      label: Mundo · sldb · los sustantivos · almacena todo documento, incluidas las relaciones de kgdb
       kind: boundary
-      contains: [sldb, kgdb, embeddings, otros]
-    sldb:
-      label: "sldb · SUSTANTIVOS · documentos, modelos, recetas, el léxico mismo"
+      contains: [store_index, modelos, anchors, docs]
+    store_index:
+      label: "store_index.yaml · la declaración del mundo · modelos registrados (los de contenido y los de relación de kgdb) · stores enlazados · predicados"
+      kind: config
+    modelos:
+      label: "Modelos de contenido · SUSTANTIVOS · nombre, campos con descripción, tags, familia"
       kind: external
-    kgdb:
-      label: "kgdb · VERBOS · acciones, transiciones, relaciones"
+    anchors:
+      label: "AnchorDoc · alias y motivos · solo lo que no coincide con un modelo, campo o tag"
       kind: external
-    embeddings:
-      label: embeddings
+    docs:
+      label: "Documentos · los objetos del mundo · markdown reversible"
       kind: external
-    otros:
-      label: "SQL · APIs · lo que venga"
+    superficies:
+      label: Superficies de sldb · lo que pron usa, no reimplementa
+      kind: layer
+      contains: [addr, writes, export]
+    addr:
+      label: "Direcciones · st.{Modelo+}.doc.campo.sub · se.tag · gse.tag · --where · ls, get, glob, find"
+      kind: bridge
+    writes:
+      label: "Escrituras · docs create / untrack · fields update, append, clean · re-renderiza, valida roundtrip, cascada de hashes"
+      kind: bridge
+    export:
+      label: "semantic-export · modelos, documentos, secciones, tags, DAG"
+      kind: bridge
+    grafo:
+      label: kgdb · dueño de los verbos transitivos · el grafo es derivado y de solo lectura
+      kind: boundary
+      contains: [reltypes, relinst, ingest, snapshot, traversal]
+    reltypes:
+      label: "RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, eje del predicado (HOW, WHY, WHAT, PROVENANCE)"
+      kind: external
+    relinst:
+      label: "RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source, target, relation_type, condition_ref"
+      kind: external
+    ingest:
+      label: "kgdb ingest · nodos y tags desde semantic-export · aristas desde los RelationDoc · integridad referencial"
+      kind: external
+    snapshot:
+      label: "GraphSnapshot · nodos = documentos · aristas = tags, contención y relaciones autoradas"
+      kind: external
+    traversal:
+      label: "edges_from · edges_to · scope · ¿existe la arista? · ¿legal desde aquí?"
       kind: external
   edges:
-    - {from: mundo, to: lexico, relation: instancia, label: carga el léxico}
-    - {from: mundo, to: proyeccion, relation: define}
-    - {from: mundo, to: capa3, relation: declara, label: qué puertas existen}
     - {from: hablante, to: superficie, relation: dice, label: una oración}
     - {from: superficie, to: dialogo, relation: resuelve, label: referentes}
-    - {from: superficie, to: bridge_emb, relation: consulta, label: "oración ↔ motivos del léxico"}
-    - {from: superficie, to: lexico, relation: verifica, label: cada palabra está en la proyección}
-    - {from: proyeccion, to: lexico, relation: acota}
-    - {from: lexico, to: bridge_sldb, relation: reads, label: se carga de AnchorDocs}
-    - {from: superficie, to: evaluador, relation: propone, label: un Meaning}
-    - {from: evaluador, to: lexico, relation: grounds, label: "palabra → entidad"}
-    - {from: evaluador, to: bridge_sldb, relation: resuelve, label: el sustantivo · cascada}
-    - {from: evaluador, to: bridge_kgdb, relation: lee, label: "el verbo · aplica a este sustantivo · transición legal"}
-    - {from: evaluador, to: bridge_emb, relation: consulta, label: "missing → cercanos por similitud"}
-    - {from: evaluador, to: dialogo, relation: guarda, label: pendiente si ambiguo}
-    - {from: evaluador, to: kernel, relation: ejecuta, label: primitivas}
-    - {from: kernel, to: bridge_sldb, relation: uses, label: leer / escribir documento}
-    - {from: kernel, to: bridge_kgdb, relation: uses, label: recorrer arista · disparar transición}
-    - {from: kernel, to: bridge_otros, relation: uses, label: lo que declaren}
-    - {from: kernel, to: proyector, relation: triggers, label: refresca tras escribir}
-    - {from: proyector, to: capa3, relation: refreshes, label: reindexa · reconstruye · recalcula}
-    - {from: bridge_sldb, to: sldb, relation: serves}
-    - {from: bridge_kgdb, to: kgdb, relation: serves}
-    - {from: bridge_emb, to: embeddings, relation: serves}
-    - {from: bridge_otros, to: otros, relation: serves}
-    - {from: evaluador, to: ledger, relation: registra, label: el movimiento entero}
-    - {from: ledger, to: evaluador, relation: explica, label: "por qué · cómo · de dónde"}
-    - {from: evaluador, to: superficie, relation: responde, label: "resultado · ¿cuál? · no existe, cercanos"}
-    - {from: superficie, to: hablante, relation: responde, label: en natural, con la traza disponible}
+    - {from: superficie, to: proyeccion, relation: verifica, label: cada palabra está en la proyección}
+    - {from: proyeccion, to: store_index, relation: reads, label: qué mundo}
+    - {from: proyeccion, to: modelos, relation: reads, label: "léxico de sustantivos · nombres, campos, tags, familias"}
+    - {from: store_index, to: reltypes, relation: registers, label: "models add kgdb…:RelationTypeDoc, RelationDoc · el mundo declara qué verbos existen"}
+    - {from: proyeccion, to: reltypes, relation: reads, label: léxico de verbos transitivos}
+    - {from: proyeccion, to: anchors, relation: reads, label: alias}
+    - {from: superficie, to: embeddings, relation: consulta, label: "palabra sin calce → cercanos"}
+    - {from: superficie, to: addr, relation: pide, label: "sustantivo = st.{Modelo+} + where · un campo = .campo.sub"}
+    - {from: addr, to: docs, relation: reads}
+    - {from: superficie, to: reltypes, relation: verifica, label: "¿el verbo aplica al sujeto y al objeto? · source_types, target_types"}
+    - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿legal desde aquí?"}
+    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
+    - {from: kernel, to: writes, relation: uses, label: "crear doc · cambiar campo · escribir RelationDoc"}
+    - {from: writes, to: docs, relation: writes, label: re-renderiza y valida}
+    - {from: writes, to: relinst, relation: writes, label: "una arista nueva es un documento más del store"}
+    - {from: kernel, to: proyector, relation: triggers, label: refrescar tras escribir}
+    - {from: proyector, to: export, relation: runs}
+    - {from: proyector, to: ingest, relation: runs}
+    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
+    - {from: relinst, to: ingest, relation: feeds, label: una arista por RelationDoc}
+    - {from: ingest, to: snapshot, relation: builds}
+    - {from: traversal, to: snapshot, relation: reads}
+    - {from: superficie, to: ledger, relation: registra, label: el movimiento entero}
+    - {from: ledger, to: traversal, relation: reads, label: "¿por qué? · aristas del eje WHY / HOW"}
+    - {from: superficie, to: hablante, relation: responde, label: "resultado · ¿cuál? · no existe, cercanos"}

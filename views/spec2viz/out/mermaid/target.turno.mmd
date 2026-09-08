@@ -2,45 +2,57 @@ sequenceDiagram
     actor hablante
     participant superficie
     participant dialogo
-    participant lexico
-    participant evaluador
-    participant kernel
-    participant sldb
-    participant kgdb
+    participant proyeccion
     participant embeddings
+    participant sldb_addr
+    participant sldb_write
+    participant kgdb
+    participant kernel
     participant proyector
     participant ledger
-    hablante->>superficie: agrega cita al usuario a las 16:00
-    superficie->>dialogo: ¿a quién refiere 'al usuario'?
-    dialogo->>superficie: el usuario de esta sesión
-    superficie->>embeddings: oración ↔ motivos del léxico de esta proyección
-    embeddings->>superficie: palabras candidatas por similitud
-    superficie->>lexico: ¿cada palabra está en la proyección?
-    lexico->>superficie: [sin palabra] 'cita' no está en tu léxico
-    superficie->>hablante: [sin palabra] no tengo 'cita' · sí tengo ...
-    superficie->>evaluador: Meaning
-    evaluador->>lexico: cada palabra → su entidad del mundo
-    evaluador->>sldb: resolver el sustantivo · cascada
-    evaluador->>kgdb: leer el verbo · ¿aplica a este sustantivo? · ¿transición legal desde aquí?
-    evaluador->>dialogo: [ambiguo] guardar candidatos y Meaning con hueco
-    evaluador->>superficie: [ambiguo] ¿cuál?
+    hablante->>superficie: ¿qué implementa el átomo de bridges?
+    superficie->>dialogo: referentes · ninguno
+    superficie->>proyeccion: ¿átomo, implementa están en la proyección?
+    proyeccion->>superficie: átomo → st.{Atom} · implementa → RelationTypeDoc implements de kgdb (eje HOW)
+    superficie->>embeddings: [missing] 'bridges' sin calce → cercanos por descripciones
+    superficie->>ledger: [missing] registrar el hueco y los cercanos
+    superficie->>hablante: [missing] no existe · ¿querías Y o Z?
+    superficie->>sldb_addr: find st.{Atom+} --where 'doc ~ "bridges"'
+    sldb_addr->>superficie: [ambiguo] dos direcciones
+    superficie->>dialogo: [ambiguo] guardar candidatos y la oración con hueco
     superficie->>hablante: [ambiguo] ¿cuál? A o B
-    evaluador->>embeddings: [missing] cercanos por similitud
-    evaluador->>ledger: [missing] registrar el hueco con motivo y cercanos
-    evaluador->>superficie: [missing] no existe · cercanos · esto buscaba
-    superficie->>hablante: [missing] no existe X · ¿querías Y o Z?
-    evaluador->>kernel: [único] escribir documento · disparar transición
-    kernel->>sldb: escribir el documento
-    sldb->>kernel: ok + refs
-    kernel->>kgdb: disparar la transición
-    kgdb->>kernel: nuevo estado
-    kernel->>proyector: refrescar tras escribir
-    evaluador->>ledger: oración + Meaning + refs + motivos + resultado
-    evaluador->>superficie: resultado + traza
+    sldb_addr->>superficie: [único] st.{Atom}.atom-bridges-are-the-only-doors
+    superficie->>kgdb: edges_from(sldb://document/Atom:atom-bridges..., implements)
+    kgdb->>superficie: targets · sldb://model/SldbBridge, sldb://model/KgdbBridge
+    superficie->>ledger: oración · dirección · verbo · aristas
+    superficie->>hablante: Implementa SldbBridge y KgdbBridge.
+    hablante->>superficie: ese átomo también implementa el proyector
+    superficie->>dialogo: ese átomo → la dirección del turno anterior
+    superficie->>sldb_addr: find st.{SurfaceDoc+} --where 'doc ~ "proyector"'
+    sldb_addr->>superficie: st.{SurfaceDoc}.surface-pron-infra-projector
+    superficie->>sldb_addr: get st.{RelationTypeDoc}.implements · source_types, target_types
+    sldb_addr->>superficie: Atom → SurfaceDoc · aplica
+    superficie->>kernel: escribir arista implements A → B
+    kernel->>sldb_write: docs create --model RelationDoc · source_id, target_id, relation_type
+    sldb_write->>kernel: tracked · hashes actualizados
+    kernel->>proyector: refrescar
+    proyector->>kgdb: kgdb ingest · nodos desde semantic-export · aristas desde los RelationDoc
+    kgdb->>proyector: snapshot nuevo · la arista existe
+    superficie->>ledger: oración · direcciones · RelationDoc escrito
     superficie->>hablante: Listo. Queda registrado.
-    hablante->>superficie: ¿por qué?
-    superficie->>evaluador: explicar el último movimiento
-    evaluador->>ledger: leer la traza
-    ledger->>evaluador: oración · Meaning · refs · motivos
-    evaluador->>superficie: la traza
+    hablante->>superficie: cambia la sinopsis del comando repl a: bucle interactivo sobre el evaluador
+    superficie->>proyeccion: cambiar → verbo de acción · sinopsis → campo synopsis de CliCommandDoc
+    superficie->>sldb_addr: find st.{CliCommandDoc+} --where 'command_path = "repl"'
+    sldb_addr->>superficie: st.{CliCommandDoc}.cmd-pron-repl
+    superficie->>kernel: cambiar campo
+    kernel->>sldb_write: fields update docs/cmd-pron-repl/synopsis '"bucle interactivo sobre el evaluador"'
+    sldb_write->>kernel: re-renderizado · roundtrip ok · hashes
+    kernel->>proyector: refrescar
+    superficie->>ledger: oración · dirección · campo · valor anterior y nuevo
+    superficie->>hablante: Hecho.
+    hablante->>superficie: ¿por qué dice eso?
+    superficie->>ledger: leer el último movimiento sobre esa dirección
+    ledger->>superficie: oración · dirección · campo · quién · cuándo
+    superficie->>kgdb: edges_from(cmd-pron-repl, eje WHY / PROVENANCE)
+    kgdb->>superficie: grounded_by → el docstring de _cmd_repl
     superficie->>hablante: la traza en natural

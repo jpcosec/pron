@@ -3,7 +3,7 @@ diagram_store:
   template: template.html
   title: Arquitectura de pron
   brand_name: pron
-  brand_subtitle: "Actual: derivado del código. Objetivo: el SHRDLU sobre el mundo — sustantivos en sldb, verbos en kgdb, el léxico como puente. La diferencia entre ambos es la lista de trabajo."
+  brand_subtitle: 'Actual: derivado del código. Objetivo: un SHRDLU sobre el mundo que sldb y kgdb ya reparten — sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb.'
   project_name: legos/pron
   items:
   - id: architecture
@@ -23,7 +23,7 @@ diagram_store:
     - El generador de docs (pron docs) deriva CliCommandDoc de los docstrings de los handlers _cmd_* y SurfaceDoc del AST de cada módulo público.
   - id: target-components
     title: Objetivo · componentes
-    desc: Un SHRDLU montado sobre el mundo tal como los dos stores lo reparten. Sustantivos en sldb (documentos, modelos, recetas, el léxico mismo). Verbos en kgdb (acciones, transiciones, relaciones). Pron no tiene operaciones — las lee del grafo y las interpreta — y lo único que es código es un kernel de cuatro primitivas.
+    desc: Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.
     category: pron · objetivo
     nav: Objetivo · componentes
     type: component
@@ -32,28 +32,33 @@ diagram_store:
     specs:
     - specs/target.components.yml
     notes:
-    - Los anchors son el léxico. Nombran cosas que ya existen en el mundo, por proyección, con un motivo. No declaran operaciones ni contienen semántica. Su kind se deriva de a qué apuntan — modelo = sustantivo, arista/transición/acción = verbo.
-    - Lo que un operador puede decir es lo que puede hacer. Una entidad del grafo sin anchor en tu proyección es invisible desde la superficie.
-    - La pregunta qué puedo hacer con un paso la responde el grafo — las aristas, transiciones y acciones incidentes a ese tipo — y el léxico lo traduce a palabras.
-    - La superficie traduce comparando la oración con los motivos del léxico (embeddings). Un missing ofrece cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
-    - Las recetas (contexto, seguridad) son documentos del mundo. El anchor solo las nombra.
-    - "El _dispatch con seis verbos fijos en Python es lo que desaparece: los verbos se declaran en kgdb."
+    - 'El léxico sale de los modelos: nombre, campos con descripción, tags, familias ({Modelo+}). Los RelationTypeDoc dan los verbos transitivos con sus tipos válidos. Los AnchorDoc son alias, no la fuente.'
+    - Un sustantivo es una dirección más un predicado, y eso lo responde sldb (ls, get, glob, find, --where). Pron no tiene cascada de resolución propia.
+    - 'Los modelos de relación son de kgdb: RelationTypeDoc declara el verbo con sus tipos válidos y su eje, RelationDoc es una arista autorada. Pron los registra en su store al declarar el mundo; sldb los guarda como documentos; el ingest de kgdb los vuelve aristas. kgdb sigue siendo derivado y de solo lectura.'
+    - El ingest de kgdb tiene que tomar los RelationDoc además del semantic-export. Hoy assemble_authored_graph existe en kgdb pero no está en su CLI ni corre en el proyector de pron, por eso el grafo de pron no tiene ninguna arista de dominio.
+    - Una transición no se dispara en kgdb. Es una escritura en sldb, arista más campo de estado, seguida de un refresh que reensambla el grafo.
+    - 'El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.'
+    - 'La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.'
+    - El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.
+    - 'Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.'
   - id: target-turno
-    title: Objetivo · un turno
-    desc: Desde que entra una oración hasta que sale una respuesta en natural. La superficie compara la oración con los motivos del léxico; el evaluador resuelve el sustantivo en sldb y lee el verbo en kgdb; las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
+    title: Objetivo · tres turnos
+    desc: Tres oraciones, una por tipo de palabra. Un verbo transitivo leído (¿qué implementa X?), uno afirmado (X implementa Y, que se escribe como RelationDoc) y un verbo de acción (cambiar la sinopsis de un comando, que es un fields update). Las tres salidas del grounding se muestran sobre el primer turno.
     category: pron · objetivo
-    nav: Objetivo · un turno
+    nav: Objetivo · tres turnos
     type: sequence
     src: out/mermaid/target.turno.mmd
     mmd: out/mermaid/target.turno.mmd
     specs:
     - specs/target.turno.yml
     notes:
-    - Los referentes (al usuario, ese, la anterior) se resuelven en el diálogo antes de groundear.
-    - Sin palabra en la proyección, la oración vuelve desde la superficie sin llegar al evaluador.
-    - Leer el verbo en kgdb incluye si aplica a este sustantivo y si la transición es legal desde el estado actual.
-    - Ambiguo abre una pendiente; la próxima oración entra como respuesta. Missing consulta embeddings, registra el hueco y termina el turno.
-    - El kernel solo ejecuta primitivas; el proyector refresca solo después de una escritura.
+    - 'La superficie no resuelve el sustantivo: arma find st.{Modelo+} --where y sldb devuelve una dirección, dos (ambiguo) o ninguna (missing).'
+    - Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc, el modelo de kgdb, por dirección en sldb. Verificar que la arista existe o es legal desde aquí es kgdb.
+    - Afirmar un verbo transitivo es docs create de un RelationDoc, el modelo de relación de kgdb guardado en sldb. kgdb nunca recibe una orden; su ingest reensambla y la arista aparece.
+    - 'Un verbo de acción es una escritura de sldb: fields update re-renderiza el markdown, valida el roundtrip y actualiza la cascada de hashes.'
+    - Missing consulta embeddings sobre las descripciones de modelos y campos, registra el hueco y termina el turno. Ambiguo abre una pendiente; la próxima oración entra como respuesta.
+    - El por qué combina el ledger (quién, cuándo, con qué oración) con las aristas del eje WHY y PROVENANCE.
+    - 'Todos los sustantivos son del mundo de pron: st.{Atom+} es su modelo de átomo, no el AtomDoc de deskops, y el comando es un CliCommandDoc de la KB de pron.'
   - id: target-dialogo
     title: Objetivo · el diálogo
     desc: El único estado propio de pron por sesión — si hay o no una pregunta pendiente — y sus cuatro salidas.

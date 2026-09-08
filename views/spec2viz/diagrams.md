@@ -1,6 +1,6 @@
 # Arquitectura de pron
 
-Actual: derivado del código. Objetivo: el SHRDLU sobre el mundo — sustantivos en sldb, verbos en kgdb, el léxico como puente. La diferencia entre ambos es la lista de trabajo.
+Actual: derivado del código. Objetivo: un SHRDLU sobre el mundo que sldb y kgdb ya reparten — sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb.
 
 ## Arquitectura actual
 
@@ -67,136 +67,149 @@ graph TD
 
 ## Objetivo · componentes
 
-Un SHRDLU montado sobre el mundo tal como los dos stores lo reparten. Sustantivos en sldb (documentos, modelos, recetas, el léxico mismo). Verbos en kgdb (acciones, transiciones, relaciones). Pron no tiene operaciones — las lee del grafo y las interpreta — y lo único que es código es un kernel de cuatro primitivas.
+Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.
 
-- Los anchors son el léxico. Nombran cosas que ya existen en el mundo, por proyección, con un motivo. No declaran operaciones ni contienen semántica. Su kind se deriva de a qué apuntan — modelo = sustantivo, arista/transición/acción = verbo.
-- Lo que un operador puede decir es lo que puede hacer. Una entidad del grafo sin anchor en tu proyección es invisible desde la superficie.
-- La pregunta qué puedo hacer con un paso la responde el grafo — las aristas, transiciones y acciones incidentes a ese tipo — y el léxico lo traduce a palabras.
-- La superficie traduce comparando la oración con los motivos del léxico (embeddings). Un missing ofrece cercanos por similitud, no solo por texto. Qué pasa después con el hueco no es de pron.
-- Las recetas (contexto, seguridad) son documentos del mundo. El anchor solo las nombra.
-- El _dispatch con seis verbos fijos en Python es lo que desaparece: los verbos se declaran en kgdb.
+- El léxico sale de los modelos: nombre, campos con descripción, tags, familias ({Modelo+}). Los RelationTypeDoc dan los verbos transitivos con sus tipos válidos. Los AnchorDoc son alias, no la fuente.
+- Un sustantivo es una dirección más un predicado, y eso lo responde sldb (ls, get, glob, find, --where). Pron no tiene cascada de resolución propia.
+- Los modelos de relación son de kgdb: RelationTypeDoc declara el verbo con sus tipos válidos y su eje, RelationDoc es una arista autorada. Pron los registra en su store al declarar el mundo; sldb los guarda como documentos; el ingest de kgdb los vuelve aristas. kgdb sigue siendo derivado y de solo lectura.
+- El ingest de kgdb tiene que tomar los RelationDoc además del semantic-export. Hoy assemble_authored_graph existe en kgdb pero no está en su CLI ni corre en el proyector de pron, por eso el grafo de pron no tiene ninguna arista de dominio.
+- Una transición no se dispara en kgdb. Es una escritura en sldb, arista más campo de estado, seguida de un refresh que reensambla el grafo.
+- El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.
+- La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.
+- El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.
+- Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.
 
 ```mermaid
 graph TD
     subgraph afuera ["Fuera de pron"]
         hablante["Quien habla · persona, LLM u otro producto"]
     end
-    subgraph capa0 ["Capa 0 · Mundo"]
-        mundo["Declaración del mundo · qué stores y grafo, qué léxico, qué proyecciones"]
+    subgraph pron ["pron · el SHRDLU"]
+        superficie["Superficie · oración → (alcance, predicado) para sustantivos · (verbo, sujeto, objeto) para verbos · respuesta en natural"]
+        proyeccion["Proyección · qué stores, modelos, tipos de relación y alias puede nombrar esta sesión"]
+        dialogo["Diálogo · pendiente (¿cuál?) y referentes (ese, la anterior)"]
+        kernel["Kernel · verbos de acción · crear doc · cambiar campo · escribir arista · refrescar"]
+        embeddings["Embeddings · palabra sin calce → cercanos por descripciones de modelos y campos"]
+        ledger["Ledger · oración + direcciones + verbo + resultado · el por qué se lee de las aristas del eje WHY/HOW"]
+        proyector["Proyector · stores update · semantic-export · kgdb ingest"]
     end
-    subgraph capa1 ["Capa 1 · Superficie"]
-        superficie["Superficie · natural → Meaning · Meaning → natural"]
+    subgraph mundo ["Mundo · sldb · los sustantivos · almacena todo documento, incluidas las relaciones de kgdb"]
+        store_index["store_index.yaml · la declaración del mundo · modelos registrados (los de contenido y los de relación de kgdb) · stores enlazados · predicados"]
+        modelos["Modelos de contenido · SUSTANTIVOS · nombre, campos con descripción, tags, familia"]
+        anchors["AnchorDoc · alias y motivos · solo lo que no coincide con un modelo, campo o tag"]
+        docs["Documentos · los objetos del mundo · markdown reversible"]
     end
-    subgraph capa2 ["Capa 2 · Meaning"]
-        lexico["Léxico · anchors · palabra → entidad del mundo · motivo"]
-        proyeccion["Proyección · lo que esta sesión puede nombrar"]
-        dialogo["Diálogo · pendiente y referentes (ese, la anterior)"]
-        evaluador["Evaluador · grounding · resolución · interpreta verbos del grafo · traza"]
-        kernel["Kernel de primitivas · leer doc · escribir doc · recorrer arista · disparar transición"]
+    subgraph superficies ["Superficies de sldb · lo que pron usa, no reimplementa"]
+        addr["Direcciones · st.{Modelo+}.doc.campo.sub · se.tag · gse.tag · --where · ls, get, glob, find"]
+        writes["Escrituras · docs create / untrack · fields update, append, clean · re-renderiza, valida roundtrip, cascada de hashes"]
+        export["semantic-export · modelos, documentos, secciones, tags, DAG"]
     end
-    subgraph capa3 ["Capa 3 · Bridges"]
-        bridge_sldb["Bridge sldb · documentos, campos, secciones"]
-        bridge_kgdb["Bridge kgdb · aristas, transiciones, estados"]
-        bridge_emb["Bridge embeddings · oración ↔ motivos · cercanos"]
-        bridge_otros["Bridge lo-que-venga · SQL, APIs, ..."]
+    subgraph grafo ["kgdb · dueño de los verbos transitivos · el grafo es derivado y de solo lectura"]
+        reltypes["RelationTypeDoc · VERBOS TRANSITIVOS · modelo de kgdb · name, source_types, target_types, eje del predicado (HOW, WHY, WHAT, PROVENANCE)"]
+        relinst["RelationDoc · una arista autorada · modelo de kgdb, guardada como documento en sldb · source, target, relation_type, condition_ref"]
+        ingest["kgdb ingest · nodos y tags desde semantic-export · aristas desde los RelationDoc · integridad referencial"]
+        snapshot["GraphSnapshot · nodos = documentos · aristas = tags, contención y relaciones autoradas"]
+        traversal["edges_from · edges_to · scope · ¿existe la arista? · ¿legal desde aquí?"]
     end
-    subgraph transversal ["Transversal"]
-        proyector["Proyector · reindexa · reconstruye grafo · recalcula embeddings"]
-        ledger["Ledger · oración + Meaning + refs + motivos + resultado · provenance"]
-    end
-    subgraph backends ["Backends · el mundo"]
-        sldb["sldb · SUSTANTIVOS · documentos, modelos, recetas, el léxico mismo"]
-        kgdb["kgdb · VERBOS · acciones, transiciones, relaciones"]
-        embeddings["embeddings"]
-        otros["SQL · APIs · lo que venga"]
-    end
-    mundo -->|"carga el léxico"| lexico
-    mundo -->|"define"| proyeccion
-    mundo -->|"qué puertas existen"| capa3
     hablante -->|"una oración"| superficie
     superficie -->|"referentes"| dialogo
-    superficie -->|"oración ↔ motivos del léxico"| bridge_emb
-    superficie -->|"cada palabra está en la proyección"| lexico
-    proyeccion -->|"acota"| lexico
-    lexico -->|"se carga de AnchorDocs"| bridge_sldb
-    superficie -->|"un Meaning"| evaluador
-    evaluador -->|"palabra → entidad"| lexico
-    evaluador -->|"el sustantivo · cascada"| bridge_sldb
-    evaluador -->|"el verbo · aplica a este sustantivo · transición legal"| bridge_kgdb
-    evaluador -->|"missing → cercanos por similitud"| bridge_emb
-    evaluador -->|"pendiente si ambiguo"| dialogo
-    evaluador -->|"primitivas"| kernel
-    kernel -->|"leer / escribir documento"| bridge_sldb
-    kernel -->|"recorrer arista · disparar transición"| bridge_kgdb
-    kernel -->|"lo que declaren"| bridge_otros
-    kernel -->|"refresca tras escribir"| proyector
-    proyector -->|"reindexa · reconstruye · recalcula"| capa3
-    bridge_sldb -->|"serves"| sldb
-    bridge_kgdb -->|"serves"| kgdb
-    bridge_emb -->|"serves"| embeddings
-    bridge_otros -->|"serves"| otros
-    evaluador -->|"el movimiento entero"| ledger
-    ledger -->|"por qué · cómo · de dónde"| evaluador
-    evaluador -->|"resultado · ¿cuál? · no existe, cercanos"| superficie
-    superficie -->|"en natural"| hablante
+    superficie -->|"cada palabra está en la proyección"| proyeccion
+    proyeccion -->|"qué mundo"| store_index
+    proyeccion -->|"léxico de sustantivos · nombres, campos, tags, familias"| modelos
+    store_index -->|"models add kgdb…:RelationTypeDoc, RelationDoc · el mundo declara qué verbos existen"| reltypes
+    proyeccion -->|"léxico de verbos transitivos"| reltypes
+    proyeccion -->|"alias"| anchors
+    superficie -->|"palabra sin calce → cercanos"| embeddings
+    superficie -->|"sustantivo = st.{Modelo+} + where · un campo = .campo.sub"| addr
+    addr -->|"reads"| docs
+    superficie -->|"¿el verbo aplica al sujeto y al objeto? · source_types, target_types"| reltypes
+    superficie -->|"verbo transitivo leído · ¿quién implementa X? · ¿legal desde aquí?"| traversal
+    superficie -->|"verbo de acción"| kernel
+    kernel -->|"crear doc · cambiar campo · escribir RelationDoc"| writes
+    writes -->|"re-renderiza y valida"| docs
+    writes -->|"una arista nueva es un documento más del store"| relinst
+    kernel -->|"refrescar tras escribir"| proyector
+    proyector -->|"runs"| export
+    proyector -->|"runs"| ingest
+    export -->|"nodos"| ingest
+    relinst -->|"una arista por RelationDoc"| ingest
+    ingest -->|"builds"| snapshot
+    traversal -->|"reads"| snapshot
+    superficie -->|"el movimiento entero"| ledger
+    ledger -->|"¿por qué? · aristas del eje WHY / HOW"| traversal
+    superficie -->|"resultado · ¿cuál? · no existe, cercanos"| hablante
 ```
 
-## Objetivo · un turno
+## Objetivo · tres turnos
 
-Desde que entra una oración hasta que sale una respuesta en natural. La superficie compara la oración con los motivos del léxico; el evaluador resuelve el sustantivo en sldb y lee el verbo en kgdb; las tres salidas del grounding — único, ambiguo, missing — y el "¿por qué?" que lee el ledger.
+Tres oraciones, una por tipo de palabra. Un verbo transitivo leído (¿qué implementa X?), uno afirmado (X implementa Y, que se escribe como RelationDoc) y un verbo de acción (cambiar la sinopsis de un comando, que es un fields update). Las tres salidas del grounding se muestran sobre el primer turno.
 
-- Los referentes (al usuario, ese, la anterior) se resuelven en el diálogo antes de groundear.
-- Sin palabra en la proyección, la oración vuelve desde la superficie sin llegar al evaluador.
-- Leer el verbo en kgdb incluye si aplica a este sustantivo y si la transición es legal desde el estado actual.
-- Ambiguo abre una pendiente; la próxima oración entra como respuesta. Missing consulta embeddings, registra el hueco y termina el turno.
-- El kernel solo ejecuta primitivas; el proyector refresca solo después de una escritura.
+- La superficie no resuelve el sustantivo: arma find st.{Modelo+} --where y sldb devuelve una dirección, dos (ambiguo) o ninguna (missing).
+- Verificar que el verbo aplica es leer source_types y target_types del RelationTypeDoc, el modelo de kgdb, por dirección en sldb. Verificar que la arista existe o es legal desde aquí es kgdb.
+- Afirmar un verbo transitivo es docs create de un RelationDoc, el modelo de relación de kgdb guardado en sldb. kgdb nunca recibe una orden; su ingest reensambla y la arista aparece.
+- Un verbo de acción es una escritura de sldb: fields update re-renderiza el markdown, valida el roundtrip y actualiza la cascada de hashes.
+- Missing consulta embeddings sobre las descripciones de modelos y campos, registra el hueco y termina el turno. Ambiguo abre una pendiente; la próxima oración entra como respuesta.
+- El por qué combina el ledger (quién, cuándo, con qué oración) con las aristas del eje WHY y PROVENANCE.
+- Todos los sustantivos son del mundo de pron: st.{Atom+} es su modelo de átomo, no el AtomDoc de deskops, y el comando es un CliCommandDoc de la KB de pron.
 
 ```mermaid
 sequenceDiagram
     actor hablante
     participant superficie
     participant dialogo
-    participant lexico
-    participant evaluador
-    participant kernel
-    participant sldb
-    participant kgdb
+    participant proyeccion
     participant embeddings
+    participant sldb_addr
+    participant sldb_write
+    participant kgdb
+    participant kernel
     participant proyector
     participant ledger
-    hablante->>superficie: agrega cita al usuario a las 16:00
-    superficie->>dialogo: ¿a quién refiere 'al usuario'?
-    dialogo->>superficie: el usuario de esta sesión
-    superficie->>embeddings: oración ↔ motivos del léxico de esta proyección
-    embeddings->>superficie: palabras candidatas por similitud
-    superficie->>lexico: ¿cada palabra está en la proyección?
-    lexico->>superficie: [sin palabra] 'cita' no está en tu léxico
-    superficie->>hablante: [sin palabra] no tengo 'cita' · sí tengo ...
-    superficie->>evaluador: Meaning
-    evaluador->>lexico: cada palabra → su entidad del mundo
-    evaluador->>sldb: resolver el sustantivo · cascada
-    evaluador->>kgdb: leer el verbo · ¿aplica a este sustantivo? · ¿transición legal desde aquí?
-    evaluador->>dialogo: [ambiguo] guardar candidatos y Meaning con hueco
-    evaluador->>superficie: [ambiguo] ¿cuál?
+    hablante->>superficie: ¿qué implementa el átomo de bridges?
+    superficie->>dialogo: referentes · ninguno
+    superficie->>proyeccion: ¿átomo, implementa están en la proyección?
+    proyeccion->>superficie: átomo → st.{Atom} · implementa → RelationTypeDoc implements de kgdb (eje HOW)
+    superficie->>embeddings: [missing] 'bridges' sin calce → cercanos por descripciones
+    superficie->>ledger: [missing] registrar el hueco y los cercanos
+    superficie->>hablante: [missing] no existe · ¿querías Y o Z?
+    superficie->>sldb_addr: find st.{Atom+} --where 'doc ~ "bridges"'
+    sldb_addr->>superficie: [ambiguo] dos direcciones
+    superficie->>dialogo: [ambiguo] guardar candidatos y la oración con hueco
     superficie->>hablante: [ambiguo] ¿cuál? A o B
-    evaluador->>embeddings: [missing] cercanos por similitud
-    evaluador->>ledger: [missing] registrar el hueco con motivo y cercanos
-    evaluador->>superficie: [missing] no existe · cercanos · esto buscaba
-    superficie->>hablante: [missing] no existe X · ¿querías Y o Z?
-    evaluador->>kernel: [único] escribir documento · disparar transición
-    kernel->>sldb: escribir el documento
-    sldb->>kernel: ok + refs
-    kernel->>kgdb: disparar la transición
-    kgdb->>kernel: nuevo estado
-    kernel->>proyector: refrescar tras escribir
-    evaluador->>ledger: oración + Meaning + refs + motivos + resultado
-    evaluador->>superficie: resultado + traza
+    sldb_addr->>superficie: [único] st.{Atom}.atom-bridges-are-the-only-doors
+    superficie->>kgdb: edges_from(sldb://document/Atom:atom-bridges..., implements)
+    kgdb->>superficie: targets · sldb://model/SldbBridge, sldb://model/KgdbBridge
+    superficie->>ledger: oración · dirección · verbo · aristas
+    superficie->>hablante: Implementa SldbBridge y KgdbBridge.
+    hablante->>superficie: ese átomo también implementa el proyector
+    superficie->>dialogo: ese átomo → la dirección del turno anterior
+    superficie->>sldb_addr: find st.{SurfaceDoc+} --where 'doc ~ "proyector"'
+    sldb_addr->>superficie: st.{SurfaceDoc}.surface-pron-infra-projector
+    superficie->>sldb_addr: get st.{RelationTypeDoc}.implements · source_types, target_types
+    sldb_addr->>superficie: Atom → SurfaceDoc · aplica
+    superficie->>kernel: escribir arista implements A → B
+    kernel->>sldb_write: docs create --model RelationDoc · source_id, target_id, relation_type
+    sldb_write->>kernel: tracked · hashes actualizados
+    kernel->>proyector: refrescar
+    proyector->>kgdb: kgdb ingest · nodos desde semantic-export · aristas desde los RelationDoc
+    kgdb->>proyector: snapshot nuevo · la arista existe
+    superficie->>ledger: oración · direcciones · RelationDoc escrito
     superficie->>hablante: Listo. Queda registrado.
-    hablante->>superficie: ¿por qué?
-    superficie->>evaluador: explicar el último movimiento
-    evaluador->>ledger: leer la traza
-    ledger->>evaluador: oración · Meaning · refs · motivos
-    evaluador->>superficie: la traza
+    hablante->>superficie: cambia la sinopsis del comando repl a: bucle interactivo sobre el evaluador
+    superficie->>proyeccion: cambiar → verbo de acción · sinopsis → campo synopsis de CliCommandDoc
+    superficie->>sldb_addr: find st.{CliCommandDoc+} --where 'command_path = "repl"'
+    sldb_addr->>superficie: st.{CliCommandDoc}.cmd-pron-repl
+    superficie->>kernel: cambiar campo
+    kernel->>sldb_write: fields update docs/cmd-pron-repl/synopsis '"bucle interactivo sobre el evaluador"'
+    sldb_write->>kernel: re-renderizado · roundtrip ok · hashes
+    kernel->>proyector: refrescar
+    superficie->>ledger: oración · dirección · campo · valor anterior y nuevo
+    superficie->>hablante: Hecho.
+    hablante->>superficie: ¿por qué dice eso?
+    superficie->>ledger: leer el último movimiento sobre esa dirección
+    ledger->>superficie: oración · dirección · campo · quién · cuándo
+    superficie->>kgdb: edges_from(cmd-pron-repl, eje WHY / PROVENANCE)
+    kgdb->>superficie: grounded_by → el docstring de _cmd_repl
     superficie->>hablante: la traza en natural
 ```
 
