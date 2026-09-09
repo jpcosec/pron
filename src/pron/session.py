@@ -97,6 +97,7 @@ class Session:
                 hole = self.dialogue.last_missing
                 self.dialogue.last_missing = None
                 if corrected is not None:
+                    assert hole is not None
                     refers_to = hole.get("move_id", "")
                     record["corrects"] = {
                         "move": refers_to,
@@ -253,6 +254,7 @@ class Session:
                 return self._missing(res, trace, record)
             plan[role] = res
         if part.kind == "action" and part.payload.get("verb") == "create":
+            assert part.subject is not None and part.subject.model is not None
             missing = self.kernel.required_missing(
                 part.subject.model, part.payload["fields"]
             )
@@ -330,6 +332,8 @@ class Session:
     def _plan_compose(
         self, part: Part, trace: list[str], record: dict[str, Any]
     ) -> dict[str, Any] | Response:
+        assert part.verb is not None
+        np: NounPhrase | None
         plan: dict[str, Any] = {"steps": []}
         nps: list[NounPhrase] = part.payload.get("_nps", [])
         for step in part.verb.payload.get("steps", []):
@@ -409,12 +413,13 @@ class Session:
             )
         )
         record["candidates"] = list(res.candidates)
-        listing = " · ".join(f"({i + 1}) {l}" for i, l in enumerate(labels))
+        listing = " · ".join(f"({i + 1}) {label}" for i, label in enumerate(labels))
         return Response(f"Which one? {listing}", "ambiguo")
 
     def _ask_data(
         self, part: Part, field_name: str, record: dict[str, Any]
     ) -> Response:
+        assert part.subject is not None
         self.dialogue.open(
             Pending(
                 "data",
@@ -509,6 +514,7 @@ class Session:
                 if not self.kernel.allowed(verb):
                     raise StoreError(f"in this session I cannot {verb}")
                 if verb == "create":
+                    assert part.subject is not None and part.subject.model is not None
                     self.kernel.dry_create(
                         part.subject.model, part.payload["fields"], overlay
                     )
@@ -518,6 +524,7 @@ class Session:
                             verb, e, part.field_name, part.value, overlay
                         )
             elif part.kind == "assert":
+                assert part.verb is not None and part.verb.relation is not None
                 self._dry_assert(
                     part.verb.relation,
                     plan["subject"].export_ids(),
@@ -525,7 +532,8 @@ class Session:
                     overlay,
                 )
             elif part.kind == "compose":
-                created_model = None
+                assert part.verb is not None
+                created_model: str | None = None
                 literals = {
                     k: v for k, v in part.payload.items() if not k.startswith("_")
                 }
@@ -533,8 +541,22 @@ class Session:
                     part.verb.payload.get("steps", []), plan["steps"]
                 ):
                     do = step.get("do")
+                    if (
+                        "$created" in (step.get("source"), step.get("target"))
+                        and created_model is None
+                    ):
+                        raise StoreError(
+                            "composition references $created before create"
+                        )
+                    created_id = (
+                        join_id(self.write_store, created_model, "$created")
+                        if created_model is not None
+                        else None
+                    )
                     if do == "create":
                         created_model = step["model"]
+                        if created_model is None:
+                            raise StoreError("create requires a model")
                         fields = {
                             k: v
                             for k, v in literals.items()
@@ -545,23 +567,28 @@ class Session:
                         }
                         self.kernel.dry_create(created_model, fields, overlay)
                     elif do == "assert":
+                        created_ids = [created_id] if created_id is not None else []
                         src = (
-                            [join_id(self.write_store, created_model, "$created")]
+                            created_ids
                             if step.get("source") == "$created"
                             else resolved["source"].export_ids()
                         )
                         tgt = (
-                            [join_id(self.write_store, created_model, "$created")]
+                            created_ids
                             if step.get("target") == "$created"
                             else resolved["target"].export_ids()
                         )
                         self._dry_assert(step["relation"], src, tgt, overlay)
                     elif do == "change":
                         tgt = (
-                            join_id(self.write_store, created_model, "$created")
+                            created_id
                             if step.get("target") == "$created"
                             else resolved["target"].export_ids()[0]
                         )
+                        if tgt is None:
+                            raise StoreError(
+                                "composition references $created before create"
+                            )
                         if not tgt.endswith(":$created"):
                             self.kernel.dry_run(
                                 "change", tgt, step["field"], step["value"], overlay
@@ -604,6 +631,7 @@ class Session:
         self, sentence: str, trace: list[str], record: dict[str, Any]
     ) -> tuple[Response, str]:
         pending = self.dialogue.pending
+        assert pending is not None
         interp = self.interpreter.interpret(sentence)
         kinds = [w.kind for i in interp.items for w in i.words]
         what = self.dialogue.classify_reply(sentence, kinds)
@@ -626,7 +654,9 @@ class Session:
             return self._resume(part, trace, record), pending.move_id
         picks = self.dialogue.pick(sentence, self.matcher)
         if len(picks) != 1:
-            listing = " · ".join(f"({i + 1}) {l}" for i, l in enumerate(pending.labels))
+            listing = " · ".join(
+                f"({i + 1}) {label}" for i, label in enumerate(pending.labels)
+            )
             return Response(
                 f"Still pending. Which one? {listing}", "ambiguo"
             ), pending.move_id
@@ -696,6 +726,7 @@ class Session:
     def _read(
         self, part: Part, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
     ) -> str:
+        assert part.verb is not None and part.verb.relation is not None
         rel = part.verb.relation
         asked = part.payload.get("asked", "object")
         if asked == "object" and "subject" in plan:
@@ -738,6 +769,7 @@ class Session:
     ) -> list[str]:
         from pron.surface.nouns import _word_modifier
 
+        assert np.model is not None
         for it in leftovers:
             if it.kind == "literal" and it.meta.get("kind") == "date":
                 fld = next(
@@ -754,7 +786,7 @@ class Session:
                 _word_modifier(it, None, np, self.lex)
         if not np.predicates:
             return found
-        keep = None
+        keep: set[str] | None = None
         for where in np.predicates:
             hits: set[str] = set()
             for sc in (_scope(s, np.model) for s in self.lex.stores):
@@ -771,6 +803,7 @@ class Session:
     def _assert(
         self, part: Part, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
     ) -> str:
+        assert part.verb is not None and part.verb.relation is not None
         rel = part.verb.relation
         mode = self.lex.relation_types.get(rel, {}).get("mode", "read")
         if "assert" not in mode:
@@ -807,6 +840,7 @@ class Session:
         if not self.kernel.allowed(verb):
             raise StoreError(f"in this session I cannot {verb}")
         if verb == "create":
+            assert part.subject is not None and part.subject.model is not None
             model = part.subject.model
             w = self.kernel.create(model, part.payload["fields"])
             trace.append(f"docs create --model {model} {w.address} {w.after}")
@@ -822,15 +856,23 @@ class Session:
         # pre-validate the whole batch before the first write
         for e in targets:
             if verb == "change":
+                if part.field_name is None:
+                    raise StoreError("change requires a field")
                 self.kernel.coerce(model_of(e), part.field_name, part.value)
         for e in targets:
+            if verb in ("change", "add", "remove", "clean") and part.field_name is None:
+                raise StoreError(f"{verb} requires a field")
             if verb == "change":
+                assert part.field_name is not None
                 w = self.kernel.change(e, part.field_name, part.value)
             elif verb == "add":
+                assert part.field_name is not None
                 w = self.kernel.add(e, part.field_name, part.value)
             elif verb == "remove":
+                assert part.field_name is not None
                 w = self.kernel.remove(e, part.field_name, part.value)
             elif verb == "clean":
+                assert part.field_name is not None
                 w = self.kernel.clean(e, part.field_name)
             elif verb == "forget":
                 w = self.kernel.forget(e)
@@ -869,6 +911,7 @@ class Session:
     def _compose(
         self, part: Part, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
     ) -> str:
+        assert part.verb is not None
         created: str | None = None
         texts = []
         steps = part.verb.payload.get("steps", [])
@@ -912,6 +955,8 @@ class Session:
                     if step.get("target") == "$created"
                     else resolved["target"].export_ids()[0]
                 )
+                if src is None or tgt is None:
+                    raise StoreError("composition references $created before create")
                 doc_name, _ = self.verbs.assert_edge(
                     step["relation"],
                     src,
@@ -940,6 +985,8 @@ class Session:
                     if step.get("target") == "$created"
                     else resolved["target"].export_ids()[0]
                 )
+                if tgt is None:
+                    raise StoreError("composition references $created before create")
                 w = self.kernel.change(tgt, step["field"], step["value"])
                 record["writes"].append(w.record())
         if created:

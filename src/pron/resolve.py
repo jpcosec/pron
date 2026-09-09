@@ -110,6 +110,7 @@ def _linked(
     the RelationDocs in sldb). None when no relation and class take the complement."""
     from pron.verbs import Verbs
 
+    assert np.model is not None
     family = set(lex.world.family_of(np.model))
     verbs = Verbs(lex)
     for rel, rt in lex.relation_types.items():
@@ -121,7 +122,9 @@ def _linked(
         for direction, others in sides:
             for other in others:
                 if isinstance(comp, NounPhrase):
-                    if other not in lex.world.family_of(comp.model):
+                    if comp.model is None or other not in lex.world.family_of(
+                        comp.model
+                    ):
                         continue
                     inner = resolve(comp, lex)
                 else:
@@ -153,6 +156,7 @@ def _linked(
 def _proper_predicates(np: NounPhrase, lex: Lexicon) -> list[str]:
     """A proper name in name position: the model's key field when the name looks like a
     key value, else the document name, else a name/title field."""
+    assert np.model is not None
     out = []
     key = (lex.projection.get("key") or {}).get(np.model)
     for name in np.proper:
@@ -168,11 +172,12 @@ def _proper_predicates(np: NounPhrase, lex: Lexicon) -> list[str]:
 def _decide(
     np: NounPhrase, result: list[str], queries: list[str], lex: Lexicon
 ) -> Resolution:
+    assert np.model is not None
     if not result and np.proper:
         # a proper name that is not the doc name: try name/title fields, then offer neighbors
         for fld in ("name", "title"):
             if any(f["name"] == fld for f in lex.world.schema(np.model, lex.stores)):
-                alt = None
+                alt: list[str] | None = None
                 for name in np.proper:
                     found: list[str] = []
                     for scope in (_scope(s, np.model) for s in lex.stores):
@@ -212,6 +217,7 @@ def _decide(
 
 
 def _near_names(np: NounPhrase, lex: Lexicon) -> list[str]:
+    assert np.model is not None
     if not np.proper:
         return []
     from pron.ids import address_of, join_id

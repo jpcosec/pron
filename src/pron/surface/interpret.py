@@ -368,6 +368,7 @@ class Interpreter:
             for w in it.words:
                 if w.kind not in ("field", "alias-field"):
                     continue
+                assert w.field_name is not None
                 if (
                     model
                     and w.model
@@ -418,7 +419,8 @@ class Interpreter:
 
 
 def _split_on_and(items: list[Item]) -> list[list[Item]]:
-    chunks, cur = [], []
+    chunks: list[list[Item]] = []
+    cur: list[Item] = []
     for it in items:
         if it.kind == "conj":
             if cur:

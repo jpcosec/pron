@@ -75,7 +75,23 @@ Un runtime que ya tiene su propio parser (un LLM, por ejemplo) no necesita la su
 - `World.graph` (`Graph`): lee el grafo persistido sin networkx. Además de `edges_from`/`edges_to`: `nodes_of_type`, `targets`/`sources`, `roots(node_type, relation)`, `children`/`parent`/`descendants` (por defecto sobre `semantic_parent`) y `neighbors_via(node, relation, exclude_prefixes=...)` para hermanos por tag. Todo parametrizado por nombre de relación; pron no sabe cuáles declara un mundo.
 - `DocumentIndex(Matcher(embedder), cache_path)`: documentos rankeados por similitud. `index([(key, hash, text)])` embebe solo lo que cambió y persiste los vectores en un archivo derivado; `rank(query, k, threshold)` devuelve `[(key, score)]`. Sin embedder rankea con difflib y el archivo lo dice.
 
-## Depende de
+## Verificar cambios
+
+Con SLDB y KGDB instalados en el entorno:
+
+```bash
+python -m pip install -e '.[dev]'
+make check          # lint, formato, tipado, tests y documentación
+make test           # suite local, sin plugins externos de pytest
+make format         # aplica formato; check solo lo verifica
+```
+
+También existen `make lint`, `make format-check`, `make typecheck` y `make docs-check`.
+Ruff, mypy y pytest tienen versiones fijadas en el extra `dev`. El chequeo de mypy
+cubre las anotaciones existentes; todavía no exige tipado estricto en todo pron.
+Para regenerar documentación tras un cambio de contrato, usa `pron docs --world . --pythonpath .`.
+
+## Dependencias
 
 - [sldb](https://github.com/jpcosec/hum-ecosystem) con el surface de direcciones, el `hash_b` móvil y las cachés de runtime (commits `e7a2c0c`, `cf0073d`, `1c39c2b`).
 - [kgdb](https://github.com/jpcosec/hum-ecosystem) con relaciones tipadas (`kgdb init`, `kgdb ingest --store`, commit `1247139`).

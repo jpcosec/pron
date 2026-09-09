@@ -16,7 +16,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8"]
+dev = ["pytest==8.3.4", "ruff==0.14.0", "mypy==1.14.1", "types-PyYAML"]
 
 [project.scripts]
 pron = "pron.cli.main:main"
@@ -32,5 +32,21 @@ where = ["src"]
 pron = ["surface/*.yaml"]
 
 [tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
 pythonpath = ["src", "tests"]
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/pron"]
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+
+[[tool.mypy.overrides]]
+module = ["sldb.*", "kgdb.*", "networkx.*"]
+follow_imports = "skip"
+ignore_missing_imports = true
