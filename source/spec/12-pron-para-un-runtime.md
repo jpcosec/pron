@@ -41,8 +41,9 @@ Las dos devuelven lo mismo y la sesión se usa igual. Un runtime que quiere las 
 | `now` | fecha de la sesión para "Friday", "tomorrow" (11 §3) | el runtime; sin ella, el reloj |
 | `read_only` | la proyección sin acciones y toda relación en modo `read`: nada dicho en esta sesión escribe, permita lo que permita la proyección (01, 05) | el runtime |
 | `embedder` | el puerto de embeddings (11 §2); solo en proceso | el runtime |
-| `world` | a cuál de los mundos del daemon habla la sesión, por nombre o raíz; solo por socket, y por defecto el primero montado | el runtime |
-| `home` | el mundo propio del que habla; cuando difiere de `world`, solo abren las proyecciones expuestas de ese mundo (§6) | el runtime |
+| `home` (en proceso) | el store enlazado cuyo mundo es la sesión (01 §Un mundo en varios stores): sus proyecciones se leen de ahí, su `local` es ese store y ahí escribe; `None` es el store propio | el runtime |
+| `world` (por socket) | a cuál mundo del daemon habla la sesión: el nombre de un store enlazado, o su raíz; por defecto el store propio del daemon | el runtime |
+| `home` (por socket) | el mundo propio del que habla; cuando difiere de `world`, solo abren las proyecciones expuestas de ese mundo (§6) | el runtime |
 
 `session.turn(sentence) -> Response`. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Las sesiones no son seguras entre hilos; una sesión, un hilo.
 
@@ -132,7 +133,7 @@ pron no decide quién es el hablante ni qué proyección le toca. Eso lo elige e
 
 ## 7. El socket
 
-`pron serve --world <root> [--world name=<root2> ...]` mantiene uno o más mundos; el primero es el de defecto y su socket es el del daemon; cada otro mundo montado recibe un `<root>/.pron/serve.sock` que apunta al daemon, así un cliente que solo conoce su mundo lo encuentra. `mount` agrega un mundo a un daemon corriendo; `worlds` los lista. Cada petición lleva `world` y `home` (§2). El daemon escucha en `socket_path(root)`: `<root>/.pron/serve.sock`, o una ruta corta en el directorio temporal, nombrada por un hash de `root`, cuando la del mundo excede el límite de un socket Unix. Servidor y clientes calculan la misma ruta con la misma función.
+`pron serve --world <root> [--world name=<root2> ...]` abre **un** store, el del primer `--world`, y enlaza en él los stores de los demás mundos bajo su nombre (01 §Un mundo en varios stores); el socket es el de ese store. Cada mundo montado recibe un `<root>/.pron/serve.sock` que apunta al daemon, así un cliente que solo conoce su mundo lo encuentra. `mount` enlaza un mundo en un daemon corriendo; `worlds` los lista. Una sesión sobre el mundo `A` es una sesión con hogar `A`: lee las proyecciones de A, resuelve en A, escribe en A. Cada petición lleva `world` y `home` (§2). El daemon escucha en `socket_path(root)`: `<root>/.pron/serve.sock`, o una ruta corta en el directorio temporal, nombrada por un hash de `root`, cuando la del mundo excede el límite de un socket Unix. Servidor y clientes calculan la misma ruta con la misma función.
 
 Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `payload`, `lexicon`, `state`, `close` (descartar el diálogo de esa clave), `graph` y `world` (`method` de la lista de §5 más `args` por nombre), `refresh`, `ping`, `worlds`, `mount`, `stop`. Un cliente de otro mundo solo puede `say`, `lexicon`, `state`, `close`, `ping`, `worlds`. Las que hablan de una sesión llevan los cinco parámetros de §2. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
 

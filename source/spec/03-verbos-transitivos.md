@@ -34,6 +34,8 @@ Una condición es un predicado `--where` de sldb. Se declara en el `RelationType
 
 Después de una escritura, pron reevalúa las condiciones de las aristas que salen del documento escrito **y de las que entran a él**: bajar la capacidad de una mesa afecta la `assigned_to` que apunta a esa mesa, aunque la condición la lea la reserva. El costo está acotado por las aristas del documento; el resultado es un aviso, nunca una acción (04).
 
+Con varios stores en la proyección (01), las aristas se buscan en todos y un `RelationDoc` nuevo va al primero, el mismo donde la sesión crea documentos; sus extremos llevan el id con store (`A:Reserva:doc`). El grafo tipado de kgdb cubre el store propio; un documento de un store enlazado se lee por sus `RelationDoc`, y la traza lo dice.
+
 Una **transición** es el caso en que el verbo es "cambiar el campo de estado": la oración "confirm the reservation" es `fields update …/status "confirmed"`, permitida solo si existe una arista `transitions_to` desde el estado actual al nuevo y su condición se cumple sobre la reserva. Los estados son documentos de un modelo `State`, las transiciones son `RelationDoc` entre ellos, y el objeto que transiciona solo cambia un campo.
 
 ## Afirmar un verbo

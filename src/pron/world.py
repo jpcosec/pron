@@ -15,6 +15,7 @@ from sldb.cli.model_utils import registered_model, resolve_model_ref
 from sldb.store.ops import track_document
 
 from pron.graph import GRAPH_RELPATH, Graph
+from pron.ids import LOCAL, is_local
 from pron.store import Store, StoreError
 
 PRON_MODELS = (
@@ -37,17 +38,42 @@ class World:
 
     # -- declaration -----------------------------------------------------------
 
-    def model_names(self) -> list[str]:
-        return self.store.model_names()
+    def stores(self) -> list[str]:
+        """'local' and the names of the stores linked into this one (spec 01)."""
+        return self.store.names()
+
+    def model_names(self, store: str | None = LOCAL) -> list[str]:
+        return self.store.model_names(store)
+
+    def model_store(self, name: str, stores: list[str] | None = None) -> str | None:
+        """The first of `stores` (default: local, then linked) that registers the model, or None."""
+        for s in stores or self.stores():
+            if name in self.model_names(s):
+                return None if is_local(s) else s
+        return None
+
+    def schema(
+        self, name: str, stores: list[str] | None = None
+    ) -> list[dict[str, Any]]:
+        """The model's fields, from whichever store registers it."""
+        return self.store.schema(name, self.model_store(name, stores))
+
+    def model_type(self, name: str, stores: list[str] | None = None) -> type:
+        return self.store.model_type(name, self.model_store(name, stores))
 
     def model_hashes(self) -> dict[str, str]:
-        return {m.name: self.store.models_index(m.name).hash_b for m in self.store.store_index().models}
+        return {
+            m.name: self.store.models_index(m.name).hash_b
+            for m in self.store.store_index().models
+        }
 
     def base_models(self, name: str) -> list[str]:
-        try:
-            return list(self.store.models_index(name).base_models)
-        except StoreError:
-            return []
+        for s in self.stores():
+            try:
+                return list(self.store.models_index(name, s).base_models)
+            except StoreError:
+                continue
+        return []
 
     def family_of(self, name: str) -> list[str]:
         """The model and its bases, nearest first."""
@@ -69,24 +95,76 @@ class World:
             parts.append([m.name, mi.version, mi.hash_b, schema])
         parts.append(sorted((p.name, p.axis) for p in idx.predicates))
         parts.append(sorted((s.name, s.path) for s in idx.stores))
-        return hashlib.sha256(json.dumps(parts, sort_keys=True, default=str).encode()).hexdigest()
+        for s in (
+            idx.stores
+        ):  # a linked store's models move the lexicon of a projection over it
+            try:
+                parts.append(
+                    [
+                        s.name,
+                        sorted(
+                            (m.name, self.store.models_index(m.name, s.name).hash_b)
+                            for m in self.store.store_index(s.name).models
+                        ),
+                    ]
+                )
+            except Exception:  # noqa: BLE001 - a missing linked store counts as absent
+                parts.append([s.name, None])
+        return hashlib.sha256(
+            json.dumps(parts, sort_keys=True, default=str).encode()
+        ).hexdigest()
 
-    def relation_types(self) -> dict[str, dict[str, Any]]:
-        """name -> RelationTypeDoc payload, read by address from the store."""
-        if "RelationTypeDoc" not in self.model_names():
-            return {}
-        return {d.payload["name"]: dict(d.payload, doc=d.name) for d in self.store.docs_of("RelationTypeDoc")}
+    def relation_types(
+        self, stores: list[str] | None = None
+    ) -> dict[str, dict[str, Any]]:
+        """name -> RelationTypeDoc payload, read from the given stores (default: every store);
+        the first store that declares a name wins."""
+        out: dict[str, dict[str, Any]] = {}
+        for s in stores or self.stores():
+            if "RelationTypeDoc" not in self.model_names(s):
+                continue
+            for d in self.store.docs_of("RelationTypeDoc", s):
+                out.setdefault(
+                    d.payload["name"],
+                    dict(d.payload, doc=d.name, store=None if is_local(s) else s),
+                )
+        return out
 
-    def projection(self, name: str = "all") -> dict[str, Any]:
-        """A ProjectionDoc payload; 'all' is synthesized when no document declares it."""
-        d = self.store.doc("ProjectionDoc", f"projection-{name}") if "ProjectionDoc" in self.model_names() else None
+    def projection(self, name: str = "all", home: str | None = None) -> dict[str, Any]:
+        """A ProjectionDoc payload; 'all' is synthesized when no document declares it. With
+        `home`, the projection is read from that linked store and its 'local' means that
+        store: a node's own projections work the same alone and through a daemon (12 §6)."""
+        d = (
+            self.store.doc("ProjectionDoc", f"projection-{name}", home)
+            if "ProjectionDoc" in self.model_names(home)
+            else None
+        )
         if d is not None:
-            return dict(d.payload)
+            return _rebind(dict(d.payload), home)
         if name != "all":
-            raise StoreError(f"no projection named '{name}'")
+            raise StoreError(
+                f"no projection named '{name}'"
+                + (f" in store '{home}'" if not is_local(home) else "")
+            )
         from pron.models.projection import ACTIONS
-        return {"name": "all", "stores": ["local"], "models": [], "relations": [], "actions": list(ACTIONS),
-                "aliases": ["all"], "naming": {}, "display": {}, "key": {}, "matching": {"neighbors": 3, "threshold": 0.55}, "description": ""}
+
+        return _rebind(
+            {
+                "name": "all",
+                "stores": ["local"],
+                "models": [],
+                "relations": [],
+                "actions": list(ACTIONS),
+                "aliases": ["all"],
+                "naming": {},
+                "display": {},
+                "key": {},
+                "matching": {"neighbors": 3, "threshold": 0.55},
+                "exposed": False,
+                "description": "",
+            },
+            home,
+        )
 
     # -- derived graph -----------------------------------------------------------
 
@@ -101,7 +179,9 @@ class World:
         d.mkdir(exist_ok=True)
         return d
 
-    def refresh_if_stale(self, exclude_tags: tuple[str, ...] = ("type.pron.move",)) -> bool:
+    def refresh_if_stale(
+        self, exclude_tags: tuple[str, ...] = ("type.pron.move",)
+    ) -> bool:
         """Refresh only when the graph is missing or was built from other model hashes.
         Returns whether it refreshed."""
         if self.graph_is_fresh():
@@ -109,16 +189,40 @@ class World:
         self.refresh(exclude_tags)
         return True
 
-    def refresh(self, exclude_tags: tuple[str, ...] = ("type.pron.move",)) -> dict[str, Any]:
-        """stores update, then kgdb's typed ingest into .pron/graph.nx.json. Library calls only.
-        kgdb and networkx are imported here, not at module load: a session that only reads
-        never pays for them."""
+    def refresh(
+        self,
+        exclude_tags: tuple[str, ...] = ("type.pron.move",),
+        stores: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """stores update on the local store and on every store in `stores` (default: the
+        linked ones too), then kgdb's typed ingest into .pron/graph.nx.json. Library calls
+        only. kgdb and networkx are imported here, not at module load: a session that only
+        reads never pays for them."""
         import networkx as nx
         from kgdb.graph.utils import add_knowledge_node, save_graph
         from kgdb.ingest.typed import build_typed_snapshot
 
-        update_store(SimpleNamespace(store=str(self.store.sp), pythonpath=self.store.pythonpath, wait=False, verbose=False))
-        snapshot, report = build_typed_snapshot(self.store.sp, self.store.pythonpath, exclude_tags)
+        for s in stores if stores is not None else self.stores():
+            update_store(
+                SimpleNamespace(
+                    store=str(self.store.sp_of(s)),
+                    pythonpath=self.store.pythonpath,
+                    wait=False,
+                    verbose=False,
+                )
+            )
+        if stores is not None and not any(is_local(s) for s in stores):
+            update_store(
+                SimpleNamespace(
+                    store=str(self.store.sp),
+                    pythonpath=self.store.pythonpath,
+                    wait=False,
+                    verbose=False,
+                )
+            )
+        snapshot, report = build_typed_snapshot(
+            self.store.sp, self.store.pythonpath, exclude_tags
+        )
         g = nx.MultiDiGraph()
         for node in snapshot.nodes:
             add_knowledge_node(g, node)
@@ -129,11 +233,28 @@ class World:
         return report
 
 
-TEMPLATE_DIRS = {"anchors": ("AnchorDoc", "anchor-"), "projections": ("ProjectionDoc", "projection-"),
-                 "relations/types": ("RelationTypeDoc", "rt-"), "relations": ("RelationDoc", "")}
+def _rebind(projection: dict[str, Any], home: str | None) -> dict[str, Any]:
+    """A projection read from a linked store: its 'local' is that store."""
+    if is_local(home):
+        return projection
+    projection["stores"] = [
+        home if is_local(s) else s for s in (projection.get("stores") or ["local"])
+    ]
+    projection["home"] = home
+    return projection
 
 
-def apply_template(root: str | Path, template: str | Path, pythonpath: str | None = None) -> list[str]:
+TEMPLATE_DIRS = {
+    "anchors": ("AnchorDoc", "anchor-"),
+    "projections": ("ProjectionDoc", "projection-"),
+    "relations/types": ("RelationTypeDoc", "rt-"),
+    "relations": ("RelationDoc", ""),
+}
+
+
+def apply_template(
+    root: str | Path, template: str | Path, pythonpath: str | None = None
+) -> list[str]:
     """Copy a world template into a world and track its documents (spec 01 §Plantilla):
     `anchors/*.md` as AnchorDoc, `projections/*.md` as ProjectionDoc, `relations/types/*.md`
     as RelationTypeDoc, `relations/*.md` as RelationDoc, each under <root>/knowledge/.
@@ -157,15 +278,37 @@ def apply_template(root: str | Path, template: str | Path, pythonpath: str | Non
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(src, dst)
             model_type, entry, idx = registered_model(store.sp, model, store.pythonpath)
-            track_document(store.sp, store.project_root, idx, model_type, entry, dst, name, resolve_model_ref, store.pythonpath)
+            track_document(
+                store.sp,
+                store.project_root,
+                idx,
+                model_type,
+                entry,
+                dst,
+                name,
+                resolve_model_ref,
+                store.pythonpath,
+            )
             store.invalidate()
             added.append(f"{model}:{name}")
     if added:
-        update_store(SimpleNamespace(store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False))
+        update_store(
+            SimpleNamespace(
+                store=str(store.sp),
+                pythonpath=store.pythonpath,
+                wait=False,
+                verbose=False,
+            )
+        )
     return added
 
 
-def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: bool = False, template: str | Path | None = None) -> dict[str, Any]:
+def init_world(
+    root: str | Path,
+    pythonpath: str | None = None,
+    with_knowledge: bool = False,
+    template: str | Path | None = None,
+) -> dict[str, Any]:
     """Make a store a pron world: kgdb's typed relations plus pron's own models. With
     with_knowledge, also what pron's own knowledge base needs: SpecDoc and the relation
     type `implements` (a module or command implements a spec chapter). With a template,
@@ -177,7 +320,11 @@ def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: 
     kgdb_report = kgdb_init(store.sp, store.pythonpath)
     added = [ref for ref in PRON_MODELS if store.register_model(ref)]
     if with_knowledge:
-        for ref in ("pron.models:SpecDoc", "sldb.models.knowledge_surface:CliCommandDoc", "sldb.models.knowledge_surface:SurfaceDoc"):
+        for ref in (
+            "pron.models:SpecDoc",
+            "sldb.models.knowledge_surface:CliCommandDoc",
+            "sldb.models.knowledge_surface:SurfaceDoc",
+        ):
             if store.register_model(ref):
                 added.append(ref)
     (root / LEDGER_DIR).mkdir(exist_ok=True)
@@ -187,14 +334,29 @@ def init_world(root: str | Path, pythonpath: str | None = None, with_knowledge: 
         gitignore.write_text("*\n", encoding="utf-8")
     types_added = _knowledge_relation_types(store) if with_knowledge else []
     # a model registered without documents leaves its index hash behind until the next update
-    update_store(SimpleNamespace(store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False))
+    update_store(
+        SimpleNamespace(
+            store=str(store.sp), pythonpath=store.pythonpath, wait=False, verbose=False
+        )
+    )
     from_template = apply_template(root, template, pythonpath) if template else []
-    return {"kgdb": kgdb_report.summary(), "pron_models_added": added, "relation_types_added": types_added, "template_added": from_template}
+    return {
+        "kgdb": kgdb_report.summary(),
+        "pron_models_added": added,
+        "relation_types_added": types_added,
+        "template_added": from_template,
+    }
 
 
-KNOWLEDGE_RELATION_TYPES = [
-    {"name": "implements", "axis": "HOW", "cardinality": "many_to_many", "source_types": ["SurfaceDoc", "CliCommandDoc"], "target_types": ["SpecDoc"],
-     "description": "This module or command implements that chapter of the specification: the direct branch from the code to what it is supposed to do, derived from the spec references in the module's docstring."},
+KNOWLEDGE_RELATION_TYPES: list[dict[str, Any]] = [
+    {
+        "name": "implements",
+        "axis": "HOW",
+        "cardinality": "many_to_many",
+        "source_types": ["SurfaceDoc", "CliCommandDoc"],
+        "target_types": ["SpecDoc"],
+        "description": "This module or command implements that chapter of the specification: the direct branch from the code to what it is supposed to do, derived from the spec references in the module's docstring.",
+    },
 ]
 
 
@@ -206,6 +368,11 @@ def _knowledge_relation_types(store: Store) -> list[str]:
         if store.doc("RelationTypeDoc", name) is not None:
             continue
         payload = {"title": rt["name"], "direction": "directed", "condition": "", **rt}
-        store.create("RelationTypeDoc", name, payload, store.root / "knowledge" / "relations" / "types" / f"{rt['name']}.md")
+        store.create(
+            "RelationTypeDoc",
+            name,
+            payload,
+            store.root / "knowledge" / "relations" / "types" / f"{rt['name']}.md",
+        )
         added.append(rt["name"])
     return added

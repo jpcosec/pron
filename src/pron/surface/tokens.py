@@ -24,11 +24,13 @@ SLOTS = {"N", "X", "Z", "DAY", "TIME"}
 
 @dataclass
 class Item:
-    kind: str                       # det | referent | wh | conj | punct | number | literal | word | unknown
-    text: str                       # surface text as written
-    words: list[Word] = field(default_factory=list)   # candidates when kind == word
-    slots: dict[str, Any] = field(default_factory=dict)  # captured N / X / Z / DAY / TIME
-    number: str | None = None       # singular | plural for det/referent/word
+    kind: str  # det | referent | wh | conj | punct | number | literal | word | unknown
+    text: str  # surface text as written
+    words: list[Word] = field(default_factory=list)  # candidates when kind == word
+    slots: dict[str, Any] = field(
+        default_factory=dict
+    )  # captured N / X / Z / DAY / TIME
+    number: str | None = None  # singular | plural for det/referent/word
     meta: dict[str, Any] = field(default_factory=dict)
 
     def refs(self) -> set[str]:
@@ -50,10 +52,16 @@ class Classifier:
         self.function: dict[str, tuple[str, dict]] = {}
         for num, forms in fw["determiners"].items():
             for f in forms:
-                self.function[normalize(f)] = ("det", {"number": num if f != "the" else None})
+                self.function[normalize(f)] = (
+                    "det",
+                    {"number": num if f != "the" else None},
+                )
         for num, forms in fw["referents"].items():
             for f in forms:
-                self.function[normalize(f)] = ("referent", {"number": "plural" if num == "plural" else "singular", "who": num})
+                self.function[normalize(f)] = (
+                    "referent",
+                    {"number": "plural" if num == "plural" else "singular", "who": num},
+                )
         for kind, forms in fw["interrogatives"].items():
             for f in forms:
                 self.function.setdefault(normalize(f), ("wh", {"question": kind}))
@@ -95,7 +103,13 @@ class Classifier:
             return Item("literal", t[1:-1], meta={"quoted": True}), 1
         if t in ("?", ",", ".", ":", ";", "!"):
             return Item("punct", t), 1
-        if t.endswith(":") and normalize(t[:-1]) in ("to", "saying", "note", "named", "called"):
+        if t.endswith(":") and normalize(t[:-1]) in (
+            "to",
+            "saying",
+            "note",
+            "named",
+            "called",
+        ):
             lit, used = self._literal_after(toks, i + 1)
             return Item("literal", lit, meta={"marker": t}), 1 + used
         best = self._best_lexicon_match(toks, i)
@@ -113,23 +127,32 @@ class Classifier:
 
     def _function_match(self, toks: list[str], i: int) -> tuple[Item, int] | None:
         for n in range(min(4, len(toks) - i), 0, -1):
-            span = normalize(" ".join(toks[i:i + n]))
+            span = normalize(" ".join(toks[i : i + n]))
             if span in self.function:
                 kind, meta = self.function[span]
-                return Item(kind, " ".join(toks[i:i + n]), number=meta.get("number"), meta=meta), n
+                return Item(
+                    kind,
+                    " ".join(toks[i : i + n]),
+                    number=meta.get("number"),
+                    meta=meta,
+                ), n
         return None
 
     def _best_lexicon_match(self, toks: list[str], i: int) -> tuple[Item, int] | None:
         for n in range(min(MAX_FORM_WORDS, len(toks) - i), 0, -1):
             for parts, words in self.lexicon_forms.get(n, []):
-                slots = self._match_form(parts, toks[i:i + n], words)
+                slots = self._match_form(parts, toks[i : i + n], words)
                 if slots is not None:
-                    text = " ".join(toks[i:i + n])
+                    text = " ".join(toks[i : i + n])
                     number = self._number_of(words, text)
-                    return Item("word", text, words=list(words), slots=slots, number=number), n
+                    return Item(
+                        "word", text, words=list(words), slots=slots, number=number
+                    ), n
         return None
 
-    def _match_form(self, parts: list[str], toks: list[str], words: list[Word]) -> dict[str, Any] | None:
+    def _match_form(
+        self, parts: list[str], toks: list[str], words: list[Word]
+    ) -> dict[str, Any] | None:
         slots: dict[str, Any] = {}
         for p, t in zip(parts, toks):
             nt = normalize(t)
@@ -158,7 +181,11 @@ class Classifier:
     def _literal_after(self, toks: list[str], j: int) -> tuple[str, int]:
         out = []
         k = j
-        while k < len(toks) and toks[k] not in ("?", ".", ";", "!") and normalize(toks[k]) != "and":
+        while (
+            k < len(toks)
+            and toks[k] not in ("?", ".", ";", "!")
+            and normalize(toks[k]) != "and"
+        ):
             out.append(toks[k].strip('"'))
             k += 1
         return " ".join(out), k - j
@@ -171,7 +198,11 @@ class Classifier:
                 symbol = normalize(w.payload.get("symbol", w.form))
                 if nt == symbol or nt == normalize(w.form) and w.kind == "model":
                     return "singular"
-                return "plural" if nt.endswith("s") and not symbol.endswith("s") else "singular"
+                return (
+                    "plural"
+                    if nt.endswith("s") and not symbol.endswith("s")
+                    else "singular"
+                )
         return None
 
     def _is_number(self, t: str) -> bool:

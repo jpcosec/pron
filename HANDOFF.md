@@ -30,6 +30,8 @@ Doctrina que no se negocia: pron nunca filtra payloads en Python, nunca ensambla
 6. **pron sin networkx en lectura** (`0bc5f64`), ids de movimiento únicos contra el store (`a6cf9bf`).
 7. **`pron serve`** (`18defed`, spec 11 §8): un proceso mantiene el mundo abierto tras `<mundo>/.pron/serve.sock`; `say`, `repl` y kinesis lo usan si contesta; `--local` lo evita; `pron.client` es solo biblioteca estándar.
 
+8. **Mundos y stores** (después del handoff inicial): un `ProjectionDoc` puede estar `exposed`, y esa es la interfaz de un mundo hacia otros; plantillas de mundo (`pron init --template`); cada turno registra lo que leyó con su `hash_c` (`record["reads"]`); `pron serve` abre **un** store y enlaza en él los stores de los demás mundos (`--world otro=../otro`, `--mount`), y cada mundo es una proyección sobre su store: una sesión tiene un hogar (`Session(home="A")`), resuelve con un alcance por store (`A:st.{Reserva+}`, direcciones calificadas en sldb desde `19af4f0`), escribe en el primer store de su proyección y los documentos que escribe nombran los ids como ese store los lee (sin prefijo). Un cliente de otro mundo solo abre proyecciones expuestas y solo dice oraciones. Spec 01 §Un mundo en varios stores, §Interfaz entre mundos, §Plantilla; 02, 03, 07, 12. Tests `test_09_worlds.py`, `test_10_federation.py`.
+
 Tiempos en el mundo del restaurante, máquina quieta: abrir sesión 0,06 s; lectura 0,11 s; escritura 0,4–0,6 s; `pron say` en frío 0,45 s, y 0,12 s con `pron serve` corriendo. Al empezar el día eran 0,24 s, 0,5–0,8 s, 3–4,5 s y 1,0 s.
 
 ## Cómo correr
@@ -55,7 +57,7 @@ Una advertencia: `pron say` sobre el repo de pron deja `MoveDoc`s en `ledger/` y
 3. **Escrituras**: lo que queda es real (releer textos para mover la cadena, rearmar el grafo entero en kgdb, guardar el índice de secciones del ledger que crece por turno). Si hace falta bajar de 0,4 s, el candidato es un ingest incremental en kgdb.
 4. **Higiene**: lock de revisiones de sldb, kgdb y pron (hoy editables desde carpetas vecinas), CI que corra las suites, y pushear.
 
-Kinesis lo lleva otro agente. Lo que pron le ofrece y no debe cambiar sin avisarle: `Session(read_only=...)`, `Response` en `pron.response`, `pron.client` (`socket_path`, `alive`, `request`, `RemoteSession`), `World.store.payload`, y el socket en `<mundo>/.pron/serve.sock`. Sus cambios de hoy en kinesis (`9f6a423`, `f167bea`, `71f60f3`, y la documentación en `docs/configuracion-base-agente/10-conocimiento-via-pron.md`) quedaron comiteados ahí; lo que siga en ese repo es de ese agente.
+Kinesis lo lleva otro agente. Lo que pron le ofrece está en el spec 12 y no cambia sin ese capítulo: `Session(read_only=..., home=...)`, `Response` en `pron.response`, `pron.client` (`socket_path`, `alive`, `request`, `RemoteSession` con `world` y `home`, `RemoteGraph`, `RemoteWorld`), `World.store.payload`, y el socket en `<mundo>/.pron/serve.sock`. Aviso para ese agente: los ids de exportación ahora pueden llevar store (`A:Modelo:doc`) cuando la sesión habla a través de un daemon; `pron.ids` los parte. Las firmas viejas siguen valiendo con sus defaults. Sus cambios de hoy en kinesis (`9f6a423`, `f167bea`, `71f60f3`, y la documentación en `docs/configuracion-base-agente/10-conocimiento-via-pron.md`) quedaron comiteados ahí; lo que siga en ese repo es de ese agente.
 
 ## Decisiones abiertas
 

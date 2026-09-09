@@ -12,15 +12,17 @@ from pron.lexicon import FUNCTION_WORDS
 
 @dataclass
 class Pending:
-    kind: str                       # choice | data
-    move_id: str                    # the move that opened it
+    kind: str  # choice | data
+    move_id: str  # the move that opened it
     sentence: str
-    candidates: list[str] = field(default_factory=list)   # addresses (choice)
-    labels: list[str] = field(default_factory=list)       # natural names, same order
-    slot: str = ""                  # what the answer fills: "subject" / "object" / a field name
-    field_name: str | None = None   # data: the missing field
+    candidates: list[str] = field(default_factory=list)  # addresses (choice)
+    labels: list[str] = field(default_factory=list)  # natural names, same order
+    slot: str = ""  # what the answer fills: "subject" / "object" / a field name
+    field_name: str | None = None  # data: the missing field
     model: str | None = None
-    state: dict[str, Any] = field(default_factory=dict)   # whatever the session needs to resume
+    state: dict[str, Any] = field(
+        default_factory=dict
+    )  # whatever the session needs to resume
 
 
 @dataclass
@@ -28,12 +30,16 @@ class Dialogue:
     speaker: str = ""
     speaker_address: str | None = None
     pending: Pending | None = None
-    singular: dict[str, str] = field(default_factory=dict)   # model -> last singular address
+    singular: dict[str, str] = field(
+        default_factory=dict
+    )  # model -> last singular address
     last_singular: str | None = None
     last_set: list[str] = field(default_factory=list)
     last_set_model: str | None = None
-    last_written: str | None = None                           # last address written, for "why?"
-    last_missing: dict[str, Any] | None = None                # the hole a missing turn left, for a correction (spec 06)
+    last_written: str | None = None  # last address written, for "why?"
+    last_missing: dict[str, Any] | None = (
+        None  # the hole a missing turn left, for a correction (spec 06)
+    )
 
     @property
     def state(self) -> str:
@@ -46,15 +52,19 @@ class Dialogue:
             self.last_singular = addresses[0]
             if model:
                 self.singular[model] = addresses[0]
-            self.last_set = list(addresses); self.last_set_model = model
+            self.last_set = list(addresses)
+            self.last_set_model = model
         elif addresses:
-            self.last_set = list(addresses); self.last_set_model = model
+            self.last_set = list(addresses)
+            self.last_set_model = model
 
-    def referent(self, number: str, model: str | None, family: list[str] | None = None) -> list[str] | None:
+    def referent(
+        self, number: str, model: str | None, family: list[str] | None = None
+    ) -> list[str] | None:
         """The antecedent for a pronoun: singular by class (a set of one counts), plural = the last set."""
         if number == "plural":
             return list(self.last_set) if self.last_set else None
-        for m in (family or ([model] if model else [])):
+        for m in family or ([model] if model else []):
             if m in self.singular:
                 return [self.singular[m]]
         if model is None and self.last_singular:
@@ -105,7 +115,12 @@ class Dialogue:
                 return [i] if 0 <= i < n else []
         if t.startswith("the ") and t.endswith(" one"):
             t = t[4:-4]
-        ranked = matcher.rank(t, [(str(i), label) for i, label in enumerate(self.pending.labels)], k=len(self.pending.labels), threshold=0.0)
+        ranked = matcher.rank(
+            t,
+            [(str(i), label) for i, label in enumerate(self.pending.labels)],
+            k=len(self.pending.labels),
+            threshold=0.0,
+        )
         if not ranked:
             return []
         best = ranked[0][1]

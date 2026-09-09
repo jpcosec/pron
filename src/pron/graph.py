@@ -39,7 +39,7 @@ def tag_id(tag: str) -> str:
 def kind(node_id: str) -> str | None:
     """The `<kind>` of an `sldb://<kind>/...` id (document, model, semantic_tag, section, field, ...)."""
     if node_id.startswith("sldb://"):
-        rest = node_id[len("sldb://"):]
+        rest = node_id[len("sldb://") :]
         return rest.split("/", 1)[0] if "/" in rest else None
     return None
 
@@ -47,7 +47,7 @@ def kind(node_id: str) -> str | None:
 def bare(node_id: str) -> str:
     """The id without its `sldb://<kind>/` prefix; an id without one passes through."""
     if node_id.startswith("sldb://"):
-        rest = node_id[len("sldb://"):]
+        rest = node_id[len("sldb://") :]
         return rest.split("/", 1)[1] if "/" in rest else rest
     return node_id
 
@@ -71,7 +71,12 @@ class Graph:
             self._nodes = {n["id"]: n for n in data.get("nodes", [])}
             self._out, self._in = {}, {}
             for link in data.get("links", data.get("edges", [])):
-                e = {"source": link["source"], "target": link["target"], "relation": link.get("relation", link.get("key")), "metadata": link.get("metadata", {}) or {}}
+                e = {
+                    "source": link["source"],
+                    "target": link["target"],
+                    "relation": link.get("relation", link.get("key")),
+                    "metadata": link.get("metadata", {}) or {},
+                }
                 self._out.setdefault(e["source"], []).append(e)
                 self._in.setdefault(e["target"], []).append(e)
         return self._nodes
@@ -100,14 +105,26 @@ class Graph:
     def node(self, node_id: str) -> dict[str, Any]:
         return self.load().get(node_id, {}).get("schema", {}) or {}
 
-    def edges_from(self, node_id: str, relation: str | None = None) -> list[dict[str, Any]]:
+    def edges_from(
+        self, node_id: str, relation: str | None = None
+    ) -> list[dict[str, Any]]:
         """Outgoing edges: [{source, target, relation, metadata}]."""
         self.load()
-        return [dict(e) for e in self._out.get(node_id, []) if relation is None or e["relation"] == relation]
+        return [
+            dict(e)
+            for e in self._out.get(node_id, [])
+            if relation is None or e["relation"] == relation
+        ]
 
-    def edges_to(self, node_id: str, relation: str | None = None) -> list[dict[str, Any]]:
+    def edges_to(
+        self, node_id: str, relation: str | None = None
+    ) -> list[dict[str, Any]]:
         self.load()
-        return [dict(e) for e in self._in.get(node_id, []) if relation is None or e["relation"] == relation]
+        return [
+            dict(e)
+            for e in self._in.get(node_id, [])
+            if relation is None or e["relation"] == relation
+        ]
 
     def exists(self, source: str, target: str, relation: str) -> dict[str, Any] | None:
         for e in self.edges_from(source, relation):
@@ -137,7 +154,9 @@ class Graph:
     def roots(self, node_type: str, relation: str) -> list[str]:
         """Nodes of that type with no outgoing edge of that relation: the tops of a
         `semantic_parent` DAG, the entry states of a `transitions_to` machine."""
-        return [n for n in self.nodes_of_type(node_type) if not self.edges_from(n, relation)]
+        return [
+            n for n in self.nodes_of_type(node_type) if not self.edges_from(n, relation)
+        ]
 
     def children(self, node_id: str, relation: str = "semantic_parent") -> list[str]:
         """The nodes pointing at node_id through `relation` (a child tag points at its parent)."""
@@ -147,7 +166,9 @@ class Graph:
         found = self.targets(node_id, relation)
         return found[0] if found else None
 
-    def descendants(self, node_id: str, relation: str = "semantic_parent", depth: int | None = None) -> list[str]:
+    def descendants(
+        self, node_id: str, relation: str = "semantic_parent", depth: int | None = None
+    ) -> list[str]:
         """Everything reachable by following `relation` backwards from node_id, breadth first,
         at most `depth` levels (None: all), without node_id itself."""
         seen: set[str] = set()
@@ -164,7 +185,14 @@ class Graph:
             level += 1
         return sorted(seen)
 
-    def neighbors_via(self, node_id: str, out_relation: str, in_relation: str | None = None, exclude_prefixes: tuple[str, ...] = (), same_kind: bool = True) -> list[str]:
+    def neighbors_via(
+        self,
+        node_id: str,
+        out_relation: str,
+        in_relation: str | None = None,
+        exclude_prefixes: tuple[str, ...] = (),
+        same_kind: bool = True,
+    ) -> list[str]:
         """The nodes that share at least one `out_relation` target with node_id: documents
         tagged like it, reservations at the same table. `in_relation` (default: the same one)
         is how the shared target is read back; a target whose bare id starts with one of

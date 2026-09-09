@@ -43,8 +43,10 @@ def server(world: World):
 def test_a_client_says_through_the_server_and_the_session_lives_there(server: Server):
     s = RemoteSession(server.path, projection="all", speaker="jp", now=NOW)
     r = s.turn("the large tables")
-    assert r.outcome == "unico" and "table 12" in r.text and r.move_id.startswith("move-")
-    r = s.turn("the large table")                        # ambiguous: the server keeps the pending question
+    assert (
+        r.outcome == "unico" and "table 12" in r.text and r.move_id.startswith("move-")
+    )
+    r = s.turn("the large table")  # ambiguous: the server keeps the pending question
     assert r.outcome == "ambiguo"
     r = s.turn("1")
     assert r.outcome == "unico", r.text
@@ -54,19 +56,64 @@ def test_a_client_says_through_the_server_and_the_session_lives_there(server: Se
 
 def test_the_cli_uses_the_server_when_it_listens(server: Server, capsys):
     root = str(server.world.root)
-    assert main(["say", "the large tables on the terrace", "--world", root, "--speaker", "cli"]) == 0
+    assert (
+        main(
+            [
+                "say",
+                "the large tables on the terrace",
+                "--world",
+                root,
+                "--speaker",
+                "cli",
+            ]
+        )
+        == 0
+    )
     assert "table 12" in capsys.readouterr().out
-    assert request(server.path, {"op": "ping"})["sessions"] == 2   # a new speaker, a new session, in the server
-    assert main(["say", "the large tables", "--world", root, "--pythonpath", server.world.store.pythonpath, "--speaker", "cli", "--local"]) == 0
-    assert request(server.path, {"op": "ping"})["sessions"] == 2   # --local opened the world here
+    assert (
+        request(server.path, {"op": "ping"})["sessions"] == 2
+    )  # a new speaker, a new session, in the server
+    assert (
+        main(
+            [
+                "say",
+                "the large tables",
+                "--world",
+                root,
+                "--pythonpath",
+                server.world.store.pythonpath,
+                "--speaker",
+                "cli",
+                "--local",
+            ]
+        )
+        == 0
+    )
+    assert (
+        request(server.path, {"op": "ping"})["sessions"] == 2
+    )  # --local opened the world here
 
 
 def test_the_repl_runs_over_the_server(server: Server):
     out = io.StringIO()
     s = RemoteSession(server.path, projection="all", speaker="repl", now=NOW)
-    assert repl(s, "restaurant", "all", stdin=io.StringIO("the large tables\n:state\n:lexicon Table\n:quit\n"), stdout=out) == 0
+    assert (
+        repl(
+            s,
+            "restaurant",
+            "all",
+            stdin=io.StringIO("the large tables\n:state\n:lexicon Table\n:quit\n"),
+            stdout=out,
+        )
+        == 0
+    )
     text = out.getvalue()
-    assert "via server" in text and "table 12" in text and "state: libre" in text and "capacity" in text
+    assert (
+        "via server" in text
+        and "table 12" in text
+        and "state: libre" in text
+        and "capacity" in text
+    )
 
 
 def test_a_write_through_the_server_is_a_real_move(server: Server):
@@ -89,24 +136,41 @@ def test_socket_path_is_under_the_world_unless_too_long(world: World, tmp_path):
     short = tmp_path / "w"
     assert socket_path(short) == short.resolve() / ".pron" / "serve.sock"
     deep = tmp_path / ("x" * 120) / "world"
-    assert len(str(socket_path(deep))) < 60 and socket_path(deep).name.startswith("pron-")
+    assert len(str(socket_path(deep))) < 60 and socket_path(deep).name.startswith(
+        "pron-"
+    )
 
 
 def test_the_session_key_is_the_five_parameters_and_close_starts_over(server: Server):
     a = RemoteSession(server.path, projection="all", speaker="pair", now=NOW)
-    b = RemoteSession(server.path, projection="all", speaker="pair", now=NOW)          # same five: same dialogue
-    c = RemoteSession(server.path, projection="all", speaker="pair", now="2026-09-10")  # another now: another session
+    b = RemoteSession(
+        server.path, projection="all", speaker="pair", now=NOW
+    )  # same five: same dialogue
+    c = RemoteSession(
+        server.path, projection="all", speaker="pair", now="2026-09-10"
+    )  # another now: another session
     before = request(server.path, {"op": "ping"})["sessions"]
     assert a.turn("the large table").outcome == "ambiguo"
-    assert b.turn("1").outcome == "unico"                        # b answered a's question
-    assert c.turn("1").outcome != "unico" or "table" not in c.turn("the clients").text   # c has no pending question
+    assert b.turn("1").outcome == "unico"  # b answered a's question
+    assert (
+        c.turn("1").outcome != "unico" or "table" not in c.turn("the clients").text
+    )  # c has no pending question
     assert request(server.path, {"op": "ping"})["sessions"] == before + 2
-    assert a.turn("the large table").outcome == "ambiguo" and a.close() and a.turn("the clients").outcome == "unico"
+    assert (
+        a.turn("the large table").outcome == "ambiguo"
+        and a.close()
+        and a.turn("the clients").outcome == "unico"
+    )
 
 
 def test_payload_respects_the_session_projection(server: Server):
     proj = dict(server.world.projection("all"), name="tables-only", models=["Table"])
-    server.world.store.create("ProjectionDoc", "projection-tables-only", proj, server.world.root / "knowledge" / "projections" / "tables-only.md")
+    server.world.store.create(
+        "ProjectionDoc",
+        "projection-tables-only",
+        proj,
+        server.world.root / "knowledge" / "projections" / "tables-only.md",
+    )
     s = RemoteSession(server.path, projection="tables-only", speaker="narrow", now=NOW)
     assert s.payload("Table", "table-12")["number"] == 12
     with pytest.raises(RuntimeError, match="not in projection"):
@@ -115,11 +179,14 @@ def test_payload_respects_the_session_projection(server: Server):
 
 def test_graph_and_world_navigation_over_the_socket(server: Server):
     from pron.graph import doc_id
+
     s = RemoteSession(server.path, projection="all", speaker="nav", now=NOW)
     assert "Reservation" in s.world.model_names()
     assert "booked_by" in s.world.relation_types()
     res = doc_id("Reservation:reservation-2026-09-11-luis-soto")
-    assert s.graph.targets(node_id=res, relation="booked_by") == [doc_id("Client:client-luis-soto")]
+    assert s.graph.targets(node_id=res, relation="booked_by") == [
+        doc_id("Client:client-luis-soto")
+    ]
     edges = s.graph.edges_from(node_id=res, relation="assigned_to")
     assert edges and set(edges[0]) == {"source", "target", "relation", "metadata"}
     assert res in s.graph.nodes_of_type(node_type="Reservation")

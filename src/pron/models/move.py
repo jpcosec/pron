@@ -45,15 +45,30 @@ refers_to: ⸢rev•refers_to⸥
 ```
 """.strip()
 
-    id: str = Field(description="Move id, move-<timestamp>-<n>; also the document name.")
+    id: str = Field(
+        description="Move id, move-<timestamp>-<n>; also the document name."
+    )
     at: str = Field(description="When the move happened, ISO 8601 with timezone.")
-    speaker: str = Field(default="", description="Who spoke: an opaque id and, when the speaker is an object of the world, its address.")
-    outcome: str = Field(description="unico | ambiguo | missing | externo | undo | error.")
-    state_before: str = Field(description="Dialogue state before the move: libre or pendiente.")
+    speaker: str = Field(
+        default="",
+        description="Who spoke: an opaque id and, when the speaker is an object of the world, its address.",
+    )
+    outcome: str = Field(
+        description="unico | ambiguo | missing | externo | undo | error."
+    )
+    state_before: str = Field(
+        description="Dialogue state before the move: libre or pendiente."
+    )
     state_after: str = Field(description="Dialogue state after the move.")
     hash_before: str = Field(default="", description="hash_mundo before executing.")
-    hash_after: str = Field(default="", description="hash_mundo after executing; equal to hash_before when nothing was written.")
-    refers_to: str = Field(default="", description="Id of the move this one answers, corrects or undoes; empty otherwise.")
+    hash_after: str = Field(
+        default="",
+        description="hash_mundo after executing; equal to hash_before when nothing was written.",
+    )
+    refers_to: str = Field(
+        default="",
+        description="Id of the move this one answers, corrects or undoes; empty otherwise.",
+    )
     sentence: str = Field(description="The sentence exactly as it came in.")
     record: dict[str, Any] = Field(
         default_factory=dict,

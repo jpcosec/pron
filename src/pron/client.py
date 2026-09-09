@@ -12,7 +12,7 @@ from typing import Any
 from pron.response import Response
 
 SOCKET_RELPATH = Path(".pron") / "serve.sock"
-MAX_SOCKET_PATH = 100   # AF_UNIX paths are capped around 108 bytes on Linux
+MAX_SOCKET_PATH = 100  # AF_UNIX paths are capped around 108 bytes on Linux
 
 
 def socket_path(root: str | Path) -> Path:
@@ -25,10 +25,15 @@ def socket_path(root: str | Path) -> Path:
     import hashlib
     import tempfile
 
-    return Path(tempfile.gettempdir()) / f"pron-{hashlib.sha1(str(root).encode('utf-8')).hexdigest()[:12]}.sock"
+    return (
+        Path(tempfile.gettempdir())
+        / f"pron-{hashlib.sha1(str(root).encode('utf-8')).hexdigest()[:12]}.sock"
+    )
 
 
-def request(path: str | Path, req: dict[str, Any], timeout: float = 600.0) -> dict[str, Any]:
+def request(
+    path: str | Path, req: dict[str, Any], timeout: float = 600.0
+) -> dict[str, Any]:
     """One request to a running server. Raises ConnectionError when nobody listens."""
     with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
         s.settimeout(timeout)
@@ -65,21 +70,43 @@ class RemoteSession:
     """The Session surface a caller uses, answered by a running server: turn(sentence) ->
     Response, plus the lexicon, the dialogue state and documents by address."""
 
-    def __init__(self, path: str | Path, projection: str = "all", speaker: str = "", speaker_address: str | None = None,
-                 now: str | None = None, read_only: bool = False, world: str | Path | None = None, home: str | Path | None = None):
+    def __init__(
+        self,
+        path: str | Path,
+        projection: str = "all",
+        speaker: str = "",
+        speaker_address: str | None = None,
+        now: str | None = None,
+        read_only: bool = False,
+        world: str | Path | None = None,
+        home: str | Path | None = None,
+    ):
         """world: which of the server's worlds to speak to (name or root; the server's default
         when None). home: the caller's own world; when it differs from `world`, only that
         world's exposed projections open (spec 12 §6)."""
         self.path = Path(path)
-        self.base = {"projection": projection, "speaker": speaker, "speaker_address": speaker_address, "now": now, "read_only": read_only,
-                     "world": str(world) if world is not None else None, "home": str(home) if home is not None else None}
+        self.base = {
+            "projection": projection,
+            "speaker": speaker,
+            "speaker_address": speaker_address,
+            "now": now,
+            "read_only": read_only,
+            "world": str(world) if world is not None else None,
+            "home": str(home) if home is not None else None,
+        }
 
     def _ask(self, op: str, **fields: Any) -> dict[str, Any]:
         return request(self.path, {"op": op, **self.base, **fields})
 
     def turn(self, sentence: str) -> Response:
         r = self._ask("say", sentence=sentence)
-        return Response(r["text"], r["outcome"], list(r.get("trace", [])), r.get("move", ""), r.get("record", {}))
+        return Response(
+            r["text"],
+            r["outcome"],
+            list(r.get("trace", [])),
+            r.get("move", ""),
+            r.get("record", {}),
+        )
 
     def lexicon(self, model: str | None = None) -> list[dict[str, str]]:
         return list(self._ask("lexicon", model=model)["rows"])
@@ -114,7 +141,9 @@ class _Remote:
         self.base = dict(base or {})
 
     def call(self, method: str, **args: Any) -> Any:
-        return request(self.path, {"op": self.op, **self.base, "method": method, "args": args})["result"]
+        return request(
+            self.path, {"op": self.op, **self.base, "method": method, "args": args}
+        )["result"]
 
     def __getattr__(self, method: str) -> Any:
         if method.startswith("_"):

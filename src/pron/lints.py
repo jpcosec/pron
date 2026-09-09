@@ -20,13 +20,18 @@ def run_lints(world: World) -> list[str]:
     # the store's own integrity: every tracked document matches its index (sldb stores check)
     from sldb.cli.model_utils import resolve_model_ref
     from sldb.store.diagnostics import diagnose_store
-    if not diagnose_store(store.sp, resolve_model_ref, store.project_root, pythonpath=store.pythonpath).is_valid:
+
+    if not diagnose_store(
+        store.sp, resolve_model_ref, store.project_root, pythonpath=store.pythonpath
+    ).is_valid:
         problems.append("store: integrity FAIL (sldb stores check); run `pron refresh`")
 
     # no model registered from deskops
     for m in store.store_index().models:
         if "deskops" in m.model_ref:
-            problems.append(f"store: model {m.name} is registered from deskops ({m.model_ref})")
+            problems.append(
+                f"store: model {m.name} is registered from deskops ({m.model_ref})"
+            )
 
     # every RelationDoc has both endpoints
     if "RelationDoc" in models:
@@ -34,7 +39,9 @@ def run_lints(world: World) -> list[str]:
         for d in store.docs_of("RelationDoc"):
             for side in ("source_id", "target_id"):
                 if d.payload.get(side) not in ids:
-                    problems.append(f"relation {d.name}: {side} {d.payload.get(side)} does not exist")
+                    problems.append(
+                        f"relation {d.name}: {side} {d.payload.get(side)} does not exist"
+                    )
 
     # every move carries hash_mundo before and after
     if "MoveDoc" in models:
@@ -45,10 +52,17 @@ def run_lints(world: World) -> list[str]:
     # pron's own knowledge base: docs without drift, every module implements a chapter
     if "SpecDoc" in models and "SurfaceDoc" in models:
         from pron.docs import synchronize_docs
+
         for change in synchronize_docs(world, check=True):
             problems.append(f"docs drift: {change}")
-        implemented = {d.payload["source_id"] for d in store.docs_of("RelationDoc") if d.payload.get("relation_type") == "implements"}
+        implemented = {
+            d.payload["source_id"]
+            for d in store.docs_of("RelationDoc")
+            if d.payload.get("relation_type") == "implements"
+        }
         for d in store.docs_of("SurfaceDoc"):
             if f"SurfaceDoc:{d.name}" not in implemented:
-                problems.append(f"module {d.payload.get('surface')} cites no spec chapter in its docstring")
+                problems.append(
+                    f"module {d.payload.get('surface')} cites no spec chapter in its docstring"
+                )
     return problems

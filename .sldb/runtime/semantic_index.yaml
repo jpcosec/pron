@@ -16,6 +16,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -49,6 +50,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -81,6 +83,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -113,6 +116,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -140,6 +144,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
@@ -147,9 +152,10 @@ tags:
   - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
-  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
   - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
@@ -187,6 +193,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -242,6 +249,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -271,6 +279,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
+  - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
@@ -278,9 +287,10 @@ tags:
   - implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
-  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
   - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
@@ -330,6 +340,7 @@ tags:
   - surface-pron-docs
   - surface-pron-embedder
   - surface-pron-graph
+  - surface-pron-ids
   - surface-pron-kernel
   - surface-pron-ledger
   - surface-pron-lexicon
@@ -594,15 +605,27 @@ documents:
     tags:
     - layer.topology
     - type.relation.instance
-  implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11:
-    model: RelationDoc
-    path: knowledge/relations/implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-11.md
-    tags:
-    - layer.topology
-    - type.relation.instance
   implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12:
     model: RelationDoc
     path: knowledge/relations/implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02.md
     tags:
     - layer.topology
     - type.relation.instance
@@ -1059,6 +1082,17 @@ documents:
   surface-pron-serve:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-serve.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-ids:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-ids.md
     tags:
     - domain:system_architecture
     - entity:module

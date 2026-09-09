@@ -37,14 +37,20 @@ steps: ⸢rev•steps⸥
 ⸢rev•motive⸥
 """.strip()
 
-    symbol: str = Field(description="Canonical word of the alias; the document is named anchor-<symbol>.")
+    symbol: str = Field(
+        description="Canonical word of the alias; the document is named anchor-<symbol>."
+    )
     forms: list[str] = Field(
         default_factory=list,
         description="Every surface form the parser recognizes, listed (no morphology): 'reservation, reservations'. May use N for a number slot and X for a free slot.",
     )
-    ref: str = Field(description="What the word names: model:M | field:M.f | predicate:M:<where> | relation:R | action:<verb> M.f=v | doc:M:name | compose.")
+    ref: str = Field(
+        description="What the word names: model:M | field:M.f | predicate:M:<where> | relation:R | action:<verb> M.f=v | doc:M:name | compose."
+    )
     steps: list[dict[str, Any]] = Field(
         default_factory=list,
         description="Only for ref compose: ordered steps {do: create|assert|change, model|relation, fields|source|target} with slots $literals, $created, $referent:M, $object:M.",
     )
-    motive: str = Field(description="What the word means, shown when someone asks; embedded for approximate matching.")
+    motive: str = Field(
+        description="What the word means, shown when someone asks; embedded for approximate matching."
+    )

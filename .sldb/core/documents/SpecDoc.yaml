@@ -1,22 +1,22 @@
 documents:
 - name: spec-01
   path: source/spec/01-mundo.md
-  hash_c: e81e14562158f14ee24b236fd329938ee9940ded39b3ffc16d13490799b4c954
-  hash_d: b6e80d844635fe6a3cf24eb1526e74ee0b5cb87bebcab510b684d4df6e95f8f1
+  hash_c: dae319f84d4146672ba8c6174cc94f17dbd001d098be45f1820e7be443cf779c
+  hash_d: ccff8fb0ed08e3537cc7b333df91399dc3ba43296117f18f8a511fc0bb676f2d
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-02
   path: source/spec/02-sustantivos.md
-  hash_c: 5d6911b784b0fb6d7f1f87e3e0ddacbe684a8c72dc478d7fe84f9413e3bf1abe
-  hash_d: e439ee05b2fba444d31cd1f5f0267e0ff63753a729e11ee741876279101a0d75
+  hash_c: 64c9593152e3babf47c45d3a96441388cefc0f6af747bec4a11329006c6ad292
+  hash_d: c7b861b71e338a80eaea0bbf5d0541732ce658297f6c511974e80157ef90115a
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-03
   path: source/spec/03-verbos-transitivos.md
-  hash_c: 3ad507ee7b134124ebe41904464a28a5f902d418e7d996035e145f38ea3195f0
-  hash_d: ccbda7913751e2e7686ccd7fa5db9eaee2e9accee75c3f759b138209417663cb
+  hash_c: 4a3c35a54af9666819230aedc68155ffe5d683c53e9ba1d51fc8c8fb6d67bb42
+  hash_d: 23ea13ae2e2d06f27d89e6d99f6e305c28151dd3cca6ee67294de7b55b91e81e
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -43,8 +43,8 @@ documents:
   - workspace.source.spec
 - name: spec-07
   path: source/spec/07-ledger.md
-  hash_c: f067a6a049a4b1f6f2de675f8b890f9f4a4b0cbab19416a2e10e505c6b26e9ce
-  hash_d: 77ee0f14097e6968ae8d62bfc8f759bbf3b99a2d419d695fed045ae1831b34ab
+  hash_c: b26a242ee8e1ac5d6ef66f7e6607dc934384fa9e0c908678687f96869cf6db5c
+  hash_d: c7a6739085564462ea1a9acb1d088a00780de4587f1dc4b56c8d7ef813feea51
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,8 +85,8 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: 4a8a19f2dba700c8269bc1595b01fe34eb36c1e10019a26b7eea055b82199579
-  hash_d: 24b2e0a9e7bbf1d745300bc35a29f328b04e49d84a42c5cf510bdcac1ca3263e
+  hash_c: 97d2617f9a9c0d9f637b39074cef37691d55805902235789e50d3379d3ae73dd
+  hash_d: d3181494814f2a5c5a01173b73d5a435baa50d1a5997e280113667f811c5e933
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

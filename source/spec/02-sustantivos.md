@@ -39,6 +39,10 @@ Qué es cada palabra lo decide su posición en la frase, no su forma:
 
 La forma en español de un término sale de su alias (05). Un modelo sin alias se nombra por su identificador tal cual, `CliCommandDoc`, y pron lo dice así hasta que alguien le dé alias.
 
+## Un alcance por store
+
+Cuando la proyección nombra más de un store (01 §Un mundo en varios stores), cada predicado corre una vez por store, `find 'st.{Reserva+}'` y `find 'A:st.{Reserva+}'`, y la lista es la unión; la intersección entre predicados se hace sobre esa unión. Las direcciones de un store enlazado conservan su prefijo, `A:st.{Reserva}.doc`, y su id de exportación es `A:Reserva:doc`.
+
 ## Dos predicados, dos consultas, una intersección
 
 `--where` acepta un predicado. Una frase con dos restricciones produce dos consultas sobre el mismo alcance y pron se queda con las direcciones que aparecen en ambas. Cruza listas de direcciones; no lee payloads. La traza muestra las dos consultas, los dos conteos y el conteo final:

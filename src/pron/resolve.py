@@ -8,6 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from pron.ids import export_id as _export_id, normalize_address, scope as _scope
 from pron.lexicon import Lexicon
 from pron.surface.nouns import NounPhrase
 
@@ -15,12 +16,14 @@ from pron.surface.nouns import NounPhrase
 @dataclass
 class Resolution:
     phrase: NounPhrase
-    addresses: list[str]                # st.{Model}.doc
-    outcome: str                        # unico | ambiguo | missing
-    queries: list[str] = field(default_factory=list)   # the exact calls, copyable
+    addresses: list[str]  # st.{Model}.doc
+    outcome: str  # unico | ambiguo | missing
+    queries: list[str] = field(default_factory=list)  # the exact calls, copyable
     candidates: list[str] = field(default_factory=list)
     note: str = ""
-    also_read: list[str] = field(default_factory=list)  # documents a complement resolved on the way (spec 07: reads)
+    also_read: list[str] = field(
+        default_factory=list
+    )  # documents a complement resolved on the way (spec 07: reads)
 
     @property
     def cardinality(self) -> str:
@@ -31,15 +34,8 @@ class Resolution:
 
 
 def address_to_export_id(address: str) -> str:
-    """st.{Model}.doc → Model:doc (the store's export id); an export id passes through."""
-    a = address
-    if a.startswith("st.{"):
-        model, doc = a[4:].split("}.", 1)
-        return f"{model.rstrip('+')}:{doc}"
-    if ":st.{" in a:  # store:st.{Model}.doc from a linked store
-        store, rest = a.split(":", 1)
-        return f"{store}:{address_to_export_id(rest)}"
-    return a
+    """st.{Model}.doc → Model:doc; A:st.{Model}.doc → A:Model:doc; an export id passes through."""
+    return _export_id(address)
 
 
 def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
@@ -48,10 +44,22 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
         return Resolution(np, [], "missing", note="a referent without an antecedent")
     if np.unknown_values:
         model, fld, text = np.unknown_values[0]
-        near = [w.form for w, _ in lex.near(text, kinds=("value",)) if w.model == model and w.field_name == fld]
+        near = [
+            w.form
+            for w, _ in lex.near(text, kinds=("value",))
+            if w.model == model and w.field_name == fld
+        ]
         allowed = [w.form for w in lex.values_of(model, fld)]
-        return Resolution(np, [], "missing", candidates=near or allowed, note=f"'{text}' is not a value of {model}.{fld}")
-    scope = np.scope
+        return Resolution(
+            np,
+            [],
+            "missing",
+            candidates=near or allowed,
+            note=f"'{text}' is not a value of {model}.{fld}",
+        )
+    scopes = [
+        _scope(s, np.model) for s in lex.stores
+    ]  # one scope per store of the projection (spec 01)
     queries: list[str] = []
     result: list[str] | None = None
     # complements: the edges of a relation to what "of X" names, crossed with the predicates (spec 02)
@@ -60,18 +68,32 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
         linked = _linked(np, comp, lex, queries, also_read)
         if linked is None:
             if isinstance(comp, NounPhrase):
-                return Resolution(np, [], "missing", queries, note=f"no relation joins {np.model} and {comp.describe()}")
-            np.proper += comp   # not a related document: a proper name of the head
+                return Resolution(
+                    np,
+                    [],
+                    "missing",
+                    queries,
+                    note=f"no relation joins {np.model} and {comp.describe()}",
+                )
+            np.proper += comp  # not a related document: a proper name of the head
             continue
         result = linked if result is None else [a for a in result if a in set(linked)]
     predicates = list(np.predicates) + _proper_predicates(np, lex)
     for where in predicates:
-        found = _normalize_addresses(store.find(scope, where))   # st.{M+}.doc and st.{M}.doc are the same address
-        queries.append(f"find '{scope}' --where '{where}' → {len(found)}")
+        found: list[str] = []
+        for scope in scopes:
+            hits = _normalize_addresses(
+                store.find(scope, where)
+            )  # st.{M+}.doc and st.{M}.doc are the same address
+            queries.append(f"find '{scope}' --where '{where}' → {len(hits)}")
+            found += hits
         result = found if result is None else [a for a in result if a in set(found)]
     if result is None:
-        result = [f"{scope}.{name}" for name in store.list(scope)]
-        queries.append(f"ls '{scope}' → {len(result)}")
+        result = []
+        for scope in scopes:
+            names = store.list(scope)
+            result += [f"{scope}.{name}" for name in names]
+            queries.append(f"ls '{scope}' → {len(names)}")
     elif len(predicates) + len(np.complements) > 1:
         queries.append(f"∩ → {len(result)}")
     result = _normalize_addresses(result)
@@ -80,7 +102,9 @@ def resolve(np: NounPhrase, lex: Lexicon) -> Resolution:
     return decided
 
 
-def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str], also_read: list[str]) -> list[str] | None:
+def _linked(
+    np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str], also_read: list[str]
+) -> list[str] | None:
     """The heads related to what the complement names: for each relation type between the head's
     family and another class, resolve the complement in that class and read the edges (kgdb, or
     the RelationDocs in sldb). None when no relation and class take the complement."""
@@ -101,17 +125,28 @@ def _linked(np: NounPhrase, comp: Any, lex: Lexicon, queries: list[str], also_re
                         continue
                     inner = resolve(comp, lex)
                 else:
-                    inner = resolve(NounPhrase(other, "all", "plural", proper=list(comp)), lex)
+                    inner = resolve(
+                        NounPhrase(other, "all", "plural", proper=list(comp)), lex
+                    )
                 queries.extend("  " + q for q in inner.queries)
                 if inner.outcome != "unico" or not inner.addresses:
                     continue
                 also_read.extend(inner.addresses + inner.also_read)
                 heads: list[str] = []
                 for eid in inner.export_ids():
-                    read = verbs.edges_to(eid, rel) if direction == "to" else verbs.edges_from(eid, rel)
+                    read = (
+                        verbs.edges_to(eid, rel)
+                        if direction == "to"
+                        else verbs.edges_from(eid, rel)
+                    )
                     queries.extend(read.queries)
-                    heads += [e["source"] if direction == "to" else e["target"] for e in read.edges]
-                return sorted({f"st.{{{h.split(':', 1)[0]}}}.{h.split(':', 1)[1]}" for h in heads})
+                    heads += [
+                        e["source"] if direction == "to" else e["target"]
+                        for e in read.edges
+                    ]
+                from pron.ids import address_of
+
+                return sorted({address_of(h) for h in heads})
     return None
 
 
@@ -122,21 +157,30 @@ def _proper_predicates(np: NounPhrase, lex: Lexicon) -> list[str]:
     key = (lex.projection.get("key") or {}).get(np.model)
     for name in np.proper:
         if key and (name.isdigit() or _field_kind(lex, np.model, key) == "string"):
-            out.append(f'{key} = {name if name.isdigit() else chr(34) + name + chr(34)}')
+            out.append(
+                f"{key} = {name if name.isdigit() else chr(34) + name + chr(34)}"
+            )
         else:
             out.append(f'doc ~ "{_slug(name)}"')
     return out
 
 
-def _decide(np: NounPhrase, result: list[str], queries: list[str], lex: Lexicon) -> Resolution:
+def _decide(
+    np: NounPhrase, result: list[str], queries: list[str], lex: Lexicon
+) -> Resolution:
     if not result and np.proper:
         # a proper name that is not the doc name: try name/title fields, then offer neighbors
         for fld in ("name", "title"):
-            if any(f["name"] == fld for f in lex.world.store.schema(np.model)):
+            if any(f["name"] == fld for f in lex.world.schema(np.model, lex.stores)):
                 alt = None
                 for name in np.proper:
-                    found = lex.world.store.find(np.scope, f'{fld} ~ "{name}"')
-                    queries.append(f"find '{np.scope}' --where '{fld} ~ \"{name}\"' → {len(found)}")
+                    found: list[str] = []
+                    for scope in (_scope(s, np.model) for s in lex.stores):
+                        hits = lex.world.store.find(scope, f'{fld} ~ "{name}"')
+                        queries.append(
+                            f"find '{scope}' --where '{fld} ~ \"{name}\"' → {len(hits)}"
+                        )
+                        found += hits
                     alt = found if alt is None else [a for a in alt if a in set(found)]
                 if alt:
                     result = _normalize_addresses(alt)
@@ -145,34 +189,62 @@ def _decide(np: NounPhrase, result: list[str], queries: list[str], lex: Lexicon)
         if len(result) == 1:
             return Resolution(np, result, "unico", queries)
         if len(result) > 1 and np.determiner == "any":
-            return Resolution(np, result[:1], "unico", queries, candidates=result[1:], note=f"any: took {result[0]}; also {', '.join(result[1:])}")
+            return Resolution(
+                np,
+                result[:1],
+                "unico",
+                queries,
+                candidates=result[1:],
+                note=f"any: took {result[0]}; also {', '.join(result[1:])}",
+            )
         if len(result) > 1:
             return Resolution(np, [], "ambiguo", queries, candidates=result)
         near = _near_names(np, lex)
-        return Resolution(np, [], "missing", queries, candidates=near, note=f"no {np.model} matches {np.describe()}")
+        return Resolution(
+            np,
+            [],
+            "missing",
+            queries,
+            candidates=near,
+            note=f"no {np.model} matches {np.describe()}",
+        )
     return Resolution(np, result, "unico", queries)
 
 
 def _near_names(np: NounPhrase, lex: Lexicon) -> list[str]:
     if not np.proper:
         return []
-    docs = lex.world.store.docs_of(np.model)
-    candidates = [(f"st.{{{np.model}}}.{d.name}", f"{d.name} {d.payload.get('name', '')} {d.payload.get('title', '')}") for d in docs]
-    return [key for key, _ in lex.matcher.rank(" ".join(np.proper), candidates, k=3, threshold=float((lex.projection.get('matching') or {}).get('threshold', 0.55)))]
+    from pron.ids import address_of, join_id
+
+    candidates = []
+    for s in lex.stores:
+        for d in lex.world.store.docs_of(np.model, s):
+            candidates.append(
+                (
+                    address_of(join_id(None if s == "local" else s, np.model, d.name)),
+                    f"{d.name} {d.payload.get('name', '')} {d.payload.get('title', '')}",
+                )
+            )
+    return [
+        key
+        for key, _ in lex.matcher.rank(
+            " ".join(np.proper),
+            candidates,
+            k=3,
+            threshold=float(
+                (lex.projection.get("matching") or {}).get("threshold", 0.55)
+            ),
+        )
+    ]
 
 
 def _normalize_addresses(addresses: list[str]) -> list[str]:
-    """st.{Model+}.doc → st.{Model}.doc with the document's own model, read from the store list."""
-    out = []
-    for a in addresses:
-        if "+}" in a:
-            a = a.replace("+}", "}")
-        out.append(a)
-    return sorted(set(out))
+    """[store:]st.{Model+}.doc → [store:]st.{Model}.doc."""
+    return sorted({normalize_address(a) for a in addresses})
 
 
 def _field_kind(lex: Lexicon, model: str, fld: str) -> str:
-    for f in lex.world.store.schema(model):
+    for f in lex.world.schema(model, lex.stores):
         if f["name"] == fld:
             return f["kind"]
     return "string"

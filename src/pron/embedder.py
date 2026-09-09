@@ -21,7 +21,9 @@ class Embedder(Protocol):
 
 
 def normalize(text: str) -> str:
-    stripped = "".join(c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn")
+    stripped = "".join(
+        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
+    )
     return " ".join(stripped.lower().split())
 
 
@@ -51,7 +53,9 @@ class DifflibMatcher:
 class Matcher:
     """Ranks candidates for a query with an Embedder when given, difflib otherwise."""
 
-    def __init__(self, embedder: Embedder | None = None, cache_path: Path | None = None):
+    def __init__(
+        self, embedder: Embedder | None = None, cache_path: Path | None = None
+    ):
         self.embedder = embedder
         self.fallback = DifflibMatcher()
         self._cache: dict[str, list[float]] = {}
@@ -72,13 +76,24 @@ class Matcher:
     def id(self) -> str:
         return self.embedder.id() if self.embedder else self.fallback.id()
 
-    def rank(self, query: str, candidates: Sequence[tuple[str, str]], k: int = 3, threshold: float = 0.0) -> list[tuple[str, float]]:
+    def rank(
+        self,
+        query: str,
+        candidates: Sequence[tuple[str, str]],
+        k: int = 3,
+        threshold: float = 0.0,
+    ) -> list[tuple[str, float]]:
         """candidates are (key, text). Returns [(key, score)] best first, above threshold."""
         if self.embedder is None:
-            scored = [(key, self.fallback.similarity(query, text)) for key, text in candidates]
+            scored = [
+                (key, self.fallback.similarity(query, text)) for key, text in candidates
+            ]
         else:
             vectors = self._embed([query, *[t for _, t in candidates]])
-            scored = [(key, cosine(vectors[0], v)) for (key, _), v in zip(candidates, vectors[1:])]
+            scored = [
+                (key, cosine(vectors[0], v))
+                for (key, _), v in zip(candidates, vectors[1:])
+            ]
         best: dict[str, float] = {}
         for key, score in scored:
             if score >= threshold and score > best.get(key, -1):
@@ -86,6 +101,7 @@ class Matcher:
         return sorted(best.items(), key=lambda kv: -kv[1])[:k]
 
     def _embed(self, texts: list[str]) -> list[list[float]]:
+        assert self.embedder is not None
         missing = [t for t in texts if t not in self._cache]
         if missing:
             for t, v in zip(missing, self.embedder.embed(missing)):
@@ -93,7 +109,9 @@ class Matcher:
             if self.cache_path is not None:
                 try:
                     self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-                    self.cache_path.write_text(json.dumps(self._cache), encoding="utf-8")
+                    self.cache_path.write_text(
+                        json.dumps(self._cache), encoding="utf-8"
+                    )
                 except OSError:
                     pass
         return [self._cache[t] for t in texts]
@@ -129,7 +147,10 @@ class DocumentIndex:
 
     def _save(self) -> None:
         self.cache_path.parent.mkdir(parents=True, exist_ok=True)
-        self.cache_path.write_text(json.dumps({"embedder": self.embedder_id, "entries": self._entries}), encoding="utf-8")
+        self.cache_path.write_text(
+            json.dumps({"embedder": self.embedder_id, "entries": self._entries}),
+            encoding="utf-8",
+        )
 
     def index(self, items: Iterable[tuple[str, str, str]]) -> dict[str, int]:
         """items are (key, content_hash, text). Embeds the keys whose hash is new or changed,
@@ -165,15 +186,27 @@ class DocumentIndex:
         For consumers that project or compare the vectors themselves, e.g. a 2D map of a world."""
         return {k: list(e["vector"]) for k, e in self._entries.items() if "vector" in e}
 
-    def rank(self, query: str, k: int | None = None, threshold: float = 0.0) -> list[tuple[str, float]]:
+    def rank(
+        self, query: str, k: int | None = None, threshold: float = 0.0
+    ) -> list[tuple[str, float]]:
         """[(key, score)] best first, above threshold; cosine over the vectors, or difflib
         over the kept texts when there is no Embedder."""
         if not self._entries:
             return []
         if self.matcher.embedder is None:
-            scored = [(key, self.matcher.fallback.similarity(query, e.get("text", ""))) for key, e in self._entries.items()]
+            scored = [
+                (key, self.matcher.fallback.similarity(query, e.get("text", "")))
+                for key, e in self._entries.items()
+            ]
         else:
             q = self.matcher.embedder.embed([query])[0]
-            scored = [(key, cosine(q, e["vector"])) for key, e in self._entries.items() if "vector" in e]
-        out = sorted(((key, s) for key, s in scored if s >= threshold), key=lambda kv: (-kv[1], kv[0]))
+            scored = [
+                (key, cosine(q, e["vector"]))
+                for key, e in self._entries.items()
+                if "vector" in e
+            ]
+        out = sorted(
+            ((key, s) for key, s in scored if s >= threshold),
+            key=lambda kv: (-kv[1], kv[0]),
+        )
         return out[:k] if k is not None else out

@@ -26,4 +26,6 @@ class SpecDoc(StructuredNLDoc):
 """.strip()
 
     title: str = Field(description="Chapter title as its H1, e.g. '02 · Sustantivos'.")
-    body: str = Field(description="The chapter's whole markdown body after the H1: sections, tables, code blocks.")
+    body: str = Field(
+        description="The chapter's whole markdown body after the H1: sections, tables, code blocks."
+    )

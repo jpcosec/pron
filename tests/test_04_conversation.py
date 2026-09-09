@@ -27,7 +27,9 @@ def test_turn_1_create_with_payload(session: Session):
     r = session.turn("create a client named Ana Rojas, phone 9 5555 1234")
     assert r.outcome == "unico", r.text
     assert "Ana Rojas" in r.text
-    assert session.world.store.get("st.{Client}.client-ana-rojas.phone") == "9 5555 1234"
+    assert (
+        session.world.store.get("st.{Client}.client-ana-rojas.phone") == "9 5555 1234"
+    )
     assert r.record["writes"][0]["verb"] == "create"
     assert session.world.store.doc("MoveDoc", r.move_id) is not None
 
@@ -43,9 +45,23 @@ def test_turn_3_compose_creates_the_reservation_and_two_relations(session: Sessi
     r = session.turn("book her a table on the terrace for 6 people on Friday at 9pm")
     assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
     res = session.world.store.doc("Reservation", "reservation-2026-09-11-ana-rojas")
-    assert res is not None and res.payload["party_size"] == 6 and res.payload["time"] == "21:00" and res.payload["status"] == "pending"
-    edges = {e["relation"]: e["target"] for e in session.verbs.edges_from("Reservation:reservation-2026-09-11-ana-rojas").edges if e["relation"] in ("booked_by", "assigned_to")}
-    assert edges == {"booked_by": "Client:client-ana-rojas", "assigned_to": "Table:table-12"}
+    assert (
+        res is not None
+        and res.payload["party_size"] == 6
+        and res.payload["time"] == "21:00"
+        and res.payload["status"] == "pending"
+    )
+    edges = {
+        e["relation"]: e["target"]
+        for e in session.verbs.edges_from(
+            "Reservation:reservation-2026-09-11-ana-rojas"
+        ).edges
+        if e["relation"] in ("booked_by", "assigned_to")
+    }
+    assert edges == {
+        "booked_by": "Client:client-ana-rojas",
+        "assigned_to": "Table:table-12",
+    }
     assert "table 12" in r.text and "14" in r.text
     assert session.world.graph_is_fresh()
 
@@ -63,7 +79,12 @@ def test_turn_4_and_5_ambiguity_then_answer(session: Session):
 def test_turn_6_confirm_is_a_guarded_transition(session: Session):
     r = session.turn("confirm it")
     assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    assert session.world.store.get("st.{Reservation}.reservation-2026-09-11-ana-rojas.status") == "confirmed"
+    assert (
+        session.world.store.get(
+            "st.{Reservation}.reservation-2026-09-11-ana-rojas.status"
+        )
+        == "confirmed"
+    )
     assert any("legal" in line for line in r.trace)
 
 
@@ -91,17 +112,33 @@ def test_illegal_transition_is_refused(session: Session):
 
 
 def test_undo_restores_the_previous_values(session: Session):
-    before = session.world.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")["party_size"]
+    before = session.world.store.payload(
+        "Reservation", "reservation-2026-09-11-ana-rojas"
+    )["party_size"]
     r = session.turn("change it to 4 people")
     assert r.outcome == "unico", r.text
     r = session.turn("undo the last move")
     assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    assert session.world.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")["party_size"] == before
+    assert (
+        session.world.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")[
+            "party_size"
+        ]
+        == before
+    )
 
 
 def test_read_only_projection_cannot_write(world: World):
-    proj = dict(world.projection("all"), actions=[], relations=[{"name": "booked_by", "mode": "read"}])
-    world.store.create("ProjectionDoc", "projection-reader", dict(proj, name="reader"), world.root / "knowledge" / "projections" / "reader.md")
+    proj = dict(
+        world.projection("all"),
+        actions=[],
+        relations=[{"name": "booked_by", "mode": "read"}],
+    )
+    world.store.create(
+        "ProjectionDoc",
+        "projection-reader",
+        dict(proj, name="reader"),
+        world.root / "knowledge" / "projections" / "reader.md",
+    )
     s = Session(world, projection="reader", now=NOW)
     r = s.turn("the large tables")
     assert r.outcome == "unico" and "table 12" in r.text
