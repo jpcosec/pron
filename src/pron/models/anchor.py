@@ -1,4 +1,4 @@
-"""An alias: a word that names something the world already has."""
+"""An alias: a word that names something the world already has (spec 01, 05)."""
 
 from __future__ import annotations
 

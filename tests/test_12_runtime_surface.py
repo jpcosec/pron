@@ -13,10 +13,9 @@ from pathlib import Path
 import pron.client
 import pron.ids
 import pron.response
-from pron.client import RemoteGraph, RemoteSession, RemoteWorld, alive, request, socket_path
+from pron.client import RemoteGraph, RemoteSession, RemoteWorld, socket_path
 from pron.response import Response
 from pron.session import Session
-from pron.world import World
 
 # --- Session(world, projection, speaker, speaker_address, now, embedder,
 #             read_only, home) -------------------------------------------------------

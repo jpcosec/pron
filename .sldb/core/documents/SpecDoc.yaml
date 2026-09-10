@@ -85,8 +85,8 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: 97d2617f9a9c0d9f637b39074cef37691d55805902235789e50d3379d3ae73dd
-  hash_d: d3181494814f2a5c5a01173b73d5a435baa50d1a5997e280113667f811c5e933
+  hash_c: f0c27b876f79dff59d8057b79d032b3331d1c74f9bc3b3bf6339884d38d468bc
+  hash_d: 0dc580e62615aa801f0914238932c1b1f483edf89902a2270f464b6b34dd0961
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

@@ -287,3 +287,51 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
+- name: surface-pron-models-anchor
+  path: knowledge/surfaces/surface-pron-models-anchor.md
+  hash_c: 0257954a6ee09638d5f7d41a454741c05724e6b30cc92d85d9db2b45f9ad57ab
+  hash_d: 85e2f33b42163da989c160eed8128af955ede5d3cf0d9d1c045c92530e3a3a81
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-models-move
+  path: knowledge/surfaces/surface-pron-models-move.md
+  hash_c: cb2206ef0ce50d80289d846eb112ba10a1ec739e509ac5fea77205a402e13b33
+  hash_d: 92a49c67432e240eb9782e7d32e1a30656aaf8b0963fc53367c3dff27cedbc09
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-models-projection
+  path: knowledge/surfaces/surface-pron-models-projection.md
+  hash_c: 25e420745a0cc8868f734f6313b9cd9289a55f99ac6c10d56b0f7fbbf72c8496
+  hash_d: b32ff82d54e79abe7f31f9bf3e97135803b9d363303d7e4b04baac83e7526e00
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-models-spec
+  path: knowledge/surfaces/surface-pron-models-spec.md
+  hash_c: 178cb886b9f527132e1d2095dd116d6fc9213237458a37a6c7d13ad1a2886af9
+  hash_d: 01f4928c48ef69d17b8cc30b9a9b6e271443e58d135096fff59ff1d4758f17b2
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces

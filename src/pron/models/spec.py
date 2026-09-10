@@ -1,5 +1,6 @@
 """A chapter of pron's specification, tracked as a document so it is addressable by
-section and can be the target of `implements` edges from the code that carries it out."""
+section and can be the target of `implements` edges from the code that carries it out
+(spec 08, 12)."""
 
 from __future__ import annotations
 

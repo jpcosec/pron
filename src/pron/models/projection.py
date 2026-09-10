@@ -1,4 +1,4 @@
-"""A projection: the part of a world one session can name."""
+"""A projection: the part of a world one session can name (spec 01, 05)."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""One move of the ledger: a whole turn, recorded as a document of the world."""
+"""One move of the ledger: a whole turn, recorded as a document of the world (spec 07)."""
 
 from __future__ import annotations
 
