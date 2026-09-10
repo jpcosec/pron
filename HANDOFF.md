@@ -4,12 +4,12 @@ Estado al 2026-09-09, fin de la sesión. Todo pusheado.
 
 | Repo | HEAD | Suite |
 | --- | --- | --- |
-| pron `~/proyectos/pron` | `0e3efcb` (igual a `origin/master`) | 84 passed |
-| kinesis `~/proyectos/legos/kinesis` | `66498ec` (igual a `origin/main`) | 98 passed, 1 skipped |
+| pron `~/proyectos/pron` | `6790d99` (igual a `origin/master`) | 98 passed |
+| kinesis `~/proyectos/legos` | `4019b3a` (master de legos; el paquete vive en `legos/` tras el plan 2) | 98 passed, 1 skipped |
 | sldb `~/proyectos/hum-ecosystem/tools/sldb` | `50c2fd8` | 441 passed, 1 fallo previo de estilo (`knowledge_surface.py`, tres clases en un archivo) |
 | kgdb `~/proyectos/hum-ecosystem/tools/kgdb` | `1247139` | 41 passed |
 
-El commit `0e3efcb` (antes `5a08497`, "wip") trae: validación `$created`-antes-de-`create` en `Session._compose`/`_plan_compose` (`tests/test_composition_validation.py`), endurecimiento mypy en `session.py`/`resolve.py`/`surface/interpret.py`, un `Makefile` y el pin de extras `dev` en `pyproject.toml`.
+El commit `6790d99` (antes `5a08497`, "wip") trae: validación `$created`-antes-de-`create` en `Session._compose`/`_plan_compose` (`tests/test_composition_validation.py`), endurecimiento mypy en `session.py`/`resolve.py`/`surface/interpret.py`, un `Makefile` y el pin de extras `dev` en `pyproject.toml`.
 
 Nota de rutas: pron ya no vive dentro del monorepo legos; está en `~/proyectos/pron` y legos lo consume por path (`${PRON_DIR:-../pron}`).
 
