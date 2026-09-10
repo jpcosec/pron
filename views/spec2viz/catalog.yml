@@ -26,7 +26,7 @@ diagram_store:
     - 'El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.'
     - 'La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.'
     - El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.
-    - 'Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.'
+    - 'Los sustantivos del mundo de pron son sus propios modelos: comando, superficie, anchor, proyección, move, spec, más los dos de kgdb. pron no tiene átomos: los AtomDoc de v1 quedaron en la rama histórica (08, decidido 2026-09-09).'
     - El kgdb ingest unificado (nodos, nodos relation_type, aristas desde RelationDoc y links, ledger excluido, hash_mundo, integridad como error) es el prerrequisito de source/spec/08; hoy sus dos mitades existen por separado.
   - id: target-turno
     title: Objetivo · una conversación
