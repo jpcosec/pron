@@ -31,7 +31,7 @@ Las dos devuelven lo mismo y la sesión se usa igual. Un runtime que quiere las 
 
 ## 2. La sesión
 
-`Session(world, projection, speaker, speaker_address, now, embedder, read_only)`; `RemoteSession(sock, projection, speaker, speaker_address, now, read_only)`.
+`Session(world, projection, speaker, speaker_address, now, embedder, read_only, home)`; `RemoteSession(sock, projection, speaker, speaker_address, now, read_only, world, home)`.
 
 | parámetro | qué es | quién lo decide |
 |---|---|---|
@@ -99,7 +99,7 @@ Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero c
 | `refresh()`, `refresh_if_stale()` | `-> dict`, `-> bool` | reconstruir el grafo (siempre; solo si no corresponde). Importan kgdb y networkx; nada más lo hace |
 | `derived_dir` | `Path` | `.pron/`, fuera de git, para lo que el runtime derive |
 
-**Identificadores de nodo.** El grafo usa los ids de la exportación de sldb, y `pron.graph` da las funciones que los arman: `doc_id("Reservation:reservation-x") == "sldb://document/Reservation:reservation-x"`, `model_id("Reservation") == "sldb://model/Reservation"`, `relation_type_id("booked_by") == "sldb://relation_type/booked_by"`, `field_id("Reservation", "status") == "sldb://field/Reservation.status"`. Un `export_id` es `Modelo:nombre`. Todo método del grafo recibe y devuelve estos ids completos.
+**Identificadores de nodo.** El grafo usa los ids de la exportación de sldb, y `pron.graph` da las funciones que los arman: `doc_id("Reservation:reservation-x") == "sldb://document/Reservation:reservation-x"`, `model_id("Reservation") == "sldb://model/Reservation"`, `relation_type_id("booked_by") == "sldb://relation_type/booked_by"`, `field_id("Reservation", "status") == "sldb://field/Reservation.status"`. Un `export_id` es `Modelo:nombre` local, o `store:Modelo:nombre` cuando la sesión habla a través de un daemon con stores enlazados; `pron.ids` los parte y arma (`split_id`, `join_id`, `store_of`, `scope`, `address_of`; `None` y `"local"` significan lo mismo). Todo método del grafo recibe y devuelve estos ids completos.
 
 **`World.graph` (`Graph`)**, leído de `.pron/graph.nx.json` sin networkx. Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que kgdb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
 
@@ -145,7 +145,7 @@ Un runtime que crea muchos mundos de la misma clase les da su vocabulario con un
 
 ## 9. Qué es estable
 
-Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las cuatro funciones de id de `pron.graph`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
+Estable, y cambia solo con este documento: las firmas de `Session`, `RemoteSession`, `Response` y sus cinco campos, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 
