@@ -99,3 +99,11 @@ Para regenerar documentación tras un cambio de contrato, usa `pron docs --world
 ## Quién lo usa
 
 `kinesis` declara `pron` como dependencia y habla con esta versión: su backend `PronKnowledge` abre un mundo con `World`, dice oraciones con `Session.turn` dentro de una proyección y lee documentos por dirección con `Store.payload`. Un permiso de kinesis es el nombre de una proyección; una escritura es una oración con verbo de acción dicha por la ejecución.
+
+## Next
+
+- **Colapsar el camino dry-run.** `_dry_parts`/`_plan_compose` duplica a `_execute`/`_compose`
+  en `session.py`, y esa duplicación ya produjo un bug. Orden seguro: test de caracterización
+  que afirme que ambos caminos coinciden sobre un corpus de oraciones, y recién después
+  colapsar el par. La superficie pública (el constructor y `turn()`) ya está clavada por
+  spec 12 y `tests/test_12_runtime_surface.py`; no tocarla.
