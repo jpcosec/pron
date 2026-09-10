@@ -1,0 +1,11 @@
+# Revision lock: the commits of pron's sibling dependencies this checkout is verified
+# against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
+# moving under pron silently changes pron's test floor — pin here, verify here.
+#
+# Verified against (suites): sldb 9ba886d — 441 passed, 3 failures in sldb's own
+# style/docs tests (test_clean_code_rules knowledge_surface, test_cli_v2 faq,
+# test_store_readme roundtrip); kgdb 1247139 — 41 passed.
+# pron's own floor at these pins: 98 passed.
+
+sldb 9ba886d fix: declare linkify-it-py dependency (markdown-it linkify needs it explicitly)
+kgdb 1247139 typed relations: RelationTypeDoc/RelationDoc owned by kgdb, `kgdb init`, `kgdb ingest --store`, validation at assembly, MultiDiGraph
