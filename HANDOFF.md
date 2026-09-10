@@ -4,8 +4,8 @@ Estado al 2026-09-09, fin de la sesión. Todo pusheado.
 
 | Repo | HEAD | Suite |
 | --- | --- | --- |
-| pron `~/proyectos/pron` | `6790d99` (igual a `origin/master`) | 98 passed |
-| kinesis `~/proyectos/legos` | `4019b3a` (master de legos; el paquete vive en `legos/` tras el plan 2) | 98 passed, 1 skipped |
+| pron `~/proyectos/pron` | tag `1.0.0` (HEAD `6790d99`) | 98 passed |
+| kinesis `~/proyectos/legos` | rama master de legos, tag de cierre al aterrizar M4; el paquete vive en `legos/` (plan 2) | 98 passed, 1 skipped |
 | sldb `~/proyectos/hum-ecosystem/tools/sldb` | `50c2fd8` | 441 passed, 1 fallo previo de estilo (`knowledge_surface.py`, tres clases en un archivo) |
 | kgdb `~/proyectos/hum-ecosystem/tools/kgdb` | `1247139` | 41 passed |
 
@@ -18,7 +18,7 @@ Nota de rutas: pron ya no vive dentro del monorepo legos; está en `~/proyectos/
 - **sldb** es la base de datos direccionable: `st.{Modelo+}.doc.campo` más `--where`, `fields update`, todo por índices y hashes en cadena (`hash_a` del store, `hash_b` por modelo, `hash_c` por documento). Ver `README.md` §"Read and write by address" y §"Caches".
 - **kgdb** tipa las relaciones con `RelationTypeDoc` y `RelationDoc`, documentos de sldb, y arma un `MultiDiGraph` con `kgdb ingest --store`.
 - **pron** es el SHRDLU sobre un mundo: sustantivos = direcciones de sldb, verbos transitivos = tipos de relación de kgdb, verbos de acción = escrituras de sldb. Spec en `source/spec/`, once capítulos; el 09 y 09a son la conversación de aceptación sobre el mundo del restaurante (`tests/worlds/restaurant.py`).
-- **kinesis** monta un agente sobre `ExecutableNode`; su puerto de conocimiento habla con pron (`src/kinesis/agent_zero/bridges/pron_knowledge.py`). Documentación de esa integración en `kinesis/docs/configuracion-base-agente/10-conocimiento-via-pron.md`.
+- **kinesis** monta un agente sobre `ExecutableNode`; su puerto de conocimiento habla con pron (`legos/src/legos/bridges/pron_knowledge.py`). Documentación de esa integración en `legos/docs/configuracion-base-agente/10-conocimiento-via-pron.md`.
 
 Doctrina que no se negocia: pron nunca filtra payloads en Python, nunca ensambla aristas, nunca tiene código por modelo; un mundo agrega palabras con `AnchorDoc` y verbos con `RelationTypeDoc`. pron no tiene átomos. Todo lo declarado va en inglés por ahora (spec 11 §0).
 
