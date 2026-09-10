@@ -1,15 +1,17 @@
 # Handoff — pron, sldb, kgdb y kinesis
 
-Estado al 2026-09-08, fin de la sesión. Cuatro repos, nada pusheado.
+Estado al 2026-09-09, fin de la sesión. Todo pusheado.
 
 | Repo | HEAD | Suite |
 | --- | --- | --- |
-| pron `~/proyectos/legos/pron` | `d7f9002` (40 commits sobre `origin/master`) | 68 passed |
-| kinesis `~/proyectos/legos/kinesis` | `71f60f3` (sin remoto) | 97 passed, 1 skipped |
+| pron `~/proyectos/pron` | `0e3efcb` (igual a `origin/master`) | 84 passed |
+| kinesis `~/proyectos/legos/kinesis` | `66498ec` (igual a `origin/main`) | 98 passed, 1 skipped |
 | sldb `~/proyectos/hum-ecosystem/tools/sldb` | `50c2fd8` | 441 passed, 1 fallo previo de estilo (`knowledge_surface.py`, tres clases en un archivo) |
 | kgdb `~/proyectos/hum-ecosystem/tools/kgdb` | `1247139` | 41 passed |
 
-Los tres últimos commits de pron (`eb6cce1`, `bbecea5`, `d7f9002`: navegación del grafo, `DocumentIndex` de embeddings por documento, `refresh_if_stale`, `tests/test_08_graph_index.py`) son de otra sesión en paralelo; no los escribí y no los describo más allá de sus mensajes. La suite pasa con ellos.
+El commit `0e3efcb` (antes `5a08497`, "wip") trae: validación `$created`-antes-de-`create` en `Session._compose`/`_plan_compose` (`tests/test_composition_validation.py`), endurecimiento mypy en `session.py`/`resolve.py`/`surface/interpret.py`, un `Makefile` y el pin de extras `dev` en `pyproject.toml`.
+
+Nota de rutas: pron ya no vive dentro del monorepo legos; está en `~/proyectos/pron` y legos lo consume por path (`${PRON_DIR:-../pron}`).
 
 ## Qué es cada cosa
 
@@ -25,7 +27,7 @@ Doctrina que no se negocia: pron nunca filtra payloads en Python, nunca ensambla
 1. **Correcciones de la revisión** (pron `ba37487`): corrección tras un turno missing ("on the terrace"), prevalidación del movimiento completo antes de la primera escritura (con el evaluador `--where` de sldb sobre payloads pendientes), undo con guardas por `hash_c`, permisos dentro de alias compuestos, la proyección corta los alias, segunda lectura de `hash_mundo` antes de ejecutar. `tests/test_06_review.py`.
 2. **Complementos nominales** (`bc16543`): "the reservations of Luis Soto", "Luis Soto's reservations for Friday", anidados; resuelven por relación cruzando aristas de kgdb con predicados de sldb.
 3. **Sesiones de solo lectura** (`8d415bf`, `77ebac9`): `Session(read_only=True)`; los alias de acción fuera de las acciones permitidas no entran al léxico.
-4. **Kinesis**: permisos como alcances de proyección, lecturas por sesión de solo lectura, una sesión por ejecución (`9f6a423`), backend sobre `pron serve` (`f167bea`, `71f60f3`).
+4. **Kinesis**: permisos como alcances de proyección, lecturas por sesión de solo lectura, una sesión por ejecución (`9f6a423`), backend sobre `pron serve` (`f167bea`, `66498ec`).
 5. **Velocidad, en sldb** (`1c39c2b`, `67c0cd0`, `0cc2979`, `50c2fd8`): cachés por la cadena de hashes (índices en memoria con copias, documentos extraídos en memoria por store y por documento, `.sldb/runtime/cache/extracted.json` y `built.json` en disco), reindexados que bajan solo por el modelo cuyo `hash_b` se movió, `stores update` incremental, sin reescritura del layout al abrir, libyaml para los índices. Un `stat` por documento detecta ediciones a mano; `SLDB_TRUST_CHAIN=1` lo salta.
 6. **pron sin networkx en lectura** (`0bc5f64`), ids de movimiento únicos contra el store (`a6cf9bf`).
 7. **`pron serve`** (`18defed`, spec 11 §8): un proceso mantiene el mundo abierto tras `<mundo>/.pron/serve.sock`; `say`, `repl` y kinesis lo usan si contesta; `--local` lo evita; `pron.client` es solo biblioteca estándar.
@@ -57,7 +59,7 @@ Una advertencia: `pron say` sobre el repo de pron deja `MoveDoc`s en `ledger/` y
 3. **Escrituras**: lo que queda es real (releer textos para mover la cadena, rearmar el grafo entero en kgdb, guardar el índice de secciones del ledger que crece por turno). Si hace falta bajar de 0,4 s, el candidato es un ingest incremental en kgdb.
 4. **Higiene**: lock de revisiones de sldb, kgdb y pron (hoy editables desde carpetas vecinas), CI que corra las suites, y pushear.
 
-Kinesis lo lleva otro agente. Lo que pron le ofrece está en el spec 12 y no cambia sin ese capítulo: `Session(read_only=..., home=...)`, `Response` en `pron.response`, `pron.client` (`socket_path`, `alive`, `request`, `RemoteSession` con `world` y `home`, `RemoteGraph`, `RemoteWorld`), `World.store.payload`, y el socket en `<mundo>/.pron/serve.sock`. Aviso para ese agente: los ids de exportación ahora pueden llevar store (`A:Modelo:doc`) cuando la sesión habla a través de un daemon; `pron.ids` los parte. Las firmas viejas siguen valiendo con sus defaults. Sus cambios de hoy en kinesis (`9f6a423`, `f167bea`, `71f60f3`, y la documentación en `docs/configuracion-base-agente/10-conocimiento-via-pron.md`) quedaron comiteados ahí; lo que siga en ese repo es de ese agente.
+Kinesis lo lleva otro agente. Lo que pron le ofrece está en el spec 12 y no cambia sin ese capítulo: `Session(read_only=..., home=...)`, `Response` en `pron.response`, `pron.client` (`socket_path`, `alive`, `request`, `RemoteSession` con `world` y `home`, `RemoteGraph`, `RemoteWorld`), `World.store.payload`, y el socket en `<mundo>/.pron/serve.sock`. Aviso para ese agente: los ids de exportación ahora pueden llevar store (`A:Modelo:doc`) cuando la sesión habla a través de un daemon; `pron.ids` los parte. Las firmas viejas siguen valiendo con sus defaults. Sus cambios de hoy en kinesis (`9f6a423`, `f167bea`, `66498ec`, y la documentación en `docs/configuracion-base-agente/10-conocimiento-via-pron.md`) quedaron comiteados ahí; lo que siga en ese repo es de ese agente.
 
 ## Decisiones abiertas
 
