@@ -5,12 +5,23 @@ store's hash chain, so reading them here costs nothing and is never stale. A wor
 may link other stores (spec 01 §Un mundo en varios stores); every method that names a
 document takes the store it lives in, `None` or "local" for the local one, and the
 `*_of(export_id)` forms take the id `store:Model:doc` that carries it.
+
+Model editing (`model_catalog`, `model_detail`, `model_template_edit`, `model_fields_add`,
+`model_fields_remove`, `model_validate_draft`, `model_promote`) is the same door for a
+model's own contract instead of a document's payload (spec 12 §4, spec 10 §3): a draft
+lives in the `.py.temp` sibling sldb keeps next to the compiled model module until
+`model_promote` installs it, reindexes, and bumps the version.
 """
 
 from __future__ import annotations
 
+import contextlib
+import io
 import json
 import builtins
+import shutil
+import sys
+import tempfile
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -20,11 +31,19 @@ from pydantic import BaseModel
 from sldb.cli.commands.doc import DocCLI
 from sldb.cli.commands.fields_save import save_payload
 from sldb.cli.commands.model import ModelCLI
+from sldb.cli.commands.models_fields import ModelsFieldsCLI
+from sldb.cli.commands.models_template import ModelsTemplateCLI
+from sldb.cli.commands.models_utils import (
+    draft_path as _draft_path,
+    registered_model_source,
+)
+from sldb.cli.commands.models_validate import ModelsValidateCLI
 from sldb.cli.dict_utils import deep_delete, deep_get, deep_set
+from sldb.cli.graph_ops import ast_for_target
 from sldb.cli.model_utils import registered_model, resolve_model_ref
 from sldb.cli.serve.schema import field_descriptor
 from sldb.cli.store_context import get_store_context
-from sldb.core.exceptions import SLDBModelError
+from sldb.core.exceptions import SLDBError, SLDBModelError
 from sldb.runtime.validation import (
     render_model_markdown,
     validate_model_data_roundtrip,
@@ -330,6 +349,17 @@ class Store:
             raise StoreError(f"no {model} named '{name}'")
         save_payload(d, payload, str(self.sp_of(store)), self.pythonpath)
 
+    def replace(
+        self, model: str, name: str, payload: dict, store: str | None = LOCAL
+    ) -> None:
+        """Whole-payload rewrite: re-render, roundtrip, hash, reindex — same door as
+        update_field, for callers that already hold a full payload (spec 12 §4)."""
+        self._save(model, name, payload, store)
+
+    def replace_of(self, export_id: str, payload: dict) -> None:
+        store, model, name = split_id(export_id)
+        self.replace(model, name, payload, store)
+
     def payload(self, model: str, name: str, store: str | None = LOCAL) -> dict:
         d = self.doc(model, name, store)
         if d is None:
@@ -454,3 +484,136 @@ class Store:
             resolve_model_ref,
             self.pythonpath,
         )
+
+    # -- model editing (draft) --------------------------------------------------
+    # Editing a registered model's own contract (as opposed to a document's payload,
+    # `validate` above). Same door, same legitimacy as the rest of this file (spec 12 §4):
+    # a draft lives in a `.py.temp` sibling of the compiled model module until `model_promote`
+    # installs it, reindexes, and bumps the version. No `MoveDoc` records any of this.
+
+    def model_catalog(self, store: str | None = LOCAL) -> builtins.list[dict[str, Any]]:
+        """Registered models with version, canonical, family and document count."""
+        root = self.root_of(store)
+        out = []
+        for entry in sorted(self.store_index(store).models, key=lambda m: m.name):
+            m_idx = self.models_index(entry.name, store)
+            d_idx = load_documents_index(root / m_idx.documents_index)
+            out.append(
+                {
+                    "name": entry.name,
+                    "model_ref": entry.model_ref,
+                    "path": entry.path,
+                    "version": m_idx.version,
+                    "canonical": m_idx.canonical,
+                    "family": m_idx.family,
+                    "semantics": list(m_idx.semantics),
+                    "documents": len(d_idx.documents),
+                }
+            )
+        return out
+
+    def model_detail(self, name: str, store: str | None = LOCAL) -> dict[str, Any]:
+        """The model as sldb's `models show` builds it: `{"model": {...fields, version...}}`."""
+        return ast_for_target(str(self.sp_of(store)), self.pythonpath, f"models/{name}")
+
+    def _model_args(
+        self, name: str, store: str | None, **extra: Any
+    ) -> SimpleNamespace:
+        return SimpleNamespace(
+            model=name,
+            store=str(self.sp_of(store)),
+            pythonpath=self.pythonpath,
+            **extra,
+        )
+
+    def model_template_edit(
+        self, name: str, content: str, store: str | None = LOCAL
+    ) -> Path:
+        """Write `content` as the draft template for `name`; returns the `.py.temp` path."""
+        tmp = Path(tempfile.mkdtemp(prefix="pron-model-template-"))
+        try:
+            input_path = tmp / "template.md"
+            input_path.write_text(content, encoding="utf-8")
+            args = self._model_args(name, store, input=str(input_path))
+            try:
+                ModelsTemplateCLI().edit_template(args)
+            except SLDBError as exc:
+                raise StoreError(str(exc)) from exc
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+        path, _, _ = registered_model_source(args)
+        return _draft_path(path)
+
+    def model_fields_add(
+        self,
+        name: str,
+        field_name: str,
+        field_type: str = "str",
+        description: str = "",
+        default: Any = None,
+        store: str | None = LOCAL,
+    ) -> Path:
+        """Add a field to the draft, `.py.temp` sibling of the compiled model module."""
+        args = self._model_args(
+            name,
+            store,
+            field=field_name,
+            field_type=field_type,
+            description=description,
+            default=default,
+        )
+        try:
+            ModelsFieldsCLI().add_field(args)
+        except SLDBError as exc:
+            raise StoreError(str(exc)) from exc
+        path, _, _ = registered_model_source(args)
+        return _draft_path(path)
+
+    def model_fields_remove(
+        self, name: str, field_name: str, store: str | None = LOCAL
+    ) -> Path:
+        args = self._model_args(name, store, field=field_name)
+        try:
+            ModelsFieldsCLI().remove_field(args)
+        except SLDBError as exc:
+            raise StoreError(str(exc)) from exc
+        path, _, _ = registered_model_source(args)
+        return _draft_path(path)
+
+    def model_validate_draft(
+        self, name: str, store: str | None = LOCAL
+    ) -> dict[str, Any]:
+        """Validate the draft (or the active model if there is none), without promoting."""
+        return self._run_validate(name, store, promote=False)
+
+    def model_promote(self, name: str, store: str | None = LOCAL) -> dict[str, Any]:
+        """Install a validated draft over the active model, reindex, bump version."""
+        result = self._run_validate(name, store, promote=True)
+        result["version"] = self.models_index(name, store).version
+        if result.get("promoted"):
+            self._invalidate_model_module(name, store)
+        return result
+
+    def _invalidate_model_module(self, name: str, store: str | None) -> None:
+        """`resolve_model_ref` caches by module name in `sys.modules` (`importlib.import_module`);
+        promote just rewrote that module's file on disk, so drop the cached module or every
+        `model_type`/`schema` call in this same process keeps seeing the pre-promote class."""
+        entry = next(
+            (m for m in self.store_index(store).models if m.name == name), None
+        )
+        if entry is None:
+            return
+        module_name = entry.model_ref.split(":", 1)[0]
+        sys.modules.pop(module_name, None)
+
+    def _run_validate(
+        self, name: str, store: str | None, promote: bool
+    ) -> dict[str, Any]:
+        args = self._model_args(name, store, promote=promote, format="json")
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                ModelsValidateCLI().validate(args, ModelCLI())
+        except SLDBError as exc:
+            raise StoreError(str(exc)) from exc
+        return json.loads(buf.getvalue())

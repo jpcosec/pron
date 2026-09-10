@@ -2187,8 +2187,8 @@ documents:
     - workspace.source.spec
     slug: 5-el-mundo-y-el-grafo
     level: 2
-    line_start: 86
-    line_end: 87
+    line_start: 88
+    line_end: 89
   - path: 12-pron-para-un-runtime-externo/6-permisos-lo-que-pron-decide-y-lo-que-no
     title: '6. Permisos: lo que pron decide y lo que no'
     breadcrumbs:
@@ -2206,8 +2206,8 @@ documents:
     - workspace.source.spec
     slug: 6-permisos-lo-que-pron-decide-y-lo-que-no
     level: 2
-    line_start: 126
-    line_end: 127
+    line_start: 128
+    line_end: 129
   - path: 12-pron-para-un-runtime-externo/7-el-socket
     title: 7. El socket
     breadcrumbs:
@@ -2225,8 +2225,8 @@ documents:
     - workspace.source.spec
     slug: 7-el-socket
     level: 2
-    line_start: 134
-    line_end: 135
+    line_start: 136
+    line_end: 137
   - path: 12-pron-para-un-runtime-externo/8-plantilla-de-mundo
     title: 8. Plantilla de mundo
     breadcrumbs:
@@ -2244,8 +2244,8 @@ documents:
     - workspace.source.spec
     slug: 8-plantilla-de-mundo
     level: 2
-    line_start: 142
-    line_end: 143
+    line_start: 144
+    line_end: 145
   - path: 12-pron-para-un-runtime-externo/9-qu-es-estable
     title: 9. Qué es estable
     breadcrumbs:
@@ -2263,5 +2263,5 @@ documents:
     - workspace.source.spec
     slug: 9-qu-es-estable
     level: 2
-    line_start: 146
-    line_end: 147
+    line_start: 148
+    line_end: 149

@@ -178,6 +178,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-10
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
@@ -325,6 +327,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-10
+  - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-surface-dates--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
@@ -686,6 +690,18 @@ documents:
   implements--SurfaceDoc:surface-pron-models-spec--SpecDoc:spec-08:
     model: RelationDoc
     path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-spec--SpecDoc:spec-08.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-10:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-10.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-12:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-12.md
     tags:
     - layer.topology
     - type.relation.instance
@@ -1128,17 +1144,6 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-store:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-store.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-serve:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-serve.md
@@ -1197,6 +1202,17 @@ documents:
   surface-pron-models-spec:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-models-spec.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-store:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-store.md
     tags:
     - domain:system_architecture
     - entity:module

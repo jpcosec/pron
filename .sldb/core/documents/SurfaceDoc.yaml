@@ -251,18 +251,6 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
-- name: surface-pron-store
-  path: knowledge/surfaces/surface-pron-store.md
-  hash_c: 112d634bfcf71e534ba02cda0ae839bba181eb75021f34221436201b89b98b9d
-  hash_d: 2059e903b91f34c1f39c76fc6acb9b3a4f80b27bd6919bbad1b4e2b5c25fa0ec
-  semantic_tags:
-  - domain:system_architecture
-  - entity:module
-  - impl:here
-  - kind:software
-  - system:pron
-  - type.knowledge.surface
-  - workspace.knowledge.surfaces
 - name: surface-pron-serve
   path: knowledge/surfaces/surface-pron-serve.md
   hash_c: 86a3736a48c83bba4c28dacddb00cf16c5a76c7dcda42576a0e9acf6669a40ef
@@ -327,6 +315,18 @@ documents:
   path: knowledge/surfaces/surface-pron-models-spec.md
   hash_c: 178cb886b9f527132e1d2095dd116d6fc9213237458a37a6c7d13ad1a2886af9
   hash_d: 01f4928c48ef69d17b8cc30b9a9b6e271443e58d135096fff59ff1d4758f17b2
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-store
+  path: knowledge/surfaces/surface-pron-store.md
+  hash_c: 6e431043fb90a07f25615504b67c5b45fcb9d5da4e830dacd7a7e4cd74c46f43
+  hash_d: 29d2c22ea9e62a1f7e0cf3ea76a2a8ed2815166b916c37ebbfd2f03f0f704eae
   semantic_tags:
   - domain:system_architecture
   - entity:module

@@ -71,8 +71,8 @@ documents:
   - workspace.source.spec
 - name: spec-10
   path: source/spec/10-el-shrdlu-sobre-el-modelo.md
-  hash_c: 95d29316da26c42a300c942a3e3dc8b1ad8930518d768891d6011b6c5ada8c1f
-  hash_d: 8f617c847c98f8b79011882245ee729aa2473c01664da38876b7de2da0d12adf
+  hash_c: 0acaab9a9d3300ca6348a480619039469d744f724cc1165b606547497607b09c
+  hash_d: dae8eab42271838340b6cb82c27bb679e3520c0444675039b7606a5c36a8f088
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,8 +85,8 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: f0c27b876f79dff59d8057b79d032b3331d1c74f9bc3b3bf6339884d38d468bc
-  hash_d: 0dc580e62615aa801f0914238932c1b1f483edf89902a2270f464b6b34dd0961
+  hash_c: 64af4cd8de33b893c20ae22594514b9b5f615c461dff84db6a0e893740d04405
+  hash_d: 2774258bc7c743e98ee980086f1fd2d5cb2a0566e1018ce5802686157b68362b
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

@@ -126,6 +126,22 @@ def test_store_payload_method() -> None:
     assert callable(Store.payload)
 
 
+# --- World.store model editing (spec 12 §4) ------------------------------------------
+
+
+def test_store_model_editing_surface() -> None:
+    from pron.store import Store
+
+    assert callable(Store.replace)
+    assert callable(Store.model_catalog)
+    assert callable(Store.model_detail)
+    assert callable(Store.model_template_edit)
+    assert callable(Store.model_fields_add)
+    assert callable(Store.model_fields_remove)
+    assert callable(Store.model_validate_draft)
+    assert callable(Store.model_promote)
+
+
 # --- pron.ids splits A:Modelo:doc ---------------------------------------------------
 
 

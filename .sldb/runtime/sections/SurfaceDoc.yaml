@@ -2354,117 +2354,6 @@ documents:
     level: 2
     line_start: 26
     line_end: 27
-- doc_name: surface-pron-store
-  sections:
-  - path: store
-    title: store
-    breadcrumbs:
-    - store
-    about:
-    - store
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: store
-    level: 1
-    line_start: 14
-    line_end: 15
-  - path: store/purpose
-    title: Purpose
-    breadcrumbs:
-    - store
-    - Purpose
-    about:
-    - store
-    - Purpose
-    - purpose
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: purpose
-    level: 2
-    line_start: 16
-    line_end: 17
-  - path: store/how-it-works
-    title: How It Works
-    breadcrumbs:
-    - store
-    - How It Works
-    about:
-    - store
-    - How It Works
-    - how it works
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: how-it-works
-    level: 2
-    line_start: 20
-    line_end: 21
-  - path: store/commands
-    title: Commands
-    breadcrumbs:
-    - store
-    - Commands
-    about:
-    - store
-    - Commands
-    - commands
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: commands
-    level: 2
-    line_start: 28
-    line_end: 29
 - doc_name: surface-pron-serve
   sections:
   - path: serve
@@ -3147,3 +3036,114 @@ documents:
     level: 2
     line_start: 28
     line_end: 29
+- doc_name: surface-pron-store
+  sections:
+  - path: store
+    title: store
+    breadcrumbs:
+    - store
+    about:
+    - store
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: store
+    level: 1
+    line_start: 14
+    line_end: 15
+  - path: store/purpose
+    title: Purpose
+    breadcrumbs:
+    - store
+    - Purpose
+    about:
+    - store
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 16
+    line_end: 17
+  - path: store/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - store
+    - How It Works
+    about:
+    - store
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 20
+    line_end: 21
+  - path: store/commands
+    title: Commands
+    breadcrumbs:
+    - store
+    - Commands
+    about:
+    - store
+    - Commands
+    - commands
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 34
+    line_end: 35

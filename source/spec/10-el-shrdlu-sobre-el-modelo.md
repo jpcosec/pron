@@ -91,11 +91,11 @@ Un campo `Literal` se vuelve una máquina cuando el mundo tiene un modelo `State
 
 ## 3. El editor y pron sobre el mismo mundo
 
-El mundo tiene dos superficies de escritura además de pron: el CLI de sldb, y el editor. El editor es `sldb serve` con sus tres rutas, `/schema` (los modelos con sus campos, tipos y enums), `/graph` (los documentos con payload y tags) y `POST /save` (un payload nuevo para un documento), y sobre eso graph_ui, el editor visual de grafos de kgdb, que lee `/schema` para dibujar formularios y escribe por `/save`. Un `RelationDoc` se crea en el editor como cualquier documento: un formulario con `source_id`, `target_id` y `relation_type` como enum.
+El mundo tiene dos superficies de escritura además de pron: el CLI de sldb, y el editor. El editor es graph_ui, el editor visual de grafos de kgdb, que habla a sldb por `pron.Store` (12 §4) en vez de por su propio CLI o servidor: lee `schema()`/`docs()` para dibujar formularios y aristas, y escribe por `create`/`replace`/`untrack`, más el editor de clases sobre `model_template_edit`/`model_fields_add`/`model_fields_remove`/`model_validate_draft`/`model_promote`. Un `RelationDoc` se crea en el editor como cualquier documento: un formulario con `source_id`, `target_id` y `relation_type` como enum.
 
 Reglas de convivencia:
 
-- **Las tres superficies escriben por sldb.** `/save` y `fields update` terminan en la misma función, `save_payload`: re-render, roundtrip, hashes, índice semántico. No hay una escritura que pron no pueda ver.
+- **Las tres superficies escriben por sldb.** `world.store.replace`/`update_field` y `fields update` terminan en la misma función, `save_payload`: re-render, roundtrip, hashes, índice semántico. No hay una escritura que pron no pueda ver.
 - **pron detecta lo que no hizo.** Antes de cada turno compara `hash_mundo`; si cambió y no fue por su último movimiento, recarga léxico y proyección, marca el grafo como viejo hasta el próximo refresh, y el ledger recibe un movimiento `externo` con la lista de documentos cuyo `hash_d` cambió. "why is it at 9 people?" puede responder "it changed outside pron between 21:03 and 21:10".
 - **pron lee antes de escribir.** Un `fields update` va precedido por un `get` del campo; el valor anterior va al `MoveDoc`. Si el editor y pron escriben el mismo campo en la misma ventana, gana el último y el ledger lo muestra; no hay bloqueo de documento, solo el `store_lock` de sldb sobre los índices.
 - **El refresh es de quien escribe.** El editor que crea un `RelationDoc` corre el refresh o deja el grafo viejo; pron lo dirá al leer. La política es la misma que para el agente expansor (01).
