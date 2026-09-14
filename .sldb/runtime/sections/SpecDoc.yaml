@@ -677,7 +677,7 @@ documents:
     slug: 05-l-xico-y-proyecci-n
     level: 1
     line_start: 1
-    line_end: 88
+    line_end: 85
   - path: 05-l-xico-y-proyecci-n/de-d-nde-salen-las-palabras
     title: De dónde salen las palabras
     breadcrumbs:
@@ -734,7 +734,7 @@ documents:
     slug: anchors-la-forma-en-lengua-natural
     level: 2
     line_start: 25
-    line_end: 71
+    line_end: 68
   - path: 05-l-xico-y-proyecci-n/proyecci-n
     title: Proyección
     breadcrumbs:
@@ -752,8 +752,8 @@ documents:
     - workspace.source.spec
     slug: proyecci-n
     level: 2
-    line_start: 72
-    line_end: 75
+    line_start: 69
+    line_end: 72
   - path: 05-l-xico-y-proyecci-n/calce-aproximado
     title: Calce aproximado
     breadcrumbs:
@@ -771,8 +771,8 @@ documents:
     - workspace.source.spec
     slug: calce-aproximado
     level: 2
-    line_start: 76
-    line_end: 83
+    line_start: 73
+    line_end: 80
   - path: 05-l-xico-y-proyecci-n/invariantes
     title: Invariantes
     breadcrumbs:
@@ -790,8 +790,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 84
-    line_end: 88
+    line_start: 81
+    line_end: 85
 - doc_name: spec-06
   sections:
   - path: 06-superficie-y-di-logo
@@ -1501,7 +1501,7 @@ documents:
     slug: 09a-el-mundo-del-restaurante-declarado
     level: 1
     line_start: 1
-    line_end: 300
+    line_end: 296
   - path: 09a-el-mundo-del-restaurante-declarado/los-modelos-de-contenido-restaurant-models-py
     title: Los modelos de contenido · `restaurant/models.py`
     breadcrumbs:
@@ -1634,7 +1634,7 @@ documents:
     slug: los-alias-documentos-de-anchordoc
     level: 2
     line_start: 259
-    line_end: 295
+    line_end: 291
   - path: 09a-el-mundo-del-restaurante-declarado/lo-que-este-mundo-no-declara
     title: Lo que este mundo no declara
     breadcrumbs:
@@ -1652,8 +1652,8 @@ documents:
     - workspace.source.spec
     slug: lo-que-este-mundo-no-declara
     level: 2
-    line_start: 296
-    line_end: 300
+    line_start: 292
+    line_end: 296
 - doc_name: spec-10
   sections:
   - path: 10-el-shrdlu-sobre-el-modelo
@@ -2282,7 +2282,7 @@ documents:
     slug: 13-formas
     level: 1
     line_start: 1
-    line_end: 60
+    line_end: 74
   - path: 13-formas/qu-es
     title: Qué es
     breadcrumbs:
@@ -2320,7 +2320,7 @@ documents:
     slug: sustantivos
     level: 2
     line_start: 14
-    line_end: 25
+    line_end: 30
   - path: 13-formas/movimientos
     title: Movimientos
     breadcrumbs:
@@ -2338,8 +2338,8 @@ documents:
     - workspace.source.spec
     slug: movimientos
     level: 2
-    line_start: 26
-    line_end: 45
+    line_start: 31
+    line_end: 50
   - path: 13-formas/qu-registra
     title: Qué registra
     breadcrumbs:
@@ -2357,8 +2357,27 @@ documents:
     - workspace.source.spec
     slug: qu-registra
     level: 2
-    line_start: 46
-    line_end: 49
+    line_start: 51
+    line_end: 58
+  - path: 13-formas/el-di-logo
+    title: El diálogo
+    breadcrumbs:
+    - 13 · Formas
+    - El diálogo
+    about:
+    - 13 · Formas
+    - 13 formas
+    - El diálogo
+    - el di logo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: el-di-logo
+    level: 2
+    line_start: 59
+    line_end: 62
   - path: 13-formas/c-mo-se-usa
     title: Cómo se usa
     breadcrumbs:
@@ -2376,8 +2395,8 @@ documents:
     - workspace.source.spec
     slug: c-mo-se-usa
     level: 2
-    line_start: 50
-    line_end: 55
+    line_start: 63
+    line_end: 68
   - path: 13-formas/invariantes
     title: Invariantes
     breadcrumbs:
@@ -2395,5 +2414,5 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 56
-    line_end: 60
+    line_start: 69
+    line_end: 74

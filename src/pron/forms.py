@@ -402,16 +402,13 @@ class Compiler:
         if w.kind == "alias-action":
             if len(args) != 1:
                 raise FormError(f"(say {symbol} NOUN): an action alias takes one noun")
-            rest = w.ref.split(":", 1)[1]
-            verb, _, assign = rest.partition(" ")
-            fld, value = assign.split("=", 1)
             return Part(
                 "action",
                 subject=self.noun(args[0]),
                 verb=w,
-                field_name=fld.split(".", 1)[1],
-                value=value,
-                payload={"verb": verb, "alias": True},
+                field_name=w.field_name,
+                value=w.payload.get("value"),
+                payload={"verb": w.payload.get("verb"), "alias": True},
             )
         if w.kind == "alias-relation":
             if len(args) != 2:

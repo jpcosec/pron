@@ -20,8 +20,8 @@ Un modelo es una clase y sus campos son atributos. El SHRDLU convierte cada camp
 Reglas que completan la tabla:
 
 - **Cada campo tiene un alias** (05) que da su nombre y sus preposiciones: `capacity ← "for N"`, `zone ← "on the Z"`, `name ← "named"`. Sin alias, el campo se nombra por su identificador.
-- **Un alias puede nombrar un predicado**: `large → predicate:capacity >= 6`. Así "the large tables" es un adjetivo del mundo sin código. El alias declara sobre qué modelo vale.
-- **Comparar dos objetos** es una condición con interpolación (03): "does the reservation fit at table 12?" es el alias `fits → predicate:capacity >= {party_size}` evaluado sobre la mesa con los valores de la reserva.
+- **Un alias puede nombrar un predicado**: `large → (where Table "capacity >= 6")`. Así "the large tables" es un adjetivo del mundo sin código. El alias declara sobre qué modelo vale.
+- **Comparar dos objetos** es una condición con interpolación (03): "does the reservation fit at table 12?" es el alias `fits → (where Table "capacity >= {party_size}")` evaluado sobre la mesa con los valores de la reserva.
 - **Contar** es el tamaño del conjunto de direcciones: "how many tables are on the terrace?" es `find … --where` y contar. Sumar, promediar y ordenar sobre un campo son lecturas del campo en cada dirección del conjunto: `get` por dirección, N veces; pron no lee payloads enteros para eso.
 - **El nombre natural de un objeto** lo declara el mundo en el `ProjectionDoc`, campo `display`, una plantilla por modelo: `Table: "table {number}"`, `Reservation: "{date} {time}, {party_size} people"`. Sin plantilla, se usa `title` si existe y el nombre del documento si no.
 - **Nombrar un objeto por un campo** es un predicado de igualdad: "table 12" es `number = 12` porque `number` es el campo `key` que el `ProjectionDoc` declara para `Table`. Sin `key`, "la mesa 12" se busca como nombre propio (`doc ~ "12"`).
@@ -73,7 +73,7 @@ El refresh (04) corre tres cosas:
    - un nodo `sldb://document/Modelo:nombre` por documento de contenido, con `node_type` = el modelo, sus tags y sus secciones, como hoy;
    - un nodo `sldb://relation_type/<name>` por `RelationTypeDoc`, con `source_types`, `target_types`, cardinalidad y eje, y **aristas `applies_to_source` y `applies_to_target`** desde ese nodo a cada `sldb://model/<M>` que nombra: así los verbos de una clase son sus aristas entrantes;
    - un nodo `sldb://field/<M>.<f>` por campo de cada modelo, con tipo y descripción, y una arista `has_field` desde el modelo; una arista `extends` de cada modelo a sus `base_models`;
-   - un nodo `sldb://anchor/<symbol>` por `AnchorDoc` y una arista `names` a lo que su `ref` nombra (modelo, campo, tipo de relación; un `compose`, una por paso). Con esto el grafo contesta "¿qué puedo hacer con una reserva?" con `edges_to(sldb://model/Reservation)` filtrado por `applies_to_*` y `names`, más las aristas de sus ancestros por `extends`, sin que nadie registre verbos por sustantivo;
+   - un nodo `sldb://anchor/<symbol>` por `AnchorDoc` y una arista `names` a lo que la forma de su `ref` nombra (modelo, campo, tipo de relación; en un `(move …)`, una por paso). Con esto el grafo contesta "¿qué puedo hacer con una reserva?" con `edges_to(sldb://model/Reservation)` filtrado por `applies_to_*` y `names`, más las aristas de sus ancestros por `extends`, sin que nadie registre verbos por sustantivo;
    - **una arista por `RelationDoc`**, colgada del nodo origen: `relation_type`, y en `metadata` el id del `RelationDoc`, la condición y `origin: relation_doc`. El `RelationDoc` no es nodo;
    - una arista por link con predicado en prosa, con `origin: link`, documento y sección de donde salió;
    - los documentos con tag `type.pron.move` excluidos;

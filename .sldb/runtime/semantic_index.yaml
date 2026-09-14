@@ -27,6 +27,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -68,6 +69,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -108,6 +110,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -148,6 +151,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -184,6 +188,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-models-move--SpecDoc:spec-07
   - implements--SurfaceDoc:surface-pron-models-projection--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-models-spec--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
@@ -241,6 +246,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -305,6 +311,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -343,6 +350,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-models-move--SpecDoc:spec-07
   - implements--SurfaceDoc:surface-pron-models-projection--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-models-spec--SpecDoc:spec-08
+  - implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05
   - implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-response--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
@@ -412,6 +420,7 @@ tags:
   - surface-pron-models-move
   - surface-pron-models-projection
   - surface-pron-models-spec
+  - surface-pron-refs
   - surface-pron-resolve
   - surface-pron-response
   - surface-pron-serve
@@ -749,6 +758,12 @@ documents:
   implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06:
     model: RelationDoc
     path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05.md
     tags:
     - layer.topology
     - type.relation.instance
@@ -1299,6 +1314,17 @@ documents:
   surface-pron-forms:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-forms.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-refs:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-refs.md
     tags:
     - domain:system_architecture
     - entity:module

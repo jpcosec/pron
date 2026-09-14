@@ -3,7 +3,7 @@ symbol: move
 forms:
 - move
 - moves
-ref: model:MoveDoc
+ref: (model MoveDoc)
 steps: []
 ---
 

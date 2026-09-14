@@ -15,8 +15,8 @@ documents:
   - workspace.source.spec
 - name: spec-03
   path: source/spec/03-verbos-transitivos.md
-  hash_c: 4a3c35a54af9666819230aedc68155ffe5d683c53e9ba1d51fc8c8fb6d67bb42
-  hash_d: 23ea13ae2e2d06f27d89e6d99f6e305c28151dd3cca6ee67294de7b55b91e81e
+  hash_c: f71ac3f506dafc4a7c2bfc6c66b8b5b54f615e4b4886e7c26d98c205ff45b546
+  hash_d: 5e61eb1920be8080e08ae1fc06c5e460c9e8d852eb7f2482334eea70ebbef95f
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -29,15 +29,15 @@ documents:
   - workspace.source.spec
 - name: spec-05
   path: source/spec/05-lexico-y-proyeccion.md
-  hash_c: 177a084537638081a914e4144525b96b956651bd241b84b73b3ce82da9e0392b
-  hash_d: 9a4d08a82a66f01bd7f2d2a80570e229134421bd306d4507930e665e494478e8
+  hash_c: ee896f7808b8c7ddba2b4b09faa3f916af888144b895c29d4a47a4af961e91f8
+  hash_d: 8b166af595cb6a870c8c17db43065c0540b6d51eeb804dc1e37e216e267984e9
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-06
   path: source/spec/06-superficie-y-dialogo.md
-  hash_c: 476d8968d2c6cf81b025d17410322b34387443cd46bccc787f80c061204688fc
-  hash_d: b4b8d48bd5527fd07e420b7de6a0c7a84bada5c3eeed8482e019bb3887e3ed22
+  hash_c: 70214b82af8c1d144796542c2fe8740685f73aab4b06f0862cf1670263e9545b
+  hash_d: b8a71a5ebf7de588c476d971ab046db31f91bd3c4b4161a30f1155b16b4046bc
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -57,22 +57,22 @@ documents:
   - workspace.source.spec
 - name: spec-09
   path: source/spec/09-una-conversacion.md
-  hash_c: 29202b60e583da586dcd2a2139b07a7ae90868101a1245cdc83d8fc5d653e1c3
-  hash_d: e3ee17f0af02fd35f8e5ad9990e04f75c2912cc0ec58f230ef2932190fdd6aab
+  hash_c: 0c96035149c7399e5a98b3b9b53ccbf79efa8d7e122207dd1fafe8a9330729bd
+  hash_d: 73d8ded4ff1b3cb5e1ae92c32108d2cd7c16ceaa288549d6896683f7a9381bf1
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-09a
   path: source/spec/09a-el-mundo-del-restaurante.md
-  hash_c: 5fd5220f03a877ee86a2b43dc2f0707bc9e5fdaec098dd2ec83805cb47fef7b4
-  hash_d: 405898b1476ad57f95cb5f180170f4c532aa99158a3fb6d3dcea3d3c4c62c92e
+  hash_c: 2e979d914def4b66792898bf7a148533cc2e2080c2a4ef21355b59832439e562
+  hash_d: cef55a17d7d12b70536baf877bfda936d5435303dcfee8dd0e59e7ceb99b6200
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-10
   path: source/spec/10-el-shrdlu-sobre-el-modelo.md
-  hash_c: 0acaab9a9d3300ca6348a480619039469d744f724cc1165b606547497607b09c
-  hash_d: dae8eab42271838340b6cb82c27bb679e3520c0444675039b7606a5c36a8f088
+  hash_c: eb616a79609ba64517331d8a2915678fffb78faa5504259dc3ed6c631c2238c1
+  hash_d: 83c3c1bdc41478c76893b96050d6f5d000acad9210aec688a7fb2389c5ce1513
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,15 +85,15 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: a63c321bf746b6b0e375dd1b392bf75942c14c6329dd4251114c197ed18b26b5
-  hash_d: 27a4536421dcb9579ef96b9ac06968051901614078b36c63177ee98de54232df
+  hash_c: c62f7a742d02327b8187c099312fff8d628c8ce442ac4a6e7b417555932e90f2
+  hash_d: f21a426eef22d2384303ae0d20188b27d2168431862b8119bcba312cfaa416f6
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-13
   path: source/spec/13-formas.md
-  hash_c: c15477baf8e47ea4bf0a9d70273e6924098ce1a42fe778008e42e35db8d046bf
-  hash_d: 73cd390bb368d2fa2aa25a222151eee2b171d171232d26305800860b41f61377
+  hash_c: e2ac5a3be4551ffa3113f90ebdbcf6e44b4b3b89b60c5a4eae964cc1eadc0a96
+  hash_d: b3db4ac94ba365226cdfba89fffe3f39f04c680b33eda3361331d935493167f6
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

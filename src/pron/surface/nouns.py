@@ -359,9 +359,9 @@ def value_run(following: list[Item], string_field: bool) -> tuple[Any, int]:
 def _fill_predicate(
     w: Word, it: Item, lex: Lexicon
 ) -> tuple[str, tuple[str, str, str] | None]:
-    """predicate:M:<where> with N / Z / X slots substituted; a Z that is not a known value is reported."""
+    """(where M "<predicate>") with N / Z / X slots substituted; a Z that is not a known value is reported."""
     assert w.model is not None
-    where = w.ref.split(":", 2)[2]
+    where = str(w.payload["where"])
     unknown = None
     for slot, value in it.slots.items():
         if slot == "Z":

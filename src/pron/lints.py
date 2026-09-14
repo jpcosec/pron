@@ -12,6 +12,16 @@ def run_lints(world: World) -> list[str]:
     models = world.model_names()
     lex = Lexicon(world, world.projection("all"))
 
+    # every alias names something as a form (spec 05, 13)
+    if "AnchorDoc" in models:
+        from pron.refs import parse as parse_ref
+
+        for d in store.docs_of("AnchorDoc"):
+            try:
+                parse_ref(d.payload.get("ref", ""), d.payload.get("steps") or [])
+            except ValueError as e:
+                problems.append(f"alias {d.name}: ref is not a form: {e}")
+
     # every word of the lexicon has a motive
     for w in lex.words:
         if not w.motive.strip():

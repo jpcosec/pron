@@ -41,8 +41,8 @@ def test_classification_keeps_ambiguity_and_fills_slots(clf: Classifier):
     assert kinds == ["det", "word", "word", "word"]
     assert items[2].slots == {"Z": "terrace"}
     assert {w.ref for w in items[3].words} == {
-        "field:Reservation.party_size",
-        "predicate:Table:capacity >= N",
+        "(field Reservation party_size)",
+        '(where Table "capacity >= N")',
     }
     assert items[3].slots == {"N": 6}
 

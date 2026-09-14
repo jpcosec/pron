@@ -279,3 +279,10 @@ documents:
   semantic_tags:
   - layer.topology
   - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-refs--SpecDoc:spec-05.md
+  hash_c: 70d2a6b6799d82f5b183bcb1474f0d6727fd58756428e981a8e1f2bf67556627
+  hash_d: 0119a4a55772f539c13325cc732737406682e3cc203cdd6ee84fb3a57fe922b9
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance

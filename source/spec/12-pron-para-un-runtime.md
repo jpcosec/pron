@@ -45,7 +45,7 @@ Las dos devuelven lo mismo y la sesión se usa igual. Un runtime que quiere las 
 | `world` (por socket) | a cuál mundo del daemon habla la sesión: el nombre de un store enlazado, o su raíz; por defecto el store propio del daemon | el runtime |
 | `home` (por socket) | el mundo propio del que habla; cuando difiere de `world`, solo abren las proyecciones expuestas de ese mundo (§6) | el runtime |
 
-`session.turn(sentence) -> Response` y `session.eval(forms) -> Response`: una oración, o el mismo movimiento escrito como formas (13), con las mismas verificaciones, escrituras, `MoveDoc` y `undo`; una forma no contesta una pendiente. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Las sesiones no son seguras entre hilos; una sesión, un hilo.
+`session.turn(sentence) -> Response` y `session.eval(forms) -> Response`: una oración, o el mismo movimiento escrito como formas (13), con las mismas verificaciones, escrituras, `MoveDoc` y `undo`; una forma nunca contesta una pendiente, y evaluarla con una pendiente abierta la descarta. Una sesión es un diálogo: la pendiente (06) y los referentes viven en ella. Las sesiones no son seguras entre hilos; una sesión, un hilo.
 
 **Identidad de una sesión remota.** El servidor guarda una sesión por la tupla `(projection, speaker, read_only, speaker_address, now)`. Dos `RemoteSession` que envían los mismos cinco valores comparten el mismo diálogo, aunque sean dos objetos o dos procesos: uno pregunta, el otro puede contestar. Un valor distinto en cualquiera de los cinco es otra sesión. Para que dos ejecuciones no se contesten entre sí, el hablante lleva la ejecución (`agent.zero/run-1`). `RemoteSession.close()` descarta el diálogo en el servidor; el turno siguiente empieza de cero con la misma clave. En proceso no hay clave: cada `Session` es su propio diálogo.
 
@@ -147,7 +147,7 @@ Un runtime que crea muchos mundos de la misma clase les da su vocabulario con un
 
 ## 9. Qué es estable
 
-Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13 y `record["forms"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
+Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13, `record["forms"]` y `record["resolved"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 

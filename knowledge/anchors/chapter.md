@@ -4,7 +4,7 @@ forms:
 - chapter
 - chapters
 - spec
-ref: model:SpecDoc
+ref: (model SpecDoc)
 steps: []
 ---
 
