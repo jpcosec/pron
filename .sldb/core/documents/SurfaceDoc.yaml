@@ -349,8 +349,8 @@ documents:
   - workspace.knowledge.surfaces
 - name: surface-pron-forms
   path: knowledge/surfaces/surface-pron-forms.md
-  hash_c: b9e8edcda6e0d634270da867392a2ab088a8f752c1dcc737d3638bfb162f68cd
-  hash_d: 322d16c68c4cef3e1d64a160e98d6780187be14724e8ccca218470836a71553d
+  hash_c: f4e62e622c52977cea6f642150fc8d0d6bc0541dcbdc0a02b531eddc7c75511b
+  hash_d: 0be1e3f8c22fc42af8bcf9ec6a4a869708101d00381dc7e42dcfb5be7284e7e4
   semantic_tags:
   - domain:system_architecture
   - entity:module

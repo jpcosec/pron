@@ -3284,7 +3284,7 @@ documents:
     slug: forms
     level: 1
     line_start: 14
-    line_end: 51
+    line_end: 58
   - path: forms/purpose
     title: Purpose
     breadcrumbs:
@@ -3340,7 +3340,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 23
-    line_end: 45
+    line_end: 49
   - path: forms/commands
     title: Commands
     breadcrumbs:
@@ -3367,5 +3367,5 @@ documents:
     - workspace.knowledge.surfaces
     slug: commands
     level: 2
-    line_start: 46
-    line_end: 51
+    line_start: 50
+    line_end: 58

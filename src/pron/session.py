@@ -13,7 +13,8 @@ from typing import Any
 from pron.dialogue import Dialogue, Pending
 from pron.display import Display
 from pron.embedder import Embedder, Matcher
-from pron.forms import Compiler, FormError, of_move
+from pron.forms import Compiler, FormError, UnknownWord, said
+from pron.forms import resolved as resolved_forms
 from pron.ids import address_of, doc_of, is_local, join_id, model_of, scope as _scope
 from pron.kernel import Kernel
 from pron.ledger import Ledger
@@ -115,7 +116,16 @@ class Session:
         refresh, MoveDoc and undo as a sentence. It never answers a pending question."""
 
         def body(trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
-            return self._new_forms(forms, trace, record), ""
+            self._sentence = forms
+            if self.dialogue.pending is not None:
+                trace.append("pending dropped: a new move")
+                record["dropped_pending"] = self.dialogue.pending.sentence
+                self.dialogue.close()
+            try:
+                expr = read_one(forms)
+            except SexpError as e:
+                return Response(f"Could not read that: {e}", "error"), ""
+            return self._eval(expr, trace, record), ""
 
         return self._move(forms, body)
 
@@ -187,49 +197,40 @@ class Session:
             return Response(
                 "I can understand: " + " · ".join(examples()[:6]) + " …", "missing"
             )
-        # resolve every phrase of every part before executing anything
+        # the sentence says forms; the forms are what gets resolved and run (spec 13)
+        return self._eval(
+            said(interp.parts, self),
+            trace,
+            record,
+            retry=retry,
+            again=lambda: self._new_sentence(sentence, trace, record, retry=True),
+        )
+
+    def _eval(
+        self,
+        expr: Any,
+        trace: list[str],
+        record: dict[str, Any],
+        retry: bool = False,
+        again: Any = None,
+    ) -> Response:
+        record.setdefault("forms", write(expr))
+        trace.append("forms: " + write(expr))
+        try:
+            parts = Compiler(self).compile(expr)
+        except UnknownWord as e:
+            record["missing"] = {"note": str(e), "candidates": []}
+            return Response(f"{e}.", "missing")
+        except FormError as e:
+            return Response(f"Could not do that: {e}", "error")
+        # resolve every noun of every part before executing anything
         plans = []
-        for part in interp.parts:
+        for part in parts:
             plan = self._plan(part, trace, record)
             if isinstance(plan, Response):
                 return plan
             plans.append(plan)
-        # the resolved sentence is a move written as forms; the forms are what runs (spec 13)
-        return self._run_forms(
-            of_move(interp.parts, plans, self),
-            trace,
-            record,
-            again=lambda: self._new_sentence(sentence, trace, record, retry=True),
-            retry=retry,
-        )
-
-    def _new_forms(
-        self, text: str, trace: list[str], record: dict[str, Any], retry: bool = False
-    ) -> Response:
-        try:
-            expr = read_one(text)
-        except SexpError as e:
-            return Response(f"Could not read that: {e}", "error")
-        return self._run_forms(
-            expr,
-            trace,
-            record,
-            again=lambda: self._new_forms(text, trace, record, retry=True),
-            retry=retry,
-        )
-
-    def _run_forms(
-        self, expr: Any, trace: list[str], record: dict[str, Any], again, retry: bool
-    ) -> Response:
-        record["forms"] = write(expr)
-        trace.append("forms: " + record["forms"])
-        try:
-            compiled = Compiler(self, trace, record).compile(expr)
-        except FormError as e:
-            return Response(f"Could not do that: {e}", "error")
-        if isinstance(compiled, Response):
-            return compiled
-        parts, plans = compiled
+        record["resolved"] = write(resolved_forms(parts, plans, self))
         # every write of the move validated before the first one (spec 11 §7)
         self._prevalidate(parts, plans, trace, record)
         # hash_mundo read again just before executing (spec 11 §5)
@@ -244,7 +245,11 @@ class Session:
             )
             self.hash = current
             self._load()
-            return again()
+            return (
+                again()
+                if again is not None
+                else self._eval(expr, trace, record, retry=True)
+            )
         # execute in order, one refresh at the end
         texts = []
         wrote = False
@@ -407,6 +412,24 @@ class Session:
         trace: list[str],
         record: dict[str, Any],
     ) -> Resolution:
+        if np.given:
+            for a in np.given:
+                eid = address_to_export_id(a)
+                try:
+                    self.world.store.payload_of(eid)
+                except StoreError:
+                    return Resolution(np, [], "missing", note=f"there is no {eid}")
+            self._note_reads(np.given, record)
+            if np.alternatives:
+                return Resolution(
+                    np,
+                    list(np.given),
+                    "unico",
+                    candidates=list(np.alternatives),
+                    note=f"any: took {np.given[0]}; also {', '.join(np.alternatives)}",
+                )
+            return Resolution(np, list(np.given), "unico", note="by address")
+        need_model = need_model or np.hint
         if np.referent is not None:
             who = np.referent.meta.get("who")
             if who == "speaker":
@@ -452,31 +475,32 @@ class Session:
             except StoreError:
                 continue
 
-    def _plan_compose(
-        self, part: Part, trace: list[str], record: dict[str, Any]
-    ) -> dict[str, Any] | Response:
+    def _compose_slots(self, part: Part) -> dict[str, NounPhrase]:
+        """The phrase of the sentence each slot of a compose alias takes: $referent:M the referent,
+        $object:M a phrase of class M (spec 05)."""
         assert part.verb is not None
-        np: NounPhrase | None
-        plan: dict[str, Any] = {"steps": []}
+        if "_slots" in part.payload:
+            return dict(part.payload["_slots"])
         nps: list[NounPhrase] = part.payload.get("_nps", [])
+        slots: dict[str, NounPhrase] = {}
         for step in part.verb.payload.get("steps", []):
-            resolved = {}
             for slot_key in ("source", "target"):
                 slot = step.get(slot_key)
                 if (
                     not isinstance(slot, str)
                     or not slot.startswith("$")
                     or slot == "$created"
+                    or slot in slots
                 ):
                     continue
                 kind, _, model = slot[1:].partition(":")
                 if kind == "referent":
-                    np = next(
+                    referent: NounPhrase | None = next(
                         (n for n in nps if n.referent is not None), None
-                    ) or NounPhrase(
+                    )
+                    slots[slot] = referent or NounPhrase(
                         None, None, "singular", referent=_pronoun_item(part)
                     )
-                    res = self._resolve_phrase(np, model, trace, record)
                 elif kind == "object":
                     np = next(
                         (
@@ -486,19 +510,41 @@ class Session:
                         ),
                         None,
                     )
-                    if np is None:
-                        return Response(
-                            f"I need a {model.lower()} in that sentence.", "missing"
-                        )
-                    res = self._resolve_phrase(np, model, trace, record)
-                else:
+                    if np is not None:
+                        slots[slot] = np
+        return slots
+
+    def _plan_compose(
+        self, part: Part, trace: list[str], record: dict[str, Any]
+    ) -> dict[str, Any] | Response:
+        assert part.verb is not None
+        plan: dict[str, Any] = {"steps": []}
+        slots = self._compose_slots(part)
+        for step in part.verb.payload.get("steps", []):
+            resolved_step = {}
+            for slot_key in ("source", "target"):
+                slot = step.get(slot_key)
+                if (
+                    not isinstance(slot, str)
+                    or not slot.startswith("$")
+                    or slot == "$created"
+                ):
                     continue
+                kind, _, model = slot[1:].partition(":")
+                if kind not in ("referent", "object"):
+                    continue
+                np = slots.get(slot)
+                if np is None:
+                    return Response(
+                        f"I need a {model.lower()} in that sentence.", "missing"
+                    )
+                res = self._resolve_phrase(np, model, trace, record)
                 if res.outcome == "ambiguo":
                     return self._ask(part, slot_key, res, record)
                 if res.outcome == "missing":
                     return self._missing(res, trace, record)
-                resolved[slot_key] = res
-            plan["steps"].append(resolved)
+                resolved_step[slot_key] = res
+            plan["steps"].append(resolved_step)
         permitted = self._compose_permissions(part.verb)
         if isinstance(permitted, Response):
             return permitted
@@ -534,7 +580,7 @@ class Session:
             Pending(
                 "choice",
                 "",
-                part.items and " ".join(i.text for i in part.items) or "",
+                part.items and " ".join(i.text for i in part.items) or self._sentence,
                 candidates=list(res.candidates),
                 labels=labels,
                 slot=role,
@@ -553,7 +599,7 @@ class Session:
             Pending(
                 "data",
                 "",
-                " ".join(i.text for i in part.items),
+                " ".join(i.text for i in part.items) or self._sentence,
                 field_name=field_name,
                 model=part.subject.model,
                 state={"part": part},
@@ -801,20 +847,8 @@ class Session:
         return self._resume(part, trace, record), pending.move_id
 
     def _resume(self, part: Part, trace: list[str], record: dict[str, Any]) -> Response:
-        interp = Interpretation(
-            part.items and " ".join(i.text for i in part.items) or "", [], [part]
-        )
-        record["interpretation"] = interp.to_record()
-        plan = self._plan(part, trace, record)
-        if isinstance(plan, Response):
-            return plan
-        return self._run_forms(
-            of_move([part], [plan], self),
-            trace,
-            record,
-            again=lambda: self._resume(part, trace, record),
-            retry=True,
-        )
+        """The answer filled the hole: the part is said again as forms and evaluated."""
+        return self._eval(said([part], self), trace, record)
 
     # -- execution --------------------------------------------------------------------------
 

@@ -172,7 +172,6 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
-  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
   - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
@@ -332,7 +331,6 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
-  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
   - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
@@ -739,12 +737,6 @@ documents:
   implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13:
     model: RelationDoc
     path: knowledge/relations/implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13.md
-    tags:
-    - layer.topology
-    - type.relation.instance
-  implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06:
-    model: RelationDoc
-    path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06.md
     tags:
     - layer.topology
     - type.relation.instance

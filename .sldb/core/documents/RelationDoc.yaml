@@ -265,13 +265,6 @@ documents:
   semantic_tags:
   - layer.topology
   - type.relation.instance
-- name: implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
-  path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06.md
-  hash_c: eecb63f77e19b81241a70a181aec5dcd683c1137bdbd8c53d22f4cdca178d5c5
-  hash_d: d7fc9432e59fd75cff2907c5a323dc637ea264638bd09d8e14d5f73cce1ef4b2
-  semantic_tags:
-  - layer.topology
-  - type.relation.instance
 - name: implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
   path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13.md
   hash_c: 10a3faa6b1b4863a498036cce152c7eb15d41d77c2f96190c83f9ce659f00cb7

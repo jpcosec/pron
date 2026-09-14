@@ -1,26 +1,30 @@
-"""Forms: the structured moves pron evaluates (spec 13). A sentence becomes forms after the surface
-resolves every phrase (spec 06), and a runtime that already knows its documents writes the forms
-directly. Both go through the same evaluation: permissions, pre-validation, writes, refresh,
-MoveDoc and undo.
+"""Forms: the structured language of pron (spec 13). The surface turns a sentence into forms and
+does nothing else; evaluating forms resolves every noun (addresses, predicates, proper names,
+complements, referents of the dialogue), asks when a noun is ambiguous or a field is missing,
+checks, writes, refreshes and records. A runtime that already has its documents writes the forms.
 
 Nouns
-    (doc "Model:name" ...)                     documents by export id
-    (the Model clause ...)                     exactly one document; more than one is ambiguous
-    (find Model clause ...)                    every document that matches
-        clauses: (where "<sldb predicate>") (named "proper name")
+    (doc "Model:name" ...)                 documents by export id
+    (the Model clause ...)                 one document
+    (a Model clause ...)                   any one
+    (all Model clause ...)                 every document that matches (find is the same)
+    (it "word" [Model])  (them "word" [Model])  (me "word")      referents of the dialogue
+        clauses: (where "<sldb predicate>")  (named "proper name")  (of NOUN)  (of-name "word" ...)
+                 (plural)  (asked)  (set field value)  (not-a-value Model field "text")
 
 Moves
     (show NOUN)
-    (targets relation NOUN [(of Model)] [(where "...")])   what NOUN relates to
-    (sources relation NOUN [(of Model)] [(where "...")])   what relates to NOUN
+    (targets relation [NOUN] [(of Model)] [(where "...")])   what NOUN relates to
+    (sources relation [NOUN] [(of Model)] [(where "...")])   what relates to NOUN
     (assert relation SUBJECT OBJECT)
-    (create Model [(as "doc-name")] (field value) ...)   (as …) names it when the projection has no rule
+    (create Model [(as "doc-name")] (field value) ...)
     (change NOUN field value)  (add NOUN field value)  (remove NOUN field [value])
     (clean NOUN field)  (forget NOUN)
-    (say alias NOUN)                           an action alias on NOUN
-    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN [(alternatives id ...)]) [(as "doc-name")] (field value) ...)
+    (say alias NOUN)                                 an action alias
+    (say alias SUBJECT OBJECT)                       a relation alias
+    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN) [(as "doc-name")] (field value) ...)
     (undo)  (refresh)  (why [NOUN])
-    (move FORM ...)                            several parts, one move
+    (move FORM ...)                                  several parts, one move
 
 Values are strings, numbers, true, false, nil, or (list value ...).
 """
@@ -31,45 +35,59 @@ from typing import TYPE_CHECKING, Any
 
 from pron.ids import address_of, model_of
 from pron.lexicon import Word
-from pron.resolve import Resolution
-from pron.response import Response
+from pron.resolve import address_to_export_id
 from pron.sexp import Sym, read_one, write
 from pron.store import StoreError
 from pron.surface.interpret import Part
 from pron.surface.nouns import NounPhrase
+from pron.surface.tokens import Item
 
 if TYPE_CHECKING:
     from pron.session import Session
 
-WRITE_VERBS = ("change", "add", "remove", "clean", "forget")
+NOUN_HEADS = ("doc", "the", "a", "all", "find", "it", "them", "me")
+REFERENT_HEADS = {"it": "singular", "them": "plural", "me": "speaker"}
 
 
 class FormError(ValueError):
-    """A form that is not well made: unknown head, wrong arity, a word not in the projection."""
+    """A form that is not well made."""
 
 
-# -- printing: a resolved move → forms ------------------------------------------------------------
+class UnknownWord(FormError):
+    """A model, relation or alias the session's projection does not have (spec 01): missing."""
 
 
-def of_move(parts: list[Part], plans: list[dict[str, Any]], session: "Session") -> Any:
-    forms = [of_part(p, plan, session) for p, plan in zip(parts, plans)]
+# -- what a sentence says: parts → forms, nouns unresolved -------------------------------------
+
+
+def said(parts: list[Part], session: "Session") -> Any:
+    forms = [said_part(p, session) for p in parts]
     return forms[0] if len(forms) == 1 else [Sym("move"), *forms]
 
 
-def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
+def said_part(part: Part, session: "Session") -> list[Any]:
     k = part.kind
     if k == "nominal":
-        return [Sym("show"), _noun(plan["subject"])]
+        return [
+            Sym("show"),
+            noun_form(part.subject, session._needed_model(part, "subject")),
+        ]
     if k == "read":
         assert part.verb is not None and part.verb.relation is not None
         asked = part.payload.get("asked", "object")
-        head = "targets" if asked == "object" and "subject" in plan else "sources"
-        given = plan["subject"] if head == "targets" else plan["object"]
-        form: list[Any] = [Sym(head), Sym(part.verb.relation), _noun(given)]
+        head = (
+            "targets" if asked == "object" and part.subject is not None else "sources"
+        )
+        given, given_role = (
+            (part.subject, "subject") if head == "targets" else (part.object, "object")
+        )
+        form: list[Any] = [Sym(head), Sym(part.verb.relation)]
+        if given is not None:
+            form.append(noun_form(given, session._needed_model(part, given_role)))
         asked_np = part.subject if asked == "subject" else part.object
-        if asked_np is not None and asked_np.model:
-            form.append([Sym("of"), Sym(asked_np.model)])
-        if asked_np is not None:
+        if asked_np is not None and asked_np is not given:
+            if asked_np.model:
+                form.append([Sym("of"), Sym(asked_np.model)])
             for where in session._leftover_predicates(asked_np, part.leftovers):
                 form.append([Sym("where"), where])
         return form
@@ -78,8 +96,8 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
         return [
             Sym("assert"),
             Sym(part.verb.relation),
-            _noun(plan["subject"]),
-            _noun(plan["object"]),
+            noun_form(part.subject, session._needed_model(part, "subject")),
+            noun_form(part.object, session._needed_model(part, "object")),
         ]
     if k == "action":
         verb = part.payload.get(
@@ -96,13 +114,10 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
                 *named,
                 *_fields(part.payload["fields"]),
             ]
+        subject = noun_form(part.subject, session._needed_model(part, "subject"))
         if part.payload.get("alias") and part.verb is not None:
-            return [
-                Sym("say"),
-                Sym(part.verb.payload["symbol"]),
-                _noun(plan["subject"]),
-            ]
-        form = [Sym(verb), _noun(plan["subject"])]
+            return [Sym("say"), Sym(part.verb.payload["symbol"]), subject]
+        form = [Sym(verb), subject]
         if part.field_name is not None:
             form.append(Sym(part.field_name))
         if verb in ("change", "add") or (verb == "remove" and part.value is not None):
@@ -111,19 +126,9 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
     if k == "compose":
         assert part.verb is not None
         form = [Sym("say"), Sym(part.verb.payload["symbol"])]
-        seen: set[str] = set()
-        for step, resolved in zip(part.verb.payload.get("steps", []), plan["steps"]):
-            for slot_key, res in resolved.items():
-                slot = step[slot_key]
-                if slot in seen:
-                    continue
-                seen.add(slot)
-                binding: list[Any] = [Sym("slot"), slot, _noun(res)]
-                if res.candidates and res.note.startswith("any"):
-                    binding.append(
-                        [Sym("alternatives"), *[_eid(c) for c in res.candidates]]
-                    )
-                form.append(binding)
+        for slot, np in session._compose_slots(part).items():
+            model = slot[1:].partition(":")[2]
+            form.append([Sym("slot"), slot, noun_form(np, model or None)])
         if part.payload.get("_name"):
             form.append([Sym("as"), part.payload["_name"]])
         literals = {
@@ -132,236 +137,267 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
         form.extend(_fields(literals))
         return form
     if k == "why":
-        target = session._why_target(part)
+        target = part.payload.get("target")
         return [Sym("why"), [Sym("doc"), target]] if target else [Sym("why")]
     if k in ("undo", "refresh"):
         return [Sym(k)]
     raise FormError(f"a part of kind {k} has no form")
 
 
-def _noun(res: Resolution) -> list[Any]:
-    return [Sym("doc"), *res.export_ids()]
+def noun_form(np: NounPhrase | None, model: str | None = None) -> list[Any]:
+    if np is None:
+        return [Sym("it"), "it"] + ([Sym(model)] if model else [])
+    if np.given:
+        return [Sym("doc"), *[address_to_export_id(a) for a in np.given]]
+    if np.referent is not None:
+        who = np.referent.meta.get("who")
+        head = "me" if who == "speaker" else ("them" if np.number == "plural" else "it")
+        form: list[Any] = [Sym(head), np.referent.text]
+        hint = np.hint or model
+        if head != "me" and hint:
+            form.append(Sym(hint))
+        return form
+    assert np.model is not None
+    head = {"any": "a", "all": "all"}.get(np.determiner or "the", "the")
+    form = [Sym(head), Sym(np.model)]
+    if head == "the" and np.number == "plural":
+        form.append([Sym("plural")])
+    if np.interrogated:
+        form.append([Sym("asked")])
+    form += [[Sym("where"), w] for w in np.predicates]
+    form += [[Sym("named"), n] for n in np.proper]
+    for comp in np.complements:
+        if isinstance(comp, NounPhrase):
+            form.append([Sym("of"), noun_form(comp)])
+        else:
+            form.append([Sym("of-name"), *comp])
+    form += [[Sym("set"), Sym(k), _value(v)] for k, v in np.captures.items()]
+    form += [[Sym("not-a-value"), Sym(m), Sym(f), t] for m, f, t in np.unknown_values]
+    return form
 
 
-def _eid(address: str) -> str:
-    from pron.resolve import address_to_export_id
-
-    return address_to_export_id(address)
+# -- what a move did: every noun as the addresses it resolved to -------------------------------
 
 
-def _fields(fields: dict[str, Any]) -> list[Any]:
-    return [[Sym(k), _value(v)] for k, v in fields.items()]
+def resolved(parts: list[Part], plans: list[dict[str, Any]], session: "Session") -> Any:
+    """Evaluating this on the same world in the same state leaves the same writes, without the
+    dialogue."""
+    forms = [
+        _by_address(said_part(p, session), p, plan, session)
+        for p, plan in zip(parts, plans)
+    ]
+    return forms[0] if len(forms) == 1 else [Sym("move"), *forms]
 
 
-def _value(v: Any) -> Any:
-    if isinstance(v, (list, tuple)):
-        return [Sym("list"), *[_value(x) for x in v]]
-    return v
+def _by_address(
+    form: list[Any], part: Part, plan: dict[str, Any], session: "Session"
+) -> list[Any]:
+    def doc(res: Any) -> list[Any]:
+        return [Sym("doc"), *res.export_ids()]
+
+    k = part.kind
+    if k == "nominal" or (k == "action" and "subject" in plan):
+        form[1 if k == "nominal" else (2 if form[0] == Sym("say") else 1)] = doc(
+            plan["subject"]
+        )
+    elif k == "read":
+        role = "subject" if form[0] == Sym("targets") else "object"
+        if role in plan and len(form) > 2 and _is_noun(form[2]):
+            form[2] = doc(plan[role])
+    elif k == "assert":
+        form[2], form[3] = doc(plan["subject"]), doc(plan["object"])
+    elif k == "compose":
+        by_slot = {}
+        steps = part.verb.payload.get("steps", []) if part.verb else []
+        for step, res_by_key in zip(steps, plan["steps"]):
+            for key, res in res_by_key.items():
+                by_slot[step[key]] = res
+        for item in form[2:]:
+            if _is_clause(item, "slot") and item[1] in by_slot:
+                res = by_slot[item[1]]
+                item[2] = doc(res)
+                if res.candidates and res.note.startswith("any"):
+                    item.append(
+                        [
+                            Sym("alternatives"),
+                            *[address_to_export_id(c) for c in res.candidates],
+                        ]
+                    )
+    elif k == "why":
+        target = session._why_target(part)
+        return [Sym("why"), [Sym("doc"), target]] if target else form
+    return form
 
 
-# -- evaluation: forms → a move the session runs ------------------------------------------------
+# -- evaluation: forms → parts whose nouns the session resolves ---------------------------------
 
 
 class Compiler:
-    """Turns forms into the parts and plans Session runs. Nouns resolve here, against the
-    projection: a model, a relation or an alias outside it does not exist for the session."""
+    """Turns forms into the parts a session plans and runs. Names are checked against the
+    session's lexicon: a model, a relation or an alias outside the projection does not exist."""
 
-    def __init__(self, session: "Session", trace: list[str], record: dict[str, Any]):
+    def __init__(self, session: "Session"):
         self.s = session
         self.lex = session.lex
-        self.trace = trace
-        self.record = record
 
-    def compile(self, expr: Any) -> tuple[list[Part], list[dict[str, Any]]] | Response:
+    def compile(self, expr: Any) -> list[Part]:
         if isinstance(expr, str) and not isinstance(expr, Sym):
             expr = read_one(expr)
         forms = expr[1:] if _head(expr) == "move" else [expr]
-        parts, plans = [], []
-        for form in forms:
-            got = self._form(form)
-            if isinstance(got, Response):
-                return got
-            parts.append(got[0])
-            plans.append(got[1])
-        return parts, plans
+        return [self._form(f) for f in forms]
 
-    def _form(self, form: Any) -> tuple[Part, dict[str, Any]] | Response:
+    def _form(self, form: Any) -> Part:
         head = _head(form)
-        args = form[1:]
         fn = getattr(self, "_f_" + head.replace("-", "_"), None)
         if fn is None:
             raise FormError(f"unknown form: ({head} …)")
-        return fn(*args)
+        part: Part = fn(*form[1:])
+        return part
 
     # nouns
 
-    def noun(self, form: Any, need_model: str | None = None) -> Resolution | Response:
+    def noun(self, form: Any) -> NounPhrase:
         head = _head(form)
+        if head not in NOUN_HEADS:
+            raise FormError(f"not a noun: ({head} …)")
         if head == "doc":
             ids = [str(x) for x in form[1:]]
             for eid in ids:
-                if not self._model_in_projection(model_of(eid)):
-                    return Response(
-                        f"I don't have that word: {model_of(eid)}.", "missing"
-                    )
-                try:
-                    self.s.world.store.payload_of(eid)
-                except StoreError:
-                    return Response(f"There is no {eid}.", "missing")
-            model = model_of(ids[0]) if ids else need_model
-            np = NounPhrase(model, "the", "singular" if len(ids) == 1 else "plural")
-            self.s._note_reads([address_of(e) for e in ids], self.record)
-            return Resolution(
-                np, [address_of(e) for e in ids], "unico", note="by address"
-            )
-        if head in ("the", "find"):
-            model = str(form[1])
-            if not self._model_in_projection(model):
-                return Response(f"I don't have that word: {model}.", "missing")
+                self._need_model(model_of(eid))
             np = NounPhrase(
-                model,
-                "the" if head == "the" else "all",
-                "singular" if head == "the" else "plural",
+                model_of(ids[0]) if ids else None,
+                "the",
+                "singular" if len(ids) == 1 else "plural",
             )
-            for clause in form[2:]:
-                ch = _head(clause)
-                if ch == "where":
-                    np.predicates.append(str(clause[1]))
-                elif ch == "named":
-                    np.proper.append(str(clause[1]))
-                else:
-                    raise FormError(f"unknown clause in ({head} {model} …): ({ch} …)")
-            res = self.s._resolve_phrase(np, need_model, self.trace, self.record)
-            if res.outcome == "missing":
-                return self.s._missing(res, self.trace, self.record)
-            if res.outcome == "ambiguo" or (head == "the" and len(res.addresses) > 1):
-                from pron.resolve import address_to_export_id
-
-                ids = [
-                    address_to_export_id(a) for a in (res.candidates or res.addresses)
-                ]
-                self.record["candidates"] = ids
-                return Response(
-                    "Which one? " + " · ".join(f'(doc "{e}")' for e in ids), "ambiguo"
+            np.given = [address_of(e) for e in ids]
+            return np
+        if head in REFERENT_HEADS:
+            word = str(form[1]) if len(form) > 1 else head
+            who = REFERENT_HEADS[head]
+            number = "plural" if who == "plural" else "singular"
+            item = Item("referent", word, number=number, meta={"who": who})
+            np = NounPhrase(None, None, number, referent=item, items=[item])
+            if len(form) > 2:
+                np.hint = str(form[2])
+            return np
+        model = str(form[1])
+        self._need_model(model)
+        det = {"a": "any", "all": "all", "find": "all"}.get(head, "the")
+        np = NounPhrase(model, det, "plural" if det == "all" else "singular")
+        for clause in form[2:]:
+            ch = _head(clause)
+            if ch == "where":
+                np.predicates.append(str(clause[1]))
+            elif ch == "named":
+                np.proper.append(str(clause[1]))
+            elif ch == "plural":
+                np.number = "plural"
+            elif ch == "asked":
+                np.interrogated = True
+            elif ch == "of":
+                np.complements.append(self.noun(clause[1]))
+            elif ch == "of-name":
+                np.complements.append([str(x) for x in clause[1:]])
+            elif ch == "set":
+                np.captures[str(clause[1])] = _unvalue(clause[2])
+            elif ch == "not-a-value":
+                np.unknown_values.append(
+                    (str(clause[1]), str(clause[2]), str(clause[3]))
                 )
-            if head == "the" and not res.addresses:
-                return Response(f"There is no {model} like that.", "missing")
-            return res
-        raise FormError(f"not a noun: ({head} …)")
+            else:
+                raise FormError(f"unknown clause in ({head} {model} …): ({ch} …)")
+        return np
 
-    def _model_in_projection(self, model: str) -> bool:
-        return (
-            bool(set(self.s.world.family_of(model)) & set(self.lex.models))
-            or model in self.lex.models
-        )
+    def _need_model(self, model: str) -> None:
+        if model not in self.lex.models and not (
+            set(self.s.world.family_of(model)) & set(self.lex.models)
+        ):
+            raise UnknownWord(f"I don't have that word: {model}")
 
     # moves
 
-    def _f_show(self, noun: Any):
-        res = self.noun(noun)
-        if isinstance(res, Response):
-            return res
-        return Part("nominal", subject=res.phrase), {"subject": res}
+    def _f_show(self, noun: Any) -> Part:
+        return Part("nominal", subject=self.noun(noun))
 
-    def _f_targets(self, relation: Any, noun: Any, *clauses: Any):
-        return self._read(str(relation), noun, clauses, asked="object")
+    def _f_find(self, *args: Any) -> Part:
+        raise FormError("(find …) is a noun; show it with (show (find …))")
 
-    def _f_sources(self, relation: Any, noun: Any, *clauses: Any):
-        return self._read(str(relation), noun, clauses, asked="subject")
+    def _f_targets(self, relation: Any, *rest: Any) -> Part:
+        return self._read(str(relation), rest, asked="object")
 
-    def _read(self, relation: str, noun: Any, clauses, asked: str):
+    def _f_sources(self, relation: Any, *rest: Any) -> Part:
+        return self._read(str(relation), rest, asked="subject")
+
+    def _read(self, relation: str, rest: tuple[Any, ...], asked: str) -> Part:
         w = self._relation_word(relation)
-        rt = self.lex.relation_types.get(relation, {})
-        given_types = (
-            rt.get("source_types" if asked == "object" else "target_types") or []
-        )
-        res = self.noun(noun, given_types[0] if given_types else None)
-        if isinstance(res, Response):
-            return res
+        part = Part("read", verb=w, payload={"asked": asked, "where": []})
+        given_role = "subject" if asked == "object" else "object"
         asked_model = None
-        predicates: list[str] = []
-        for clause in clauses:
-            ch = _head(clause)
-            if ch == "of":
-                asked_model = str(clause[1])
-            elif ch == "where":
-                predicates.append(str(clause[1]))
+        for item in rest:
+            h = _head(item)
+            if h in NOUN_HEADS:
+                setattr(part, given_role, self.noun(item))
+            elif h == "of":
+                asked_model = str(item[1])
+            elif h == "where":
+                part.payload["where"].append(str(item[1]))
             else:
-                raise FormError(f"unknown clause in a read: ({ch} …)")
-        asked_np = NounPhrase(asked_model, None, "plural", predicates=predicates)
-        part = Part("read", verb=w, payload={"asked": asked, "where": predicates})
-        role = "subject" if asked == "object" else "object"
-        setattr(part, role, res.phrase)
-        setattr(part, "object" if role == "subject" else "subject", asked_np)
-        return part, {role: res}
+                raise FormError(f"unknown clause in a read: ({h} …)")
+        if asked_model is not None or part.payload["where"]:
+            setattr(
+                part,
+                asked,
+                NounPhrase(
+                    asked_model, None, "plural", predicates=list(part.payload["where"])
+                ),
+            )
+        return part
 
-    def _f_assert(self, relation: Any, subject: Any, obj: Any):
-        rel = str(relation)
-        w = self._relation_word(rel)
-        rt = self.lex.relation_types.get(rel, {})
-        s = self.noun(subject, (rt.get("source_types") or [None])[0])
-        if isinstance(s, Response):
-            return s
-        o = self.noun(obj, (rt.get("target_types") or [None])[0])
-        if isinstance(o, Response):
-            return o
-        return Part("assert", subject=s.phrase, object=o.phrase, verb=w), {
-            "subject": s,
-            "object": o,
-        }
+    def _f_assert(self, relation: Any, subject: Any, obj: Any) -> Part:
+        w = self._relation_word(str(relation))
+        return Part("assert", subject=self.noun(subject), object=self.noun(obj), verb=w)
 
-    def _f_create(self, model: Any, *fields: Any):
+    def _f_create(self, model: Any, *fields: Any) -> Part:
         m = str(model)
-        if not self._model_in_projection(m):
-            return Response(f"I don't have that word: {m}.", "missing")
-        is_as = lambda f: isinstance(f, list) and bool(f) and f[0] == Sym("as")  # noqa: E731
-        name = next((str(f[1]) for f in fields if is_as(f)), None)
-        payload = self._field_pairs(tuple(f for f in fields if not is_as(f)))
-        missing = self.s.kernel.required_missing(m, payload)
-        if missing:
-            return Response(f"{m} needs {', '.join(missing)}.", "missing")
-        part = Part(
+        self._need_model(m)
+        name = next((str(f[1]) for f in fields if _is_clause(f, "as")), None)
+        payload = self._field_pairs(tuple(f for f in fields if not _is_clause(f, "as")))
+        extra = {"name": name} if name else {}
+        return Part(
             "action",
-            subject=NounPhrase(m, "a", "singular"),
+            subject=NounPhrase(m, "any", "singular"),
             verb=self._kernel_word("create"),
-            payload={
-                "verb": "create",
-                "fields": payload,
-                **({"name": name} if name else {}),
-            },
+            payload={"verb": "create", "fields": payload, **extra},
         )
-        return part, {}
 
-    def _write(self, verb: str, noun: Any, field_name: Any = None, value: Any = None):
-        res = self.noun(noun)
-        if isinstance(res, Response):
-            return res
-        part = Part(
+    def _write(
+        self, verb: str, noun: Any, field_name: Any = None, value: Any = None
+    ) -> Part:
+        return Part(
             "action",
-            subject=res.phrase,
+            subject=self.noun(noun),
             verb=self._kernel_word(verb),
             field_name=str(field_name) if field_name is not None else None,
             value=_unvalue(value),
             payload={"verb": verb},
         )
-        return part, {"subject": res}
 
-    def _f_change(self, noun, field_name, value):
+    def _f_change(self, noun: Any, field_name: Any, value: Any) -> Part:
         return self._write("change", noun, field_name, value)
 
-    def _f_add(self, noun, field_name, value):
+    def _f_add(self, noun: Any, field_name: Any, value: Any) -> Part:
         return self._write("add", noun, field_name, value)
 
-    def _f_remove(self, noun, field_name, value=None):
+    def _f_remove(self, noun: Any, field_name: Any, value: Any = None) -> Part:
         return self._write("remove", noun, field_name, value)
 
-    def _f_clean(self, noun, field_name):
+    def _f_clean(self, noun: Any, field_name: Any) -> Part:
         return self._write("clean", noun, field_name)
 
-    def _f_forget(self, noun):
+    def _f_forget(self, noun: Any) -> Part:
         return self._write("forget", noun)
 
-    def _f_say(self, symbol: Any, *args: Any):
+    def _f_say(self, symbol: Any, *args: Any) -> Part:
         w = self._alias_word(str(symbol))
         if w.kind == "alias-action":
             if len(args) != 1:
@@ -369,87 +405,55 @@ class Compiler:
             rest = w.ref.split(":", 1)[1]
             verb, _, assign = rest.partition(" ")
             fld, value = assign.split("=", 1)
-            res = self.noun(args[0], w.model)
-            if isinstance(res, Response):
-                return res
-            part = Part(
+            return Part(
                 "action",
-                subject=res.phrase,
+                subject=self.noun(args[0]),
                 verb=w,
                 field_name=fld.split(".", 1)[1],
                 value=value,
                 payload={"verb": verb, "alias": True},
             )
-            return part, {"subject": res}
         if w.kind == "alias-relation":
             if len(args) != 2:
                 raise FormError(
                     f"(say {symbol} SUBJECT OBJECT): a relation alias takes two nouns"
                 )
-            return self._f_assert(Sym(w.relation or ""), args[0], args[1])
+            return Part(
+                "assert", subject=self.noun(args[0]), object=self.noun(args[1]), verb=w
+            )
         if w.kind == "alias-compose":
-            return self._compose(w, args)
-        raise FormError(
-            f"(say {symbol} …): an alias of kind {w.kind} is not a move; use it inside a noun"
-        )
+            slots: dict[str, NounPhrase] = {}
+            literals: dict[str, Any] = {}
+            for arg in args:
+                h = _head(arg)
+                if h == "slot":
+                    np = self.noun(arg[2])
+                    for extra in arg[3:]:
+                        if _is_clause(extra, "alternatives"):
+                            np.alternatives = [address_of(str(e)) for e in extra[1:]]
+                    slots[str(arg[1])] = np
+                elif h == "as":
+                    literals["_name"] = str(arg[1])
+                else:
+                    literals[h] = _unvalue(arg[1])
+            part = Part("compose", verb=w, payload=literals)
+            part.payload["_slots"] = slots
+            return part
+        raise FormError(f"(say {symbol} …): an alias of kind {w.kind} is not a move")
 
-    def _compose(self, w: Word, args: tuple[Any, ...]):
-        bindings: dict[str, Resolution] = {}
-        literals: dict[str, Any] = {}
-        for arg in args:
-            head = _head(arg)
-            if head == "as":
-                literals["_name"] = str(arg[1])
-                continue
-            if head == "slot":
-                slot = str(arg[1])
-                kind, _, model = slot[1:].partition(":")
-                res = self.noun(arg[2], model or None)
-                if isinstance(res, Response):
-                    return res
-                for extra in arg[3:]:
-                    if _head(extra) == "alternatives":
-                        res.candidates = [address_of(str(e)) for e in extra[1:]]
-                        res.note = "any of them; the first one"
-                bindings[slot] = res
-            else:
-                literals[head] = _unvalue(arg[1])
-        plan: dict[str, Any] = {"steps": []}
-        for step in w.payload.get("steps", []):
-            resolved = {}
-            for slot_key in ("source", "target"):
-                slot = step.get(slot_key)
-                if (
-                    isinstance(slot, str)
-                    and slot.startswith("$")
-                    and slot != "$created"
-                ):
-                    if slot not in bindings:
-                        return Response(
-                            f'(say {w.payload["symbol"]} …) needs (slot "{slot}" NOUN).',
-                            "missing",
-                        )
-                    resolved[slot_key] = bindings[slot]
-            plan["steps"].append(resolved)
-        planned = self.s._compose_permissions(w)
-        if isinstance(planned, Response):
-            return planned
-        return Part("compose", verb=w, payload=literals), plan
+    def _f_undo(self) -> Part:
+        return Part("undo", verb=self._kernel_word("undo"))
 
-    def _f_undo(self):
-        return Part("undo", verb=self._kernel_word("undo")), {}
+    def _f_refresh(self) -> Part:
+        return Part("refresh", verb=self._kernel_word("refresh"))
 
-    def _f_refresh(self):
-        return Part("refresh", verb=self._kernel_word("refresh")), {}
-
-    def _f_why(self, noun: Any = None):
+    def _f_why(self, noun: Any = None) -> Part:
         part = Part("why")
         if noun is not None:
-            res = self.noun(noun)
-            if isinstance(res, Response):
-                return res
-            part.payload["target"] = res.export_ids()[0] if res.addresses else None
-        return part, {}
+            np = self.noun(noun)
+            if np.given:
+                part.payload["target"] = address_to_export_id(np.given[0])
+        return part
 
     # words
 
@@ -463,7 +467,7 @@ class Compiler:
             None,
         )
         if w is None:
-            raise FormError(f"I don't have that word: relation {relation}")
+            raise UnknownWord(f"I don't have that word: relation {relation}")
         return w
 
     def _kernel_word(self, verb: str) -> Word:
@@ -489,7 +493,7 @@ class Compiler:
             None,
         )
         if w is None:
-            raise FormError(f"I don't have that word: alias {symbol}")
+            raise UnknownWord(f"I don't have that word: alias {symbol}")
         return w
 
     def _field_pairs(self, fields: tuple[Any, ...]) -> dict[str, Any]:
@@ -505,6 +509,29 @@ def _head(form: Any) -> str:
     if not isinstance(form, list) or not form or not isinstance(form[0], Sym):
         raise FormError(f"not a form: {write(form)}")
     return str(form[0])
+
+
+def _is_noun(form: Any) -> bool:
+    return (
+        isinstance(form, list)
+        and bool(form)
+        and isinstance(form[0], Sym)
+        and str(form[0]) in NOUN_HEADS
+    )
+
+
+def _is_clause(form: Any, name: str) -> bool:
+    return isinstance(form, list) and bool(form) and form[0] == Sym(name)
+
+
+def _fields(fields: dict[str, Any]) -> list[Any]:
+    return [[Sym(k), _value(v)] for k, v in fields.items()]
+
+
+def _value(v: Any) -> Any:
+    if isinstance(v, (list, tuple)):
+        return [Sym("list"), *[_value(x) for x in v]]
+    return v
 
 
 def _unvalue(v: Any) -> Any:
