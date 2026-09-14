@@ -1293,9 +1293,9 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-forms:
+  surface-pron-sexp:
     model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-forms.md
+    path: knowledge/surfaces/surface-pron-sexp.md
     tags:
     - domain:system_architecture
     - entity:module
@@ -1304,9 +1304,9 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-sexp:
+  surface-pron-forms:
     model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-sexp.md
+    path: knowledge/surfaces/surface-pron-forms.md
     tags:
     - domain:system_architecture
     - entity:module

@@ -14,11 +14,11 @@ Moves
     (targets relation NOUN [(of Model)] [(where "...")])   what NOUN relates to
     (sources relation NOUN [(of Model)] [(where "...")])   what relates to NOUN
     (assert relation SUBJECT OBJECT)
-    (create Model (field value) ...)
+    (create Model [(as "doc-name")] (field value) ...)   (as …) names it when the projection has no rule
     (change NOUN field value)  (add NOUN field value)  (remove NOUN field [value])
     (clean NOUN field)  (forget NOUN)
     (say alias NOUN)                           an action alias on NOUN
-    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN [(alternatives id ...)]) (field value) ...)
+    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN [(alternatives id ...)]) [(as "doc-name")] (field value) ...)
     (undo)  (refresh)  (why [NOUN])
     (move FORM ...)                            several parts, one move
 
@@ -87,9 +87,13 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
         )
         if verb == "create":
             assert part.subject is not None and part.subject.model is not None
+            named = (
+                [[Sym("as"), part.payload["name"]]] if part.payload.get("name") else []
+            )
             return [
                 Sym("create"),
                 Sym(part.subject.model),
+                *named,
                 *_fields(part.payload["fields"]),
             ]
         if part.payload.get("alias") and part.verb is not None:
@@ -120,6 +124,8 @@ def of_part(part: Part, plan: dict[str, Any], session: "Session") -> Any:
                         [Sym("alternatives"), *[_eid(c) for c in res.candidates]]
                     )
                 form.append(binding)
+        if part.payload.get("_name"):
+            form.append([Sym("as"), part.payload["_name"]])
         literals = {
             key: v for key, v in part.payload.items() if not key.startswith("_")
         }
@@ -308,7 +314,9 @@ class Compiler:
         m = str(model)
         if not self._model_in_projection(m):
             return Response(f"I don't have that word: {m}.", "missing")
-        payload = self._field_pairs(fields)
+        is_as = lambda f: isinstance(f, list) and bool(f) and f[0] == Sym("as")  # noqa: E731
+        name = next((str(f[1]) for f in fields if is_as(f)), None)
+        payload = self._field_pairs(tuple(f for f in fields if not is_as(f)))
         missing = self.s.kernel.required_missing(m, payload)
         if missing:
             return Response(f"{m} needs {', '.join(missing)}.", "missing")
@@ -316,7 +324,11 @@ class Compiler:
             "action",
             subject=NounPhrase(m, "a", "singular"),
             verb=self._kernel_word("create"),
-            payload={"verb": "create", "fields": payload},
+            payload={
+                "verb": "create",
+                "fields": payload,
+                **({"name": name} if name else {}),
+            },
         )
         return part, {}
 
@@ -386,6 +398,9 @@ class Compiler:
         literals: dict[str, Any] = {}
         for arg in args:
             head = _head(arg)
+            if head == "as":
+                literals["_name"] = str(arg[1])
+                continue
             if head == "slot":
                 slot = str(arg[1])
                 kind, _, model = slot[1:].partition(":")

@@ -986,7 +986,9 @@ class Session:
         if verb == "create":
             assert part.subject is not None and part.subject.model is not None
             model = part.subject.model
-            w = self.kernel.create(model, part.payload["fields"])
+            w = self.kernel.create(
+                model, part.payload["fields"], name=part.payload.get("name")
+            )
             trace.append(f"docs create --model {model} {w.address} {w.after}")
             record["writes"].append(w.record())
             addr = address_of(w.address)
@@ -1081,7 +1083,9 @@ class Session:
                 missing = self.kernel.required_missing(model, fields)
                 if missing:
                     raise StoreError(f"{model} needs {', '.join(missing)}")
-                w = self.kernel.create(model, fields, related)
+                w = self.kernel.create(
+                    model, fields, related, name=part.payload.get("_name")
+                )
                 created = w.address
                 trace.append(f"docs create --model {model} {created} {w.after}")
                 record["writes"].append(w.record())

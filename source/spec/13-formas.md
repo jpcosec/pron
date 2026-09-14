@@ -31,11 +31,11 @@ Un modelo fuera de la proyección es `missing` sin consultar sldb, igual que una
 | `(targets relación SUST [(of Modelo)] [(where "…")])` | "what does X relation?": `edges_from`, filtrado por los predicados |
 | `(sources relación SUST [(of Modelo)] [(where "…")])` | "who relation X?": `edges_to` |
 | `(assert relación SUJETO OBJETO)` | afirmar un verbo (03) |
-| `(create Modelo (campo valor) …)` | `create` (04); los campos obligatorios que falten son `missing` |
+| `(create Modelo [(as "nombre")] (campo valor) …)` | `create` (04); los campos obligatorios que falten son `missing`; `(as …)` da el nombre del documento cuando la proyección no tiene regla de `naming` (01) |
 | `(change SUST campo valor)`, `(add SUST campo valor)`, `(remove SUST campo [valor])`, `(clean SUST campo)`, `(forget SUST)` | los verbos de acción del kernel (04) |
 | `(say alias SUST)` | un alias de acción (05): `(say confirm (doc "Reservation:r"))` |
 | `(say alias SUJETO OBJETO)` | un alias de relación |
-| `(say alias (slot "$referent:M" SUST) (slot "$object:M" SUST [(alternatives "id" …)]) (campo valor) …)` | un alias `compose` con sus ranuras llenas por dirección y sus literales por campo |
+| `(say alias (slot "$referent:M" SUST) (slot "$object:M" SUST [(alternatives "id" …)]) [(as "nombre")] (campo valor) …)` | un alias `compose` con sus ranuras llenas por dirección y sus literales por campo |
 | `(undo)`, `(refresh)`, `(why [SUST])` | los verbos sin objeto del kernel y "why?" (07) |
 | `(move FORMA …)` | varias partes, un movimiento y un refresh (06 §Coordinación) |
 

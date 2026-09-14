@@ -92,8 +92,8 @@ documents:
   - workspace.source.spec
 - name: spec-13
   path: source/spec/13-formas.md
-  hash_c: c5443da9add9668ddcefe8d775bf060c49466e5e481bd950e3227df1c711b2bb
-  hash_d: 28cbb1acbe7b6ece8d5e2aee7c23a7ae9f1f9176607b2768f941e2437f33b3bd
+  hash_c: c15477baf8e47ea4bf0a9d70273e6924098ce1a42fe778008e42e35db8d046bf
+  hash_d: 73cd390bb368d2fa2aa25a222151eee2b171d171232d26305800860b41f61377
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

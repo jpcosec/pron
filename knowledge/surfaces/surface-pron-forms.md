@@ -33,11 +33,11 @@ Moves
     (targets relation NOUN [(of Model)] [(where "...")])   what NOUN relates to
     (sources relation NOUN [(of Model)] [(where "...")])   what relates to NOUN
     (assert relation SUBJECT OBJECT)
-    (create Model (field value) ...)
+    (create Model [(as "doc-name")] (field value) ...)   (as …) names it when the projection has no rule
     (change NOUN field value)  (add NOUN field value)  (remove NOUN field [value])
     (clean NOUN field)  (forget NOUN)
     (say alias NOUN)                           an action alias on NOUN
-    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN [(alternatives id ...)]) (field value) ...)
+    (say alias (slot "$referent:M" NOUN) (slot "$object:M" NOUN [(alternatives id ...)]) [(as "doc-name")] (field value) ...)
     (undo)  (refresh)  (why [NOUN])
     (move FORM ...)                            several parts, one move
 

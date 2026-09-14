@@ -111,3 +111,13 @@ def _writes(ws):
     return [
         (w.get("verb"), w.get("address"), w.get("field"), w.get("after")) for w in ws
     ]
+
+
+def test_a_document_can_be_named_where_the_projection_has_no_rule(world: World):
+    s = session(world)
+    r = s.eval('(create Table (number 7) (capacity 2) (zone "indoor"))')
+    assert r.outcome == "error" and "say the name" in r.text
+    r = s.eval('(create Table (as "table-7") (number 7) (capacity 2) (zone "indoor"))')
+    assert r.outcome == "unico", r.text
+    assert world.store.payload("Table", "table-7")["capacity"] == 2
+    assert r.record["forms"].startswith('(create Table (as "table-7")')
