@@ -24,7 +24,15 @@ def test_every_word_has_a_source_in_the_store_and_a_motive(lex: Lexicon):
     for w in lex.words:
         assert w.motive.strip(), w
         assert w.source.startswith(
-            ("model ", "field ", "enum ", "RelationTypeDoc ", "AnchorDoc ", "kernel")
+            (
+                "model ",
+                "field ",
+                "enum ",
+                "used value",  # PLAN 11 P3: an already-used value of system/tags
+                "RelationTypeDoc ",
+                "AnchorDoc ",
+                "kernel",
+            )
         ), w
 
 

@@ -209,24 +209,85 @@ class Session:
     ) -> Response:
         word = interp.unknown[0].text
         near = self.lex.near(word)
+        value_hits: list[tuple[str, str, str, str]] = []
+        if not any(w.kind == "value" for w, _ in near):
+            value_hits = self._value_word_suggestions(word, trace)
         names = [f"*{w.form}*" for w, _ in near]
         record["missing"] = {
             "word": word,
             "near": [w.form for w, _ in near],
             "matcher": self.matcher.id(),
         }
+        if value_hits:
+            record["missing"]["values"] = [
+                {"model": m, "field": f, "value": v, "sentence": sent}
+                for m, f, v, sent in value_hits
+            ]
         trace.append(
             f"'{word}' is not in the projection · near ({self.matcher.id()}): {', '.join(names) or 'nothing'}"
+            + (
+                "; value candidates: " + ", ".join(sent for *_, sent in value_hits)
+                if value_hits
+                else ""
+            )
         )
+        offers = [f"*{sent}*" for *_, sent in value_hits] + names
         return Response(
             f'I don\'t have "{word}".'
             + (
-                f" Did you mean {' or '.join(names)}?"
-                if names
+                f" Did you mean {' or '.join(offers)}?"
+                if offers
                 else " I can understand: " + " · ".join(examples()[:4]) + " …"
             ),
             "missing",
         )
+
+    def _value_word_suggestions(
+        self, word: str, trace: list[str]
+    ) -> list[tuple[str, str, str, str]]:
+        """PLAN 11 P2 (spec 05 §Calce aproximado): when an unknown word has no vocabulary
+        neighbor of kind 'value', rank it against the existing values of every string,
+        non-enum field of this projection's models, and offer the sentence that would
+        resolve — 'the <model> <alias-field or field> <value>' — so the candidate is usable
+        as said. Same cap as P1 (matching.max_values); never executed on its own."""
+        matching = self.projection.get("matching") or {}
+        max_values = int(matching.get("max_values", 500))
+        neighbors = int(matching.get("neighbors", 3))
+        threshold = float(matching.get("threshold", 0.55))
+        scored: list[tuple[float, str, str, str, str]] = []
+        for model in self.lex.models:
+            for f in self.world.schema(model, self.lex.stores):
+                if f["kind"] != "string":
+                    continue
+                values = self.lex.distinct_values(model, f["name"])
+                if not values:
+                    continue
+                if len(values) > max_values:
+                    trace.append(
+                        f"{model}.{f['name']}: {len(values)} distinct values over "
+                        f"matching.max_values ({max_values}), no value suggestion"
+                    )
+                    continue
+                ranked = self.matcher.rank(
+                    word, [(v, v) for v in values], k=neighbors, threshold=threshold
+                )
+                for value, score in ranked:
+                    sentence = (
+                        f"the {self.lex.model_form(model)} "
+                        f"{self.lex.field_form(model, f['name'])} {value}"
+                    )
+                    scored.append((score, model, f["name"], value, sentence))
+        scored.sort(key=lambda t: -t[0])
+        out: list[tuple[str, str, str, str]] = []
+        seen: set[str] = set()
+        for _, model, fname, value, sentence in scored:
+            if sentence in seen:
+                continue
+            seen.add(sentence)
+            out.append((model, fname, value, sentence))
+            if len(out) >= neighbors:
+                break
+        return out
 
     # -- planning: resolve the phrases of a part -----------------------------------------------
 

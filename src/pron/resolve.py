@@ -5,12 +5,15 @@ ambiguous or missing. pron never reads a payload to filter.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
 from pron.ids import export_id as _export_id, normalize_address, scope as _scope
 from pron.lexicon import Lexicon
 from pron.surface.nouns import NounPhrase
+
+_EQ_PREDICATE = re.compile(r'^(\w+)\s*=\s*"([^"]*)"$')
 
 
 @dataclass
@@ -204,16 +207,74 @@ def _decide(
             )
         if len(result) > 1:
             return Resolution(np, [], "ambiguo", queries, candidates=result)
-        near = _near_names(np, lex)
+        return _missing_with_value_suggestions(np, queries, lex)
+    return Resolution(np, result, "unico", queries)
+
+
+def _missing_with_value_suggestions(
+    np: NounPhrase, queries: list[str], lex: Lexicon
+) -> Resolution:
+    hit = _value_suggestions(np, lex, queries)
+    if hit is not None:
+        model, fld, text, ranked = hit
+        np.unknown_values.append((model, fld, text))
         return Resolution(
             np,
             [],
             "missing",
             queries,
-            candidates=near,
+            candidates=ranked,
             note=f"no {np.model} matches {np.describe()}",
         )
-    return Resolution(np, result, "unico", queries)
+    near = _near_names(np, lex)
+    return Resolution(
+        np,
+        [],
+        "missing",
+        queries,
+        candidates=near,
+        note=f"no {np.model} matches {np.describe()}",
+    )
+
+
+def _value_suggestions(
+    np: NounPhrase, lex: Lexicon, queries: list[str]
+) -> tuple[str, str, str, list[str]] | None:
+    """PLAN 11 P1 (spec 05 §Calce aproximado): for each equality predicate on a string,
+    non-enum field, rank the text that did not match against the field's existing distinct
+    values (family included, stores of the projection) and offer the nearest as candidates.
+    Never entered as lexicon, never executed on its own — only offered. Returns
+    (model, field, text, ranked) for the first predicate with a hit, or None."""
+    assert np.model is not None
+    matching = lex.projection.get("matching") or {}
+    max_values = int(matching.get("max_values", 500))
+    neighbors = int(matching.get("neighbors", 3))
+    threshold = float(matching.get("threshold", 0.55))
+    for where in np.predicates:
+        m = _EQ_PREDICATE.match(where)
+        if not m:
+            continue
+        fld, text = m.group(1), m.group(2)
+        if _field_kind(lex, np.model, fld) != "string":
+            continue
+        values = lex.distinct_values(np.model, fld)
+        if not values:
+            continue
+        if len(values) > max_values:
+            queries.append(
+                f"{np.model}.{fld}: {len(values)} distinct values over matching.max_values"
+                f" ({max_values}), no value suggestion"
+            )
+            continue
+        ranked = [
+            key
+            for key, _ in lex.matcher.rank(
+                text, [(v, v) for v in values], k=neighbors, threshold=threshold
+            )
+        ]
+        if ranked:
+            return np.model, fld, text, ranked
+    return None
 
 
 def _near_names(np: NounPhrase, lex: Lexicon) -> list[str]:

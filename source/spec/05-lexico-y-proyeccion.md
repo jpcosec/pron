@@ -79,6 +79,8 @@ Cuando una palabra no calza exactamente con el léxico, la superficie busca cerc
 
 El resultado del calce aproximado sobre el mundo nunca se ejecuta solo. Se ofrece: "I don't have *bridge*, did you mean *bridges*?". La única excepción es contestar una pendiente de elección (06): ahí el conjunto de candidatos es cerrado y ya se mostró, y un calce único contra esos candidatos sí rellena el hueco.
 
+Un valor libre de texto que no calza también se ofrece, nunca se vuelve léxico. Cuando un predicado de igualdad sobre un campo `string` no enumerado no encuentra nada, o la palabra del turno no tiene cercano de vocabulario, la superficie rankea contra los valores distintos que ese campo ya tiene en los documentos del modelo (familia incluida, stores de la proyección) y ofrece la oración corregida — "the fact about *evento_adverso*" — lista para decirse tal cual. Por encima de `matching.max_values` distintos no se sugiere, y la traza lo dice. Estos valores libres no entran a `lex.words`: sólo los de un `Literal`/`Enum` y los ya usados de `system` y `tags` lo hacen (arriba). Con el mismo criterio, el léxico puede armar unos pocos ejemplos reales de la proyección — un modelo, su plural, un campo con un valor si lo hay — para que "what can I say?" muestre algo que el mundo puede resolver, no un ejemplo genérico de otro mundo.
+
 ## Invariantes
 
 - Todo lo que el léxico sabe de un mundo se puede reconstruir desde su store: ninguna palabra de un mundo vive en código. Las palabras generales (determinantes, interrogativos, los verbos del kernel, las construcciones por tipo de campo) sí son de pron y valen para todo mundo.

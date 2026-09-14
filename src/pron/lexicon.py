@@ -125,6 +125,39 @@ class Lexicon:
                         payload={"value": v},
                     )
                 )
+            if fname in ("system", "tags") and f["kind"] in ("string", "stringlist"):
+                # spec 05 / PLAN 11 P3: values already used in a "system" or "tags" field
+                # are lexicon too, unlike other free text (never entered otherwise).
+                for v in self._used_values(m, fname, f["kind"]):
+                    self.words.append(
+                        Word(
+                            v,
+                            "value",
+                            f"value:{m}.{fname}={v}",
+                            f"{fname} = {v}",
+                            "used value",
+                            model=m,
+                            field_name=fname,
+                            payload={"value": v},
+                        )
+                    )
+
+    def _used_values(self, model: str, field_name: str, kind: str) -> list[str]:
+        seen: set[str] = set()
+        out: list[str] = []
+        for s in self.stores:
+            try:
+                docs = self.world.store.docs_of(model, s)
+            except Exception:  # noqa: BLE001 - a model missing from a store has no docs there
+                continue
+            for d in docs:
+                raw = d.payload.get(field_name)
+                values = raw if kind == "stringlist" else ([raw] if raw else [])
+                for v in values or []:
+                    if isinstance(v, str) and v and v not in seen:
+                        seen.add(v)
+                        out.append(v)
+        return out
 
     def _relation_words(self) -> None:
         allowed = {
@@ -275,6 +308,85 @@ class Lexicon:
             for w in self.words
             if w.kind == "value" and w.model == model and w.field_name == field_name
         ]
+
+    def distinct_values(self, model: str, field_name: str) -> list[str]:
+        """The distinct values a string field actually holds across this projection's stores
+        and the model's family, read straight from the documents (spec 05 §Calce aproximado,
+        PLAN 11 P1/P2). Free text never becomes a lexicon word (P3 only does that for
+        `system`/`tags`); this is what a value suggestion ranks against."""
+        family = set(self.world.family_of(model))
+        seen: set[str] = set()
+        out: list[str] = []
+        for s in self.stores:
+            for fam_model in family:
+                try:
+                    docs = self.world.store.docs_of(fam_model, s)
+                except Exception:  # noqa: BLE001 - a model missing from a store has no docs there
+                    continue
+                for d in docs:
+                    v = d.payload.get(field_name)
+                    if isinstance(v, str) and v and v not in seen:
+                        seen.add(v)
+                        out.append(v)
+        return out
+
+    def model_form(self, model: str) -> str:
+        """The lexicon's preferred spoken form of a model: its own word (an alias if one
+        exists, else the identifier lowered — 05 §Anchors)."""
+        return next(
+            (w.form for w in self.words if w.kind == "model" and w.model == model),
+            model.lower(),
+        )
+
+    def field_form(self, model: str, field_name: str) -> str:
+        """The lexicon's preferred spoken form of a field: an alias over the field's own
+        identifier form (05 §Anchors)."""
+        return next(
+            (
+                w.form
+                for w in self.words
+                if w.kind == "alias-field"
+                and w.model == model
+                and w.field_name == field_name
+            ),
+            next(
+                (
+                    w.form
+                    for w in self.words
+                    if w.kind == "field"
+                    and w.model == model
+                    and w.field_name == field_name
+                ),
+                field_name.replace("_", " "),
+            ),
+        )
+
+    def examples(self, k: int = 6) -> list[str]:
+        """PLAN 11 P4 (spec 05): a few sentences this projection can actually resolve, built
+        from its own words — never written by a world. Used so 'what can I say?' offers
+        something real instead of the restaurant's own hint text."""
+        if not self.models:
+            return []
+        model = self.models[0]
+        singular = self.model_form(model)
+        plural = next(
+            (
+                w.form
+                for w in self.words
+                if w.kind == "model" and w.model == model and w.form != singular
+            ),
+            None,
+        )
+        value_word = next(
+            (w for w in self.words if w.kind == "value" and w.model == model), None
+        )
+        out: list[str] = [f"the {plural or singular}"]
+        if value_word is not None:
+            term = self.field_form(model, value_word.field_name or "")
+            out.append(f"the {singular} {term} {value_word.form}")
+        if "create" in self.actions:
+            out.append(f"create a {singular}")
+        return out[:k]
 
     def verbs_for(self, model: str) -> list[Word]:
         """Every verb a class can take, derived: relation types naming it or an ancestor
