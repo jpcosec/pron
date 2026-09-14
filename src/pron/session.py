@@ -13,12 +13,14 @@ from typing import Any
 from pron.dialogue import Dialogue, Pending
 from pron.display import Display
 from pron.embedder import Embedder, Matcher
+from pron.forms import Compiler, FormError, of_move
 from pron.ids import address_of, doc_of, is_local, join_id, model_of, scope as _scope
 from pron.kernel import Kernel
 from pron.ledger import Ledger
 from pron.lexicon import UNSUGGESTED_MODELS, Lexicon
 from pron.resolve import Resolution, address_to_export_id, resolve
 from pron.response import Response  # noqa: F401 - re-exported: session.Response is the public name
+from pron.sexp import SexpError, read_one, write
 from pron.store import StoreError
 from pron.surface.interpret import Interpretation, Interpreter, Part, examples
 from pron.surface.nouns import NounPhrase
@@ -82,14 +84,10 @@ class Session:
     # -- the turn ---------------------------------------------------------------------------
 
     def turn(self, sentence: str) -> Response:
-        at = datetime.now(timezone.utc).replace(microsecond=0)
-        move_id = self.ledger.new_id(at)
-        state_before = self.dialogue.state
-        trace: list[str] = []
-        record: dict[str, Any] = {"queries": [], "writes": [], "edges": []}
-        hash_before = self._sync(trace)
-        refers_to = ""
-        try:
+        """One sentence: the surface resolves it to forms (spec 13) and the forms are evaluated."""
+
+        def body(trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
+            refers_to = ""
             if self.dialogue.pending is not None:
                 resp, refers_to = self._continue(sentence, trace, record)
             else:
@@ -108,6 +106,29 @@ class Session:
                     resp = self._new_sentence(corrected, trace, record)
                 else:
                     resp = self._new_sentence(sentence, trace, record)
+            return resp, refers_to
+
+        return self._move(sentence, body)
+
+    def eval(self, forms: str) -> Response:
+        """One move written as forms (spec 13), with the same permissions, pre-validation, writes,
+        refresh, MoveDoc and undo as a sentence. It never answers a pending question."""
+
+        def body(trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
+            return self._new_forms(forms, trace, record), ""
+
+        return self._move(forms, body)
+
+    def _move(self, said: str, body) -> Response:
+        at = datetime.now(timezone.utc).replace(microsecond=0)
+        move_id = self.ledger.new_id(at)
+        state_before = self.dialogue.state
+        trace: list[str] = []
+        record: dict[str, Any] = {"queries": [], "writes": [], "edges": []}
+        hash_before = self._sync(trace)
+        refers_to = ""
+        try:
+            resp, refers_to = body(trace, record)
         except StoreError as e:
             resp = Response(f"Could not do that: {e}", "error")
             record["error"] = str(e)
@@ -122,7 +143,7 @@ class Session:
             move_id=move_id,
             at=at,
             speaker=self.dialogue.speaker,
-            sentence=sentence,
+            sentence=said,
             outcome=resp.outcome,
             state_before=state_before,
             state_after=self.dialogue.state,
@@ -173,8 +194,44 @@ class Session:
             if isinstance(plan, Response):
                 return plan
             plans.append(plan)
+        # the resolved sentence is a move written as forms; the forms are what runs (spec 13)
+        return self._run_forms(
+            of_move(interp.parts, plans, self),
+            trace,
+            record,
+            again=lambda: self._new_sentence(sentence, trace, record, retry=True),
+            retry=retry,
+        )
+
+    def _new_forms(
+        self, text: str, trace: list[str], record: dict[str, Any], retry: bool = False
+    ) -> Response:
+        try:
+            expr = read_one(text)
+        except SexpError as e:
+            return Response(f"Could not read that: {e}", "error")
+        return self._run_forms(
+            expr,
+            trace,
+            record,
+            again=lambda: self._new_forms(text, trace, record, retry=True),
+            retry=retry,
+        )
+
+    def _run_forms(
+        self, expr: Any, trace: list[str], record: dict[str, Any], again, retry: bool
+    ) -> Response:
+        record["forms"] = write(expr)
+        trace.append("forms: " + record["forms"])
+        try:
+            compiled = Compiler(self, trace, record).compile(expr)
+        except FormError as e:
+            return Response(f"Could not do that: {e}", "error")
+        if isinstance(compiled, Response):
+            return compiled
+        parts, plans = compiled
         # every write of the move validated before the first one (spec 11 §7)
-        self._prevalidate(interp.parts, plans, trace, record)
+        self._prevalidate(parts, plans, trace, record)
         # hash_mundo read again just before executing (spec 11 §5)
         current = self.world.hash_mundo()
         if current != self.hash:
@@ -187,11 +244,11 @@ class Session:
             )
             self.hash = current
             self._load()
-            return self._new_sentence(sentence, trace, record, retry=True)
+            return again()
         # execute in order, one refresh at the end
         texts = []
         wrote = False
-        for part, plan in zip(interp.parts, plans):
+        for part, plan in zip(parts, plans):
             text, did_write = self._execute(part, plan, trace, record)
             texts.append(text)
             wrote = wrote or did_write
@@ -442,7 +499,13 @@ class Session:
                     return self._missing(res, trace, record)
                 resolved[slot_key] = res
             plan["steps"].append(resolved)
-        steps = part.verb.payload.get("steps", [])
+        permitted = self._compose_permissions(part.verb)
+        if isinstance(permitted, Response):
+            return permitted
+        return plan
+
+    def _compose_permissions(self, word) -> Response | None:
+        steps = word.payload.get("steps", [])
         if not self.kernel.allowed("create") and any(
             s.get("do") == "create" for s in steps
         ):
@@ -459,7 +522,7 @@ class Session:
                     f"In this session I can tell you about {s.get('relation')}, not assert it.",
                     "missing",
                 )
-        return plan
+        return None
 
     # -- pending ----------------------------------------------------------------------------------
 
@@ -745,15 +808,12 @@ class Session:
         plan = self._plan(part, trace, record)
         if isinstance(plan, Response):
             return plan
-        self._prevalidate([part], [plan], trace, record)
-        text, wrote = self._execute(part, plan, trace, record)
-        if wrote:
-            self._refresh(trace)
-        warnings = list(dict.fromkeys(self.kernel.warnings))
-        self.kernel.warnings = []
-        return Response(
-            text + (" Heads up: " + "; ".join(warnings) + "." if warnings else ""),
-            "unico",
+        return self._run_forms(
+            of_move([part], [plan], self),
+            trace,
+            record,
+            again=lambda: self._resume(part, trace, record),
+            retry=True,
         )
 
     # -- execution --------------------------------------------------------------------------
@@ -815,9 +875,18 @@ class Session:
                 )
         # extra modifiers on the asked side ("for Friday") become predicates intersected with the found set
         asked_np = part.subject if asked == "subject" else part.object
-        if asked_np is not None and part.leftovers:
-            found = self._filter_by_leftovers(
-                found, asked_np, part.leftovers, trace, record
+        predicates = (
+            part.payload["where"]
+            if "where" in part.payload
+            else (
+                self._leftover_predicates(asked_np, part.leftovers)
+                if asked_np is not None
+                else []
+            )
+        )
+        if asked_np is not None and predicates:
+            found = self._filter_by_predicates(
+                found, asked_np.model, predicates, trace, record
             )
         addresses = [address_of(e) for e in dict.fromkeys(found)]
         self._note_reads(addresses, record)
@@ -830,12 +899,16 @@ class Session:
             names[0] if len(names) == 1 else f"{len(names)}: " + "; ".join(names)
         ) + "."
 
-    def _filter_by_leftovers(
-        self, found: list[str], np: NounPhrase, leftovers, trace, record
-    ) -> list[str]:
+    def _leftover_predicates(self, np: NounPhrase, leftovers) -> list[str]:
+        """The predicates a read's extra modifiers ("for Friday") add to the asked side, with the
+        phrase's own; none when there are no extra modifiers."""
+        from copy import deepcopy
+
         from pron.surface.nouns import _word_modifier
 
-        assert np.model is not None
+        if not leftovers or np.model is None:
+            return []
+        np = deepcopy(np)
         for it in leftovers:
             if it.kind == "literal" and it.meta.get("kind") == "date":
                 fld = next(
@@ -850,12 +923,16 @@ class Session:
                     np.predicates.append(f'{fld} = "{it.meta["value"]}"')
             elif it.kind == "word":
                 _word_modifier(it, None, np, self.lex)
-        if not np.predicates:
-            return found
+        return list(np.predicates)
+
+    def _filter_by_predicates(
+        self, found: list[str], model: str | None, predicates: list[str], trace, record
+    ) -> list[str]:
+        assert model is not None
         keep: set[str] | None = None
-        for where in np.predicates:
+        for where in predicates:
             hits: set[str] = set()
-            for sc in (_scope(s, np.model) for s in self.lex.stores):
+            for sc in (_scope(s, model) for s in self.lex.stores):
                 got = {
                     address_to_export_id(a) for a in self.world.store.find(sc, where)
                 }
@@ -1101,12 +1178,16 @@ class Session:
             + (" Not touched: " + "; ".join(skipped) + "." if skipped else "")
         )
 
-    def _why(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
-        target = (
-            self.dialogue.last_written
-            or self.dialogue.last_singular
+    def _why_target(self, part: Part) -> str | None:
+        if "target" in part.payload:
+            return part.payload["target"]
+        return self.dialogue.last_written or (
+            self.dialogue.last_singular
             and address_to_export_id(self.dialogue.last_singular)
         )
+
+    def _why(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
+        target = self._why_target(part)
         if not target:
             return "Why what? Say something first."
         moves = self.ledger.about(target)
