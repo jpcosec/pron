@@ -36,8 +36,8 @@ documents:
   - workspace.source.spec
 - name: spec-06
   path: source/spec/06-superficie-y-dialogo.md
-  hash_c: f535cd2fd30b1ee8170cdb3964a9786f3f0b7b498038575db2f04a38aa23f07a
-  hash_d: 0ef8d379f161a104e7ef0fbaf8467e96b9482710c6553df1461820d748f202f2
+  hash_c: 476d8968d2c6cf81b025d17410322b34387443cd46bccc787f80c061204688fc
+  hash_d: b4b8d48bd5527fd07e420b7de6a0c7a84bada5c3eeed8482e019bb3887e3ed22
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,8 +85,15 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: 64af4cd8de33b893c20ae22594514b9b5f615c461dff84db6a0e893740d04405
-  hash_d: 2774258bc7c743e98ee980086f1fd2d5cb2a0566e1018ce5802686157b68362b
+  hash_c: a63c321bf746b6b0e375dd1b392bf75942c14c6329dd4251114c197ed18b26b5
+  hash_d: 27a4536421dcb9579ef96b9ac06968051901614078b36c63177ee98de54232df
+  semantic_tags:
+  - type.knowledge.spec
+  - workspace.source.spec
+- name: spec-13
+  path: source/spec/13-formas.md
+  hash_c: c5443da9add9668ddcefe8d775bf060c49466e5e481bd950e3227df1c711b2bb
+  hash_d: 28cbb1acbe7b6ece8d5e2aee7c23a7ae9f1f9176607b2768f941e2437f33b3bd
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec

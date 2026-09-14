@@ -203,8 +203,9 @@ class Server:
                 "sessions": len(self.sessions),
                 "pid": os.getpid(),
             }
-        if op == "say":
-            r = self._session(name, req, foreign).turn(req["sentence"])
+        if op in ("say", "eval"):
+            sess = self._session(name, req, foreign)
+            r = sess.turn(req["sentence"]) if op == "say" else sess.eval(req["forms"])
             return {
                 "ok": True,
                 "text": r.text,

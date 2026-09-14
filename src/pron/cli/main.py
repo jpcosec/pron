@@ -123,6 +123,23 @@ def _cmd_say(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_eval(args: argparse.Namespace) -> int:
+    """Evaluate one move written as forms (spec 13) and print the answer, with the trace on request.
+
+    The same move a sentence resolves to, without the natural language surface: nouns by
+    address (doc "Model:name") or by predicate (find Model (where "...")), and the kernel's
+    verbs, relations and aliases by name. Goes through the running `pron serve` when one listens.
+
+    Usage:
+      pron eval '(say confirm (doc "Reservation:reservation-x"))' --world . [--projection all] [--speaker me] [--trace] [--local]
+    """
+    response = _session_for(args).eval(args.forms)
+    print(response.text)
+    if args.trace:
+        print("\n".join(f"  · {line}" for line in response.trace))
+    return 0
+
+
 def _cmd_repl(args: argparse.Namespace) -> int:
     """Talk to a world, one sentence per line.
 
@@ -299,6 +316,15 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--trace", action="store_true")
     remote(s)
     s.set_defaults(fn=_cmd_say)
+    s = sub.add_parser("eval", help="Evaluate one move written as forms")
+    common(s)
+    s.add_argument("forms")
+    s.add_argument("--projection", default="all")
+    s.add_argument("--speaker", default="")
+    s.add_argument("--now", default=None)
+    s.add_argument("--trace", action="store_true")
+    remote(s)
+    s.set_defaults(fn=_cmd_eval)
     s = sub.add_parser("repl", help="Talk to a world")
     common(s)
     s.add_argument("--projection", default="all")

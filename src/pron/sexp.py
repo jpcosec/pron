@@ -32,7 +32,9 @@ def read(text: str) -> list[Any]:
     while pos < len(text):
         m = TOKEN.match(text, pos)
         if m is None or m.end() == pos:
-            raise SexpError(f"cannot read s-expression at {pos}: {text[pos:pos + 20]!r}")
+            raise SexpError(
+                f"cannot read s-expression at {pos}: {text[pos : pos + 20]!r}"
+            )
         pos = m.end()
         if m.group(1):
             tokens.append(("(", None))

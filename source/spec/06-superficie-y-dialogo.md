@@ -15,7 +15,7 @@ huecos:  []                                  # constituyentes sin resolver
 salida:  unico | ambiguo | missing
 ```
 
-Cómo se llega ahí son seis pasos fijos, desarrollados con una conversación entera en 09: segmentar; clasificar cada palabra contra el léxico (término, referente, literal, nombre propio, desconocida); armar interpretaciones parciales; consultar el mundo por cada frase nominal; verificar tipos contra el `RelationTypeDoc` o el esquema del modelo; decidir la salida. El mundo interviene en los pasos 2, 4 y 5 y en ningún otro.
+Una interpretación resuelta se escribe como **formas** (13) y lo que se ejecuta son esas formas: la superficie no tiene una ruta de ejecución propia. Cómo se llega ahí son seis pasos fijos, desarrollados con una conversación entera en 09: segmentar; clasificar cada palabra contra el léxico (término, referente, literal, nombre propio, desconocida); armar interpretaciones parciales; consultar el mundo por cada frase nominal; verificar tipos contra el `RelationTypeDoc` o el esquema del modelo; decidir la salida. El mundo interviene en los pasos 2, 4 y 5 y en ningún otro.
 
 Qué contiene cada construcción admitida:
 
@@ -41,7 +41,7 @@ Dos consecuencias: si cualquier parte es ambigua o missing, la oración entera l
 
 Y devuelve la respuesta en natural, con la traza disponible: las direcciones exactas, el verbo, las aristas o la escritura. La traza es corta porque cada paso es una llamada a sldb o kgdb, no un razonamiento.
 
-Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración. Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
+Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración; un runtime que ya tiene las direcciones puede saltarse la superficie y evaluar formas (13). Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
 
 ## Las tres salidas del grounding
 

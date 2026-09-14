@@ -2265,3 +2265,135 @@ documents:
     level: 2
     line_start: 148
     line_end: 154
+- doc_name: spec-13
+  sections:
+  - path: 13-formas
+    title: 13 · Formas
+    breadcrumbs:
+    - 13 · Formas
+    about:
+    - 13 · Formas
+    - 13 formas
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 13-formas
+    level: 1
+    line_start: 1
+    line_end: 60
+  - path: 13-formas/qu-es
+    title: Qué es
+    breadcrumbs:
+    - 13 · Formas
+    - Qué es
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Qué es
+    - qu es
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: qu-es
+    level: 2
+    line_start: 3
+    line_end: 13
+  - path: 13-formas/sustantivos
+    title: Sustantivos
+    breadcrumbs:
+    - 13 · Formas
+    - Sustantivos
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Sustantivos
+    - sustantivos
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: sustantivos
+    level: 2
+    line_start: 14
+    line_end: 25
+  - path: 13-formas/movimientos
+    title: Movimientos
+    breadcrumbs:
+    - 13 · Formas
+    - Movimientos
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Movimientos
+    - movimientos
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: movimientos
+    level: 2
+    line_start: 26
+    line_end: 45
+  - path: 13-formas/qu-registra
+    title: Qué registra
+    breadcrumbs:
+    - 13 · Formas
+    - Qué registra
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Qué registra
+    - qu registra
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: qu-registra
+    level: 2
+    line_start: 46
+    line_end: 49
+  - path: 13-formas/c-mo-se-usa
+    title: Cómo se usa
+    breadcrumbs:
+    - 13 · Formas
+    - Cómo se usa
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Cómo se usa
+    - c mo se usa
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: c-mo-se-usa
+    level: 2
+    line_start: 50
+    line_end: 55
+  - path: 13-formas/invariantes
+    title: Invariantes
+    breadcrumbs:
+    - 13 · Formas
+    - Invariantes
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Invariantes
+    - invariantes
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: invariantes
+    level: 2
+    line_start: 56
+    line_end: 60

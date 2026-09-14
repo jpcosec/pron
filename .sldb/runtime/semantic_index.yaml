@@ -2,6 +2,7 @@ tags:
   domain:system_architecture:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -15,6 +16,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -29,6 +31,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -39,6 +42,7 @@ tags:
   entity:cli_command:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -53,6 +57,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -67,6 +72,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -77,6 +83,7 @@ tags:
   impl:here:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -90,6 +97,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -104,6 +112,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -114,6 +123,7 @@ tags:
   kind:software:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -127,6 +137,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -141,6 +152,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -149,6 +161,7 @@ tags:
   - surface-pron-verbs
   - surface-pron-world
   layer.topology:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
   - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
@@ -159,6 +172,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
   - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
@@ -175,6 +190,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -201,6 +217,7 @@ tags:
   system:pron:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -214,6 +231,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -228,6 +246,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -244,6 +263,7 @@ tags:
   type.knowledge.cli_command:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -266,6 +286,7 @@ tags:
   - spec-10
   - spec-11
   - spec-12
+  - spec-13
   type.knowledge.surface:
   - surface-pron-cli-main
   - surface-pron-cli-repl
@@ -274,6 +295,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -288,6 +310,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -298,6 +321,7 @@ tags:
   type.pron.move:
   - move-20260908T062556-001
   type.relation.instance:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
   - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-cli-main--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
@@ -308,6 +332,8 @@ tags:
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
   - implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-11
   - implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
   - implements--SurfaceDoc:surface-pron-graph--SpecDoc:spec-03
   - implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-kernel--SpecDoc:spec-04
@@ -324,6 +350,7 @@ tags:
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-serve--SpecDoc:spec-12
   - implements--SurfaceDoc:surface-pron-session--SpecDoc:spec-06
+  - implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-01
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-02
   - implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
@@ -357,6 +384,7 @@ tags:
   workspace.knowledge.commands:
   - cmd-pron-check
   - cmd-pron-docs
+  - cmd-pron-eval
   - cmd-pron-init
   - cmd-pron-lexicon
   - cmd-pron-refresh
@@ -375,6 +403,7 @@ tags:
   - surface-pron-display
   - surface-pron-docs
   - surface-pron-embedder
+  - surface-pron-forms
   - surface-pron-graph
   - surface-pron-ids
   - surface-pron-kernel
@@ -389,6 +418,7 @@ tags:
   - surface-pron-response
   - surface-pron-serve
   - surface-pron-session
+  - surface-pron-sexp
   - surface-pron-store
   - surface-pron-surface-dates
   - surface-pron-surface-interpret
@@ -410,6 +440,7 @@ tags:
   - spec-10
   - spec-11
   - spec-12
+  - spec-13
 documents:
   reltype-has_model:
     model: RelationTypeDoc
@@ -705,6 +736,30 @@ documents:
     tags:
     - layer.topology
     - type.relation.instance
+  implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13:
+    model: RelationDoc
+    path: knowledge/relations/implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13.md
+    tags:
+    - layer.topology
+    - type.relation.instance
+  implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06:
+    model: RelationDoc
+    path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06.md
+    tags:
+    - layer.topology
+    - type.relation.instance
   anchor-chapter:
     model: AnchorDoc
     path: knowledge/anchors/chapter.md
@@ -825,6 +880,12 @@ documents:
     tags:
     - type.knowledge.spec
     - workspace.source.spec
+  spec-13:
+    model: SpecDoc
+    path: source/spec/13-formas.md
+    tags:
+    - type.knowledge.spec
+    - workspace.source.spec
   cmd-pron-refresh:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-refresh.md
@@ -905,6 +966,17 @@ documents:
   cmd-pron-serve:
     model: CliCommandDoc
     path: knowledge/commands/cmd-pron-serve.md
+    tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+  cmd-pron-eval:
+    model: CliCommandDoc
+    path: knowledge/commands/cmd-pron-eval.md
     tags:
     - domain:system_architecture
     - entity:cli_command
@@ -1213,6 +1285,28 @@ documents:
   surface-pron-store:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-store.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-forms:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-forms.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-sexp:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-sexp.md
     tags:
     - domain:system_architecture
     - entity:module

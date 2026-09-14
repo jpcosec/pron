@@ -258,3 +258,31 @@ documents:
   semantic_tags:
   - layer.topology
   - type.relation.instance
+- name: implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  path: knowledge/relations/implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13.md
+  hash_c: cc6b7ca87b0d919308c1bb0bf5e37baef6e3587d315b35ae6e9c3b0691915268
+  hash_d: e9c928b2bae92b214f38705f2d51cc616bde774d2f0b47627f650da8df68cd53
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-06.md
+  hash_c: eecb63f77e19b81241a70a181aec5dcd683c1137bdbd8c53d22f4cdca178d5c5
+  hash_d: d7fc9432e59fd75cff2907c5a323dc637ea264638bd09d8e14d5f73cce1ef4b2
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13.md
+  hash_c: 10a3faa6b1b4863a498036cce152c7eb15d41d77c2f96190c83f9ce659f00cb7
+  hash_d: dcf4726ebf34e20d4f621bb9d91e5d69790441156638e95aa3053d7250841e20
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance
+- name: implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06
+  path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexp--SpecDoc:spec-06.md
+  hash_c: 699494f971c65c8f676a40fe7e6c51e560f233a550e73febf5bb9dffb58075e1
+  hash_d: 848745a5681c3f1208dee1a7bf1a2e3f9fcc9af5f8b3369d4a305665f844469b
+  semantic_tags:
+  - layer.topology
+  - type.relation.instance

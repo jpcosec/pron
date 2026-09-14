@@ -95,3 +95,15 @@ documents:
   - system:pron
   - type.knowledge.cli_command
   - workspace.knowledge.commands
+- name: cmd-pron-eval
+  path: knowledge/commands/cmd-pron-eval.md
+  hash_c: 17960dfdbb7af6aec2801a92a6b9ecee502fe77ffd3b081717f06bedd00ac31d
+  hash_d: 08f05aaaf744c03f391519916ec73eab8181d9be9bd86152ff85b6a2e0eddfa8
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands

@@ -1,6 +1,6 @@
 # pron — especificación
 
-pron es un SHRDLU sobre un mundo que ya existe: los documentos de sldb son los objetos, los modelos de relación de kgdb son los verbos transitivos, y las escrituras de sldb son los verbos de acción. pron no resuelve, no filtra, no declara verbos ni guarda estado del mundo. Convierte oraciones en direcciones, aristas y escrituras, sostiene el diálogo cuando una oración no alcanza, y deja rastro de cada movimiento.
+pron es un SHRDLU sobre un mundo que ya existe, con un lenguaje estructurado debajo, las formas (13), del que el lenguaje natural es una envoltura: los documentos de sldb son los objetos, los modelos de relación de kgdb son los verbos transitivos, y las escrituras de sldb son los verbos de acción. pron no resuelve, no filtra, no declara verbos ni guarda estado del mundo. Convierte oraciones en direcciones, aristas y escrituras, sostiene el diálogo cuando una oración no alcanza, y deja rastro de cada movimiento.
 
 La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el tag `v1-frozen`. Esta especificación se escribió después de leer cómo funcionan sldb y kgdb de verdad, y reemplaza a la v1 en vez de extenderla.
 
@@ -21,6 +21,7 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 10 | [El SHRDLU sobre el modelo](10-el-shrdlu-sobre-el-modelo.md) | cómo los campos se vuelven propiedades por tipo, cómo una relación llega a kgdb en bytes, cómo conviven pron y el editor |
 | 11 | [Decisiones de implementación](11-decisiones-de-implementacion.md) | parser, embeddings, fechas, el ingest de kgdb, cambios durante el turno, identidad, fallo parcial: qué decide pron y qué aporta la aplicación |
 | 12 | [pron para un runtime externo](12-pron-para-un-runtime.md) | lo que un runtime (kinesis, un editor, un servidor) puede usar de pron: sesión en proceso o por socket, la respuesta y sus outcomes, documentos por dirección, el mundo, permisos, el socket, qué es estable |
+| 13 | [Formas](13-formas.md) | el lenguaje estructurado de pron: los movimientos como s-expressions, que la superficie produce y que un runtime puede escribir directo |
 
 Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 y el 11 se leen antes de implementar; el 12 es el único que un runtime externo necesita.
 

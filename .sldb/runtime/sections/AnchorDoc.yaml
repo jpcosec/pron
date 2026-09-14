@@ -15,7 +15,7 @@ documents:
     slug: chapter
     level: 1
     line_start: 11
-    line_end: 12
+    line_end: 15
   - path: chapter/motive
     title: Motive
     breadcrumbs:
@@ -33,7 +33,7 @@ documents:
     slug: motive
     level: 2
     line_start: 13
-    line_end: 14
+    line_end: 15
 - doc_name: anchor-command
   sections:
   - path: command
@@ -50,7 +50,7 @@ documents:
     slug: command
     level: 1
     line_start: 10
-    line_end: 11
+    line_end: 14
   - path: command/motive
     title: Motive
     breadcrumbs:
@@ -68,7 +68,7 @@ documents:
     slug: motive
     level: 2
     line_start: 12
-    line_end: 13
+    line_end: 14
 - doc_name: anchor-module
   sections:
   - path: module
@@ -85,7 +85,7 @@ documents:
     slug: module
     level: 1
     line_start: 12
-    line_end: 13
+    line_end: 16
   - path: module/motive
     title: Motive
     breadcrumbs:
@@ -103,7 +103,7 @@ documents:
     slug: motive
     level: 2
     line_start: 14
-    line_end: 15
+    line_end: 16
 - doc_name: anchor-move
   sections:
   - path: move
@@ -120,7 +120,7 @@ documents:
     slug: move
     level: 1
     line_start: 10
-    line_end: 11
+    line_end: 14
   - path: move/motive
     title: Motive
     breadcrumbs:
@@ -138,7 +138,7 @@ documents:
     slug: motive
     level: 2
     line_start: 12
-    line_end: 13
+    line_end: 14
 - doc_name: anchor-implements
   sections:
   - path: implements
@@ -155,7 +155,7 @@ documents:
     slug: implements
     level: 1
     line_start: 11
-    line_end: 12
+    line_end: 15
   - path: implements/motive
     title: Motive
     breadcrumbs:
@@ -173,4 +173,4 @@ documents:
     slug: motive
     level: 2
     line_start: 13
-    line_end: 14
+    line_end: 15

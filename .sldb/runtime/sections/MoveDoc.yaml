@@ -83,7 +83,7 @@ documents:
     slug: move-20260908t062556-001
     level: 1
     line_start: 13
-    line_end: 14
+    line_end: 62
   - path: move-20260908t062556-001/sentence
     title: Sentence
     breadcrumbs:
@@ -102,7 +102,7 @@ documents:
     slug: sentence
     level: 2
     line_start: 15
-    line_end: 16
+    line_end: 18
   - path: move-20260908t062556-001/record
     title: Record
     breadcrumbs:
@@ -121,4 +121,4 @@ documents:
     slug: record
     level: 2
     line_start: 19
-    line_end: 20
+    line_end: 62

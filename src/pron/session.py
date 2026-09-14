@@ -906,7 +906,8 @@ class Session:
 
         from pron.surface.nouns import _word_modifier
 
-        if not leftovers or np.model is None:
+        model = np.model
+        if not leftovers or model is None:
             return []
         np = deepcopy(np)
         for it in leftovers:
@@ -914,7 +915,7 @@ class Session:
                 fld = next(
                     (
                         f["name"]
-                        for f in self.world.schema(np.model, self.lex.stores)
+                        for f in self.world.schema(model, self.lex.stores)
                         if f["name"] == "date"
                     ),
                     None,
