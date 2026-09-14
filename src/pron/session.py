@@ -262,6 +262,9 @@ class Session:
                 values = self.lex.distinct_values(model, f["name"])
                 if not values:
                     continue
+                if any(len(v.split()) > 6 for v in values):
+                    # free prose (a statement, a note), not a nameable value one word says
+                    continue
                 if len(values) > max_values:
                     trace.append(
                         f"{model}.{f['name']}: {len(values)} distinct values over "
