@@ -151,3 +151,22 @@ def _module_tmp(tag: str):
     from pathlib import Path
 
     return Path(tempfile.mkdtemp(prefix=f"pron-values-{tag}-"))
+
+
+def test_i_an_unknown_word_never_offers_the_ledger_or_pron_bookkeeping(world: World):
+    """A projection may list MoveDoc/AnchorDoc/ProjectionDoc (pron's own world does): their
+    values (past sentences of this conversation, anchor refs) are never offered."""
+    first = Session(world, projection="all", speaker="test", read_only=True)
+    first.turn(
+        "what is evento_adversso?"
+    )  # leaves a MoveDoc sentence in this tmp world
+    fresh = Session(world, projection="all", speaker="test", read_only=True)
+    for internal in ("MoveDoc", "AnchorDoc", "ProjectionDoc"):
+        if internal not in fresh.lex.models:
+            fresh.lex.models.append(internal)
+    offered = fresh._value_word_suggestions("evento_adversso", [])
+    assert offered, "the real Fact value must still be offered"
+    assert all(
+        model not in {"MoveDoc", "AnchorDoc", "ProjectionDoc"} for model, *_ in offered
+    )
+    assert not any("what is" in sentence for *_, sentence in offered)

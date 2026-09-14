@@ -16,7 +16,7 @@ from pron.embedder import Embedder, Matcher
 from pron.ids import address_of, doc_of, is_local, join_id, model_of, scope as _scope
 from pron.kernel import Kernel
 from pron.ledger import Ledger
-from pron.lexicon import Lexicon
+from pron.lexicon import UNSUGGESTED_MODELS, Lexicon
 from pron.resolve import Resolution, address_to_export_id, resolve
 from pron.response import Response  # noqa: F401 - re-exported: session.Response is the public name
 from pron.store import StoreError
@@ -256,6 +256,8 @@ class Session:
         threshold = float(matching.get("threshold", 0.55))
         scored: list[tuple[float, str, str, str, str]] = []
         for model in self.lex.models:
+            if model in UNSUGGESTED_MODELS:
+                continue
             for f in self.world.schema(model, self.lex.stores):
                 if f["kind"] != "string":
                     continue

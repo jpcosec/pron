@@ -21,6 +21,9 @@ FUNCTION_WORDS = yaml.safe_load(
     )
 )
 INTERNAL_MODELS = {"RelationTypeDoc", "RelationDoc", "ProjectionDoc", "AnchorDoc"}
+# never a source of values to offer or promote: pron's and kgdb's own bookkeeping, and the
+# ledger, whose values are this very conversation's past sentences
+UNSUGGESTED_MODELS = INTERNAL_MODELS | {"MoveDoc"}
 SLOT_RE = re.compile(r"\b(N|X|Z|DAY|TIME)\b")
 
 
@@ -125,7 +128,11 @@ class Lexicon:
                         payload={"value": v},
                     )
                 )
-            if fname in ("system", "tags") and f["kind"] in ("string", "stringlist"):
+            if (
+                fname in ("system", "tags")
+                and f["kind"] in ("string", "stringlist")
+                and m not in UNSUGGESTED_MODELS
+            ):
                 # spec 05 / PLAN 11 P3: values already used in a "system" or "tags" field
                 # are lexicon too, unlike other free text (never entered otherwise).
                 for v in self._used_values(m, fname, f["kind"]):
