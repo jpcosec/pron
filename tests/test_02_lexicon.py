@@ -118,3 +118,22 @@ def test_an_injected_embedder_finds_synonyms(world: World):
     near = lex.near("patio", kinds=("value",))
     assert near and near[0][0].form == "terrace"
     assert lex.matcher.id() == "fake"
+
+
+def test_an_injected_embedder_keeps_typos_near(world: World):
+    """With an Embedder, a misspelling is still offered: the score is the best of meaning
+    (cosine) and spelling (difflib), never only the vector (spec 11 §2: better with
+    embeddings, never worse)."""
+    from pron.embedder import Matcher
+
+    class Orthogonal:
+        def id(self) -> str:
+            return "orthogonal"
+
+        def embed(self, texts):
+            return [[1.0, 0.0] if t == "reservtion" else [0.0, 1.0] for t in texts]
+
+    ranked = Matcher(Orthogonal()).rank(
+        "reservtion", [("r", "reservation"), ("z", "zone")], threshold=0.55
+    )
+    assert ranked and ranked[0][0] == "r"

@@ -89,10 +89,12 @@ class Matcher:
                 (key, self.fallback.similarity(query, text)) for key, text in candidates
             ]
         else:
+            # an embedder adds meaning, it does not remove spelling: a typo ("fcts") stays
+            # near by string similarity even when its vector lands nowhere near "facts"
             vectors = self._embed([query, *[t for _, t in candidates]])
             scored = [
-                (key, cosine(vectors[0], v))
-                for (key, _), v in zip(candidates, vectors[1:])
+                (key, max(cosine(vectors[0], v), self.fallback.similarity(query, text)))
+                for (key, text), v in zip(candidates, vectors[1:])
             ]
         best: dict[str, float] = {}
         for key, score in scored:
