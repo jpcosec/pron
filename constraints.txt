@@ -2,6 +2,13 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
+# Verified against (suites), 2026-09-15, pron b04f88d (merge 'merkle': refresh passes the previous
+# graph to kgdb's incremental build_typed_snapshot(previous=), hash_mundo memoized per turn):
+#   - kgdb 5effed5; sldb working tree (b0f196a + uncommitted changes of another session): 129 passed.
+#   - kgdb 5effed5; sldb merkle 6c6b173 (branch `merkle` in the sldb repo, not on main: its section
+#     rebuild overlaps uncommitted work there): 128 passed, 1 failed (the same promote failure below).
+#   pron's refresh requires kgdb >= 5effed5 (the `previous=` argument).
+#
 # Verified against (suites), 2026-09-15, pron ae2d0a3 + test fix:
 #   - kgdb 846f331; sldb working tree (b0f196a + uncommitted changes of another session): 129 passed.
 #   - kgdb 846f331; sldb b0f196a clean: 128 passed, 1 failed
@@ -11,4 +18,4 @@
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
 sldb b0f196a fix(cli): replace_rhs_expression usa offsets en bytes (ast) para cortar líneas utf-8  # needs the pending models_validate fix, see above
-kgdb 846f331 typed ingest: los alias con ref escrito como forma de pron (spec 13) nombran lo mismo
+kgdb 5effed5 merkle capa 1: build_typed_snapshot incremental con previous=
