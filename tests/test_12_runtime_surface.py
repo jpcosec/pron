@@ -18,7 +18,7 @@ from pron.response import Response
 from pron.session import Session
 
 # --- Session(world, projection, speaker, speaker_address, now, embedder,
-#             read_only, home) -------------------------------------------------------
+#             read_only, home, defer_refresh) ---------------------------------------
 
 
 def test_session_signature() -> None:
@@ -32,6 +32,7 @@ def test_session_signature() -> None:
         "embedder",
         "read_only",
         "home",
+        "defer_refresh",
     ]
     assert params["projection"].default == "all"
     assert params["speaker"].default == ""
@@ -40,6 +41,7 @@ def test_session_signature() -> None:
     assert params["embedder"].default is None
     assert params["read_only"].default is False
     assert params["home"].default is None
+    assert params["defer_refresh"].default is False
 
 
 def test_session_has_turn() -> None:

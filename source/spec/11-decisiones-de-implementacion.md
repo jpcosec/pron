@@ -105,7 +105,7 @@ Además, cada escritura por campo compara el `hash_c` esperado del documento con
 
 **Decisión.** `pron serve --world .` abre el mundo una vez y escucha en `<mundo>/.pron/serve.sock`, un socket Unix. Cada petición es una conexión, un objeto JSON por línea: `say` (proyección, hablante, oración, `now`, solo lectura), `payload` (un documento por dirección), `lexicon`, `state`, `refresh`, `ping`, `stop`. Las sesiones viven en el servidor, una por proyección, hablante y modo, así que una pendiente sobrevive entre peticiones del mismo hablante. Las peticiones se atienden de a una: un mundo tiene un escritor y un turno es corto. `pron say`, `pron repl` y el backend de kinesis buscan el socket y, si alguien escucha, hablan por ahí sin abrir nada; `--local` abre el mundo en el proceso propio. Un archivo de socket sin nadie detrás no engaña a un cliente: `ping` decide.
 
-El servidor habla como el hablante que el cliente dice ser, igual que una sesión local (§6): la identidad sigue siendo de la aplicación, y el socket es local a la máquina y a los permisos del archivo.
+El servidor habla como el hablante que el cliente dice ser, igual que una sesión local (§6): la identidad sigue siendo de la aplicación, y el socket es local a la máquina y a los permisos del archivo. En serve, la respuesta de una escritura sale antes de refrescar el grafo; el refresco corre enseguida, bajo el mismo candado, así que el próximo pedido ya lo ve.
 
 **Por qué.** Lo que cuesta en un turno frío son los imports y la primera carga del store, no la oración. El REPL ya los paga una vez para una persona; el servidor los paga una vez para todos los procesos que hablen con el mismo mundo: un editor, kinesis desde la CLI, otro agente.
 

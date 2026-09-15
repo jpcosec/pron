@@ -34,8 +34,9 @@ class World:
     def __init__(self, root: str | Path, pythonpath: str | None = None) -> None:
         self.root = Path(root).resolve()
         self.store = Store(self.root, pythonpath)
-        self.graph = Graph(self.root)
+        self._graph = Graph(self.root)
         self._hash_mundo_cache: tuple[Any, str] | None = None
+        self._pending: tuple[set[str], bool] | None = None  # a deferred refresh: (stores, light)
 
     # -- declaration -----------------------------------------------------------
 
@@ -199,6 +200,14 @@ class World:
 
     # -- derived graph -----------------------------------------------------------
 
+    @property
+    def graph(self) -> Graph:
+        """The derived graph. A deferred refresh settles here first (spec 11 §8): every
+        graph read — from Session code, from a World method, from the server's `graph` op —
+        sees the graph of the writes already made, never one that predates them."""
+        self.settle()
+        return self._graph
+
     def graph_is_fresh(self) -> bool:
         return self.graph.is_fresh(self.model_hashes())
 
@@ -220,6 +229,39 @@ class World:
         self.refresh(exclude_tags)
         return True
 
+    # -- deferred refresh (serve: respond, then settle) ----------------------------------
+
+    def defer_refresh(self, stores: list[str] | None, light: bool) -> None:
+        """Record a refresh to run after the response (spec 11 §8): the session answered
+        first, and the graph catches up when the server settles or the next graph read
+        arrives. Deferrals accumulate — the stores are their union, and the refresh is
+        light only if every one of them was."""
+        if self._pending is None:
+            self._pending = (set(stores or ()), light)
+        else:
+            pending_stores, pending_light = self._pending
+            pending_stores.update(stores or ())
+            self._pending = (pending_stores, pending_light and light)
+
+    @property
+    def has_pending_refresh(self) -> bool:
+        return self._pending is not None
+
+    def settle(self) -> bool:
+        """Run the pending refresh, if there is one, and say whether it ran. It only stops
+        being pending after `refresh` returns: a refresh that raises stays pending, so a
+        server that could not settle now retries on the next graph read."""
+        if self._pending is None:
+            return False
+        stores, light = self._pending
+        self._pending = None  # not pending while it runs: refresh reads self.graph itself
+        try:
+            self.refresh(stores=sorted(stores), light=light)
+            return True
+        except Exception:
+            self._pending = (stores, light)
+            raise
+
     def refresh(
         self,
         exclude_tags: tuple[str, ...] = ("type.pron.move",),
@@ -236,7 +278,11 @@ class World:
         semantic and sections shards for the documents it touched) are already current; a
         full `stores update` there would only re-read and re-hash every tracked file to catch
         a hand edit that cannot exist yet. The explicit `(refresh)` verb and `refresh_if_stale`
-        keep the full path — the one that actually notices an edit made outside pron."""
+        keep the full path — the one that actually notices an edit made outside pron.
+
+        A refresh here supersedes any pending deferral (spec 11 §8): it rebuilds the same
+        graph from the same store, so the deferral is dropped and no later settle repeats it."""
+        self._pending = None
         import networkx as nx
         from kgdb.graph.utils import add_knowledge_node, save_graph
         from kgdb.ingest.typed import build_typed_snapshot

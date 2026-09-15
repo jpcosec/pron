@@ -136,12 +136,16 @@ def cmd_write(args: argparse.Namespace) -> None:
     opening a cold world (reading every index once — not what this plan is about); a second
     and later ones are the steady-state marginal cost of a write in an already-open session,
     which is what M2/M3/M4 change. Both numbers are printed; --repeat > 1 is how the 172 vs
-    ~1500 docs comparison should be read."""
+    ~1500 docs comparison should be read.
+
+    With --defer (spec 11 §8) the session does not refresh inside the eval — the eval alone
+    is timed, what a `pron serve` client waits for — and the pending refresh settles once
+    after the last one (its cost is reported as settle_s, never in the runs)."""
     from pron.session import Session
     from pron.world import World
 
     world = World(args.world, args.pythonpath)
-    session = Session(world, projection="all", speaker="bench")
+    session = Session(world, projection="all", speaker="bench", defer_refresh=args.defer)
     docs_before = len(world.store.docs())
     runs = []
 
@@ -168,6 +172,8 @@ def cmd_write(args: argparse.Namespace) -> None:
         "steady_state_s": runs[-1]["elapsed_s"],
         "runs": runs,
     }
+    if args.defer:
+        out["settle_s"] = round(_time_call(world.settle, False)[0], 6)
     print(json.dumps(out))
 
 
@@ -208,6 +214,7 @@ def main() -> int:
     p.add_argument("--forms", help="Override the create form entirely.")
     p.add_argument("--profile", action="store_true")
     p.add_argument("--repeat", type=int, default=1)
+    p.add_argument("--defer", action="store_true", help="Session(defer_refresh=True): time the eval alone; the graph settles once after.")
     p.add_argument("--label", default="")
     p.set_defaults(func=cmd_write)
 
