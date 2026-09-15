@@ -872,7 +872,7 @@ class Session:
         if part.kind == "compose":
             return self._compose(part, plan, trace, record), True
         if part.kind == "refresh":
-            self._refresh(trace)
+            self._refresh(trace, full=True)
             return "Refreshed.", False
         if part.kind == "undo":
             return self._undo(trace, record), True
@@ -1266,8 +1266,12 @@ class Session:
         record["edges"].extend(why_edges)
         return (" · ".join(bits) or f"No record explains {target}.") + "."
 
-    def _refresh(self, trace: list[str]) -> None:
-        report = self.world.refresh(stores=self.lex.stores)
+    def _refresh(self, trace: list[str], full: bool = False) -> None:
+        """PLAN 15 capa 8: light (the default) — right after our own write, whose indexes
+        sldb already kept current — skips `stores update` entirely; `full=True` is the
+        explicit `(refresh)` verb's own path, the one that actually notices an edit made
+        outside pron."""
+        report = self.world.refresh(stores=self.lex.stores, light=not full)
         trace.append(f"refresh: {report['nodes']} nodes, {report['edges']} edges")
         self.hash = self.world.hash_mundo()
 

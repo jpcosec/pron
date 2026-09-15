@@ -215,33 +215,25 @@ class World:
         self,
         exclude_tags: tuple[str, ...] = ("type.pron.move",),
         stores: list[str] | None = None,
+        light: bool = False,
     ) -> dict[str, Any]:
         """stores update on the local store and on every store in `stores` (default: the
         linked ones too), then kgdb's typed ingest into .pron/graph.nx.json. Library calls
         only. kgdb and networkx are imported here, not at module load: a session that only
-        reads never pays for them."""
+        reads never pays for them.
+
+        `light` (PLAN 15 capa 8): skip stores update entirely — for the refresh right after
+        a write that went through sldb's own API, whose indexes (hash_c/hash_d/hash_b/hash_a,
+        semantic and sections shards for the documents it touched) are already current; a
+        full `stores update` there would only re-read and re-hash every tracked file to catch
+        a hand edit that cannot exist yet. The explicit `(refresh)` verb and `refresh_if_stale`
+        keep the full path — the one that actually notices an edit made outside pron."""
         import networkx as nx
         from kgdb.graph.utils import add_knowledge_node, save_graph
         from kgdb.ingest.typed import build_typed_snapshot
 
-        for s in stores if stores is not None else self.stores():
-            update_store(
-                SimpleNamespace(
-                    store=str(self.store.sp_of(s)),
-                    pythonpath=self.store.pythonpath,
-                    wait=False,
-                    verbose=False,
-                )
-            )
-        if stores is not None and not any(is_local(s) for s in stores):
-            update_store(
-                SimpleNamespace(
-                    store=str(self.store.sp),
-                    pythonpath=self.store.pythonpath,
-                    wait=False,
-                    verbose=False,
-                )
-            )
+        if not light:
+            self._update_stores(stores)
         snapshot, report = build_typed_snapshot(
             self.store.sp, self.store.pythonpath, exclude_tags, previous=self._previous_snapshot()
         )
@@ -253,6 +245,12 @@ class World:
         self.graph.reload()
         self.store.invalidate()
         return report
+
+    def _update_stores(self, stores: list[str] | None) -> None:
+        for s in stores if stores is not None else self.stores():
+            update_store(SimpleNamespace(store=str(self.store.sp_of(s)), pythonpath=self.store.pythonpath, wait=False, verbose=False))
+        if stores is not None and not any(is_local(s) for s in stores):
+            update_store(SimpleNamespace(store=str(self.store.sp), pythonpath=self.store.pythonpath, wait=False, verbose=False))
 
     def _previous_snapshot(self):
         """`.pron/graph.nx.json` (kgdb's own node-link JSON, node `schema` holds the full
