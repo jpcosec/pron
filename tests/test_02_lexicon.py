@@ -37,13 +37,14 @@ def test_every_word_has_a_source_in_the_store_and_a_motive(lex: Lexicon):
 
 
 def test_models_fields_values_relations_and_aliases_enter(lex: Lexicon):
-    assert {w.ref for w in lex.lookup("table")} == {"model:Table"}
+    assert {w.ref for w in lex.lookup("table")} == {"(model Table)"}
     assert lex.lookup("party size")[0].motive == "Number of people coming."
-    assert {w.ref for w in lex.lookup("terrace")} == {"value:Table.zone=terrace"}
+    assert {w.ref for w in lex.lookup("terrace")} == {'(value Table zone "terrace")'}
     assert lex.lookup("assigned to")[0].payload["mode"] == "read and assert"
     assert lex.lookup("book her")[0].kind == "alias-compose"
     assert (
-        lex.lookup("confirm it")[0].ref == "action:change Reservation.status=confirmed"
+        lex.lookup("confirm it")[0].ref
+        == '(change (it "it" Reservation) status "confirmed")'
     )
 
 
@@ -63,18 +64,18 @@ def test_kernel_verbs_are_cut_by_the_projection(world: World, lex: Lexicon):
 def test_verbs_of_a_class_are_derived_not_registered(lex: Lexicon):
     refs = {w.ref for w in lex.verbs_for("Reservation")}
     assert {
-        "relation:booked_by",
-        "relation:assigned_to",
-        "action:change",
-        "action:forget",
-        "compose",
-        "action:change Reservation.status=confirmed",
+        "(relation booked_by)",
+        "(relation assigned_to)",
+        "(action change)",
+        "(action forget)",
+        '(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table)))',
+        '(change (it "it" Reservation) status "confirmed")',
     } <= refs
-    assert "relation:transitions_to" not in refs
+    assert "(relation transitions_to)" not in refs
     table_refs = {w.ref for w in lex.verbs_for("Table")}
     assert (
-        "relation:assigned_to" in table_refs
-        and "action:change Reservation.status=confirmed" not in table_refs
+        "(relation assigned_to)" in table_refs
+        and '(change (it "it" Reservation) status "confirmed")' not in table_refs
     )
 
 
@@ -84,7 +85,7 @@ def test_near_offers_neighbors_and_never_executes(lex: Lexicon):
     near = lex.near("terace", kinds=("value",))
     assert near and near[0][0].form == "terrace"
     near_word = lex.near("reservtion")
-    assert near_word[0][0].ref == "model:Reservation"
+    assert near_word[0][0].ref == "(model Reservation)"
     assert lex.near("patio", kinds=("value",)) == []
 
 

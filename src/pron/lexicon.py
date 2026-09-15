@@ -13,6 +13,8 @@ from typing import Any, Iterable
 import yaml
 
 from pron.embedder import Matcher, normalize
+from pron.refs import models_and_relations, parse as parse_ref
+from pron.sexp import Sym, write
 from pron.world import World
 
 FUNCTION_WORDS = yaml.safe_load(
@@ -31,7 +33,7 @@ SLOT_RE = re.compile(r"\b(N|X|Z|DAY|TIME)\b")
 class Word:
     form: str
     kind: str  # model | field | value | relation | action | alias
-    ref: str  # model:M | field:M.f | value:M.f=v | relation:R | action:<verb> | predicate:… | doc:… | compose
+    ref: str  # what the word names, as a form (pron.refs, spec 13): (model M), (relation R), …
     motive: str
     source: str  # where it comes from, for the trace
     model: str | None = None
@@ -85,7 +87,7 @@ class Lexicon:
         doc = (model_type.__doc__ or "").strip().splitlines()
         motive = doc[0] if doc else f"a {m}"
         self.words.append(
-            Word(m.lower(), "model", f"model:{m}", motive, f"model {m}", model=m)
+            Word(m.lower(), "model", _ref("model", m), motive, f"model {m}", model=m)
         )
         split = " ".join(re.findall(r"[A-Z]+(?![a-z])|[A-Z]?[a-z0-9]+", m)).lower()
         if (
@@ -95,7 +97,7 @@ class Lexicon:
                 Word(
                     split,
                     "model",
-                    f"model:{m}",
+                    _ref("model", m),
                     motive,
                     f"model {m} (identifier split into words)",
                     model=m,
@@ -107,7 +109,7 @@ class Lexicon:
                 Word(
                     fname.replace("_", " "),
                     "field",
-                    f"field:{m}.{fname}",
+                    _ref("field", m, fname),
                     f["description"] or fname,
                     f"field {m}.{fname}",
                     model=m,
@@ -120,7 +122,7 @@ class Lexicon:
                     Word(
                         str(v),
                         "value",
-                        f"value:{m}.{fname}={v}",
+                        write([Sym("value"), Sym(m), Sym(fname), v]),
                         f"{fname} = {v}",
                         f"enum {m}.{fname}",
                         model=m,
@@ -140,7 +142,7 @@ class Lexicon:
                         Word(
                             v,
                             "value",
-                            f"value:{m}.{fname}={v}",
+                            write([Sym("value"), Sym(m), Sym(fname), v]),
                             f"{fname} = {v}",
                             "used value",
                             model=m,
@@ -181,7 +183,7 @@ class Lexicon:
                     Word(
                         form,
                         "relation",
-                        f"relation:{name}",
+                        _ref("relation", name),
                         rt.get("description", name),
                         f"RelationTypeDoc {rt.get('doc', name)}",
                         relation=name,
@@ -201,7 +203,7 @@ class Lexicon:
                     Word(
                         form,
                         "action",
-                        f"action:{verb}",
+                        _ref("action", verb),
                         spec["motive"],
                         "kernel",
                         payload={"verb": verb},
@@ -224,75 +226,51 @@ class Lexicon:
         p = d.payload
         if "all" not in wanted and p["symbol"] not in wanted:
             return
-        ref = p["ref"]
-        head = ref.split(":", 1)[0]
-        payload = {"symbol": p["symbol"], "ref": ref, "steps": p.get("steps") or []}
-        model, fname, rel = self._ref_targets(ref)
-        if not self._alias_in_projection(model, rel, payload["steps"], ref):
+        try:
+            ref = parse_ref(p["ref"], p.get("steps") or [])
+        except ValueError:
+            return  # a ref that is not a form names nothing; the lint reports it
+        if not self._alias_in_projection(ref):
             return  # its target is outside this projection: the word does not exist here (spec 01, 05)
+        payload = {
+            "symbol": p["symbol"],
+            "ref": ref.text,
+            "steps": ref.steps,
+            "where": ref.where,
+            "verb": ref.verb,
+            "value": ref.value,
+        }
         for form in p.get("forms") or [p["symbol"]]:
             self.words.append(
                 Word(
                     form,
-                    f"alias-{head}",
-                    ref,
+                    f"alias-{ref.kind}",
+                    ref.text,
                     p.get("motive", ""),
                     f"AnchorDoc {d.name}",
-                    model=model,
-                    field_name=fname,
-                    relation=rel,
+                    model=ref.model,
+                    field_name=ref.field_name,
+                    relation=ref.relation,
                     payload=payload,
                 )
             )
 
-    def _alias_in_projection(
-        self, model: str | None, rel: str | None, steps: list[Any], ref: str = ""
-    ) -> bool:
+    def _alias_in_projection(self, ref: Any) -> bool:
         """An alias enters only if every model, relation and action verb it points at is in the projection."""
-
-        def model_ok(m: str | None) -> bool:
-            return (
-                m is None
-                or m in self.models
-                or bool(set(self.world.family_of(m)) & set(self.models))
-            )
-
-        def rel_ok(r: str | None) -> bool:
-            return r is None or r in self.relation_types
-
-        if not model_ok(model) or not rel_ok(rel):
-            return False
-        if ref.startswith("action:") and ref[7:].split(" ", 1)[0] not in self.actions:
-            return False
-        for s in steps:
-            if isinstance(s, dict) and (
-                not model_ok(s.get("model"))
-                or not rel_ok(s.get("relation"))
-                or (s.get("do") in ("create", "change") and s["do"] not in self.actions)
+        models, relations = models_and_relations(ref)
+        for m in models:
+            if m not in self.models and not set(self.world.family_of(m)) & set(
+                self.models
             ):
                 return False
-        return True
-
-    @staticmethod
-    def _ref_targets(ref: str) -> tuple[str | None, str | None, str | None]:
-        head, _, rest = ref.partition(":")
-        if head == "model":
-            return rest, None, None
-        if head == "field" and "." in rest:
-            m, f = rest.split(".", 1)
-            return m, f, None
-        if head == "predicate":
-            return rest.split(":", 1)[0], None, None
-        if head == "relation":
-            return None, None, rest
-        if head == "action":
-            match = re.search(r"\b([A-Za-z_]\w*)\.([A-Za-z_]\w*)=", rest)
-            return (
-                (match.group(1), match.group(2), None) if match else (None, None, None)
-            )
-        if head == "doc":
-            return rest.split(":", 1)[0], None, None
-        return None, None, None
+        if any(r not in self.relation_types for r in relations):
+            return False
+        if ref.kind == "action" and ref.verb not in self.actions:
+            return False
+        return not any(
+            s.get("do") in ("create", "change") and s["do"] not in self.actions
+            for s in ref.steps
+        )
 
     # -- reading ----------------------------------------------------------------------
 
@@ -481,3 +459,7 @@ def projection_models(world: World, projection: dict[str, Any]) -> list[str]:
     if wanted:
         return [m for m in wanted if m in known]
     return [m for m in known if m not in INTERNAL_MODELS]
+
+
+def _ref(head: str, *names: str) -> str:
+    return write([Sym(head), *[Sym(n) for n in names]])

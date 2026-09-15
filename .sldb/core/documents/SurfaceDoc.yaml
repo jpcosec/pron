@@ -131,18 +131,6 @@ documents:
   - system:pron
   - type.knowledge.surface
   - workspace.knowledge.surfaces
-- name: surface-pron-surface-interpret
-  path: knowledge/surfaces/surface-pron-surface-interpret.md
-  hash_c: e47eb2829dc4489a74a6acc7cbb21b914c7eb3e20fad74585bd9ad92276e8460
-  hash_d: 018625d4d6faa7785165d79727a6d5fbf57397244b425a8fc2ee248325d032bb
-  semantic_tags:
-  - domain:system_architecture
-  - entity:module
-  - impl:here
-  - kind:software
-  - system:pron
-  - type.knowledge.surface
-  - workspace.knowledge.surfaces
 - name: surface-pron-cli-main
   path: knowledge/surfaces/surface-pron-cli-main.md
   hash_c: ebc5661825e3b7b27cf8fc407a21295a06750cf400f01f80314511c01c0503f1
@@ -327,6 +315,54 @@ documents:
   path: knowledge/surfaces/surface-pron-store.md
   hash_c: 6e431043fb90a07f25615504b67c5b45fcb9d5da4e830dacd7a7e4cd74c46f43
   hash_d: 29d2c22ea9e62a1f7e0cf3ea76a2a8ed2815166b916c37ebbfd2f03f0f704eae
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-sexp
+  path: knowledge/surfaces/surface-pron-sexp.md
+  hash_c: 91c5f1175a600bf64270b83b9ea7b02bdcc818276e7bf65e14914f1e3e6e9d02
+  hash_d: 795b8338204452d998f7e3fdc659b8cc5cf4efd75f024ec1575e265b22d6de9f
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-forms
+  path: knowledge/surfaces/surface-pron-forms.md
+  hash_c: f4e62e622c52977cea6f642150fc8d0d6bc0541dcbdc0a02b531eddc7c75511b
+  hash_d: 0be1e3f8c22fc42af8bcf9ec6a4a869708101d00381dc7e42dcfb5be7284e7e4
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-refs
+  path: knowledge/surfaces/surface-pron-refs.md
+  hash_c: 6092e0ca5c6760d2740d2cf867e94f399cb1115fa2c219ffa7f90349196bb4b7
+  hash_d: 065339705247724e6a9a7d388bb73f1c78f10e8332a8e84822b7592521db9f3c
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+- name: surface-pron-surface-interpret
+  path: knowledge/surfaces/surface-pron-surface-interpret.md
+  hash_c: 78f7feb1af30ea1c6e329712835ea748f65524279b259a282cb7063f6ae656e8
+  hash_d: 94593779cd7fe58b450cd7d8f0e72091979951c4c8ef82db2d607b6d4446603b
   semantic_tags:
   - domain:system_architecture
   - entity:module

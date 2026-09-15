@@ -25,7 +25,7 @@ documents:
     slug: refresh
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 36
   - path: refresh/synopsis
     title: Synopsis
     breadcrumbs:
@@ -53,7 +53,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: refresh/purpose
     title: Purpose
     breadcrumbs:
@@ -81,7 +81,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: refresh/how-it-works
     title: How It Works
     breadcrumbs:
@@ -109,7 +109,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 28
   - path: refresh/arguments
     title: Arguments
     breadcrumbs:
@@ -137,7 +137,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 29
-    line_end: 30
+    line_end: 33
   - path: refresh/usage
     title: Usage
     breadcrumbs:
@@ -165,7 +165,7 @@ documents:
     slug: usage
     level: 2
     line_start: 34
-    line_end: 35
+    line_end: 36
 - doc_name: cmd-pron-lexicon
   sections:
   - path: lexicon
@@ -192,7 +192,7 @@ documents:
     slug: lexicon
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 40
   - path: lexicon/synopsis
     title: Synopsis
     breadcrumbs:
@@ -220,7 +220,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: lexicon/purpose
     title: Purpose
     breadcrumbs:
@@ -248,7 +248,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: lexicon/how-it-works
     title: How It Works
     breadcrumbs:
@@ -276,7 +276,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 29
   - path: lexicon/arguments
     title: Arguments
     breadcrumbs:
@@ -304,7 +304,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 30
-    line_end: 31
+    line_end: 37
   - path: lexicon/usage
     title: Usage
     breadcrumbs:
@@ -332,7 +332,7 @@ documents:
     slug: usage
     level: 2
     line_start: 38
-    line_end: 39
+    line_end: 40
 - doc_name: cmd-pron-check
   sections:
   - path: check
@@ -359,7 +359,7 @@ documents:
     slug: check
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 36
   - path: check/synopsis
     title: Synopsis
     breadcrumbs:
@@ -387,7 +387,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: check/purpose
     title: Purpose
     breadcrumbs:
@@ -415,7 +415,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: check/how-it-works
     title: How It Works
     breadcrumbs:
@@ -443,7 +443,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 28
   - path: check/arguments
     title: Arguments
     breadcrumbs:
@@ -471,7 +471,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 29
-    line_end: 30
+    line_end: 33
   - path: check/usage
     title: Usage
     breadcrumbs:
@@ -499,7 +499,7 @@ documents:
     slug: usage
     level: 2
     line_start: 34
-    line_end: 35
+    line_end: 36
 - doc_name: cmd-pron-docs
   sections:
   - path: docs
@@ -526,7 +526,7 @@ documents:
     slug: docs
     level: 1
     line_start: 16
-    line_end: 17
+    line_end: 39
   - path: docs/synopsis
     title: Synopsis
     breadcrumbs:
@@ -554,7 +554,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 18
-    line_end: 19
+    line_end: 21
   - path: docs/purpose
     title: Purpose
     breadcrumbs:
@@ -582,7 +582,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 25
   - path: docs/how-it-works
     title: How It Works
     breadcrumbs:
@@ -610,7 +610,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 30
   - path: docs/arguments
     title: Arguments
     breadcrumbs:
@@ -638,7 +638,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 31
-    line_end: 32
+    line_end: 36
   - path: docs/usage
     title: Usage
     breadcrumbs:
@@ -666,7 +666,7 @@ documents:
     slug: usage
     level: 2
     line_start: 37
-    line_end: 38
+    line_end: 39
 - doc_name: cmd-pron-init
   sections:
   - path: init
@@ -693,7 +693,7 @@ documents:
     slug: init
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 43
   - path: init/synopsis
     title: Synopsis
     breadcrumbs:
@@ -721,7 +721,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: init/purpose
     title: Purpose
     breadcrumbs:
@@ -749,7 +749,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: init/how-it-works
     title: How It Works
     breadcrumbs:
@@ -777,7 +777,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 33
   - path: init/arguments
     title: Arguments
     breadcrumbs:
@@ -805,7 +805,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 34
-    line_end: 35
+    line_end: 40
   - path: init/usage
     title: Usage
     breadcrumbs:
@@ -833,7 +833,7 @@ documents:
     slug: usage
     level: 2
     line_start: 41
-    line_end: 42
+    line_end: 43
 - doc_name: cmd-pron-say
   sections:
   - path: say
@@ -860,7 +860,7 @@ documents:
     slug: say
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 47
   - path: say/synopsis
     title: Synopsis
     breadcrumbs:
@@ -888,7 +888,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: say/purpose
     title: Purpose
     breadcrumbs:
@@ -916,7 +916,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: say/how-it-works
     title: How It Works
     breadcrumbs:
@@ -944,7 +944,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 31
   - path: say/arguments
     title: Arguments
     breadcrumbs:
@@ -972,7 +972,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 32
-    line_end: 33
+    line_end: 44
   - path: say/usage
     title: Usage
     breadcrumbs:
@@ -1000,7 +1000,7 @@ documents:
     slug: usage
     level: 2
     line_start: 45
-    line_end: 46
+    line_end: 47
 - doc_name: cmd-pron-repl
   sections:
   - path: repl
@@ -1027,7 +1027,7 @@ documents:
     slug: repl
     level: 1
     line_start: 15
-    line_end: 16
+    line_end: 44
   - path: repl/synopsis
     title: Synopsis
     breadcrumbs:
@@ -1055,7 +1055,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 17
-    line_end: 18
+    line_end: 20
   - path: repl/purpose
     title: Purpose
     breadcrumbs:
@@ -1083,7 +1083,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 24
   - path: repl/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1111,7 +1111,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 25
-    line_end: 26
+    line_end: 30
   - path: repl/arguments
     title: Arguments
     breadcrumbs:
@@ -1139,7 +1139,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 31
-    line_end: 32
+    line_end: 41
   - path: repl/usage
     title: Usage
     breadcrumbs:
@@ -1167,7 +1167,7 @@ documents:
     slug: usage
     level: 2
     line_start: 42
-    line_end: 43
+    line_end: 44
 - doc_name: cmd-pron-serve
   sections:
   - path: serve
@@ -1194,7 +1194,7 @@ documents:
     slug: serve
     level: 1
     line_start: 16
-    line_end: 17
+    line_end: 48
   - path: serve/synopsis
     title: Synopsis
     breadcrumbs:
@@ -1222,7 +1222,7 @@ documents:
     slug: synopsis
     level: 2
     line_start: 18
-    line_end: 19
+    line_end: 21
   - path: serve/purpose
     title: Purpose
     breadcrumbs:
@@ -1250,7 +1250,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 25
   - path: serve/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1278,7 +1278,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 35
   - path: serve/arguments
     title: Arguments
     breadcrumbs:
@@ -1306,7 +1306,7 @@ documents:
     slug: arguments
     level: 2
     line_start: 36
-    line_end: 37
+    line_end: 43
   - path: serve/usage
     title: Usage
     breadcrumbs:
@@ -1334,4 +1334,171 @@ documents:
     slug: usage
     level: 2
     line_start: 44
-    line_end: 45
+    line_end: 48
+- doc_name: cmd-pron-eval
+  sections:
+  - path: eval
+    title: eval
+    breadcrumbs:
+    - eval
+    about:
+    - eval
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: eval
+    level: 1
+    line_start: 16
+    line_end: 47
+  - path: eval/synopsis
+    title: Synopsis
+    breadcrumbs:
+    - eval
+    - Synopsis
+    about:
+    - eval
+    - Synopsis
+    - synopsis
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: synopsis
+    level: 2
+    line_start: 18
+    line_end: 21
+  - path: eval/purpose
+    title: Purpose
+    breadcrumbs:
+    - eval
+    - Purpose
+    about:
+    - eval
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: purpose
+    level: 2
+    line_start: 22
+    line_end: 25
+  - path: eval/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - eval
+    - How It Works
+    about:
+    - eval
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: how-it-works
+    level: 2
+    line_start: 26
+    line_end: 31
+  - path: eval/arguments
+    title: Arguments
+    breadcrumbs:
+    - eval
+    - Arguments
+    about:
+    - eval
+    - Arguments
+    - arguments
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: arguments
+    level: 2
+    line_start: 32
+    line_end: 44
+  - path: eval/usage
+    title: Usage
+    breadcrumbs:
+    - eval
+    - Usage
+    about:
+    - eval
+    - Usage
+    - usage
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    semantic_tags:
+    - domain:system_architecture
+    - entity:cli_command
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.cli_command
+    - workspace.knowledge.commands
+    slug: usage
+    level: 2
+    line_start: 45
+    line_end: 47

@@ -1,36 +1,36 @@
 documents:
 - name: anchor-chapter
   path: knowledge/anchors/chapter.md
-  hash_c: c8f926420af5813e82d3884e8ca9b8fbad0a64908bcd5d15f6e6c3e0192dbee1
-  hash_d: 827701eb82c7bb8a9b59717abd0745a60d8f0ca1afb614017d44f14f15684874
+  hash_c: 65e6636c6ff78f880750734365f19b68dd3eff839d0df1e165365b349f77abae
+  hash_d: 4309e5f92e8183e46efdba4e728b82ca30435c229a1087ad2c612812c805e431
   semantic_tags:
   - type.knowledge.anchor
   - workspace.knowledge.anchors
 - name: anchor-command
   path: knowledge/anchors/command.md
-  hash_c: 66b9954f9e9fa5500eeaa0438bce78e6bf84578c1870cefcb4256c449932fc34
-  hash_d: cac15796ffc238a075084cb9d3c414c2648fa743e23c5ebe8533d1fd7bd68782
+  hash_c: 2f5e556754769b3565b9afc63bb00ede9bc64934a05bb9f46d505c610d193a38
+  hash_d: 2f7cea1189a202a69cb18e1e1c98dacdb86ffdd1cf5c2e4c6526c39f876ef0d5
   semantic_tags:
   - type.knowledge.anchor
   - workspace.knowledge.anchors
 - name: anchor-module
   path: knowledge/anchors/module.md
-  hash_c: 6de10a6ef1cfe79b447c99e76558df35ffe8b9b46f367fdf81599a8f8ec613f0
-  hash_d: c85f12dd1b59a4f5c6cebf985f0fb624d3efe2639177f869241cebb44811fa8f
+  hash_c: 0bac4c84a76172b447a9abcbc26f1725d2541b7cc603195ba9d7ed441fddfee2
+  hash_d: 624fc09ceaff602f0e7959ff9edd2672bf05c9113127ef1133e968252f0c2d00
   semantic_tags:
   - type.knowledge.anchor
   - workspace.knowledge.anchors
 - name: anchor-move
   path: knowledge/anchors/move.md
-  hash_c: a6fc6ffb59eb704c4270c0dfa1773934cee1f5c3685668d127dd20d82948bda4
-  hash_d: 351e4439ff9da7b95f2d780bad5e83f6b5a6e0dc33879b09f63800dc22faec96
+  hash_c: 4f1bb69922a066dfd349d1f83d2f7b3f0a8924b11472ebfaa461af70897660ee
+  hash_d: b089d343a88a13efbf8244303b69428a2d9276fe21eff2b8c282d7d0b475e4c5
   semantic_tags:
   - type.knowledge.anchor
   - workspace.knowledge.anchors
 - name: anchor-implements
   path: knowledge/anchors/implements.md
-  hash_c: 2dad41a3bff78455de735824e58e98cc9f7d044f3648674f8b9a148016ae2755
-  hash_d: 955dfc8bb149f331779a00df86b131808c1615e1630347d23fb0bc15f5b7e1fb
+  hash_c: 250fd31e61a6fc3593248e6cef2889063c0edb36622f64dfe2dfdab5d6c8d110
+  hash_d: 6f4b708e065c907c50cf5245bb9b692a9b80cb74c481569a723e83157c671385
   semantic_tags:
   - type.knowledge.anchor
   - workspace.knowledge.anchors

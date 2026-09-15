@@ -260,38 +260,34 @@ matching: {neighbors: 3, threshold: 0.55}
 
 | symbol | forms | ref | motive |
 |---|---|---|---|
-| client | client, clients | `model:Client` | a person who books |
-| table | table, tables | `model:Table` | a table in the venue |
-| reservation | reservation, reservations, booking, bookings | `model:Reservation` | a booking for a date and time |
-| named | named, called, whose name is | `field:Client.name` | the client's name |
-| phone | phone, phone number, number | `field:Client.phone` | the contact phone number |
-| for N | for N, for N people, party of N | `field:Reservation.party_size` y `predicate:Table:capacity >= N` | how many people; as a table adjective, that they fit |
-| on the Z | on the Z, in the Z | `predicate:Table:zone = Z` | where the table is |
-| on DAY, at TIME | on DAY, this DAY, next DAY, at TIME | `field:Reservation.date`, `field:Reservation.time` | when; the surface normalizes relative dates (11 §3) |
-| book | book her, book him, book them, make a reservation for | `compose` (abajo) | create a reservation for someone and put it at a table |
-| assign | assign, put it at table, seat at | `relation:assigned_to` | put a reservation at a table |
-| has | has, have, of | `relation:booked_by` leída desde el cliente | someone's reservations |
-| confirm | confirm, confirm it | `action:change Reservation.status=confirmed` | move the reservation to confirmed |
-| cancel | cancel, cancel it | `action:change Reservation.status=cancelled` | cancel the reservation |
-| seat | seat, seat them, they arrived | `action:change Reservation.status=seated` | mark that they arrived |
-| fits | fits, fit, fits at | `predicate:Table:capacity >= {party_size}` | whether the table has room for the reservation |
-| large | large, big | `predicate:Table:capacity >= 6` | tables for six or more |
-| note | note, add a note, note saying | `field:Reservation.notes` | remarks on the reservation |
+| client | client, clients | `(model Client)` | a person who books |
+| table | table, tables | `(model Table)` | a table in the venue |
+| reservation | reservation, reservations, booking, bookings | `(model Reservation)` | a booking for a date and time |
+| named | named, called, whose name is | `(field Client name)` | the client's name |
+| phone | phone, phone number, number | `(field Client phone)` | the contact phone number |
+| for N | for N, for N people, party of N | `(field Reservation party_size)` y `(where Table "capacity >= N")` | how many people; as a table adjective, that they fit |
+| on the Z | on the Z, in the Z | `(where Table "zone = Z")` | where the table is |
+| on DAY, at TIME | on DAY, this DAY, next DAY, at TIME | `(field Reservation date)`, `(field Reservation time)` | when; the surface normalizes relative dates (11 §3) |
+| book | book her, book him, book them, make a reservation for | `(move …)` (abajo) | create a reservation for someone and put it at a table |
+| assign | assign, put it at table, seat at | `(relation assigned_to)` | put a reservation at a table |
+| has | has, have, of | `(relation booked_by)` leída desde el cliente | someone's reservations |
+| confirm | confirm, confirm it | `(change (it "it" Reservation) status "confirmed")` | move the reservation to confirmed |
+| cancel | cancel, cancel it | `(change (it "it" Reservation) status "cancelled")` | cancel the reservation |
+| seat | seat, seat them, they arrived | `(change (it "it" Reservation) status "seated")` | mark that they arrived |
+| fits | fits, fit, fits at | `(where Table "capacity >= {party_size}")` | whether the table has room for the reservation |
+| large | large, big | `(where Table "capacity >= 6")` | tables for six or more |
+| note | note, add a note, note saying | `(field Reservation notes)` | remarks on the reservation |
 
 El alias compuesto `book`, completo:
 
 ```yaml
 symbol: book
 forms: [book her, book him, book them, make a reservation for]
-ref: compose
+ref: (move (create Reservation) (assert booked_by (created) (it "her" Client)) (assert assigned_to (created) (a Table)))
 motive: create a reservation for someone and put it at a table
-steps:
-  - {do: create, model: Reservation, fields: $literals}
-  - {do: assert, relation: booked_by,   source: $created, target: $referent:Client}
-  - {do: assert, relation: assigned_to, source: $created, target: $object:Table}
 ```
 
-Las formas de `ref` (`model:`, `field:`, `predicate:`, `relation:`, `action:`, `doc:`, `compose`) son las que 05 y 10 describen. El `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza.
+Los casos de `ref` son los de 05, todos formas (13). El `AnchorDoc` de v1 solo tenía `model`, `doc`, `edge`, `op`, `fields`, `view`, `expr`, y se reemplaza; la sintaxis de texto que usó la primera versión de este documento (`model:Client`, `compose` con `steps`) se sigue leyendo.
 
 ## Lo que este mundo no declara
 

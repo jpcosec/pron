@@ -15,7 +15,7 @@ huecos:  []                                  # constituyentes sin resolver
 salida:  unico | ambiguo | missing
 ```
 
-Cómo se llega ahí son seis pasos fijos, desarrollados con una conversación entera en 09: segmentar; clasificar cada palabra contra el léxico (término, referente, literal, nombre propio, desconocida); armar interpretaciones parciales; consultar el mundo por cada frase nominal; verificar tipos contra el `RelationTypeDoc` o el esquema del modelo; decidir la salida. El mundo interviene en los pasos 2, 4 y 5 y en ningún otro.
+La superficie solo hace sintaxis: la interpretación **es** una forma (13), con cada frase nominal escrita como sustantivo sin resolver (`(the Reservation (plural) (of-name "Luis" "Soto"))`, `(it "her" Client)`). Resolver direcciones, referentes y candidatos, preguntar, verificar y escribir es evaluar esa forma; la superficie no tiene una ruta de ejecución propia. Cómo se llega ahí son seis pasos fijos, desarrollados con una conversación entera en 09: segmentar; clasificar cada palabra contra el léxico (término, referente, literal, nombre propio, desconocida); armar interpretaciones parciales; consultar el mundo por cada frase nominal; verificar tipos contra el `RelationTypeDoc` o el esquema del modelo; decidir la salida. El mundo interviene en los pasos 2, 4 y 5 y en ningún otro.
 
 Qué contiene cada construcción admitida:
 
@@ -28,7 +28,7 @@ Qué contiene cada construcción admitida:
 | "create an atom saying …" | acción | `alcance: Atom`, `valor: payload` con los campos capturados; los obligatorios que falten son huecos y abren una pendiente por campo |
 | "add the tag T to them" | acción | sujeto = referente plural con N direcciones, `campo: tags`, `valor: T` |
 | "change it to 9 and add a note" | acción, dos escrituras | mismo sujeto, dos pares `campo`/`valor`, un movimiento |
-| "book Ana a table" | compuesta, por alias `compose` (05) | pasos declarados en el alias: crear la reserva con los literales, afirmar `de`, afirmar `assigned_to`; cada paso con sus ranuras resueltas |
+| "book Ana a table" | compuesta, por un alias `(move …)` (05) | pasos declarados en el alias: crear la reserva con los literales, afirmar `de`, afirmar `assigned_to`; cada paso con sus ranuras resueltas |
 | "confirm it" | acción por alias | `campo: status`, `valor: confirmed`, verificada como transición (03) |
 
 Un sujeto plural en un verbo de acción es N escrituras en un solo movimiento y un solo refresh.
@@ -41,7 +41,7 @@ Dos consecuencias: si cualquier parte es ambigua o missing, la oración entera l
 
 Y devuelve la respuesta en natural, con la traza disponible: las direcciones exactas, el verbo, las aristas o la escritura. La traza es corta porque cada paso es una llamada a sldb o kgdb, no un razonamiento.
 
-Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración. Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
+Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración. Esta superficie es una de las que hay sobre las formas (13), no la entrada obligada: `graph_ui` es otra superficie al mismo nivel, que produce formas desde gestos y proyecta visualizaciones en vez de lenguaje, y no pasa por esta. Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
 
 ## Las tres salidas del grounding
 

@@ -3,7 +3,7 @@ symbol: command
 forms:
 - command
 - commands
-ref: model:CliCommandDoc
+ref: (model CliCommandDoc)
 steps: []
 ---
 

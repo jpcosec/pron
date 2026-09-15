@@ -25,7 +25,7 @@ documents:
     slug: lexicon
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 32
   - path: lexicon/purpose
     title: Purpose
     breadcrumbs:
@@ -53,7 +53,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 21
   - path: lexicon/how-it-works
     title: How It Works
     breadcrumbs:
@@ -81,7 +81,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 27
   - path: lexicon/commands
     title: Commands
     breadcrumbs:
@@ -109,7 +109,7 @@ documents:
     slug: commands
     level: 2
     line_start: 28
-    line_end: 29
+    line_end: 32
 - doc_name: surface-pron-resolve
   sections:
   - path: resolve
@@ -136,7 +136,7 @@ documents:
     slug: resolve
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 32
   - path: resolve/purpose
     title: Purpose
     breadcrumbs:
@@ -164,7 +164,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 21
   - path: resolve/how-it-works
     title: How It Works
     breadcrumbs:
@@ -192,7 +192,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 27
   - path: resolve/commands
     title: Commands
     breadcrumbs:
@@ -220,7 +220,7 @@ documents:
     slug: commands
     level: 2
     line_start: 28
-    line_end: 29
+    line_end: 32
 - doc_name: surface-pron-verbs
   sections:
   - path: verbs
@@ -247,7 +247,7 @@ documents:
     slug: verbs
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 33
   - path: verbs/purpose
     title: Purpose
     breadcrumbs:
@@ -275,7 +275,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 22
   - path: verbs/how-it-works
     title: How It Works
     breadcrumbs:
@@ -303,7 +303,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 23
-    line_end: 24
+    line_end: 29
   - path: verbs/commands
     title: Commands
     breadcrumbs:
@@ -331,7 +331,7 @@ documents:
     slug: commands
     level: 2
     line_start: 30
-    line_end: 31
+    line_end: 33
 - doc_name: surface-pron-kernel
   sections:
   - path: kernel
@@ -358,7 +358,7 @@ documents:
     slug: kernel
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 33
   - path: kernel/purpose
     title: Purpose
     breadcrumbs:
@@ -386,7 +386,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 22
   - path: kernel/how-it-works
     title: How It Works
     breadcrumbs:
@@ -414,7 +414,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 23
-    line_end: 24
+    line_end: 29
   - path: kernel/commands
     title: Commands
     breadcrumbs:
@@ -442,7 +442,7 @@ documents:
     slug: commands
     level: 2
     line_start: 30
-    line_end: 31
+    line_end: 33
 - doc_name: surface-pron-dialogue
   sections:
   - path: dialogue
@@ -469,7 +469,7 @@ documents:
     slug: dialogue
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 29
   - path: dialogue/purpose
     title: Purpose
     breadcrumbs:
@@ -497,7 +497,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 20
   - path: dialogue/how-it-works
     title: How It Works
     breadcrumbs:
@@ -525,7 +525,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 25
   - path: dialogue/commands
     title: Commands
     breadcrumbs:
@@ -553,7 +553,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 29
 - doc_name: surface-pron-ledger
   sections:
   - path: ledger
@@ -580,7 +580,7 @@ documents:
     slug: ledger
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 27
   - path: ledger/purpose
     title: Purpose
     breadcrumbs:
@@ -608,7 +608,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: ledger/how-it-works
     title: How It Works
     breadcrumbs:
@@ -636,7 +636,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: ledger/commands
     title: Commands
     breadcrumbs:
@@ -664,7 +664,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 27
 - doc_name: surface-pron-display
   sections:
   - path: display
@@ -691,7 +691,7 @@ documents:
     slug: display
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 29
   - path: display/purpose
     title: Purpose
     breadcrumbs:
@@ -719,7 +719,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: display/how-it-works
     title: How It Works
     breadcrumbs:
@@ -747,7 +747,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: display/commands
     title: Commands
     breadcrumbs:
@@ -775,7 +775,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 29
 - doc_name: surface-pron-docs
   sections:
   - path: docs
@@ -802,7 +802,7 @@ documents:
     slug: docs
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 37
   - path: docs/purpose
     title: Purpose
     breadcrumbs:
@@ -830,7 +830,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 23
   - path: docs/how-it-works
     title: How It Works
     breadcrumbs:
@@ -858,7 +858,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 31
   - path: docs/commands
     title: Commands
     breadcrumbs:
@@ -886,7 +886,7 @@ documents:
     slug: commands
     level: 2
     line_start: 32
-    line_end: 33
+    line_end: 37
 - doc_name: surface-pron-lints
   sections:
   - path: lints
@@ -913,7 +913,7 @@ documents:
     slug: lints
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 26
   - path: lints/purpose
     title: Purpose
     breadcrumbs:
@@ -941,7 +941,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: lints/how-it-works
     title: How It Works
     breadcrumbs:
@@ -969,7 +969,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: lints/commands
     title: Commands
     breadcrumbs:
@@ -997,7 +997,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 26
 - doc_name: surface-pron-surface-tokens
   sections:
   - path: surface-tokens
@@ -1025,7 +1025,7 @@ documents:
     slug: surface-tokens
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 32
   - path: surface-tokens/purpose
     title: Purpose
     breadcrumbs:
@@ -1054,7 +1054,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: surface-tokens/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1083,7 +1083,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 27
   - path: surface-tokens/commands
     title: Commands
     breadcrumbs:
@@ -1112,7 +1112,7 @@ documents:
     slug: commands
     level: 2
     line_start: 28
-    line_end: 29
+    line_end: 32
 - doc_name: surface-pron-surface-dates
   sections:
   - path: surface-dates
@@ -1140,7 +1140,7 @@ documents:
     slug: surface-dates
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 28
   - path: surface-dates/purpose
     title: Purpose
     breadcrumbs:
@@ -1169,7 +1169,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: surface-dates/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1198,7 +1198,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: surface-dates/commands
     title: Commands
     breadcrumbs:
@@ -1227,122 +1227,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
-- doc_name: surface-pron-surface-interpret
-  sections:
-  - path: surface-interpret
-    title: surface.interpret
-    breadcrumbs:
-    - surface.interpret
-    about:
-    - surface.interpret
-    - surface interpret
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: surface-interpret
-    level: 1
-    line_start: 14
-    line_end: 15
-  - path: surface-interpret/purpose
-    title: Purpose
-    breadcrumbs:
-    - surface.interpret
-    - Purpose
-    about:
-    - surface.interpret
-    - surface interpret
-    - Purpose
-    - purpose
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: purpose
-    level: 2
-    line_start: 16
-    line_end: 17
-  - path: surface-interpret/how-it-works
-    title: How It Works
-    breadcrumbs:
-    - surface.interpret
-    - How It Works
-    about:
-    - surface.interpret
-    - surface interpret
-    - How It Works
-    - how it works
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: how-it-works
-    level: 2
-    line_start: 21
-    line_end: 22
-  - path: surface-interpret/commands
-    title: Commands
-    breadcrumbs:
-    - surface.interpret
-    - Commands
-    about:
-    - surface.interpret
-    - surface interpret
-    - Commands
-    - commands
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    semantic_tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
-    slug: commands
-    level: 2
-    line_start: 26
-    line_end: 27
+    line_end: 28
 - doc_name: surface-pron-cli-main
   sections:
   - path: cli-main
@@ -1370,7 +1255,7 @@ documents:
     slug: cli-main
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 29
   - path: cli-main/purpose
     title: Purpose
     breadcrumbs:
@@ -1399,7 +1284,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 20
   - path: cli-main/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1428,7 +1313,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 25
   - path: cli-main/commands
     title: Commands
     breadcrumbs:
@@ -1457,7 +1342,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 29
 - doc_name: surface-pron-cli-repl
   sections:
   - path: cli-repl
@@ -1485,7 +1370,7 @@ documents:
     slug: cli-repl
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 26
   - path: cli-repl/purpose
     title: Purpose
     breadcrumbs:
@@ -1514,7 +1399,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: cli-repl/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1543,7 +1428,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: cli-repl/commands
     title: Commands
     breadcrumbs:
@@ -1572,7 +1457,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 26
 - doc_name: surface-pron-surface-nouns
   sections:
   - path: surface-nouns
@@ -1600,7 +1485,7 @@ documents:
     slug: surface-nouns
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 40
   - path: surface-nouns/purpose
     title: Purpose
     breadcrumbs:
@@ -1629,7 +1514,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: surface-nouns/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1658,7 +1543,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 34
   - path: surface-nouns/commands
     title: Commands
     breadcrumbs:
@@ -1687,7 +1572,7 @@ documents:
     slug: commands
     level: 2
     line_start: 35
-    line_end: 36
+    line_end: 40
 - doc_name: surface-pron-session
   sections:
   - path: session
@@ -1714,7 +1599,7 @@ documents:
     slug: session
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 28
   - path: session/purpose
     title: Purpose
     breadcrumbs:
@@ -1742,7 +1627,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: session/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1770,7 +1655,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 25
   - path: session/commands
     title: Commands
     breadcrumbs:
@@ -1798,7 +1683,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 28
 - doc_name: surface-pron-response
   sections:
   - path: response
@@ -1825,7 +1710,7 @@ documents:
     slug: response
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 28
   - path: response/purpose
     title: Purpose
     breadcrumbs:
@@ -1853,7 +1738,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 20
   - path: response/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1881,7 +1766,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 25
   - path: response/commands
     title: Commands
     breadcrumbs:
@@ -1909,7 +1794,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 28
 - doc_name: surface-pron-graph
   sections:
   - path: graph
@@ -1936,7 +1821,7 @@ documents:
     slug: graph
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 36
   - path: graph/purpose
     title: Purpose
     breadcrumbs:
@@ -1964,7 +1849,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: graph/how-it-works
     title: How It Works
     breadcrumbs:
@@ -1992,7 +1877,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 26
   - path: graph/commands
     title: Commands
     breadcrumbs:
@@ -2020,7 +1905,7 @@ documents:
     slug: commands
     level: 2
     line_start: 27
-    line_end: 28
+    line_end: 36
 - doc_name: surface-pron-embedder
   sections:
   - path: embedder
@@ -2047,7 +1932,7 @@ documents:
     slug: embedder
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 33
   - path: embedder/purpose
     title: Purpose
     breadcrumbs:
@@ -2075,7 +1960,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: embedder/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2103,7 +1988,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 25
   - path: embedder/commands
     title: Commands
     breadcrumbs:
@@ -2131,7 +2016,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 33
 - doc_name: surface-pron-client
   sections:
   - path: client
@@ -2158,7 +2043,7 @@ documents:
     slug: client
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 35
   - path: client/purpose
     title: Purpose
     breadcrumbs:
@@ -2186,7 +2071,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 21
   - path: client/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2214,7 +2099,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 27
   - path: client/commands
     title: Commands
     breadcrumbs:
@@ -2242,7 +2127,7 @@ documents:
     slug: commands
     level: 2
     line_start: 28
-    line_end: 29
+    line_end: 35
 - doc_name: surface-pron-world
   sections:
   - path: world
@@ -2269,7 +2154,7 @@ documents:
     slug: world
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 30
   - path: world/purpose
     title: Purpose
     breadcrumbs:
@@ -2297,7 +2182,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 20
   - path: world/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2325,7 +2210,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 21
-    line_end: 22
+    line_end: 25
   - path: world/commands
     title: Commands
     breadcrumbs:
@@ -2353,7 +2238,7 @@ documents:
     slug: commands
     level: 2
     line_start: 26
-    line_end: 27
+    line_end: 30
 - doc_name: surface-pron-serve
   sections:
   - path: serve
@@ -2380,7 +2265,7 @@ documents:
     slug: serve
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 37
   - path: serve/purpose
     title: Purpose
     breadcrumbs:
@@ -2408,7 +2293,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 22
   - path: serve/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2436,7 +2321,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 23
-    line_end: 24
+    line_end: 34
   - path: serve/commands
     title: Commands
     breadcrumbs:
@@ -2464,7 +2349,7 @@ documents:
     slug: commands
     level: 2
     line_start: 35
-    line_end: 36
+    line_end: 37
 - doc_name: surface-pron-ids
   sections:
   - path: ids
@@ -2491,7 +2376,7 @@ documents:
     slug: ids
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 41
   - path: ids/purpose
     title: Purpose
     breadcrumbs:
@@ -2519,7 +2404,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: ids/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2547,7 +2432,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 26
   - path: ids/commands
     title: Commands
     breadcrumbs:
@@ -2575,7 +2460,7 @@ documents:
     slug: commands
     level: 2
     line_start: 27
-    line_end: 28
+    line_end: 41
 - doc_name: surface-pron-models-anchor
   sections:
   - path: models-anchor
@@ -2603,7 +2488,7 @@ documents:
     slug: models-anchor
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 26
   - path: models-anchor/purpose
     title: Purpose
     breadcrumbs:
@@ -2632,7 +2517,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: models-anchor/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2661,7 +2546,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: models-anchor/commands
     title: Commands
     breadcrumbs:
@@ -2690,7 +2575,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 26
 - doc_name: surface-pron-models-move
   sections:
   - path: models-move
@@ -2718,7 +2603,7 @@ documents:
     slug: models-move
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 26
   - path: models-move/purpose
     title: Purpose
     breadcrumbs:
@@ -2747,7 +2632,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: models-move/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2776,7 +2661,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: models-move/commands
     title: Commands
     breadcrumbs:
@@ -2805,7 +2690,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 26
 - doc_name: surface-pron-models-projection
   sections:
   - path: models-projection
@@ -2833,7 +2718,7 @@ documents:
     slug: models-projection
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 26
   - path: models-projection/purpose
     title: Purpose
     breadcrumbs:
@@ -2862,7 +2747,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: models-projection/how-it-works
     title: How It Works
     breadcrumbs:
@@ -2891,7 +2776,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 23
   - path: models-projection/commands
     title: Commands
     breadcrumbs:
@@ -2920,7 +2805,7 @@ documents:
     slug: commands
     level: 2
     line_start: 24
-    line_end: 25
+    line_end: 26
 - doc_name: surface-pron-models-spec
   sections:
   - path: models-spec
@@ -2948,7 +2833,7 @@ documents:
     slug: models-spec
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 30
   - path: models-spec/purpose
     title: Purpose
     breadcrumbs:
@@ -2977,7 +2862,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 21
   - path: models-spec/how-it-works
     title: How It Works
     breadcrumbs:
@@ -3006,7 +2891,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 22
-    line_end: 23
+    line_end: 27
   - path: models-spec/commands
     title: Commands
     breadcrumbs:
@@ -3035,7 +2920,7 @@ documents:
     slug: commands
     level: 2
     line_start: 28
-    line_end: 29
+    line_end: 30
 - doc_name: surface-pron-store
   sections:
   - path: store
@@ -3062,7 +2947,7 @@ documents:
     slug: store
     level: 1
     line_start: 14
-    line_end: 15
+    line_end: 37
   - path: store/purpose
     title: Purpose
     breadcrumbs:
@@ -3090,7 +2975,7 @@ documents:
     slug: purpose
     level: 2
     line_start: 16
-    line_end: 17
+    line_end: 19
   - path: store/how-it-works
     title: How It Works
     breadcrumbs:
@@ -3118,7 +3003,7 @@ documents:
     slug: how-it-works
     level: 2
     line_start: 20
-    line_end: 21
+    line_end: 33
   - path: store/commands
     title: Commands
     breadcrumbs:
@@ -3146,4 +3031,452 @@ documents:
     slug: commands
     level: 2
     line_start: 34
-    line_end: 35
+    line_end: 37
+- doc_name: surface-pron-sexp
+  sections:
+  - path: sexp
+    title: sexp
+    breadcrumbs:
+    - sexp
+    about:
+    - sexp
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: sexp
+    level: 1
+    line_start: 14
+    line_end: 32
+  - path: sexp/purpose
+    title: Purpose
+    breadcrumbs:
+    - sexp
+    - Purpose
+    about:
+    - sexp
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 16
+    line_end: 20
+  - path: sexp/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - sexp
+    - How It Works
+    about:
+    - sexp
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 21
+    line_end: 25
+  - path: sexp/commands
+    title: Commands
+    breadcrumbs:
+    - sexp
+    - Commands
+    about:
+    - sexp
+    - Commands
+    - commands
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 26
+    line_end: 32
+- doc_name: surface-pron-forms
+  sections:
+  - path: forms
+    title: forms
+    breadcrumbs:
+    - forms
+    about:
+    - forms
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: forms
+    level: 1
+    line_start: 14
+    line_end: 58
+  - path: forms/purpose
+    title: Purpose
+    breadcrumbs:
+    - forms
+    - Purpose
+    about:
+    - forms
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 16
+    line_end: 22
+  - path: forms/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - forms
+    - How It Works
+    about:
+    - forms
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 23
+    line_end: 49
+  - path: forms/commands
+    title: Commands
+    breadcrumbs:
+    - forms
+    - Commands
+    about:
+    - forms
+    - Commands
+    - commands
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 50
+    line_end: 58
+- doc_name: surface-pron-refs
+  sections:
+  - path: refs
+    title: refs
+    breadcrumbs:
+    - refs
+    about:
+    - refs
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: refs
+    level: 1
+    line_start: 14
+    line_end: 42
+  - path: refs/purpose
+    title: Purpose
+    breadcrumbs:
+    - refs
+    - Purpose
+    about:
+    - refs
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 16
+    line_end: 21
+  - path: refs/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - refs
+    - How It Works
+    about:
+    - refs
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 22
+    line_end: 36
+  - path: refs/commands
+    title: Commands
+    breadcrumbs:
+    - refs
+    - Commands
+    about:
+    - refs
+    - Commands
+    - commands
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 37
+    line_end: 42
+- doc_name: surface-pron-surface-interpret
+  sections:
+  - path: surface-interpret
+    title: surface.interpret
+    breadcrumbs:
+    - surface.interpret
+    about:
+    - surface.interpret
+    - surface interpret
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: surface-interpret
+    level: 1
+    line_start: 14
+    line_end: 31
+  - path: surface-interpret/purpose
+    title: Purpose
+    breadcrumbs:
+    - surface.interpret
+    - Purpose
+    about:
+    - surface.interpret
+    - surface interpret
+    - Purpose
+    - purpose
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: purpose
+    level: 2
+    line_start: 16
+    line_end: 20
+  - path: surface-interpret/how-it-works
+    title: How It Works
+    breadcrumbs:
+    - surface.interpret
+    - How It Works
+    about:
+    - surface.interpret
+    - surface interpret
+    - How It Works
+    - how it works
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: how-it-works
+    level: 2
+    line_start: 21
+    line_end: 25
+  - path: surface-interpret/commands
+    title: Commands
+    breadcrumbs:
+    - surface.interpret
+    - Commands
+    about:
+    - surface.interpret
+    - surface interpret
+    - Commands
+    - commands
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    semantic_tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+    slug: commands
+    level: 2
+    line_start: 26
+    line_end: 31

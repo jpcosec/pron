@@ -74,8 +74,11 @@ class Interpretation:
         }
 
 
-def examples() -> list[str]:
-    return [c["example"] for c in PATTERNS]
+def construction_names() -> list[str]:
+    """The constructions pron tries, by name (spec 11 §1): world-agnostic, unlike a fixed
+    example sentence, which would leak whatever world wrote patterns.yaml's docstrings into
+    every other world's hint text."""
+    return [c["name"] for c in PATTERNS]
 
 
 class Interpreter:
@@ -153,16 +156,13 @@ class Interpreter:
             return None
         nps = find_noun_phrases(items, self.lex)
         subject = nps[0] if nps else None
-        rest = w.ref.split(":", 1)[1]
-        verb, _, assign = rest.partition(" ")
-        fld, value = assign.split("=", 1)
         return Part(
             "action",
             subject=subject,
             verb=w,
-            field_name=fld.split(".", 1)[1],
-            value=value,
-            payload={"verb": verb, "alias": True},
+            field_name=w.field_name,
+            value=w.payload.get("value"),
+            payload={"verb": w.payload.get("verb"), "alias": True},
         )
 
     def _c_create(self, items):

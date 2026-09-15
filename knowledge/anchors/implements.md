@@ -4,7 +4,7 @@ forms:
 - implements
 - implement
 - implemented by
-ref: relation:implements
+ref: (relation implements)
 steps: []
 ---
 

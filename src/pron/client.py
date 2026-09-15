@@ -108,6 +108,17 @@ class RemoteSession:
             r.get("record", {}),
         )
 
+    def eval(self, forms: str) -> Response:
+        """One move written as forms (spec 13): same checks, writes, MoveDoc and undo as a sentence."""
+        r = self._ask("eval", forms=forms)
+        return Response(
+            r["text"],
+            r["outcome"],
+            list(r.get("trace", [])),
+            r.get("move", ""),
+            r.get("record", {}),
+        )
+
     def lexicon(self, model: str | None = None) -> list[dict[str, str]]:
         return list(self._ask("lexicon", model=model)["rows"])
 

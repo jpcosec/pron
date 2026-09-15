@@ -47,7 +47,7 @@ Una **transición** es el caso en que el verbo es "cambiar el campo de estado": 
 3. `docs create --model RelationDoc` con `source_id`, `target_id`, `relation_type`;
 4. refresh (04). La arista aparece cuando el ingest de kgdb vuelve a correr.
 
-Crear el sujeto y afirmar el verbo en un mismo movimiento ("book Ana a table") no es un comportamiento implícito del verbo: lo declara un alias `compose` con sus pasos y ranuras (05). Cada paso exige su permiso: `create` en `actions`, `assert` en la relación.
+Crear el sujeto y afirmar el verbo en un mismo movimiento ("book Ana a table") no es un comportamiento implícito del verbo: lo declara un alias compuesto, un `(move …)` con sus pasos y huecos (05). Cada paso exige su permiso: `create` en `actions`, `assert` en la relación.
 
 Negar un verbo, "X ya no implementa Y", es `docs untrack` del `RelationDoc` correspondiente y refresh. Si la arista no viene de un `RelationDoc` sino de un link en prosa (abajo), pron no la niega: responde dónde está escrita, documento y sección, y que hay que editar ese texto.
 

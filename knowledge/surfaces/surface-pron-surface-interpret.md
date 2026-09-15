@@ -27,5 +27,5 @@ adds words. A sentence coordinated with "and" is one move with several parts.
 
 Part
 Interpretation
-examples
+construction_names
 Interpreter

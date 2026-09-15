@@ -677,7 +677,7 @@ documents:
     slug: 05-l-xico-y-proyecci-n
     level: 1
     line_start: 1
-    line_end: 88
+    line_end: 85
   - path: 05-l-xico-y-proyecci-n/de-d-nde-salen-las-palabras
     title: De dónde salen las palabras
     breadcrumbs:
@@ -734,7 +734,7 @@ documents:
     slug: anchors-la-forma-en-lengua-natural
     level: 2
     line_start: 25
-    line_end: 71
+    line_end: 68
   - path: 05-l-xico-y-proyecci-n/proyecci-n
     title: Proyección
     breadcrumbs:
@@ -752,8 +752,8 @@ documents:
     - workspace.source.spec
     slug: proyecci-n
     level: 2
-    line_start: 72
-    line_end: 75
+    line_start: 69
+    line_end: 72
   - path: 05-l-xico-y-proyecci-n/calce-aproximado
     title: Calce aproximado
     breadcrumbs:
@@ -771,8 +771,8 @@ documents:
     - workspace.source.spec
     slug: calce-aproximado
     level: 2
-    line_start: 76
-    line_end: 83
+    line_start: 73
+    line_end: 80
   - path: 05-l-xico-y-proyecci-n/invariantes
     title: Invariantes
     breadcrumbs:
@@ -790,8 +790,8 @@ documents:
     - workspace.source.spec
     slug: invariantes
     level: 2
-    line_start: 84
-    line_end: 88
+    line_start: 81
+    line_end: 85
 - doc_name: spec-06
   sections:
   - path: 06-superficie-y-di-logo
@@ -1501,7 +1501,7 @@ documents:
     slug: 09a-el-mundo-del-restaurante-declarado
     level: 1
     line_start: 1
-    line_end: 300
+    line_end: 296
   - path: 09a-el-mundo-del-restaurante-declarado/los-modelos-de-contenido-restaurant-models-py
     title: Los modelos de contenido · `restaurant/models.py`
     breadcrumbs:
@@ -1634,7 +1634,7 @@ documents:
     slug: los-alias-documentos-de-anchordoc
     level: 2
     line_start: 259
-    line_end: 295
+    line_end: 291
   - path: 09a-el-mundo-del-restaurante-declarado/lo-que-este-mundo-no-declara
     title: Lo que este mundo no declara
     breadcrumbs:
@@ -1652,8 +1652,8 @@ documents:
     - workspace.source.spec
     slug: lo-que-este-mundo-no-declara
     level: 2
-    line_start: 296
-    line_end: 300
+    line_start: 292
+    line_end: 296
 - doc_name: spec-10
   sections:
   - path: 10-el-shrdlu-sobre-el-modelo
@@ -1671,7 +1671,7 @@ documents:
     slug: 10-el-shrdlu-sobre-el-modelo
     level: 1
     line_start: 1
-    line_end: 112
+    line_end: 114
   - path: 10-el-shrdlu-sobre-el-modelo/1-los-campos-son-las-propiedades-del-objeto
     title: 1. Los campos son las propiedades del objeto
     breadcrumbs:
@@ -1820,25 +1820,25 @@ documents:
     level: 3
     line_start: 88
     line_end: 91
-  - path: 10-el-shrdlu-sobre-el-modelo/3-el-editor-y-pron-sobre-el-mismo-mundo
-    title: 3. El editor y pron sobre el mismo mundo
+  - path: 10-el-shrdlu-sobre-el-modelo/3-dos-superficies-sobre-el-mismo-mundo
+    title: 3. Dos superficies sobre el mismo mundo
     breadcrumbs:
     - 10 · El SHRDLU sobre el modelo
-    - 3. El editor y pron sobre el mismo mundo
+    - 3. Dos superficies sobre el mismo mundo
     about:
     - 10 · El SHRDLU sobre el modelo
     - 10 el shrdlu sobre el modelo
-    - 3. El editor y pron sobre el mismo mundo
-    - 3 el editor y pron sobre el mismo mundo
+    - 3. Dos superficies sobre el mismo mundo
+    - 3 dos superficies sobre el mismo mundo
     - type.knowledge.spec
     - workspace.source.spec
     semantic_tags:
     - type.knowledge.spec
     - workspace.source.spec
-    slug: 3-el-editor-y-pron-sobre-el-mismo-mundo
+    slug: 3-dos-superficies-sobre-el-mismo-mundo
     level: 2
     line_start: 92
-    line_end: 103
+    line_end: 105
   - path: 10-el-shrdlu-sobre-el-modelo/4-lo-que-hay-que-construir-en-orden
     title: 4. Lo que hay que construir, en orden
     breadcrumbs:
@@ -1856,8 +1856,8 @@ documents:
     - workspace.source.spec
     slug: 4-lo-que-hay-que-construir-en-orden
     level: 2
-    line_start: 104
-    line_end: 112
+    line_start: 106
+    line_end: 114
 - doc_name: spec-11
   sections:
   - path: 11-decisiones-de-implementaci-n
@@ -2265,3 +2265,154 @@ documents:
     level: 2
     line_start: 148
     line_end: 154
+- doc_name: spec-13
+  sections:
+  - path: 13-formas
+    title: 13 · Formas
+    breadcrumbs:
+    - 13 · Formas
+    about:
+    - 13 · Formas
+    - 13 formas
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: 13-formas
+    level: 1
+    line_start: 1
+    line_end: 74
+  - path: 13-formas/qu-es
+    title: Qué es
+    breadcrumbs:
+    - 13 · Formas
+    - Qué es
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Qué es
+    - qu es
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: qu-es
+    level: 2
+    line_start: 3
+    line_end: 13
+  - path: 13-formas/sustantivos
+    title: Sustantivos
+    breadcrumbs:
+    - 13 · Formas
+    - Sustantivos
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Sustantivos
+    - sustantivos
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: sustantivos
+    level: 2
+    line_start: 14
+    line_end: 30
+  - path: 13-formas/movimientos
+    title: Movimientos
+    breadcrumbs:
+    - 13 · Formas
+    - Movimientos
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Movimientos
+    - movimientos
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: movimientos
+    level: 2
+    line_start: 31
+    line_end: 50
+  - path: 13-formas/qu-registra
+    title: Qué registra
+    breadcrumbs:
+    - 13 · Formas
+    - Qué registra
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Qué registra
+    - qu registra
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: qu-registra
+    level: 2
+    line_start: 51
+    line_end: 58
+  - path: 13-formas/el-di-logo
+    title: El diálogo
+    breadcrumbs:
+    - 13 · Formas
+    - El diálogo
+    about:
+    - 13 · Formas
+    - 13 formas
+    - El diálogo
+    - el di logo
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: el-di-logo
+    level: 2
+    line_start: 59
+    line_end: 62
+  - path: 13-formas/c-mo-se-usa
+    title: Cómo se usa
+    breadcrumbs:
+    - 13 · Formas
+    - Cómo se usa
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Cómo se usa
+    - c mo se usa
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: c-mo-se-usa
+    level: 2
+    line_start: 63
+    line_end: 68
+  - path: 13-formas/invariantes
+    title: Invariantes
+    breadcrumbs:
+    - 13 · Formas
+    - Invariantes
+    about:
+    - 13 · Formas
+    - 13 formas
+    - Invariantes
+    - invariantes
+    - type.knowledge.spec
+    - workspace.source.spec
+    semantic_tags:
+    - type.knowledge.spec
+    - workspace.source.spec
+    slug: invariantes
+    level: 2
+    line_start: 69
+    line_end: 74

@@ -193,7 +193,7 @@ La intersección cruza la lista que dio kgdb con la que dio sldb: direcciones, n
 
 ## Turno 6 · "confirm it"
 
-**Clasificar.** "confirm it" es una forma del alias `confirm` → `action:change Reservation.status=confirmed`; "it" es referente singular. Un alias puede nombrar un verbo de acción con campo y valor fijos; es una de las dos formas en que un mundo agrega verbos sin código.
+**Clasificar.** "confirm it" es una forma del alias `confirm` → `(change (it "it" Reservation) status "confirmed")`; "it" es referente singular. Un alias puede nombrar un verbo de acción con campo y valor fijos; es una de las dos formas en que un mundo agrega verbos sin código.
 
 **Referente.** "it" en un verbo que exige `Reservation`: el último singular de esa clase, el del turno 5.
 
@@ -275,7 +275,7 @@ Antes de ofrecer alternativas pron evalúa la misma condición sobre las otras m
 - Crear es un verbo de acción con payload; los campos obligatorios que falten abren una pendiente de dato por campo. Crear un sujeto y afirmar verbos sobre él en un movimiento es un alias `compose` con sus pasos escritos.
 - Dos restricciones son dos consultas y una intersección de direcciones, también cuando una lista viene de kgdb y otra de sldb.
 - Una transición es cambiar el campo de estado, permitida por una arista `transitions_to` y su condición, ambas verificadas en sldb, con o sin grafo.
-- Un mundo agrega verbos sin código de dos maneras: un alias `action:` con campo y valor fijos ("confirm"), o un `RelationTypeDoc` que es un verbo transitivo nuevo; y oraciones nuevas con un alias `compose`.
+- Un mundo agrega verbos sin código de dos maneras: un alias de acción con campo y valor fijos ("confirm"), o un `RelationTypeDoc` que es un verbo transitivo nuevo; y oraciones nuevas con un alias `compose`.
 - Después de una escritura pron reevalúa las condiciones de las aristas del sujeto en las dos direcciones y avisa; no deshace ni decide.
 - Un referente se elige por número y por la clase que el verbo exige.
 - Afirmar y leer un verbo son dos permisos distintos de la proyección; un paso `create` dentro de un `compose` exige además `create` en `actions`.

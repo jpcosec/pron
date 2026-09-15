@@ -148,7 +148,9 @@ def test_a_model_identifier_is_also_known_split_into_words(world: World):
         world,
         {"models": ["RelationTypeDoc"], "relations": [], "actions": [], "aliases": []},
     )
-    assert [w.ref for w in lex.lookup("relation type doc")] == ["model:RelationTypeDoc"]
+    assert [w.ref for w in lex.lookup("relation type doc")] == [
+        "(model RelationTypeDoc)"
+    ]
 
 
 def test_a_complement_names_a_related_document_and_crosses_its_edges(world: World):

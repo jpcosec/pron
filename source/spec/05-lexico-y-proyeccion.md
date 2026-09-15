@@ -24,50 +24,47 @@ Las fuentes de arriba son documentos y esquemas de sldb, y el ingest de kgdb las
 
 ## Anchors: la forma en lengua natural
 
-Un `AnchorDoc` es un alias. Su contrato:
+Toda palabra del léxico nombra una **forma** (13): un modelo es `(model M)`, un campo `(field M f)`, un valor `(value M f v)`, un tipo de relación `(relation R)`, un verbo del kernel `(action verbo)`. Eso es lo que muestra `pron lexicon` en la columna `ref`, y lo que la superficie arma cuando reconoce la palabra. Un `AnchorDoc` es un alias: una palabra más, con la forma que nombra escrita por quien declara el mundo. Su contrato:
 
 | campo | contenido |
 |---|---|
 | `symbol` | la palabra canónica |
 | `forms` | todas las formas que la superficie reconoce, listadas: `reservation, reservations`; `confirma, confirmá, confirm it` (11 §1) |
-| `ref` | lo que nombra, en una de las siete formas de abajo |
+| `ref` | la forma que nombra, en uno de los casos de abajo |
 | `motive` | lo que se muestra al preguntar qué significa |
-| `steps` | solo para `ref: compose`: la lista de pasos |
 
-Las formas de `ref`:
+Los casos de `ref`:
 
 | forma | ejemplo | qué es |
 |---|---|---|
-| `model:M` | `client → model:Client` | un sustantivo |
-| `field:M.f` | `named → field:Client.name` | un atributo, con sus preposiciones en `forms` |
-| `predicate:M:<where>` | `large → predicate:Table:capacity >= 6` | un adjetivo; `<where>` puede usar `{campo}` del sujeto |
-| `relation:R` | `asignale → relation:assigned_to` | un verbo transitivo; `forms` puede marcar la lectura inversa (`has ← relation:booked_by`) |
-| `action:<verbo> M.f=v` | `confirm → action:change Reservation.status=confirmed` | un verbo de acción con campo y valor fijos |
-| `doc:M:nombre` | `el proyector → doc:SurfaceDoc:surface-pron-infra-projector` | un nombre propio fijo para un objeto |
-| `compose` | `book`, abajo | una oración compuesta |
+| `(model M)` | `client → (model Client)` | un sustantivo |
+| `(field M f)` | `named → (field Client name)` | un atributo, con sus preposiciones en `forms` |
+| `(where M "<predicado>")` | `large → (where Table "capacity >= 6")` | un adjetivo; el predicado puede usar `{campo}` del sujeto y las ranuras `N`, `X`, `Z` de sus `forms` |
+| `(relation R)` | `asignale → (relation assigned_to)` | un verbo transitivo; `forms` puede marcar la lectura inversa (`has ← (relation booked_by)`) |
+| `(change (it "it" M) f "v")` | `confirm → (change (it "it" Reservation) status "confirmed")` | un verbo de acción con campo y valor fijos; `(it …)` es el hueco que llena el sustantivo de la oración |
+| `(doc "M:nombre")` | `el proyector → (doc "SurfaceDoc:surface-pron-infra-projector")` | un nombre propio fijo para un objeto |
+| `(move (create M) (assert R (created) SUST) …)` | `book`, abajo | una oración compuesta |
 
-**Oraciones compuestas.** Un alias `compose` declara, en `steps`, una secuencia de pasos con ranuras que la oración llena. "book her a table for 6 on Friday at 9pm":
+**Oraciones compuestas.** Un alias compuesto es un `(move …)` con huecos que la oración llena. "book her a table for 6 on Friday at 9pm":
 
 ```yaml
 symbol: book
 forms: [book her, book him, book them, make a reservation for]
-ref: compose
+ref: (move (create Reservation) (assert booked_by (created) (it "her" Client)) (assert assigned_to (created) (a Table)))
 motive: create a reservation for someone and put it at a table
-steps:
-  - {do: create, model: Reservation, fields: $literals}
-  - {do: assert, relation: booked_by,   source: $created, target: $referent:Client}
-  - {do: assert, relation: assigned_to, source: $created, target: $object:Table}
 ```
 
-Las ranuras son cuatro y fijas: `$literals`, los literales de la oración asignados a campos del modelo por sus alias; `$created`, el documento que dejó un paso `create`; `$referent:M`, el referente de la oración con esa clase ("her"); `$object:M`, la frase nominal de la oración con esa clase ("a table on the terrace for 6"). Un paso puede ser `create`, `assert` o `change`. Cada paso pasa por las mismas verificaciones y permisos que si fuera una oración sola; si un paso no se puede resolver, la oración entera es ambigua o missing antes de ejecutar nada; los pasos se ejecutan en orden en un solo movimiento con un solo refresh. No hay condicionales ni repeticiones: lo que no cabe en una secuencia fija de tres tipos de paso no es un alias, es un patrón general de pron o no existe.
+Los huecos son tres y fijos: `(created)`, el documento que dejó el `(create …)` del mismo movimiento, que recibe los literales de la oración asignados a sus campos por sus alias; `(it "…" M)`, el referente de la oración con esa clase ("her"); `(a M)`, la frase nominal de la oración con esa clase ("a table on the terrace for 6"). Un paso puede ser `create`, `assert` o `change`. Al decir la oración, el alias se escribe como `(say book (slot "$referent:Client" SUST) (slot "$object:Table" SUST) (campo valor) …)` y se evalúa: cada paso pasa por las mismas verificaciones y permisos que si fuera una forma sola; si un hueco no se puede resolver, el movimiento entero es ambiguo o missing antes de ejecutar nada; los pasos se ejecutan en orden con un solo refresh. No hay condicionales ni repeticiones: lo que no cabe en una secuencia fija de tres tipos de paso no es un alias, es un patrón general de pron o no existe.
 
-Un alias sí aporta significado a una expresión: "large" significa algo porque alguien decidió que es capacidad mayor o igual a seis. Lo que no hace es agregar capacidades: todo `ref` apunta a algo que el mundo ya puede hacer sin el alias, con la dirección o el comando completo. Por eso no es la fuente del léxico, sino su forma en lengua natural, y por eso se puede listar, revisar y borrar sin que nada deje de ser posible.
+Un alias sí aporta significado a una expresión: "large" significa algo porque alguien decidió que es capacidad mayor o igual a seis. Lo que no hace es agregar capacidades: todo `ref` es una forma que el mundo ya puede evaluar sin el alias (13). Por eso no es la fuente del léxico, sino su forma en lengua natural, y por eso se puede listar, revisar y borrar sin que nada deje de ser posible.
 
-Un alias puede nombrar también un **verbo de acción con campo y valor fijos**: `confirm → action:change Reservation.status=confirmed`. Es la única forma en que un mundo agrega verbos sin código, y sigue siendo un alias: el verbo real es `change` y pasa por las mismas verificaciones, incluida la transición (03).
+Un alias puede nombrar también un **verbo de acción con campo y valor fijos**: `confirm → (change (it "it" Reservation) status "confirmed")`. Es la única forma en que un mundo agrega verbos sin código, y sigue siendo un alias: el verbo real es `change` y pasa por las mismas verificaciones, incluida la transición (03).
 
-Son la única fuente de la forma hablada. El identificador `CliCommandDoc` no se convierte en "command" por ninguna regla: alguien escribe el alias `command → model:CliCommandDoc`, con su plural en `forms`. Un término sin alias se nombra y se reconoce por su identificador tal cual y, además, partido en palabras (`cli command doc`, `party size`): esa forma la deriva el léxico del identificador, no es un `AnchorDoc`, y sirve de calce hasta que un alias diga algo mejor.
+Son la única fuente de la forma hablada. El identificador `CliCommandDoc` no se convierte en "command" por ninguna regla: alguien escribe el alias `command → (model CliCommandDoc)`, con su plural en `forms`. Un término sin alias se nombra y se reconoce por su identificador tal cual y, además, partido en palabras (`cli command doc`, `party size`): esa forma la deriva el léxico del identificador, no es un `AnchorDoc`, y sirve de calce hasta que un alias diga algo mejor.
 
-Un alias entra a una sesión solo si todo lo que apunta está en la proyección: el modelo de su `ref`, la relación, y en un alias compuesto el modelo y la relación de cada paso. Un alias hacia un modelo fuera de `models` no existe para esa sesión, aunque la lista `aliases` lo nombre.
+Un alias entra a una sesión solo si todo lo que su forma nombra está en la proyección: los modelos, las relaciones y los verbos del kernel de cada paso. Un alias hacia un modelo fuera de `models` no existe para esa sesión, aunque la lista `aliases` lo nombre.
+
+**La sintaxis anterior.** Los `ref` escritos como texto (`model:M`, `field:M.f`, `predicate:M:<where>`, `relation:R`, `action:<verbo> M.f=v`, `doc:M:nombre`, y `compose` con una lista `steps`) se siguen leyendo, y el léxico los convierte en la forma equivalente; un lint rechaza un `ref` que no es ninguna de las dos.
 
 ## Proyección
 

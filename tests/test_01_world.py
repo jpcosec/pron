@@ -75,16 +75,50 @@ def test_addresses_and_fields_read_by_address(world: World):
     assert world.store.hash_c("Table", "table-12")
 
 
-def test_alias_with_steps_round_trips(world: World):
+def test_a_composed_alias_is_a_form_that_round_trips(world: World):
+    from pron.refs import parse
+
     d = world.store.doc("AnchorDoc", "anchor-book")
-    assert d.payload["ref"] == "compose"
-    assert d.payload["steps"][1] == {
+    assert d.payload["ref"].startswith("(move (create Reservation)")
+    assert parse(d.payload["ref"]).steps[1] == {
         "do": "assert",
         "relation": "booked_by",
         "source": "$created",
         "target": "$referent:Client",
     }
     assert "book her" in d.payload["forms"]
+
+
+def test_an_alias_written_the_old_way_is_read_as_the_same_form():
+    from pron.refs import parse
+
+    old = parse(
+        "compose",
+        [
+            {"do": "create", "model": "Reservation", "fields": "$literals"},
+            {
+                "do": "assert",
+                "relation": "booked_by",
+                "source": "$created",
+                "target": "$referent:Client",
+            },
+            {
+                "do": "assert",
+                "relation": "assigned_to",
+                "source": "$created",
+                "target": "$object:Table",
+            },
+        ],
+    )
+    new = parse(
+        '(move (create Reservation) (assert booked_by (created) (it "her" Client)) (assert assigned_to (created) (a Table)))'
+    )
+    assert old.steps == new.steps
+    assert (
+        parse("action:change Reservation.status=confirmed").text
+        == '(change (it "it" Reservation) status "confirmed")'
+    )
+    assert parse("predicate:Table:capacity >= N").where == "capacity >= N"
 
 
 def test_graph_is_built_fresh_and_typed(world: World):

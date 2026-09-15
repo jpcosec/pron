@@ -13,14 +13,17 @@ from typing import Any
 from pron.dialogue import Dialogue, Pending
 from pron.display import Display
 from pron.embedder import Embedder, Matcher
+from pron.forms import Compiler, FormError, UnknownWord, said
+from pron.forms import resolved as resolved_forms
 from pron.ids import address_of, doc_of, is_local, join_id, model_of, scope as _scope
 from pron.kernel import Kernel
 from pron.ledger import Ledger
 from pron.lexicon import UNSUGGESTED_MODELS, Lexicon
 from pron.resolve import Resolution, address_to_export_id, resolve
 from pron.response import Response  # noqa: F401 - re-exported: session.Response is the public name
+from pron.sexp import SexpError, read_one, write
 from pron.store import StoreError
-from pron.surface.interpret import Interpretation, Interpreter, Part, examples
+from pron.surface.interpret import Interpretation, Interpreter, Part, construction_names
 from pron.surface.nouns import NounPhrase
 from pron.verbs import Verbs
 from pron.world import World
@@ -82,14 +85,10 @@ class Session:
     # -- the turn ---------------------------------------------------------------------------
 
     def turn(self, sentence: str) -> Response:
-        at = datetime.now(timezone.utc).replace(microsecond=0)
-        move_id = self.ledger.new_id(at)
-        state_before = self.dialogue.state
-        trace: list[str] = []
-        record: dict[str, Any] = {"queries": [], "writes": [], "edges": []}
-        hash_before = self._sync(trace)
-        refers_to = ""
-        try:
+        """One sentence: the surface resolves it to forms (spec 13) and the forms are evaluated."""
+
+        def body(trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
+            refers_to = ""
             if self.dialogue.pending is not None:
                 resp, refers_to = self._continue(sentence, trace, record)
             else:
@@ -108,6 +107,38 @@ class Session:
                     resp = self._new_sentence(corrected, trace, record)
                 else:
                     resp = self._new_sentence(sentence, trace, record)
+            return resp, refers_to
+
+        return self._move(sentence, body)
+
+    def eval(self, forms: str) -> Response:
+        """One move written as forms (spec 13), with the same permissions, pre-validation, writes,
+        refresh, MoveDoc and undo as a sentence. It never answers a pending question."""
+
+        def body(trace: list[str], record: dict[str, Any]) -> tuple[Response, str]:
+            self._sentence = forms
+            if self.dialogue.pending is not None:
+                trace.append("pending dropped: a new move")
+                record["dropped_pending"] = self.dialogue.pending.sentence
+                self.dialogue.close()
+            try:
+                expr = read_one(forms)
+            except SexpError as e:
+                return Response(f"Could not read that: {e}", "error"), ""
+            return self._eval(expr, trace, record), ""
+
+        return self._move(forms, body)
+
+    def _move(self, said: str, body) -> Response:
+        at = datetime.now(timezone.utc).replace(microsecond=0)
+        move_id = self.ledger.new_id(at)
+        state_before = self.dialogue.state
+        trace: list[str] = []
+        record: dict[str, Any] = {"queries": [], "writes": [], "edges": []}
+        hash_before = self._sync(trace)
+        refers_to = ""
+        try:
+            resp, refers_to = body(trace, record)
         except StoreError as e:
             resp = Response(f"Could not do that: {e}", "error")
             record["error"] = str(e)
@@ -122,7 +153,7 @@ class Session:
             move_id=move_id,
             at=at,
             speaker=self.dialogue.speaker,
-            sentence=sentence,
+            sentence=said,
             outcome=resp.outcome,
             state_before=state_before,
             state_after=self.dialogue.state,
@@ -163,18 +194,43 @@ class Session:
         if interp.unknown and all(p.kind in ("none", "nominal") for p in interp.parts):
             return self._missing_words(interp, trace, record)
         if any(p.kind == "none" for p in interp.parts):
-            return Response(
-                "I can understand: " + " · ".join(examples()[:6]) + " …", "missing"
-            )
-        # resolve every phrase of every part before executing anything
+            return Response(self._cannot_parse_hint(), "missing")
+        # the sentence says forms; the forms are what gets resolved and run (spec 13)
+        return self._eval(
+            said(interp.parts, self),
+            trace,
+            record,
+            retry=retry,
+            again=lambda: self._new_sentence(sentence, trace, record, retry=True),
+        )
+
+    def _eval(
+        self,
+        expr: Any,
+        trace: list[str],
+        record: dict[str, Any],
+        retry: bool = False,
+        again: Any = None,
+    ) -> Response:
+        record.setdefault("forms", write(expr))
+        trace.append("forms: " + write(expr))
+        try:
+            parts = Compiler(self).compile(expr)
+        except UnknownWord as e:
+            record["missing"] = {"note": str(e), "candidates": []}
+            return Response(f"{e}.", "missing")
+        except FormError as e:
+            return Response(f"Could not do that: {e}", "error")
+        # resolve every noun of every part before executing anything
         plans = []
-        for part in interp.parts:
+        for part in parts:
             plan = self._plan(part, trace, record)
             if isinstance(plan, Response):
                 return plan
             plans.append(plan)
+        record["resolved"] = write(resolved_forms(parts, plans, self))
         # every write of the move validated before the first one (spec 11 §7)
-        self._prevalidate(interp.parts, plans, trace, record)
+        self._prevalidate(parts, plans, trace, record)
         # hash_mundo read again just before executing (spec 11 §5)
         current = self.world.hash_mundo()
         if current != self.hash:
@@ -187,11 +243,15 @@ class Session:
             )
             self.hash = current
             self._load()
-            return self._new_sentence(sentence, trace, record, retry=True)
+            return (
+                again()
+                if again is not None
+                else self._eval(expr, trace, record, retry=True)
+            )
         # execute in order, one refresh at the end
         texts = []
         wrote = False
-        for part, plan in zip(interp.parts, plans):
+        for part, plan in zip(parts, plans):
             text, did_write = self._execute(part, plan, trace, record)
             texts.append(text)
             wrote = wrote or did_write
@@ -203,6 +263,14 @@ class Session:
         if warnings:
             text += " Heads up: " + "; ".join(warnings) + "."
         return Response(text, "unico")
+
+    def _cannot_parse_hint(self) -> str:
+        """What to say when nothing calzó: real sentences of *this* world (spec 05 §Calce
+        aproximado P4) when its lexicon has any, never another world's fixture sentences."""
+        real = self.lex.examples()
+        if real:
+            return "I can understand: " + " · ".join(real) + " …"
+        return "I can understand constructions like: " + ", ".join(construction_names())
 
     def _missing_words(
         self, interp: Interpretation, trace: list[str], record: dict[str, Any]
@@ -237,7 +305,7 @@ class Session:
             + (
                 f" Did you mean {' or '.join(offers)}?"
                 if offers
-                else " I can understand: " + " · ".join(examples()[:4]) + " …"
+                else " " + self._cannot_parse_hint()
             ),
             "missing",
         )
@@ -350,6 +418,24 @@ class Session:
         trace: list[str],
         record: dict[str, Any],
     ) -> Resolution:
+        if np.given:
+            for a in np.given:
+                eid = address_to_export_id(a)
+                try:
+                    self.world.store.payload_of(eid)
+                except StoreError:
+                    return Resolution(np, [], "missing", note=f"there is no {eid}")
+            self._note_reads(np.given, record)
+            if np.alternatives:
+                return Resolution(
+                    np,
+                    list(np.given),
+                    "unico",
+                    candidates=list(np.alternatives),
+                    note=f"any: took {np.given[0]}; also {', '.join(np.alternatives)}",
+                )
+            return Resolution(np, list(np.given), "unico", note="by address")
+        need_model = need_model or np.hint
         if np.referent is not None:
             who = np.referent.meta.get("who")
             if who == "speaker":
@@ -395,31 +481,32 @@ class Session:
             except StoreError:
                 continue
 
-    def _plan_compose(
-        self, part: Part, trace: list[str], record: dict[str, Any]
-    ) -> dict[str, Any] | Response:
+    def _compose_slots(self, part: Part) -> dict[str, NounPhrase]:
+        """The phrase of the sentence each slot of a compose alias takes: $referent:M the referent,
+        $object:M a phrase of class M (spec 05)."""
         assert part.verb is not None
-        np: NounPhrase | None
-        plan: dict[str, Any] = {"steps": []}
+        if "_slots" in part.payload:
+            return dict(part.payload["_slots"])
         nps: list[NounPhrase] = part.payload.get("_nps", [])
+        slots: dict[str, NounPhrase] = {}
         for step in part.verb.payload.get("steps", []):
-            resolved = {}
             for slot_key in ("source", "target"):
                 slot = step.get(slot_key)
                 if (
                     not isinstance(slot, str)
                     or not slot.startswith("$")
                     or slot == "$created"
+                    or slot in slots
                 ):
                     continue
                 kind, _, model = slot[1:].partition(":")
                 if kind == "referent":
-                    np = next(
+                    referent: NounPhrase | None = next(
                         (n for n in nps if n.referent is not None), None
-                    ) or NounPhrase(
+                    )
+                    slots[slot] = referent or NounPhrase(
                         None, None, "singular", referent=_pronoun_item(part)
                     )
-                    res = self._resolve_phrase(np, model, trace, record)
                 elif kind == "object":
                     np = next(
                         (
@@ -429,20 +516,48 @@ class Session:
                         ),
                         None,
                     )
-                    if np is None:
-                        return Response(
-                            f"I need a {model.lower()} in that sentence.", "missing"
-                        )
-                    res = self._resolve_phrase(np, model, trace, record)
-                else:
+                    if np is not None:
+                        slots[slot] = np
+        return slots
+
+    def _plan_compose(
+        self, part: Part, trace: list[str], record: dict[str, Any]
+    ) -> dict[str, Any] | Response:
+        assert part.verb is not None
+        plan: dict[str, Any] = {"steps": []}
+        slots = self._compose_slots(part)
+        for step in part.verb.payload.get("steps", []):
+            resolved_step = {}
+            for slot_key in ("source", "target"):
+                slot = step.get(slot_key)
+                if (
+                    not isinstance(slot, str)
+                    or not slot.startswith("$")
+                    or slot == "$created"
+                ):
                     continue
+                kind, _, model = slot[1:].partition(":")
+                if kind not in ("referent", "object"):
+                    continue
+                np = slots.get(slot)
+                if np is None:
+                    return Response(
+                        f"I need a {model.lower()} in that sentence.", "missing"
+                    )
+                res = self._resolve_phrase(np, model, trace, record)
                 if res.outcome == "ambiguo":
                     return self._ask(part, slot_key, res, record)
                 if res.outcome == "missing":
                     return self._missing(res, trace, record)
-                resolved[slot_key] = res
-            plan["steps"].append(resolved)
-        steps = part.verb.payload.get("steps", [])
+                resolved_step[slot_key] = res
+            plan["steps"].append(resolved_step)
+        permitted = self._compose_permissions(part.verb)
+        if isinstance(permitted, Response):
+            return permitted
+        return plan
+
+    def _compose_permissions(self, word) -> Response | None:
+        steps = word.payload.get("steps", [])
         if not self.kernel.allowed("create") and any(
             s.get("do") == "create" for s in steps
         ):
@@ -459,7 +574,7 @@ class Session:
                     f"In this session I can tell you about {s.get('relation')}, not assert it.",
                     "missing",
                 )
-        return plan
+        return None
 
     # -- pending ----------------------------------------------------------------------------------
 
@@ -471,7 +586,7 @@ class Session:
             Pending(
                 "choice",
                 "",
-                part.items and " ".join(i.text for i in part.items) or "",
+                part.items and " ".join(i.text for i in part.items) or self._sentence,
                 candidates=list(res.candidates),
                 labels=labels,
                 slot=role,
@@ -490,7 +605,7 @@ class Session:
             Pending(
                 "data",
                 "",
-                " ".join(i.text for i in part.items),
+                " ".join(i.text for i in part.items) or self._sentence,
                 field_name=field_name,
                 model=part.subject.model,
                 state={"part": part},
@@ -738,23 +853,8 @@ class Session:
         return self._resume(part, trace, record), pending.move_id
 
     def _resume(self, part: Part, trace: list[str], record: dict[str, Any]) -> Response:
-        interp = Interpretation(
-            part.items and " ".join(i.text for i in part.items) or "", [], [part]
-        )
-        record["interpretation"] = interp.to_record()
-        plan = self._plan(part, trace, record)
-        if isinstance(plan, Response):
-            return plan
-        self._prevalidate([part], [plan], trace, record)
-        text, wrote = self._execute(part, plan, trace, record)
-        if wrote:
-            self._refresh(trace)
-        warnings = list(dict.fromkeys(self.kernel.warnings))
-        self.kernel.warnings = []
-        return Response(
-            text + (" Heads up: " + "; ".join(warnings) + "." if warnings else ""),
-            "unico",
-        )
+        """The answer filled the hole: the part is said again as forms and evaluated."""
+        return self._eval(said([part], self), trace, record)
 
     # -- execution --------------------------------------------------------------------------
 
@@ -815,9 +915,18 @@ class Session:
                 )
         # extra modifiers on the asked side ("for Friday") become predicates intersected with the found set
         asked_np = part.subject if asked == "subject" else part.object
-        if asked_np is not None and part.leftovers:
-            found = self._filter_by_leftovers(
-                found, asked_np, part.leftovers, trace, record
+        predicates = (
+            part.payload["where"]
+            if "where" in part.payload
+            else (
+                self._leftover_predicates(asked_np, part.leftovers)
+                if asked_np is not None
+                else []
+            )
+        )
+        if asked_np is not None and predicates:
+            found = self._filter_by_predicates(
+                found, asked_np.model, predicates, trace, record
             )
         addresses = [address_of(e) for e in dict.fromkeys(found)]
         self._note_reads(addresses, record)
@@ -830,18 +939,23 @@ class Session:
             names[0] if len(names) == 1 else f"{len(names)}: " + "; ".join(names)
         ) + "."
 
-    def _filter_by_leftovers(
-        self, found: list[str], np: NounPhrase, leftovers, trace, record
-    ) -> list[str]:
+    def _leftover_predicates(self, np: NounPhrase, leftovers) -> list[str]:
+        """The predicates a read's extra modifiers ("for Friday") add to the asked side, with the
+        phrase's own; none when there are no extra modifiers."""
+        from copy import deepcopy
+
         from pron.surface.nouns import _word_modifier
 
-        assert np.model is not None
+        model = np.model
+        if not leftovers or model is None:
+            return []
+        np = deepcopy(np)
         for it in leftovers:
             if it.kind == "literal" and it.meta.get("kind") == "date":
                 fld = next(
                     (
                         f["name"]
-                        for f in self.world.schema(np.model, self.lex.stores)
+                        for f in self.world.schema(model, self.lex.stores)
                         if f["name"] == "date"
                     ),
                     None,
@@ -850,12 +964,16 @@ class Session:
                     np.predicates.append(f'{fld} = "{it.meta["value"]}"')
             elif it.kind == "word":
                 _word_modifier(it, None, np, self.lex)
-        if not np.predicates:
-            return found
+        return list(np.predicates)
+
+    def _filter_by_predicates(
+        self, found: list[str], model: str | None, predicates: list[str], trace, record
+    ) -> list[str]:
+        assert model is not None
         keep: set[str] | None = None
-        for where in np.predicates:
+        for where in predicates:
             hits: set[str] = set()
-            for sc in (_scope(s, np.model) for s in self.lex.stores):
+            for sc in (_scope(s, model) for s in self.lex.stores):
                 got = {
                     address_to_export_id(a) for a in self.world.store.find(sc, where)
                 }
@@ -908,7 +1026,9 @@ class Session:
         if verb == "create":
             assert part.subject is not None and part.subject.model is not None
             model = part.subject.model
-            w = self.kernel.create(model, part.payload["fields"])
+            w = self.kernel.create(
+                model, part.payload["fields"], name=part.payload.get("name")
+            )
             trace.append(f"docs create --model {model} {w.address} {w.after}")
             record["writes"].append(w.record())
             addr = address_of(w.address)
@@ -1003,7 +1123,9 @@ class Session:
                 missing = self.kernel.required_missing(model, fields)
                 if missing:
                     raise StoreError(f"{model} needs {', '.join(missing)}")
-                w = self.kernel.create(model, fields, related)
+                w = self.kernel.create(
+                    model, fields, related, name=part.payload.get("_name")
+                )
                 created = w.address
                 trace.append(f"docs create --model {model} {created} {w.after}")
                 record["writes"].append(w.record())
@@ -1101,12 +1223,16 @@ class Session:
             + (" Not touched: " + "; ".join(skipped) + "." if skipped else "")
         )
 
-    def _why(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
-        target = (
-            self.dialogue.last_written
-            or self.dialogue.last_singular
+    def _why_target(self, part: Part) -> str | None:
+        if "target" in part.payload:
+            return part.payload["target"]
+        return self.dialogue.last_written or (
+            self.dialogue.last_singular
             and address_to_export_id(self.dialogue.last_singular)
         )
+
+    def _why(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
+        target = self._why_target(part)
         if not target:
             return "Why what? Say something first."
         moves = self.ledger.about(target)
