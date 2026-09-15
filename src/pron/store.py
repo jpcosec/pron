@@ -49,8 +49,9 @@ from sldb.runtime.validation import (
     validate_model_data_roundtrip,
     validate_model_input_roundtrip,
 )
+from sldb.store import documents_hash
 from sldb.store.io import load_documents_index, load_models_index, load_store_index
-from sldb.store.layout import project_root as _project_root
+from sldb.store.layout import project_root as _project_root, store_exists
 from sldb.store.ops import track_document
 from sldb.store.query import (
     find_structural,
@@ -59,6 +60,7 @@ from sldb.store.query import (
     list_structural,
     load_runtime_documents,
 )
+from sldb.store.runtime_cache import new_operation as _sldb_new_operation
 from sldb.store.query_engine.filter import DocumentFilter
 
 from pron.ids import LOCAL, is_local, join_id, split_id
@@ -75,6 +77,25 @@ class Store:
         self.root = Path(root).resolve()
         self.sp, self.project_root = get_store_context(str(self.root / ".sldb"))
         self.pythonpath = pythonpath or str(self.root)
+
+    def begin_operation(self) -> None:
+        """Start one sldb operation over this store and every linked one.
+
+        sldb re-checks the document files once per operation (PLAN 15 capa 6), and until
+        now an operation started only here, in `__init__`: a long-lived World never
+        started another one, so a markdown edited by hand or a document written by
+        another process (`sldb fields update`, `sldb docs track`) stayed invisible to
+        every later read. One pron request is one operation: call this at the start of a
+        turn, an eval or a payload read, never inside the read methods themselves (they
+        run several times per request; re-checking there would re-stat every file on
+        every internal call)."""
+        _sldb_new_operation(self.sp)
+        documents_hash.new_operation(self.sp)
+        for linked in self.linked().values():
+            if not store_exists(linked):
+                continue
+            _sldb_new_operation(linked)
+            documents_hash.new_operation(linked)
 
     # -- stores ----------------------------------------------------------------
 

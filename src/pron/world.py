@@ -62,6 +62,15 @@ class World:
     def model_type(self, name: str, stores: list[str] | None = None) -> type:
         return self.store.model_type(name, self.model_store(name, stores))
 
+    def payload(
+        self, model: str, name: str, store: str | None = LOCAL
+    ) -> dict[str, Any]:
+        """One document's payload, read straight from the store (spec 12 §3). Each read is
+        its own sldb operation, so what the files say right now is what comes back, never
+        what an earlier request of this World cached."""
+        self.store.begin_operation()
+        return self.store.payload(model, name, store)
+
     def model_hashes(self) -> dict[str, str]:
         return {
             m.name: self.store.models_index(m.name).hash_b

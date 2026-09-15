@@ -130,6 +130,7 @@ class Session:
         return self._move(forms, body)
 
     def _move(self, said: str, body) -> Response:
+        self.world.store.begin_operation()
         at = datetime.now(timezone.utc).replace(microsecond=0)
         move_id = self.ledger.new_id(at)
         state_before = self.dialogue.state

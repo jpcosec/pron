@@ -216,6 +216,7 @@ class Server:
             }
         if op == "payload":
             self._in_projection(name, req, req["model"])
+            world.store.begin_operation()
             return {
                 "ok": True,
                 "payload": world.store.payload(req["model"], req["doc"], name),
