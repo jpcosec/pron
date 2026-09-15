@@ -1,0 +1,14 @@
+name: cmd-pron-check
+path: knowledge/commands/cmd-pron-check.md
+hash_c: e59cb32b0f911c5f6bee9a3c6293a54cc22080d28e4ad7d028d61a5b9af96d3e
+hash_d: 67f0fa89484aa99703e00faf7987139dd17b8bb665bab5462f7a29b2d11d246f
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

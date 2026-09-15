@@ -1,0 +1,9 @@
+name: spec-09a
+path: source/spec/09a-el-mundo-del-restaurante.md
+hash_c: 2e979d914def4b66792898bf7a148533cc2e2080c2a4ef21355b59832439e562
+hash_d: cef55a17d7d12b70536baf877bfda936d5435303dcfee8dd0e59e7ceb99b6200
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

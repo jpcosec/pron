@@ -1,0 +1,93 @@
+doc_name: try
+sections:
+- path: probar
+  title: Probar
+  breadcrumbs:
+  - Probar
+  about:
+  - Probar
+  - probar
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: probar
+  level: 1
+  line_start: 1
+  line_end: 14
+- path: probar/question
+  title: Question
+  breadcrumbs:
+  - Probar
+  - Question
+  about:
+  - Probar
+  - probar
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: probar/answer
+  title: Answer
+  breadcrumbs:
+  - Probar
+  - Answer
+  about:
+  - Probar
+  - probar
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 13
+- path: probar/sources
+  title: Sources
+  breadcrumbs:
+  - Probar
+  - Sources
+  about:
+  - Probar
+  - probar
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 14
+  line_end: 14
+hash_c: 4021c59ebf78e4da848b7f39c5a2109ae79b208434887f243b0d00c7caf383ec
+sections_version: '2'

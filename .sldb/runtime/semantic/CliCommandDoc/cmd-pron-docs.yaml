@@ -1,0 +1,13 @@
+model: CliCommandDoc
+path: knowledge/commands/cmd-pron-docs.md
+tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands
+hash_c: 42b566f563e091674ebbfa571a47f7424ee83b356a0c018d2b3b51242efb0ff1

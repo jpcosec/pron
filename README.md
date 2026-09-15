@@ -1,5 +1,7 @@
 # pron
 
+## ¿Qué es pron?
+
 Un SHRDLU sobre un mundo que ya existe. Los documentos de sldb son los objetos, los modelos de relación de kgdb son los verbos transitivos, las escrituras de sldb son los verbos de acción. pron convierte oraciones en direcciones, aristas y escrituras, sostiene el diálogo cuando una oración no alcanza, y registra cada movimiento.
 
 El nombre es Mapudungun: el cordel anudado con que se llevaba el registro.
@@ -36,6 +38,8 @@ pron check --world .                        # los lints
 ```
 
 Un turno frío cuesta medio segundo, casi todo imports y la primera carga del store; con `pron serve` corriendo, `pron say` lee en 0,12 s y escribe en medio segundo, y el proceso que pregunta no importa ni sldb: el cliente es `pron.client`, solo biblioteca estándar.
+
+## Un mundo se declara con documentos
 
 Un mundo se declara con documentos, nunca con código de pron: modelos `StructuredNLDoc`, `RelationTypeDoc` de kgdb para los verbos, `RelationDoc` para las aristas, `AnchorDoc` para las palabras, `ProjectionDoc` para lo que una sesión puede nombrar. El ejemplo completo está en [`source/spec/09a`](source/spec/09a-el-mundo-del-restaurante.md) y montado como fixture en `tests/worlds/restaurant.py`.
 
@@ -93,12 +97,12 @@ Para regenerar documentación tras un cambio de contrato, usa `pron docs --world
 
 ## Dependencias
 
-- [sldb](https://github.com/jpcosec/hum-ecosystem) con el surface de direcciones, el `hash_b` móvil y las cachés de runtime (commits `e7a2c0c`, `cf0073d`, `1c39c2b`).
-- [kgdb](https://github.com/jpcosec/hum-ecosystem) con relaciones tipadas (`kgdb init`, `kgdb ingest --store`, commit `1247139`).
+- [sldb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `a508034`.
+- [kgdb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `5effed5`.
 
 ## Quién lo usa
 
-`kinesis` declara `pron` como dependencia y habla con esta versión: su backend `PronKnowledge` abre un mundo con `World`, dice oraciones con `Session.turn` dentro de una proyección y lee documentos por dirección con `Store.payload`. Un permiso de kinesis es el nombre de una proyección; una escritura es una oración con verbo de acción dicha por la ejecución.
+legos declara `pron` como dependencia y habla con esta versión: su `PronWorld` (`legos/src/legos/bridges/pron_world.py`) abre un `World` y lee con forms (spec 13) a través de sesiones de solo lectura y `World.payload`. Un permiso de legos es el nombre de una proyección.
 
 ## Next
 

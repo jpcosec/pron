@@ -1,0 +1,8 @@
+model: RelationTypeDoc
+path: kgdb/relation_types/has_model.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type
+hash_c: 4d020a92bb01bd3ef1e712e3b8edbe1c35bb51e414fd401bb37bce53716f19ec

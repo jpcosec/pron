@@ -3,7 +3,8 @@ model_ref: kgdb.models:RelationDoc
 path: /home/jp/proyectos/hum-ecosystem/tools/kgdb/src/kgdb/models/relation_doc.py
 documents_index: .sldb/core/documents/RelationDoc.yaml
 sections_index: .sldb/runtime/sections/RelationDoc.yaml
-hash_b: 720b85dad05615f475e8b7e8b7bf68a464a0d47ebdcc02c2ad8b82e948c96fd4
+hash_b: 6fd5ab175b1b1e3933f0145d9d5d248282c7f91a2ccdd65f057c85590bf32a93
+documents_count: 44
 version: 1
 canonical: false
 family: relation

@@ -1,0 +1,14 @@
+name: surface-pron-verbs
+path: knowledge/surfaces/surface-pron-verbs.md
+hash_c: 96aed2c2b73a68141d90be06c0473c051f995da63abd54cf08cabbdcdd806702
+hash_d: 0987c52527d7e229b187bf60b14efd9fc21a0500160eaa05e64d8c4f0ed948bf
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

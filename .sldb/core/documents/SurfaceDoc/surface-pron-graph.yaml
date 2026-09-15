@@ -1,0 +1,14 @@
+name: surface-pron-graph
+path: knowledge/surfaces/surface-pron-graph.md
+hash_c: a964d41ade21a5167e491e1d156bb894430d5437f517a1917527b1525c34ba25
+hash_d: a7cf08d945db192b6fd9b4b795e34c965e5ae0aa4a73031a42973ff9fb61471a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

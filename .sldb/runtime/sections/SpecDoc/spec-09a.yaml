@@ -1,0 +1,208 @@
+doc_name: spec-09a
+sections:
+- path: 09a-el-mundo-del-restaurante-declarado
+  title: 09a · El mundo del restaurante, declarado
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 09a-el-mundo-del-restaurante-declarado
+  level: 1
+  line_start: 1
+  line_end: 296
+- path: 09a-el-mundo-del-restaurante-declarado/los-modelos-de-contenido-restaurant-models-py
+  title: Los modelos de contenido · `restaurant/models.py`
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Los modelos de contenido · `restaurant/models.py`
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Los modelos de contenido · `restaurant/models.py`
+  - los modelos de contenido restaurant models py
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-modelos-de-contenido-restaurant-models-py
+  level: 2
+  line_start: 9
+  line_end: 104
+- path: 09a-el-mundo-del-restaurante-declarado/los-tipos-de-relaci-n-documentos-de-relationtypedoc-modelo-de-kgdb
+  title: Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
+  - los tipos de relaci n documentos de relationtypedoc modelo de kgdb
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-tipos-de-relaci-n-documentos-de-relationtypedoc-modelo-de-kgdb
+  level: 2
+  line_start: 105
+  line_end: 177
+- path: 09a-el-mundo-del-restaurante-declarado/las-transiciones-documentos-de-relationdoc
+  title: Las transiciones · documentos de `RelationDoc`
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Las transiciones · documentos de `RelationDoc`
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Las transiciones · documentos de `RelationDoc`
+  - las transiciones documentos de relationdoc
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: las-transiciones-documentos-de-relationdoc
+  level: 2
+  line_start: 178
+  line_end: 198
+- path: 09a-el-mundo-del-restaurante-declarado/los-documentos-iniciales
+  title: Los documentos iniciales
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Los documentos iniciales
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Los documentos iniciales
+  - los documentos iniciales
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-documentos-iniciales
+  level: 2
+  line_start: 199
+  line_end: 212
+- path: 09a-el-mundo-del-restaurante-declarado/el-store
+  title: El store
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - El store
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - El store
+  - el store
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: el-store
+  level: 2
+  line_start: 213
+  line_end: 229
+- path: 09a-el-mundo-del-restaurante-declarado/la-proyecci-n-projectiondoc-modelo-de-pron
+  title: La proyección · `ProjectionDoc` (modelo de pron)
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - La proyección · `ProjectionDoc` (modelo de pron)
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - La proyección · `ProjectionDoc` (modelo de pron)
+  - la proyecci n projectiondoc modelo de pron
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: la-proyecci-n-projectiondoc-modelo-de-pron
+  level: 2
+  line_start: 230
+  line_end: 258
+- path: 09a-el-mundo-del-restaurante-declarado/los-alias-documentos-de-anchordoc
+  title: Los alias · documentos de `AnchorDoc`
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Los alias · documentos de `AnchorDoc`
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Los alias · documentos de `AnchorDoc`
+  - los alias documentos de anchordoc
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-alias-documentos-de-anchordoc
+  level: 2
+  line_start: 259
+  line_end: 291
+- path: 09a-el-mundo-del-restaurante-declarado/lo-que-este-mundo-no-declara
+  title: Lo que este mundo no declara
+  breadcrumbs:
+  - 09a · El mundo del restaurante, declarado
+  - Lo que este mundo no declara
+  about:
+  - 09a · El mundo del restaurante, declarado
+  - 09a el mundo del restaurante declarado
+  - Lo que este mundo no declara
+  - lo que este mundo no declara
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: lo-que-este-mundo-no-declara
+  level: 2
+  line_start: 292
+  line_end: 296
+hash_c: 2e979d914def4b66792898bf7a148533cc2e2080c2a4ef21355b59832439e562
+sections_version: '2'

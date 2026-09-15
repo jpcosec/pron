@@ -1,0 +1,9 @@
+name: what-is-pron
+path: knowledge/explanations/what-is-pron.md
+hash_c: e6ac4710131a2ac777e52cd90b39215e7410e025a9123b9b4c085331386df853
+hash_d: a688d5cf9e08b690f6e3bad0e9a7748cf14be7c162e56a98e30a4884f3733ab2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

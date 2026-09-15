@@ -1,0 +1,14 @@
+name: surface-pron-lexicon
+path: knowledge/surfaces/surface-pron-lexicon.md
+hash_c: 96ee52c38acca89c34e4a7776098d02b6832a7f0a99de61de9834f17342831d0
+hash_d: 9bfdc474e502b0c14249e52f4ae4ea131efe4c55dce4d89875ac91b60936d026
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

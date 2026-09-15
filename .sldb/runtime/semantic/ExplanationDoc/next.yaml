@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/next.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: e9ccf9cdf7e4df77f3fe750b0c5cc978e8e72f2d2134a9ed0b64efdd268cc277

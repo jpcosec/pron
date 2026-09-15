@@ -1,0 +1,13 @@
+model: SurfaceDoc
+path: knowledge/surfaces/surface-pron-sexp.md
+tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces
+hash_c: 91c5f1175a600bf64270b83b9ea7b02bdcc818276e7bf65e14914f1e3e6e9d02

@@ -1,0 +1,141 @@
+doc_name: move-20260908T062556-001
+sections:
+- path: id-move-20260908t062556-001-at-2026-09-08t06-25-56-00-00-speaker-outcome-unico-state-before-libre-state-after-libre-hash-before-8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8-hash-after-8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8-refers-to
+  title: 'id: move-20260908T062556-001
+
+    at: ''2026-09-08T06:25:56+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    hash_after: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    refers_to: '''''
+  breadcrumbs:
+  - 'id: move-20260908T062556-001
+
+    at: ''2026-09-08T06:25:56+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    hash_after: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    refers_to: '''''
+  about:
+  - 'id: move-20260908T062556-001
+
+    at: ''2026-09-08T06:25:56+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    hash_after: 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+
+    refers_to: '''''
+  - id move 20260908t062556 001 at 2026 09 08t06 25 56 00 00 speaker outcome unico
+    state before libre state after libre hash before 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8
+    hash after 8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8 refers
+    to
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: id-move-20260908t062556-001-at-2026-09-08t06-25-56-00-00-speaker-outcome-unico-state-before-libre-state-after-libre-hash-before-8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8-hash-after-8e55db370075db8dc379eed10400020c809dda717ade1ad4901fa8f66d0b79e8-refers-to
+  level: 2
+  line_start: 2
+  line_end: 12
+- path: move-20260908t062556-001
+  title: move-20260908T062556-001
+  breadcrumbs:
+  - move-20260908T062556-001
+  about:
+  - move-20260908T062556-001
+  - move 20260908t062556 001
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: move-20260908t062556-001
+  level: 1
+  line_start: 13
+  line_end: 62
+- path: move-20260908t062556-001/sentence
+  title: Sentence
+  breadcrumbs:
+  - move-20260908T062556-001
+  - Sentence
+  about:
+  - move-20260908T062556-001
+  - move 20260908t062556 001
+  - Sentence
+  - sentence
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: sentence
+  level: 2
+  line_start: 15
+  line_end: 18
+- path: move-20260908t062556-001/record
+  title: Record
+  breadcrumbs:
+  - move-20260908T062556-001
+  - Record
+  about:
+  - move-20260908T062556-001
+  - move 20260908t062556 001
+  - Record
+  - record
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: record
+  level: 2
+  line_start: 19
+  line_end: 62
+hash_c: cd6a55e7d0567861515d4ce8808621b4e22d6eff7f2261e91c77b1db258fc4bb
+sections_version: '2'

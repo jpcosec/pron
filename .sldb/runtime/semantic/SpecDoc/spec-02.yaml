@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/02-sustantivos.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: 9be1e9e07259d29af1ecc7a9631fa6d8a7194bbfe6a2c73b7e3b687281c65985

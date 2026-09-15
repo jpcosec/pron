@@ -1,0 +1,23 @@
+doc_name: projection-all
+sections:
+- path: all
+  title: all
+  breadcrumbs:
+  - all
+  about:
+  - all
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.projection
+  - workspace.knowledge.projections
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.projection
+  - workspace.knowledge.projections
+  slug: all
+  level: 1
+  line_start: 35
+  line_end: 37
+hash_c: 444c1cf78742b4ebec608ce76cdae0802f9785690a24ce8e4d0939e7e8af402e
+sections_version: '2'

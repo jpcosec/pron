@@ -1,0 +1,246 @@
+doc_name: spec-10
+sections:
+- path: 10-el-shrdlu-sobre-el-modelo
+  title: 10 · El SHRDLU sobre el modelo
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 10-el-shrdlu-sobre-el-modelo
+  level: 1
+  line_start: 1
+  line_end: 114
+- path: 10-el-shrdlu-sobre-el-modelo/1-los-campos-son-las-propiedades-del-objeto
+  title: 1. Los campos son las propiedades del objeto
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 1. Los campos son las propiedades del objeto
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 1. Los campos son las propiedades del objeto
+  - 1 los campos son las propiedades del objeto
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 1-los-campos-son-las-propiedades-del-objeto
+  level: 2
+  line_start: 5
+  line_end: 31
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb
+  title: 2. Cómo una relación llega a kgdb
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-c-mo-una-relaci-n-llega-a-kgdb
+  level: 2
+  line_start: 32
+  line_end: 91
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-1-el-tipo-una-vez-por-mundo
+  title: 2.1 El tipo, una vez por mundo
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2.1 El tipo, una vez por mundo
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - 2.1 El tipo, una vez por mundo
+  - 2 1 el tipo una vez por mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-1-el-tipo-una-vez-por-mundo
+  level: 3
+  line_start: 36
+  line_end: 50
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-2-la-instancia-una-por-arista
+  title: 2.2 La instancia, una por arista
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2.2 La instancia, una por arista
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - 2.2 La instancia, una por arista
+  - 2 2 la instancia una por arista
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-2-la-instancia-una-por-arista
+  level: 3
+  line_start: 51
+  line_end: 65
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-3-del-store-al-grafo
+  title: 2.3 Del store al grafo
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2.3 Del store al grafo
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - 2.3 Del store al grafo
+  - 2 3 del store al grafo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-3-del-store-al-grafo
+  level: 3
+  line_start: 66
+  line_end: 83
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-4-c-mo-pron-lo-lee
+  title: 2.4 Cómo pron lo lee
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2.4 Cómo pron lo lee
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - 2.4 Cómo pron lo lee
+  - 2 4 c mo pron lo lee
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-4-c-mo-pron-lo-lee
+  level: 3
+  line_start: 84
+  line_end: 87
+- path: 10-el-shrdlu-sobre-el-modelo/2-c-mo-una-relaci-n-llega-a-kgdb/2-5-estados
+  title: 2.5 Estados
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2.5 Estados
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 2. Cómo una relación llega a kgdb
+  - 2 c mo una relaci n llega a kgdb
+  - 2.5 Estados
+  - 2 5 estados
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-5-estados
+  level: 3
+  line_start: 88
+  line_end: 91
+- path: 10-el-shrdlu-sobre-el-modelo/3-dos-superficies-sobre-el-mismo-mundo
+  title: 3. Dos superficies sobre el mismo mundo
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 3. Dos superficies sobre el mismo mundo
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 3. Dos superficies sobre el mismo mundo
+  - 3 dos superficies sobre el mismo mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 3-dos-superficies-sobre-el-mismo-mundo
+  level: 2
+  line_start: 92
+  line_end: 105
+- path: 10-el-shrdlu-sobre-el-modelo/4-lo-que-hay-que-construir-en-orden
+  title: 4. Lo que hay que construir, en orden
+  breadcrumbs:
+  - 10 · El SHRDLU sobre el modelo
+  - 4. Lo que hay que construir, en orden
+  about:
+  - 10 · El SHRDLU sobre el modelo
+  - 10 el shrdlu sobre el modelo
+  - 4. Lo que hay que construir, en orden
+  - 4 lo que hay que construir en orden
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 4-lo-que-hay-que-construir-en-orden
+  level: 2
+  line_start: 106
+  line_end: 114
+hash_c: d6176d425bf8c43798df138a204c3b33a2e77031970c579056129ef238b6a707
+sections_version: '2'

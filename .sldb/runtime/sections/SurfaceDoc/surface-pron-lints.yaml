@@ -1,0 +1,129 @@
+doc_name: surface-pron-lints
+sections:
+- path: lints
+  title: lints
+  breadcrumbs:
+  - lints
+  about:
+  - lints
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: lints
+  level: 1
+  line_start: 14
+  line_end: 26
+- path: lints/purpose
+  title: Purpose
+  breadcrumbs:
+  - lints
+  - Purpose
+  about:
+  - lints
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: lints/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - lints
+  - How It Works
+  about:
+  - lints
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 23
+- path: lints/commands
+  title: Commands
+  breadcrumbs:
+  - lints
+  - Commands
+  about:
+  - lints
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 24
+  line_end: 26
+hash_c: 84aed52c753e3d5ca885b3efa71528353044f130863a8a5c87b0e9e4ab1b316f
+sections_version: '2'

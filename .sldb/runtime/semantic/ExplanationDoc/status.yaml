@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/status.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: 7cf6b228e6b8536a241cf207686083fa0bb9b6cbb12f6eaeef4952c1193032d6

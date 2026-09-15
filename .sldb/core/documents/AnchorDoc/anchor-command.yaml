@@ -1,0 +1,9 @@
+name: anchor-command
+path: knowledge/anchors/command.md
+hash_c: 2f5e556754769b3565b9afc63bb00ede9bc64934a05bb9f46d505c610d193a38
+hash_d: 2f7cea1189a202a69cb18e1e1c98dacdb86ffdd1cf5c2e4c6526c39f876ef0d5
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors

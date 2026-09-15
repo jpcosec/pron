@@ -1,0 +1,14 @@
+name: surface-pron-surface-dates
+path: knowledge/surfaces/surface-pron-surface-dates.md
+hash_c: 2868022c70556a374492f61d23586026d4173a02488c9067514818b2fa73ad49
+hash_d: 3b8ee9d9f96a01af2ce196b8492d050b459aedee716a9c57b68337d967889c70
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

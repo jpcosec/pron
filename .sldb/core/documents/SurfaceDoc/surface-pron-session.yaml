@@ -1,0 +1,14 @@
+name: surface-pron-session
+path: knowledge/surfaces/surface-pron-session.md
+hash_c: 93d36e3b5caa22a1d82b3b1fa4b1f9d8149fbedc3c224dcd6d24214b7b0b91da
+hash_d: b49425e7948c5381c91c41f35f32a2542af87ee9c0a2137472e47b51ed10efdf
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

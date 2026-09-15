@@ -1,0 +1,14 @@
+name: surface-pron-embedder
+path: knowledge/surfaces/surface-pron-embedder.md
+hash_c: 4e7b5a5ff12b0c130aa66d0475d5d2ab85812f3575d7af57235c5182cedef280
+hash_d: ae59ff166a705b759a246fe46a75f7c5bfeabc528215377c13caf36118a6207c
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

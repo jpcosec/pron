@@ -1,0 +1,23 @@
+doc_name: readme
+sections:
+- path: pron
+  title: pron
+  breadcrumbs:
+  - pron
+  about:
+  - pron
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.readme
+  - workspace.knowledge
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.readme
+  - workspace.knowledge
+  slug: pron
+  level: 1
+  line_start: 1
+  line_end: 16
+hash_c: 0e22d28a9aa61038ebe21392ebca5e8b677e3383e23472b1c401ff3e82ed308f
+sections_version: '2'

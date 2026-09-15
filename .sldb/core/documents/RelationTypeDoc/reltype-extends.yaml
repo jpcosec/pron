@@ -1,0 +1,9 @@
+name: reltype-extends
+path: kgdb/relation_types/extends.md
+hash_c: b8afd042eec8642deb7a4bddf948a36889905ba28c9402062b58207854042b77
+hash_d: 6b4611a3b93a0ba70b089cd35aa6bc47788c57ac20184022ff0231ae09041906
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

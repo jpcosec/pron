@@ -1,0 +1,231 @@
+doc_name: spec-03
+sections:
+- path: 03-verbos-transitivos
+  title: 03 · Verbos transitivos
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 03-verbos-transitivos
+  level: 1
+  line_start: 1
+  line_end: 86
+- path: 03-verbos-transitivos/qu-es-un-verbo
+  title: Qué es un verbo
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Qué es un verbo
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Qué es un verbo
+  - qu es un verbo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: qu-es-un-verbo
+  level: 2
+  line_start: 3
+  line_end: 19
+- path: 03-verbos-transitivos/leer-un-verbo
+  title: Leer un verbo
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Leer un verbo
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Leer un verbo
+  - leer un verbo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: leer-un-verbo
+  level: 2
+  line_start: 20
+  line_end: 30
+- path: 03-verbos-transitivos/condiciones
+  title: Condiciones
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Condiciones
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Condiciones
+  - condiciones
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: condiciones
+  level: 2
+  line_start: 31
+  line_end: 40
+- path: 03-verbos-transitivos/afirmar-un-verbo
+  title: Afirmar un verbo
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Afirmar un verbo
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Afirmar un verbo
+  - afirmar un verbo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: afirmar-un-verbo
+  level: 2
+  line_start: 41
+  line_end: 53
+- path: 03-verbos-transitivos/qu-se-verifica-d-nde
+  title: Qué se verifica dónde
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Qué se verifica dónde
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Qué se verifica dónde
+  - qu se verifica d nde
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: qu-se-verifica-d-nde
+  level: 2
+  line_start: 54
+  line_end: 69
+- path: 03-verbos-transitivos/los-verbos-que-ya-existen-sin-declararse
+  title: Los verbos que ya existen sin declararse
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Los verbos que ya existen sin declararse
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Los verbos que ya existen sin declararse
+  - los verbos que ya existen sin declararse
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-verbos-que-ya-existen-sin-declararse
+  level: 2
+  line_start: 70
+  line_end: 73
+- path: 03-verbos-transitivos/leer-y-afirmar-son-dos-permisos
+  title: Leer y afirmar son dos permisos
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Leer y afirmar son dos permisos
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Leer y afirmar son dos permisos
+  - leer y afirmar son dos permisos
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: leer-y-afirmar-son-dos-permisos
+  level: 2
+  line_start: 74
+  line_end: 77
+- path: 03-verbos-transitivos/el-eje-es-lo-que-contesta-las-preguntas
+  title: El eje es lo que contesta las preguntas
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - El eje es lo que contesta las preguntas
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - El eje es lo que contesta las preguntas
+  - el eje es lo que contesta las preguntas
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: el-eje-es-lo-que-contesta-las-preguntas
+  level: 2
+  line_start: 78
+  line_end: 81
+- path: 03-verbos-transitivos/invariantes
+  title: Invariantes
+  breadcrumbs:
+  - 03 · Verbos transitivos
+  - Invariantes
+  about:
+  - 03 · Verbos transitivos
+  - 03 verbos transitivos
+  - Invariantes
+  - invariantes
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: invariantes
+  level: 2
+  line_start: 82
+  line_end: 86
+hash_c: f71ac3f506dafc4a7c2bfc6c66b8b5b54f615e4b4886e7c26d98c205ff45b546
+sections_version: '2'

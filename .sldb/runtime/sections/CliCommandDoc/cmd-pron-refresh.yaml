@@ -1,0 +1,193 @@
+doc_name: cmd-pron-refresh
+sections:
+- path: refresh
+  title: refresh
+  breadcrumbs:
+  - refresh
+  about:
+  - refresh
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: refresh
+  level: 1
+  line_start: 15
+  line_end: 36
+- path: refresh/synopsis
+  title: Synopsis
+  breadcrumbs:
+  - refresh
+  - Synopsis
+  about:
+  - refresh
+  - Synopsis
+  - synopsis
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: synopsis
+  level: 2
+  line_start: 17
+  line_end: 20
+- path: refresh/purpose
+  title: Purpose
+  breadcrumbs:
+  - refresh
+  - Purpose
+  about:
+  - refresh
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: purpose
+  level: 2
+  line_start: 21
+  line_end: 24
+- path: refresh/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - refresh
+  - How It Works
+  about:
+  - refresh
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: how-it-works
+  level: 2
+  line_start: 25
+  line_end: 28
+- path: refresh/arguments
+  title: Arguments
+  breadcrumbs:
+  - refresh
+  - Arguments
+  about:
+  - refresh
+  - Arguments
+  - arguments
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: arguments
+  level: 2
+  line_start: 29
+  line_end: 33
+- path: refresh/usage
+  title: Usage
+  breadcrumbs:
+  - refresh
+  - Usage
+  about:
+  - refresh
+  - Usage
+  - usage
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: usage
+  level: 2
+  line_start: 34
+  line_end: 36
+hash_c: 2c1c31fbb4b799e75b5aa0280f3a02389204e07bdaa0c5f079c076985580b99c
+sections_version: '2'

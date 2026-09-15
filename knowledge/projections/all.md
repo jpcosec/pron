@@ -9,6 +9,8 @@ models:
 - AnchorDoc
 - ProjectionDoc
 - MoveDoc
+- ExplanationDoc
+- ReadmeDoc
 relations:
 - name: implements
   mode: read
@@ -22,6 +24,8 @@ display:
   CliCommandDoc: pron {command_path}
   SurfaceDoc: '{surface}'
   MoveDoc: '{id}: {sentence}'
+  ExplanationDoc: '{answer}'
+  ReadmeDoc: '{title}'
 key: {}
 matching:
   neighbors: 3

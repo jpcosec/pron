@@ -1,0 +1,14 @@
+name: surface-pron-response
+path: knowledge/surfaces/surface-pron-response.md
+hash_c: d306ce9a6c12ea73e6ab8432100036e4b474ad3a4daf5e921cc1e7c5543594ed
+hash_d: 083d879fff5e5e85aac8dad23ad8f846e1f1adc68243db0daf828d164e5a5e2f
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

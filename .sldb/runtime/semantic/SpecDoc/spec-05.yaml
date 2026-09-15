@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/05-lexico-y-proyeccion.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: ee896f7808b8c7ddba2b4b09faa3f916af888144b895c29d4a47a4af961e91f8

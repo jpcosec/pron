@@ -1,0 +1,14 @@
+name: surface-pron-surface-nouns
+path: knowledge/surfaces/surface-pron-surface-nouns.md
+hash_c: 0fc16bfee16116de12e6930ee9837366d9d349c8b9b7c32c7b4f7f4ebbea6389
+hash_d: a030becf9588036308191d95590dc5998f1121678ffc564beb080f5fd8594469
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

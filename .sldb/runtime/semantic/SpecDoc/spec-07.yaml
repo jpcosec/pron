@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/07-ledger.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: b26a242ee8e1ac5d6ef66f7e6607dc934384fa9e0c908678687f96869cf6db5c

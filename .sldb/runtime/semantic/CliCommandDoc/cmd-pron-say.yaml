@@ -1,0 +1,13 @@
+model: CliCommandDoc
+path: knowledge/commands/cmd-pron-say.md
+tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands
+hash_c: 74de009766f73fa40ef776bcaa3996dacaa4341dff084cc6dc14cb3558326325

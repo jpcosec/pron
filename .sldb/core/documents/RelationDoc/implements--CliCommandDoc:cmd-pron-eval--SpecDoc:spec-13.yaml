@@ -1,0 +1,9 @@
+name: implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+path: knowledge/relations/implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13.md
+hash_c: cc6b7ca87b0d919308c1bb0bf5e37baef6e3587d315b35ae6e9c3b0691915268
+hash_d: e9c928b2bae92b214f38705f2d51cc616bde774d2f0b47627f650da8df68cd53
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

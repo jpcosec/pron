@@ -1,0 +1,9 @@
+name: reltype-names
+path: kgdb/relation_types/names.md
+hash_c: 2166f9e353e9726713148eb93362cb79bcac0a02528f852580b82e0405559832
+hash_d: 73b524d5cbe0ff6160ef9f59354912aa48c38e16875677388be20a9ab3559035
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-models-readme--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-readme--SpecDoc:spec-12.md
+hash_c: e93d0f6f68e534212a77f50ebe1c18578997d8991c3c128dd64e96c0f6a2285f
+hash_d: ce72f1dcac2e299a03b0d6a9f0ac3e9b07af571d073f5e5fd01998e71b8ec942
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

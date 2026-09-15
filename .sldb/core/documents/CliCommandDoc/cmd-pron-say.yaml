@@ -1,0 +1,14 @@
+name: cmd-pron-say
+path: knowledge/commands/cmd-pron-say.md
+hash_c: 74de009766f73fa40ef776bcaa3996dacaa4341dff084cc6dc14cb3558326325
+hash_d: 9b6d612070aedbd314b2ebf869719c36dad38f021fecb21aca9f15a982818c6a
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

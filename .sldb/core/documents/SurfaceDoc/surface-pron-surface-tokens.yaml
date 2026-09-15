@@ -1,0 +1,14 @@
+name: surface-pron-surface-tokens
+path: knowledge/surfaces/surface-pron-surface-tokens.md
+hash_c: 75a8c6af979857099607ee6af882c52e6eaa6cd6aeb17960ef57e5c6771df5a4
+hash_d: 47378439b942d83fae57508fa90602fe116166bd802362c9fc0b601c7001bdd2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

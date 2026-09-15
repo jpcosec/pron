@@ -1,0 +1,93 @@
+doc_name: next
+sections:
+- path: next
+  title: Next
+  breadcrumbs:
+  - Next
+  about:
+  - Next
+  - next
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: next
+  level: 1
+  line_start: 1
+  line_end: 17
+- path: next/question
+  title: Question
+  breadcrumbs:
+  - Next
+  - Question
+  about:
+  - Next
+  - next
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: next/answer
+  title: Answer
+  breadcrumbs:
+  - Next
+  - Answer
+  about:
+  - Next
+  - next
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 14
+- path: next/sources
+  title: Sources
+  breadcrumbs:
+  - Next
+  - Sources
+  about:
+  - Next
+  - next
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 15
+  line_end: 17
+hash_c: e9ccf9cdf7e4df77f3fe750b0c5cc978e8e72f2d2134a9ed0b64efdd268cc277
+sections_version: '2'

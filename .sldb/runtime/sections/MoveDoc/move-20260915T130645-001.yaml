@@ -1,0 +1,141 @@
+doc_name: move-20260915T130645-001
+sections:
+- path: id-move-20260915t130645-001-at-2026-09-15t13-06-45-00-00-speaker-outcome-unico-state-before-libre-state-after-libre-hash-before-80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e-hash-after-80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e-refers-to
+  title: 'id: move-20260915T130645-001
+
+    at: ''2026-09-15T13:06:45+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    hash_after: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    refers_to: '''''
+  breadcrumbs:
+  - 'id: move-20260915T130645-001
+
+    at: ''2026-09-15T13:06:45+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    hash_after: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    refers_to: '''''
+  about:
+  - 'id: move-20260915T130645-001
+
+    at: ''2026-09-15T13:06:45+00:00''
+
+    speaker: ''''
+
+    outcome: unico
+
+    state_before: libre
+
+    state_after: libre
+
+    hash_before: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    hash_after: 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+
+    refers_to: '''''
+  - id move 20260915t130645 001 at 2026 09 15t13 06 45 00 00 speaker outcome unico
+    state before libre state after libre hash before 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e
+    hash after 80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e refers
+    to
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: id-move-20260915t130645-001-at-2026-09-15t13-06-45-00-00-speaker-outcome-unico-state-before-libre-state-after-libre-hash-before-80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e-hash-after-80f37f33e242db98a4199bb09c57dbd8c892e88e0ebaa2773680b221d048d45e-refers-to
+  level: 2
+  line_start: 2
+  line_end: 12
+- path: move-20260915t130645-001
+  title: move-20260915T130645-001
+  breadcrumbs:
+  - move-20260915T130645-001
+  about:
+  - move-20260915T130645-001
+  - move 20260915t130645 001
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: move-20260915t130645-001
+  level: 1
+  line_start: 13
+  line_end: 33
+- path: move-20260915t130645-001/sentence
+  title: Sentence
+  breadcrumbs:
+  - move-20260915T130645-001
+  - Sentence
+  about:
+  - move-20260915T130645-001
+  - move 20260915t130645 001
+  - Sentence
+  - sentence
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: sentence
+  level: 2
+  line_start: 15
+  line_end: 18
+- path: move-20260915t130645-001/record
+  title: Record
+  breadcrumbs:
+  - move-20260915T130645-001
+  - Record
+  about:
+  - move-20260915T130645-001
+  - move 20260915t130645 001
+  - Record
+  - record
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.pron.move
+  - workspace.knowledge.ledger
+  slug: record
+  level: 2
+  line_start: 19
+  line_end: 33
+hash_c: 8e624ae81aae4afaff7e6310b50d36e807a971cefc3eab67943f8fd63b4ddbed
+sections_version: '2'

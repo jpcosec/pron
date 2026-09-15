@@ -1,0 +1,133 @@
+doc_name: surface-pron-cli-repl
+sections:
+- path: cli-repl
+  title: cli.repl
+  breadcrumbs:
+  - cli.repl
+  about:
+  - cli.repl
+  - cli repl
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: cli-repl
+  level: 1
+  line_start: 14
+  line_end: 26
+- path: cli-repl/purpose
+  title: Purpose
+  breadcrumbs:
+  - cli.repl
+  - Purpose
+  about:
+  - cli.repl
+  - cli repl
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: cli-repl/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - cli.repl
+  - How It Works
+  about:
+  - cli.repl
+  - cli repl
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 23
+- path: cli-repl/commands
+  title: Commands
+  breadcrumbs:
+  - cli.repl
+  - Commands
+  about:
+  - cli.repl
+  - cli repl
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 24
+  line_end: 26
+hash_c: ad773b76bd08b65bf3a10fdf1da15d4e1c68941a9a52fb4cd2aba3ba588aeba8
+sections_version: '2'

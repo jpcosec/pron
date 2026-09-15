@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-embedder--SpecDoc:spec-11.md
+hash_c: ab8709d3e483b149174a4184fe4108baf014268488ebd6aceb20f8ff40fd3f41
+hash_d: 1386868cb5b76b80b9f7730a50f984080236818e81f46dc037d3db0924d10597
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,14 @@
+name: cmd-pron-refresh
+path: knowledge/commands/cmd-pron-refresh.md
+hash_c: 2c1c31fbb4b799e75b5aa0280f3a02389204e07bdaa0c5f079c076985580b99c
+hash_d: 6b4d4548a06dd3481afd976f661af52fec8640f65214f244ebb2e564703d34e6
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/09-una-conversacion.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: 0c96035149c7399e5a98b3b9b53ccbf79efa8d7e122207dd1fafe8a9330729bd

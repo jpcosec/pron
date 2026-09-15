@@ -1,0 +1,14 @@
+name: surface-pron-models-projection
+path: knowledge/surfaces/surface-pron-models-projection.md
+hash_c: 25e420745a0cc8868f734f6313b9cd9289a55f99ac6c10d56b0f7fbbf72c8496
+hash_d: b32ff82d54e79abe7f31f9bf3e97135803b9d363303d7e4b04baac83e7526e00
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

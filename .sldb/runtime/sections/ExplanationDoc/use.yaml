@@ -1,0 +1,93 @@
+doc_name: use
+sections:
+- path: usar
+  title: Usar
+  breadcrumbs:
+  - Usar
+  about:
+  - Usar
+  - usar
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: usar
+  level: 1
+  line_start: 1
+  line_end: 36
+- path: usar/question
+  title: Question
+  breadcrumbs:
+  - Usar
+  - Question
+  about:
+  - Usar
+  - usar
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: usar/answer
+  title: Answer
+  breadcrumbs:
+  - Usar
+  - Answer
+  about:
+  - Usar
+  - usar
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 26
+- path: usar/sources
+  title: Sources
+  breadcrumbs:
+  - Usar
+  - Sources
+  about:
+  - Usar
+  - usar
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 27
+  line_end: 36
+hash_c: 1dc5b0d006cc646ee420f73430e938825ab443e177a4dd2cb1b0da37e50f74ab
+sections_version: '2'

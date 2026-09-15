@@ -1,0 +1,129 @@
+doc_name: surface-pron-store
+sections:
+- path: store
+  title: store
+  breadcrumbs:
+  - store
+  about:
+  - store
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: store
+  level: 1
+  line_start: 14
+  line_end: 37
+- path: store/purpose
+  title: Purpose
+  breadcrumbs:
+  - store
+  - Purpose
+  about:
+  - store
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: store/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - store
+  - How It Works
+  about:
+  - store
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 33
+- path: store/commands
+  title: Commands
+  breadcrumbs:
+  - store
+  - Commands
+  about:
+  - store
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 34
+  line_end: 37
+hash_c: 6e431043fb90a07f25615504b67c5b45fcb9d5da4e830dacd7a7e4cd74c46f43
+sections_version: '2'

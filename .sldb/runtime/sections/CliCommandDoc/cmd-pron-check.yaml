@@ -1,0 +1,193 @@
+doc_name: cmd-pron-check
+sections:
+- path: check
+  title: check
+  breadcrumbs:
+  - check
+  about:
+  - check
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: check
+  level: 1
+  line_start: 15
+  line_end: 36
+- path: check/synopsis
+  title: Synopsis
+  breadcrumbs:
+  - check
+  - Synopsis
+  about:
+  - check
+  - Synopsis
+  - synopsis
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: synopsis
+  level: 2
+  line_start: 17
+  line_end: 20
+- path: check/purpose
+  title: Purpose
+  breadcrumbs:
+  - check
+  - Purpose
+  about:
+  - check
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: purpose
+  level: 2
+  line_start: 21
+  line_end: 24
+- path: check/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - check
+  - How It Works
+  about:
+  - check
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: how-it-works
+  level: 2
+  line_start: 25
+  line_end: 28
+- path: check/arguments
+  title: Arguments
+  breadcrumbs:
+  - check
+  - Arguments
+  about:
+  - check
+  - Arguments
+  - arguments
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: arguments
+  level: 2
+  line_start: 29
+  line_end: 33
+- path: check/usage
+  title: Usage
+  breadcrumbs:
+  - check
+  - Usage
+  about:
+  - check
+  - Usage
+  - usage
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: usage
+  level: 2
+  line_start: 34
+  line_end: 36
+hash_c: e59cb32b0f911c5f6bee9a3c6293a54cc22080d28e4ad7d028d61a5b9af96d3e
+sections_version: '2'

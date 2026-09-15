@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/pron-kb.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: 59b52f4d5fdb2161fca5bd314ce289e27b3c8f91acc5ba7e6154c7ad02f1c1e0

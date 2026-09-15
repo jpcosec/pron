@@ -1,0 +1,93 @@
+doc_name: dependencies
+sections:
+- path: dependencias
+  title: Dependencias
+  breadcrumbs:
+  - Dependencias
+  about:
+  - Dependencias
+  - dependencias
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: dependencias
+  level: 1
+  line_start: 1
+  line_end: 12
+- path: dependencias/question
+  title: Question
+  breadcrumbs:
+  - Dependencias
+  - Question
+  about:
+  - Dependencias
+  - dependencias
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: dependencias/answer
+  title: Answer
+  breadcrumbs:
+  - Dependencias
+  - Answer
+  about:
+  - Dependencias
+  - dependencias
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 11
+- path: dependencias/sources
+  title: Sources
+  breadcrumbs:
+  - Dependencias
+  - Sources
+  about:
+  - Dependencias
+  - dependencias
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 12
+  line_end: 12
+hash_c: 88ab0ad4d903b87970104291ce1ec586393f8454c80b507c2da6b678eef5804e
+sections_version: '2'

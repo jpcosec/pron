@@ -1,0 +1,162 @@
+doc_name: spec-07
+sections:
+- path: 07-ledger
+  title: 07 · Ledger
+  breadcrumbs:
+  - 07 · Ledger
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 07-ledger
+  level: 1
+  line_start: 1
+  line_end: 62
+- path: 07-ledger/qu-se-registra
+  title: Qué se registra
+  breadcrumbs:
+  - 07 · Ledger
+  - Qué se registra
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - Qué se registra
+  - qu se registra
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: qu-se-registra
+  level: 2
+  line_start: 3
+  line_end: 20
+- path: 07-ledger/frescura-tres-huellas-no-una
+  title: 'Frescura: tres huellas, no una'
+  breadcrumbs:
+  - 07 · Ledger
+  - 'Frescura: tres huellas, no una'
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - 'Frescura: tres huellas, no una'
+  - frescura tres huellas no una
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: frescura-tres-huellas-no-una
+  level: 2
+  line_start: 21
+  line_end: 34
+- path: 07-ledger/orden-dentro-de-un-turno
+  title: Orden dentro de un turno
+  breadcrumbs:
+  - 07 · Ledger
+  - Orden dentro de un turno
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - Orden dentro de un turno
+  - orden dentro de un turno
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: orden-dentro-de-un-turno
+  level: 2
+  line_start: 35
+  line_end: 44
+- path: 07-ledger/c-mo-se-contesta-why
+  title: Cómo se contesta "why?"
+  breadcrumbs:
+  - 07 · Ledger
+  - Cómo se contesta "why?"
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - Cómo se contesta "why?"
+  - c mo se contesta why
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: c-mo-se-contesta-why
+  level: 2
+  line_start: 45
+  line_end: 53
+- path: 07-ledger/provenance-de-lo-escrito
+  title: Provenance de lo escrito
+  breadcrumbs:
+  - 07 · Ledger
+  - Provenance de lo escrito
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - Provenance de lo escrito
+  - provenance de lo escrito
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: provenance-de-lo-escrito
+  level: 2
+  line_start: 54
+  line_end: 57
+- path: 07-ledger/invariantes
+  title: Invariantes
+  breadcrumbs:
+  - 07 · Ledger
+  - Invariantes
+  about:
+  - 07 · Ledger
+  - 07 ledger
+  - Invariantes
+  - invariantes
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: invariantes
+  level: 2
+  line_start: 58
+  line_end: 62
+hash_c: b26a242ee8e1ac5d6ef66f7e6607dc934384fa9e0c908678687f96869cf6db5c
+sections_version: '2'

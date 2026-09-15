@@ -1,0 +1,8 @@
+model: ReadmeDoc
+path: knowledge/readme.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.readme
+- workspace.knowledge
+hash_c: 0e22d28a9aa61038ebe21392ebca5e8b677e3383e23472b1c401ff3e82ed308f

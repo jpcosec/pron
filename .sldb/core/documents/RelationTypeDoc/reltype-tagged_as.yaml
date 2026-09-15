@@ -1,0 +1,9 @@
+name: reltype-tagged_as
+path: kgdb/relation_types/tagged_as.md
+hash_c: c387f850d87e22f4c341fbb021373ea836a8722f48bb882140f959771e0a50fb
+hash_d: 79e628547a7e90b85324bc73b6ccfa8ae3c3bd5ccbb2fd5877b2c9a01788364d
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

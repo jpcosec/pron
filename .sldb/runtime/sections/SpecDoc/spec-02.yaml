@@ -1,0 +1,208 @@
+doc_name: spec-02
+sections:
+- path: 02-sustantivos
+  title: 02 · Sustantivos
+  breadcrumbs:
+  - 02 · Sustantivos
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 02-sustantivos
+  level: 1
+  line_start: 1
+  line_end: 66
+- path: 02-sustantivos/la-regla
+  title: La regla
+  breadcrumbs:
+  - 02 · Sustantivos
+  - La regla
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - La regla
+  - la regla
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: la-regla
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: 02-sustantivos/de-la-frase-a-la-direcci-n
+  title: De la frase a la dirección
+  breadcrumbs:
+  - 02 · Sustantivos
+  - De la frase a la dirección
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - De la frase a la dirección
+  - de la frase a la direcci n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: de-la-frase-a-la-direcci-n
+  level: 2
+  line_start: 7
+  line_end: 19
+- path: 02-sustantivos/el-determinante-decide-la-cardinalidad
+  title: El determinante decide la cardinalidad
+  breadcrumbs:
+  - 02 · Sustantivos
+  - El determinante decide la cardinalidad
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - El determinante decide la cardinalidad
+  - el determinante decide la cardinalidad
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: el-determinante-decide-la-cardinalidad
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: 02-sustantivos/lo-que-sldb-devuelve-y-pron-muestra
+  title: Lo que sldb devuelve y pron muestra
+  breadcrumbs:
+  - 02 · Sustantivos
+  - Lo que sldb devuelve y pron muestra
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - Lo que sldb devuelve y pron muestra
+  - lo que sldb devuelve y pron muestra
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: lo-que-sldb-devuelve-y-pron-muestra
+  level: 2
+  line_start: 27
+  line_end: 30
+- path: 02-sustantivos/t-rmino-nombre-propio-literal
+  title: Término, nombre propio, literal
+  breadcrumbs:
+  - 02 · Sustantivos
+  - Término, nombre propio, literal
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - Término, nombre propio, literal
+  - t rmino nombre propio literal
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: t-rmino-nombre-propio-literal
+  level: 2
+  line_start: 31
+  line_end: 41
+- path: 02-sustantivos/un-alcance-por-store
+  title: Un alcance por store
+  breadcrumbs:
+  - 02 · Sustantivos
+  - Un alcance por store
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - Un alcance por store
+  - un alcance por store
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: un-alcance-por-store
+  level: 2
+  line_start: 42
+  line_end: 45
+- path: 02-sustantivos/dos-predicados-dos-consultas-una-intersecci-n
+  title: Dos predicados, dos consultas, una intersección
+  breadcrumbs:
+  - 02 · Sustantivos
+  - Dos predicados, dos consultas, una intersección
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - Dos predicados, dos consultas, una intersección
+  - dos predicados dos consultas una intersecci n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: dos-predicados-dos-consultas-una-intersecci-n
+  level: 2
+  line_start: 46
+  line_end: 61
+- path: 02-sustantivos/invariantes
+  title: Invariantes
+  breadcrumbs:
+  - 02 · Sustantivos
+  - Invariantes
+  about:
+  - 02 · Sustantivos
+  - 02 sustantivos
+  - Invariantes
+  - invariantes
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: invariantes
+  level: 2
+  line_start: 62
+  line_end: 66
+hash_c: 9be1e9e07259d29af1ecc7a9631fa6d8a7194bbfe6a2c73b7e3b687281c65985
+sections_version: '2'

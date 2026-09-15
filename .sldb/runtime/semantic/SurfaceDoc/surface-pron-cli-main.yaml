@@ -1,0 +1,13 @@
+model: SurfaceDoc
+path: knowledge/surfaces/surface-pron-cli-main.md
+tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces
+hash_c: ebc5661825e3b7b27cf8fc407a21295a06750cf400f01f80314511c01c0503f1

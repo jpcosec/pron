@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world--SpecDoc:spec-01.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: fea0980ea1b6ef6213a03793d01382a46811d350d1f11f0f7db0bf2c216f47a4

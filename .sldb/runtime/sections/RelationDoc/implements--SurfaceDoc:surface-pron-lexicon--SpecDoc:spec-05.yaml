@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+sections:
+- path: source-id-surfacedoc-surface-pron-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron lexicon target id specdoc spec 05 relation type
+    implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05
+  title: implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  about:
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  - implements surfacedoc surface pron lexicon specdoc spec 05
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-lexicon-specdoc-spec-05/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-lexicon--SpecDoc:spec-05
+  - implements surfacedoc surface pron lexicon specdoc spec 05
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: c66b5f7a0a760d10315f0615d11763659c53768c148716c99a3d435b66a9b6c3
+sections_version: '2'
