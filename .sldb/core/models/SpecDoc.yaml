@@ -3,7 +3,7 @@ model_ref: pron.models:SpecDoc
 path: src/pron/models/spec.py
 documents_index: .sldb/core/documents/SpecDoc.yaml
 sections_index: .sldb/runtime/sections/SpecDoc.yaml
-hash_b: 7507116e55eed5a57eb78b6195d4307ad627c00ded1d45c6f8659ec872bfba90
+hash_b: 369242acb2e7f14011f708d57dd793fb6732765c22a562cfd834a20e0a3a002b
 documents_count: 14
 version: 1
 canonical: false

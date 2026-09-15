@@ -19,7 +19,7 @@ sections:
   slug: 12-pron-para-un-runtime-externo
   level: 1
   line_start: 1
-  line_end: 154
+  line_end: 178
 - path: 12-pron-para-un-runtime-externo/1-dos-formas-de-hablar-con-un-mundo
   title: 1. Dos formas de hablar con un mundo
   breadcrumbs:
@@ -134,7 +134,30 @@ sections:
   slug: 5-el-mundo-y-el-grafo
   level: 2
   line_start: 88
-  line_end: 127
+  line_end: 129
+- path: 12-pron-para-un-runtime-externo/5b-el-corpus-indexado
+  title: 5b. El corpus indexado
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 5b. El corpus indexado
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 5b. El corpus indexado
+  - 5b el corpus indexado
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 5b-el-corpus-indexado
+  level: 2
+  line_start: 130
+  line_end: 151
 - path: 12-pron-para-un-runtime-externo/6-permisos-lo-que-pron-decide-y-lo-que-no
   title: '6. Permisos: lo que pron decide y lo que no'
   breadcrumbs:
@@ -156,8 +179,8 @@ sections:
   - workspace.source.spec
   slug: 6-permisos-lo-que-pron-decide-y-lo-que-no
   level: 2
-  line_start: 128
-  line_end: 135
+  line_start: 152
+  line_end: 159
 - path: 12-pron-para-un-runtime-externo/7-el-socket
   title: 7. El socket
   breadcrumbs:
@@ -179,8 +202,8 @@ sections:
   - workspace.source.spec
   slug: 7-el-socket
   level: 2
-  line_start: 136
-  line_end: 143
+  line_start: 160
+  line_end: 167
 - path: 12-pron-para-un-runtime-externo/8-plantilla-de-mundo
   title: 8. Plantilla de mundo
   breadcrumbs:
@@ -202,8 +225,8 @@ sections:
   - workspace.source.spec
   slug: 8-plantilla-de-mundo
   level: 2
-  line_start: 144
-  line_end: 147
+  line_start: 168
+  line_end: 171
 - path: 12-pron-para-un-runtime-externo/9-qu-es-estable
   title: 9. Qué es estable
   breadcrumbs:
@@ -225,7 +248,7 @@ sections:
   - workspace.source.spec
   slug: 9-qu-es-estable
   level: 2
-  line_start: 148
-  line_end: 154
-hash_c: a791c6cc49a970d3b323a12faa59779b74fd94d3173226317fbeda8b43e02f63
+  line_start: 172
+  line_end: 178
+hash_c: d3e8f23c349c9522695a0c5178aa3a90ff1578f79504088c2a861564c7effb8d
 sections_version: '2'
