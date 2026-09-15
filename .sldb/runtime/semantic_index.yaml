@@ -1113,17 +1113,6 @@ documents:
     - system:pron
     - type.knowledge.surface
     - workspace.knowledge.surfaces
-  surface-pron-surface-interpret:
-    model: SurfaceDoc
-    path: knowledge/surfaces/surface-pron-surface-interpret.md
-    tags:
-    - domain:system_architecture
-    - entity:module
-    - impl:here
-    - kind:software
-    - system:pron
-    - type.knowledge.surface
-    - workspace.knowledge.surfaces
   surface-pron-cli-main:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-cli-main.md
@@ -1325,6 +1314,17 @@ documents:
   surface-pron-refs:
     model: SurfaceDoc
     path: knowledge/surfaces/surface-pron-refs.md
+    tags:
+    - domain:system_architecture
+    - entity:module
+    - impl:here
+    - kind:software
+    - system:pron
+    - type.knowledge.surface
+    - workspace.knowledge.surfaces
+  surface-pron-surface-interpret:
+    model: SurfaceDoc
+    path: knowledge/surfaces/surface-pron-surface-interpret.md
     tags:
     - domain:system_architecture
     - entity:module

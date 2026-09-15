@@ -23,7 +23,7 @@ from pron.resolve import Resolution, address_to_export_id, resolve
 from pron.response import Response  # noqa: F401 - re-exported: session.Response is the public name
 from pron.sexp import SexpError, read_one, write
 from pron.store import StoreError
-from pron.surface.interpret import Interpretation, Interpreter, Part, examples
+from pron.surface.interpret import Interpretation, Interpreter, Part, construction_names
 from pron.surface.nouns import NounPhrase
 from pron.verbs import Verbs
 from pron.world import World
@@ -194,9 +194,7 @@ class Session:
         if interp.unknown and all(p.kind in ("none", "nominal") for p in interp.parts):
             return self._missing_words(interp, trace, record)
         if any(p.kind == "none" for p in interp.parts):
-            return Response(
-                "I can understand: " + " · ".join(examples()[:6]) + " …", "missing"
-            )
+            return Response(self._cannot_parse_hint(), "missing")
         # the sentence says forms; the forms are what gets resolved and run (spec 13)
         return self._eval(
             said(interp.parts, self),
@@ -266,6 +264,14 @@ class Session:
             text += " Heads up: " + "; ".join(warnings) + "."
         return Response(text, "unico")
 
+    def _cannot_parse_hint(self) -> str:
+        """What to say when nothing calzó: real sentences of *this* world (spec 05 §Calce
+        aproximado P4) when its lexicon has any, never another world's fixture sentences."""
+        real = self.lex.examples()
+        if real:
+            return "I can understand: " + " · ".join(real) + " …"
+        return "I can understand constructions like: " + ", ".join(construction_names())
+
     def _missing_words(
         self, interp: Interpretation, trace: list[str], record: dict[str, Any]
     ) -> Response:
@@ -299,7 +305,7 @@ class Session:
             + (
                 f" Did you mean {' or '.join(offers)}?"
                 if offers
-                else " I can understand: " + " · ".join(examples()[:4]) + " …"
+                else " " + self._cannot_parse_hint()
             ),
             "missing",
         )

@@ -74,8 +74,11 @@ class Interpretation:
         }
 
 
-def examples() -> list[str]:
-    return [c["example"] for c in PATTERNS]
+def construction_names() -> list[str]:
+    """The constructions pron tries, by name (spec 11 §1): world-agnostic, unlike a fixed
+    example sentence, which would leak whatever world wrote patterns.yaml's docstrings into
+    every other world's hint text."""
+    return [c["name"] for c in PATTERNS]
 
 
 class Interpreter:
