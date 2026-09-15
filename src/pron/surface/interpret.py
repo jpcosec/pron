@@ -322,10 +322,11 @@ class Interpreter:
             if fam & src_types:
                 part.subject = interrogated
                 part.object = _proper_phrase(named, tgt_types, nps)
+                part.payload["asked"] = "subject"
             else:
                 part.object = interrogated
                 part.subject = _proper_phrase(named, src_types, nps)
-            part.payload["asked"] = "subject" if fam & src_types else "object"
+                part.payload["asked"] = "object"
         else:
             others = [n for n in nps if not n.interrogated]
             if others:

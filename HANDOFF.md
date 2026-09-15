@@ -69,3 +69,23 @@ Kinesis lo lleva otro agente. Lo que pron le ofrece está en el spec 12 y no cam
 ## Memoria de la sesión
 
 Notas persistentes en `~/.claude/projects/-home-jp-proyectos-legos/memory/`: doctrina de pron, no atoms, inglés por ahora, la regla Merkle de las cachés, y la lección de no borrar todo lo sin trackear.
+
+## Checkpoint 2026-09-14: vocabulario de símbolos Python (iteraciones 1–3)
+
+Estado de la sesión sobre el trabajo previo sin commitear (`source_symbols.py`, `source_graph.py`, merges en `world.py`/`graph.py`/`verbs.py`/`display.py`/`lexicon.py`/`resolve.py`/`session.py`). Workspace sucio preservado; sin reset ni checkout destructivos.
+
+Correcciones sobre lo entregado antes:
+
+- `is_node` no exige grafo: `display.name` consultaba `graph.load()` en mundos sin `.pron/graph.nx.json` (daemon de federación) y reventaba con `FileNotFoundError`; cascada que rompía tres tests de `test_10_federation.py` y el REPL de `test_05`. Ahora `source_symbols.is_node` pasa por `graph.available()`.
+- `source_symbols.name` no deja punto colgante en nodos de módulo (`sample..` → `sample`).
+- Nodos del grafo fuente: `python_symbol`, `python_module` y `python_external` participan como sustantivo de sólo lectura; los endpoints externos se rotulan desde su id (`pydantic.BaseModel`).
+
+Iteración 1 — pruebas de las tres relaciones (`tests/test_01_world.py::test_source_contains_and_imports_answer_through_pron`): `references` inversa (ya cubierta), `contains` (módulo → declaración) e `imports` (importer → importado, con endpoint externo). Cada caso verifica que la respuesta sale de la sesión de Pron y que la traza registra `pron graph ...` / `kgdb edges...`, nunca lectura directa del JSON generado.
+
+Iteración 2 — dirección directa sin parser paralelo: `what python symbols does CommandRecord reference` funciona. Dos piezas: los verbos fuente registran su forma no flexionada (`reference`/`import`/`contain`) como palabras de la misma relación, y `_c_read_relation` reconoce el auxiliar `does/do` sólo para relaciones `source_relation:*` (el agente de un verbo AST es el origen de la arista). La regla auxiliar no toca relaciones de store pasivas: `what reservations does Ana have?` sigue resolviendo como antes. Además `_value_word_suggestions` ya no consulta schema de modelos virtuales (`PythonSymbol` no está registrado en el store).
+
+Iteración 3 — nombres propios exactos: la resolución por substring es último recurso. Nuevo orden en `source_symbols.resolve`: (1) identidad exacta — `ast.name`, `module.name`, id de nodo y su segmento final (`ParserScanner.scan`); (2) substring. Los nombres punteados llegan como un solo token gracias a `_merge_dotted` en `surface/interpret.py` (une `word/unknown` separados por `.` sin espacios; no toca números). La ambigüedad exacta pregunta "Which one?" con candidatos calificados por módulo; `sldb.sldb.selfdoc.command.CommandRecord` resuelve exacto.
+
+Validación de la sesión: `python -m pytest -q tests/` → 121 passed, 0 failed (incluye `test_05...::test_own_knowledge_base_is_derived_from_the_repo`). Interfaz real contra el mundo SLDB tras `pron refresh`: las tres relaciones responden con traza limpia. `sldb selfdoc python-check` → `ok: true`, `kgdb_stale: []`, `written: 0`; `sldb stores check` → PASS.
+
+Pendiente (mismo orden del handoff previo): 4 proyecciones (`ProjectionDoc` explícito para exponer/ocultar `PythonSymbol`, read-only siempre), 5 aliases curados (`AnchorDoc.ref` con `source:<python-node-id>`), 6 federación de símbolos fuente por addressing de store, 7 documentación del spec SLDB al cerrar cada capacidad (`contains/imports/references` son hechos AST, no `RelationDoc`; sin certezas sobre imports dinámicos, star imports, reexports ni shadowing).
