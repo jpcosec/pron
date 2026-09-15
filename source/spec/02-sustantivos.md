@@ -45,7 +45,7 @@ Cuando la proyección nombra más de un store (01 §Un mundo en varios stores), 
 
 ## Dos predicados, dos consultas, una intersección
 
-`--where` acepta un predicado. Una frase con dos restricciones produce dos consultas sobre el mismo alcance y pron se queda con las direcciones que aparecen en ambas. Cruza listas de direcciones; no lee payloads. La traza muestra las dos consultas, los dos conteos y el conteo final:
+`--where` acepta un predicado. Una frase con dos restricciones produce dos consultas sobre el mismo alcance y pron se queda con las direcciones que aparecen en ambas. Cruza listas de direcciones; no lee payloads. La traza muestra las dos consultas, los dos conteos y el conteo final. Un predicado que no parsea es error, no una lista vacía: el turno termina con ese error y nombra el predicado; `""` es un literal válido (`campo = ""` es un campo presente y vacío; un campo ausente no matchea ni `=` ni `!=`).
 
 ```
 find 'st.{Atom+}' --where 'system = "pron"'   → 41
