@@ -35,6 +35,7 @@ class World:
         self.root = Path(root).resolve()
         self.store = Store(self.root, pythonpath)
         self.graph = Graph(self.root)
+        self._hash_mundo_cache: tuple[Any, str] | None = None
 
     # -- declaration -----------------------------------------------------------
 
@@ -81,8 +82,29 @@ class World:
 
     def hash_mundo(self) -> str:
         """Fingerprint of what the lexicon and the graph depend on: every model but the
-        ledger (name, version, hash_b, schema), the predicates, and the linked stores."""
+        ledger (name, version, hash_b, schema), the predicates, and the linked stores.
+
+        Memoized by (local hash_a, every linked store's own hash_a): hash_a is already the
+        store's Merkle root over every model's hash_b, so it alone says whether anything in
+        `idx.models` could have moved since the last call — a turn that reads this several
+        times (spec 11 §5, §_move, §_refresh) recomputes the expensive part (per-model
+        schema) once, not once per read (PLAN 15 M4)."""
         idx = self.store.store_index()
+        key = (idx.hash_a, tuple(sorted((s.name, self._linked_hash_a(s.name)) for s in idx.stores)))
+        cached = self._hash_mundo_cache
+        if cached is not None and cached[0] == key:
+            return cached[1]
+        value = self._hash_mundo_uncached(idx)
+        self._hash_mundo_cache = (key, value)
+        return value
+
+    def _linked_hash_a(self, name: str) -> str | None:
+        try:
+            return self.store.store_index(name).hash_a
+        except Exception:  # noqa: BLE001 - a missing linked store counts as absent
+            return None
+
+    def _hash_mundo_uncached(self, idx: Any) -> str:
         parts: list[Any] = []
         for m in sorted(idx.models, key=lambda m: m.name):
             if m.name == LEDGER_MODEL:
@@ -221,7 +243,7 @@ class World:
                 )
             )
         snapshot, report = build_typed_snapshot(
-            self.store.sp, self.store.pythonpath, exclude_tags
+            self.store.sp, self.store.pythonpath, exclude_tags, previous=self._previous_snapshot()
         )
         g = nx.MultiDiGraph()
         for node in snapshot.nodes:
@@ -231,6 +253,28 @@ class World:
         self.graph.reload()
         self.store.invalidate()
         return report
+
+    def _previous_snapshot(self):
+        """`.pron/graph.nx.json` (kgdb's own node-link JSON, node `schema` holds the full
+        KnowledgeNode dump — see `kgdb.graph.utils.add_knowledge_node`) read back as the
+        GraphSnapshot `build_typed_snapshot`'s incremental path wants as `previous` (PLAN 15
+        M4). Anything wrong with the file (missing, unparseable, foreign shape) is simply no
+        previous: the next refresh falls back to a full rebuild, same as today."""
+        path = self.root / GRAPH_RELPATH
+        if not path.exists():
+            return None
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            from kgdb.contracts import GraphSnapshot, KnowledgeNode
+
+            nodes = [
+                KnowledgeNode.model_validate(n["schema"])
+                for n in data.get("nodes", [])
+                if n.get("schema")
+            ]
+            return GraphSnapshot(version="1.0", nodes=nodes, metadata=data.get("graph") or {})
+        except Exception:  # noqa: BLE001 - a previous snapshot is an optimization, never load-bearing
+            return None
 
 
 def _rebind(projection: dict[str, Any], home: str | None) -> dict[str, Any]:
