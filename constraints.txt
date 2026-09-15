@@ -2,10 +2,13 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
-# Verified against (suites): sldb 9ba886d — 441 passed, 3 failures in sldb's own
-# style/docs tests (test_clean_code_rules knowledge_surface, test_cli_v2 faq,
-# test_store_readme roundtrip); kgdb 1247139 — 41 passed.
-# pron's own floor at these pins: 98 passed.
+# Verified against (suites), 2026-09-15, pron ae2d0a3 + test fix:
+#   - kgdb 846f331; sldb working tree (b0f196a + uncommitted changes of another session): 129 passed.
+#   - kgdb 846f331; sldb b0f196a clean: 128 passed, 1 failed
+#     (test_13_model_editing promote: `models validate --promote --format json` prints non-JSON
+#     without the uncommitted models_validate.py/models_validate_utils.py fix). Pin sldb to the
+#     commit that lands that fix.
+# Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
-sldb 9ba886d fix: declare linkify-it-py dependency (markdown-it linkify needs it explicitly)
-kgdb 1247139 typed relations: RelationTypeDoc/RelationDoc owned by kgdb, `kgdb init`, `kgdb ingest --store`, validation at assembly, MultiDiGraph
+sldb b0f196a fix(cli): replace_rhs_expression usa offsets en bytes (ast) para cortar líneas utf-8  # needs the pending models_validate fix, see above
+kgdb 846f331 typed ingest: los alias con ref escrito como forma de pron (spec 13) nombran lo mismo

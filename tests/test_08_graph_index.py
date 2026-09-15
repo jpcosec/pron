@@ -59,15 +59,23 @@ def test_descendants_walk_the_dag_breadth_first(world: World):
     assert tag_id("type") not in all_under_type
 
 
+# Tags every document of a store carries (sldb's StructuredNLDoc can declare representation and
+# source axes for all models): shared by everything, so a caller skips them by prefix.
+STORE_WIDE = ("representation.", "source.")
+
+
 def test_documents_tagged_alike_are_neighbors(world: World):
     g = world.graph
     table3 = doc_id("Table:table-3")
-    siblings = g.neighbors_via(table3, "tagged_as")
+    siblings = g.neighbors_via(table3, "tagged_as", exclude_prefixes=STORE_WIDE)
     assert table3 not in siblings
     assert siblings == sorted(doc_id(f"Table:table-{n}") for n in (5, 12, 14, 20))
     assert doc_id("Client:client-ana-perez") not in siblings  # a different leaf tag
     # the shared target can be excluded by prefix without pron knowing what the tag means
-    assert g.neighbors_via(table3, "tagged_as", exclude_prefixes=("type.",)) == []
+    assert (
+        g.neighbors_via(table3, "tagged_as", exclude_prefixes=("type.", *STORE_WIDE))
+        == []
+    )
     # the model node and the sections carry the same tag; they come back only on request
     everything = g.neighbors_via(table3, "tagged_as", same_kind=False)
     assert "sldb://model/Table" in everything and set(siblings) < set(everything)
