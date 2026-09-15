@@ -6,10 +6,10 @@ Una **forma** es una s-expression, y es el lenguaje de pron: todo lo que pron en
 
 ```
 oración ──superficie (06): solo sintaxis──▶ formas ──evaluación──▶ respuesta · escrituras · MoveDoc
-                              runtime ──▶ formas ──evaluación──▶ respuesta · escrituras · MoveDoc
+             gesto de graph_ui, runtime ──▶ formas ──evaluación──▶ respuesta · escrituras · MoveDoc
 ```
 
-Un runtime que ya sabe qué documentos quiere (un editor que tiene los dos extremos de un arrastre) escribe las formas directamente y no habla. Las dos entradas terminan en la misma evaluación: permisos de la proyección (01), verificación de verbos (03), verbos de acción del kernel (04), prevalidación del movimiento entero y segunda lectura de `hash_mundo` (11 §5, §7), refresh, `MoveDoc` (07) y `undo`.
+Las superficies están al mismo nivel sobre las formas: el SHRDLU (06) proyecta lenguaje; `graph_ui`, que ya sabe qué documentos quiere (tiene los dos extremos de un arrastre), escribe las formas directamente y proyecta visualizaciones; un runtime como kinesis hace lo mismo sin dibujar. Ninguna habla a través de otra. Las dos entradas terminan en la misma evaluación: permisos de la proyección (01), verificación de verbos (03), verbos de acción del kernel (04), prevalidación del movimiento entero y segunda lectura de `hash_mundo` (11 §5, §7), refresh, `MoveDoc` (07) y `undo`.
 
 ## Sustantivos
 

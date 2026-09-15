@@ -41,7 +41,7 @@ Dos consecuencias: si cualquier parte es ambigua o missing, la oración entera l
 
 Y devuelve la respuesta en natural, con la traza disponible: las direcciones exactas, el verbo, las aristas o la escritura. La traza es corta porque cada paso es una llamada a sldb o kgdb, no un razonamiento.
 
-Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración; un runtime que ya tiene las direcciones puede saltarse la superficie y evaluar formas (13). Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
+Quien habla puede ser una persona, un LLM operador u otro producto. Para todos la interfaz es la misma oración. Esta superficie es una de las que hay sobre las formas (13), no la entrada obligada: `graph_ui` es otra superficie al mismo nivel, que produce formas desde gestos y proyecta visualizaciones en vez de lenguaje, y no pasa por esta. Un LLM operador es un hablante que sabe su mundo por el léxico listado (05), no por prompt.
 
 ## Las tres salidas del grounding
 

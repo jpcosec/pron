@@ -36,8 +36,8 @@ documents:
   - workspace.source.spec
 - name: spec-06
   path: source/spec/06-superficie-y-dialogo.md
-  hash_c: 70214b82af8c1d144796542c2fe8740685f73aab4b06f0862cf1670263e9545b
-  hash_d: b8a71a5ebf7de588c476d971ab046db31f91bd3c4b4161a30f1155b16b4046bc
+  hash_c: ab10a9a33833a4a0725643f29d50b692dedc9593eb4be1a33106e1dac7f60b67
+  hash_d: f3f8f498c029d161cdbd9f1ea725afb6751a93628fcf65b33bc2a75c704a2e95
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -50,8 +50,8 @@ documents:
   - workspace.source.spec
 - name: spec-08
   path: source/spec/08-prerequisitos-y-orden.md
-  hash_c: f011473714202dedf797acc3c3769b9c2c7acf692ae6526d7c8302aba62653f4
-  hash_d: e3998d059ee4454af816b8d3154adf72de8ad7ce29886161ab81d87d39032ab4
+  hash_c: 1a5bfc25c9280f8d34a96522cb0d3eabfd7c5b3ef205efc00b65ff07ef3c5dc6
+  hash_d: f25b99b4633062da4b70bb451778938116c202abf7e44af32631ec40710c09b7
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -71,8 +71,8 @@ documents:
   - workspace.source.spec
 - name: spec-10
   path: source/spec/10-el-shrdlu-sobre-el-modelo.md
-  hash_c: eb616a79609ba64517331d8a2915678fffb78faa5504259dc3ed6c631c2238c1
-  hash_d: 83c3c1bdc41478c76893b96050d6f5d000acad9210aec688a7fb2389c5ce1513
+  hash_c: d6176d425bf8c43798df138a204c3b33a2e77031970c579056129ef238b6a707
+  hash_d: a2021d65b2b60cff4dc1d456b6c37850662bedfc91fe6056225d1f6c7f6b9d60
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
@@ -85,15 +85,15 @@ documents:
   - workspace.source.spec
 - name: spec-12
   path: source/spec/12-pron-para-un-runtime.md
-  hash_c: c62f7a742d02327b8187c099312fff8d628c8ce442ac4a6e7b417555932e90f2
-  hash_d: f21a426eef22d2384303ae0d20188b27d2168431862b8119bcba312cfaa416f6
+  hash_c: a791c6cc49a970d3b323a12faa59779b74fd94d3173226317fbeda8b43e02f63
+  hash_d: c7513e3d933310d4ad10bfd2a2a548db3fd87820c8789a18663eb4699626ef22
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
 - name: spec-13
   path: source/spec/13-formas.md
-  hash_c: e2ac5a3be4551ffa3113f90ebdbcf6e44b4b3b89b60c5a4eae964cc1eadc0a96
-  hash_d: b3db4ac94ba365226cdfba89fffe3f39f04c680b33eda3361331d935493167f6
+  hash_c: 11812d0319ec03e60aadf11f45d5ea181f940c551bbbc230cc647247bb16dfd2
+  hash_d: ed37227771300d2adbe02a673aadcc71e3e5f4ac3815fc238834d60919875e54
   semantic_tags:
   - type.knowledge.spec
   - workspace.source.spec
