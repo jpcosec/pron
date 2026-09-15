@@ -2,6 +2,9 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
+# Verified against (suites), 2026-09-15, pron a2d8f53 (merkle capa 8: light refresh after an own write):
+#   - kgdb 5effed5; sldb 8699177 (main, merkle capa 8): 129 passed.
+#
 # Verified against (suites), 2026-09-15, pron 742cc29:
 #   - kgdb 5effed5; sldb 00b2dd4 (main, merge 'merkle': per-document shards for semantic,
 #     sections and documents index; a write touches only its own path): 129 passed.
@@ -21,5 +24,5 @@
 #     commit that lands that fix.
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
-sldb 00b2dd4 merge 'merkle' (PLAN 15 capas 5-7): escrituras por camino en sldb main
+sldb 8699177 merkle capa 8: tras una escritura, ningún consumidor recorre cada hoja
 kgdb 5effed5 merkle capa 1: build_typed_snapshot incremental con previous=
