@@ -80,6 +80,30 @@ models:
   semantics:
   - type.knowledge.surface
   - workspace.knowledge.surfaces
+- name: ExplanationDoc
+  model_ref: pron.models:ExplanationDoc
+  path: src/pron/models/explanation.py
+  models_index: .sldb/core/models/ExplanationDoc.yaml
+  version: 1
+  canonical: false
+  family: knowledge
+  semantics:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+- name: ReadmeDoc
+  model_ref: pron.models:ReadmeDoc
+  path: src/pron/models/readme.py
+  models_index: .sldb/core/models/ReadmeDoc.yaml
+  version: 1
+  canonical: false
+  family: knowledge
+  semantics:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.readme
+  - workspace.knowledge
 predicates:
 - name: is_solved_by
   axis: HOW
@@ -140,4 +164,4 @@ predicates:
   axis: WHAT
   description: The anchor (an alias word) names this model, field, relation type or
     document.
-hash_a: 9ce13e71919127baebbcd20d7d6e054ffd9a4596eb71aa0c46e371db6930a00a
+hash_a: 22dc165fdeeef5f86c9fdb06ef4aee893a2a051a257a94b5970ecbb4978fd9e2

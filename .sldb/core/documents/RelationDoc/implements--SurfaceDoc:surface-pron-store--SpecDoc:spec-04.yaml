@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-store--SpecDoc:spec-04.md
+hash_c: 8543abe38201d4914ca5725782dd4ce8ab7458d546e10a384bf4c6133dc66422
+hash_d: 502705501d03fca1ceee5357777c87e48d5999d94da1c1455bfc0ab276fac10b
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-models-explanation--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-explanation--SpecDoc:spec-08.md
+hash_c: 2efa3b31c26ad9d11127c302c45c8bbbb7f2ab987f4855435f8743ae9d0dd740
+hash_d: 08860a6ad157e95738d87201a781cf289020467c7e87c9d728e3ab9a881f0b3e
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

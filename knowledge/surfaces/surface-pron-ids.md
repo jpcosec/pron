@@ -29,6 +29,7 @@ pron splits an id by hand.
 is_local
 split_id
 join_id
+split_relation_doc_id
 model_of
 doc_of
 store_of

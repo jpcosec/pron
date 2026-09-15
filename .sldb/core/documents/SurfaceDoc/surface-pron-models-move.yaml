@@ -1,0 +1,14 @@
+name: surface-pron-models-move
+path: knowledge/surfaces/surface-pron-models-move.md
+hash_c: cb2206ef0ce50d80289d846eb112ba10a1ec739e509ac5fea77205a402e13b33
+hash_d: 92a49c67432e240eb9782e7d32e1a30656aaf8b0963fc53367c3dff27cedbc09
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

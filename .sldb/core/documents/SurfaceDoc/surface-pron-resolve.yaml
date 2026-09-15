@@ -1,0 +1,14 @@
+name: surface-pron-resolve
+path: knowledge/surfaces/surface-pron-resolve.md
+hash_c: fff8f0e6f2108553942d46631aadf8e00357fd0ed31be30fb87f91239e937363
+hash_d: 39c38a3074085fbd68f06b6c62f68a353d15214c138c6262688675d7f8ce60c8
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

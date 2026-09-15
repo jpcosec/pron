@@ -1,0 +1,9 @@
+name: layers
+path: knowledge/explanations/layers.md
+hash_c: db13bf1e04b8695900013193f00d8af174738d9f10f4c2184f989d519ea67f09
+hash_d: a8c4d65b58bd91a733e3dff573ed47da940baa145a4fdea60c0e3a0ac52cfdc2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

@@ -1,0 +1,9 @@
+name: rt-implements
+path: knowledge/relations/types/implements.md
+hash_c: 6e7bbe9d9eabbbb77a32502fc7b53b1844e090baea219bb145ffee971b83f6b8
+hash_d: ee767b1e4b9f303ac269f87720f70ae8ed5a682ceb7e70e62f6835f9f2876bc3
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

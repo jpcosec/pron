@@ -1,0 +1,9 @@
+name: anchor-implements
+path: knowledge/anchors/implements.md
+hash_c: 250fd31e61a6fc3593248e6cef2889063c0edb36622f64dfe2dfdab5d6c8d110
+hash_d: 6f4b708e065c907c50cf5245bb9b692a9b80cb74c481569a723e83157c671385
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors

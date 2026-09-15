@@ -1,0 +1,93 @@
+doc_name: verify-changes
+sections:
+- path: verificar-cambios
+  title: Verificar cambios
+  breadcrumbs:
+  - Verificar cambios
+  about:
+  - Verificar cambios
+  - verificar cambios
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: verificar-cambios
+  level: 1
+  line_start: 1
+  line_end: 25
+- path: verificar-cambios/question
+  title: Question
+  breadcrumbs:
+  - Verificar cambios
+  - Question
+  about:
+  - Verificar cambios
+  - verificar cambios
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: verificar-cambios/answer
+  title: Answer
+  breadcrumbs:
+  - Verificar cambios
+  - Answer
+  about:
+  - Verificar cambios
+  - verificar cambios
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 22
+- path: verificar-cambios/sources
+  title: Sources
+  breadcrumbs:
+  - Verificar cambios
+  - Sources
+  about:
+  - Verificar cambios
+  - verificar cambios
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 23
+  line_end: 25
+hash_c: 279389d8ef92b4569f0011512a9d58c351d523704e49e94ee4d93ebd9da3c4c4
+sections_version: '2'

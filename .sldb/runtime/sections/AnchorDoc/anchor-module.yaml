@@ -1,0 +1,45 @@
+doc_name: anchor-module
+sections:
+- path: module
+  title: module
+  breadcrumbs:
+  - module
+  about:
+  - module
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  slug: module
+  level: 1
+  line_start: 12
+  line_end: 16
+- path: module/motive
+  title: Motive
+  breadcrumbs:
+  - module
+  - Motive
+  about:
+  - module
+  - Motive
+  - motive
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  slug: motive
+  level: 2
+  line_start: 14
+  line_end: 16
+hash_c: 0bac4c84a76172b447a9abcbc26f1725d2541b7cc603195ba9d7ed441fddfee2
+sections_version: '2'

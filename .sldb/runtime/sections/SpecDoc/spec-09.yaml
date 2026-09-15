@@ -1,0 +1,277 @@
+doc_name: spec-09
+sections:
+- path: 09-una-conversaci-n-paso-a-paso
+  title: 09 · Una conversación, paso a paso
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 09-una-conversaci-n-paso-a-paso
+  level: 1
+  line_start: 1
+  line_end: 281
+- path: 09-una-conversaci-n-paso-a-paso/el-mundo
+  title: El mundo
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - El mundo
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - El mundo
+  - el mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: el-mundo
+  level: 2
+  line_start: 5
+  line_end: 25
+- path: 09-una-conversaci-n-paso-a-paso/el-procedimiento-de-comprensi-n
+  title: El procedimiento de comprensión
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - El procedimiento de comprensión
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - El procedimiento de comprensión
+  - el procedimiento de comprensi n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: el-procedimiento-de-comprensi-n
+  level: 2
+  line_start: 26
+  line_end: 51
+- path: 09-una-conversaci-n-paso-a-paso/turno-1-create-a-client-named-ana-rojas-phone-9-5555-1234
+  title: Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 1 · "create a client named Ana Rojas, phone 9 5555 1234"
+  - turno 1 create a client named ana rojas phone 9 5555 1234
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-1-create-a-client-named-ana-rojas-phone-9-5555-1234
+  level: 2
+  line_start: 52
+  line_end: 93
+- path: 09-una-conversaci-n-paso-a-paso/turno-2-book-her-a-table-on-the-patio-for-6-people-on-friday-at-9pm
+  title: Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 2 · "book her a table on the patio for 6 people on Friday at 9pm"
+  - turno 2 book her a table on the patio for 6 people on friday at 9pm
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-2-book-her-a-table-on-the-patio-for-6-people-on-friday-at-9pm
+  level: 2
+  line_start: 94
+  line_end: 105
+- path: 09-una-conversaci-n-paso-a-paso/turno-3-on-the-terrace
+  title: Turno 3 · "on the terrace"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 3 · "on the terrace"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 3 · "on the terrace"
+  - turno 3 on the terrace
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-3-on-the-terrace
+  level: 2
+  line_start: 106
+  line_end: 155
+- path: 09-una-conversaci-n-paso-a-paso/turno-4-what-reservations-does-ana-have-for-friday
+  title: Turno 4 · "what reservations does Ana have for Friday?"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 4 · "what reservations does Ana have for Friday?"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 4 · "what reservations does Ana have for Friday?"
+  - turno 4 what reservations does ana have for friday
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-4-what-reservations-does-ana-have-for-friday
+  level: 2
+  line_start: 156
+  line_end: 173
+- path: 09-una-conversaci-n-paso-a-paso/turno-5-rojas
+  title: Turno 5 · "Rojas"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 5 · "Rojas"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 5 · "Rojas"
+  - turno 5 rojas
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-5-rojas
+  level: 2
+  line_start: 174
+  line_end: 193
+- path: 09-una-conversaci-n-paso-a-paso/turno-6-confirm-it
+  title: Turno 6 · "confirm it"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 6 · "confirm it"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 6 · "confirm it"
+  - turno 6 confirm it
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-6-confirm-it
+  level: 2
+  line_start: 194
+  line_end: 231
+- path: 09-una-conversaci-n-paso-a-paso/turno-7-change-it-to-9-people-and-add-a-note-saying-birthday
+  title: 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - 'Turno 7 · "change it to 9 people and add a note saying: birthday"'
+  - turno 7 change it to 9 people and add a note saying birthday
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-7-change-it-to-9-people-and-add-a-note-saying-birthday
+  level: 2
+  line_start: 232
+  line_end: 252
+- path: 09-una-conversaci-n-paso-a-paso/turno-8-why-did-you-warn-me-about-the-table
+  title: Turno 8 · "why did you warn me about the table?"
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Turno 8 · "why did you warn me about the table?"
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Turno 8 · "why did you warn me about the table?"
+  - turno 8 why did you warn me about the table
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: turno-8-why-did-you-warn-me-about-the-table
+  level: 2
+  line_start: 253
+  line_end: 269
+- path: 09-una-conversaci-n-paso-a-paso/lo-que-esta-conversaci-n-fija
+  title: Lo que esta conversación fija
+  breadcrumbs:
+  - 09 · Una conversación, paso a paso
+  - Lo que esta conversación fija
+  about:
+  - 09 · Una conversación, paso a paso
+  - 09 una conversaci n paso a paso
+  - Lo que esta conversación fija
+  - lo que esta conversaci n fija
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: lo-que-esta-conversaci-n-fija
+  level: 2
+  line_start: 270
+  line_end: 281
+hash_c: 0c96035149c7399e5a98b3b9b53ccbf79efa8d7e122207dd1fafe8a9330729bd
+sections_version: '2'

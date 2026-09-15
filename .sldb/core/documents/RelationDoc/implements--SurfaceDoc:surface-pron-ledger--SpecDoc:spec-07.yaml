@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-ledger--SpecDoc:spec-07.md
+hash_c: 7b2401b0defd8e6dd3a6af06fe9d8f705f6f3df8a3f2e39596ee08715ad7a5b2
+hash_d: 961bbe1e69db7607c5713cd435a026906ae65fc836d1f400be38afa94d273ac1
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

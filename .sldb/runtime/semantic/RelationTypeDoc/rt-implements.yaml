@@ -1,0 +1,8 @@
+model: RelationTypeDoc
+path: knowledge/relations/types/implements.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type
+hash_c: 6e7bbe9d9eabbbb77a32502fc7b53b1844e090baea219bb145ffee971b83f6b8

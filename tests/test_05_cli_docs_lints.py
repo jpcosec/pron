@@ -89,9 +89,12 @@ def test_lints_pass_on_a_declared_world(world: World):
 
 @pytest.fixture(scope="module")
 def own(tmp_path_factory) -> World:
-    """A copy of pron's own knowledge base: the spec chapters, built from scratch."""
+    """A copy of pron's own knowledge base: the spec chapters and the hand-written
+    explanations the README composes, built from scratch."""
     root = tmp_path_factory.mktemp("pron-own") / "world"
     shutil.copytree(PRON_REPO / "source", root / "source")
+    shutil.copytree(PRON_REPO / "knowledge" / "explanations", root / "knowledge" / "explanations")
+    shutil.copy2(PRON_REPO / "knowledge" / "readme.md", root / "knowledge" / "readme.md")
     from sldb.cli import main as sldb_main
 
     assert sldb_main(["stores", "init", "--path", str(root)]) == 0
@@ -121,6 +124,33 @@ def test_own_knowledge_base_is_derived_from_the_repo(own: World):
         .startswith("Say one sentence")
     )
     assert run_lints(own) == [], run_lints(own)
+
+
+def test_the_readme_is_composed_from_the_explanations(own: World):
+    """README.md is generated from the ReadmeDoc's parts: an edited explanation is drift,
+    and `pron docs` regenerates the README with the new text."""
+    assert synchronize_docs(own, check=True) == []
+    readme = own.root / "README.md"
+    text = readme.read_text(encoding="utf-8")
+    assert text.startswith("# pron\n\n## ¿Qué es pron?\n\n")
+    assert "- knowledge/explanations/" not in text  # the paths are the declaration, not the README
+
+    # the drift: edit one explanation where it lives
+    path = own.root / "knowledge" / "explanations" / "what-is-pron.md"
+    original = path.read_text(encoding="utf-8")
+    path.write_text(
+        original.replace(
+            "el cordel anudado con que se llevaba el registro",
+            "el cordel anudado del registro",
+        ),
+        encoding="utf-8",
+    )
+    assert "README.md out of date" in synchronize_docs(own, check=True)
+    assert "el cordel anudado del registro" not in readme.read_text(encoding="utf-8")
+
+    assert synchronize_docs(own)  # re-tracks the explanation and regenerates the README
+    assert "el cordel anudado del registro" in readme.read_text(encoding="utf-8")
+    assert synchronize_docs(own, check=True) == []
 
 
 def test_a_question_over_the_own_knowledge_base(own: World):

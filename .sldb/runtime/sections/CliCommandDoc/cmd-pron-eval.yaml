@@ -1,0 +1,193 @@
+doc_name: cmd-pron-eval
+sections:
+- path: eval
+  title: eval
+  breadcrumbs:
+  - eval
+  about:
+  - eval
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: eval
+  level: 1
+  line_start: 16
+  line_end: 47
+- path: eval/synopsis
+  title: Synopsis
+  breadcrumbs:
+  - eval
+  - Synopsis
+  about:
+  - eval
+  - Synopsis
+  - synopsis
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: synopsis
+  level: 2
+  line_start: 18
+  line_end: 21
+- path: eval/purpose
+  title: Purpose
+  breadcrumbs:
+  - eval
+  - Purpose
+  about:
+  - eval
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: purpose
+  level: 2
+  line_start: 22
+  line_end: 25
+- path: eval/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - eval
+  - How It Works
+  about:
+  - eval
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: how-it-works
+  level: 2
+  line_start: 26
+  line_end: 31
+- path: eval/arguments
+  title: Arguments
+  breadcrumbs:
+  - eval
+  - Arguments
+  about:
+  - eval
+  - Arguments
+  - arguments
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: arguments
+  level: 2
+  line_start: 32
+  line_end: 44
+- path: eval/usage
+  title: Usage
+  breadcrumbs:
+  - eval
+  - Usage
+  about:
+  - eval
+  - Usage
+  - usage
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  semantic_tags:
+  - domain:system_architecture
+  - entity:cli_command
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.cli_command
+  - workspace.knowledge.commands
+  slug: usage
+  level: 2
+  line_start: 45
+  line_end: 47
+hash_c: 17960dfdbb7af6aec2801a92a6b9ecee502fe77ffd3b081717f06bedd00ac31d
+sections_version: '2'

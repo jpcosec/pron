@@ -1,0 +1,9 @@
+name: spec-09
+path: source/spec/09-una-conversacion.md
+hash_c: 0c96035149c7399e5a98b3b9b53ccbf79efa8d7e122207dd1fafe8a9330729bd
+hash_d: 73d8ded4ff1b3cb5e1ae92c32108d2cd7c16ceaa288549d6896683f7a9381bf1
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

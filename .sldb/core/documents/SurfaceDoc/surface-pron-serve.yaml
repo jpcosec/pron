@@ -1,0 +1,14 @@
+name: surface-pron-serve
+path: knowledge/surfaces/surface-pron-serve.md
+hash_c: 86a3736a48c83bba4c28dacddb00cf16c5a76c7dcda42576a0e9acf6669a40ef
+hash_d: afec54e40be477d240ab249ff5589575f6c0802e76616f9e37a0e4b7cf5224ec
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

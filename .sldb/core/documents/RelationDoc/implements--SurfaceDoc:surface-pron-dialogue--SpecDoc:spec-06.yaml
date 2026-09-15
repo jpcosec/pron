@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-dialogue--SpecDoc:spec-06.md
+hash_c: c30b7d0a0cc135d7a916ed80470b178087ec1ed774abcb28bb3bb16c09fc1bc6
+hash_d: 7a7cf49a808d47e3244cfd7c974cc0b22d08f97d6971b48ac58d1dcbca89c0dc
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

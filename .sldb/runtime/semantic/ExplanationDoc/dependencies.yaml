@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/dependencies.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: 88ab0ad4d903b87970104291ce1ec586393f8454c80b507c2da6b678eef5804e

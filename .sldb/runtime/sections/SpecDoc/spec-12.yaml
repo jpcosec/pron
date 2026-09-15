@@ -1,0 +1,231 @@
+doc_name: spec-12
+sections:
+- path: 12-pron-para-un-runtime-externo
+  title: 12 · pron para un runtime externo
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 12-pron-para-un-runtime-externo
+  level: 1
+  line_start: 1
+  line_end: 154
+- path: 12-pron-para-un-runtime-externo/1-dos-formas-de-hablar-con-un-mundo
+  title: 1. Dos formas de hablar con un mundo
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 1. Dos formas de hablar con un mundo
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 1. Dos formas de hablar con un mundo
+  - 1 dos formas de hablar con un mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 1-dos-formas-de-hablar-con-un-mundo
+  level: 2
+  line_start: 7
+  line_end: 31
+- path: 12-pron-para-un-runtime-externo/2-la-sesi-n
+  title: 2. La sesión
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 2. La sesión
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 2. La sesión
+  - 2 la sesi n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-la-sesi-n
+  level: 2
+  line_start: 32
+  line_end: 53
+- path: 12-pron-para-un-runtime-externo/3-la-respuesta
+  title: 3. La respuesta
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 3. La respuesta
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 3. La respuesta
+  - 3 la respuesta
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 3-la-respuesta
+  level: 2
+  line_start: 54
+  line_end: 74
+- path: 12-pron-para-un-runtime-externo/4-documentos-por-direcci-n
+  title: 4. Documentos por dirección
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 4. Documentos por dirección
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 4. Documentos por dirección
+  - 4 documentos por direcci n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 4-documentos-por-direcci-n
+  level: 2
+  line_start: 75
+  line_end: 87
+- path: 12-pron-para-un-runtime-externo/5-el-mundo-y-el-grafo
+  title: 5. El mundo y el grafo
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 5. El mundo y el grafo
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 5. El mundo y el grafo
+  - 5 el mundo y el grafo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 5-el-mundo-y-el-grafo
+  level: 2
+  line_start: 88
+  line_end: 127
+- path: 12-pron-para-un-runtime-externo/6-permisos-lo-que-pron-decide-y-lo-que-no
+  title: '6. Permisos: lo que pron decide y lo que no'
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - '6. Permisos: lo que pron decide y lo que no'
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - '6. Permisos: lo que pron decide y lo que no'
+  - 6 permisos lo que pron decide y lo que no
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 6-permisos-lo-que-pron-decide-y-lo-que-no
+  level: 2
+  line_start: 128
+  line_end: 135
+- path: 12-pron-para-un-runtime-externo/7-el-socket
+  title: 7. El socket
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 7. El socket
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 7. El socket
+  - 7 el socket
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 7-el-socket
+  level: 2
+  line_start: 136
+  line_end: 143
+- path: 12-pron-para-un-runtime-externo/8-plantilla-de-mundo
+  title: 8. Plantilla de mundo
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 8. Plantilla de mundo
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 8. Plantilla de mundo
+  - 8 plantilla de mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 8-plantilla-de-mundo
+  level: 2
+  line_start: 144
+  line_end: 147
+- path: 12-pron-para-un-runtime-externo/9-qu-es-estable
+  title: 9. Qué es estable
+  breadcrumbs:
+  - 12 · pron para un runtime externo
+  - 9. Qué es estable
+  about:
+  - 12 · pron para un runtime externo
+  - 12 pron para un runtime externo
+  - 9. Qué es estable
+  - 9 qu es estable
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 9-qu-es-estable
+  level: 2
+  line_start: 148
+  line_end: 154
+hash_c: a791c6cc49a970d3b323a12faa59779b74fd94d3173226317fbeda8b43e02f63
+sections_version: '2'

@@ -3,7 +3,8 @@ model_ref: pron.models:AnchorDoc
 path: src/pron/models/anchor.py
 documents_index: .sldb/core/documents/AnchorDoc.yaml
 sections_index: .sldb/runtime/sections/AnchorDoc.yaml
-hash_b: b8dd72ab27b7fa551c1d78face5ee3928b1e9b96e5ffe002bd877cdc4c5ecafe
+hash_b: 426026adc70d747386d1804d8df623a2772ca3c907e6cc8382bcf10402db92d8
+documents_count: 5
 version: 1
 canonical: false
 family: knowledge

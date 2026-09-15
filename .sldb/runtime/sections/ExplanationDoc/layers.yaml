@@ -1,0 +1,93 @@
+doc_name: layers
+sections:
+- path: capas
+  title: Capas
+  breadcrumbs:
+  - Capas
+  about:
+  - Capas
+  - capas
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: capas
+  level: 1
+  line_start: 1
+  line_end: 20
+- path: capas/question
+  title: Question
+  breadcrumbs:
+  - Capas
+  - Question
+  about:
+  - Capas
+  - capas
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: capas/answer
+  title: Answer
+  breadcrumbs:
+  - Capas
+  - Answer
+  about:
+  - Capas
+  - capas
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 19
+- path: capas/sources
+  title: Sources
+  breadcrumbs:
+  - Capas
+  - Sources
+  about:
+  - Capas
+  - capas
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 20
+  line_end: 20
+hash_c: db13bf1e04b8695900013193f00d8af174738d9f10f4c2184f989d519ea67f09
+sections_version: '2'

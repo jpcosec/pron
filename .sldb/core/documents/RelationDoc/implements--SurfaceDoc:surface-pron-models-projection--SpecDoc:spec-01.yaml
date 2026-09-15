@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-models-projection--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-projection--SpecDoc:spec-01.md
+hash_c: de62c20217b5c3846f67e5263c08f6168f06bad133833dae3d3ef88018774bc4
+hash_d: 6ec009d281530af05338e486473859b44cb7b2aa67acf76d8b89b64835e5242d
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

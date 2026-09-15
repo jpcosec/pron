@@ -1,0 +1,86 @@
+doc_name: implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+sections:
+- path: source-id-clicommanddoc-cmd-pron-serve-target-id-specdoc-spec-11-relation-type-implements-condition
+  title: 'source_id: CliCommandDoc:cmd-pron-serve
+
+    target_id: SpecDoc:spec-11
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: CliCommandDoc:cmd-pron-serve
+
+    target_id: SpecDoc:spec-11
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: CliCommandDoc:cmd-pron-serve
+
+    target_id: SpecDoc:spec-11
+
+    relation_type: implements
+
+    condition: '''''
+  - source id clicommanddoc cmd pron serve target id specdoc spec 11 relation type
+    implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-clicommanddoc-cmd-pron-serve-target-id-specdoc-spec-11-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-clicommanddoc-cmd-pron-serve-specdoc-spec-11
+  title: implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+  breadcrumbs:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+  about:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+  - implements clicommanddoc cmd pron serve specdoc spec 11
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-clicommanddoc-cmd-pron-serve-specdoc-spec-11
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-clicommanddoc-cmd-pron-serve-specdoc-spec-11/notes
+  title: Notes
+  breadcrumbs:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+  - Notes
+  about:
+  - implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
+  - implements clicommanddoc cmd pron serve specdoc spec 11
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: af9ac4673d1380cdfbe5230abc42ec87bb71518f22fe2bb9f639184f5969952c
+sections_version: '2'

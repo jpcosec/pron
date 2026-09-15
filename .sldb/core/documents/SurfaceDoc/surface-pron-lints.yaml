@@ -1,0 +1,14 @@
+name: surface-pron-lints
+path: knowledge/surfaces/surface-pron-lints.md
+hash_c: 84aed52c753e3d5ca885b3efa71528353044f130863a8a5c87b0e9e4ab1b316f
+hash_d: e84202d1edb50d69ca0479a8c89cb67c6ebf9cc721df6e2b14d65d0871443f21
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

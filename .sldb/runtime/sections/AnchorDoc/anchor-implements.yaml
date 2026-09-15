@@ -1,0 +1,45 @@
+doc_name: anchor-implements
+sections:
+- path: implements
+  title: implements
+  breadcrumbs:
+  - implements
+  about:
+  - implements
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  slug: implements
+  level: 1
+  line_start: 11
+  line_end: 15
+- path: implements/motive
+  title: Motive
+  breadcrumbs:
+  - implements
+  - Motive
+  about:
+  - implements
+  - Motive
+  - motive
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.anchor
+  - workspace.knowledge.anchors
+  slug: motive
+  level: 2
+  line_start: 13
+  line_end: 15
+hash_c: 250fd31e61a6fc3593248e6cef2889063c0edb36622f64dfe2dfdab5d6c8d110
+sections_version: '2'

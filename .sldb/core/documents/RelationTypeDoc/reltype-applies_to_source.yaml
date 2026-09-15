@@ -1,0 +1,9 @@
+name: reltype-applies_to_source
+path: kgdb/relation_types/applies_to_source.md
+hash_c: 710d071df8cc9867fdc007ce1b1506e02085669b5d548b812e750119e4b3877b
+hash_d: 76163cb41f82534a41d3abd15493f3330acdb83c361611797177367803ae2283
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

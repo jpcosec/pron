@@ -1,0 +1,14 @@
+name: surface-pron-models-readme
+path: knowledge/surfaces/surface-pron-models-readme.md
+hash_c: ca6861f39a16f5dd80c582e2c088d9b8eeb439cd9de8b8e661f253bc831e328d
+hash_d: e8b86c8cc69967ce50b969fc4a957d7f622f45b3c04cd13f91e4f19ad2aad344
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

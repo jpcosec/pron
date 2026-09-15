@@ -1,0 +1,8 @@
+model: AnchorDoc
+path: knowledge/anchors/move.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors
+hash_c: 4f1bb69922a066dfd349d1f83d2f7b3f0a8924b11472ebfaa461af70897660ee

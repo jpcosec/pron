@@ -1,0 +1,9 @@
+name: spec-07
+path: source/spec/07-ledger.md
+hash_c: b26a242ee8e1ac5d6ef66f7e6607dc934384fa9e0c908678687f96869cf6db5c
+hash_d: c7a6739085564462ea1a9acb1d088a00780de4587f1dc4b56c8d7ef813feea51
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

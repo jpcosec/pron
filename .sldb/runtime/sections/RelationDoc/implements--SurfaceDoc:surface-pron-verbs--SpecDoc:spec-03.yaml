@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+sections:
+- path: source-id-surfacedoc-surface-pron-verbs-target-id-specdoc-spec-03-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-verbs
+
+    target_id: SpecDoc:spec-03
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-verbs
+
+    target_id: SpecDoc:spec-03
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-verbs
+
+    target_id: SpecDoc:spec-03
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron verbs target id specdoc spec 03 relation type
+    implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-verbs-target-id-specdoc-spec-03-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03
+  title: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  about:
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  - implements surfacedoc surface pron verbs specdoc spec 03
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-verbs-specdoc-spec-03/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
+  - implements surfacedoc surface pron verbs specdoc spec 03
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: 53386dcdc41b1573df1e8bfcfd5dbe1893046c2eb84d196c9f757cab1dc04c18
+sections_version: '2'

@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/world-declaration.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: 408e5efc94d506efdfec3d663cd5ae9911a53210e88272a976359bc10f422d9a

@@ -1,0 +1,231 @@
+doc_name: spec-01
+sections:
+- path: 01-el-mundo
+  title: 01 · El mundo
+  breadcrumbs:
+  - 01 · El mundo
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 01-el-mundo
+  level: 1
+  line_start: 1
+  line_end: 71
+- path: 01-el-mundo/qu-es
+  title: Qué es
+  breadcrumbs:
+  - 01 · El mundo
+  - Qué es
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Qué es
+  - qu es
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: qu-es
+  level: 2
+  line_start: 3
+  line_end: 13
+- path: 01-el-mundo/modelo-clase-documento-instancia
+  title: Modelo = clase, documento = instancia
+  breadcrumbs:
+  - 01 · El mundo
+  - Modelo = clase, documento = instancia
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Modelo = clase, documento = instancia
+  - modelo clase documento instancia
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: modelo-clase-documento-instancia
+  level: 2
+  line_start: 14
+  line_end: 21
+- path: 01-el-mundo/los-modelos-del-mundo-de-pron
+  title: Los modelos del mundo de pron
+  breadcrumbs:
+  - 01 · El mundo
+  - Los modelos del mundo de pron
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Los modelos del mundo de pron
+  - los modelos del mundo de pron
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: los-modelos-del-mundo-de-pron
+  level: 2
+  line_start: 22
+  line_end: 32
+- path: 01-el-mundo/proyecci-n
+  title: Proyección
+  breadcrumbs:
+  - 01 · El mundo
+  - Proyección
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Proyección
+  - proyecci n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: proyecci-n
+  level: 2
+  line_start: 33
+  line_end: 50
+- path: 01-el-mundo/un-mundo-en-varios-stores
+  title: Un mundo en varios stores
+  breadcrumbs:
+  - 01 · El mundo
+  - Un mundo en varios stores
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Un mundo en varios stores
+  - un mundo en varios stores
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: un-mundo-en-varios-stores
+  level: 2
+  line_start: 51
+  line_end: 54
+- path: 01-el-mundo/interfaz-entre-mundos
+  title: Interfaz entre mundos
+  breadcrumbs:
+  - 01 · El mundo
+  - Interfaz entre mundos
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Interfaz entre mundos
+  - interfaz entre mundos
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: interfaz-entre-mundos
+  level: 2
+  line_start: 55
+  line_end: 58
+- path: 01-el-mundo/plantilla-de-un-mundo
+  title: Plantilla de un mundo
+  breadcrumbs:
+  - 01 · El mundo
+  - Plantilla de un mundo
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Plantilla de un mundo
+  - plantilla de un mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: plantilla-de-un-mundo
+  level: 2
+  line_start: 59
+  line_end: 62
+- path: 01-el-mundo/expansi-n-del-mundo
+  title: Expansión del mundo
+  breadcrumbs:
+  - 01 · El mundo
+  - Expansión del mundo
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Expansión del mundo
+  - expansi n del mundo
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: expansi-n-del-mundo
+  level: 2
+  line_start: 63
+  line_end: 66
+- path: 01-el-mundo/invariantes
+  title: Invariantes
+  breadcrumbs:
+  - 01 · El mundo
+  - Invariantes
+  about:
+  - 01 · El mundo
+  - 01 el mundo
+  - Invariantes
+  - invariantes
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: invariantes
+  level: 2
+  line_start: 67
+  line_end: 71
+hash_c: dae319f84d4146672ba8c6174cc94f17dbd001d098be45f1820e7be443cf779c
+sections_version: '2'

@@ -1,0 +1,14 @@
+name: surface-pron-models-explanation
+path: knowledge/surfaces/surface-pron-models-explanation.md
+hash_c: c70675709e204c2eff63d075f6ddaa7ea0625caaebb3c25a611a3ba26c71303d
+hash_d: fa03d1b9c0f6d07eee658542f49e4b553a568d2771c15d8b6ca6a1954f96e12b
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

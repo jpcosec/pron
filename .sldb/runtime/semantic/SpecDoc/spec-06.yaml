@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/06-superficie-y-dialogo.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: 99e99cdb361a682a262145c714f98f1a7cca74b262d881bdf23659ac7a3039e7

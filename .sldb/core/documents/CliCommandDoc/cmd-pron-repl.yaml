@@ -1,0 +1,14 @@
+name: cmd-pron-repl
+path: knowledge/commands/cmd-pron-repl.md
+hash_c: 9ba7a98544208d7c32d3947524dcd5070f56ee0b996d129edecd438c723427f7
+hash_d: 3dc1edeace9c0edf4c3cdf46ec59899f2ebf3870898155520cd6a3dad3c1c58d
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

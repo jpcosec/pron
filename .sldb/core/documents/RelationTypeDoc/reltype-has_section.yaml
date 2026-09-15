@@ -1,0 +1,9 @@
+name: reltype-has_section
+path: kgdb/relation_types/has_section.md
+hash_c: c982b6ad78924ee59157c388069451f5631f82d81b2568eb28d80b60e51c8e0c
+hash_d: 449bb563fb84964ea6318b2ee4f8baa5de1b1f841544c0ef0ee13d91263632e5
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

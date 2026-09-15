@@ -1,0 +1,86 @@
+doc_name: implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+sections:
+- path: source-id-clicommanddoc-cmd-pron-eval-target-id-specdoc-spec-13-relation-type-implements-condition
+  title: 'source_id: CliCommandDoc:cmd-pron-eval
+
+    target_id: SpecDoc:spec-13
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: CliCommandDoc:cmd-pron-eval
+
+    target_id: SpecDoc:spec-13
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: CliCommandDoc:cmd-pron-eval
+
+    target_id: SpecDoc:spec-13
+
+    relation_type: implements
+
+    condition: '''''
+  - source id clicommanddoc cmd pron eval target id specdoc spec 13 relation type
+    implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-clicommanddoc-cmd-pron-eval-target-id-specdoc-spec-13-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-clicommanddoc-cmd-pron-eval-specdoc-spec-13
+  title: implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  breadcrumbs:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  about:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  - implements clicommanddoc cmd pron eval specdoc spec 13
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-clicommanddoc-cmd-pron-eval-specdoc-spec-13
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-clicommanddoc-cmd-pron-eval-specdoc-spec-13/notes
+  title: Notes
+  breadcrumbs:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  - Notes
+  about:
+  - implements--CliCommandDoc:cmd-pron-eval--SpecDoc:spec-13
+  - implements clicommanddoc cmd pron eval specdoc spec 13
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: cc6b7ca87b0d919308c1bb0bf5e37baef6e3587d315b35ae6e9c3b0691915268
+sections_version: '2'

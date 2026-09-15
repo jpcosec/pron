@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-forms--SpecDoc:spec-13.md
+hash_c: 10a3faa6b1b4863a498036cce152c7eb15d41d77c2f96190c83f9ce659f00cb7
+hash_d: dcf4726ebf34e20d4f621bb9d91e5d69790441156638e95aa3053d7250841e20
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

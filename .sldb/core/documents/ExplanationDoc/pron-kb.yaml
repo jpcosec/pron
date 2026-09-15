@@ -1,0 +1,9 @@
+name: pron-kb
+path: knowledge/explanations/pron-kb.md
+hash_c: 59b52f4d5fdb2161fca5bd314ce289e27b3c8f91acc5ba7e6154c7ad02f1c1e0
+hash_d: 01f32c2d87a2ee67ac5044ca8d9d63546d371adcacaf85ea24c157d69528b1c8
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

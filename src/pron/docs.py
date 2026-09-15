@@ -1,8 +1,10 @@
 """pron's own knowledge base is derived from this repo (spec 08 step 9): a CliCommandDoc
 per `_cmd_*` handler from its docstring and its argparse arguments, a SurfaceDoc per
-module from its module docstring, a SpecDoc per chapter of source/spec, and one
-`implements` edge from each module or command to every chapter its docstring cites
-("spec 06", "spec 11 §2"). Nothing is hand-kept: the docstrings are the source.
+module from its module docstring, a SpecDoc per chapter of source/spec, the hand-written
+ExplanationDocs of knowledge/explanations plus the ReadmeDoc that composes them into
+README.md, and one `implements` edge from each module or command to every chapter its
+docstring cites ("spec 06", "spec 11 §2"). Nothing is hand-kept except the explanations:
+the docstrings and the README's declaration are the source.
 """
 
 from __future__ import annotations
@@ -10,6 +12,7 @@ from __future__ import annotations
 import ast
 import importlib
 import inspect
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -32,6 +35,9 @@ SURFACE_TAGS = [
     "entity:module",
 ]
 PACKAGE_DIR = Path(__file__).parent
+EXPLANATIONS_DIR = Path("knowledge") / "explanations"
+README_PATH = Path("knowledge") / "readme.md"
+README_ID = "readme"
 
 
 def _discover_modules() -> list[str]:
@@ -155,6 +161,8 @@ def synchronize_docs(world: World, check: bool = False) -> list[str]:
         "CliCommandDoc": "sldb.models.knowledge_surface:CliCommandDoc",
         "SurfaceDoc": "sldb.models.knowledge_surface:SurfaceDoc",
         "SpecDoc": "pron.models:SpecDoc",
+        "ExplanationDoc": "pron.models:ExplanationDoc",
+        "ReadmeDoc": "pron.models:ReadmeDoc",
     }
     for model, ref in needed.items():
         if model not in world.model_names():
@@ -194,7 +202,71 @@ def synchronize_docs(world: World, check: bool = False) -> list[str]:
                 store.create(
                     model, spec["id"], payload, world.root / folder / f"{spec['id']}.md"
                 )
+    changed += _hand_written(world, check)
+    changed += _render_readme(world, check)
     changed += _implements_edges(world, plans, check)
+    return changed
+
+
+def _hand_written(world: World, check: bool) -> list[str]:
+    """The ExplanationDocs under knowledge/explanations and the ReadmeDoc in
+    knowledge/readme.md are written where they live, like the spec chapters; re-track
+    one when its payload changed."""
+    store = world.store
+    changed = []
+    from sldb.runtime.validation import extract_model_data
+
+    written: list[tuple[str, str, Path]] = []
+    if (world.root / EXPLANATIONS_DIR).is_dir():
+        written += [
+            ("ExplanationDoc", path.stem, path)
+            for path in sorted((world.root / EXPLANATIONS_DIR).glob("*.md"))
+        ]
+    if (world.root / README_PATH).is_file():
+        written.append(("ReadmeDoc", README_ID, world.root / README_PATH))
+    for model, doc_id, path in written:
+        model_type = store.model_type(model)
+        existing = store.doc(model, doc_id)
+        canonical = extract_model_data(model_type, path.read_text(encoding="utf-8"))
+        if (
+            existing is not None
+            and {k: existing.payload.get(k) for k in canonical} == canonical
+        ):
+            continue
+        changed.append(f"{model} {doc_id}")
+        if check:
+            continue
+        if existing is not None:
+            store.untrack(doc_id)
+        store.track(path, model, doc_id)
+    return changed
+
+
+def _render_readme(world: World, check: bool) -> list[str]:
+    """README.md at the repo root is the ReadmeDoc rendered, never edited by hand: the
+    parts are composed by address. With check, report the drift and write nothing."""
+    store = world.store
+    doc = store.doc("ReadmeDoc", README_ID)
+    if doc is None:
+        return []
+    from sldb.runtime.validation import render_model_markdown
+
+    readme = world.root / "README.md"
+    cwd = Path.cwd()
+    try:
+        os.chdir(world.root)  # composition child paths resolve from the process cwd
+        rendered = render_model_markdown(store.model_type("ReadmeDoc"), dict(doc.payload))
+    finally:
+        os.chdir(cwd)
+    rendered = re.sub(r"\n{3,}", "\n\n", rendered)  # the dropped parts list leaves a hole
+    if not rendered.endswith("\n"):
+        rendered += "\n"
+    current = readme.read_text(encoding="utf-8") if readme.exists() else ""
+    if current == rendered:
+        return []
+    changed = ["README.md out of date"]
+    if not check:
+        readme.write_text(rendered, encoding="utf-8")
     return changed
 
 

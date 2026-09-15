@@ -1,0 +1,14 @@
+name: surface-pron-ledger
+path: knowledge/surfaces/surface-pron-ledger.md
+hash_c: fec1893194a1537a79c20c6af2e5ef82f4209932cab2c3397164f25208f99408
+hash_d: 517930155306834cd1a1e0a36a6f92577d61f1f0ab547a025bd8382e88ebbf85
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

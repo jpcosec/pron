@@ -1,0 +1,9 @@
+name: spec-11
+path: source/spec/11-decisiones-de-implementacion.md
+hash_c: d85e173f09cf8012d7484e981389d604e656f01e26036245e15aa367473a6feb
+hash_d: 00d7df8df393dba6f22b37ccad42ade6720fb68f1c3d2e734fc14f7acc91eeaf
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

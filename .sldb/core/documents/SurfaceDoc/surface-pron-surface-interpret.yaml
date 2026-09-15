@@ -1,0 +1,14 @@
+name: surface-pron-surface-interpret
+path: knowledge/surfaces/surface-pron-surface-interpret.md
+hash_c: 78f7feb1af30ea1c6e329712835ea748f65524279b259a282cb7063f6ae656e8
+hash_d: 94593779cd7fe58b450cd7d8f0e72091979951c4c8ef82db2d607b6d4446603b
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

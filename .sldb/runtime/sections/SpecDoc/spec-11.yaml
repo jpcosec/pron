@@ -1,0 +1,262 @@
+doc_name: spec-11
+sections:
+- path: 11-decisiones-de-implementaci-n
+  title: 11 · Decisiones de implementación
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 11-decisiones-de-implementaci-n
+  level: 1
+  line_start: 1
+  line_end: 124
+- path: 11-decisiones-de-implementaci-n/0-por-ahora-todo-lo-declarado-va-en-ingl-s
+  title: 0. Por ahora, todo lo declarado va en inglés
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 0. Por ahora, todo lo declarado va en inglés
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 0. Por ahora, todo lo declarado va en inglés
+  - 0 por ahora todo lo declarado va en ingl s
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 0-por-ahora-todo-lo-declarado-va-en-ingl-s
+  level: 2
+  line_start: 5
+  line_end: 12
+- path: 11-decisiones-de-implementaci-n/1-la-gram-tica-es-artesanal-determinista-y-dirigida-por-el-l-xico
+  title: 1. La gramática es artesanal, determinista y dirigida por el léxico
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 1. La gramática es artesanal, determinista y dirigida por el léxico
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 1. La gramática es artesanal, determinista y dirigida por el léxico
+  - 1 la gram tica es artesanal determinista y dirigida por el l xico
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 1-la-gram-tica-es-artesanal-determinista-y-dirigida-por-el-l-xico
+  level: 2
+  line_start: 13
+  line_end: 29
+- path: 11-decisiones-de-implementaci-n/2-el-calce-aproximado-es-un-puerto-con-un-fallback-sin-red
+  title: 2. El calce aproximado es un puerto, con un fallback sin red
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 2. El calce aproximado es un puerto, con un fallback sin red
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 2. El calce aproximado es un puerto, con un fallback sin red
+  - 2 el calce aproximado es un puerto con un fallback sin red
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 2-el-calce-aproximado-es-un-puerto-con-un-fallback-sin-red
+  level: 2
+  line_start: 30
+  line_end: 39
+- path: 11-decisiones-de-implementaci-n/3-las-fechas-y-horas-relativas-las-normaliza-la-superficie-con-reloj-de-sesi-n
+  title: 3. Las fechas y horas relativas las normaliza la superficie, con reloj de
+    sesión
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesión
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 3. Las fechas y horas relativas las normaliza la superficie, con reloj de sesión
+  - 3 las fechas y horas relativas las normaliza la superficie con reloj de sesi n
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 3-las-fechas-y-horas-relativas-las-normaliza-la-superficie-con-reloj-de-sesi-n
+  level: 2
+  line_start: 40
+  line_end: 49
+- path: 11-decisiones-de-implementaci-n/4-el-ingest-unificado-de-kgdb-es-previo-y-es-de-kgdb
+  title: 4. El ingest unificado de kgdb es previo y es de kgdb
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 4. El ingest unificado de kgdb es previo y es de kgdb
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 4. El ingest unificado de kgdb es previo y es de kgdb
+  - 4 el ingest unificado de kgdb es previo y es de kgdb
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 4-el-ingest-unificado-de-kgdb-es-previo-y-es-de-kgdb
+  level: 2
+  line_start: 50
+  line_end: 59
+- path: 11-decisiones-de-implementaci-n/5-un-turno-lee-hash-mundo-dos-veces-y-cada-escritura-verifica-su-documento
+  title: 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 5. Un turno lee `hash_mundo` dos veces y cada escritura verifica su documento
+  - 5 un turno lee hash mundo dos veces y cada escritura verifica su documento
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 5-un-turno-lee-hash-mundo-dos-veces-y-cada-escritura-verifica-su-documento
+  level: 2
+  line_start: 60
+  line_end: 69
+- path: 11-decisiones-de-implementaci-n/6-la-identidad-la-trae-la-aplicaci-n-pron-solo-la-usa-y-la-registra
+  title: 6. La identidad la trae la aplicación; pron solo la usa y la registra
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - 6. La identidad la trae la aplicación; pron solo la usa y la registra
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - 6. La identidad la trae la aplicación; pron solo la usa y la registra
+  - 6 la identidad la trae la aplicaci n pron solo la usa y la registra
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 6-la-identidad-la-trae-la-aplicaci-n-pron-solo-la-usa-y-la-registra
+  level: 2
+  line_start: 70
+  line_end: 75
+- path: 11-decisiones-de-implementaci-n/7-sin-rollback-validaci-n-previa-registro-por-direcci-n-y-un-verbo-undo-expl-cito
+  title: '7. Sin rollback: validación previa, registro por dirección y un verbo `undo`
+    explícito'
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - '7. Sin rollback: validación previa, registro por dirección y un verbo `undo`
+    explícito'
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - '7. Sin rollback: validación previa, registro por dirección y un verbo `undo`
+    explícito'
+  - 7 sin rollback validaci n previa registro por direcci n y un verbo undo expl cito
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 7-sin-rollback-validaci-n-previa-registro-por-direcci-n-y-un-verbo-undo-expl-cito
+  level: 2
+  line_start: 76
+  line_end: 103
+- path: 11-decisiones-de-implementaci-n/8-servir-el-mundo-un-proceso-lo-mantiene-abierto-y-los-dem-s-le-hablan-por-un-socket
+  title: '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan
+    por un socket'
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan por
+    un socket'
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - '8. Servir el mundo: un proceso lo mantiene abierto y los demás le hablan por
+    un socket'
+  - 8 servir el mundo un proceso lo mantiene abierto y los dem s le hablan por un
+    socket
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: 8-servir-el-mundo-un-proceso-lo-mantiene-abierto-y-los-dem-s-le-hablan-por-un-socket
+  level: 2
+  line_start: 104
+  line_end: 113
+- path: 11-decisiones-de-implementaci-n/resumen
+  title: Resumen
+  breadcrumbs:
+  - 11 · Decisiones de implementación
+  - Resumen
+  about:
+  - 11 · Decisiones de implementación
+  - 11 decisiones de implementaci n
+  - Resumen
+  - resumen
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.spec
+  - workspace.source.spec
+  slug: resumen
+  level: 2
+  line_start: 114
+  line_end: 124
+hash_c: d85e173f09cf8012d7484e981389d604e656f01e26036245e15aa367473a6feb
+sections_version: '2'

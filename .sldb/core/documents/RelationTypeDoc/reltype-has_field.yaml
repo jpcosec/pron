@@ -1,0 +1,9 @@
+name: reltype-has_field
+path: kgdb/relation_types/has_field.md
+hash_c: 0b993475af6138e3aaa4dcabbf23b537a404f5eb5e7cbaf98374d459eccd872d
+hash_d: d9f05817118af43485b5821ae34b2d0d04a6fb7739856a33e3eaee8a8e31fcc5
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

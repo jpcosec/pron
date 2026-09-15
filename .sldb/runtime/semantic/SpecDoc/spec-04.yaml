@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/04-verbos-de-accion.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: e3f334244c595dbc707cede315dac5d78dfbfbac05981fec1b7d4f9303aed2f4

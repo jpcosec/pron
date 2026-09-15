@@ -1,0 +1,8 @@
+model: ExplanationDoc
+path: knowledge/explanations/library-api.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+hash_c: 56979b422d2ba16e39a45a09b30935e32b35c4f9d818ae8ddea0d7e716169a29

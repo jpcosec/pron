@@ -1,0 +1,9 @@
+name: reltype-has_model
+path: kgdb/relation_types/has_model.md
+hash_c: 4d020a92bb01bd3ef1e712e3b8edbe1c35bb51e414fd401bb37bce53716f19ec
+hash_d: 3b2d51c8d50e9383e5aab83ad84084ac81f4e43722a61585d6a4b0301246faaa
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

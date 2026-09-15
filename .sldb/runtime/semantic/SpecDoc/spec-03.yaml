@@ -1,0 +1,8 @@
+model: SpecDoc
+path: source/spec/03-verbos-transitivos.md
+tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+hash_c: f71ac3f506dafc4a7c2bfc6c66b8b5b54f615e4b4886e7c26d98c205ff45b546

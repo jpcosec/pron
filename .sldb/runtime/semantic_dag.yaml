@@ -1,9 +1,34 @@
 nodes:
+- id: domain:system_architecture
+  parents: []
+- id: entity:cli_command
+  parents: []
+- id: entity:module
+  parents: []
+- id: impl:here
+  parents: []
+- id: kind:software
+  parents: []
 - id: layer
   parents: []
 - id: layer.topology
   parents:
   - layer
+- id: representation
+  parents: []
+- id: representation.markdown
+  parents:
+  - representation
+- id: source
+  parents: []
+- id: source.document
+  parents:
+  - source
+- id: source.document.markdown
+  parents:
+  - source.document
+- id: system:pron
+  parents: []
 - id: type
   parents: []
 - id: type.knowledge
@@ -15,7 +40,13 @@ nodes:
 - id: type.knowledge.cli_command
   parents:
   - type.knowledge
+- id: type.knowledge.explanation
+  parents:
+  - type.knowledge
 - id: type.knowledge.projection
+  parents:
+  - type.knowledge
+- id: type.knowledge.readme
   parents:
   - type.knowledge
 - id: type.knowledge.spec
@@ -48,6 +79,9 @@ nodes:
   parents:
   - workspace.knowledge
 - id: workspace.knowledge.commands
+  parents:
+  - workspace.knowledge
+- id: workspace.knowledge.explanations
   parents:
   - workspace.knowledge
 - id: workspace.knowledge.ledger
