@@ -2,6 +2,10 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
+# Verified against (suites), 2026-09-15, pron 742cc29:
+#   - kgdb 5effed5; sldb 00b2dd4 (main, merge 'merkle': per-document shards for semantic,
+#     sections and documents index; a write touches only its own path): 129 passed.
+#
 # Verified against (suites), 2026-09-15, pron b04f88d (merge 'merkle': refresh passes the previous
 # graph to kgdb's incremental build_typed_snapshot(previous=), hash_mundo memoized per turn):
 #   - kgdb 5effed5; sldb working tree (b0f196a + uncommitted changes of another session): 129 passed.
@@ -17,5 +21,5 @@
 #     commit that lands that fix.
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
-sldb b0f196a fix(cli): replace_rhs_expression usa offsets en bytes (ast) para cortar líneas utf-8  # needs the pending models_validate fix, see above
+sldb 00b2dd4 merge 'merkle' (PLAN 15 capas 5-7): escrituras por camino en sldb main
 kgdb 5effed5 merkle capa 1: build_typed_snapshot incremental con previous=
