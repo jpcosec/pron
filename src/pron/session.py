@@ -13,7 +13,7 @@ from typing import Any
 from pron.dialogue import Dialogue, Pending
 from pron.display import Display
 from pron.embedder import Embedder, Matcher
-from pron.forms import Compiler, FormError, UnknownWord, said
+from pron.forms import Compiler, FormError, NotAMove, UnknownWord, said
 from pron.forms import resolved as resolved_forms
 from pron.ids import address_of, doc_of, is_local, join_id, model_of, scope as _scope
 from pron.kernel import Kernel
@@ -226,6 +226,8 @@ class Session:
         except UnknownWord as e:
             record["missing"] = {"note": str(e), "candidates": []}
             return Response(f"{e}.", "missing")
+        except NotAMove as e:
+            return Response(str(e), "error")
         except FormError as e:
             return Response(f"Could not do that: {e}", "error")
         # the creates of this move with an explicit name: (doc …) resolves against

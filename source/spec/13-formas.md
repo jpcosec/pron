@@ -44,6 +44,8 @@ Un modelo, un tipo de relación o un alias fuera de la proyección es `missing` 
 | `(undo)`, `(refresh)`, `(why [SUST])` | los verbos sin objeto del kernel y "why?" (07) |
 | `(move FORMA …)` | varias partes, un movimiento y un refresh (06 §Coordinación) |
 
+Un sustantivo solo no es un movimiento: pron responde error y sugiere `(show SUST)`; una cabeza desconocida cercana a una conocida también se sugiere.
+
 Valores: cadenas, números, `true`, `false`, `nil`, y listas como `(list v …)`.
 
 Las formas no agregan capacidades: cada una usa los nombres del mundo (modelos, campos, `RelationTypeDoc`, símbolos de alias). Un alias sigue siendo lo único que da nombres nuevos, y lo que nombra es a su vez una forma (05).

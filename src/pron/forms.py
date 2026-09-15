@@ -31,6 +31,7 @@ Values are strings, numbers, true, false, nil, or (list value ...).
 
 from __future__ import annotations
 
+from difflib import get_close_matches
 from typing import TYPE_CHECKING, Any
 
 from pron.ids import address_of, model_of
@@ -47,10 +48,31 @@ if TYPE_CHECKING:
 
 NOUN_HEADS = ("doc", "the", "a", "all", "find", "it", "them", "me")
 REFERENT_HEADS = {"it": "singular", "them": "plural", "me": "speaker"}
+MOVE_HEADS = (
+    "show",
+    "targets",
+    "sources",
+    "assert",
+    "create",
+    "change",
+    "add",
+    "remove",
+    "clean",
+    "forget",
+    "say",
+    "undo",
+    "refresh",
+    "why",
+    "move",
+)
 
 
 class FormError(ValueError):
     """A form that is not well made."""
+
+
+class NotAMove(FormError):
+    """A bare noun where a move is expected (spec 13): the noun is fine, the move is (show …)."""
 
 
 class UnknownWord(FormError):
@@ -244,13 +266,20 @@ class Compiler:
         if isinstance(expr, str) and not isinstance(expr, Sym):
             expr = read_one(expr)
         forms = expr[1:] if _head(expr) == "move" else [expr]
+        for f in forms:
+            if _head(f) in NOUN_HEADS:
+                raise NotAMove(
+                    f"A noun is not a move: did you mean {write([Sym('show'), f])}?"
+                )
         return [self._form(f) for f in forms]
 
     def _form(self, form: Any) -> Part:
         head = _head(form)
         fn = getattr(self, "_f_" + head.replace("-", "_"), None)
         if fn is None:
-            raise FormError(f"unknown form: ({head} …)")
+            close = get_close_matches(head, MOVE_HEADS, n=1, cutoff=0.75)
+            hint = f"; did you mean ({close[0]} …)?" if close else ""
+            raise FormError(f"unknown form: ({head} …){hint}")
         part: Part = fn(*form[1:])
         return part
 
@@ -318,9 +347,6 @@ class Compiler:
 
     def _f_show(self, noun: Any) -> Part:
         return Part("nominal", subject=self.noun(noun))
-
-    def _f_find(self, *args: Any) -> Part:
-        raise FormError("(find …) is a noun; show it with (show (find …))")
 
     def _f_targets(self, relation: Any, *rest: Any) -> Part:
         return self._read(str(relation), rest, asked="object")

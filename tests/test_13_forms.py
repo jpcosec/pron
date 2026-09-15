@@ -86,6 +86,21 @@ def test_words_outside_the_projection_do_not_exist(world: World):
     assert s.eval("(show").outcome == "error"
 
 
+def test_a_bare_noun_suggests_show(world: World):
+    """A noun alone is not a move (spec 13): the error proposes the (show …) move it needs; an
+    unknown head close to a known one proposes it, a foreign one proposes nothing."""
+
+    s = session(world)
+    r = s.eval("(all Table)")
+    assert r.outcome == "error" and "(show (all Table))" in r.text
+    r = s.eval('(doc "Table:table-3")')
+    assert r.outcome == "error" and '(show (doc "Table:table-3"))' in r.text
+    r = s.eval("(shwo (all Table))")
+    assert r.outcome == "error" and "did you mean (show …)" in r.text
+    r = s.eval("(explode)")
+    assert r.outcome == "error" and "did you mean" not in r.text
+
+
 def test_a_sentence_is_the_forms_it_records(tmp_path_factory):
     """The conversation of spec 09 on one world; the resolved forms it recorded, evaluated on another
     copy, leave the same writes and the same answers."""
