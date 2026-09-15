@@ -179,6 +179,25 @@ class World:
         d.mkdir(exist_ok=True)
         return d
 
+    def is_ready(self) -> bool:
+        """Whether this store is already a pron world. What that requires is pron's own
+        business: a consumer asks, it does not check for a model by name."""
+        names = set(self.model_names())
+        required = {ref.split(":")[-1] for ref in PRON_MODELS} | {"RelationTypeDoc"}
+        return required <= names
+
+    def ensure_ready(self, template: str | Path | None = None) -> dict[str, Any] | None:
+        """Make this store a world if it is not one yet, and leave its derived graph fresh.
+        The one call a runtime makes on startup: it never decides what initialising a world
+        involves, nor when the graph has to be rebuilt. Returns what init did, or None when
+        the world was already there."""
+        report = None
+        if not self.is_ready():
+            report = init_world(self.root, self.store.pythonpath, template=template)
+            self.store.invalidate()
+        self.refresh_if_stale()
+        return report
+
     def refresh_if_stale(
         self, exclude_tags: tuple[str, ...] = ("type.pron.move",)
     ) -> bool:

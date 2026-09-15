@@ -123,7 +123,31 @@ Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero c
 
 Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametriza por nombre de relación. Las estructurales de kgdb (`semantic_parent`, `tagged_as`, `has_document`, `has_model`, …) son argumentos como cualquier otro.
 
+**Ciclo de vida.** Un runtime que monta un mundo no decide qué es inicializarlo: `world.is_ready()` dice si ese store ya es un mundo de pron, y `world.ensure_ready(template=None)` lo hace uno si no lo era y deja el grafo fresco, en una sola llamada idempotente. Devuelve lo que hizo `init_world`, o `None` si el mundo ya estaba. Qué modelos y tipos de relación requiere un mundo es interior de pron y cambia con él: un consumidor que lo averigua preguntando por un modelo por nombre está leyendo el interior.
+
 **Por socket**, `RemoteSession.world` y `RemoteSession.graph` exponen los mismos métodos con los mismos nombres y resultados, con argumentos por nombre: `session.graph.targets(node_id=..., relation=...)`, `session.world.relation_types()`. Un método fuera de la lista es `RuntimeError`. `refresh` es una operación aparte del socket, no un método de `world`.
+
+## 5b. El corpus indexado
+
+Un runtime que recupera documentos por significado no arma el índice: declara su política y pron mantiene el resto. `pron.corpus` da dos piezas.
+
+`IndexProjection.of(models=None, exclude_models=(), text=summary_text, text_id="summary", stores=None)` es lo único que el consumidor declara: qué modelos entran al corpus (`models` los admite, `exclude_models` los quita) y cómo se lee el texto que representa a un documento (`text`, un `payload -> str`; `summary_text` y `fields_text(*campos)` son los dos usos corrientes). `text_id` nombra esa representación: cambiarla invalida el índice igual que cambiar de embedder, y cada una guarda su archivo aparte. Un documento cuyo texto sale vacío no entra.
+
+`Corpus(world, projection, embedder=None, matcher=None)` ejecuta esa política:
+
+| método | firma | qué da |
+|---|---|---|
+| `entries()` | `-> list[CorpusEntry]` | los documentos admitidos, cada uno con `id`, `model`, `name`, `store`, `text`, `hash`, `payload`, `tags` |
+| `refresh()` | `-> dict` | embebe lo que cambió, conserva lo demás, descarta lo que salió: `{embedded, reused, dropped}` |
+| `refresh_if_stale()` | `-> dict \| None` | lo anterior solo si el índice no corresponde al store |
+| `audit()` | `-> dict` | `missing`, `stale`, `orphan`, `clean`, contra los hashes del store |
+| `rank(query, k, threshold, among, refresh=True)` | `-> list[Hit]` | documentos por similitud, el mejor primero; `among` restringe a un subconjunto |
+| `vectors()` | `-> dict[str, list[float]]` | id → vector, para quien los proyecte o compare él mismo |
+| `index_path` | `Path` | el archivo derivado, en `.pron/`, nombrado por embedder y `text_id` |
+
+Un `Hit` trae `id`, `model`, `name`, `score`, `payload` y `tags`.
+
+**La identidad es siempre la de la exportación**: la clave del índice y el `id` de una entrada son `Model:doc` o `store:Model:doc`, nunca el nombre pelado, porque dos stores de un mundo federado pueden tener un documento del mismo nombre. Un nombre puede a su vez contener `:` (un `RelationDoc` se llama por los dos extremos que une), así que un id no siempre se puede volver a partir: por eso una entrada y un `Hit` llevan `store`, `model` y `name` por separado, y ningún consumidor parte un id a mano.
 
 ## 6. Permisos: lo que pron decide y lo que no
 
@@ -147,7 +171,7 @@ Un runtime que crea muchos mundos de la misma clase les da su vocabulario con un
 
 ## 9. Qué es estable
 
-Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13, `record["forms"]` y `record["resolved"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
+Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13, `record["forms"]` y `record["resolved"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, `is_ready` y `ensure_ready`, `IndexProjection`, `Corpus`, `CorpusEntry` y `Hit` con las firmas de §5b, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 
