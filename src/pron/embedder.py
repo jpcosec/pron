@@ -183,6 +183,11 @@ class DocumentIndex:
     def keys(self) -> list[str]:
         return sorted(self._entries)
 
+    def entries_by_hash(self) -> dict[str, str]:
+        """key -> the content hash it was indexed from, for a consumer that audits the
+        index against the store it came from."""
+        return {k: e.get("hash", "") for k, e in self._entries.items()}
+
     def vectors(self) -> dict[str, list[float]]:
         """key -> vector for every indexed document that has one (none without an Embedder).
         For consumers that project or compare the vectors themselves, e.g. a 2D map of a world."""
