@@ -15,7 +15,7 @@ import json
 from sldb.cli.dict_utils import deep_delete, deep_get, deep_set
 
 from pron.display import render_name
-from pron.ids import join_id, model_of, split_id, store_of
+from pron.ids import join_id, model_of, split_id, split_relation_doc_id, store_of
 from pron.store import StoreError
 from pron.verbs import Verbs
 
@@ -319,6 +319,14 @@ class Kernel:
 
     # -- undo ---------------------------------------------------------------------------------
 
+    def _current_hash(self, address: str) -> str:
+        """The hash_c a document has now; a RelationDoc id carries a name with colons, so
+        split_id cannot parse it and hash_c is asked directly (spec 03)."""
+        rel = split_relation_doc_id(address)
+        if rel is not None:
+            return self.store.hash_c("RelationDoc", rel[1], rel[0])
+        return self.store.hash_of(address)
+
     def undo(self, move: dict[str, Any]) -> list[Write]:
         """Apply the inverses of a recorded move's writes, newest first (spec 11 §7). Before
         touching anything: a write whose document changed since the move (a different hash_c
@@ -331,13 +339,21 @@ class Kernel:
         ]
         out: list[Write] = []
         todo: list[dict[str, Any]] = []
+        # the relation docs this undo untracks (by doc name, as the edge metadata names them):
+        # endpoints of those edges are not orphans
+        dropping = {
+            rel[1]
+            for w in writes
+            if w["verb"] == "assert"
+            and (rel := split_relation_doc_id(w["address"])) is not None
+        }
         for w in writes:
             verb, address = w["verb"], w["address"]
             if verb == "forget":
                 todo.append(w)
                 continue
             left = w.get("hash_c")
-            current = self.store.hash_of(address)
+            current = self._current_hash(address)
             if left and current and left != current:
                 out.append(
                     Write(
@@ -352,10 +368,12 @@ class Kernel:
                 )
                 continue
             if verb == "create":
-                dependents = (
-                    self.verbs._edges_sldb("source_id", address, None).edges
+                dependents = [
+                    e
+                    for e in self.verbs._edges_sldb("source_id", address, None).edges
                     + self.verbs._edges_sldb("target_id", address, None).edges
-                )
+                    if e["metadata"].get("relation_doc") not in dropping
+                ]
                 if dependents:
                     raise StoreError(
                         f"undo would orphan {len(dependents)} relation(s) on {address}: "
@@ -393,7 +411,11 @@ class Kernel:
                     Write("undo", address, w["field"], None, w["before"], done=True)
                 )
             elif verb in ("create", "assert"):
-                self.store.untrack_of(address)
+                rel = split_relation_doc_id(address)
+                if rel is not None:
+                    self.store.untrack(rel[1], rel[0])
+                else:
+                    self.store.untrack_of(address)
                 out.append(
                     Write(
                         "undo",

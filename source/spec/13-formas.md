@@ -17,7 +17,7 @@ Un sustantivo sin resolver es lo que dijo la oración; evaluarlo lo resuelve con
 
 | forma | qué nombra |
 |---|---|
-| `(doc "Modelo:nombre" …)` | documentos por id de exportación (02, 10 §2.2); con store enlazado, `"A:Modelo:nombre"`; no hay nada que resolver |
+| `(doc "Modelo:nombre" …)` | documentos por id de exportación (02, 10 §2.2); con store enlazado, `"A:Modelo:nombre"`; no hay nada que resolver; dentro de un movimiento, resuelve también contra los creates pendientes de ese movimiento |
 | `(the Modelo cláusula …)` | uno: más de uno es `ambiguo` y abre una pendiente de elección (06) |
 | `(a Modelo cláusula …)` | cualquiera: pron toma el primero y lo dice |
 | `(all Modelo cláusula …)` | el conjunto, incluso vacío; `find` es lo mismo |

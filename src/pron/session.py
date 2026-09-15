@@ -222,10 +222,23 @@ class Session:
             return Response(f"{e}.", "missing")
         except FormError as e:
             return Response(f"Could not do that: {e}", "error")
+        # the creates of this move with an explicit name: (doc …) resolves against
+        # them without reading the store (spec 06 §Coordinación, 13 §Sustantivos)
+        pending = {
+            join_id(self.write_store, part.subject.model, part.payload["name"]): address_of(
+                join_id(self.write_store, part.subject.model, part.payload["name"])
+            )
+            for part in parts
+            if part.kind == "action"
+            and part.payload.get("verb") == "create"
+            and part.payload.get("name")
+            and part.subject is not None
+            and part.subject.model is not None
+        }
         # resolve every noun of every part before executing anything
         plans = []
         for part in parts:
-            plan = self._plan(part, trace, record)
+            plan = self._plan(part, trace, record, pending)
             if isinstance(plan, Response):
                 return plan
             plans.append(plan)
@@ -249,13 +262,34 @@ class Session:
                 if again is not None
                 else self._eval(expr, trace, record, retry=True)
             )
-        # execute in order, one refresh at the end
+        # execute in order, one refresh at the end; a part that references a create of
+        # its own move runs after that create, even if the form said it first
+        creates = {
+            eid: i
+            for eid, addr in pending.items()
+            for i, part in enumerate(parts)
+            if part.kind == "action"
+            and part.payload.get("verb") == "create"
+            and join_id(self.write_store, part.subject.model, part.payload.get("name", "")) == eid
+        }
+        remaining = list(range(len(parts)))
+        done: set[int] = set()
         texts = []
         wrote = False
-        for part, plan in zip(parts, plans):
-            text, did_write = self._execute(part, plan, trace, record)
+        while remaining:
+            i = next(
+                idx
+                for idx, j in enumerate(remaining)
+                if all(
+                    creates.get(e, j) in done or e not in creates
+                    for e in self._plan_references(plans[j])
+                )
+            )
+            j = remaining.pop(i)
+            text, did_write = self._execute(parts[j], plans[j], trace, record)
             texts.append(text)
             wrote = wrote or did_write
+            done.add(j)
         if wrote:
             self._refresh(trace)
         warnings = list(dict.fromkeys(self.kernel.warnings))
@@ -366,13 +400,17 @@ class Session:
     # -- planning: resolve the phrases of a part -----------------------------------------------
 
     def _plan(
-        self, part: Part, trace: list[str], record: dict[str, Any]
+        self,
+        part: Part,
+        trace: list[str],
+        record: dict[str, Any],
+        pending: dict[str, str] | None = None,
     ) -> dict[str, Any] | Response:
         plan: dict[str, Any] = {}
         if part.kind in ("undo", "refresh", "why"):
             return plan
         if part.kind == "compose":
-            return self._plan_compose(part, trace, record)
+            return self._plan_compose(part, trace, record, pending)
         for role in ("subject", "object"):
             np = getattr(part, role)
             if np is None or (
@@ -382,7 +420,7 @@ class Session:
             ):
                 continue  # a create's subject does not exist yet: nothing to resolve
             need_model = self._needed_model(part, role)
-            res = self._resolve_phrase(np, need_model, trace, record)
+            res = self._resolve_phrase(np, need_model, trace, record, pending)
             if res.outcome == "ambiguo":
                 return self._ask(part, role, res, record)
             if res.outcome == "missing":
@@ -412,16 +450,32 @@ class Session:
             return part.payload.get("model") or (part.verb.model if part.verb else None)
         return None
 
+    def _plan_references(self, plan: dict[str, Any]) -> list[str]:
+        """Export ids a planned part names, so execution can hoist the creates of its move."""
+        ids: list[str] = []
+        for res in (plan.get("subject"), plan.get("object")):
+            if res is not None and hasattr(res, "export_ids"):
+                ids += res.export_ids()
+        for step in plan.get("steps", []):
+            for res in (step.get("source"), step.get("target")):
+                if res is not None and hasattr(res, "export_ids"):
+                    ids += res.export_ids()
+        return ids
+
     def _resolve_phrase(
         self,
         np: NounPhrase,
         need_model: str | None,
         trace: list[str],
         record: dict[str, Any],
+        pending: dict[str, str] | None = None,
     ) -> Resolution:
+        pending = pending or {}
         if np.given:
             for a in np.given:
                 eid = address_to_export_id(a)
+                if eid in pending:
+                    continue  # a create of this move the store has not written yet
                 try:
                     self.world.store.payload_of(eid)
                 except StoreError:
@@ -522,7 +576,11 @@ class Session:
         return slots
 
     def _plan_compose(
-        self, part: Part, trace: list[str], record: dict[str, Any]
+        self,
+        part: Part,
+        trace: list[str],
+        record: dict[str, Any],
+        pending: dict[str, str] | None = None,
     ) -> dict[str, Any] | Response:
         assert part.verb is not None
         plan: dict[str, Any] = {"steps": []}
@@ -545,7 +603,7 @@ class Session:
                     return Response(
                         f"I need a {model.lower()} in that sentence.", "missing"
                     )
-                res = self._resolve_phrase(np, model, trace, record)
+                res = self._resolve_phrase(np, model, trace, record, pending)
                 if res.outcome == "ambiguo":
                     return self._ask(part, slot_key, res, record)
                 if res.outcome == "missing":
@@ -697,9 +755,17 @@ class Session:
                     raise StoreError(f"in this session I cannot {verb}")
                 if verb == "create":
                     assert part.subject is not None and part.subject.model is not None
-                    self.kernel.dry_create(
+                    full = self.kernel.dry_create(
                         part.subject.model, part.payload["fields"], overlay
                     )
+                    if part.payload.get("name"):
+                        overlay[
+                            join_id(
+                                self.write_store,
+                                part.subject.model,
+                                part.payload["name"],
+                            )
+                        ] = full
                 else:
                     for e in plan["subject"].export_ids():
                         self.kernel.dry_run(

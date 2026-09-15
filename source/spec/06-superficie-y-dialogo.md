@@ -35,7 +35,7 @@ Un sujeto plural en un verbo de acción es N escrituras en un solo movimiento y 
 
 ## Coordinación
 
-"and" une dos partes en **un solo movimiento** siempre, tengan el mismo sujeto o no, sean verbos de acción, transitivos o un `compose`. La regla que lo permite es que ninguna verificación depende del grafo (03 §Qué se verifica dónde): la segunda parte puede referirse a lo que la primera crea (`$created`, o "it" apuntando al documento recién creado, cuya dirección se conoce en cuanto `docs create` termina) sin necesitar un refresh en el medio. Un movimiento es una interpretación, sus escrituras en orden y un refresh al final.
+"and" une dos partes en **un solo movimiento** siempre, tengan el mismo sujeto o no, sean verbos de acción, transitivos o un `compose`. La regla que lo permite es que ninguna verificación depende del grafo (03 §Qué se verifica dónde): la segunda parte puede referirse a lo que la primera crea (los creates pendientes del mismo movimiento, por su nombre `(as …)`, o "it" apuntando al documento recién creado, cuya dirección se conoce en cuanto `docs create` termina) sin necesitar un refresh en el medio. Un movimiento es una interpretación, sus escrituras en orden y un refresh al final.
 
 Dos consecuencias: si cualquier parte es ambigua o missing, la oración entera lo es y nada se ejecuta; y "create a client named X and book her a table" es un movimiento de cuatro escrituras, no dos turnos.
 

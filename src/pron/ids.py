@@ -8,6 +8,8 @@ pron splits an id by hand.
 
 from __future__ import annotations
 
+import re
+
 LOCAL = "local"
 
 
@@ -27,6 +29,16 @@ def split_id(export_id: str) -> tuple[str | None, str, str]:
 
 def join_id(store: str | None, model: str, doc: str) -> str:
     return f"{model}:{doc}" if is_local(store) else f"{store}:{model}:{doc}"
+
+
+def split_relation_doc_id(export_id: str) -> tuple[str | None, str] | None:
+    """(store, doc name) for 'RelationDoc:{name}' or 'A:RelationDoc:{name}', None otherwise.
+    A RelationDoc's name embeds export ids (colons), so the ordinary split_id cannot parse
+    these; the store prefix carries no colon, so this match is unambiguous."""
+    m = re.fullmatch(r"(?:([^:]+):)?RelationDoc:(.+)", export_id)
+    if m is None:
+        return None
+    return (None if m.group(1) in (None, LOCAL) else m.group(1)), m.group(2)
 
 
 def model_of(export_id: str) -> str:
