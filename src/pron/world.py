@@ -36,7 +36,7 @@ class World:
         self.store = Store(self.root, pythonpath)
         self._graph = Graph(self.root)
         self._hash_mundo_cache: tuple[Any, str] | None = None
-        self._pending: tuple[set[str], bool] | None = None  # a deferred refresh: (stores, light)
+        self._pending: tuple[set[str] | None, bool] | None = None  # a deferred refresh: (stores, light)
 
     # -- declaration -----------------------------------------------------------
 
@@ -236,12 +236,13 @@ class World:
         first, and the graph catches up when the server settles or the next graph read
         arrives. Deferrals accumulate — the stores are their union, and the refresh is
         light only if every one of them was."""
+        wanted = None if stores is None else set(stores)  # None: every store, as in refresh
         if self._pending is None:
-            self._pending = (set(stores or ()), light)
+            self._pending = (wanted, light)
         else:
             pending_stores, pending_light = self._pending
-            pending_stores.update(stores or ())
-            self._pending = (pending_stores, pending_light and light)
+            union = None if pending_stores is None or wanted is None else pending_stores | wanted
+            self._pending = (union, pending_light and light)
 
     @property
     def has_pending_refresh(self) -> bool:
@@ -256,7 +257,7 @@ class World:
         stores, light = self._pending
         self._pending = None  # not pending while it runs: refresh reads self.graph itself
         try:
-            self.refresh(stores=sorted(stores), light=light)
+            self.refresh(stores=None if stores is None else sorted(stores), light=light)
             return True
         except Exception:
             self._pending = (stores, light)
