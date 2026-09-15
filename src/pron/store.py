@@ -62,6 +62,7 @@ from sldb.store.query import (
 )
 from sldb.store.runtime_cache import new_operation as _sldb_new_operation
 from sldb.store.query_engine.filter import DocumentFilter
+from sldb.store.query_engine.where_parse import WherePredicateError
 
 from pron.ids import LOCAL, is_local, join_id, split_id
 
@@ -174,9 +175,12 @@ class Store:
 
     def find(self, scope: str, where: str) -> list[str]:
         """Addresses `[store:]st.{Model[+]}.doc` matching one predicate."""
-        return find_structural(
-            self.sp, scope, where, resolve_model_ref, self.pythonpath
-        )
+        try:
+            return find_structural(
+                self.sp, scope, where, resolve_model_ref, self.pythonpath
+            )
+        except WherePredicateError as e:
+            raise StoreError(str(e)) from e  # an unparseable predicate is an error, never an empty set
 
     def list(self, address: str) -> list[str]:
         return list_structural(self.sp, address, resolve_model_ref, self.pythonpath)
@@ -262,9 +266,12 @@ class Store:
             raise StoreError(f"no {model} named '{name}'")
         if payload is not None:
             d = replace(d, payload=payload)
-        return DocumentFilter.where_matches(
-            d, where, resolve_model_ref, self.pythonpath
-        )
+        try:
+            return DocumentFilter.where_matches(
+                d, where, resolve_model_ref, self.pythonpath
+            )
+        except WherePredicateError as e:
+            raise StoreError(str(e)) from e
 
     def matches_of(
         self, export_id: str, where: str, payload: dict | None = None

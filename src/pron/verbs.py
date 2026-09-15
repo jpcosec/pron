@@ -359,6 +359,7 @@ def _pending_matches(
     from dataclasses import replace
 
     from sldb.store.query_engine.filter import DocumentFilter
+    from sldb.store.query_engine.where_parse import WherePredicateError
     from sldb.cli.model_utils import resolve_model_ref
 
     sample = next(iter(store.docs_of(model, in_store or "local")), None) or next(
@@ -368,12 +369,15 @@ def _pending_matches(
         return (
             True  # nothing to compare the shape against; the write itself will validate
         )
-    return DocumentFilter.where_matches(
-        replace(sample, name="$created", payload=payload),
-        where,
-        resolve_model_ref,
-        store.pythonpath,
-    )
+    try:
+        return DocumentFilter.where_matches(
+            replace(sample, name="$created", payload=payload),
+            where,
+            resolve_model_ref,
+            store.pythonpath,
+        )
+    except WherePredicateError as e:
+        raise StoreError(str(e)) from e
 
 
 def _strip(e: dict[str, Any]) -> dict[str, Any]:
