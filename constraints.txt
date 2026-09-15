@@ -2,6 +2,9 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
+# Verified against (suites), 2026-09-15, pron 052bdb4 (+corpus c534d77, README compuesto, serve settle):
+#   - kgdb 5effed5; sldb 60943c7 (where: escaped literals): 158 passed.
+#
 # Verified against (suites), 2026-09-15, pron fa66935 (move resolves its pending creates; where errors):
 #   - kgdb 5effed5; sldb a508034 (where: empty literal, unparseable predicate is an error): 137 passed.
 #
@@ -27,5 +30,5 @@
 #     commit that lands that fix.
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
-sldb a508034 merge 'where-empty': literal vacío y predicado que no parsea es error
+sldb 60943c7 where: literales con escapes (\" y \\)
 kgdb 5effed5 merkle capa 1: build_typed_snapshot incremental con previous=
