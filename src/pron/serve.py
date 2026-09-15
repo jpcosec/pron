@@ -19,9 +19,10 @@ from __future__ import annotations
 import json
 import os
 import socketserver
+import sys
 import threading
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from pron.client import RemoteSession, alive, request, socket_path  # noqa: F401 - re-exported for callers of pron.serve
 from pron.ids import LOCAL, is_local
@@ -168,13 +169,39 @@ class Server:
 
     # -- requests ---------------------------------------------------------------------------
 
-    def handle(self, req: dict[str, Any]) -> dict[str, Any]:
+    def handle(
+        self,
+        req: dict[str, Any],
+        respond: Callable[[dict[str, Any]], None] | None = None,
+    ) -> dict[str, Any]:
+        """One request under the server's lock. With `respond`, the answer is written and
+        flushed inside the lock: the client's bytes leave before the deferred graph refresh
+        settles, and the settle runs right after them, still under this lock — the next
+        request waits on the lock and always reads a fresh graph (spec 11 §8)."""
         op = req.get("op", "say")
         with self.lock:
             try:
-                return self._dispatch(op, req)
+                resp = self._dispatch(op, req)
             except Exception as e:  # noqa: BLE001 - the answer says what the world refused; the server stays up
-                return {"ok": False, "error": f"{type(e).__name__}: {e}"}
+                resp = {"ok": False, "error": f"{type(e).__name__}: {e}"}
+            if respond is not None:
+                respond(resp)
+            self._settle()
+            return resp
+
+    def _settle(self) -> None:
+        """Run the pending refresh of the one world every session shares — the mounted
+        stores ride in the same World (World.defer_refresh accumulates their union). A
+        settle that raises keeps its pending state (World.settle) and is only logged: the
+        next request retries it, synchronously, through world.graph."""
+        try:
+            self.world.settle()
+        except Exception as e:  # noqa: BLE001 - the refresh is retried on the next request; the server stays up
+            print(
+                f"pron serve: the deferred graph refresh failed, "
+                f"it will run again before the next answer: {type(e).__name__}: {e}",
+                file=sys.stderr,
+            )
 
     def _dispatch(self, op: str, req: dict[str, Any]) -> dict[str, Any]:
         if op == "worlds":
@@ -270,6 +297,7 @@ class Server:
                 now=key[5],
                 read_only=key[3],
                 home=home,
+                defer_refresh=True,  # the answer leaves before the graph refresh; handle settles it (11 §8)
             )
         return self.sessions[key]
 
@@ -303,13 +331,26 @@ class Server:
                 try:
                     req = json.loads(line)
                 except ValueError as e:
-                    resp = {"ok": False, "error": f"bad request: {e}"}
-                else:
-                    resp = app.handle(req)
-                self.wfile.write(
-                    json.dumps(resp, default=str, ensure_ascii=False).encode("utf-8")
-                    + b"\n"
-                )
+                    self.wfile.write(
+                        json.dumps(
+                            {"ok": False, "error": f"bad request: {e}"},
+                            default=str,
+                            ensure_ascii=False,
+                        ).encode("utf-8")
+                        + b"\n"
+                    )
+                    return
+
+                def respond(r: dict[str, Any]) -> None:
+                    """The answer leaves while the server still holds its lock; the graph
+                    refresh settles right after these bytes (spec 11 §8)."""
+                    self.wfile.write(
+                        json.dumps(r, default=str, ensure_ascii=False).encode("utf-8")
+                        + b"\n"
+                    )
+                    self.wfile.flush()
+
+                app.handle(req, respond=respond)
 
         self._srv = socketserver.UnixStreamServer(str(self.path), Handler)
         self._link(self.world.root)

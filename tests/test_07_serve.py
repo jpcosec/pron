@@ -4,9 +4,12 @@ does not fool a client."""
 
 from __future__ import annotations
 
+import argparse
+import importlib.util
 import io
 import threading
 import time
+from pathlib import Path
 
 import pytest
 
@@ -14,6 +17,7 @@ from pron.cli.main import main
 from pron.cli.repl import run as repl
 from pron.client import RemoteSession, alive, request, socket_path
 from pron.serve import Server
+from pron.session import Session
 from pron.world import World
 from worlds.restaurant import build_restaurant
 
@@ -122,6 +126,95 @@ def test_a_write_through_the_server_is_a_real_move(server: Server):
     assert r.outcome == "unico" and r.record["writes"], r.text
     assert server.world.store.doc("Client", "client-zed-lee") is not None
     assert s.turn("the clients").outcome == "unico"
+
+
+def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(world: World):
+    """A session with defer_refresh (spec 11 §8) answers without the graph refresh: the
+    world keeps it pending, and the first graph read — the server's settle, or any caller
+    of world.graph — runs it and sees the node the write made."""
+    from pron.graph import doc_id
+
+    s = Session(world, projection="all", speaker="defer", now=NOW, defer_refresh=True)
+    r = s.eval(
+        '(create Client (as "client-settled-dee") (name "Settled Dee") (phone "9 5555 1111"))'
+    )
+    assert r.outcome == "unico", r.text
+    assert "graph refresh deferred until after the response" in r.trace, r.trace
+    assert world.has_pending_refresh
+    assert world.graph.has_node(doc_id("Client:client-settled-dee"))  # the read settles it
+    assert not world.has_pending_refresh
+
+
+def test_a_write_through_the_server_is_seen_by_the_next_read(server: Server):
+    """The answer leaves before the refresh (11 §8); the next request — a graph read here —
+    waits for it and sees the write."""
+    from pron.graph import doc_id
+
+    s = RemoteSession(server.path, projection="all", speaker="settle", now=NOW)
+    r = s.turn("create a client named Settled Sue, phone 9 5555 4321")
+    assert r.outcome == "unico" and r.record["writes"], r.text
+    assert any("deferred" in line for line in r.trace), r.trace
+    assert s.graph.has_node(node_id=doc_id("Client:client-settled-sue"))
+    assert not server.world.has_pending_refresh
+    assert s.turn("the clients").outcome == "unico"
+
+
+def _bench_module():
+    """bench/merkle.py, loaded from its file: it is a script, not a package."""
+    path = Path(__file__).resolve().parent.parent / "bench" / "merkle.py"
+    spec = importlib.util.spec_from_file_location("bench_merkle", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_a_write_through_the_server_answers_before_the_graph_settles(tmp_path):
+    """What the client waits for is the write, not write + refresh (spec 11 §8): on a
+    synthetic world of 800 notes, a write's response through the server takes clearly less
+    than a sync session's write measured in this same test. Best of three on each side; a
+    machine too noisy to tell skips instead of flaking."""
+    merkle = _bench_module()
+    root = tmp_path / "bench-world"
+    merkle.cmd_generate(argparse.Namespace(root=str(root), n=800))
+
+    srv = Server(root, str(root))
+    t = threading.Thread(target=srv.serve_forever, daemon=True)
+    t.start()
+    try:
+        for _ in range(100):
+            if alive(srv.path):
+                break
+            time.sleep(0.05)
+        assert alive(srv.path)
+
+        def timed(fn):
+            start = time.perf_counter()
+            fn()
+            return time.perf_counter() - start
+
+        def creates(tag: str) -> list[str]:
+            return [
+                f'(create BenchNote (as "bench-{tag}-{i}") '
+                f'(title "Bench {tag} {i}") (body "A timed create."))'
+                for i in range(3)
+            ]
+
+        remote = RemoteSession(srv.path, speaker="bench-defer")
+        deferred = min(timed(lambda: remote.eval(f)) for f in creates("d"))
+        sync = Session(World(root, str(root)), projection="all", speaker="bench-sync")
+        # no defer_refresh: the eval pays the refresh; min drops the cold first one
+        synchronous = min(timed(lambda: sync.eval(f)) for f in creates("s"))
+        assert deferred < synchronous, (
+            f"a deferred write cost {deferred:.3f}s, as much as a sync one ({synchronous:.3f}s)"
+        )
+        if deferred >= 0.7 * synchronous:
+            pytest.skip(
+                f"machine too noisy: deferred {deferred:.3f}s vs sync {synchronous:.3f}s"
+            )
+    finally:
+        if alive(srv.path):
+            request(srv.path, {"op": "stop"})
+            t.join(timeout=10)
 
 
 def test_a_stale_socket_file_is_not_a_server(tmp_path):

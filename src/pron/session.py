@@ -40,15 +40,21 @@ class Session:
         embedder: Embedder | None = None,
         read_only: bool = False,
         home: str | None = None,
+        defer_refresh: bool = False,
     ):
         """read_only: the projection's actions are dropped and every relation is in mode read, so
         nothing said in this session writes; the application decides that per session (spec 05).
         home: the linked store this session's world is (spec 01 §Un mundo en varios stores): its
         projections are read from there, its 'local' is that store, and that is where the session
-        writes; None is the world's own store."""
+        writes; None is the world's own store.
+        defer_refresh (spec 11 §8): a write's graph refresh does not run in the turn; it is
+        recorded on the world (World.defer_refresh) for whoever serves it. `pron serve` answers
+        with the bytes and settles right after, still under its lock, so the next request reads a
+        fresh graph; any graph read settles it too."""
         self.world = world
         self.projection_name = projection
         self.read_only = read_only
+        self.defer_refresh = defer_refresh
         self.home = None if is_local(home) else home
         self.now = now
         self.dialogue = Dialogue(speaker=speaker, speaker_address=speaker_address)
@@ -1337,7 +1343,18 @@ class Session:
         """PLAN 15 capa 8: light (the default) — right after our own write, whose indexes
         sldb already kept current — skips `stores update` entirely; `full=True` is the
         explicit `(refresh)` verb's own path, the one that actually notices an edit made
-        outside pron."""
+        outside pron.
+
+        With `defer_refresh` (spec 11 §8) the light refresh is recorded on the world instead
+        of run here: the response leaves first and the settle runs right after, still under
+        the server's lock, so the next request reads a fresh graph. `self.hash` still moves:
+        hash_mundo reads the store, not the graph, and it is already current after the write.
+        A full refresh stays synchronous: whoever asked for it wants the graph now."""
+        if self.defer_refresh and not full:
+            self.world.defer_refresh(stores=self.lex.stores, light=True)
+            trace.append("graph refresh deferred until after the response")
+            self.hash = self.world.hash_mundo()
+            return
         report = self.world.refresh(stores=self.lex.stores, light=not full)
         trace.append(f"refresh: {report['nodes']} nodes, {report['edges']} edges")
         self.hash = self.world.hash_mundo()
