@@ -200,3 +200,14 @@ def test_a_read_only_session_writes_nothing_whatever_the_projection_allows(
         not m["record"].get("writes")
         for m in (s.ledger.get(mid) for mid in [r.move_id])
     )
+
+
+def test_removing_a_required_field_is_refused_not_raised(world: World):
+    """A write whose payload would not validate is refused before anything is written
+    (spec 11 §7), even when the model rejects it outright for a missing required field."""
+    s = Session(world, projection="all", speaker="jp", now=NOW)
+    assert s.turn("the tables on the terrace").outcome == "unico"
+    r = s.turn("remove the zone of them")
+    assert r.outcome == "error" and "zone" in r.text and "round-trip" in r.text
+    assert not r.record["writes"]
+    assert s.turn("the tables on the terrace").outcome == "unico"

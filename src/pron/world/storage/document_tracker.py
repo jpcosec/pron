@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
+from pydantic import ValidationError
 from sldb.cli.commands.doc import DocCLI
 from sldb.cli.model_utils import resolve_model_ref
 from sldb.runtime.validation import (
@@ -23,15 +24,25 @@ from pron.world.storage.document_reader import DocumentReader
 from pron.world.store_error import StoreError
 
 
+def _reason(error: dict) -> str:
+    """One pydantic complaint as `field: message`."""
+    return f"{'.'.join(map(str, error['loc']))}: {error['msg']}"
+
+
 class DocumentTracker(DocumentReader):
     """Creates, tracks and untracks the documents of this world's stores."""
 
     def validate(
         self, model: str, payload: dict, store: str | None = LOCAL
     ) -> tuple[bool, str]:
-        ok, details = validate_model_data_roundtrip(
-            self.model_type(model, store), payload
-        )
+        """Whether sldb reads the payload back as itself; a payload the model rejects
+        outright (a required field missing) is not valid either, with pydantic's reasons."""
+        try:
+            ok, details = validate_model_data_roundtrip(
+                self.model_type(model, store), payload
+            )
+        except ValidationError as e:
+            return False, "; ".join(_reason(err) for err in e.errors())[:200]
         return ok, "" if ok else json.dumps(
             details.get("extracted_payload"), default=str
         )[:200]
