@@ -28,7 +28,7 @@ El estado propio de una sesión es mínimo: si hay o no una pregunta pendiente, 
 
 Afuera de pron: **sldb** (el store de documentos y direcciones), **kgdb** (el grafo de relaciones tipadas, derivado y de solo lectura), **graph_ui** (otra superficie, gestos en vez de oraciones, que produce las mismas formas de spec 13) y **legos** (consume pron como librería, sin pasar por ninguna superficie — ver §Quién lo usa).
 
-Las capas de código que implementan cada paso están en la tabla de la siguiente sección (§Capas); una versión dibujada de este mismo recorrido, con un turno completo de ejemplo, está en [`views/spec2viz`](views/spec2viz/README.md) (`offline.html`, sin dependencias de red).
+Las capas de código que implementan cada paso están en la tabla de la siguiente sección (§Capas); una versión dibujada de este mismo recorrido, con un turno completo de ejemplo, está en [`docs/spec2viz`](docs/spec2viz/README.md) (`offline.html`, sin dependencias de red).
 
 ## Sources
 

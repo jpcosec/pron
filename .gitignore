@@ -12,7 +12,7 @@ kgdb/
 knowledge/commands/
 knowledge/relations/
 knowledge/surfaces/
-views/spec2viz/out/
-views/spec2viz/index.html
-views/spec2viz/offline.html
-views/spec2viz/diagrams.md
+docs/spec2viz/out/
+docs/spec2viz/index.html
+docs/spec2viz/offline.html
+docs/spec2viz/diagrams.md

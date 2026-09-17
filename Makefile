@@ -13,7 +13,7 @@ lint:
 # standards.md Layer 1 (size/structure), report-only until the backlog is collapsed
 audit:
 	$(PYTHON) -m ruff check src --select C901,PLR0911,PLR0912,PLR0915 --exit-zero --output-format concise
-	$(PYTHON) scripts/check_file_length.py src --report
+	$(PYTHON) tools/check_file_length.py src --report
 
 format-check:
 	$(PYTHON) -m ruff format --check src tests

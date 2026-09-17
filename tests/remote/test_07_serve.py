@@ -160,8 +160,8 @@ def test_a_write_through_the_server_is_seen_by_the_next_read(server: Server):
 
 
 def _bench_module():
-    """bench/merkle.py, loaded from its file: it is a script, not a package."""
-    path = Path(__file__).resolve().parents[2] / "bench" / "merkle.py"
+    """tools/merkle_bench.py, loaded from its file: it is a script, not a package."""
+    path = Path(__file__).resolve().parents[2] / "tools" / "merkle_bench.py"
     spec = importlib.util.spec_from_file_location("bench_merkle", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

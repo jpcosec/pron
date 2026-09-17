@@ -32,7 +32,7 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 
 Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 y el 11 se leen antes de implementar; el 12 es el único que un runtime externo necesita.
 
-Las vistas spec2viz en [`views/spec2viz`](../../views/spec2viz) son la proyección gráfica de estos documentos. Cuando difieran, manda el spec.
+Las vistas spec2viz en [`docs/spec2viz`](../../docs/spec2viz) son la proyección gráfica de estos documentos. Cuando difieran, manda el spec.
 
 ## Vocabulario fijo
 
