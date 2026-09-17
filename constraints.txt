@@ -33,5 +33,5 @@
 #     commit that lands that fix.
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
-sldb 23f78c5 api: paquete sldb.api tipado como librería; la CLI lo usa y reexporta lo movido
-kgdb 29d2898 sldb.api: kgdb deja de importar internos de sldb.cli
+sldb f48a154 api: init_store y create_document; stores init y docs create delegan en sldb.api
+kgdb 66f6c0e tests: typed_ingest y merkle_incremental arman sus stores con sldb.api (sin sldb.cli)
