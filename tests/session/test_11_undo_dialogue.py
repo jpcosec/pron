@@ -23,3 +23,20 @@ def test_an_undone_create_is_no_longer_it(tmp_path):
     r = session.turn("confirm it")
     assert ANA not in r.text, r.text
     assert all(ANA not in a for a in session.dialogue.singular.values())
+
+
+def test_undo_again_takes_back_the_move_before(tmp_path):
+    session = _booked(tmp_path)
+    first = session.turn("undo the last move")
+    r = session.turn("undo the last move")
+    assert "(1 write(s))" in r.text, r.text
+    assert r.record["undoes"] != first.record["undoes"]
+    assert session.world.store.doc("Client", "client-ana-rojas") is None
+    assert session.world.store.doc("Reservation", ANA) is None
+
+
+def test_nothing_left_to_undo(tmp_path):
+    session = Session(build_restaurant(tmp_path), speaker="jp", now=NOW)
+    session.turn("create a client named Eva Diaz, phone 9 4444 0000")
+    session.turn("undo the last move")
+    assert session.turn("undo the last move").text == "Nothing to undo."

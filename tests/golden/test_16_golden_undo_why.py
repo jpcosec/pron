@@ -48,7 +48,7 @@ DOCUMENTS = [
     UNDO,
     "confirm it",  # the undo removed the reservation: 'it' has no antecedent
     "why?",
-    UNDO,  # the last move with writes is the undo itself
+    UNDO,  # undo again: the move before, the create of Ana Rojas
 ]
 
 

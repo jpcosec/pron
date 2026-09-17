@@ -1472,7 +1472,7 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-14>',
+        'hash_after': '<hash-1>',
         'hash_before': '<hash-14>',
         'id': '<move-20>',
         'outcome': 'unico',
@@ -1508,20 +1508,35 @@
         'trace': list([
           'interpretation: undo',
           'forms: (undo)',
-          'refresh: 178 nodes, 362 edges',
+          "undo Client:client-ana-rojas: {'name': 'Ana Rojas', 'phone': '9 5555 1234'} → None",
+          'refresh: 174 nodes, 346 edges',
         ]),
-        'undoes': '<move-17>',
+        'undoes': '<move-14>',
         'writes': list([
+          dict({
+            'address': 'Client:client-ana-rojas',
+            'after': None,
+            'before': dict({
+              'name': 'Ana Rojas',
+              'phone': '9 5555 1234',
+            }),
+            'done': True,
+            'field': None,
+            'note': 'untracked',
+            'verb': 'undo',
+          }),
         ]),
       }),
-      'text': 'Undid <move-17> (0 write(s)).',
+      'text': 'Undid <move-14> (1 write(s)).',
       'trace': list([
         'interpretation: undo',
         'forms: (undo)',
-        'refresh: 178 nodes, 362 edges',
+        "undo Client:client-ana-rojas: {'name': 'Ana Rojas', 'phone': '9 5555 1234'} → None",
+        'refresh: 174 nodes, 346 edges',
       ]),
       'turn': 'undo the last move',
       'written': dict({
+        'Client:client-ana-rojas': None,
       }),
     }),
   ])
