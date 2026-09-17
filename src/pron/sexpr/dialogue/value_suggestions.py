@@ -5,13 +5,15 @@ existing values of every string, non-enum field of this projection's models, and
 offered is the sentence that would resolve — 'the <model> <alias-field or field> <value>' —
 so the candidate is usable as said. Free prose is not a nameable value and is skipped; a
 field with more distinct values than matching.max_values is too wide to rank and says so in
-the trace. Same cap as P1; this never executes anything on its own.
+the trace. Same cap as P1 (pron.sexpr.resolving.field_values); this never executes anything
+on its own.
 """
 
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
+from pron.sexpr.resolving.field_values import FieldValues
 from pron.world.lexicon import UNSUGGESTED_MODELS
 
 if TYPE_CHECKING:
@@ -32,10 +34,7 @@ class ValueSuggestions:
         self.projection, self.lex, self.world, self.matcher = projection, lex, world, matcher
 
     def __call__(self, word: str, trace: list[str]) -> list[Suggestion]:
-        matching = self.projection.get("matching") or {}
-        self.max_values = int(matching.get("max_values", 500))
-        self.neighbors = int(matching.get("neighbors", 3))
-        self.threshold = float(matching.get("threshold", 0.55))
+        self.values = FieldValues.of(self.projection, self.lex, self.matcher)
         scored: list[Scored] = []
         for model in self.lex.models:
             if model not in UNSUGGESTED_MODELS:
@@ -53,30 +52,13 @@ class ValueSuggestions:
     def _field(
         self, word: str, model: str, name: str, trace: list[str]
     ) -> list[Scored]:
-        values = self._values(model, name, trace)
+        values = self.values.rankable(model, name, trace, prose=False)
         if not values:
             return []
         return [
             (score, model, name, value, self._sentence(model, name, value))
-            for value, score in self._rank(word, values)
+            for value, score in self.values.rank(word, values)
         ]
-
-    def _values(self, model: str, name: str, trace: list[str]) -> list[str]:
-        values = self.lex.distinct_values(model, name)
-        if not values or _is_prose(values):
-            return []
-        if len(values) > self.max_values:
-            trace.append(
-                f"{model}.{name}: {len(values)} distinct values over "
-                f"matching.max_values ({self.max_values}), no value suggestion"
-            )
-            return []
-        return values
-
-    def _rank(self, word: str, values: list[str]) -> list[tuple[str, float]]:
-        return self.matcher.rank(
-            word, [(v, v) for v in values], k=self.neighbors, threshold=self.threshold
-        )
 
     def _sentence(self, model: str, name: str, value: Any) -> str:
         """What someone would have to say for this value to resolve."""
@@ -93,11 +75,6 @@ class ValueSuggestions:
                 continue
             seen.add(sentence)
             out.append((model, fname, value, sentence))
-            if len(out) >= self.neighbors:
+            if len(out) >= self.values.neighbors:
                 break
         return out
-
-
-def _is_prose(values: list[str]) -> bool:
-    """Free prose (a statement, a note), not a nameable value one word says."""
-    return any(len(v.split()) > 6 for v in values)

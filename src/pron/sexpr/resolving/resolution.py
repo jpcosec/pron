@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from pron.kernel.ids import export_id as _export_id
+from pron.kernel.ids import export_id as _export_id, normalize_address
 from pron.kernel.parts.noun_phrase import NounPhrase
 
 
@@ -34,3 +34,8 @@ class Resolution:
 def address_to_export_id(address: str) -> str:
     """st.{Model}.doc → Model:doc; A:st.{Model}.doc → A:Model:doc; an export id passes through."""
     return _export_id(address)
+
+
+def normalize_addresses(addresses: list[str]) -> list[str]:
+    """[store:]st.{Model+}.doc → [store:]st.{Model}.doc, sorted and without repeats."""
+    return sorted({normalize_address(a) for a in addresses})
