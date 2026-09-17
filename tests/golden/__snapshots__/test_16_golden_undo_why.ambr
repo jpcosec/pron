@@ -675,7 +675,7 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-11>',
+        'hash_after': '<hash-1>',
         'hash_before': '<hash-10>',
         'id': '<move-10>',
         'outcome': 'unico',
@@ -711,21 +711,12 @@
         'trace': list([
           'interpretation: undo',
           'forms: (undo)',
-          'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
           "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
+          'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 9 → 4',
           'refresh: 174 nodes, 346 edges',
         ]),
         'undoes': '<move-8>',
         'writes': list([
-          dict({
-            'address': 'Reservation:reservation-2026-09-11-luis-soto',
-            'after': None,
-            'before': None,
-            'done': False,
-            'field': 'party_size',
-            'note': 'Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched',
-            'verb': 'undo',
-          }),
           dict({
             'address': 'Reservation:reservation-2026-09-11-luis-soto',
             'after': '',
@@ -735,14 +726,23 @@
             'note': '',
             'verb': 'undo',
           }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': 4,
+            'before': 9,
+            'done': True,
+            'field': 'party_size',
+            'note': '',
+            'verb': 'undo',
+          }),
         ]),
       }),
-      'text': 'Undid <move-8> (1 write(s)). Not touched: Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched. Heads up: assigned_to → Table:table-3 requires capacity >= {party_size}, which no longer holds.',
+      'text': 'Undid <move-8> (2 write(s)).',
       'trace': list([
         'interpretation: undo',
         'forms: (undo)',
-        'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
         "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
+        'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 9 → 4',
         'refresh: 174 nodes, 346 edges',
       ]),
       'turn': 'undo the last move',
@@ -750,7 +750,7 @@
         'Reservation:reservation-2026-09-11-luis-soto': dict({
           'date': '2026-09-11',
           'notes': '',
-          'party_size': 9,
+          'party_size': 4,
           'status': 'pending',
           'time': '20:00',
         }),
@@ -759,8 +759,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-13>',
-        'hash_before': '<hash-11>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-1>',
         'id': '<move-11>',
         'outcome': 'unico',
         'refers_to': '',
@@ -797,7 +797,7 @@
         'reads': list([
           dict({
             'address': 'Table:table-20',
-            'hash_c': '<hash-12>',
+            'hash_c': '<hash-11>',
           }),
         ]),
         'resolved': '(forget (doc "Table:table-20"))',
@@ -819,7 +819,7 @@
             }),
             'done': True,
             'field': None,
-            'hash_c': '<hash-12>',
+            'hash_c': '<hash-11>',
             'note': '',
             'path': '<tmp>/world/tables/20.md',
             'verb': 'forget',
@@ -842,8 +842,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-13>',
-        'hash_before': '<hash-13>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-12>',
         'id': '<move-12>',
         'outcome': 'unico',
         'refers_to': '',
@@ -897,8 +897,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-11>',
-        'hash_before': '<hash-13>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-12>',
         'id': '<move-13>',
         'outcome': 'unico',
         'refers_to': '',
@@ -972,8 +972,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-15>',
-        'hash_before': '<hash-11>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-1>',
         'id': '<move-14>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1031,7 +1031,7 @@
             'before': None,
             'done': True,
             'field': None,
-            'hash_c': '<hash-14>',
+            'hash_c': '<hash-13>',
             'note': '',
             'path': '<tmp>/world/clients/client-ana-rojas.md',
             'verb': 'create',
@@ -1057,8 +1057,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-18>',
-        'hash_before': '<hash-15>',
+        'hash_after': '<hash-17>',
+        'hash_before': '<hash-14>',
         'id': '<move-15>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1102,7 +1102,7 @@
         'reads': list([
           dict({
             'address': 'Table:table-12',
-            'hash_c': '<hash-17>',
+            'hash_c': '<hash-16>',
           }),
         ]),
         'resolved': '(say book (slot "$referent:Client" (doc "Client:client-ana-rojas")) (slot "$object:Table" (doc "Table:table-12") (alternatives "Table:table-14")) (party_size 6) (date "2026-09-11") (time "21:00"))',
@@ -1131,7 +1131,7 @@
             'before': None,
             'done': True,
             'field': None,
-            'hash_c': '<hash-16>',
+            'hash_c': '<hash-15>',
             'note': '',
             'path': '<tmp>/world/reservations/reservation-2026-09-11-ana-rojas.md',
             'verb': 'create',
@@ -1203,8 +1203,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-18>',
-        'hash_before': '<hash-18>',
+        'hash_after': '<hash-17>',
+        'hash_before': '<hash-17>',
         'id': '<move-16>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1258,8 +1258,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-15>',
-        'hash_before': '<hash-18>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-17>',
         'id': '<move-17>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1361,8 +1361,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-15>',
-        'hash_before': '<hash-15>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-14>',
         'id': '<move-18>',
         'outcome': 'error',
         'refers_to': '',
@@ -1416,8 +1416,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-15>',
-        'hash_before': '<hash-15>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-14>',
         'id': '<move-19>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1471,8 +1471,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-15>',
-        'hash_before': '<hash-15>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-14>',
         'id': '<move-20>',
         'outcome': 'unico',
         'refers_to': '',

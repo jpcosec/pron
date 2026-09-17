@@ -150,3 +150,23 @@ def test_every_turn_left_a_move(world: World):
     moves = world.store.docs_of("MoveDoc")
     assert len(moves) >= 12
     assert all(m.payload["hash_before"] for m in moves)
+
+
+def test_undo_restores_every_write_of_a_move_to_the_same_document(tmp_path):
+    """Spec 11 §7: a document is 'changed after that move' only if something outside the move
+    changed it; two writes of one move to one reservation are both undone."""
+    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
+    address = ("Reservation", "reservation-2026-09-11-luis-soto")
+    before = dict(s.world.store.payload(*address))
+    s.turn("the reservation of Luis Soto")  # 'it' in the move below needs an antecedent
+    r = s.turn(
+        "change the reservation of Luis Soto to 9 people and add a note saying: birthday"
+    )
+    assert r.outcome == "unico" and len(r.record["writes"]) == 2, r.text
+    r = s.turn("undo the last move")
+    assert "changed after" not in r.text and "Heads up" not in r.text, r.text
+    after = s.world.store.payload(*address)
+    assert (after["party_size"], after["notes"]) == (
+        before["party_size"],
+        before["notes"],
+    )

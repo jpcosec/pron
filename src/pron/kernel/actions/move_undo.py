@@ -1,7 +1,8 @@
 """Undoing a recorded move (spec 11 §7): the inverses of its writes, newest first. Before
 touching anything, a write whose document changed since the move (a different hash_c from
-the one the move left) is skipped and named, and an inverse that would orphan a later
-relation rejects the whole undo.
+the one the move's last write to it left: its own later writes are not a change after it)
+is skipped and named, and an inverse that would orphan a later relation rejects the whole
+undo.
 """
 
 from __future__ import annotations
@@ -29,9 +30,13 @@ class MoveUndo:
             for w in reversed(move.get("record", {}).get("writes", []))
             if w.get("done")
         ]
+        # the hash_c the move's last write to each document left (writes come newest first)
+        self.left = {w["address"]: w["hash_c"] for w in writes[::-1] if w.get("hash_c")}
         out, todo = self._checked(writes, self._dropping(writes))
         for w in todo:
-            self._invert(w, out)
+            self.kernel.expected_hash.pop(w["address"], None)
+            out.extend(self._inverse(w))
+        self._recheck(todo)
         return out
 
     @staticmethod
@@ -63,7 +68,7 @@ class MoveUndo:
 
     def _changed_since(self, w: dict[str, Any]) -> Write | None:
         address = w["address"]
-        left = w.get("hash_c")
+        left = self.left.get(address)
         current = self._current_hash(address)
         if left and current and left != current:
             return Write(
@@ -99,11 +104,11 @@ class MoveUndo:
                 )
             )
 
-    def _invert(self, w: dict[str, Any], out: list[Write]) -> None:
-        verb, address = w["verb"], w["address"]
-        self.kernel.expected_hash.pop(address, None)
-        out.extend(self._inverse(w))
-        if verb != "forget":
+    def _recheck(self, todo: list[dict[str, Any]]) -> None:
+        """Re-evaluate the conditions around each document once every inverse is applied, so
+        a heads-up speaks of what the undo left, not of a document halfway back."""
+        kept = [w["address"] for w in todo if w["verb"] != "forget"]
+        for address in dict.fromkeys(kept):
             self.kernel.warnings += self.kernel.verbs.broken_conditions(address)
 
     def _inverse(self, w: dict[str, Any]) -> list[Write]:
