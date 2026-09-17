@@ -57,8 +57,17 @@ class ReadExecutor:
         found = self._narrow(found, asked_np, part, ctx)
         addresses = [address_of(e) for e in dict.fromkeys(found)]
         note_reads(self.world, addresses, ctx.record)
+        self._name(part, plan)
         self.dialogue.remember(addresses, asked_np.model if asked_np else None)
         return listing(self.display, addresses)
+
+    def _name(self, part: Part, plan: dict[str, Any]) -> None:
+        """The side the sentence named, if one document, is the referent of its class; the
+        answer is remembered after it, so a single answer is still the latest "it"."""
+        side = self._named_side(part, plan)
+        named = plan[side] if side else None
+        if named is not None and len(named.addresses) == 1:
+            self.dialogue.name(named.addresses[0], named.phrase.model)
 
     @staticmethod
     def _asked_phrase(part: Part):
@@ -84,13 +93,20 @@ class ReadExecutor:
         """The edges from the subject (answering targets), or to the object (sources)."""
         assert part.verb is not None and part.verb.relation is not None
         rel = part.verb.relation
-        if part.payload.get("asked", "object") == "object" and "subject" in plan:
-            ids = plan["subject"].export_ids()
+        side = self._named_side(part, plan)
+        if side is None:
+            return None, ""
+        ids = plan[side].export_ids()
+        if side == "subject":
             return [self.verbs.edges_from(e, rel) for e in ids], "target"
-        if "object" in plan:
-            ids = plan["object"].export_ids()
-            return [self.verbs.edges_to(e, rel) for e in ids], "source"
-        return None, ""
+        return [self.verbs.edges_to(e, rel) for e in ids], "source"
+
+    @staticmethod
+    def _named_side(part: Part, plan: dict[str, Any]) -> str | None:
+        """Which side the sentence named: the subject when the object is asked, else the object."""
+        if part.payload.get("asked", "object") == "object" and "subject" in plan:
+            return "subject"
+        return "object" if "object" in plan else None
 
     @staticmethod
     def _note(r: EdgeRead, ctx: MoveContext) -> None:

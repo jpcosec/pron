@@ -46,6 +46,13 @@ class Dialogue:
             self.last_set = list(addresses)
             self.last_set_model = model
 
+    def name(self, address: str, model: str | None) -> None:
+        """A document a sentence named on its own (a read's subject): the singular antecedent
+        of its class. It is no set, so "them" still means what the read answered."""
+        self.last_singular = address
+        if model:
+            self.singular[model] = address
+
     def referent(
         self, number: str, model: str | None, family: list[str] | None = None
     ) -> list[str] | None:
