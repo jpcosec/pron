@@ -2,24 +2,23 @@
 (spec 11 §7). Every write is pre-validated, guarded by the document's hash_c, recorded
 with its previous value, and followed by a re-evaluation of the conditions of the edges
 around the document. Nothing here knows any model.
+
+What each verb does lives in its own class under pron.kernel.actions (`CreateVerb` and the
+registry's `Verb`s), the dry runs of a move in `DryRun`, undoing a move in `MoveUndo`, and
+coercing a value to a field in `FieldCoercion`; the kernel holds the state they share —
+the expected hashes, the warnings and notes of the turn — and the guards around every write.
 """
 
 from __future__ import annotations
 
 from typing import Any
 
-import json
-
-from pron.kernel.display import render_name
-from pron.kernel.ids import (
-    join_id,
-    model_of,
-    split_id,
-    split_relation_doc_id,
-    store_of,
-)
+from pron.kernel.actions.create_verb import CreateVerb
+from pron.kernel.actions.dry_run import DryRun
+from pron.kernel.actions.move_undo import MoveUndo
 from pron.kernel.actions.verb_registry import VERBS
 from pron.kernel.actions.write import Write
+from pron.kernel.field_coercion import FieldCoercion
 from pron.sexpr.resolving.verbs import Verbs
 from pron.world.store_error import StoreError
 
@@ -29,8 +28,7 @@ __all__ = ["Kernel", "Write"]
 class Kernel:
     def __init__(self, verbs: Verbs, projection: dict[str, Any]):
         self.verbs = verbs
-        self.world = verbs.world
-        self.store = verbs.store
+        self.world, self.store = verbs.world, verbs.store
         self.projection = projection
         self.write_store = (
             verbs.write_store
@@ -39,6 +37,8 @@ class Kernel:
         self.expected_hash: dict[str, str] = {}
         self.warnings: list[str] = []
         self.notes: list[str] = []  # what the last verbs verified, for the trace
+        self.fields = FieldCoercion(self)
+        self.dry = DryRun(self)
 
     def allowed(self, verb: str) -> bool:
         return verb in (self.projection.get("actions") or [])
@@ -62,32 +62,20 @@ class Kernel:
         )
         self.warnings += self.verbs.broken_conditions(export_id)
 
-    # -- pre-validation (spec 11 §7) --------------------------------------------------------
-
-    def _dry_load(
-        self, export_id: str, overlay: dict[str, dict[str, Any]]
-    ) -> dict[str, Any]:
-        """A JSON-safe copy of the payload a verb's dry-run should mutate: the move's own
-        overlay if an earlier step already touched this document, else the document as it
-        is now."""
-        return json.loads(
-            json.dumps(overlay.get(export_id) or self.store.payload_of(export_id))
-        )
-
-    def _dry_save(
-        self,
-        export_id: str,
-        model: str,
-        p: dict[str, Any],
-        overlay: dict[str, dict[str, Any]],
-    ) -> dict[str, Any]:
-        """sldb's roundtrip of the mutated payload, then left in `overlay` so the next write
-        of the move sees it."""
-        ok, detail = self.store.validate(model, p, store_of(export_id))
+    def roundtrip(self, model: str, payload: dict[str, Any], store: str | None) -> None:
+        """Refuse a payload sldb would not read back as itself."""
+        ok, detail = self.store.validate(model, payload, store)
         if not ok:
             raise StoreError(f"{model} payload would not round-trip: {detail}")
-        overlay[export_id] = p
-        return p
+
+    def dependents(self, export_id: str) -> list[dict[str, Any]]:
+        """The authored edges that have this document as source or target."""
+        return (
+            self.verbs._edges_sldb("source_id", export_id, None).edges
+            + self.verbs._edges_sldb("target_id", export_id, None).edges
+        )
+
+    # -- pre-validation (spec 11 §7) --------------------------------------------------------
 
     def dry_run(
         self,
@@ -98,71 +86,26 @@ class Kernel:
         overlay: dict[str, dict[str, Any]],
     ) -> dict[str, Any]:
         """What a write would leave, without writing (spec 11 §7); each verb's `Verb.dry`
-        (pron.kernel.actions.verb) knows its own coercion and transition. A verb outside the registry
-        (none in practice: `_action` rejects it at execution) leaves the payload untouched
-        but still round-tripped."""
-        v = VERBS.get(verb)
-        if v is None:
-            model = model_of(export_id)
-            p = self._dry_load(export_id, overlay)
-            return self._dry_save(export_id, model, p, overlay)
-        return v.dry(self, export_id, field_name, value, overlay)
+        (pron.kernel.actions.verb) knows its own coercion and transition."""
+        return self.dry(verb, export_id, field_name, value, overlay)
 
     def dry_create(
         self, model: str, payload: dict[str, Any], overlay: dict[str, dict[str, Any]]
     ) -> dict[str, Any]:
         """The payload a create would leave, coerced and round-tripped, registered in the overlay
         as `Model:$created` so later steps of the move can be checked against it."""
-        missing = self.required_missing(model, payload)
-        if missing:
-            raise StoreError(f"{model} needs {', '.join(missing)}")
-        full = {
-            f["name"]: self.coerce(model, f["name"], payload[f["name"]])
-            for f in self.schema(model)
-            if f["name"] in payload
-        }
-        ok, detail = self.store.validate(model, full, self.write_store)
-        if not ok:
-            raise StoreError(f"{model} payload would not round-trip: {detail}")
-        overlay[join_id(self.write_store, model, "$created")] = full
-        return full
+        return CreateVerb().dry(self, model, payload, overlay)
 
     # -- coercion ---------------------------------------------------------------------------
 
     def schema(self, model: str) -> list[dict[str, Any]]:
-        return self.world.schema(model, self.stores)
+        return self.fields.schema(model)
 
     def coerce(self, model: str, field_name: str, value: Any) -> Any:
-        f = next(
-            (x for x in self.schema(model) if x["name"] == field_name.split(".")[0]),
-            None,
-        )
-        if f is None:
-            raise StoreError(
-                f"{model} has no field '{field_name}'; it has {', '.join(x['name'] for x in self.schema(model))}"
-            )
-        kind = f["kind"]
-        if kind == "integer":
-            try:
-                return int(value)
-            except (TypeError, ValueError):
-                raise StoreError(f"{field_name} takes a whole number, not {value!r}")
-        if kind == "number":
-            return float(value)
-        if kind == "boolean":
-            return str(value).lower() in ("true", "yes", "on", "1")
-        if kind == "enum" and f.get("enum") and value not in f["enum"]:
-            raise StoreError(
-                f"{field_name} is one of {', '.join(map(str, f['enum']))}, not {value!r}"
-            )
-        return value
+        return self.fields.coerce(model, field_name, value)
 
     def required_missing(self, model: str, payload: dict[str, Any]) -> list[str]:
-        return [
-            f["name"]
-            for f in self.schema(model)
-            if f["required"] and f["name"] not in payload
-        ]
+        return self.fields.required_missing(model, payload)
 
     # -- verbs -------------------------------------------------------------------------------
 
@@ -173,206 +116,31 @@ class Kernel:
         related: dict[str, dict[str, Any]] | None = None,
         name: str | None = None,
     ) -> Write:
-        rule = (self.projection.get("naming") or {}).get(model)
-        if name is None:
-            if not rule:
-                raise StoreError(f"no naming rule for {model}; say the name")
-            name = render_name(rule, payload, related or {})
-        full = {}
-        for f in self.schema(model):
-            if f["name"] in payload:
-                full[f["name"]] = self.coerce(model, f["name"], payload[f["name"]])
-        ok, detail = self.store.validate(model, full, self.write_store)
-        if not ok:
-            raise StoreError(f"{model} payload would not round-trip: {detail}")
-        path = self.store.root_of(self.write_store) / f"{model.lower()}s" / f"{name}.md"
-        export_id = self.store.create(model, name, full, path, self.write_store)
-        w = Write("create", export_id, after=full, done=True, extra={"path": str(path)})
-        self._after_write(export_id, w)
-        return w
+        return CreateVerb().execute(self, model, payload, related, name)
 
     def change(self, export_id: str, field_name: str, value: Any) -> Write:
-        model = model_of(export_id)
-        value = self.coerce(model, field_name, value)
-        current = self.store.payload_of(export_id)
-        before = current.get(field_name.split(".")[0])
-        if field_name.split(".")[0] in {f["name"] for f in self.schema(model)}:
-            legal, why, queries = self.verbs.transition(
-                model, field_name, export_id, before, value
-            )
-            self.notes += queries
-            if queries or "legal" in why:
-                self.notes.append(why)
-            if not legal:
-                raise StoreError(why)
-        self._guard(export_id)
-        before = self.store.update_field_of(export_id, field_name, value)
-        w = Write("change", export_id, field_name, before, value, done=True)
-        self._after_write(export_id, w)
-        return w
+        return VERBS["change"].execute(self, export_id, field_name, value)
 
     def add(self, export_id: str, field_name: str, value: Any) -> Write:
-        self._guard(export_id)
-        lst = self.store.payload_of(export_id).get(field_name)
-        if isinstance(lst, list) and value in lst:
-            return Write(
-                "add", export_id, field_name, lst, lst, done=False, note="already there"
-            )
-        idx = self.store.append_of(export_id, field_name, value)
-        w = Write(
-            "add", export_id, field_name, None, value, done=True, extra={"index": idx}
-        )
-        self._after_write(export_id, w)
-        return w
+        return VERBS["add"].execute(self, export_id, field_name, value)
 
     def remove(self, export_id: str, field_name: str, value: Any = None) -> Write:
-        self._guard(export_id)
-        if value is not None:
-            lst = self.store.payload_of(export_id).get(field_name)
-            if not isinstance(lst, list) or value not in lst:
-                return Write(
-                    "remove", export_id, field_name, done=False, note="not there"
-                )
-            before = list(lst)
-            lst.remove(value)
-            self.store.update_field_of(export_id, field_name, lst)
-            w = Write("remove", export_id, field_name, before, lst, done=True)
-        else:
-            before = self.store.remove_field_of(export_id, field_name)
-            w = Write("remove", export_id, field_name, before, None, done=True)
-        self._after_write(export_id, w)
-        return w
+        return VERBS["remove"].execute(self, export_id, field_name, value)
 
     def clean(self, export_id: str, field_name: str) -> Write:
-        self._guard(export_id)
-        before = self.store.clean_of(export_id, field_name)
-        w = Write(
-            "clean",
-            export_id,
-            field_name,
-            before,
-            self.store.payload_of(export_id).get(field_name),
-            done=True,
-        )
-        self._after_write(export_id, w)
-        return w
+        return VERBS["clean"].execute(self, export_id, field_name, None)
 
     def forget(self, export_id: str) -> Write:
-        store, model, doc = split_id(export_id)
-        path = self.store.doc_path(model, doc, store)
-        payload = self.store.payload_of(export_id)
-        dependents = (
-            self.verbs._edges_sldb("source_id", export_id, None).edges
-            + self.verbs._edges_sldb("target_id", export_id, None).edges
-        )
-        if dependents:
-            raise StoreError(
-                f"{export_id} is an endpoint of {len(dependents)} relation(s); negate them first"
-            )
-        self._guard(export_id)
-        self.store.untrack_of(export_id)
-        return Write(
-            "forget",
-            export_id,
-            before=payload,
-            done=True,
-            extra={"path": str(path), "hash_c": self.expected_hash.get(export_id, "")},
-        )
+        return VERBS["forget"].execute(self, export_id, None, None)
 
     def refresh(self) -> dict[str, Any]:
         return self.world.refresh()
 
     # -- undo ---------------------------------------------------------------------------------
 
-    def _current_hash(self, address: str) -> str:
-        """The hash_c a document has now; a RelationDoc id carries a name with colons, so
-        split_id cannot parse it and hash_c is asked directly (spec 03)."""
-        rel = split_relation_doc_id(address)
-        if rel is not None:
-            return self.store.hash_c("RelationDoc", rel[1], rel[0])
-        return self.store.hash_of(address)
-
     def undo(self, move: dict[str, Any]) -> list[Write]:
         """Apply the inverses of a recorded move's writes, newest first (spec 11 §7). Before
         touching anything: a write whose document changed since the move (a different hash_c
         from the one the move left) is skipped and named; an inverse that would orphan a
         later relation rejects the whole undo."""
-        writes = [
-            w
-            for w in reversed(move.get("record", {}).get("writes", []))
-            if w.get("done")
-        ]
-        out: list[Write] = []
-        todo: list[dict[str, Any]] = []
-        # the relation docs this undo untracks (by doc name, as the edge metadata names them):
-        # endpoints of those edges are not orphans
-        dropping = {
-            rel[1]
-            for w in writes
-            if w["verb"] == "assert"
-            and (rel := split_relation_doc_id(w["address"])) is not None
-        }
-        for w in writes:
-            verb, address = w["verb"], w["address"]
-            if verb == "forget":
-                todo.append(w)
-                continue
-            left = w.get("hash_c")
-            current = self._current_hash(address)
-            if left and current and left != current:
-                out.append(
-                    Write(
-                        "undo",
-                        address,
-                        w.get("field"),
-                        None,
-                        None,
-                        done=False,
-                        note=f"{address} changed after that move; not touched",
-                    )
-                )
-                continue
-            if verb == "create":
-                dependents = [
-                    e
-                    for e in self.verbs._edges_sldb("source_id", address, None).edges
-                    + self.verbs._edges_sldb("target_id", address, None).edges
-                    if e["metadata"].get("relation_doc") not in dropping
-                ]
-                if dependents:
-                    raise StoreError(
-                        f"undo would orphan {len(dependents)} relation(s) on {address}: "
-                        + ", ".join(
-                            e["metadata"].get("relation_doc", e["relation"])
-                            for e in dependents
-                        )
-                    )
-            todo.append(w)
-        for w in todo:
-            verb, address = w["verb"], w["address"]
-            self.expected_hash.pop(address, None)
-            v = VERBS.get(verb)
-            if v is not None:
-                u = v.undo(self, w)
-                if u is not None:
-                    out.append(u)
-            elif verb in ("create", "assert"):
-                rel = split_relation_doc_id(address)
-                if rel is not None:
-                    self.store.untrack(rel[1], rel[0])
-                else:
-                    self.store.untrack_of(address)
-                out.append(
-                    Write(
-                        "undo",
-                        address,
-                        None,
-                        w.get("after"),
-                        None,
-                        done=True,
-                        note="untracked",
-                    )
-                )
-            if verb != "forget":
-                self.warnings += self.verbs.broken_conditions(address)
-        return out
+        return MoveUndo(self)(move)

@@ -4,11 +4,9 @@ restore the list as it was to undo.
 
 from __future__ import annotations
 
-import json
-from typing import Any
-
 from pron.kernel.ids import model_of
-from pron.kernel.actions.write import restore_field
+from pron.kernel.actions.write import Write, restore_field
+from pron.world.storage.cleaned_list import without_empty_or_repeated
 
 
 class CleanVerb:
@@ -16,24 +14,27 @@ class CleanVerb:
 
     def dry(self, kernel, export_id, field_name, value, overlay):
         model = model_of(export_id)
-        p = kernel._dry_load(export_id, overlay)
+        p = kernel.dry.load(export_id, overlay)
         head = field_name.split(".")[0] if field_name else None
         lst = p.get(head)
         if isinstance(lst, list):
-            seen: set[str] = set()
-            out: list[Any] = []
-            for item in lst:
-                k = json.dumps(item, sort_keys=True)
-                if item in (None, "", [], {}) or k in seen:
-                    continue
-                seen.add(k)
-                out.append(item)
-            p[head] = out
-        return kernel._dry_save(export_id, model, p, overlay)
+            p[head] = without_empty_or_repeated(lst)
+        return kernel.dry.save(export_id, model, p, overlay)
 
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
-        return kernel.clean(export_id, field_name)
+        kernel._guard(export_id)
+        before = kernel.store.clean_of(export_id, field_name)
+        w = Write(
+            "clean",
+            export_id,
+            field_name,
+            before,
+            kernel.store.payload_of(export_id).get(field_name),
+            done=True,
+        )
+        kernel._after_write(export_id, w)
+        return w
 
     def undo(self, kernel, write):
         return restore_field(kernel, write)

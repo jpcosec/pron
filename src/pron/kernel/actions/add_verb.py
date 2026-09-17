@@ -16,18 +16,29 @@ class AddVerb:
 
     def dry(self, kernel, export_id, field_name, value, overlay):
         model = model_of(export_id)
-        p = kernel._dry_load(export_id, overlay)
+        p = kernel.dry.load(export_id, overlay)
         head = field_name.split(".")[0] if field_name else None
         lst = deep_get(p, field_name) if head in p else None
         if not isinstance(lst, list):
             raise StoreError(f"{field_name} is not a list field")
         if value not in lst:
             lst.append(value)
-        return kernel._dry_save(export_id, model, p, overlay)
+        return kernel.dry.save(export_id, model, p, overlay)
 
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
-        return kernel.add(export_id, field_name, value)
+        kernel._guard(export_id)
+        lst = kernel.store.payload_of(export_id).get(field_name)
+        if isinstance(lst, list) and value in lst:
+            return Write(
+                "add", export_id, field_name, lst, lst, done=False, note="already there"
+            )
+        idx = kernel.store.append_of(export_id, field_name, value)
+        w = Write(
+            "add", export_id, field_name, None, value, done=True, extra={"index": idx}
+        )
+        kernel._after_write(export_id, w)
+        return w
 
     def undo(self, kernel, write):
         lst = kernel.store.payload_of(write["address"]).get(write["field"], [])
