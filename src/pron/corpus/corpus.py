@@ -17,6 +17,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Sequence
 
+from pron.corpus.corpus_audit import CorpusAudit
 from pron.corpus.corpus_entry import CorpusEntry
 from pron.corpus.hit import Hit
 from pron.corpus.index_projection import IndexProjection
@@ -68,29 +69,32 @@ class Corpus:
         """Every document the projection admits, with its text, hash and export id."""
         out: list[CorpusEntry] = []
         for record in self.world.store.docs():
-            model = record.model_name or ""
-            if not self.projection.admits(model):
-                continue
-            store = record.store_name
-            if self.projection.stores is not None and store not in self.projection.stores:
-                continue
-            payload = record.payload or {}
-            text = self.projection.text(payload)
-            if not text:
-                continue
-            out.append(
-                CorpusEntry(
-                    id=join_id(store, model, record.name),
-                    model=model,
-                    name=record.name,
-                    store=store,
-                    text=text,
-                    hash=self.world.store.hash_c(model, record.name, store),
-                    payload=payload,
-                    tags=tuple(record.semantic_tags or ()),
-                )
-            )
+            entry = self._entry(record)
+            if entry is not None:
+                out.append(entry)
         return out
+
+    def _entry(self, record: Any) -> CorpusEntry | None:
+        model = record.model_name or ""
+        store = record.store_name
+        if not self.projection.admits(model) or (
+            self.projection.stores is not None and store not in self.projection.stores
+        ):
+            return None
+        payload = record.payload or {}
+        text = self.projection.text(payload)
+        if not text:
+            return None
+        return CorpusEntry(
+            id=join_id(store, model, record.name),
+            model=model,
+            name=record.name,
+            store=store,
+            text=text,
+            hash=self.world.store.hash_c(model, record.name, store),
+            payload=payload,
+            tags=tuple(record.semantic_tags or ()),
+        )
 
     def refresh(self) -> dict[str, int]:
         """Embed what changed, keep what did not, drop what left the corpus."""
@@ -107,21 +111,7 @@ class Corpus:
         """What the index has against what the corpus holds: documents never indexed
         (`missing`), indexed from other content (`stale`), indexed and no longer in the
         corpus (`orphan`)."""
-        entries = {e.id: e for e in self.entries()}
-        indexed = self.index.entries_by_hash()
-        missing = sorted(k for k in entries if k not in indexed)
-        stale = sorted(k for k, e in entries.items() if k in indexed and indexed[k] != e.hash)
-        orphan = sorted(k for k in indexed if k not in entries)
-        return {
-            "embedder": self.matcher.id(),
-            "text": self.projection.text_id,
-            "corpus": len(entries),
-            "indexed": len(indexed),
-            "missing": missing,
-            "stale": stale,
-            "orphan": orphan,
-            "clean": not (missing or stale or orphan),
-        }
+        return CorpusAudit(self)()
 
     # -- retrieval ------------------------------------------------------------
 
@@ -140,23 +130,23 @@ class Corpus:
             self.refresh_if_stale()
         by_id = {e.id: e for e in self.entries()}
         allowed = set(among) if among is not None else None
+        ranked = self.index.rank(query, k=None, threshold=threshold)
+        return self._hits(ranked, by_id, allowed, k)
+
+    @staticmethod
+    def _hits(
+        ranked: list[tuple[str, float]],
+        by_id: dict[str, CorpusEntry],
+        allowed: set[str] | None,
+        k: int | None,
+    ) -> list[Hit]:
+        """The ranked entries still in the corpus (and among the allowed ones), at most k."""
         hits: list[Hit] = []
-        for doc_id, score in self.index.rank(query, k=None, threshold=threshold):
-            if allowed is not None and doc_id not in allowed:
-                continue
+        for doc_id, score in ranked:
             entry = by_id.get(doc_id)
-            if entry is None:
+            if (allowed is not None and doc_id not in allowed) or entry is None:
                 continue
-            hits.append(
-                Hit(
-                    id=entry.id,
-                    model=entry.model,
-                    name=entry.name,
-                    score=round(score, 4),
-                    payload=entry.payload,
-                    tags=entry.tags,
-                )
-            )
+            hits.append(Hit.of(entry, score))
             if k is not None and len(hits) >= k:
                 break
         return hits
