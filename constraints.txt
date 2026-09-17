@@ -34,4 +34,4 @@
 # Earlier floor: sldb 9ba886d, kgdb 1247139 — 98 passed.
 
 sldb 23f78c5 api: paquete sldb.api tipado como librería; la CLI lo usa y reexporta lo movido
-kgdb 5effed5 merkle capa 1: build_typed_snapshot incremental con previous=
+kgdb 29d2898 sldb.api: kgdb deja de importar internos de sldb.cli
