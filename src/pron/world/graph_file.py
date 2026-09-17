@@ -9,8 +9,10 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pron.world.doc_kind import ledger_model
+
 GRAPH_RELPATH = Path(".pron") / "graph.nx.json"
-LEDGER_MODEL = "MoveDoc"
+LEDGER_MODEL = ledger_model()  # read from DocKind; the constant goes when callers do
 
 
 class GraphFile:

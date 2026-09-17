@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from pron.kernel.ids import LOCAL
+from pron.world.doc_kind import tags_outside_graph
 from pron.world.fingerprint import WorldFingerprint
 from pron.world.graph import Graph
 from pron.world.graph_refresher import GraphRefresher
@@ -101,7 +102,7 @@ class World(WorldDeclaration):
         return report
 
     def refresh_if_stale(
-        self, exclude_tags: tuple[str, ...] = ("type.pron.move",)
+        self, exclude_tags: tuple[str, ...] = tags_outside_graph()
     ) -> bool:
         """Refresh only when the graph is missing or was built from other model hashes.
         Returns whether it refreshed."""
@@ -131,7 +132,7 @@ class World(WorldDeclaration):
 
     def refresh(
         self,
-        exclude_tags: tuple[str, ...] = ("type.pron.move",),
+        exclude_tags: tuple[str, ...] = tags_outside_graph(),
         stores: list[str] | None = None,
         light: bool = False,
     ) -> dict[str, Any]:

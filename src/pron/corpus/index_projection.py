@@ -9,6 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 
+from pron.world.doc_kind import kind_of
+
 
 def summary_text(payload: dict[str, Any]) -> str:
     """The default representative text: the document's summary."""
@@ -34,11 +36,11 @@ class IndexProjection:
     """What a consumer declares about its corpus: which documents it admits and how it
     reads the text of one. Nothing else about indexing is the consumer's business.
 
-    `models` is the allowed set (None: every model of the world); `exclude_models` drops
-    from it (a model that exists to frame a prompt, never to be retrieved). `text` maps a
-    payload to its representative text; a document whose text is empty stays out, and
-    `text_id` names the mapping so a change of representation invalidates the index the
-    same way a change of embedder does.
+    `models` is the allowed set (None: every model whose `DocKind` is in the corpus);
+    `exclude_models` drops from it (a model that exists to frame a prompt, never to be
+    retrieved). `text` maps a payload to its representative text; a document whose text is
+    empty stays out, and `text_id` names the mapping so a change of representation
+    invalidates the index the same way a change of embedder does.
     """
 
     models: frozenset[str] | None = None
@@ -50,7 +52,9 @@ class IndexProjection:
     def admits(self, model: str) -> bool:
         if model in self.exclude_models:
             return False
-        return self.models is None or model in self.models
+        if self.models is None:  # every model of the world: those DocKind admits
+            return kind_of(model).in_corpus
+        return model in self.models
 
     @staticmethod
     def of(
