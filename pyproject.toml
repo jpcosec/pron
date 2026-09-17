@@ -41,13 +41,10 @@ testpaths = ["tests"]
 target-version = "py311"
 
 # Layer 1 of standards.md (hum-ecosystem/tools/sldb), size/structure only: blocking for the
-# code; tests are exempt (world fixtures and scripted conversations are long by nature).
+# code and the tests alike (a test world's declaration lives in data files, not in code).
 # File length is checked by tools/check_file_length.py in `make lint`.
 [tool.ruff.lint]
 extend-select = ["C901", "PLR0911", "PLR0912", "PLR0915"]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**" = ["C901", "PLR0911", "PLR0912", "PLR0915"]
 
 [tool.ruff.lint.pylint]
 max-statements = 10  # approximates "no function over 10 lines of logic"
