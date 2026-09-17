@@ -12,7 +12,8 @@ from __future__ import annotations
 
 from pron.sexpr.dialogue.dialogue import Dialogue
 from pron.sexpr.turn.ledger import Ledger
-from pron.sexpr.turn.projection_load import ProjectionLoad, ProjectionSettings
+from pron.sexpr.turn.projection_load import ProjectionLoad
+from pron.sexpr.turn.projection_settings import ProjectionSettings
 from pron.sexpr.turn.turn_tools import TurnTools
 from pron.world.matching.matcher import Matcher
 from pron.world.world import World

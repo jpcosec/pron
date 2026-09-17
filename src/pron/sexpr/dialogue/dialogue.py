@@ -89,26 +89,46 @@ class Dialogue:
         """Indexes of candidates a designation selects: a number, an ordinal, or a name matched against labels."""
         if self.pending is None:
             return []
+        n = len(self.pending.candidates)
         t = text.strip().lower().rstrip("?.! ")
         if t.isdigit():
-            i = int(t) - 1
-            return [i] if 0 <= i < len(self.pending.candidates) else []
-        ordinals = FUNCTION_WORDS["designation"]["ordinal"]
-        for word, idx in ordinals.items():
-            if t in (word, f"the {word}", f"the {word} one"):
-                n = len(self.pending.candidates)
-                i = idx if idx >= 0 else n + idx
-                return [i] if 0 <= i < n else []
-        if t.startswith("the ") and t.endswith(" one"):
-            t = t[4:-4]
-        ranked = matcher.rank(
-            t,
-            [(str(i), label) for i, label in enumerate(self.pending.labels)],
-            k=len(self.pending.labels),
-            threshold=0.0,
-        )
-        if not ranked:
-            return []
-        best = ranked[0][1]
-        winners = [int(k) for k, s in ranked if s >= best - 1e-9]
-        return winners if best >= 0.5 else []
+            return _within(int(t) - 1, n)
+        ordinal = _ordinal(t)
+        if ordinal is not None:
+            return _within(ordinal if ordinal >= 0 else n + ordinal, n)
+        return _by_label(t, self.pending.labels, matcher)
+
+
+def _within(i: int, n: int) -> list[int]:
+    return [i] if 0 <= i < n else []
+
+
+def _ordinal(t: str) -> int | None:
+    """The index an ordinal says — "second", "the second", "the second one" — negative from
+    the end; None when it is not one."""
+    ordinals = FUNCTION_WORDS["designation"]["ordinal"]
+    return next(
+        (
+            idx
+            for word, idx in ordinals.items()
+            if t in (word, f"the {word}", f"the {word} one")
+        ),
+        None,
+    )
+
+
+def _by_label(t: str, labels: list[str], matcher) -> list[int]:
+    """The candidates whose labels a name matches best, when it matches well enough."""
+    if t.startswith("the ") and t.endswith(" one"):
+        t = t[4:-4]
+    ranked = matcher.rank(
+        t,
+        [(str(i), label) for i, label in enumerate(labels)],
+        k=len(labels),
+        threshold=0.0,
+    )
+    if not ranked:
+        return []
+    best = ranked[0][1]
+    winners = [int(k) for k, s in ranked if s >= best - 1e-9]
+    return winners if best >= 0.5 else []
