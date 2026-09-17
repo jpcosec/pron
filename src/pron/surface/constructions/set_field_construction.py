@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 
 from pron.kernel.parts.item import Item
 from pron.kernel.parts.part import Part
-from pron.surface.interpret import _field_word, _implicit_it, _kernel
+from pron.surface.interpret import _field_model, _field_word, _implicit_it, _kernel
 from pron.surface.nouns import find_noun_phrases
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
@@ -36,5 +36,5 @@ class SetFieldConstruction:
             verb=verb,
             field_name=w.field_name,
             value=lit.meta.get("value", lit.text),
-            payload={"verb": "change", "model": w.model},
+            payload={"verb": "change", "model": _field_model(found)},
         )

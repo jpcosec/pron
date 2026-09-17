@@ -7,7 +7,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from pron.kernel.ids import address_of
+from pron.kernel.ids import address_of, export_id, model_of
 from pron.sexpr.dialogue.designation import by_label, ordinal, within
 from pron.sexpr.dialogue.pending import Pending
 from pron.world.lexicon import FUNCTION_WORDS
@@ -49,9 +49,13 @@ class Dialogue:
     def referent(
         self, number: str, model: str | None, family: list[str] | None = None
     ) -> list[str] | None:
-        """The antecedent for a pronoun: singular by class (a set of one counts), plural = the last set."""
+        """The antecedent for a pronoun: singular by class (a set of one counts), plural = the last set.
+        Without a model, family is the classes any of which will do, and the latest one wins."""
         if number == "plural":
             return list(self.last_set) if self.last_set else None
+        last = self.last_singular
+        if model is None and family and last and model_of(export_id(last)) in family:
+            return [last]
         for m in family or ([model] if model else []):
             if m in self.singular:
                 return [self.singular[m]]

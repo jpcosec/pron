@@ -17,3 +17,14 @@ def test_the_picked_candidate_is_the_singular_referent(tmp_path):
     chosen = session.dialogue.pending.candidates[0]
     session.turn("1")
     assert session.dialogue.singular["Client"] == chosen
+
+
+def test_a_field_of_several_classes_takes_the_class_of_the_antecedent(tmp_path):
+    """'notes' is a field of Client and of Reservation: 'it' is whichever the dialogue left."""
+    session = Session(build_restaurant(tmp_path), speaker="jp", now=NOW)
+    luis = "Reservation:reservation-2026-09-11-luis-soto"
+    assert session.eval(f'(change (doc "{luis}") notes "window")').outcome == "unico"
+    r = session.turn("remove the notes of it")
+    assert r.outcome == "unico", r.text
+    assert r.record["writes"][0]["address"] == luis
+    assert session.world.store.payload_of(luis).get("notes", "") == ""

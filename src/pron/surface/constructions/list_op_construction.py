@@ -9,7 +9,13 @@ from typing import TYPE_CHECKING
 from pron.kernel.parts.item import Item
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.word import Word
-from pron.surface.interpret import _field_word, _implicit_it, _in_np, _kernel
+from pron.surface.interpret import (
+    _field_model,
+    _field_word,
+    _implicit_it,
+    _in_np,
+    _kernel,
+)
 from pron.surface.nouns import find_noun_phrases
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
@@ -53,5 +59,5 @@ class ListOpConstruction:
             verb=w,
             field_name=fw.field_name,
             value=value_item.meta.get("value", value_item.text) if value_item else None,
-            payload={"verb": verb, "model": fw.model},
+            payload={"verb": verb, "model": _field_model(found)},
         )

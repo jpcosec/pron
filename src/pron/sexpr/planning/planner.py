@@ -16,7 +16,7 @@ from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
 from pron.sexpr.dialogue.asker import Asker
 from pron.sexpr.planning.compose_planner import ComposePlanner
-from pron.sexpr.planning.needed_model import needed_model
+from pron.sexpr.planning.needed_model import field_classes, needed_model
 from pron.sexpr.planning.phrase_planner import PhrasePlanner
 from pron.sexpr.resolving.resolution import Resolution
 
@@ -62,7 +62,8 @@ class Planner:
         if np is None or _is_new_subject(part, role):
             return None  # a create's subject does not exist yet: nothing to resolve
         need_model = needed_model(part, role, self.tools.lex)
-        res = self.phrases(np, need_model, ctx)
+        classes = None if need_model else field_classes(part, self.tools.lex)
+        res = self.phrases(np, need_model, ctx, classes)
         if res.outcome == "ambiguo":
             return self.asker.choice(part, role, res, ctx)
         if res.outcome == "missing":
