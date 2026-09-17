@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 from pron.session import Session
-from pron.world import World
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"

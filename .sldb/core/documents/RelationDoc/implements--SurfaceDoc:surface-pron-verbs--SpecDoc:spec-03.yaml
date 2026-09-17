@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-verbs--SpecDoc:spec-03.md
-hash_c: 53386dcdc41b1573df1e8bfcfd5dbe1893046c2eb84d196c9f757cab1dc04c18
-hash_d: d4a27411f4770f096bad678e1a4be57c7f2a9ffe9a8872acd3209752695fc421
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

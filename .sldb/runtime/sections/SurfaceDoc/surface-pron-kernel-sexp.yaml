@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-sexp
+sections:
+- path: kernel-sexp
+  title: kernel.sexp
+  breadcrumbs:
+  - kernel.sexp
+  about:
+  - kernel.sexp
+  - kernel sexp
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-sexp
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: kernel-sexp/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.sexp
+  - Purpose
+  about:
+  - kernel.sexp
+  - kernel sexp
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-sexp/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.sexp
+  - How It Works
+  about:
+  - kernel.sexp
+  - kernel sexp
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-sexp/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.sexp
+  - Commands
+  about:
+  - kernel.sexp
+  - kernel sexp
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 30
+hash_c: a421a0697a55e7993cf985166085ef18e9debcbc66a665a047fa30bc81740d91
+sections_version: '2'

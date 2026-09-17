@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-remove_verb--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-remove_verb--SpecDoc:spec-11.md
+hash_c: 39fcfb2d71fa6a563e284746b86390566b196c8e8846a82ef8b9bb1ad87f94ae
+hash_d: bf507670c85fed6d9a71b45da9965f5e9e934bcd45743a7b2b1f94a6a1557f2f
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

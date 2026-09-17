@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from pron.lexicon import Lexicon
-from pron.world import World
+from pron.world.lexicon import Lexicon
+from pron.world.world import World
 
 
 def run_lints(world: World) -> list[str]:
@@ -14,7 +14,7 @@ def run_lints(world: World) -> list[str]:
 
     # every alias names something as a form (spec 05, 13)
     if "AnchorDoc" in models:
-        from pron.refs import parse as parse_ref
+        from pron.sexpr.refs import parse as parse_ref
 
         for d in store.docs_of("AnchorDoc"):
             try:

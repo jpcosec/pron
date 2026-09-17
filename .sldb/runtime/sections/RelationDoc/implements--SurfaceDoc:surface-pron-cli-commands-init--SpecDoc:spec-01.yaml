@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+sections:
+- path: source-id-surfacedoc-surface-pron-cli-commands-init-target-id-specdoc-spec-01-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-cli-commands-init
+
+    target_id: SpecDoc:spec-01
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-cli-commands-init
+
+    target_id: SpecDoc:spec-01
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-cli-commands-init
+
+    target_id: SpecDoc:spec-01
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron cli commands init target id specdoc spec 01
+    relation type implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-cli-commands-init-target-id-specdoc-spec-01-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-cli-commands-init-specdoc-spec-01
+  title: implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+  about:
+  - implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+  - implements surfacedoc surface pron cli commands init specdoc spec 01
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-cli-commands-init-specdoc-spec-01
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-cli-commands-init-specdoc-spec-01/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
+  - implements surfacedoc surface pron cli commands init specdoc spec 01
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: 39c536b71203fd225bbd225e45830aa70c73b4cdea9489a0e3396b635bfc5585
+sections_version: '2'

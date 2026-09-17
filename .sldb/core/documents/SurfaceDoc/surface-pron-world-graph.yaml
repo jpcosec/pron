@@ -1,0 +1,14 @@
+name: surface-pron-world-graph
+path: knowledge/surfaces/surface-pron-world-graph.md
+hash_c: bede65449f65dfff41106fb1f425a8a046398ac18d9ae0e97426ce3646d0da11
+hash_d: 0cd1777cbd655bb495894a86a106d44702dcf23e98b934a6ef0539979ed281c7
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

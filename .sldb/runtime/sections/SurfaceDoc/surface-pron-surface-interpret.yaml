@@ -29,7 +29,7 @@ sections:
   slug: surface-interpret
   level: 1
   line_start: 14
-  line_end: 31
+  line_end: 30
 - path: surface-interpret/purpose
   title: Purpose
   breadcrumbs:
@@ -95,7 +95,7 @@ sections:
   slug: how-it-works
   level: 2
   line_start: 21
-  line_end: 25
+  line_end: 27
 - path: surface-interpret/commands
   title: Commands
   breadcrumbs:
@@ -127,7 +127,7 @@ sections:
   - workspace.knowledge.surfaces
   slug: commands
   level: 2
-  line_start: 26
-  line_end: 31
-hash_c: 78f7feb1af30ea1c6e329712835ea748f65524279b259a282cb7063f6ae656e8
+  line_start: 28
+  line_end: 30
+hash_c: 4d05a830e956f7c04a775534d7c575220133476d0150baf2305469662219436a
 sections_version: '2'

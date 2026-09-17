@@ -10,7 +10,7 @@ tags:
 - kind:software
 - impl:here
 - entity:cli_command
-provenance: src/pron/cli/main.py:_cmd_eval
+provenance: src/pron/cli/commands/eval.py:command
 ---
 
 # eval

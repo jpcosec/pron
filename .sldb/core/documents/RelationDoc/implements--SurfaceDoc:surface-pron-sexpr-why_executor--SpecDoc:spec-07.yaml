@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-why_executor--SpecDoc:spec-07
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-why_executor--SpecDoc:spec-07.md
+hash_c: e4da3be273464ef0e5cf15bc3b15626bd2a55bc0603ca91595f6fee588ecf9db
+hash_d: a670ad4a1a02448c90875b26747c3b419b4725aa4f17fe871c89d95a73f2a918
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

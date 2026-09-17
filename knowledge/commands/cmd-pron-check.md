@@ -9,7 +9,7 @@ tags:
 - kind:software
 - impl:here
 - entity:cli_command
-provenance: src/pron/cli/main.py:_cmd_check
+provenance: src/pron/cli/commands/check.py:command
 ---
 
 # check

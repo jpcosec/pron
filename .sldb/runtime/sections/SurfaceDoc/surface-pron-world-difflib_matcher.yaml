@@ -1,0 +1,133 @@
+doc_name: surface-pron-world-difflib_matcher
+sections:
+- path: world-difflib-matcher
+  title: world.difflib_matcher
+  breadcrumbs:
+  - world.difflib_matcher
+  about:
+  - world.difflib_matcher
+  - world difflib matcher
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: world-difflib-matcher
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: world-difflib-matcher/purpose
+  title: Purpose
+  breadcrumbs:
+  - world.difflib_matcher
+  - Purpose
+  about:
+  - world.difflib_matcher
+  - world difflib matcher
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: world-difflib-matcher/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - world.difflib_matcher
+  - How It Works
+  about:
+  - world.difflib_matcher
+  - world difflib matcher
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: world-difflib-matcher/commands
+  title: Commands
+  breadcrumbs:
+  - world.difflib_matcher
+  - Commands
+  about:
+  - world.difflib_matcher
+  - world difflib matcher
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 31
+hash_c: f63a0e125afc5685a0c4abf82ef6996e36f3ccc6721b5f86230ca3fd100b5c78
+sections_version: '2'

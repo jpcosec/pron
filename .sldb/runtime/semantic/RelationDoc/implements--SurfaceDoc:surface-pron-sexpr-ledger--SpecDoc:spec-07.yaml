@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-ledger--SpecDoc:spec-07.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 1da6fef18cfcab260f154742edb0cfb9c638a9408f43c56b37fe3b9f63262eee

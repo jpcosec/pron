@@ -1,0 +1,14 @@
+name: surface-pron-cli-commands-eval
+path: knowledge/surfaces/surface-pron-cli-commands-eval.md
+hash_c: 5798b85f960d105bd537eeae9c13127b2e25027c5b165916c90e1b2b4d21d26a
+hash_d: 4297fc2b2967aa197ffa8484d5f6adc5547b4590f0ef457f5d3fba289b800764
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

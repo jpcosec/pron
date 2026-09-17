@@ -16,7 +16,7 @@ provenance: src/pron/docs.py
 ## Purpose
 
 pron's own knowledge base is derived from this repo (spec 08 step 9): a CliCommandDoc
-per `_cmd_*` handler from its docstring and its argparse arguments, a SurfaceDoc per
+per command from its handler's docstring and its click parameters, a SurfaceDoc per
 module from its module docstring, a SpecDoc per chapter of source/spec, the hand-written
 ExplanationDocs of knowledge/explanations plus the ReadmeDoc that composes them into
 README.md, and one `implements` edge from each module or command to every chapter its
@@ -26,7 +26,7 @@ the docstrings and the README's declaration are the source.
 ## How It Works
 
 pron's own knowledge base is derived from this repo (spec 08 step 9): a CliCommandDoc
-per `_cmd_*` handler from its docstring and its argparse arguments, a SurfaceDoc per
+per command from its handler's docstring and its click parameters, a SurfaceDoc per
 module from its module docstring, a SpecDoc per chapter of source/spec, the hand-written
 ExplanationDocs of knowledge/explanations plus the ReadmeDoc that composes them into
 README.md, and one `implements` edge from each module or command to every chapter its

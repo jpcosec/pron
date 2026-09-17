@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-listing
+sections:
+- path: sexpr-listing
+  title: sexpr.listing
+  breadcrumbs:
+  - sexpr.listing
+  about:
+  - sexpr.listing
+  - sexpr listing
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-listing
+  level: 1
+  line_start: 14
+  line_end: 29
+- path: sexpr-listing/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.listing
+  - Purpose
+  about:
+  - sexpr.listing
+  - sexpr listing
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-listing/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.listing
+  - How It Works
+  about:
+  - sexpr.listing
+  - sexpr listing
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 25
+- path: sexpr-listing/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.listing
+  - Commands
+  about:
+  - sexpr.listing
+  - sexpr listing
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 29
+hash_c: fc1d2da5fb7a1c73f214395419f87a208d9607282479feda5994c8e34c088d8c
+sections_version: '2'

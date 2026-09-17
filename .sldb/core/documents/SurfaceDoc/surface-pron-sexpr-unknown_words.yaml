@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-unknown_words
+path: knowledge/surfaces/surface-pron-sexpr-unknown_words.md
+hash_c: 07f68d06f9bab5eab969ce65d6d6fa3c300a8d210834a11c0fda44337056ee69
+hash_d: 0068f11455ea6bf326e65f7fe6de2844a151cbbe68878e985b5a90ae97c2c226
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

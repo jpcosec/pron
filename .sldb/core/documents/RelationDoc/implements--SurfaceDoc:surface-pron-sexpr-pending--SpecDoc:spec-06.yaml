@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-pending--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-pending--SpecDoc:spec-06.md
+hash_c: 55310cc7bff61e99bd9c2747bc70b4d44d65eef6601e31873c94d0c6ffc69d0d
+hash_d: d0e6204b045b764c2c18bc072d37d8da916ece3709324f864beed5777cdd41f4
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -14,7 +14,7 @@ from pron.cli.repl import run as repl
 from pron.docs import synchronize_docs
 from pron.lints import run_lints
 from pron.session import Session
-from pron.world import World, init_world
+from pron.world.world import World, init_world
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"
@@ -110,7 +110,7 @@ def test_own_knowledge_base_is_derived_from_the_repo(own: World):
     )
     assert any(
         c.startswith(
-            "RelationDoc implements--SurfaceDoc:surface-pron-resolve--SpecDoc:spec-02"
+            "RelationDoc implements--SurfaceDoc:surface-pron-sexpr-resolve--SpecDoc:spec-02"
         )
         for c in changed
     )

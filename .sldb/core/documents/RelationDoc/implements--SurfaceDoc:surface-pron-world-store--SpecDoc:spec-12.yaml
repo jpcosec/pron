@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-12.md
+hash_c: 611c5f88e92c9ae7528cb9fe946280cb28387c783f4ce5925c7d31026d7620f1
+hash_d: 7a7946fc0c6ea9e51a52d5a95c0c6a8938fc0e08e3a56806a47ac1445f890401
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

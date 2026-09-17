@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+sections:
+- path: source-id-surfacedoc-surface-pron-world-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-world-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-world-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-world-lexicon
+
+    target_id: SpecDoc:spec-05
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron world lexicon target id specdoc spec 05 relation
+    type implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-world-lexicon-target-id-specdoc-spec-05-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-world-lexicon-specdoc-spec-05
+  title: implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+  about:
+  - implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+  - implements surfacedoc surface pron world lexicon specdoc spec 05
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-world-lexicon-specdoc-spec-05
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-world-lexicon-specdoc-spec-05/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
+  - implements surfacedoc surface pron world lexicon specdoc spec 05
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: a86a47642952fa9ff5e85345b74f736d8e90b24d8e67693f190a2f741de6b22e
+sections_version: '2'

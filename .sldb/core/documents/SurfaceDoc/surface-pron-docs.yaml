@@ -1,7 +1,7 @@
 name: surface-pron-docs
 path: knowledge/surfaces/surface-pron-docs.md
-hash_c: 5e2916e29c9aee05ce6234b0f3c606bade935a31cd520e7ac6449d140136ca8e
-hash_d: 8936585a5ff2a7a20dc29a233d5c32880664b9bfd30b66deb7c56277ef230a24
+hash_c: 46851d466bd4acf500ec411f5617ce1a6f3a23d4b4e9dccf3c1c83eec69bdff9
+hash_d: 8f99d2e9ca5cfa87569732ca801c20ace3b4ed6a12cbf89efbe7025993f236b8
 semantic_tags:
 - domain:system_architecture
 - entity:module

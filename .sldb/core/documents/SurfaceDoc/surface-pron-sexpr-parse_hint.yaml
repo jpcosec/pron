@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-parse_hint
+path: knowledge/surfaces/surface-pron-sexpr-parse_hint.md
+hash_c: 8bd4086ab07fd38941c230303e5b24b2556e161418c10162d579425a6c31d3e5
+hash_d: 58621e82d5bedbc03771621529c231ac00cc89896dc562f162a7b2cad93eabed
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

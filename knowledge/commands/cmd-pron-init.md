@@ -9,7 +9,7 @@ tags:
 - kind:software
 - impl:here
 - entity:cli_command
-provenance: src/pron/cli/main.py:_cmd_init
+provenance: src/pron/cli/commands/init.py:command
 ---
 
 # init

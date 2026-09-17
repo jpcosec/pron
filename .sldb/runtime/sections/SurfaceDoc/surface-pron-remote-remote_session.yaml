@@ -1,0 +1,133 @@
+doc_name: surface-pron-remote-remote_session
+sections:
+- path: remote-remote-session
+  title: remote.remote_session
+  breadcrumbs:
+  - remote.remote_session
+  about:
+  - remote.remote_session
+  - remote remote session
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: remote-remote-session
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: remote-remote-session/purpose
+  title: Purpose
+  breadcrumbs:
+  - remote.remote_session
+  - Purpose
+  about:
+  - remote.remote_session
+  - remote remote session
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: remote-remote-session/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - remote.remote_session
+  - How It Works
+  about:
+  - remote.remote_session
+  - remote remote session
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: remote-remote-session/commands
+  title: Commands
+  breadcrumbs:
+  - remote.remote_session
+  - Commands
+  about:
+  - remote.remote_session
+  - remote remote session
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: f8e0c4b31ce239553c99810c5d28d69696ee616efcf5a831dff1b30a7c3b4645
+sections_version: '2'

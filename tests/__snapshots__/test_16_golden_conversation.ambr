@@ -1,0 +1,2201 @@
+# serializer version: 1
+# name: test_every_construction
+  list([
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-1>',
+        'id': '<move-1>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-1>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          'refresh: 171 nodes, 337 edges',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Nothing to undo.',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        'refresh: 171 nodes, 337 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-1>',
+        'id': '<move-2>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'refresh',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-2>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(refresh)',
+        'interpretation': dict({
+          'forma': 'refresh',
+          'items': list([
+            "word('refresh'→(action refresh))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'refresh · (action refresh)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(refresh)',
+        'trace': list([
+          'interpretation: refresh',
+          'forms: (refresh)',
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Refreshed.',
+      'trace': list([
+        'interpretation: refresh',
+        'forms: (refresh)',
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'refresh',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-1>',
+        'id': '<move-3>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-3>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why)',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Why what? Say something first.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-3>',
+        'hash_before': '<hash-1>',
+        'id': '<move-4>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'create a client named Ana Rojas, phone 9 5555 1234',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-4>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('create'→(action create))",
+            "det('a')",
+            "word('client'→(model Client))",
+            "word('named'→(field Client name))",
+            "unknown('Ana')",
+            "unknown('Rojas')",
+            "punct(',')",
+            "word('phone'→(field Client phone))",
+            "number('9')",
+            "number('5555')",
+            "number('1234')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (action create) · subject=any Client [name = "Ana Rojas"] · payload={\'verb\': \'create\', \'fields\': {\'name\': \'Ana Rojas\', \'phone\': \'9 5555 1234\'}}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+          "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+          'refresh: 176 nodes, 356 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Client:client-ana-rojas',
+            'after': dict({
+              'name': 'Ana Rojas',
+              'phone': '9 5555 1234',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-2>',
+            'note': '',
+            'path': '<tmp>/world/clients/client-ana-rojas.md',
+            'verb': 'create',
+          }),
+        ]),
+      }),
+      'text': 'Created client Ana Rojas.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+        'refresh: 176 nodes, 356 edges',
+      ]),
+      'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
+      'written': dict({
+        'Client:client-ana-rojas': dict({
+          'name': 'Ana Rojas',
+          'notes': '',
+          'phone': '9 5555 1234',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-3>',
+        'id': '<move-5>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'book her a table on the terrace for 6 people on Friday at 9pm',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-5>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'interpretation': dict({
+          'forma': 'compose',
+          'items': list([
+            'word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))',
+            "det('a')",
+            "word('table'→(model Table))",
+            'word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'})',
+            'word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})',
+            "word('on Friday'→(field Reservation date) {'DAY': '2026-09-11'})",
+            "word('at 9pm'→(field Reservation time) {'TIME': '21:00'})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'compose · (move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))) · payload={\'party_size\': 6, \'date\': \'2026-09-11\', \'time\': \'21:00\', \'_nps\': [NounPhrase(model=None, determiner=None, number=\'singular\', predicates=[], proper=[], referent=referent(\'her\'), interrogated=False, items=[word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[]), NounPhrase(model=\'Table\', determiner=\'any\', number=\'singular\', predicates=[\'zone = "terrace"\', \'capacity >= 6\'], proper=[], referent=None, interrogated=False, items=[word(\'table\'→(model Table)), word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'}), word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[])]}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          "find 'st.{Table+}' --where 'capacity >= 6'",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-12',
+            'hash_c': '<hash-5>',
+          }),
+        ]),
+        'resolved': '(say book (slot "$referent:Client" (doc "Client:client-ana-rojas")) (slot "$object:Table" (doc "Table:table-12") (alternatives "Table:table-14")) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'trace': list([
+          'interpretation: compose',
+          'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+          "'her' → st.{Client}.client-ana-rojas",
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          'any: took st.{Table}.table-12; also st.{Table}.table-14',
+          "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+          "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+          'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+          'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+          'refresh: 180 nodes, 374 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': dict({
+              'date': '2026-09-11',
+              'party_size': 6,
+              'time': '21:00',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-4>',
+            'note': '',
+            'path': '<tmp>/world/reservations/reservation-2026-09-11-ana-rojas.md',
+            'verb': 'create',
+          }),
+          dict({
+            'address': 'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+            'after': dict({
+              'relation_type': 'booked_by',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Client:client-ana-rojas',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+          dict({
+            'address': 'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+            'after': dict({
+              'relation_type': 'assigned_to',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Table:table-12',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+        ]),
+      }),
+      'text': 'Created reservation 2026-09-11 21:00, 6 people, table 12, pending, booked by Ana Rojas, assigned to table 12. Table 14 would also work.',
+      'trace': list([
+        'interpretation: compose',
+        'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        "'her' → st.{Client}.client-ana-rojas",
+        'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+        "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+        '∩ → 2',
+        'any: took st.{Table}.table-12; also st.{Table}.table-14',
+        "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+        "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+        'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+        'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+        'refresh: 180 nodes, 374 edges',
+      ]),
+      'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
+      'written': dict({
+        'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'assigned_to',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Table:table-12',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas assigned_to Table:table-12',
+        }),
+        'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'booked_by',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Client:client-ana-rojas',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas booked_by Client:client-ana-rojas',
+        }),
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 6,
+          'status': 'pending',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-6>',
+        'id': '<move-6>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'confirm it',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-6>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(say confirm (it "it" Reservation))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            'word(\'confirm it\'→(change (it "it" Reservation) status "confirmed"))',
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (change (it "it" Reservation) status "confirmed") · subject=it [] · status=\'confirmed\' · payload={\'verb\': \'change\', \'alias\': True}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+        ]),
+        'resolved': '(say confirm (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (say confirm (it "it" Reservation))',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          'pre-validation: find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'pre-validation: find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "pre-validation: find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pre-validation: pending → confirmed is legal (party_size <= 8)',
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+          "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
+          'refresh: 181 nodes, 377 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 'confirmed',
+            'before': 'pending',
+            'done': True,
+            'field': 'status',
+            'hash_c': '<hash-7>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (say confirm (it "it" Reservation))',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        'pre-validation: find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+        'pre-validation: find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+        "pre-validation: find 'st.{Reservation+}' --where 'party_size <= 8'",
+        'pre-validation: pending → confirmed is legal (party_size <= 8)',
+        'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+        'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+        "find 'st.{Reservation+}' --where 'party_size <= 8'",
+        'pending → confirmed is legal (party_size <= 8)',
+        "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
+        'refresh: 181 nodes, 377 edges',
+      ]),
+      'turn': 'confirm it',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 6,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-8>',
+        'id': '<move-7>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'change it to 9 people',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-7>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(change (it "it") party_size 9)',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('change'→(action change))",
+            "referent('it')",
+            "unknown('to')",
+            "word('9 people'→(field Reservation party_size) {'N': 9})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action change) · subject=it [] · party_size=9 · payload={'verb': 'change'}",
+          ]),
+          'unknown': list([
+            'to',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(change (doc "Reservation:reservation-2026-09-11-ana-rojas") party_size 9)',
+        'trace': list([
+          'interpretation: action',
+          'forms: (change (it "it") party_size 9)',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 9,
+            'before': 6,
+            'done': True,
+            'field': 'party_size',
+            'hash_c': '<hash-9>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done. Heads up: assigned_to → Table:table-12 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (change (it "it") party_size 9)',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'change it to 9 people',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 9,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-10>',
+        'id': '<move-8>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'add a note saying: birthday',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-8>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(change (it "it" Reservation) notes "birthday")',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('add a note'→(field Reservation notes))",
+            "literal('birthday')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (field Reservation notes) · subject=it [] · notes='birthday' · payload={'verb': 'change', 'model': 'Reservation'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(change (doc "Reservation:reservation-2026-09-11-ana-rojas") notes "birthday")',
+        'trace': list([
+          'interpretation: action',
+          'forms: (change (it "it" Reservation) notes "birthday")',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 'birthday',
+            'before': '',
+            'done': True,
+            'field': 'notes',
+            'hash_c': '<hash-11>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done. Heads up: assigned_to → Table:table-12 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (change (it "it" Reservation) notes "birthday")',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'add a note saying: birthday',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': 'birthday',
+          'party_size': 9,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-12>',
+        'id': '<move-9>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-9>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-8>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "add a note saying: birthday" (jp, <at>): notes: \'\' → \'birthday\'.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-8>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-12>',
+        'id': '<move-10>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-10>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo Reservation:reservation-2026-09-11-ana-rojas.notes: 'birthday' → ''",
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'undoes': '<move-8>',
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': '',
+            'before': 'birthday',
+            'done': True,
+            'field': 'notes',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-8> (1 write(s)). Heads up: assigned_to → Table:table-12 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo Reservation:reservation-2026-09-11-ana-rojas.notes: 'birthday' → ''",
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 9,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'eval': '(show (doc "AnchorDoc:anchor-client"))',
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-10>',
+        'id': '<move-11>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': '(show (doc "AnchorDoc:anchor-client"))',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-11>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(show (doc "AnchorDoc:anchor-client"))',
+        'interpretation': dict({
+        }),
+        'queries': list([
+        ]),
+        'reads': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'hash_c': '<hash-13>',
+          }),
+        ]),
+        'resolved': '(show (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'forms: (show (doc "AnchorDoc:anchor-client"))',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'anchor-client.',
+      'trace': list([
+        'forms: (show (doc "AnchorDoc:anchor-client"))',
+      ]),
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-10>',
+        'id': '<move-12>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'add patron to its forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-12>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(add (it "it" AnchorDoc) forms "patron")',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('add'→(action add))",
+            "unknown('patron')",
+            "unknown('to')",
+            "unknown('its')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action add) · subject=it [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+            'patron',
+            'to',
+            'its',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(add (doc "AnchorDoc:anchor-client") forms "patron")',
+        'trace': list([
+          'interpretation: action',
+          'forms: (add (it "it" AnchorDoc) forms "patron")',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "add AnchorDoc:anchor-client.forms: None → 'patron'",
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': 'patron',
+            'before': None,
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-14>',
+            'index': 2,
+            'note': '',
+            'verb': 'add',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (add (it "it" AnchorDoc) forms "patron")',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "add AnchorDoc:anchor-client.forms: None → 'patron'",
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'add patron to its forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+            'patron',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-17>',
+        'hash_before': '<hash-15>',
+        'id': '<move-13>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'forget table 5',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-13>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(forget (the Table (named "5")))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('forget'→(action forget))",
+            "word('table'→(model Table))",
+            "number('5')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action forget) · subject=the Table [] 5 · payload={'verb': 'forget'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          "find 'st.{Table+}' --where 'number = 5' → 1",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-5',
+            'hash_c': '<hash-16>',
+          }),
+        ]),
+        'resolved': '(forget (doc "Table:table-5"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (forget (the Table (named "5")))',
+          "find 'st.{Table+}' --where 'number = 5' → 1",
+          'forget Table:table-5',
+          'refresh: 179 nodes, 368 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Table:table-5',
+            'after': None,
+            'before': dict({
+              'capacity': 4,
+              'number': 5,
+              'zone': 'indoor',
+            }),
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-16>',
+            'note': '',
+            'path': '<tmp>/world/tables/5.md',
+            'verb': 'forget',
+          }),
+        ]),
+      }),
+      'text': 'Forgot 1.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (forget (the Table (named "5")))',
+        "find 'st.{Table+}' --where 'number = 5' → 1",
+        'forget Table:table-5',
+        'refresh: 179 nodes, 368 edges',
+      ]),
+      'turn': 'forget table 5',
+      'written': dict({
+        'Table:table-5': None,
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-17>',
+        'hash_before': '<hash-17>',
+        'id': '<move-14>',
+        'outcome': 'ambiguo',
+        'refers_to': '',
+        'sentence': 'forget that reservation',
+        'speaker': 'jp',
+        'state_after': 'pendiente',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-14>',
+      'outcome': 'ambiguo',
+      'record': dict({
+        'candidates': list([
+          'st.{Reservation}.reservation-2026-09-11-ana-rojas',
+          'st.{Reservation}.reservation-2026-09-11-luis-soto',
+        ]),
+        'edges': list([
+        ]),
+        'forms': '(forget (the Reservation))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('forget'→(action forget))",
+            "det('that')",
+            "word('reservation'→(model Reservation))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action forget) · subject=the Reservation [] · payload={'verb': 'forget'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          "ls 'st.{Reservation+}' → 2",
+        ]),
+        'reads': list([
+        ]),
+        'trace': list([
+          'interpretation: action',
+          'forms: (forget (the Reservation))',
+          "ls 'st.{Reservation+}' → 2",
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Which one? (1) 2026-09-11 21:00, 9 people, table 12, confirmed · (2) 2026-09-11 20:00, 4 people, table 3, pending',
+      'trace': list([
+        'interpretation: action',
+        'forms: (forget (the Reservation))',
+        "ls 'st.{Reservation+}' → 2",
+      ]),
+      'turn': 'forget that reservation',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-17>',
+        'hash_before': '<hash-17>',
+        'id': '<move-15>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'none',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'pendiente',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-15>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'interpretation': dict({
+        }),
+        'queries': list([
+        ]),
+        'trace': list([
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Cancelled.',
+      'trace': list([
+      ]),
+      'turn': 'none',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'eval': '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-19>',
+        'hash_before': '<hash-17>',
+        'id': '<move-16>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-16>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+        'interpretation': dict({
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+        'trace': list([
+          'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+          "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '13:00', 'party_size': 2}",
+          'refresh: 183 nodes, 384 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:walk-in',
+            'after': dict({
+              'date': '2026-09-12',
+              'party_size': 2,
+              'time': '13:00',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-18>',
+            'note': '',
+            'path': '<tmp>/world/reservations/walk-in.md',
+            'verb': 'create',
+          }),
+        ]),
+      }),
+      'text': 'Created reservation 2026-09-12 13:00, 2 people, table , pending.',
+      'trace': list([
+        'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
+        "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '13:00', 'party_size': 2}",
+        'refresh: 183 nodes, 384 edges',
+      ]),
+      'written': dict({
+        'Reservation:walk-in': dict({
+          'date': '2026-09-12',
+          'notes': '',
+          'party_size': 2,
+          'status': 'pending',
+          'time': '13:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-21>',
+        'hash_before': '<hash-19>',
+        'id': '<move-17>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'assign it to table 20',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-17>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(assert assigned_to (it "it" Reservation) (the Table (named "20")))',
+        'interpretation': dict({
+          'forma': 'assert',
+          'items': list([
+            "word('assign'→(relation assigned_to))",
+            "referent('it')",
+            "unknown('to')",
+            "word('table'→(model Table))",
+            "number('20')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'assert · (relation assigned_to) · subject=it [] · object=the Table [] 20',
+          ]),
+          'unknown': list([
+            'to',
+          ]),
+        }),
+        'queries': list([
+          "find 'st.{Table+}' --where 'number = 20' → 1",
+          "find 'st.{Table+}' --where 'capacity >= 2'",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-20',
+            'hash_c': '<hash-20>',
+          }),
+        ]),
+        'resolved': '(assert assigned_to (doc "Reservation:walk-in") (doc "Table:table-20"))',
+        'trace': list([
+          'interpretation: assert',
+          'forms: (assert assigned_to (it "it" Reservation) (the Table (named "20")))',
+          "'it' → st.{Reservation}.walk-in",
+          "find 'st.{Table+}' --where 'number = 20' → 1",
+          "pre-validation: find 'st.{Table+}' --where 'capacity >= 2'",
+          'docs create --model RelationDoc assigned_to--Reservation:walk-in--Table:table-20',
+          'refresh: 183 nodes, 385 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'RelationDoc:assigned_to--Reservation:walk-in--Table:table-20',
+            'after': dict({
+              'relation_type': 'assigned_to',
+              'source_id': 'Reservation:walk-in',
+              'target_id': 'Table:table-20',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+        ]),
+      }),
+      'text': 'Done: 2026-09-12 13:00, 2 people, table 20, pending assigned to table 20.',
+      'trace': list([
+        'interpretation: assert',
+        'forms: (assert assigned_to (it "it" Reservation) (the Table (named "20")))',
+        "'it' → st.{Reservation}.walk-in",
+        "find 'st.{Table+}' --where 'number = 20' → 1",
+        "pre-validation: find 'st.{Table+}' --where 'capacity >= 2'",
+        'docs create --model RelationDoc assigned_to--Reservation:walk-in--Table:table-20',
+        'refresh: 183 nodes, 385 edges',
+      ]),
+      'turn': 'assign it to table 20',
+      'written': dict({
+        'RelationDoc:assigned_to--Reservation:walk-in--Table:table-20': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'assigned_to',
+          'source_id': 'Reservation:walk-in',
+          'target_id': 'Table:table-20',
+          'title': 'Reservation:walk-in assigned_to Table:table-20',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-21>',
+        'hash_before': '<hash-21>',
+        'id': '<move-18>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'what reservations does Luis Soto have for Friday?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-18>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+          dict({
+            'metadata': dict({
+              'axis': 'WHAT',
+              'condition': '',
+              'origin': 'relation_doc',
+              'relation_doc': 'booked_by--Reservation:reservation-2026-09-11-luis-soto--Client:client-luis-soto',
+            }),
+            'relation': 'booked_by',
+            'source': 'Reservation:reservation-2026-09-11-luis-soto',
+            'target': 'Client:client-luis-soto',
+          }),
+        ]),
+        'forms': '(sources booked_by (the Client (named "Luis")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+        'interpretation': dict({
+          'forma': 'read',
+          'items': list([
+            "wh('what')",
+            "word('reservations'→(model Reservation))",
+            "wh('does')",
+            "unknown('Luis')",
+            "unknown('Soto')",
+            "word('have'→(relation booked_by))",
+            "unknown('for')",
+            "literal('Friday')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "read · (relation booked_by) · subject=all Reservation [] · object=the Client [] Luis · payload={'asked': 'subject'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+          'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'hash_c': '<hash-9>',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'hash_c': '<hash-22>',
+          }),
+          dict({
+            'address': 'Client:client-luis-soto',
+            'hash_c': '<hash-23>',
+          }),
+        ]),
+        'resolved': '(sources booked_by (doc "Client:client-luis-soto") (of Reservation))',
+        'trace': list([
+          'interpretation: read',
+          'forms: (sources booked_by (the Client (named "Luis")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+          'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': '2026-09-11 20:00, 4 people, table 3, pending.',
+      'trace': list([
+        'interpretation: read',
+        'forms: (sources booked_by (the Client (named "Luis")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+        'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+        'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+      ]),
+      'turn': 'what reservations does Luis Soto have for Friday?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-21>',
+        'hash_before': '<hash-21>',
+        'id': '<move-19>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'the large tables on the terrace',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-19>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(show (the Table (plural) (where "capacity >= 6") (where "zone = \\"terrace\\"")))',
+        'interpretation': dict({
+          'forma': 'nominal',
+          'items': list([
+            "det('the')",
+            'word(\'large\'→(where Table "capacity >= 6"))',
+            "word('tables'→(model Table))",
+            'word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'})',
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'nominal · subject=the Table [capacity >= 6; zone = "terrace"]',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          '∩ → 2',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-12',
+            'hash_c': '<hash-5>',
+          }),
+          dict({
+            'address': 'Table:table-14',
+            'hash_c': '<hash-24>',
+          }),
+        ]),
+        'resolved': '(show (doc "Table:table-12" "Table:table-14"))',
+        'trace': list([
+          'interpretation: nominal',
+          'forms: (show (the Table (plural) (where "capacity >= 6") (where "zone = \\"terrace\\"")))',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          '∩ → 2',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': '2: table 12; table 14.',
+      'trace': list([
+        'interpretation: nominal',
+        'forms: (show (the Table (plural) (where "capacity >= 6") (where "zone = \\"terrace\\"")))',
+        "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+        'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+        '∩ → 2',
+      ]),
+      'turn': 'the large tables on the terrace',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-21>',
+        'hash_before': '<hash-21>',
+        'id': '<move-20>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'refresh',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-20>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(refresh)',
+        'interpretation': dict({
+          'forma': 'refresh',
+          'items': list([
+            "word('refresh'→(action refresh))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'refresh · (action refresh)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(refresh)',
+        'trace': list([
+          'interpretation: refresh',
+          'forms: (refresh)',
+          'refresh: 183 nodes, 385 edges',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Refreshed.',
+      'trace': list([
+        'interpretation: refresh',
+        'forms: (refresh)',
+        'refresh: 183 nodes, 385 edges',
+      ]),
+      'turn': 'refresh',
+      'written': dict({
+      }),
+    }),
+  ])
+# ---
+# name: test_spec_09_conversation
+  list([
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-3>',
+        'hash_before': '<hash-2>',
+        'id': '<move-1>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'create a client named Ana Rojas, phone 9 5555 1234',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-1>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('create'→(action create))",
+            "det('a')",
+            "word('client'→(model Client))",
+            "word('named'→(field Client name))",
+            "unknown('Ana')",
+            "unknown('Rojas')",
+            "punct(',')",
+            "word('phone'→(field Client phone))",
+            "number('9')",
+            "number('5555')",
+            "number('1234')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (action create) · subject=any Client [name = "Ana Rojas"] · payload={\'verb\': \'create\', \'fields\': {\'name\': \'Ana Rojas\', \'phone\': \'9 5555 1234\'}}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+          "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+          'refresh: 175 nodes, 353 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Client:client-ana-rojas',
+            'after': dict({
+              'name': 'Ana Rojas',
+              'phone': '9 5555 1234',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-1>',
+            'note': '',
+            'path': '<tmp>/world/clients/client-ana-rojas.md',
+            'verb': 'create',
+          }),
+        ]),
+      }),
+      'text': 'Created client Ana Rojas.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+        'refresh: 175 nodes, 353 edges',
+      ]),
+      'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
+      'written': dict({
+        'Client:client-ana-rojas': dict({
+          'name': 'Ana Rojas',
+          'notes': '',
+          'phone': '9 5555 1234',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-3>',
+        'hash_before': '<hash-3>',
+        'id': '<move-2>',
+        'outcome': 'missing',
+        'refers_to': '',
+        'sentence': 'book her a table on the patio for 6 people on Friday at 9pm',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-2>',
+      'outcome': 'missing',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"patio\\"") (where "capacity >= 6") (not-a-value Table zone "patio"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'interpretation': dict({
+          'forma': 'compose',
+          'items': list([
+            'word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))',
+            "det('a')",
+            "word('table'→(model Table))",
+            'word(\'on the patio\'→(where Table "zone = Z") {\'Z\': \'patio\'})',
+            'word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})',
+            "word('on Friday'→(field Reservation date) {'DAY': '2026-09-11'})",
+            "word('at 9pm'→(field Reservation time) {'TIME': '21:00'})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'compose · (move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))) · payload={\'party_size\': 6, \'date\': \'2026-09-11\', \'time\': \'21:00\', \'_nps\': [NounPhrase(model=None, determiner=None, number=\'singular\', predicates=[], proper=[], referent=referent(\'her\'), interrogated=False, items=[word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[]), NounPhrase(model=\'Table\', determiner=\'any\', number=\'singular\', predicates=[\'zone = "patio"\', \'capacity >= 6\'], proper=[], referent=None, interrogated=False, items=[word(\'table\'→(model Table)), word(\'on the patio\'→(where Table "zone = Z") {\'Z\': \'patio\'}), word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})], captures={}, unknown_values=[(\'Table\', \'zone\', \'patio\')], complements=[], given=[], hint=None, alternatives=[])]}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'missing': dict({
+          'candidates': list([
+            'terrace',
+            'indoor',
+          ]),
+          'note': "'patio' is not a value of Table.zone",
+        }),
+        'queries': list([
+        ]),
+        'reads': list([
+        ]),
+        'trace': list([
+          'interpretation: compose',
+          'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"patio\\"") (where "capacity >= 6") (not-a-value Table zone "patio"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+          "'her' → st.{Client}.client-ana-rojas",
+          "'patio' is not a value of Table.zone",
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': "'patio' is not a value of Table.zone. Did you mean *terrace* or *indoor*?",
+      'trace': list([
+        'interpretation: compose',
+        'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"patio\\"") (where "capacity >= 6") (not-a-value Table zone "patio"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        "'her' → st.{Client}.client-ana-rojas",
+        "'patio' is not a value of Table.zone",
+      ]),
+      'turn': 'book her a table on the patio for 6 people on Friday at 9pm',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-3>',
+        'id': '<move-3>',
+        'outcome': 'unico',
+        'refers_to': '<move-2>',
+        'sentence': 'on the terrace',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-3>',
+      'outcome': 'unico',
+      'record': dict({
+        'corrects': dict({
+          'fragment': 'on the terrace',
+          'move': '<move-2>',
+          'sentence': 'book her a table on the terrace for 6 people on Friday at 9pm',
+        }),
+        'edges': list([
+        ]),
+        'forms': '(say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'interpretation': dict({
+          'forma': 'compose',
+          'items': list([
+            'word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))',
+            "det('a')",
+            "word('table'→(model Table))",
+            'word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'})',
+            'word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})',
+            "word('on Friday'→(field Reservation date) {'DAY': '2026-09-11'})",
+            "word('at 9pm'→(field Reservation time) {'TIME': '21:00'})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'compose · (move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))) · payload={\'party_size\': 6, \'date\': \'2026-09-11\', \'time\': \'21:00\', \'_nps\': [NounPhrase(model=None, determiner=None, number=\'singular\', predicates=[], proper=[], referent=referent(\'her\'), interrogated=False, items=[word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[]), NounPhrase(model=\'Table\', determiner=\'any\', number=\'singular\', predicates=[\'zone = "terrace"\', \'capacity >= 6\'], proper=[], referent=None, interrogated=False, items=[word(\'table\'→(model Table)), word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'}), word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[])]}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          "find 'st.{Table+}' --where 'capacity >= 6'",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-12',
+            'hash_c': '<hash-5>',
+          }),
+        ]),
+        'resolved': '(say book (slot "$referent:Client" (doc "Client:client-ana-rojas")) (slot "$object:Table" (doc "Table:table-12") (alternatives "Table:table-14")) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'trace': list([
+          "correction of the last missing turn: 'book her a table on the terrace for 6 people on Friday at 9pm'",
+          'interpretation: compose',
+          'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+          "'her' → st.{Client}.client-ana-rojas",
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          'any: took st.{Table}.table-12; also st.{Table}.table-14',
+          "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+          "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+          'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+          'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+          'refresh: 180 nodes, 374 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': dict({
+              'date': '2026-09-11',
+              'party_size': 6,
+              'time': '21:00',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-4>',
+            'note': '',
+            'path': '<tmp>/world/reservations/reservation-2026-09-11-ana-rojas.md',
+            'verb': 'create',
+          }),
+          dict({
+            'address': 'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+            'after': dict({
+              'relation_type': 'booked_by',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Client:client-ana-rojas',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+          dict({
+            'address': 'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+            'after': dict({
+              'relation_type': 'assigned_to',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Table:table-12',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+        ]),
+      }),
+      'text': 'Created reservation 2026-09-11 21:00, 6 people, table 12, pending, booked by Ana Rojas, assigned to table 12. Table 14 would also work.',
+      'trace': list([
+        "correction of the last missing turn: 'book her a table on the terrace for 6 people on Friday at 9pm'",
+        'interpretation: compose',
+        'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        "'her' → st.{Client}.client-ana-rojas",
+        'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+        "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+        '∩ → 2',
+        'any: took st.{Table}.table-12; also st.{Table}.table-14',
+        "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+        "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+        'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+        'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+        'refresh: 180 nodes, 374 edges',
+      ]),
+      'turn': 'on the terrace',
+      'written': dict({
+        'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'assigned_to',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Table:table-12',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas assigned_to Table:table-12',
+        }),
+        'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'booked_by',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Client:client-ana-rojas',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas booked_by Client:client-ana-rojas',
+        }),
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 6,
+          'status': 'pending',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-6>',
+        'id': '<move-4>',
+        'outcome': 'ambiguo',
+        'refers_to': '',
+        'sentence': 'what reservations does Ana have for Friday?',
+        'speaker': 'jp',
+        'state_after': 'pendiente',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-4>',
+      'outcome': 'ambiguo',
+      'record': dict({
+        'candidates': list([
+          'st.{Client}.client-ana-perez',
+          'st.{Client}.client-ana-rojas',
+        ]),
+        'edges': list([
+        ]),
+        'forms': '(sources booked_by (the Client (named "Ana")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+        'interpretation': dict({
+          'forma': 'read',
+          'items': list([
+            "wh('what')",
+            "word('reservations'→(model Reservation))",
+            "wh('does')",
+            "unknown('Ana')",
+            "word('have'→(relation booked_by))",
+            "unknown('for')",
+            "literal('Friday')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "read · (relation booked_by) · subject=all Reservation [] · object=the Client [] Ana · payload={'asked': 'subject'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+          'find \'st.{Client+}\' --where \'doc ~ "ana"\' → 2',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'hash_c': '<hash-4>',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'hash_c': '<hash-7>',
+          }),
+        ]),
+        'trace': list([
+          'interpretation: read',
+          'forms: (sources booked_by (the Client (named "Ana")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+          'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+          'find \'st.{Client+}\' --where \'doc ~ "ana"\' → 2',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Which one? (1) Ana Pérez · (2) Ana Rojas',
+      'trace': list([
+        'interpretation: read',
+        'forms: (sources booked_by (the Client (named "Ana")) (of Reservation) (where "date = \\"2026-09-11\\""))',
+        'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
+        'find \'st.{Client+}\' --where \'doc ~ "ana"\' → 2',
+      ]),
+      'turn': 'what reservations does Ana have for Friday?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-6>',
+        'id': '<move-5>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'Rojas',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'pendiente',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-5>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+          dict({
+            'metadata': dict({
+              'axis': 'WHAT',
+              'condition': '',
+              'origin': 'relation_doc',
+              'relation_doc': 'booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+            }),
+            'relation': 'booked_by',
+            'source': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'target': 'Client:client-ana-rojas',
+          }),
+        ]),
+        'forms': '(sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
+        'interpretation': dict({
+        }),
+        'queries': list([
+          "ls 'st.{Reservation+}' → 2",
+          'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
+          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'hash_c': '<hash-4>',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'hash_c': '<hash-7>',
+          }),
+          dict({
+            'address': 'Client:client-ana-rojas',
+            'hash_c': '<hash-1>',
+          }),
+        ]),
+        'resolved': '(sources booked_by (doc "Client:client-ana-rojas") (of Reservation))',
+        'trace': list([
+          "'Rojas' → st.{Client}.client-ana-rojas (answer to the pending question)",
+          'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
+          "ls 'st.{Reservation+}' → 2",
+          'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
+          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': '2026-09-11 21:00, 6 people, table 12, pending.',
+      'trace': list([
+        "'Rojas' → st.{Client}.client-ana-rojas (answer to the pending question)",
+        'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
+        "ls 'st.{Reservation+}' → 2",
+        'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
+        'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+      ]),
+      'turn': 'Rojas',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-9>',
+        'hash_before': '<hash-6>',
+        'id': '<move-6>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'confirm it',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-6>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(say confirm (it "it" Reservation))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            'word(\'confirm it\'→(change (it "it" Reservation) status "confirmed"))',
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (change (it "it" Reservation) status "confirmed") · subject=it [] · status=\'confirmed\' · payload={\'verb\': \'change\', \'alias\': True}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+        ]),
+        'resolved': '(say confirm (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (say confirm (it "it" Reservation))',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          'pre-validation: find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'pre-validation: find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "pre-validation: find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pre-validation: pending → confirmed is legal (party_size <= 8)',
+          'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+          'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+          "find 'st.{Reservation+}' --where 'party_size <= 8'",
+          'pending → confirmed is legal (party_size <= 8)',
+          "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
+          'refresh: 181 nodes, 377 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 'confirmed',
+            'before': 'pending',
+            'done': True,
+            'field': 'status',
+            'hash_c': '<hash-8>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (say confirm (it "it" Reservation))',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        'pre-validation: find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+        'pre-validation: find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+        "pre-validation: find 'st.{Reservation+}' --where 'party_size <= 8'",
+        'pre-validation: pending → confirmed is legal (party_size <= 8)',
+        'find \'st.{RelationDoc}\' --where \'source_id = "State:state-reservation-pending"\' → 2 (graph not fresh)',
+        'find \'st.{RelationDoc}\' --where \'relation_type = "transitions_to"\' → 4',
+        "find 'st.{Reservation+}' --where 'party_size <= 8'",
+        'pending → confirmed is legal (party_size <= 8)',
+        "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
+        'refresh: 181 nodes, 377 edges',
+      ]),
+      'turn': 'confirm it',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 6,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-9>',
+        'id': '<move-7>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'change it to 9 people and add a note saying: birthday',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-7>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(move (change (it "it") party_size 9) (change (it "it" Reservation) notes "birthday"))',
+        'interpretation': dict({
+          'forma': 'action+action',
+          'items': list([
+            "word('change'→(action change))",
+            "referent('it')",
+            "unknown('to')",
+            "word('9 people'→(field Reservation party_size) {'N': 9})",
+            "conj('and')",
+            "word('add a note'→(field Reservation notes))",
+            "literal('birthday')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action change) · subject=it [] · party_size=9 · payload={'verb': 'change'}",
+            "action · (field Reservation notes) · subject=it [] · notes='birthday' · payload={'verb': 'change', 'model': 'Reservation'}",
+          ]),
+          'unknown': list([
+            'to',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(move (change (doc "Reservation:reservation-2026-09-11-ana-rojas") party_size 9) (change (doc "Reservation:reservation-2026-09-11-ana-rojas") notes "birthday"))',
+        'trace': list([
+          'interpretation: action+action',
+          'forms: (move (change (it "it") party_size 9) (change (it "it" Reservation) notes "birthday"))',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+          'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
+          "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 9,
+            'before': 6,
+            'done': True,
+            'field': 'party_size',
+            'hash_c': '<hash-10>',
+            'note': '',
+            'verb': 'change',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': 'birthday',
+            'before': '',
+            'done': True,
+            'field': 'notes',
+            'hash_c': '<hash-11>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done. Done. Heads up: assigned_to → Table:table-12 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: action+action',
+        'forms: (move (change (it "it") party_size 9) (change (it "it" Reservation) notes "birthday"))',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
+        "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'change it to 9 people and add a note saying: birthday',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': 'birthday',
+          'party_size': 9,
+          'status': 'confirmed',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-12>',
+        'id': '<move-8>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why did you warn me about the table?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-8>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "wh('did')",
+            "unknown('you')",
+            "unknown('warn')",
+            "referent('me')",
+            "unknown('about')",
+            "det('the')",
+            "word('table'→(model Table))",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+            'you',
+            'warn',
+            'about',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-7>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "change it to 9 people and add a note saying: birthday" (jp, <at>): party_size: 6 → 9, notes: \'\' → \'birthday\'.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-7>',
+      ]),
+      'turn': 'why did you warn me about the table?',
+      'written': dict({
+      }),
+    }),
+  ])
+# ---

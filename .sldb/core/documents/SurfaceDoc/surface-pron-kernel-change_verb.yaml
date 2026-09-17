@@ -1,0 +1,14 @@
+name: surface-pron-kernel-change_verb
+path: knowledge/surfaces/surface-pron-kernel-change_verb.md
+hash_c: dc94c99a28dd10b69d5af2da994e4dfb3ca3c1e7e9c488cb4051a793c8626a17
+hash_d: 143b87f060ba24b7b9f580a3a7a663850ac237c007d9984136e51f4b11929300
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

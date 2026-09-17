@@ -14,6 +14,8 @@ HELP = """:help            this
 :quit            leave
 Anything else is a sentence to the world."""
 
+QUIT = (":quit", ":q", ":exit")
+
 
 def run(
     session: Any,
@@ -23,50 +25,54 @@ def run(
     stdout: IO[str] = sys.stdout,
 ) -> int:
     """session: a pron.session.Session or a pron.serve.RemoteSession; both answer turn()."""
-    trace = False
     remote = hasattr(session, "path")
     print(
         f"pron · world {world_name} · projection {projection}{' · via server' if remote else ''} · :help for commands",
         file=stdout,
     )
-    for raw in stdin:
-        line = raw.strip()
-        if not line:
-            continue
-        if line in (":quit", ":q", ":exit"):
+    trace = False
+    for line in (raw.strip() for raw in stdin):
+        if line in QUIT:
             break
-        if line == ":help":
-            print(HELP, file=stdout)
-            continue
-        if line == ":trace":
-            trace = not trace
-            print(f"trace {'on' if trace else 'off'}", file=stdout)
-            continue
-        if line.startswith(":lexicon"):
-            model = line.split(maxsplit=1)[1] if " " in line else None
-            rows = session.lexicon(model) if remote else session.lex.table(model)
-            for row in rows:
-                print(
-                    f"  {row['form']:<24} {row['kind']:<16} {row['ref']}", file=stdout
-                )
-            continue
-        if line == ":state":
-            if remote:
-                st = session.state()
-                print(
-                    f"state: {st['state']} · singular: {st['singular']} · set: {st['set']} · pending: {st['pending'] or '-'}",
-                    file=stdout,
-                )
-            else:
-                d = session.dialogue
-                print(
-                    f"state: {d.state} · singular: {d.singular} · set: {d.last_set} · pending: {d.pending.kind if d.pending else '-'}",
-                    file=stdout,
-                )
-            continue
-        response = session.turn(line)
-        print(response.text, file=stdout)
-        if trace:
-            for t in response.trace:
-                print(f"  · {t}", file=stdout)
+        if line:
+            trace = _line(session, line, trace, remote, stdout)
     return 0
+
+
+def _line(session: Any, line: str, trace: bool, remote: bool, stdout: IO[str]) -> bool:
+    """Answer one non-empty line; returns whether the trace is on afterwards."""
+    if line == ":trace":
+        print(f"trace {'off' if trace else 'on'}", file=stdout)
+        return not trace
+    if line == ":help":
+        print(HELP, file=stdout)
+    elif line.startswith(":lexicon"):
+        _lexicon(session, line, remote, stdout)
+    elif line == ":state":
+        print(_state(session, remote), file=stdout)
+    else:
+        _sentence(session, line, trace, stdout)
+    return trace
+
+
+def _lexicon(session: Any, line: str, remote: bool, stdout: IO[str]) -> None:
+    model = line.split(maxsplit=1)[1] if " " in line else None
+    rows = session.lexicon(model) if remote else session.lex.table(model)
+    for row in rows:
+        print(f"  {row['form']:<24} {row['kind']:<16} {row['ref']}", file=stdout)
+
+
+def _state(session: Any, remote: bool) -> str:
+    if remote:
+        st = session.state()
+        return f"state: {st['state']} · singular: {st['singular']} · set: {st['set']} · pending: {st['pending'] or '-'}"
+    d = session.dialogue
+    return f"state: {d.state} · singular: {d.singular} · set: {d.last_set} · pending: {d.pending.kind if d.pending else '-'}"
+
+
+def _sentence(session: Any, line: str, trace: bool, stdout: IO[str]) -> None:
+    response = session.turn(line)
+    print(response.text, file=stdout)
+    if trace:
+        for t in response.trace:
+            print(f"  · {t}", file=stdout)

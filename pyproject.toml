@@ -9,6 +9,7 @@ description = "pron: a SHRDLU over an sldb world — nouns by address in sldb, t
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "click>=8.1",
     "pydantic>=2",
     "PyYAML>=6",
     "sldb",
@@ -16,7 +17,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.4", "ruff==0.14.0", "mypy==1.14.1", "types-PyYAML"]
+dev = ["pytest==8.3.4", "syrupy==6.1.1", "ruff==0.14.0", "mypy==1.14.1", "types-PyYAML"]
 
 [project.scripts]
 pron = "pron.cli.main:main"
@@ -38,6 +39,16 @@ testpaths = ["tests"]
 
 [tool.ruff]
 target-version = "py311"
+
+# Thresholds for Layer 1 of standards.md (hum-ecosystem/tools/sldb), size/structure only.
+# Report-only for now (`make audit`); they join `make lint` once the backlog is collapsed.
+[tool.ruff.lint.pylint]
+max-statements = 10  # approximates "no function over 10 lines of logic"
+max-branches = 8
+max-returns = 6
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
 
 [tool.mypy]
 python_version = "3.11"

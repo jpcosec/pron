@@ -1,7 +1,7 @@
 name: cmd-pron-say
 path: knowledge/commands/cmd-pron-say.md
-hash_c: 74de009766f73fa40ef776bcaa3996dacaa4341dff084cc6dc14cb3558326325
-hash_d: 9b6d612070aedbd314b2ebf869719c36dad38f021fecb21aca9f15a982818c6a
+hash_c: 293ec3bf6b6ccc4b46c0cf164e511e09275d491196f0cc047af0ecd0ec120809
+hash_d: 77ef39a05a29c726d3bc39bc93a36f38bb395e623e2b08c70e428a93643e8e76
 semantic_tags:
 - domain:system_architecture
 - entity:cli_command

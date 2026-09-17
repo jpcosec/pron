@@ -10,11 +10,11 @@ from __future__ import annotations
 import inspect
 from pathlib import Path
 
-import pron.client
-import pron.ids
-import pron.response
-from pron.client import RemoteGraph, RemoteSession, RemoteWorld, socket_path
-from pron.response import Response
+import pron.kernel.ids
+import pron.kernel.response
+import pron.remote
+from pron.remote import RemoteGraph, RemoteSession, RemoteWorld, socket_path
+from pron.kernel.response import Response
 from pron.session import Session
 
 # --- Session(world, projection, speaker, speaker_address, now, embedder,
@@ -99,12 +99,12 @@ def test_response_construction() -> None:
 
 
 def test_client_module_surface() -> None:
-    assert callable(pron.client.socket_path)
-    assert callable(pron.client.alive)
-    assert callable(pron.client.request)
-    assert pron.client.RemoteSession is RemoteSession
-    assert pron.client.RemoteGraph is RemoteGraph
-    assert pron.client.RemoteWorld is RemoteWorld
+    assert callable(pron.remote.socket_path)
+    assert callable(pron.remote.alive)
+    assert callable(pron.remote.request)
+    assert pron.remote.RemoteSession is RemoteSession
+    assert pron.remote.RemoteGraph is RemoteGraph
+    assert pron.remote.RemoteWorld is RemoteWorld
 
 
 def test_remote_graph_and_world_call_by_name() -> None:
@@ -116,14 +116,14 @@ def test_remote_graph_and_world_call_by_name() -> None:
 
 
 def test_world_store_attribute_exists() -> None:
-    from pron.store import Store
+    from pron.world.store import Store
 
     # World.store yields a Store, whose payload(model, doc) is the documented read.
     assert callable(Store.payload)
 
 
 def test_store_payload_method() -> None:
-    from pron.store import Store
+    from pron.world.store import Store
 
     assert callable(Store.payload)
 
@@ -132,7 +132,7 @@ def test_store_payload_method() -> None:
 
 
 def test_store_model_editing_surface() -> None:
-    from pron.store import Store
+    from pron.world.store import Store
 
     assert callable(Store.replace)
     assert callable(Store.model_catalog)
@@ -148,23 +148,23 @@ def test_store_model_editing_surface() -> None:
 
 
 def test_ids_split_qualified() -> None:
-    assert pron.ids.split_id("A:Reserva:mesa-1") == ("A", "Reserva", "mesa-1")
-    assert pron.ids.split_id("Reserva:mesa-1") == (None, "Reserva", "mesa-1")
-    assert pron.ids.split_id("local:Reserva:mesa-1") == (None, "Reserva", "mesa-1")
+    assert pron.kernel.ids.split_id("A:Reserva:mesa-1") == ("A", "Reserva", "mesa-1")
+    assert pron.kernel.ids.split_id("Reserva:mesa-1") == (None, "Reserva", "mesa-1")
+    assert pron.kernel.ids.split_id("local:Reserva:mesa-1") == (None, "Reserva", "mesa-1")
 
 
 def test_ids_join_and_address() -> None:
-    assert pron.ids.join_id("A", "Reserva", "mesa-1") == "A:Reserva:mesa-1"
-    assert pron.ids.join_id(None, "Reserva", "mesa-1") == "Reserva:mesa-1"
-    assert pron.ids.scope("A", "Reserva") == "A:st.{Reserva+}"
-    assert pron.ids.scope(None, "Reserva") == "st.{Reserva+}"
-    assert pron.ids.address_of("A:Reserva:mesa-1") == "A:st.{Reserva}.mesa-1"
-    assert pron.ids.address_of("Reserva:mesa-1") == "st.{Reserva}.mesa-1"
+    assert pron.kernel.ids.join_id("A", "Reserva", "mesa-1") == "A:Reserva:mesa-1"
+    assert pron.kernel.ids.join_id(None, "Reserva", "mesa-1") == "Reserva:mesa-1"
+    assert pron.kernel.ids.scope("A", "Reserva") == "A:st.{Reserva+}"
+    assert pron.kernel.ids.scope(None, "Reserva") == "st.{Reserva+}"
+    assert pron.kernel.ids.address_of("A:Reserva:mesa-1") == "A:st.{Reserva}.mesa-1"
+    assert pron.kernel.ids.address_of("Reserva:mesa-1") == "st.{Reserva}.mesa-1"
 
 
 def test_ids_local_none_equivalent() -> None:
-    assert pron.ids.is_local(None)
-    assert pron.ids.is_local(pron.ids.LOCAL)
+    assert pron.kernel.ids.is_local(None)
+    assert pron.kernel.ids.is_local(pron.kernel.ids.LOCAL)
 
 
 # --- the socket at <world>/.pron/serve.sock -----------------------------------------

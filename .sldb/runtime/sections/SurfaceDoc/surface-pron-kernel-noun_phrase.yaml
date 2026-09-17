@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-noun_phrase
+sections:
+- path: kernel-noun-phrase
+  title: kernel.noun_phrase
+  breadcrumbs:
+  - kernel.noun_phrase
+  about:
+  - kernel.noun_phrase
+  - kernel noun phrase
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-noun-phrase
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: kernel-noun-phrase/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.noun_phrase
+  - Purpose
+  about:
+  - kernel.noun_phrase
+  - kernel noun phrase
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: kernel-noun-phrase/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.noun_phrase
+  - How It Works
+  about:
+  - kernel.noun_phrase
+  - kernel noun phrase
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: kernel-noun-phrase/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.noun_phrase
+  - Commands
+  about:
+  - kernel.noun_phrase
+  - kernel noun phrase
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 4bdcbf12cc7422d676b5f35ea0c5fddabbafa2882a7db06c77fb2a00bb505705
+sections_version: '2'

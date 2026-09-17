@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-refs
+path: knowledge/surfaces/surface-pron-sexpr-refs.md
+hash_c: f5b49a8d010bad65074788f9c17ac047faf424072e3998101e95fe720a4f302d
+hash_d: 0469fbacef8be2e457b5bf0e45e8599df3a3629b17ede32c69fa0a910698eb14
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

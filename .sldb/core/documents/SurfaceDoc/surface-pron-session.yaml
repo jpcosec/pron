@@ -1,7 +1,7 @@
 name: surface-pron-session
 path: knowledge/surfaces/surface-pron-session.md
-hash_c: 93d36e3b5caa22a1d82b3b1fa4b1f9d8149fbedc3c224dcd6d24214b7b0b91da
-hash_d: b49425e7948c5381c91c41f35f32a2542af87ee9c0a2137472e47b51ed10efdf
+hash_c: 07cf4704a782ec4f57d09bec6a07459a78224cf138df680fa4b9435b028e088b
+hash_d: ad9dcb2d0115bbe3fc5efc9a3aafd0f8f678f663ffbb125007467b5c4c89c25f
 semantic_tags:
 - domain:system_architecture
 - entity:module

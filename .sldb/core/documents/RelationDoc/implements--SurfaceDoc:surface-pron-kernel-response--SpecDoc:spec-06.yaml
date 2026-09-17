@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-response--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-response--SpecDoc:spec-06.md
+hash_c: 26068801c59adba6c07e6662077238825f02bb54a0802e91aacd90b1c910f93a
+hash_d: ca261522c241d7e81b96cee0384e2544f1f3c3efe7e404cef46d386fb36191ab
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

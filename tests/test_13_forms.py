@@ -8,8 +8,8 @@ from __future__ import annotations
 import pytest
 
 from pron.session import Session
-from pron.sexp import Sym, read, read_one, write
-from pron.world import World
+from pron.kernel.sexp import Sym, read, read_one, write
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"

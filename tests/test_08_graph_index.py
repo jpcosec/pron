@@ -9,9 +9,10 @@ from pathlib import Path
 
 import pytest
 
-from pron.embedder import DocumentIndex, Matcher
-from pron.graph import bare, doc_id, kind, tag_id
-from pron.world import World
+from pron.world.document_index import DocumentIndex
+from pron.world.matcher import Matcher
+from pron.world.graph import bare, doc_id, kind, tag_id
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 
@@ -227,7 +228,8 @@ def test_refresh_if_stale_only_refreshes_when_needed(world: World, tmp_path: Pat
 
 
 def test_document_index_exposes_its_vectors(tmp_path):
-    from pron.embedder import DocumentIndex, Matcher
+    from pron.world.document_index import DocumentIndex
+    from pron.world.matcher import Matcher
 
     idx = DocumentIndex(Matcher(CharBag()), tmp_path / "docs.json")
     idx.index([("a", "h1", "alpha"), ("b", "h2", "beta")])

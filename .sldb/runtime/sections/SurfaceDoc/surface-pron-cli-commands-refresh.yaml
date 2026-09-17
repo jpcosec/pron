@@ -1,0 +1,133 @@
+doc_name: surface-pron-cli-commands-refresh
+sections:
+- path: cli-commands-refresh
+  title: cli.commands.refresh
+  breadcrumbs:
+  - cli.commands.refresh
+  about:
+  - cli.commands.refresh
+  - cli commands refresh
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: cli-commands-refresh
+  level: 1
+  line_start: 14
+  line_end: 26
+- path: cli-commands-refresh/purpose
+  title: Purpose
+  breadcrumbs:
+  - cli.commands.refresh
+  - Purpose
+  about:
+  - cli.commands.refresh
+  - cli commands refresh
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: cli-commands-refresh/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - cli.commands.refresh
+  - How It Works
+  about:
+  - cli.commands.refresh
+  - cli commands refresh
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 23
+- path: cli-commands-refresh/commands
+  title: Commands
+  breadcrumbs:
+  - cli.commands.refresh
+  - Commands
+  about:
+  - cli.commands.refresh
+  - cli commands refresh
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 24
+  line_end: 26
+hash_c: baab2f34f2ce49e2a27ce53a6ce997d170fd6c54010a53533ec686ea2c191f1c
+sections_version: '2'

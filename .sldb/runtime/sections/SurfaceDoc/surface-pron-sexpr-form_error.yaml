@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-form_error
+sections:
+- path: sexpr-form-error
+  title: sexpr.form_error
+  breadcrumbs:
+  - sexpr.form_error
+  about:
+  - sexpr.form_error
+  - sexpr form error
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-form-error
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: sexpr-form-error/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.form_error
+  - Purpose
+  about:
+  - sexpr.form_error
+  - sexpr form error
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: sexpr-form-error/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.form_error
+  - How It Works
+  about:
+  - sexpr.form_error
+  - sexpr form error
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: sexpr-form-error/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.form_error
+  - Commands
+  about:
+  - sexpr.form_error
+  - sexpr form error
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: dae24b91a393690af249f29fdffff0868998ec545caa2952c869b6579c39c293
+sections_version: '2'

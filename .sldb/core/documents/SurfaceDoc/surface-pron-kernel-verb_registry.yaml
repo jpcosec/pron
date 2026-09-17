@@ -1,0 +1,14 @@
+name: surface-pron-kernel-verb_registry
+path: knowledge/surfaces/surface-pron-kernel-verb_registry.md
+hash_c: fbaea144051dc60033c23e5268e5602f01fc93647edbcf77a3d83a2202bb761c
+hash_d: 26fb42d5165186a3f4727f837d42a25b2f20a355b713ad2364e6c4eda562266d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

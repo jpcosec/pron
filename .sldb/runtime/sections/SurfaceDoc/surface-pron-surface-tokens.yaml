@@ -29,7 +29,7 @@ sections:
   slug: surface-tokens
   level: 1
   line_start: 14
-  line_end: 32
+  line_end: 28
 - path: surface-tokens/purpose
   title: Purpose
   breadcrumbs:
@@ -95,7 +95,7 @@ sections:
   slug: how-it-works
   level: 2
   line_start: 20
-  line_end: 27
+  line_end: 25
 - path: surface-tokens/commands
   title: Commands
   breadcrumbs:
@@ -127,7 +127,7 @@ sections:
   - workspace.knowledge.surfaces
   slug: commands
   level: 2
-  line_start: 28
-  line_end: 32
-hash_c: 75a8c6af979857099607ee6af882c52e6eaa6cd6aeb17960ef57e5c6771df5a4
+  line_start: 26
+  line_end: 28
+hash_c: 6d1732ed8e75bdac8ade148de2b570e2b70d4c45fb78b2ab6d2cb74fc212b093
 sections_version: '2'

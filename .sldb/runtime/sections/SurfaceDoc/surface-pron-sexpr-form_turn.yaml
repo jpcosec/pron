@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-form_turn
+sections:
+- path: sexpr-form-turn
+  title: sexpr.form_turn
+  breadcrumbs:
+  - sexpr.form_turn
+  about:
+  - sexpr.form_turn
+  - sexpr form turn
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-form-turn
+  level: 1
+  line_start: 14
+  line_end: 29
+- path: sexpr-form-turn/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.form_turn
+  - Purpose
+  about:
+  - sexpr.form_turn
+  - sexpr form turn
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-form-turn/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.form_turn
+  - How It Works
+  about:
+  - sexpr.form_turn
+  - sexpr form turn
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: sexpr-form-turn/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.form_turn
+  - Commands
+  about:
+  - sexpr.form_turn
+  - sexpr form turn
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 27
+  line_end: 29
+hash_c: 79e743c14eaf2d8cd5dd3a577a6c33a4693c8c0bd9ac1a6e423d00ab9635900a
+sections_version: '2'

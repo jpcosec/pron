@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dry_runner
+path: knowledge/surfaces/surface-pron-sexpr-dry_runner.md
+hash_c: a52dbb907b12b0deb85d6da768e38971a1d3992e39a65c2241918ebc90514255
+hash_d: d67bc59fb9714f664695070ec9f76cf41707c975474d90275fdfba62849e6c1b
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

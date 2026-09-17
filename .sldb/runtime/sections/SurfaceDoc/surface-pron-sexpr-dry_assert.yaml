@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-dry_assert
+sections:
+- path: sexpr-dry-assert
+  title: sexpr.dry_assert
+  breadcrumbs:
+  - sexpr.dry_assert
+  about:
+  - sexpr.dry_assert
+  - sexpr dry assert
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-dry-assert
+  level: 1
+  line_start: 14
+  line_end: 29
+- path: sexpr-dry-assert/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.dry_assert
+  - Purpose
+  about:
+  - sexpr.dry_assert
+  - sexpr dry assert
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-dry-assert/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.dry_assert
+  - How It Works
+  about:
+  - sexpr.dry_assert
+  - sexpr dry assert
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: sexpr-dry-assert/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.dry_assert
+  - Commands
+  about:
+  - sexpr.dry_assert
+  - sexpr dry assert
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 27
+  line_end: 29
+hash_c: db265e8bcdc84bd8676bf096f227673cfd360da6ca8d3ae5b25a6666c8abc956
+sections_version: '2'

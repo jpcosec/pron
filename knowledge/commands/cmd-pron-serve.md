@@ -10,7 +10,7 @@ tags:
 - kind:software
 - impl:here
 - entity:cli_command
-provenance: src/pron/cli/main.py:_cmd_serve
+provenance: src/pron/cli/commands/serve.py:command
 ---
 
 # serve

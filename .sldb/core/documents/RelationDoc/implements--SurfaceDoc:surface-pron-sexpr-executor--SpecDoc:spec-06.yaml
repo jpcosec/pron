@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-executor--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-executor--SpecDoc:spec-06.md
+hash_c: ab335d212ae28e1fe6b86d386a2ee1e3dfd7abe5a4ba43896b7236d34fd05152
+hash_d: 35fe66a101649a07fe58b841485bfbeccc6c9119b184093411e94fdd4a7d5f27
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

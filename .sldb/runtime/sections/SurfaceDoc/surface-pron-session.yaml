@@ -28,7 +28,7 @@ sections:
   slug: session
   level: 1
   line_start: 14
-  line_end: 28
+  line_end: 36
 - path: session/purpose
   title: Purpose
   breadcrumbs:
@@ -92,7 +92,7 @@ sections:
   slug: how-it-works
   level: 2
   line_start: 20
-  line_end: 25
+  line_end: 33
 - path: session/commands
   title: Commands
   breadcrumbs:
@@ -123,7 +123,7 @@ sections:
   - workspace.knowledge.surfaces
   slug: commands
   level: 2
-  line_start: 26
-  line_end: 28
-hash_c: 93d36e3b5caa22a1d82b3b1fa4b1f9d8149fbedc3c224dcd6d24214b7b0b91da
+  line_start: 34
+  line_end: 36
+hash_c: 07cf4704a782ec4f57d09bec6a07459a78224cf138df680fa4b9435b028e088b
 sections_version: '2'

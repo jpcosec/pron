@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-action_verb
+path: knowledge/surfaces/surface-pron-sexpr-action_verb.md
+hash_c: 846fdbe9e835a4a3d1591031f20f334f37c3913a74a6a727355ea06994d5111f
+hash_d: 89a508f44833bb47e7b0d33d12a48a76a8bddbd739294cee47b0918e0e03d5b6
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

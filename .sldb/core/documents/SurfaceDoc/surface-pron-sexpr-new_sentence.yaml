@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-new_sentence
+path: knowledge/surfaces/surface-pron-sexpr-new_sentence.md
+hash_c: 3b1bfdbd0df33e8714509c68d5915769f2858194d350d21e21fea2839d2fe1b1
+hash_d: 82d28ce760db8ed7cb5a6a8ed1d472418e56c0b95bd0f4abd318dbcfcac8b072
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

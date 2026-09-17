@@ -11,10 +11,10 @@ from pathlib import Path
 import pytest
 from sldb.runtime.validation import render_model_markdown
 
-from pron.client import RemoteSession, alive, request, socket_path
+from pron.remote import RemoteSession, alive, request, socket_path
 from pron.serve import Server
 from pron.session import Session
-from pron.world import World, apply_template, init_world
+from pron.world.world import World, apply_template, init_world
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-compiler
+sections:
+- path: sexpr-compiler
+  title: sexpr.compiler
+  breadcrumbs:
+  - sexpr.compiler
+  about:
+  - sexpr.compiler
+  - sexpr compiler
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-compiler
+  level: 1
+  line_start: 14
+  line_end: 52
+- path: sexpr-compiler/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.compiler
+  - Purpose
+  about:
+  - sexpr.compiler
+  - sexpr compiler
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 22
+- path: sexpr-compiler/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.compiler
+  - How It Works
+  about:
+  - sexpr.compiler
+  - sexpr compiler
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 23
+  line_end: 49
+- path: sexpr-compiler/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.compiler
+  - Commands
+  about:
+  - sexpr.compiler
+  - sexpr compiler
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 50
+  line_end: 52
+hash_c: e96b3cd6792f365f705aa35ea51e3c26f3e144180b64811d0600f1322e12268b
+sections_version: '2'

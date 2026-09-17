@@ -9,7 +9,7 @@ tags:
 - kind:software
 - impl:here
 - entity:cli_command
-provenance: src/pron/cli/main.py:_cmd_repl
+provenance: src/pron/cli/commands/repl.py:command
 ---
 
 # repl

@@ -1,0 +1,133 @@
+doc_name: surface-pron-world-lexicon
+sections:
+- path: world-lexicon
+  title: world.lexicon
+  breadcrumbs:
+  - world.lexicon
+  about:
+  - world.lexicon
+  - world lexicon
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: world-lexicon
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: world-lexicon/purpose
+  title: Purpose
+  breadcrumbs:
+  - world.lexicon
+  - Purpose
+  about:
+  - world.lexicon
+  - world lexicon
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: world-lexicon/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - world.lexicon
+  - How It Works
+  about:
+  - world.lexicon
+  - world lexicon
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: world-lexicon/commands
+  title: Commands
+  breadcrumbs:
+  - world.lexicon
+  - Commands
+  about:
+  - world.lexicon
+  - world lexicon
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 31
+hash_c: 8a778c664884275f075ade773a51206a846746d5d1ede9c67994928b1d3040a6
+sections_version: '2'

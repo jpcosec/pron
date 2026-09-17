@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-not_a_move
+path: knowledge/surfaces/surface-pron-sexpr-not_a_move.md
+hash_c: 3b844a0054606e8edcd40117237d7448a2d90992f69236f86b71fbbb8b993643
+hash_d: 03f2293cdbf435861bebab0aabfc930b2396c716f0ae7620f5fdaccc2f480742
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

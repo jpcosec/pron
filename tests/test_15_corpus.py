@@ -6,8 +6,8 @@ from __future__ import annotations
 import pytest
 
 from pron.corpus import Corpus, IndexProjection, fields_text, summary_text
-from pron.ids import join_id, split_id
-from pron.world import World
+from pron.kernel.ids import join_id, split_id
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-why_executor
+sections:
+- path: sexpr-why-executor
+  title: sexpr.why_executor
+  breadcrumbs:
+  - sexpr.why_executor
+  about:
+  - sexpr.why_executor
+  - sexpr why executor
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-why-executor
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-why-executor/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.why_executor
+  - Purpose
+  about:
+  - sexpr.why_executor
+  - sexpr why executor
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-why-executor/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.why_executor
+  - How It Works
+  about:
+  - sexpr.why_executor
+  - sexpr why executor
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-why-executor/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.why_executor
+  - Commands
+  about:
+  - sexpr.why_executor
+  - sexpr why executor
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 923258a751ea3617674e1a914772a7f3feb42ce3f2a627330f0766b7b1b3f1f8
+sections_version: '2'

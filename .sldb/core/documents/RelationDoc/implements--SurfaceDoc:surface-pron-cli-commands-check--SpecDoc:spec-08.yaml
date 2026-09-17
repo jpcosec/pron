@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-cli-commands-check--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-check--SpecDoc:spec-08.md
+hash_c: a8d33b114c6ca91ef9335556febebcb104b5f81c337883d685f724c73d9cbe43
+hash_d: 1cc6a71cc9873d2f66371366f8c0a818a0ae825fb5155c5d8d4378b06b9aa05d
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -11,8 +11,9 @@ from pathlib import Path
 
 import pytest
 
-from pron.store import Store, StoreError
-from pron.world import World
+from pron.world.store import Store
+from pron.world.store_error import StoreError
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 

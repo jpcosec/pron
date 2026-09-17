@@ -4,10 +4,10 @@ from unittest.mock import Mock
 
 import pytest
 
-from pron.lexicon import Word
+from pron.kernel.word import Word
 from pron.session import Session
-from pron.store import StoreError
-from pron.surface.interpret import Part
+from pron.world.store_error import StoreError
+from pron.kernel.part import Part
 
 
 @pytest.mark.parametrize("phase", ["validate", "execute"])

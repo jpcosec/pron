@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-form_turn
+path: knowledge/surfaces/surface-pron-sexpr-form_turn.md
+hash_c: 79e743c14eaf2d8cd5dd3a577a6c33a4693c8c0bd9ac1a6e423d00ab9635900a
+hash_d: 18a0a70fa29487009ee4e0bde860afd99b2d231134a16075a76bbfcb1087d8c9
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

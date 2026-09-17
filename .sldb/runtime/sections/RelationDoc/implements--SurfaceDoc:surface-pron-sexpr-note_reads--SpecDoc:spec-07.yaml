@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+sections:
+- path: source-id-surfacedoc-surface-pron-sexpr-note-reads-target-id-specdoc-spec-07-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-sexpr-note_reads
+
+    target_id: SpecDoc:spec-07
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-sexpr-note_reads
+
+    target_id: SpecDoc:spec-07
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-sexpr-note_reads
+
+    target_id: SpecDoc:spec-07
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron sexpr note reads target id specdoc spec 07 relation
+    type implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-sexpr-note-reads-target-id-specdoc-spec-07-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-sexpr-note-reads-specdoc-spec-07
+  title: implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+  about:
+  - implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+  - implements surfacedoc surface pron sexpr note reads specdoc spec 07
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-sexpr-note-reads-specdoc-spec-07
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-sexpr-note-reads-specdoc-spec-07/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
+  - implements surfacedoc surface pron sexpr note reads specdoc spec 07
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: bb7a0eeeb96ffeb892131e0aa691d48e9292c135d80ffc5953dc71e04c0edd7d
+sections_version: '2'

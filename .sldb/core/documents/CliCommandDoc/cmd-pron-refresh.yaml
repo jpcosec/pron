@@ -1,7 +1,7 @@
 name: cmd-pron-refresh
 path: knowledge/commands/cmd-pron-refresh.md
-hash_c: 2c1c31fbb4b799e75b5aa0280f3a02389204e07bdaa0c5f079c076985580b99c
-hash_d: 6b4d4548a06dd3481afd976f661af52fec8640f65214f244ebb2e564703d34e6
+hash_c: f857b0952a15524672706a7159bfc9c1eafebb9e2177e4bc1449eabd1bf8107a
+hash_d: 3a88261f3d5a72a749166a40a2202431f3d1ab187e0b6d22122c2c4baf5d56ee
 semantic_tags:
 - domain:system_architecture
 - entity:cli_command

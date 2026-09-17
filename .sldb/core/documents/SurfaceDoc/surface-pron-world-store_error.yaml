@@ -1,0 +1,14 @@
+name: surface-pron-world-store_error
+path: knowledge/surfaces/surface-pron-world-store_error.md
+hash_c: dcc76ef07018bec1be1343d7bf6af780efc62b9225dc30162fb9c5b54ec5561e
+hash_d: 88e677c6a31a20ee3796b8849876e69d9b2001a67acc72e2784ceeebb02224c3
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

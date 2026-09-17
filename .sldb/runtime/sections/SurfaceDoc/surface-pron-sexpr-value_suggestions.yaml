@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-value_suggestions
+sections:
+- path: sexpr-value-suggestions
+  title: sexpr.value_suggestions
+  breadcrumbs:
+  - sexpr.value_suggestions
+  about:
+  - sexpr.value_suggestions
+  - sexpr value suggestions
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-value-suggestions
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: sexpr-value-suggestions/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.value_suggestions
+  - Purpose
+  about:
+  - sexpr.value_suggestions
+  - sexpr value suggestions
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-value-suggestions/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.value_suggestions
+  - How It Works
+  about:
+  - sexpr.value_suggestions
+  - sexpr value suggestions
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 28
+- path: sexpr-value-suggestions/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.value_suggestions
+  - Commands
+  about:
+  - sexpr.value_suggestions
+  - sexpr value suggestions
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 29
+  line_end: 31
+hash_c: b8dbf99ddb5301c8cac44f7c2cb82379d424e369c960dd30e78db0eeac878fd6
+sections_version: '2'

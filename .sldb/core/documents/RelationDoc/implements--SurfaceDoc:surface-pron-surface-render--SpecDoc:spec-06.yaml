@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-surface-render--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-render--SpecDoc:spec-06.md
+hash_c: dd711f993dc33b684d9ad5c11665714229be3f7cd4c0b5bd20f03d79533ff00e
+hash_d: a9e6ed13e1319fb90668d03d8ab0e4db9956a6290e337e55ba9b63e3f27cb6dc
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

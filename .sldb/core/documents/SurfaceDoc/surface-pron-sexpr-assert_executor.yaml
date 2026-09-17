@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-assert_executor
+path: knowledge/surfaces/surface-pron-sexpr-assert_executor.md
+hash_c: 4122992141bc7e8b427abbf8d7f3dbc77f19f2d305da97f4140d3ca48636cda6
+hash_d: 2b7a29af1c6082c10d17ab68e514007417ab076b86077b978ea6f702c6ac8adb
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

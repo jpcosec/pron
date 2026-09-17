@@ -1,7 +1,7 @@
 name: surface-pron-serve
 path: knowledge/surfaces/surface-pron-serve.md
-hash_c: 86a3736a48c83bba4c28dacddb00cf16c5a76c7dcda42576a0e9acf6669a40ef
-hash_d: afec54e40be477d240ab249ff5589575f6c0802e76616f9e37a0e4b7cf5224ec
+hash_c: 8f08cef91db8e6c087c58fccab97f7c5e791677b06ffafb7cd49dcdcf4aa696f
+hash_d: bd820d132c9e504a8235d6b6a764ada8bb7e969ee1b12c49353831de0520182e
 semantic_tags:
 - domain:system_architecture
 - entity:module

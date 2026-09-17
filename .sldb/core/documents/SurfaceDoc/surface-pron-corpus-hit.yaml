@@ -1,0 +1,14 @@
+name: surface-pron-corpus-hit
+path: knowledge/surfaces/surface-pron-corpus-hit.md
+hash_c: 86281e3cf1141ddb08278605d29fb6f8e2781be33bba7313d40d70aed53d1b72
+hash_d: 95ed0e09bd39b97e74919f727bc255688d26edf925af0862339e96796a538f2e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

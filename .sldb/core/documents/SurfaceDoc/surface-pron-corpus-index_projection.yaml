@@ -1,0 +1,14 @@
+name: surface-pron-corpus-index_projection
+path: knowledge/surfaces/surface-pron-corpus-index_projection.md
+hash_c: 0defb0007d10a4680e6ec4b2cdce6bc08694a0b2dc4ec3dff8bfa2e2dee8b314
+hash_d: f3d1b5ef9b4931094e02cc0a06c3e85ee1a364c01e8d9edb953876b991deca8e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

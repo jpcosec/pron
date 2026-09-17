@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-corpus-corpus--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-corpus-corpus--SpecDoc:spec-12.md
+hash_c: 37be9bba1b22d5f32d63b3c53a6015fc8cb0e31226f37164201aeac624bd3a86
+hash_d: d75dd9a7f2bfc48546a55a6b710273f4af925a0892e2e03f39abb37bb3be27e4
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

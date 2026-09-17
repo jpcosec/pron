@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-corrector
+path: knowledge/surfaces/surface-pron-sexpr-corrector.md
+hash_c: 958f8e92482f494019671b2c81d286699edabf16a5d25c67ab6c69dda355257c
+hash_d: 862383008057c56016b5981ff1a6a9cc51904cc731b2d1858fe375c9442a63a8
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -34,7 +34,6 @@ relation with its own predicates), a proper name of the head itself.
 
 ## Commands
 
-NounPhrase
 find_noun_phrases
 field_is_string
 value_run

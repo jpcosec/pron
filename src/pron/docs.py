@@ -1,5 +1,5 @@
 """pron's own knowledge base is derived from this repo (spec 08 step 9): a CliCommandDoc
-per `_cmd_*` handler from its docstring and its argparse arguments, a SurfaceDoc per
+per command from its handler's docstring and its click parameters, a SurfaceDoc per
 module from its module docstring, a SpecDoc per chapter of source/spec, the hand-written
 ExplanationDocs of knowledge/explanations plus the ReadmeDoc that composes them into
 README.md, and one `implements` edge from each module or command to every chapter its
@@ -17,7 +17,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from pron.world import World
+from pron.world.world import World
 
 PACKAGE = Path(__file__).parent
 TAGS = [
@@ -64,42 +64,40 @@ def _parse_doc(doc: str) -> tuple[str, str, str]:
 
 
 def command_specs() -> list[dict[str, Any]]:
-    from pron.cli.main import build_parser
+    """A CliCommandDoc payload per command of pron's click group, in the order they were added."""
+    from pron.cli.main import cli
 
-    parser = build_parser()
-    subparsers = next(
-        a
-        for a in parser._actions
-        if isinstance(a, __import__("argparse")._SubParsersAction)
-    )
-    specs = []
-    for name, sub in subparsers.choices.items():
-        fn = sub.get_default("fn")
-        synopsis, how, usage = _parse_doc(fn.__doc__ or "")
-        args = []
-        for a in sub._actions:
-            if a.dest in ("help", "fn"):
-                continue
-            flag = a.option_strings[0] if a.option_strings else a.dest
-            args.append(
-                f"{flag} | {'required' if a.required or not a.option_strings else 'optional'} | {a.help or ''}"
-            )
-        specs.append(
-            {
-                "id": f"cmd-pron-{name}",
-                "system": "pron",
-                "command_path": name,
-                "synopsis": synopsis or sub.description or "",
-                "purpose": synopsis,
-                "how_it_works": how or synopsis,
-                "arguments": "\n".join(args) or "(none)",
-                "usage": usage or f"pron {name}",
-                "tags": TAGS,
-                "provenance": f"src/pron/cli/main.py:{fn.__name__}",
-                "_cites": sorted(set(SPEC_REF.findall(fn.__doc__ or ""))),
-            }
-        )
-    return specs
+    return [_command_spec(name, command) for name, command in cli.commands.items()]
+
+
+def _command_spec(name: str, command) -> dict[str, Any]:
+    fn = command.callback
+    synopsis, how, usage = _parse_doc(fn.__doc__ or "")
+    args = [_argument_line(param) for param in command.params]
+    return {
+        "id": f"cmd-pron-{name}",
+        "system": "pron",
+        "command_path": name,
+        "synopsis": synopsis or command.help or "",
+        "purpose": synopsis,
+        "how_it_works": how or synopsis,
+        "arguments": "\n".join(args) or "(none)",
+        "usage": usage or f"pron {name}",
+        "tags": TAGS,
+        "provenance": f"src/{fn.__module__.replace('.', '/')}.py:{fn.__name__}",
+        "_cites": sorted(set(SPEC_REF.findall(fn.__doc__ or ""))),
+    }
+
+
+def _argument_line(param) -> str:
+    """`<flag> | required|optional | <help>`; a positional counts as required even when it may be
+    omitted, as the documents have always said."""
+    import click
+
+    positional = isinstance(param, click.Argument)
+    flag = param.name if positional else param.opts[0]
+    required = "required" if param.required or positional else "optional"
+    return f"{flag} | {required} | {getattr(param, 'help', None) or ''}"
 
 
 def surface_specs() -> list[dict[str, Any]]:

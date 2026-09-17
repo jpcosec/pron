@@ -3,8 +3,8 @@ model_ref: pron.models:ExplanationDoc
 path: src/pron/models/explanation.py
 documents_index: .sldb/core/documents/ExplanationDoc.yaml
 sections_index: .sldb/runtime/sections/ExplanationDoc.yaml
-hash_b: fabcb655ec8e84bc80719067ab809fb468b608991feda3db12f8333d06015038
-documents_count: 12
+hash_b: 761d4bf477980ee376ccb33f2b8ef0aaa03d4d73c7ca72a8177c2189a134365d
+documents_count: 13
 version: 1
 canonical: false
 family: knowledge

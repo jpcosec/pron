@@ -1,0 +1,14 @@
+name: surface-pron-cli-commands-serve
+path: knowledge/surfaces/surface-pron-cli-commands-serve.md
+hash_c: 29546a6475380b6c078d1aae37a12cac745c82ddef8c361aebfe93d93aeb4e32
+hash_d: 7e24991a1af41ef0779012f3a18a6ba12cfd34b7bcf3d6a812f7d483afe9ab4a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

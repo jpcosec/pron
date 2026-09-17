@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-remove_verb
+sections:
+- path: kernel-remove-verb
+  title: kernel.remove_verb
+  breadcrumbs:
+  - kernel.remove_verb
+  about:
+  - kernel.remove_verb
+  - kernel remove verb
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-remove-verb
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: kernel-remove-verb/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.remove_verb
+  - Purpose
+  about:
+  - kernel.remove_verb
+  - kernel remove verb
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-remove-verb/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.remove_verb
+  - How It Works
+  about:
+  - kernel.remove_verb
+  - kernel remove verb
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-remove-verb/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.remove_verb
+  - Commands
+  about:
+  - kernel.remove_verb
+  - kernel remove verb
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: 41d50b4f14ae0b451358d45a1de2f00003e4c2c009dee1bf08bf6650dc45d240
+sections_version: '2'

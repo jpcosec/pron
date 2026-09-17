@@ -6,9 +6,9 @@ from __future__ import annotations
 
 import pytest
 
-from pron.ids import address_of, split_id
+from pron.kernel.ids import address_of, split_id
 from pron.session import Session
-from pron.world import World, init_world
+from pron.world.world import World, init_world
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"

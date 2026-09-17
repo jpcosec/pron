@@ -1,0 +1,14 @@
+name: surface-pron-remote-remote
+path: knowledge/surfaces/surface-pron-remote-remote.md
+hash_c: 01dd51b7d33205bdd233067294b63b97b3a9505670e9f19d2c5e7b67600b95cc
+hash_d: f5f03cdc77091e2de06a6d852fad99b422dcbd58dd92ffb0a3093d48b23cd27e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-leftover_predicates
+sections:
+- path: sexpr-leftover-predicates
+  title: sexpr.leftover_predicates
+  breadcrumbs:
+  - sexpr.leftover_predicates
+  about:
+  - sexpr.leftover_predicates
+  - sexpr leftover predicates
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-leftover-predicates
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-leftover-predicates/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.leftover_predicates
+  - Purpose
+  about:
+  - sexpr.leftover_predicates
+  - sexpr leftover predicates
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-leftover-predicates/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.leftover_predicates
+  - How It Works
+  about:
+  - sexpr.leftover_predicates
+  - sexpr leftover predicates
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-leftover-predicates/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.leftover_predicates
+  - Commands
+  about:
+  - sexpr.leftover_predicates
+  - sexpr leftover predicates
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: c8717d25d6420e759a5326af19201d4ab6019e7115a00fbab78ffc930c32fff0
+sections_version: '2'

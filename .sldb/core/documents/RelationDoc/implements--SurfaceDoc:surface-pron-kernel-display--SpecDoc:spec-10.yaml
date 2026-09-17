@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-display--SpecDoc:spec-10
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-display--SpecDoc:spec-10.md
+hash_c: 9d8bae1dd07f9c32b1a626640ac1b31ad1fe3b69ab44a71a7cb0d15119a7cb9f
+hash_d: f3ed3d3fb4773e8ddadb43b6fac6161f9e18ccf5c8aaca7008a77f6c5a98b836
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

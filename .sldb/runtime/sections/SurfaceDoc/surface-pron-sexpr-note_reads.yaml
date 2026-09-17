@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-note_reads
+sections:
+- path: sexpr-note-reads
+  title: sexpr.note_reads
+  breadcrumbs:
+  - sexpr.note_reads
+  about:
+  - sexpr.note_reads
+  - sexpr note reads
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-note-reads
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: sexpr-note-reads/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.note_reads
+  - Purpose
+  about:
+  - sexpr.note_reads
+  - sexpr note reads
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-note-reads/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.note_reads
+  - How It Works
+  about:
+  - sexpr.note_reads
+  - sexpr note reads
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 25
+- path: sexpr-note-reads/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.note_reads
+  - Commands
+  about:
+  - sexpr.note_reads
+  - sexpr note reads
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: a4413ee241f54518c3ad833d1e7a0e29a142ff60e4f3ccc57f699bf83d993d7b
+sections_version: '2'

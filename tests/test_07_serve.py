@@ -15,10 +15,10 @@ import pytest
 
 from pron.cli.main import main
 from pron.cli.repl import run as repl
-from pron.client import RemoteSession, alive, request, socket_path
+from pron.remote import RemoteSession, alive, request, socket_path
 from pron.serve import Server
 from pron.session import Session
-from pron.world import World
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"
@@ -132,7 +132,7 @@ def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(worl
     """A session with defer_refresh (spec 11 §8) answers without the graph refresh: the
     world keeps it pending, and the first graph read — the server's settle, or any caller
     of world.graph — runs it and sees the node the write made."""
-    from pron.graph import doc_id
+    from pron.world.graph import doc_id
 
     s = Session(world, projection="all", speaker="defer", now=NOW, defer_refresh=True)
     r = s.eval(
@@ -148,7 +148,7 @@ def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(worl
 def test_a_write_through_the_server_is_seen_by_the_next_read(server: Server):
     """The answer leaves before the refresh (11 §8); the next request — a graph read here —
     waits for it and sees the write."""
-    from pron.graph import doc_id
+    from pron.world.graph import doc_id
 
     s = RemoteSession(server.path, projection="all", speaker="settle", now=NOW)
     r = s.turn("create a client named Settled Sue, phone 9 5555 4321")
@@ -271,7 +271,7 @@ def test_payload_respects_the_session_projection(server: Server):
 
 
 def test_graph_and_world_navigation_over_the_socket(server: Server):
-    from pron.graph import doc_id
+    from pron.world.graph import doc_id
 
     s = RemoteSession(server.path, projection="all", speaker="nav", now=NOW)
     assert "Reservation" in s.world.model_names()

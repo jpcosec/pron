@@ -1,0 +1,560 @@
+# serializer version: 1
+# name: test_a_world_that_does_not_exist[check]
+  dict({
+    'argv': list([
+      'check',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[docs]
+  dict({
+    'argv': list([
+      'docs',
+      '--check',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[eval]
+  dict({
+    'argv': list([
+      'eval',
+      '(show (all Table))',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[init]
+  dict({
+    'argv': list([
+      'init',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[lexicon]
+  dict({
+    'argv': list([
+      'lexicon',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[refresh]
+  dict({
+    'argv': list([
+      'refresh',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[repl]
+  dict({
+    'argv': list([
+      'repl',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_a_world_that_does_not_exist[say]
+  dict({
+    'argv': list([
+      'say',
+      'the tables',
+      '--world',
+      '<tmp>/nowhere',
+      '--pythonpath',
+      '<tmp>',
+    ]),
+    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
+    'raised': 'FileNotFoundError',
+    'stderr': '',
+    'stdout': '',
+  })
+# ---
+# name: test_commands_on_a_world
+  list([
+    dict({
+      'argv': list([
+        'say',
+        'the large tables',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+        '--trace',
+        '--now',
+        '2026-09-09',
+        '--local',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        2: table 12; table 14.
+          · interpretation: nominal
+          · forms: (show (the Table (plural) (where "capacity >= 6")))
+          · find 'st.{Table+}' --where 'capacity >= 6' → 2
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'say',
+        'create a client named Zoe Lee, phone 1',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+        '--now',
+        '2026-09-09',
+        '--local',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        Created client Zoe Lee.
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'eval',
+        '(show (find Table (where "capacity >= 6")))',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+        '--trace',
+        '--local',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        2: table 12; table 14.
+          · forms: (show (find Table (where "capacity >= 6")))
+          · find 'st.{Table+}' --where 'capacity >= 6' → 2
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'eval',
+        '(show',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+        '--local',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        Could not read that: unbalanced parentheses: missing ')'
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'lexicon',
+        'Table',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        assigned_to         relation         (relation assigned_to)                           Which table a reservation gets. The table must seat everyone.
+        assigned to         relation         (relation assigned_to)                           Which table a reservation gets. The table must seat everyone.
+        create              action           (action create)                                  make a new object of a class
+        make                action           (action create)                                  make a new object of a class
+        new                 action           (action create)                                  make a new object of a class
+        add a new           action           (action create)                                  make a new object of a class
+        register            action           (action create)                                  make a new object of a class
+        change              action           (action change)                                  set one field of an object
+        set                 action           (action change)                                  set one field of an object
+        update              action           (action change)                                  set one field of an object
+        edit                action           (action change)                                  set one field of an object
+        rename              action           (action change)                                  set one field of an object
+        move                action           (action change)                                  set one field of an object
+        put                 action           (action change)                                  set one field of an object
+        add                 action           (action add)                                     add an item to a list field
+        append              action           (action add)                                     add an item to a list field
+        tag with            action           (action add)                                     add an item to a list field
+        give                action           (action add)                                     add an item to a list field
+        clean               action           (action clean)                                   drop empty and duplicate items of a list field
+        dedupe              action           (action clean)                                   drop empty and duplicate items of a list field
+        tidy                action           (action clean)                                   drop empty and duplicate items of a list field
+        remove              action           (action remove)                                  remove a field or an item
+        clear               action           (action remove)                                  remove a field or an item
+        drop                action           (action remove)                                  remove a field or an item
+        delete              action           (action remove)                                  remove a field or an item
+        forget              action           (action forget)                                  take a document out of the world
+        untrack             action           (action forget)                                  take a document out of the world
+        discard             action           (action forget)                                  take a document out of the world
+        refresh             action           (action refresh)                                 rebuild the indexes and the graph
+        rebuild             action           (action refresh)                                 rebuild the indexes and the graph
+        reindex             action           (action refresh)                                 rebuild the indexes and the graph
+        undo                action           (action undo)                                    reverse the last move that wrote
+        undo that           action           (action undo)                                    reverse the last move that wrote
+        undo the last move  action           (action undo)                                    reverse the last move that wrote
+        revert              action           (action undo)                                    reverse the last move that wrote
+        for N people        alias-predicate  (where Table "capacity >= N")                    a table with room for N people
+        for N               alias-predicate  (where Table "capacity >= N")                    a table with room for N people
+        seats N             alias-predicate  (where Table "capacity >= N")                    a table with room for N people
+        that seats N        alias-predicate  (where Table "capacity >= N")                    a table with room for N people
+        on the Z            alias-predicate  (where Table "zone = Z")                         where the table is
+        in the Z            alias-predicate  (where Table "zone = Z")                         where the table is
+        assign              alias-relation   (relation assigned_to)                           put a reservation at a table
+        put it at table     alias-relation   (relation assigned_to)                           put a reservation at a table
+        seat at             alias-relation   (relation assigned_to)                           put a reservation at a table
+        fits                alias-predicate  (where Table "capacity >= {party_size}")         whether the table has room for the reservation
+        fit                 alias-predicate  (where Table "capacity >= {party_size}")         whether the table has room for the reservation
+        fits at             alias-predicate  (where Table "capacity >= {party_size}")         whether the table has room for the reservation
+        large               alias-predicate  (where Table "capacity >= 6")                    tables for six or more
+        big                 alias-predicate  (where Table "capacity >= 6")                    tables for six or more
+        number              field            (field Table number)                             Table number as marked on the floor.
+        capacity            field            (field Table capacity)                           Maximum number of people seated comfortably.
+        zone                field            (field Table zone)                               Where the table is: the open-air terrace or the indoor room.
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'check',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        ok
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'refresh',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        Updated store at <tmp>/world/.sldb
+        Semantic index: 0 processed, 0 missing
+        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
+        graph: 176 nodes, 356 edges, 14 relation types
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'docs',
+        '--check',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 1,
+      'stderr': '',
+      'stdout': '''
+        model sldb.models.knowledge_surface:CliCommandDoc not registered
+        model sldb.models.knowledge_surface:SurfaceDoc not registered
+        model pron.models:SpecDoc not registered
+        model pron.models:ExplanationDoc not registered
+        model pron.models:ReadmeDoc not registered
+  
+      ''',
+    }),
+  ])
+# ---
+# name: test_docs_and_check_on_pron_own_knowledge_base
+  list([
+    dict({
+      'argv': list([
+        'docs',
+        '--check',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<repo>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        up to date
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'check',
+        '--world',
+        '<tmp>/world',
+        '--pythonpath',
+        '<repo>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        ok
+  
+      ''',
+    }),
+  ])
+# ---
+# name: test_init_a_store
+  list([
+    dict({
+      'argv': list([
+        'init',
+        '--world',
+        '<tmp>/fresh',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        Registered 'RelationTypeDoc'
+        Registered 'RelationDoc'
+        Registered 'AnchorDoc'
+        Registered 'ProjectionDoc'
+        Registered 'MoveDoc'
+        Updated store at <tmp>/fresh/.sldb
+        Semantic index: 0 processed, 0 missing
+        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
+        {
+          "kgdb": "models added: 2 \u00b7 builtin relation types written: 11 \u00b7 predicates added: 11",
+          "pron_models_added": [
+            "pron.models:AnchorDoc",
+            "pron.models:ProjectionDoc",
+            "pron.models:MoveDoc"
+          ],
+          "relation_types_added": [],
+          "template_added": []
+        }
+  
+      ''',
+    }),
+    dict({
+      'argv': list([
+        'init',
+        '--world',
+        '<tmp>/fresh',
+        '--pythonpath',
+        '<tmp>',
+      ]),
+      'exit': 0,
+      'stderr': '',
+      'stdout': '''
+        Updated store at <tmp>/fresh/.sldb
+        Semantic index: 0 processed, 0 missing
+        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
+        {
+          "kgdb": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 predicates added: 0",
+          "pron_models_added": [],
+          "relation_types_added": [],
+          "template_added": []
+        }
+  
+      ''',
+    }),
+  ])
+# ---
+# name: test_repl
+  dict({
+    'exit': 0,
+    'stdout': '''
+      pron · world world · projection all · :help for commands
+      :help            this
+      :trace           toggle the trace after every answer
+      :lexicon [MODEL] what this projection can say (or the verbs and fields of one model)
+      :state           dialogue state, referents, last move
+      :quit            leave
+      Anything else is a sentence to the world.
+      Created client Ana Rojas.
+      trace on
+      Which one? (1) Ana Pérez · (2) Ana Rojas
+        · interpretation: read
+        · forms: (sources booked_by (the Client (named "Ana")) (of Reservation))
+        · ls 'st.{Reservation+}' → 1
+        · find 'st.{Client+}' --where 'doc ~ "ana"' → 2
+      None.
+        · '1' → st.{Client}.client-ana-perez (answer to the pending question)
+        · forms: (sources booked_by (the Client (where "doc ~ \"^client-ana-perez$\"")) (of Reservation))
+        · ls 'st.{Reservation+}' → 1
+        · find 'st.{Client+}' --where 'doc ~ "^client-ana-perez$"' → 1
+        · kgdb edges_to(Client:client-ana-perez, booked_by) → 0
+      state: libre · singular: {'Client': 'st.{Client}.client-ana-rojas'} · set: ['st.{Client}.client-ana-rojas'] · pending: -
+        booked_by                relation         (relation booked_by)
+        booked by                relation         (relation booked_by)
+        create                   action           (action create)
+        make                     action           (action create)
+        new                      action           (action create)
+        add a new                action           (action create)
+        register                 action           (action create)
+        change                   action           (action change)
+        set                      action           (action change)
+        update                   action           (action change)
+        edit                     action           (action change)
+        rename                   action           (action change)
+        move                     action           (action change)
+        put                      action           (action change)
+        add                      action           (action add)
+        append                   action           (action add)
+        tag with                 action           (action add)
+        give                     action           (action add)
+        clean                    action           (action clean)
+        dedupe                   action           (action clean)
+        tidy                     action           (action clean)
+        remove                   action           (action remove)
+        clear                    action           (action remove)
+        drop                     action           (action remove)
+        delete                   action           (action remove)
+        forget                   action           (action forget)
+        untrack                  action           (action forget)
+        discard                  action           (action forget)
+        refresh                  action           (action refresh)
+        rebuild                  action           (action refresh)
+        reindex                  action           (action refresh)
+        undo                     action           (action undo)
+        undo that                action           (action undo)
+        undo the last move       action           (action undo)
+        revert                   action           (action undo)
+        has                      alias-relation   (relation booked_by)
+        have                     alias-relation   (relation booked_by)
+        of                       alias-relation   (relation booked_by)
+        name                     field            (field Client name)
+        phone                    field            (field Client phone)
+        notes                    field            (field Client notes)
+  
+    ''',
+  })
+# ---
+# name: test_serve_prints_its_worlds
+  dict({
+    'argv': list([
+      'serve',
+      '--world',
+      'home=<tmp>',
+    ]),
+    'exit': 0,
+    'stderr': '',
+    'stdout': '''
+      pron serve · worlds home=<tmp> · socket <tmp>/.pron/serve.sock · pid <pid>
+  
+    ''',
+  })
+# ---
+# name: test_usage_errors[eval]
+  dict({
+    'argv': list([
+      'eval',
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---
+# name: test_usage_errors[lexicon --projection]
+  dict({
+    'argv': list([
+      'lexicon',
+      '--projection',
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---
+# name: test_usage_errors[nonsense]
+  dict({
+    'argv': list([
+      'nonsense',
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---
+# name: test_usage_errors[nothing]
+  dict({
+    'argv': list([
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---
+# name: test_usage_errors[say]
+  dict({
+    'argv': list([
+      'say',
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---
+# name: test_usage_errors[serve]
+  dict({
+    'argv': list([
+      'serve',
+    ]),
+    'exit': 2,
+    'failed': True,
+  })
+# ---

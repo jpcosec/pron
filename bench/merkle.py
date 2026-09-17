@@ -56,7 +56,7 @@ def cmd_prepare(args: argparse.Namespace) -> None:
     root.parent.mkdir(parents=True, exist_ok=True)
     shutil.copytree(Path(args.source), root, ignore=IGNORE)
     pythonpath = args.pythonpath or str(root)
-    from pron.world import World, init_world
+    from pron.world.world import World, init_world
 
     init_world(root, pythonpath)
     report = World(root, pythonpath).refresh()
@@ -71,8 +71,8 @@ def cmd_generate(args: argparse.Namespace) -> None:
     (root / "bench_models.py").write_text(BENCH_MODEL_SOURCE, encoding="utf-8")
     pythonpath = str(root)
     from sldb.cli import main as sldb_main
-    from pron.store import Store
-    from pron.world import World, init_world
+    from pron.world.store import Store
+    from pron.world.world import World, init_world
 
     assert sldb_main(["stores", "init", "--path", str(root)]) == 0
     init_world(root, pythonpath)
@@ -142,7 +142,7 @@ def cmd_write(args: argparse.Namespace) -> None:
     is timed, what a `pron serve` client waits for — and the pending refresh settles once
     after the last one (its cost is reported as settle_s, never in the runs)."""
     from pron.session import Session
-    from pron.world import World
+    from pron.world.world import World
 
     world = World(args.world, args.pythonpath)
     session = Session(world, projection="all", speaker="bench", defer_refresh=args.defer)
@@ -178,7 +178,7 @@ def cmd_write(args: argparse.Namespace) -> None:
 
 
 def cmd_refresh(args: argparse.Namespace) -> None:
-    from pron.world import World
+    from pron.world.world import World
 
     world = World(args.world, args.pythonpath)
     world.refresh()  # warm: caches, on-disk indexes and .pron/graph.nx.json settle here

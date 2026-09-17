@@ -1,0 +1,14 @@
+name: surface-pron-kernel-sym
+path: knowledge/surfaces/surface-pron-kernel-sym.md
+hash_c: 9c3f1ffe23120086bd1f768323450deb7186d986602ab3fe0b3a903a67d72506
+hash_d: 563df4c77f396bbac7507cff74aef0f1091f26e6ab7fb23dfe18e3546ef21ac2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

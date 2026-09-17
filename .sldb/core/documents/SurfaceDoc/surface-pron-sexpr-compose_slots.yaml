@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-compose_slots
+path: knowledge/surfaces/surface-pron-sexpr-compose_slots.md
+hash_c: d96ba636c7cbeaa42b49ca2b7457fe0dd66c8d50b76e25234bbde120ab242c8b
+hash_d: d5834f79b0d90cd07274ea91ed28ee798ffb79348cce5c31e4c7094722b8d1cd
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

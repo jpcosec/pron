@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+sections:
+- path: source-id-surfacedoc-surface-pron-world-store-target-id-specdoc-spec-10-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-world-store
+
+    target_id: SpecDoc:spec-10
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-world-store
+
+    target_id: SpecDoc:spec-10
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-world-store
+
+    target_id: SpecDoc:spec-10
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron world store target id specdoc spec 10 relation
+    type implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-world-store-target-id-specdoc-spec-10-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-world-store-specdoc-spec-10
+  title: implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+  about:
+  - implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+  - implements surfacedoc surface pron world store specdoc spec 10
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-world-store-specdoc-spec-10
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-world-store-specdoc-spec-10/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-world-store--SpecDoc:spec-10
+  - implements surfacedoc surface pron world store specdoc spec 10
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: ef0458b3473ae143c92183e5785fe8a20c4c9a75cf310564bab92784386e08d3
+sections_version: '2'

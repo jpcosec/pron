@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-word
+sections:
+- path: kernel-word
+  title: kernel.word
+  breadcrumbs:
+  - kernel.word
+  about:
+  - kernel.word
+  - kernel word
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-word
+  level: 1
+  line_start: 14
+  line_end: 32
+- path: kernel-word/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.word
+  - Purpose
+  about:
+  - kernel.word
+  - kernel word
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 22
+- path: kernel-word/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.word
+  - How It Works
+  about:
+  - kernel.word
+  - kernel word
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 23
+  line_end: 29
+- path: kernel-word/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.word
+  - Commands
+  about:
+  - kernel.word
+  - kernel word
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 30
+  line_end: 32
+hash_c: 9df6416545a00f6a6799373c8ac9eed066eb25b55dcf90a43c7845e722fccf40
+sections_version: '2'

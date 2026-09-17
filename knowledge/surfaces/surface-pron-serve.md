@@ -30,7 +30,7 @@ its interface lexicon, and nothing else (spec 12 §6): talking to another world 
 semantic, never access to its store. The server speaks as whoever the client says it is;
 identity is the application's (11 §6). Every mounted world gets `<root>/.pron/serve.sock`
 pointing at the daemon's socket, so a client that only knows its world finds the daemon.
-The client side is pron.client.
+The client side is pron.remote.
 
 ## Commands
 

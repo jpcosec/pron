@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-read_executor
+path: knowledge/surfaces/surface-pron-sexpr-read_executor.md
+hash_c: 96c5b9563b4a2d534fdd88052108af2b446a230d39cf5953cfa025973af8d2af
+hash_d: d038a7440758e465ddfcd5544f239d7c22fed10bbdc6bc0b553e5271c313a87c
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

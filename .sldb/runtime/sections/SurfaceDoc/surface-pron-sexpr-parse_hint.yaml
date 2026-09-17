@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-parse_hint
+sections:
+- path: sexpr-parse-hint
+  title: sexpr.parse_hint
+  breadcrumbs:
+  - sexpr.parse_hint
+  about:
+  - sexpr.parse_hint
+  - sexpr parse hint
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-parse-hint
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: sexpr-parse-hint/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.parse_hint
+  - Purpose
+  about:
+  - sexpr.parse_hint
+  - sexpr parse hint
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-parse-hint/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.parse_hint
+  - How It Works
+  about:
+  - sexpr.parse_hint
+  - sexpr parse hint
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 25
+- path: sexpr-parse-hint/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.parse_hint
+  - Commands
+  about:
+  - sexpr.parse_hint
+  - sexpr parse hint
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: 8bd4086ab07fd38941c230303e5b24b2556e161418c10162d579425a6c31d3e5
+sections_version: '2'

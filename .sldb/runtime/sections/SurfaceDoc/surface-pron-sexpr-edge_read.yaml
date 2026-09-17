@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-edge_read
+sections:
+- path: sexpr-edge-read
+  title: sexpr.edge_read
+  breadcrumbs:
+  - sexpr.edge_read
+  about:
+  - sexpr.edge_read
+  - sexpr edge read
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-edge-read
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-edge-read/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.edge_read
+  - Purpose
+  about:
+  - sexpr.edge_read
+  - sexpr edge read
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: sexpr-edge-read/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.edge_read
+  - How It Works
+  about:
+  - sexpr.edge_read
+  - sexpr edge read
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: sexpr-edge-read/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.edge_read
+  - Commands
+  about:
+  - sexpr.edge_read
+  - sexpr edge read
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: c5d682d6d70a0fc0b73d1fdf34ee74740843348c1b859ecac216f95619820313
+sections_version: '2'

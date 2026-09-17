@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-graph--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-graph--SpecDoc:spec-03.md
+hash_c: d63170b8e4080859e81263feabfa24e0a78d7862c4d0ddab89aa3c6cceb5cda8
+hash_d: c0a9759aefd29da8b8c249cbba226f725c7701f1bcb521351cdc809f05e1cded
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-dry_runner
+sections:
+- path: sexpr-dry-runner
+  title: sexpr.dry_runner
+  breadcrumbs:
+  - sexpr.dry_runner
+  about:
+  - sexpr.dry_runner
+  - sexpr dry runner
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-dry-runner
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-dry-runner/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.dry_runner
+  - Purpose
+  about:
+  - sexpr.dry_runner
+  - sexpr dry runner
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-dry-runner/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.dry_runner
+  - How It Works
+  about:
+  - sexpr.dry_runner
+  - sexpr dry runner
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-dry-runner/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.dry_runner
+  - Commands
+  about:
+  - sexpr.dry_runner
+  - sexpr dry runner
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: a52dbb907b12b0deb85d6da768e38971a1d3992e39a65c2241918ebc90514255
+sections_version: '2'

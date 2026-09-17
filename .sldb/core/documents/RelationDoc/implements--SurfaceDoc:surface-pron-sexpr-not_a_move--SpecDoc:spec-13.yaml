@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-not_a_move--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-not_a_move--SpecDoc:spec-13.md
+hash_c: 79c78028c5e10e143ba92e2f183dd2313725ca6fdcb641246799da49d931bfa7
+hash_d: 242e5ae5c303792eec320c6d04b79433ccf5dc0050a190cfa77a1507b657a992
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

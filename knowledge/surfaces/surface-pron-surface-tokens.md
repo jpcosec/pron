@@ -15,18 +15,14 @@ provenance: src/pron/surface/tokens.py
 
 ## Purpose
 
-Segmenting and classifying a sentence against the lexicon (spec 06 steps 1–2).
+Segmenting a sentence into tokens (spec 06 step 1).
 
 ## How It Works
 
-A sentence becomes a list of items. Each item is one of: `det`, `referent`, `wh`,
-`conj`, `punct`, `number`, `literal`, `word` (one or more lexicon words sharing the
-matched form, ambiguity kept), or `unknown`. Matching is greedy longest-first over
-listed forms; forms may carry slots: N (a number), X (free text up to the next known
-word), Z (an enum value), DAY and TIME (normalized by pron.surface.dates).
+A quoted run is one token, so is a word ending in ':' (the marker of a literal that
+follows), a word, and each of the punctuation marks pron reads. What each token turns out
+to be is the classifier's business; this is only where one token ends and the next begins.
 
 ## Commands
 
-Item
 tokenize
-Classifier

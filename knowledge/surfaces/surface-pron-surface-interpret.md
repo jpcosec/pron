@@ -15,17 +15,16 @@ provenance: src/pron/surface/interpret.py
 
 ## Purpose
 
-From a sentence to an Interpretation (spec 06): the six steps, with the world
-consulted only at steps 2 (lexicon), 4 (addresses) and 5 (types).
+The constructions a sentence can match, and the small operations every one of them needs
+(spec 06, 11 §1).
 
 ## How It Works
 
 The constructions are fixed and listed in patterns.yaml; a world never adds one, it
-adds words. A sentence coordinated with "and" is one move with several parts.
+adds words. A sentence coordinated with "and" is one move with several parts, and that
+split, the search for a verb word among the items, and what is left unattached to any
+noun phrase are all here — the constructions themselves are Interpreter's methods.
 
 ## Commands
 
-Part
-Interpretation
 construction_names
-Interpreter

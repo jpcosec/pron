@@ -1,0 +1,14 @@
+name: surface-pron-kernel-write
+path: knowledge/surfaces/surface-pron-kernel-write.md
+hash_c: 3c21c0411877b6912255381142b190499f7996f2e7157cf654bb4cdb375d244a
+hash_d: 3dc1436daad7e1da9b8368fdc138b63ff6a3baccc052172a3d7e8a33fe01a8c3
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

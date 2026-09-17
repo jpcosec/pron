@@ -1,0 +1,14 @@
+name: surface-pron-kernel-word
+path: knowledge/surfaces/surface-pron-kernel-word.md
+hash_c: 9df6416545a00f6a6799373c8ac9eed066eb25b55dcf90a43c7845e722fccf40
+hash_d: 28d65aca1f1d382fc2f6dd8e34a160f4d8d27036e256852d3b7ad15424c89fd0
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

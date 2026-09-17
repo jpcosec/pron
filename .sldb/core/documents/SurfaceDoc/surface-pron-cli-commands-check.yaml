@@ -1,0 +1,14 @@
+name: surface-pron-cli-commands-check
+path: knowledge/surfaces/surface-pron-cli-commands-check.md
+hash_c: c89eeb8b7d610f4793ca3980020c3f68802ed28fa868dc9795c508fb0916e1e6
+hash_d: 4b0197490001c3b6fcd825d79036096184093d8b57d166a75fd218876d8cb71d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

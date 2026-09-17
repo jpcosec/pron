@@ -6,12 +6,12 @@ from __future__ import annotations
 
 import pytest
 
-from pron.lexicon import Lexicon
-from pron.resolve import resolve
+from pron.world.lexicon import Lexicon
+from pron.sexpr.resolve import resolve
 from pron.session import Session
 from pron.surface.nouns import find_noun_phrases
-from pron.surface.tokens import Classifier
-from pron.world import World
+from pron.surface.classifier import Classifier
+from pron.world.world import World
 from worlds.values import build_values
 
 NOW = "2026-09-14"

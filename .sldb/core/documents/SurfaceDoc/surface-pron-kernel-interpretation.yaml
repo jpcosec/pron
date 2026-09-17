@@ -1,0 +1,14 @@
+name: surface-pron-kernel-interpretation
+path: knowledge/surfaces/surface-pron-kernel-interpretation.md
+hash_c: d8fa1b85388eea07ec18f6da56a84317775d00f5513e5ab22da7a5f962f4dbb1
+hash_d: 809568108473eb60b14a2d506c3efdfc5b8c34ba8cd4f987799fb772e3d9e70e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

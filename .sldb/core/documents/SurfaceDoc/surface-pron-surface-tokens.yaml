@@ -1,7 +1,7 @@
 name: surface-pron-surface-tokens
 path: knowledge/surfaces/surface-pron-surface-tokens.md
-hash_c: 75a8c6af979857099607ee6af882c52e6eaa6cd6aeb17960ef57e5c6771df5a4
-hash_d: 47378439b942d83fae57508fa90602fe116166bd802362c9fc0b601c7001bdd2
+hash_c: 6d1732ed8e75bdac8ade148de2b570e2b70d4c45fb78b2ab6d2cb74fc212b093
+hash_d: f0cfd4930ab99cdd5ebcecceadd8e1b224555d30b8947d45ab3cd410702e1168
 semantic_tags:
 - domain:system_architecture
 - entity:module

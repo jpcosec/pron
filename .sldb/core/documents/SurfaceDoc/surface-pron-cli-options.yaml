@@ -1,0 +1,14 @@
+name: surface-pron-cli-options
+path: knowledge/surfaces/surface-pron-cli-options.md
+hash_c: b88642a92b75f4c944040e3b6c4aa326a1843d883f4bdd271cb52883626828e1
+hash_d: ad4934b320c890cc485121c2dcd4acf2de406fb82d3d9ac1a6dbfbef6046a7e2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -16,11 +16,12 @@ relation with its own predicates), a proper name of the head itself.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
 from typing import Any
 
-from pron.lexicon import Lexicon, Word
-from pron.surface.tokens import Item
+from pron.kernel.item import Item
+from pron.kernel.noun_phrase import NounPhrase
+from pron.kernel.word import Word
+from pron.world.lexicon import Lexicon
 
 PREDICATE_STOP = {"and", "to", "as", "with"}
 PRONOUNS = {
@@ -30,48 +31,6 @@ PRONOUNS = {
     "them": "plural",
     "those": "plural",
 }
-
-
-@dataclass
-class NounPhrase:
-    model: str | None  # head model; None for a bare referent
-    determiner: str | None  # the | a | any | all | none
-    number: str  # singular | plural
-    predicates: list[str] = field(default_factory=list)
-    proper: list[str] = field(
-        default_factory=list
-    )  # proper names to resolve by key/name/doc
-    referent: Item | None = None
-    interrogated: bool = False
-    items: list[Item] = field(default_factory=list)
-    captures: dict[str, Any] = field(
-        default_factory=dict
-    )  # field literals seen inside the phrase (for compose $literals)
-    unknown_values: list[tuple[str, str, str]] = field(
-        default_factory=list
-    )  # (model, field, text) missing enum values
-    complements: list[Any] = field(
-        default_factory=list
-    )  # after "of" / genitive: a run of proper-name tokens (list[str]) or a nested NounPhrase
-    given: list[str] = field(
-        default_factory=list
-    )  # addresses a form gave directly, (doc "Model:name"): nothing to resolve
-    hint: str | None = None  # the class a referent form names, (it "her" Client)
-    alternatives: list[str] = field(
-        default_factory=list
-    )  # the other documents an "any" could have taken, kept so the answer can say so
-
-    @property
-    def scope(self) -> str:
-        return f"st.{{{self.model}+}}" if self.model else ""
-
-    def describe(self) -> str:
-        head = self.model or (self.referent.text if self.referent else "?")
-        comps = " ".join(
-            "of " + (c.describe() if isinstance(c, NounPhrase) else " ".join(c))
-            for c in self.complements
-        )
-        return f"{self.determiner or ''} {head} [{'; '.join(self.predicates)}]{' ' + ','.join(self.proper) if self.proper else ''}{' ' + comps if comps else ''}".strip()
 
 
 def find_noun_phrases(items: list[Item], lex: Lexicon) -> list[NounPhrase]:

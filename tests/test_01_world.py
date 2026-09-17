@@ -8,7 +8,7 @@ import pytest
 
 from sldb.cli import main as sldb_main
 
-from pron.world import World
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 
@@ -76,7 +76,7 @@ def test_addresses_and_fields_read_by_address(world: World):
 
 
 def test_a_composed_alias_is_a_form_that_round_trips(world: World):
-    from pron.refs import parse
+    from pron.sexpr.refs import parse
 
     d = world.store.doc("AnchorDoc", "anchor-book")
     assert d.payload["ref"].startswith("(move (create Reservation)")
@@ -90,7 +90,7 @@ def test_a_composed_alias_is_a_form_that_round_trips(world: World):
 
 
 def test_an_alias_written_the_old_way_is_read_as_the_same_form():
-    from pron.refs import parse
+    from pron.sexpr.refs import parse
 
     old = parse(
         "compose",

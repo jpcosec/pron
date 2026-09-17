@@ -1,0 +1,2705 @@
+# serializer version: 1
+# name: test_undo_and_why_on_documents
+  list([
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-1>',
+        'id': '<move-1>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-1>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          'refresh: 171 nodes, 337 edges',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Nothing to undo.',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        'refresh: 171 nodes, 337 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-3>',
+        'hash_before': '<hash-1>',
+        'id': '<move-2>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'create a client named Eva Diaz, phone 9 4444 0000',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-2>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(create Client (name "Eva Diaz") (phone "9 4444 0000"))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('create'→(action create))",
+            "det('a')",
+            "word('client'→(model Client))",
+            "word('named'→(field Client name))",
+            "unknown('Eva')",
+            "unknown('Diaz')",
+            "punct(',')",
+            "word('phone'→(field Client phone))",
+            "number('9')",
+            "number('4444')",
+            "number('0000')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (action create) · subject=any Client [name = "Eva Diaz"] · payload={\'verb\': \'create\', \'fields\': {\'name\': \'Eva Diaz\', \'phone\': \'9 4444 0000\'}}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(create Client (name "Eva Diaz") (phone "9 4444 0000"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
+          "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
+          'refresh: 176 nodes, 356 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Client:client-eva-diaz',
+            'after': dict({
+              'name': 'Eva Diaz',
+              'phone': '9 4444 0000',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-2>',
+            'note': '',
+            'path': '<tmp>/world/clients/client-eva-diaz.md',
+            'verb': 'create',
+          }),
+        ]),
+      }),
+      'text': 'Created client Eva Diaz.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
+        "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
+        'refresh: 176 nodes, 356 edges',
+      ]),
+      'turn': 'create a client named Eva Diaz, phone 9 4444 0000',
+      'written': dict({
+        'Client:client-eva-diaz': dict({
+          'name': 'Eva Diaz',
+          'notes': '',
+          'phone': '9 4444 0000',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-3>',
+        'hash_before': '<hash-3>',
+        'id': '<move-3>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-3>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Client:client-eva-diaz"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-2>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "create a client named Eva Diaz, phone 9 4444 0000" (jp, <at>): create: None → {\'name\': \'Eva Diaz\', \'phone\': \'9 4444 0000\'}.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-2>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-3>',
+        'id': '<move-4>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-4>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo Client:client-eva-diaz: {'name': 'Eva Diaz', 'phone': '9 4444 0000'} → None",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'undoes': '<move-2>',
+        'writes': list([
+          dict({
+            'address': 'Client:client-eva-diaz',
+            'after': None,
+            'before': dict({
+              'name': 'Eva Diaz',
+              'phone': '9 4444 0000',
+            }),
+            'done': True,
+            'field': None,
+            'note': 'untracked',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-2> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo Client:client-eva-diaz: {'name': 'Eva Diaz', 'phone': '9 4444 0000'} → None",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'Client:client-eva-diaz': None,
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-7>',
+        'hash_before': '<hash-1>',
+        'id': '<move-5>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'change the reservation of Luis Soto to 3 people',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-5>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(change (the Reservation (of-name "Luis" "Soto")) party_size 3)',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('change'→(action change))",
+            "det('the')",
+            "word('reservation'→(model Reservation))",
+            "of('of')",
+            "unknown('Luis')",
+            "unknown('Soto')",
+            "unknown('to')",
+            "word('3 people'→(field Reservation party_size) {'N': 3})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action change) · subject=the Reservation [] of Luis Soto · party_size=3 · payload={'verb': 'change'}",
+          ]),
+          'unknown': list([
+            'to',
+          ]),
+        }),
+        'queries': list([
+          '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+          '  ∩ → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'hash_c': '<hash-5>',
+          }),
+          dict({
+            'address': 'Client:client-luis-soto',
+            'hash_c': '<hash-6>',
+          }),
+        ]),
+        'resolved': '(change (doc "Reservation:reservation-2026-09-11-luis-soto") party_size 3)',
+        'trace': list([
+          'interpretation: action',
+          'forms: (change (the Reservation (of-name "Luis" "Soto")) party_size 3)',
+          '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+          '  ∩ → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 3',
+          'refresh: 173 nodes, 343 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': 3,
+            'before': 4,
+            'done': True,
+            'field': 'party_size',
+            'hash_c': '<hash-4>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (change (the Reservation (of-name "Luis" "Soto")) party_size 3)',
+        '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+        '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+        '  ∩ → 1',
+        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 3',
+        'refresh: 173 nodes, 343 edges',
+      ]),
+      'turn': 'change the reservation of Luis Soto to 3 people',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-luis-soto': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 3,
+          'status': 'pending',
+          'time': '20:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-7>',
+        'hash_before': '<hash-7>',
+        'id': '<move-6>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-6>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-luis-soto"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-5>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "change the reservation of Luis Soto to 3 people" (jp, <at>): party_size: 4 → 3.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-5>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-1>',
+        'hash_before': '<hash-7>',
+        'id': '<move-7>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-7>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 3 → 4',
+          'refresh: 173 nodes, 343 edges',
+        ]),
+        'undoes': '<move-5>',
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': 4,
+            'before': 3,
+            'done': True,
+            'field': 'party_size',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-5> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 3 → 4',
+        'refresh: 173 nodes, 343 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-luis-soto': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 4,
+          'status': 'pending',
+          'time': '20:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-1>',
+        'id': '<move-8>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'change the reservation of Luis Soto to 9 people and add a note saying: birthday',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-8>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(move (change (the Reservation (of-name "Luis" "Soto")) party_size 9) (change (it "it" Reservation) notes "birthday"))',
+        'interpretation': dict({
+          'forma': 'action+action',
+          'items': list([
+            "word('change'→(action change))",
+            "det('the')",
+            "word('reservation'→(model Reservation))",
+            "of('of')",
+            "unknown('Luis')",
+            "unknown('Soto')",
+            "unknown('to')",
+            "word('9 people'→(field Reservation party_size) {'N': 9})",
+            "conj('and')",
+            "word('add a note'→(field Reservation notes))",
+            "literal('birthday')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action change) · subject=the Reservation [] of Luis Soto · party_size=9 · payload={'verb': 'change'}",
+            "action · (field Reservation notes) · subject=it [] · notes='birthday' · payload={'verb': 'change', 'model': 'Reservation'}",
+          ]),
+          'unknown': list([
+            'to',
+          ]),
+        }),
+        'queries': list([
+          '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+          '  ∩ → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'hash_c': '<hash-5>',
+          }),
+          dict({
+            'address': 'Client:client-luis-soto',
+            'hash_c': '<hash-6>',
+          }),
+        ]),
+        'resolved': '(move (change (doc "Reservation:reservation-2026-09-11-luis-soto") party_size 9) (change (doc "Reservation:reservation-2026-09-11-luis-soto") notes "birthday"))',
+        'trace': list([
+          'interpretation: action+action',
+          'forms: (move (change (the Reservation (of-name "Luis" "Soto")) party_size 9) (change (it "it" Reservation) notes "birthday"))',
+          '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+          '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+          '  ∩ → 1',
+          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          "'it' → st.{Reservation}.reservation-2026-09-11-luis-soto",
+          'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 9',
+          "change Reservation:reservation-2026-09-11-luis-soto.notes: '' → 'birthday'",
+          'refresh: 174 nodes, 346 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': 9,
+            'before': 4,
+            'done': True,
+            'field': 'party_size',
+            'hash_c': '<hash-8>',
+            'note': '',
+            'verb': 'change',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': 'birthday',
+            'before': '',
+            'done': True,
+            'field': 'notes',
+            'hash_c': '<hash-9>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done. Done. Heads up: assigned_to → Table:table-3 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: action+action',
+        'forms: (move (change (the Reservation (of-name "Luis" "Soto")) party_size 9) (change (it "it" Reservation) notes "birthday"))',
+        '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
+        '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
+        '  ∩ → 1',
+        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        "'it' → st.{Reservation}.reservation-2026-09-11-luis-soto",
+        'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 9',
+        "change Reservation:reservation-2026-09-11-luis-soto.notes: '' → 'birthday'",
+        'refresh: 174 nodes, 346 edges',
+      ]),
+      'turn': 'change the reservation of Luis Soto to 9 people and add a note saying: birthday',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-luis-soto': dict({
+          'date': '2026-09-11',
+          'notes': 'birthday',
+          'party_size': 9,
+          'status': 'pending',
+          'time': '20:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-10>',
+        'id': '<move-9>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-9>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-luis-soto"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-8>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "change the reservation of Luis Soto to 9 people and add a note saying: birthday" (jp, <at>): party_size: 4 → 9, notes: \'\' → \'birthday\'.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-8>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-11>',
+        'hash_before': '<hash-10>',
+        'id': '<move-10>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-10>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
+          "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
+          'refresh: 174 nodes, 346 edges',
+        ]),
+        'undoes': '<move-8>',
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': None,
+            'before': None,
+            'done': False,
+            'field': 'party_size',
+            'note': 'Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched',
+            'verb': 'undo',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-luis-soto',
+            'after': '',
+            'before': 'birthday',
+            'done': True,
+            'field': 'notes',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-8> (1 write(s)). Not touched: Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched. Heads up: assigned_to → Table:table-3 requires capacity >= {party_size}, which no longer holds.',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
+        "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
+        'refresh: 174 nodes, 346 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'Reservation:reservation-2026-09-11-luis-soto': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 9,
+          'status': 'pending',
+          'time': '20:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-13>',
+        'hash_before': '<hash-11>',
+        'id': '<move-11>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'forget table 20',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-11>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(forget (the Table (named "20")))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('forget'→(action forget))",
+            "word('table'→(model Table))",
+            "number('20')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action forget) · subject=the Table [] 20 · payload={'verb': 'forget'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          "find 'st.{Table+}' --where 'number = 20' → 1",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-20',
+            'hash_c': '<hash-12>',
+          }),
+        ]),
+        'resolved': '(forget (doc "Table:table-20"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (forget (the Table (named "20")))',
+          "find 'st.{Table+}' --where 'number = 20' → 1",
+          'forget Table:table-20',
+          'refresh: 171 nodes, 334 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Table:table-20',
+            'after': None,
+            'before': dict({
+              'capacity': 2,
+              'number': 20,
+              'zone': 'terrace',
+            }),
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-12>',
+            'note': '',
+            'path': '<tmp>/world/tables/20.md',
+            'verb': 'forget',
+          }),
+        ]),
+      }),
+      'text': 'Forgot 1.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (forget (the Table (named "20")))',
+        "find 'st.{Table+}' --where 'number = 20' → 1",
+        'forget Table:table-20',
+        'refresh: 171 nodes, 334 edges',
+      ]),
+      'turn': 'forget table 20',
+      'written': dict({
+        'Table:table-20': None,
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-13>',
+        'hash_before': '<hash-13>',
+        'id': '<move-12>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-12>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Table:table-20"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-11>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "forget table 20" (jp, <at>): forget: {\'number\': 20, \'capacity\': 2, \'zone\': \'terrace\'} → None.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-11>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-11>',
+        'hash_before': '<hash-13>',
+        'id': '<move-13>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-13>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo Table:table-20: None → {'number': 20, 'capacity': 2, 'zone': 'terrace'}",
+          'refresh: 174 nodes, 346 edges',
+        ]),
+        'undoes': '<move-11>',
+        'writes': list([
+          dict({
+            'address': 'Table:table-20',
+            'after': dict({
+              'capacity': 2,
+              'number': 20,
+              'zone': 'terrace',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'note': 'tracked again',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-11> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo Table:table-20: None → {'number': 20, 'capacity': 2, 'zone': 'terrace'}",
+        'refresh: 174 nodes, 346 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'Table:table-20': dict({
+          'capacity': 2,
+          'number': 20,
+          'zone': 'terrace',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-11>',
+        'id': '<move-14>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'create a client named Ana Rojas, phone 9 5555 1234',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-14>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('create'→(action create))",
+            "det('a')",
+            "word('client'→(model Client))",
+            "word('named'→(field Client name))",
+            "unknown('Ana')",
+            "unknown('Rojas')",
+            "punct(',')",
+            "word('phone'→(field Client phone))",
+            "number('9')",
+            "number('5555')",
+            "number('1234')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (action create) · subject=any Client [name = "Ana Rojas"] · payload={\'verb\': \'create\', \'fields\': {\'name\': \'Ana Rojas\', \'phone\': \'9 5555 1234\'}}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+          "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+          'refresh: 178 nodes, 362 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Client:client-ana-rojas',
+            'after': dict({
+              'name': 'Ana Rojas',
+              'phone': '9 5555 1234',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-14>',
+            'note': '',
+            'path': '<tmp>/world/clients/client-ana-rojas.md',
+            'verb': 'create',
+          }),
+        ]),
+      }),
+      'text': 'Created client Ana Rojas.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
+        "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
+        'refresh: 178 nodes, 362 edges',
+      ]),
+      'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
+      'written': dict({
+        'Client:client-ana-rojas': dict({
+          'name': 'Ana Rojas',
+          'notes': '',
+          'phone': '9 5555 1234',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-18>',
+        'hash_before': '<hash-15>',
+        'id': '<move-15>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'book her a table on the terrace for 6 people on Friday at 9pm',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-15>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'interpretation': dict({
+          'forma': 'compose',
+          'items': list([
+            'word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))',
+            "det('a')",
+            "word('table'→(model Table))",
+            'word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'})',
+            'word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})',
+            "word('on Friday'→(field Reservation date) {'DAY': '2026-09-11'})",
+            "word('at 9pm'→(field Reservation time) {'TIME': '21:00'})",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'compose · (move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))) · payload={\'party_size\': 6, \'date\': \'2026-09-11\', \'time\': \'21:00\', \'_nps\': [NounPhrase(model=None, determiner=None, number=\'singular\', predicates=[], proper=[], referent=referent(\'her\'), interrogated=False, items=[word(\'book her\'→(move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table))))], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[]), NounPhrase(model=\'Table\', determiner=\'any\', number=\'singular\', predicates=[\'zone = "terrace"\', \'capacity >= 6\'], proper=[], referent=None, interrogated=False, items=[word(\'table\'→(model Table)), word(\'on the terrace\'→(where Table "zone = Z") {\'Z\': \'terrace\'}), word(\'for 6 people\'→(field Reservation party_size),(where Table "capacity >= N") {\'N\': 6})], captures={}, unknown_values=[], complements=[], given=[], hint=None, alternatives=[])]}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          "find 'st.{Table+}' --where 'capacity >= 6'",
+        ]),
+        'reads': list([
+          dict({
+            'address': 'Table:table-12',
+            'hash_c': '<hash-17>',
+          }),
+        ]),
+        'resolved': '(say book (slot "$referent:Client" (doc "Client:client-ana-rojas")) (slot "$object:Table" (doc "Table:table-12") (alternatives "Table:table-14")) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        'trace': list([
+          'interpretation: compose',
+          'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+          "'her' → st.{Client}.client-ana-rojas",
+          'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+          "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+          '∩ → 2',
+          'any: took st.{Table}.table-12; also st.{Table}.table-14',
+          "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+          "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+          'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+          'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+          'refresh: 182 nodes, 380 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': dict({
+              'date': '2026-09-11',
+              'party_size': 6,
+              'time': '21:00',
+            }),
+            'before': None,
+            'done': True,
+            'field': None,
+            'hash_c': '<hash-16>',
+            'note': '',
+            'path': '<tmp>/world/reservations/reservation-2026-09-11-ana-rojas.md',
+            'verb': 'create',
+          }),
+          dict({
+            'address': 'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+            'after': dict({
+              'relation_type': 'booked_by',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Client:client-ana-rojas',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+          dict({
+            'address': 'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+            'after': dict({
+              'relation_type': 'assigned_to',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Table:table-12',
+            }),
+            'done': True,
+            'verb': 'assert',
+          }),
+        ]),
+      }),
+      'text': 'Created reservation 2026-09-11 21:00, 6 people, table 12, pending, booked by Ana Rojas, assigned to table 12. Table 14 would also work.',
+      'trace': list([
+        'interpretation: compose',
+        'forms: (say book (slot "$referent:Client" (it "her" Client)) (slot "$object:Table" (a Table (where "zone = \\"terrace\\"") (where "capacity >= 6"))) (party_size 6) (date "2026-09-11") (time "21:00"))',
+        "'her' → st.{Client}.client-ana-rojas",
+        'find \'st.{Table+}\' --where \'zone = "terrace"\' → 3',
+        "find 'st.{Table+}' --where 'capacity >= 6' → 2",
+        '∩ → 2',
+        'any: took st.{Table}.table-12; also st.{Table}.table-14',
+        "pre-validation: find 'st.{Table+}' --where 'capacity >= 6'",
+        "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
+        'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+        'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+        'refresh: 182 nodes, 380 edges',
+      ]),
+      'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
+      'written': dict({
+        'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'assigned_to',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Table:table-12',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas assigned_to Table:table-12',
+        }),
+        'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': dict({
+          'condition': '',
+          'notes': '',
+          'relation_type': 'booked_by',
+          'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+          'target_id': 'Client:client-ana-rojas',
+          'title': 'Reservation:reservation-2026-09-11-ana-rojas booked_by Client:client-ana-rojas',
+        }),
+        'Reservation:reservation-2026-09-11-ana-rojas': dict({
+          'date': '2026-09-11',
+          'notes': '',
+          'party_size': 6,
+          'status': 'pending',
+          'time': '21:00',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-18>',
+        'hash_before': '<hash-18>',
+        'id': '<move-16>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-16>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-15>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "book her a table on the terrace for 6 people on Friday at 9pm" (jp, <at>): create: None → {\'date\': \'2026-09-11\', \'time\': \'21:00\', \'party_size\': 6}.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-15>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-18>',
+        'id': '<move-17>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-17>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Table:table-12', 'relation_type': 'assigned_to'} → None",
+          "undo RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Client:client-ana-rojas', 'relation_type': 'booked_by'} → None",
+          "undo Reservation:reservation-2026-09-11-ana-rojas: {'date': '2026-09-11', 'time': '21:00', 'party_size': 6} → None",
+          'refresh: 178 nodes, 362 edges',
+        ]),
+        'undoes': '<move-15>',
+        'writes': list([
+          dict({
+            'address': 'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
+            'after': None,
+            'before': dict({
+              'relation_type': 'assigned_to',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Table:table-12',
+            }),
+            'done': True,
+            'field': None,
+            'note': 'untracked',
+            'verb': 'undo',
+          }),
+          dict({
+            'address': 'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
+            'after': None,
+            'before': dict({
+              'relation_type': 'booked_by',
+              'source_id': 'Reservation:reservation-2026-09-11-ana-rojas',
+              'target_id': 'Client:client-ana-rojas',
+            }),
+            'done': True,
+            'field': None,
+            'note': 'untracked',
+            'verb': 'undo',
+          }),
+          dict({
+            'address': 'Reservation:reservation-2026-09-11-ana-rojas',
+            'after': None,
+            'before': dict({
+              'date': '2026-09-11',
+              'party_size': 6,
+              'time': '21:00',
+            }),
+            'done': True,
+            'field': None,
+            'note': 'untracked',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-15> (3 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Table:table-12', 'relation_type': 'assigned_to'} → None",
+        "undo RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Client:client-ana-rojas', 'relation_type': 'booked_by'} → None",
+        "undo Reservation:reservation-2026-09-11-ana-rojas: {'date': '2026-09-11', 'time': '21:00', 'party_size': 6} → None",
+        'refresh: 178 nodes, 362 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': None,
+        'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': None,
+        'Reservation:reservation-2026-09-11-ana-rojas': None,
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-15>',
+        'id': '<move-18>',
+        'outcome': 'error',
+        'refers_to': '',
+        'sentence': 'confirm it',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-18>',
+      'outcome': 'error',
+      'record': dict({
+        'edges': list([
+        ]),
+        'error': "no Reservation named 'reservation-2026-09-11-ana-rojas'",
+        'forms': '(say confirm (it "it" Reservation))',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            'word(\'confirm it\'→(change (it "it" Reservation) status "confirmed"))',
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'action · (change (it "it" Reservation) status "confirmed") · subject=it [] · status=\'confirmed\' · payload={\'verb\': \'change\', \'alias\': True}',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(say confirm (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: action',
+          'forms: (say confirm (it "it" Reservation))',
+          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': "Could not do that: no Reservation named 'reservation-2026-09-11-ana-rojas'",
+      'trace': list([
+        'interpretation: action',
+        'forms: (say confirm (it "it" Reservation))',
+        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
+      ]),
+      'turn': 'confirm it',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-15>',
+        'id': '<move-19>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-19>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-17>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "undo the last move" (jp, <at>): undo: {\'date\': \'2026-09-11\', \'time\': \'21:00\', \'party_size\': 6} → None.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-17>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-15>',
+        'hash_before': '<hash-15>',
+        'id': '<move-20>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-20>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          'refresh: 178 nodes, 362 edges',
+        ]),
+        'undoes': '<move-17>',
+        'writes': list([
+        ]),
+      }),
+      'text': 'Undid <move-17> (0 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        'refresh: 178 nodes, 362 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+      }),
+    }),
+  ])
+# ---
+# name: test_undo_and_why_on_list_fields
+  list([
+    dict({
+      'eval': '(show (doc "AnchorDoc:anchor-client"))',
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-2>',
+        'id': '<move-1>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': '(show (doc "AnchorDoc:anchor-client"))',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-1>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(show (doc "AnchorDoc:anchor-client"))',
+        'interpretation': dict({
+        }),
+        'queries': list([
+        ]),
+        'reads': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'hash_c': '<hash-1>',
+          }),
+        ]),
+        'resolved': '(show (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'forms: (show (doc "AnchorDoc:anchor-client"))',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'anchor-client.',
+      'trace': list([
+        'forms: (show (doc "AnchorDoc:anchor-client"))',
+      ]),
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-4>',
+        'hash_before': '<hash-2>',
+        'id': '<move-2>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'add patron to its forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-2>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(add (it "it" AnchorDoc) forms "patron")',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('add'→(action add))",
+            "unknown('patron')",
+            "unknown('to')",
+            "unknown('its')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action add) · subject=it [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+            'patron',
+            'to',
+            'its',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(add (doc "AnchorDoc:anchor-client") forms "patron")',
+        'trace': list([
+          'interpretation: action',
+          'forms: (add (it "it" AnchorDoc) forms "patron")',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "add AnchorDoc:anchor-client.forms: None → 'patron'",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': 'patron',
+            'before': None,
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-3>',
+            'index': 2,
+            'note': '',
+            'verb': 'add',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (add (it "it" AnchorDoc) forms "patron")',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "add AnchorDoc:anchor-client.forms: None → 'patron'",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'add patron to its forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+            'patron',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-4>',
+        'hash_before': '<hash-4>',
+        'id': '<move-3>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-3>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-2>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "add patron to its forms" (jp, <at>): forms: None → \'patron\'.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-2>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-4>',
+        'id': '<move-4>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-4>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo AnchorDoc:anchor-client.forms: 'patron' → None",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'undoes': '<move-2>',
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': None,
+            'before': 'patron',
+            'done': True,
+            'field': 'forms',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-2> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo AnchorDoc:anchor-client.forms: 'patron' → None",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-4>',
+        'hash_before': '<hash-2>',
+        'id': '<move-5>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'add patron to its forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-5>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(add (it "it" AnchorDoc) forms "patron")',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('add'→(action add))",
+            "unknown('patron')",
+            "unknown('to')",
+            "unknown('its')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action add) · subject=it [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+            'patron',
+            'to',
+            'its',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(add (doc "AnchorDoc:anchor-client") forms "patron")',
+        'trace': list([
+          'interpretation: action',
+          'forms: (add (it "it" AnchorDoc) forms "patron")',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "add AnchorDoc:anchor-client.forms: None → 'patron'",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': 'patron',
+            'before': None,
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-3>',
+            'index': 2,
+            'note': '',
+            'verb': 'add',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (add (it "it" AnchorDoc) forms "patron")',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "add AnchorDoc:anchor-client.forms: None → 'patron'",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'add patron to its forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+            'patron',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-4>',
+        'id': '<move-6>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'remove patron from its forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-6>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(remove (it "it" AnchorDoc) forms "patron")',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('remove'→(action remove))",
+            "unknown('patron')",
+            "unknown('from')",
+            "unknown('its')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action remove) · subject=it [] · forms='patron' · payload={'verb': 'remove', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+            'patron',
+            'from',
+            'its',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(remove (doc "AnchorDoc:anchor-client") forms "patron")',
+        'trace': list([
+          'interpretation: action',
+          'forms: (remove (it "it" AnchorDoc) forms "patron")',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'clients',
+            ]),
+            'before': list([
+              'client',
+              'clients',
+              'patron',
+            ]),
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-1>',
+            'note': '',
+            'verb': 'remove',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (remove (it "it" AnchorDoc) forms "patron")',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'remove patron from its forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-2>',
+        'id': '<move-7>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-7>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-6>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "remove patron from its forms" (jp, <at>): forms: [\'client\', \'clients\', \'patron\'] → [\'client\', \'clients\'].',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-6>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-4>',
+        'hash_before': '<hash-2>',
+        'id': '<move-8>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-8>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo AnchorDoc:anchor-client.forms: None → ['client', 'clients', 'patron']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'undoes': '<move-6>',
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'clients',
+              'patron',
+            ]),
+            'before': None,
+            'done': True,
+            'field': 'forms',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-6> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo AnchorDoc:anchor-client.forms: None → ['client', 'clients', 'patron']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+            'patron',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'eval': '(change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-4>',
+        'id': '<move-9>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': '(change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-9>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+        'interpretation': dict({
+        }),
+        'queries': list([
+        ]),
+        'reads': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'hash_c': '<hash-3>',
+          }),
+        ]),
+        'resolved': '(change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+        'trace': list([
+          'forms: (change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+          "change AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'client', '', 'clients']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'client',
+              '',
+              'clients',
+            ]),
+            'before': list([
+              'client',
+              'clients',
+              'patron',
+            ]),
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-5>',
+            'note': '',
+            'verb': 'change',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'forms: (change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
+        "change AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'client', '', 'clients']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'client',
+            '',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-6>',
+        'id': '<move-10>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'clean its forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-10>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(clean (it "it" AnchorDoc) forms)',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('clean'→(action clean))",
+            "unknown('its')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action clean) · subject=it [] · forms='its' · payload={'verb': 'clean', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+            'its',
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(clean (doc "AnchorDoc:anchor-client") forms)',
+        'trace': list([
+          'interpretation: action',
+          'forms: (clean (it "it" AnchorDoc) forms)',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'clients',
+            ]),
+            'before': list([
+              'client',
+              'client',
+              '',
+              'clients',
+            ]),
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-1>',
+            'note': '',
+            'verb': 'clean',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (clean (it "it" AnchorDoc) forms)',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'clean its forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-2>',
+        'hash_before': '<hash-2>',
+        'id': '<move-11>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-11>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-10>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "clean its forms" (jp, <at>): forms: [\'client\', \'client\', \'\', \'clients\'] → [\'client\', \'clients\'].',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-10>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-2>',
+        'id': '<move-12>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-12>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo AnchorDoc:anchor-client.forms: ['client', 'clients'] → ['client', 'client', '', 'clients']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'undoes': '<move-10>',
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'client',
+              '',
+              'clients',
+            ]),
+            'before': list([
+              'client',
+              'clients',
+            ]),
+            'done': True,
+            'field': 'forms',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-10> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo AnchorDoc:anchor-client.forms: ['client', 'clients'] → ['client', 'client', '', 'clients']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'client',
+            '',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-6>',
+        'id': '<move-13>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'remove the forms',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-13>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(remove (it "it" AnchorDoc) forms)',
+        'interpretation': dict({
+          'forma': 'action',
+          'items': list([
+            "word('remove'→(action remove))",
+            "det('the')",
+            "word('forms'→(field AnchorDoc forms))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            "action · (action remove) · subject=it [] · forms=None · payload={'verb': 'remove', 'model': 'AnchorDoc'}",
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(remove (doc "AnchorDoc:anchor-client") forms)',
+        'trace': list([
+          'interpretation: action',
+          'forms: (remove (it "it" AnchorDoc) forms)',
+          "'it' → st.{AnchorDoc}.anchor-client",
+          "remove AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → None",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': None,
+            'before': list([
+              'client',
+              'client',
+              '',
+              'clients',
+            ]),
+            'done': True,
+            'field': 'forms',
+            'hash_c': '<hash-7>',
+            'note': '',
+            'verb': 'remove',
+          }),
+        ]),
+      }),
+      'text': 'Done.',
+      'trace': list([
+        'interpretation: action',
+        'forms: (remove (it "it" AnchorDoc) forms)',
+        "'it' → st.{AnchorDoc}.anchor-client",
+        "remove AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → None",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'remove the forms',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-8>',
+        'id': '<move-14>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-14>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-13>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "remove the forms" (jp, <at>): forms: [\'client\', \'client\', \'\', \'clients\'] → None.',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-13>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-8>',
+        'id': '<move-15>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'undo the last move',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-15>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(undo)',
+        'interpretation': dict({
+          'forma': 'undo',
+          'items': list([
+            "word('undo the last move'→(action undo))",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'undo · (action undo)',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(undo)',
+        'trace': list([
+          'interpretation: undo',
+          'forms: (undo)',
+          "undo AnchorDoc:anchor-client.forms: None → ['client', 'client', '', 'clients']",
+          'refresh: 172 nodes, 340 edges',
+        ]),
+        'undoes': '<move-13>',
+        'writes': list([
+          dict({
+            'address': 'AnchorDoc:anchor-client',
+            'after': list([
+              'client',
+              'client',
+              '',
+              'clients',
+            ]),
+            'before': None,
+            'done': True,
+            'field': 'forms',
+            'note': '',
+            'verb': 'undo',
+          }),
+        ]),
+      }),
+      'text': 'Undid <move-13> (1 write(s)).',
+      'trace': list([
+        'interpretation: undo',
+        'forms: (undo)',
+        "undo AnchorDoc:anchor-client.forms: None → ['client', 'client', '', 'clients']",
+        'refresh: 172 nodes, 340 edges',
+      ]),
+      'turn': 'undo the last move',
+      'written': dict({
+        'AnchorDoc:anchor-client': dict({
+          'forms': list([
+            'client',
+            'client',
+            '',
+            'clients',
+          ]),
+          'motive': 'a person who books',
+          'ref': '(model Client)',
+          'steps': list([
+          ]),
+          'symbol': 'client',
+        }),
+      }),
+    }),
+    dict({
+      'ledger': dict({
+        'at': '<at>',
+        'hash_after': '<hash-6>',
+        'hash_before': '<hash-6>',
+        'id': '<move-16>',
+        'outcome': 'unico',
+        'refers_to': '',
+        'sentence': 'why?',
+        'speaker': 'jp',
+        'state_after': 'libre',
+        'state_before': 'libre',
+      }),
+      'ledger_record_is_response_record': True,
+      'move_id': '<move-16>',
+      'outcome': 'unico',
+      'record': dict({
+        'edges': list([
+        ]),
+        'forms': '(why)',
+        'interpretation': dict({
+          'forma': 'why',
+          'items': list([
+            "wh('why')",
+            "punct('?')",
+          ]),
+          'notes': list([
+          ]),
+          'parts': list([
+            'why',
+          ]),
+          'unknown': list([
+          ]),
+        }),
+        'queries': list([
+        ]),
+        'resolved': '(why (doc "AnchorDoc:anchor-client"))',
+        'trace': list([
+          'interpretation: why',
+          'forms: (why)',
+          'ledger: <move-15>',
+        ]),
+        'writes': list([
+        ]),
+      }),
+      'text': 'Because of "undo the last move" (jp, <at>): forms: None → [\'client\', \'client\', \'\', \'clients\'].',
+      'trace': list([
+        'interpretation: why',
+        'forms: (why)',
+        'ledger: <move-15>',
+      ]),
+      'turn': 'why?',
+      'written': dict({
+      }),
+    }),
+  ])
+# ---

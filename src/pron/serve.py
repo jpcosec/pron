@@ -11,7 +11,7 @@ its interface lexicon, and nothing else (spec 12 §6): talking to another world 
 semantic, never access to its store. The server speaks as whoever the client says it is;
 identity is the application's (11 §6). Every mounted world gets `<root>/.pron/serve.sock`
 pointing at the daemon's socket, so a client that only knows its world finds the daemon.
-The client side is pron.client.
+The client side is pron.remote.
 """
 
 from __future__ import annotations
@@ -24,10 +24,10 @@ import threading
 from pathlib import Path
 from typing import Any, Callable
 
-from pron.client import RemoteSession, alive, request, socket_path  # noqa: F401 - re-exported for callers of pron.serve
-from pron.ids import LOCAL, is_local
+from pron.remote import RemoteSession, alive, request, socket_path  # noqa: F401 - re-exported for callers of pron.serve
+from pron.kernel.ids import LOCAL, is_local
 from pron.session import Session
-from pron.world import World
+from pron.world.world import World
 
 GRAPH_METHODS = (
     "has_node",
@@ -306,7 +306,7 @@ class Server:
         pname = req.get("projection")
         if not pname:
             return
-        from pron.lexicon import projection_models
+        from pron.world.lexicon import projection_models
 
         if model not in projection_models(
             self.world, self.world.projection(pname, None if is_local(name) else name)

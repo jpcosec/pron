@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-write--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-write--SpecDoc:spec-11.md
+hash_c: cf04e3b05a6a3e2d9e2ec66478fa7a8f425b1bf00df6fb64cd0dea4b9d0d99e4
+hash_d: 26c8b92dd07a8b3479024428d2656876e60b7be39870c162128b2829b699911e
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

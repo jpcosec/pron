@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-predicate_filter
+path: knowledge/surfaces/surface-pron-sexpr-predicate_filter.md
+hash_c: 4b01b4a4745e7e557aeab162bb59bf78beffee30d4300b70e090050bce93bcac
+hash_d: 269ffb0405baa01b2466af4adbe1f7c22312b7332c3e7249dc4208194512ecfd
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,14 @@
+name: surface-pron-world-document_index
+path: knowledge/surfaces/surface-pron-world-document_index.md
+hash_c: 01525ee99c25921bdf30d0b1b27555f835087d735ea3bb3ef955b65434a414c7
+hash_d: f7fa3a37bf8b669fabcc326417d7eb792b22ef9ff94648628e291b66f3beca3e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

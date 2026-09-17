@@ -1,7 +1,7 @@
 name: cmd-pron-lexicon
 path: knowledge/commands/cmd-pron-lexicon.md
-hash_c: 3b9fc936f2b479e4f66d74de7c3ad7260a60e4d382ecd9246872ef818d27cca4
-hash_d: 5d328cb31f8ff21c058bf75111140a6fedace5aa71e468000fdcc86266f1ebff
+hash_c: 91807ce9795720dd70711672093af2822d7ac47a099d6b4c6b68be85a053d96b
+hash_d: eeb5b3b69be3ea23be960ee896f6bbe1a59763ecdc16cf15a227f187822e8b3f
 semantic_tags:
 - domain:system_architecture
 - entity:cli_command

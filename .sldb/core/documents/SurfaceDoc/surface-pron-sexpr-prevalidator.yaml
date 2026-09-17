@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-prevalidator
+path: knowledge/surfaces/surface-pron-sexpr-prevalidator.md
+hash_c: f0e3fe1e8033e3589fba6174c2c1198ca6ee784c9acd7ff191d69951286b7e49
+hash_d: 7b758f23ef28a71286ded276bf97c74dbc44c2d20eea0889d331a0f1df035bc6
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

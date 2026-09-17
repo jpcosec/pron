@@ -1,6 +1,7 @@
 # pron
 
 - knowledge/explanations/what-is-pron.md
+- knowledge/explanations/how-it-works.md
 - knowledge/explanations/status.md
 - knowledge/explanations/try.md
 - knowledge/explanations/use.md

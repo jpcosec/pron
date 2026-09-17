@@ -3,7 +3,7 @@ model_ref: pron.models:ReadmeDoc
 path: src/pron/models/readme.py
 documents_index: .sldb/core/documents/ReadmeDoc.yaml
 sections_index: .sldb/runtime/sections/ReadmeDoc.yaml
-hash_b: daa8aa6b80edeaf710f4e1d049fecc33870a7d01e7948c12a8033a49535aace8
+hash_b: 2243af4976d6dbe92adbc2372944d9cdcd46c36c3dff741828fe83073a399517
 documents_count: 1
 version: 1
 canonical: false

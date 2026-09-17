@@ -1,0 +1,14 @@
+name: surface-pron-world-store
+path: knowledge/surfaces/surface-pron-world-store.md
+hash_c: c962fcee40f67499054fb7a944d6405c71f7fa982d632245d8be75c2e5ccd8c2
+hash_d: f0e7ad5f39a033b0b9fccf749a7844ccaa01b2d775e91e3cfda52a8b878c94fc
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

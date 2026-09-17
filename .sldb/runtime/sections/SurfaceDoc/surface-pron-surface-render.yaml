@@ -1,0 +1,133 @@
+doc_name: surface-pron-surface-render
+sections:
+- path: surface-render
+  title: surface.render
+  breadcrumbs:
+  - surface.render
+  about:
+  - surface.render
+  - surface render
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: surface-render
+  level: 1
+  line_start: 14
+  line_end: 35
+- path: surface-render/purpose
+  title: Purpose
+  breadcrumbs:
+  - surface.render
+  - Purpose
+  about:
+  - surface.render
+  - surface render
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 22
+- path: surface-render/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - surface.render
+  - How It Works
+  about:
+  - surface.render
+  - surface render
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 23
+  line_end: 29
+- path: surface-render/commands
+  title: Commands
+  breadcrumbs:
+  - surface.render
+  - Commands
+  about:
+  - surface.render
+  - surface render
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 30
+  line_end: 35
+hash_c: 31ebd9d3b0b5aa0a66bf8a48f778c3d7b49d1d693b5f1e2492b2581a046bcb0a
+sections_version: '2'

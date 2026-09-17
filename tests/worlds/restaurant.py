@@ -11,7 +11,7 @@ from pathlib import Path
 
 from sldb.cli import main as sldb_main
 
-from pron.world import World, init_world
+from pron.world.world import World, init_world
 
 MODELS = '''from typing import Literal
 from pydantic import Field

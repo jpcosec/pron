@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-compose_executor
+sections:
+- path: sexpr-compose-executor
+  title: sexpr.compose_executor
+  breadcrumbs:
+  - sexpr.compose_executor
+  about:
+  - sexpr.compose_executor
+  - sexpr compose executor
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-compose-executor
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: sexpr-compose-executor/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.compose_executor
+  - Purpose
+  about:
+  - sexpr.compose_executor
+  - sexpr compose executor
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-compose-executor/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.compose_executor
+  - How It Works
+  about:
+  - sexpr.compose_executor
+  - sexpr compose executor
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 28
+- path: sexpr-compose-executor/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.compose_executor
+  - Commands
+  about:
+  - sexpr.compose_executor
+  - sexpr compose executor
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 29
+  line_end: 31
+hash_c: cc170b51d5ddc9951b98c899bee525d4d8fff09801bcdd735f61320848463ffc
+sections_version: '2'

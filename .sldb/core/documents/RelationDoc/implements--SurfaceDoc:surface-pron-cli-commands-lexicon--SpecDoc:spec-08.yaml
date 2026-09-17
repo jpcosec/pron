@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-cli-commands-lexicon--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-lexicon--SpecDoc:spec-08.md
+hash_c: 287b06758c656de044514b3b6d3ac94d8d5261eca3758c5c18fc03a3566a10e5
+hash_d: 81d42aa72de57b7c4ef1119dcce21d3a5469174aed637642c478563fa4164798
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

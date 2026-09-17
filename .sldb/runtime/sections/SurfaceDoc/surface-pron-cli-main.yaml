@@ -29,7 +29,7 @@ sections:
   slug: cli-main
   level: 1
   line_start: 14
-  line_end: 29
+  line_end: 30
 - path: cli-main/purpose
   title: Purpose
   breadcrumbs:
@@ -62,7 +62,7 @@ sections:
   slug: purpose
   level: 2
   line_start: 16
-  line_end: 20
+  line_end: 21
 - path: cli-main/how-it-works
   title: How It Works
   breadcrumbs:
@@ -94,8 +94,8 @@ sections:
   - workspace.knowledge.surfaces
   slug: how-it-works
   level: 2
-  line_start: 21
-  line_end: 25
+  line_start: 22
+  line_end: 27
 - path: cli-main/commands
   title: Commands
   breadcrumbs:
@@ -127,7 +127,7 @@ sections:
   - workspace.knowledge.surfaces
   slug: commands
   level: 2
-  line_start: 26
-  line_end: 29
-hash_c: ebc5661825e3b7b27cf8fc407a21295a06750cf400f01f80314511c01c0503f1
+  line_start: 28
+  line_end: 30
+hash_c: fa11328369efd82ea0821e57b77d58a6cf760a3106774597bcf02bb81397bced
 sections_version: '2'

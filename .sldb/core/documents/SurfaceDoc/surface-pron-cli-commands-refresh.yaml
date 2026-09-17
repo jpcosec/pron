@@ -1,0 +1,14 @@
+name: surface-pron-cli-commands-refresh
+path: knowledge/surfaces/surface-pron-cli-commands-refresh.md
+hash_c: baab2f34f2ce49e2a27ce53a6ce997d170fd6c54010a53533ec686ea2c191f1c
+hash_d: 74e056cbdeda4841896905548f7a134c4269af42169ebf2bbf042dac0f8cea82
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

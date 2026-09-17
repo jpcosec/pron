@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-change_verb
+sections:
+- path: kernel-change-verb
+  title: kernel.change_verb
+  breadcrumbs:
+  - kernel.change_verb
+  about:
+  - kernel.change_verb
+  - kernel change verb
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-change-verb
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: kernel-change-verb/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.change_verb
+  - Purpose
+  about:
+  - kernel.change_verb
+  - kernel change verb
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-change-verb/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.change_verb
+  - How It Works
+  about:
+  - kernel.change_verb
+  - kernel change verb
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-change-verb/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.change_verb
+  - Commands
+  about:
+  - kernel.change_verb
+  - kernel change verb
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: dc94c99a28dd10b69d5af2da994e4dfb3ca3c1e7e9c488cb4051a793c8626a17
+sections_version: '2'

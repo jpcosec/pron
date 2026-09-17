@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-ids--SpecDoc:spec-02.md
-hash_c: 8fca40556d40f6cada46c24d60512b71a1a19c52c613ef196de5f5ef2916fce0
-hash_d: 95fe2b8df9589ca9eb08d81dd1c808458cff5090d38ddc0539cc31b22149d270
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

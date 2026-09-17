@@ -1,0 +1,93 @@
+doc_name: how-it-works
+sections:
+- path: c-mo-funciona
+  title: Cómo funciona
+  breadcrumbs:
+  - Cómo funciona
+  about:
+  - Cómo funciona
+  - c mo funciona
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: c-mo-funciona
+  level: 1
+  line_start: 1
+  line_end: 38
+- path: c-mo-funciona/question
+  title: Question
+  breadcrumbs:
+  - Cómo funciona
+  - Question
+  about:
+  - Cómo funciona
+  - c mo funciona
+  - Question
+  - question
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: question
+  level: 2
+  line_start: 3
+  line_end: 6
+- path: c-mo-funciona/answer
+  title: Answer
+  breadcrumbs:
+  - Cómo funciona
+  - Answer
+  about:
+  - Cómo funciona
+  - c mo funciona
+  - Answer
+  - answer
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: answer
+  level: 2
+  line_start: 7
+  line_end: 32
+- path: c-mo-funciona/sources
+  title: Sources
+  breadcrumbs:
+  - Cómo funciona
+  - Sources
+  about:
+  - Cómo funciona
+  - c mo funciona
+  - Sources
+  - sources
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  semantic_tags:
+  - representation.markdown
+  - source.document.markdown
+  - type.knowledge.explanation
+  - workspace.knowledge.explanations
+  slug: sources
+  level: 2
+  line_start: 33
+  line_end: 38
+hash_c: 48e45765f280ca18fce94351d2c9fcb546289c2a87fe3bddfdd45e8b152026ed
+sections_version: '2'

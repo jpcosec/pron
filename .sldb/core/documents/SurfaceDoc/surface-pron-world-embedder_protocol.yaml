@@ -1,0 +1,14 @@
+name: surface-pron-world-embedder_protocol
+path: knowledge/surfaces/surface-pron-world-embedder_protocol.md
+hash_c: faadfa054f7fced25d03462e35496734e3cf8611a54452f86046719f740a470c
+hash_d: 1c9bf396f5bc96d0d9de5b2cdfbfec5902a6e112b8bb1afe9f2510cf485883ad
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

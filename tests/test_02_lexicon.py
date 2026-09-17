@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from pron.lexicon import Lexicon
-from pron.world import World
+from pron.world.lexicon import Lexicon
+from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
 
@@ -113,7 +113,7 @@ class FakeEmbedder:
 
 
 def test_an_injected_embedder_finds_synonyms(world: World):
-    from pron.embedder import Matcher
+    from pron.world.matcher import Matcher
 
     lex = Lexicon(world, world.projection("all"), matcher=Matcher(FakeEmbedder()))
     near = lex.near("patio", kinds=("value",))
@@ -125,7 +125,7 @@ def test_an_injected_embedder_keeps_typos_near(world: World):
     """With an Embedder, a misspelling is still offered: the score is the best of meaning
     (cosine) and spelling (difflib), never only the vector (spec 11 §2: better with
     embeddings, never worse)."""
-    from pron.embedder import Matcher
+    from pron.world.matcher import Matcher
 
     class Orthogonal:
         def id(self) -> str:

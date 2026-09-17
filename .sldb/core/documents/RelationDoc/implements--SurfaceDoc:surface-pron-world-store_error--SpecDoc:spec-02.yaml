@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-store_error--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-store_error--SpecDoc:spec-02.md
+hash_c: 6e92bf8271069d510199877f586289e63c255d696ed6f3130668d695ac6605ad
+hash_d: 70ed9af2b93946177931a03830edf0883a212b3e3e91e56c89c80abc8b8ba684
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

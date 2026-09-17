@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-collaborator
+path: knowledge/surfaces/surface-pron-sexpr-collaborator.md
+hash_c: bd5272ad17d697446db7028fd26ed51e810724b10a1ba0ae8a01febfa5e2ea2e
+hash_d: 67e0ae95ebda4d6d3e773bd8c15355d96aa3cb6530069474bdccd77437bae98b
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces
