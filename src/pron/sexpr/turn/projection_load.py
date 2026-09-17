@@ -8,28 +8,17 @@ lexicon's vectors are cached per hash_mundo, home, projection and matcher.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Any
 
 from pron.kernel.display import Display
 from pron.kernel.ids import is_local
 from pron.kernel.kernel import Kernel
 from pron.sexpr.resolving.verbs import Verbs
+from pron.sexpr.turn.projection_settings import ProjectionSettings
 from pron.surface.interpreter import Interpreter
 from pron.world.lexicon import Lexicon
 from pron.world.matching.matcher import Matcher
 from pron.world.world import World
-
-
-@dataclass(frozen=True)
-class ProjectionSettings:
-    """How a session reads its projection (spec 01, 05, 11 §8): fixed for its life."""
-
-    name: str
-    home: str | None
-    read_only: bool
-    defer_refresh: bool
-    now: object
 
 
 class ProjectionLoad:
