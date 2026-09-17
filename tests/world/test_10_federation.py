@@ -4,11 +4,14 @@ several stores reads them all; nothing is copied."""
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from pron.kernel.ids import address_of, split_id
 from pron.session import Session
-from pron.world.world import World, init_world
+from pron.world.world import World
+from worlds.bare import init_bare
 from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"
@@ -21,19 +24,7 @@ def nodes(tmp_path_factory):
     return a, b
 
 
-@pytest.fixture(scope="module")
-def daemon(nodes, tmp_path_factory) -> World:
-    """The daemon's own store, empty of restaurant documents, linking A and B."""
-    a, b = nodes
-    root = tmp_path_factory.mktemp("daemon") / "world"
-    root.mkdir()
-    from sldb.cli import main as sldb_main
-
-    assert sldb_main(["stores", "init", "--path", str(root)]) == 0
-    init_world(root, str(root))
-    d = World(root, str(root))
-    assert d.store.link("A", a.root) and d.store.link("B", b.root)
-    assert not d.store.link("A", a.root)
+def _orchestrator_projection(d: World, root: Path) -> None:
     proj = dict(
         d.projection("all"),
         name="orq",
@@ -51,28 +42,41 @@ def daemon(nodes, tmp_path_factory) -> World:
         proj,
         root / "knowledge" / "projections" / "orq.md",
     )
+
+
+@pytest.fixture(scope="module")
+def daemon(nodes, tmp_path_factory) -> World:
+    """The daemon's own store, empty of restaurant documents, linking A and B."""
+    a, b = nodes
+    root = tmp_path_factory.mktemp("daemon") / "world"
+    init_bare(root)
+    d = World(root, str(root))
+    assert d.store.link("A", a.root) and d.store.link("B", b.root)
+    assert not d.store.link("A", a.root)
+    _orchestrator_projection(d, root)
     return d
 
 
-def test_a_session_at_home_in_a_linked_store_lives_there(daemon: World, nodes):
-    a, _ = nodes
-    s = Session(daemon, projection="all", speaker="node-a", now=NOW, home="A")
+def _said(r) -> str:
+    return r.text + " / " + " | ".join(r.trace)
+
+
+def _reads_at_home(s: Session, daemon: World) -> None:
     r = s.turn("the large tables")
-    assert r.outcome == "unico" and "table 12" in r.text, (
-        r.text + " / " + " | ".join(r.trace)
-    )
+    assert r.outcome == "unico" and "table 12" in r.text, _said(r)
     assert any("A:st.{Table+}" in q for q in r.trace)  # the scope names the store
     assert all(split_id(x["address"])[0] == "A" for x in r.record["reads"])
     assert daemon.store.doc("MoveDoc", r.move_id, "A") is not None  # the ledger is A's
     assert daemon.store.doc("MoveDoc", r.move_id) is None
+
+
+def _writes_at_home(s: Session, daemon: World, a: World) -> None:
     r = s.turn("create a client named Ana Rojas, phone 9 5555 1234")
     assert r.outcome == "unico", r.text
     assert a.store.doc("Client", "client-ana-rojas") is not None  # written in A's store
     assert daemon.store.doc("Client", "client-ana-rojas") is None
     r = s.turn("book her a table on the terrace for 6 people on Friday at 9pm")
-    assert r.outcome == "unico" and "table 12" in r.text, (
-        r.text + " / " + " | ".join(r.trace)
-    )
+    assert r.outcome == "unico" and "table 12" in r.text, _said(r)
     assert (
         a.store.doc(
             "RelationDoc",
@@ -80,10 +84,15 @@ def test_a_session_at_home_in_a_linked_store_lives_there(daemon: World, nodes):
         )
         is not None
     )  # written as A reads itself
+
+
+def test_a_session_at_home_in_a_linked_store_lives_there(daemon: World, nodes):
+    a, _ = nodes
+    s = Session(daemon, projection="all", speaker="node-a", now=NOW, home="A")
+    _reads_at_home(s, daemon)
+    _writes_at_home(s, daemon, a)
     r = s.turn("the reservations of Ana Rojas")
-    assert r.outcome == "unico" and "table 12" in r.text, (
-        r.text + " / " + " | ".join(r.trace)
-    )
+    assert r.outcome == "unico" and "table 12" in r.text, _said(r)
     r = s.turn("confirm it")
     assert (
         r.outcome == "unico"

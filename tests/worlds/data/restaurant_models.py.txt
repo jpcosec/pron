@@ -1,0 +1,89 @@
+from typing import Literal
+from pydantic import Field
+from sldb import StructuredNLDoc
+
+
+class Client(StructuredNLDoc):
+    """A person who books. Identified by name; the phone number is mandatory."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "client"]}
+    __template__ = """---
+name: ⸢rev•name⸥
+phone: ⸢rev•phone⸥
+---
+
+# ⸢render•name⸥
+
+## Notes
+
+⸢rev•notes⸥
+""".strip()
+
+    name: str = Field(description="Full name as the client gives it.")
+    phone: str = Field(description="Contact phone number, in whatever format the client uses.")
+    notes: str = Field(default="", description="Free-form remarks about the client: allergies, preferences, incidents.")
+
+
+class Table(StructuredNLDoc):
+    """A physical table in the venue. Capacity is fixed; the zone is one of two."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "table"]}
+    __template__ = """---
+number: ⸢rev•number⸥
+capacity: ⸢rev•capacity⸥
+zone: ⸢rev•zone⸥
+---
+
+# Table ⸢render•number⸥
+""".strip()
+
+    number: int = Field(description="Table number as marked on the floor.")
+    capacity: int = Field(description="Maximum number of people seated comfortably.")
+    zone: Literal["terrace", "indoor"] = Field(description="Where the table is: the open-air terrace or the indoor room.")
+
+
+class Reservation(StructuredNLDoc):
+    """A booking for a date and time. Who it is for and which table it gets are relations, not fields."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "reservation"]}
+    __template__ = """---
+date: ⸢rev•date⸥
+time: ⸢rev•time⸥
+party_size: ⸢rev•party_size⸥
+status: ⸢rev•status⸥
+---
+
+# Reservation ⸢render•date⸥ ⸢render•time⸥
+
+## Notes
+
+⸢rev•notes⸥
+""".strip()
+
+    date: str = Field(description="Reservation date in ISO form, YYYY-MM-DD.")
+    time: str = Field(description="Arrival time, HH:MM in 24-hour form.")
+    party_size: int = Field(description="Number of people coming.")
+    status: Literal["pending", "confirmed", "seated", "cancelled"] = Field(
+        default="pending",
+        description="Where the reservation stands. Changes only through the transitions declared between states.",
+    )
+    notes: str = Field(default="", description="Free-form remarks: occasion, special requests.")
+
+
+class State(StructuredNLDoc):
+    """One possible state of a status field. Exists as a document so that transitions are edges between states."""
+    __family__ = "restaurant"
+    __semantics__ = {"type": ["restaurant", "state"]}
+    __template__ = """---
+machine: ⸢rev•machine⸥
+name: ⸢rev•name⸥
+---
+
+# ⸢render•machine⸥ · ⸢render•name⸥
+
+⸢rev•description⸥
+""".strip()
+
+    machine: str = Field(description="Which field of which model this machine governs, as Model.field; for example Reservation.status.")
+    name: str = Field(description="The field value this document stands for.")
+    description: str = Field(description="What being in this state means.")

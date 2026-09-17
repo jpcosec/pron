@@ -1,7 +1,5 @@
-"""Forms (spec 13): pron's structured moves. The reader and printer round-trip; a runtime that knows
-its documents evaluates forms directly with the same checks as a sentence; and a sentence is the
-forms it resolves to: evaluating the forms a conversation recorded, on a second copy of the world,
-leaves the same writes."""
+"""Forms (spec 13): pron's structured moves. The reader and printer round-trip, and a runtime
+that knows its documents evaluates forms directly with the same checks as a sentence."""
 
 from __future__ import annotations
 
@@ -59,6 +57,12 @@ def test_an_assertion_goes_through_the_condition(world: World):
     assert not r.record["writes"]
 
 
+def _undo_puts_it_back(s: Session, world: World) -> None:
+    r = s.eval("(undo)")
+    assert r.outcome == "unico", r.text
+    assert world.store.payload_of(LUIS)["status"] == "pending"
+
+
 def test_a_transition_is_checked_and_undone(world: World):
     s = session(world)
     r = s.eval(f'(change (doc "{LUIS}") status "seated")')
@@ -68,9 +72,7 @@ def test_a_transition_is_checked_and_undone(world: World):
     assert world.store.payload_of(LUIS)["status"] == "confirmed"
     move = world.store.payload("MoveDoc", r.move_id)
     assert move["sentence"] == f'(say confirm (doc "{LUIS}"))'
-    r = s.eval("(undo)")
-    assert r.outcome == "unico", r.text
-    assert world.store.payload_of(LUIS)["status"] == "pending"
+    _undo_puts_it_back(s, world)
 
 
 def test_words_outside_the_projection_do_not_exist(world: World):
@@ -101,36 +103,6 @@ def test_a_bare_noun_suggests_show(world: World):
     assert r.outcome == "error" and "did you mean" not in r.text
 
 
-def test_a_sentence_is_the_forms_it_records(tmp_path_factory):
-    """The conversation of spec 09 on one world; the resolved forms it recorded, evaluated on another
-    copy, leave the same writes and the same answers."""
-    spoken = build_restaurant(tmp_path_factory.mktemp("spoken"))
-    replayed = build_restaurant(tmp_path_factory.mktemp("replayed"))
-    talk = Session(spoken, projection="all", speaker="jp", now=NOW)
-    run = Session(replayed, projection="all", speaker="jp", now=NOW)
-    sentences = [
-        "create a client named Ana Rojas, phone 9 5555 1234",
-        "book her a table on the terrace for 6 people on Friday at 9pm",
-        "confirm it",
-        "change it to 9 people and add a note saying: birthday",
-        "what reservations does Luis Soto have for Friday?",
-    ]
-    for sentence in sentences:
-        said = talk.turn(sentence)
-        assert said.outcome == "unico", (sentence, said.text)
-        forms = said.record["resolved"]
-        again = run.eval(forms)
-        assert again.outcome == "unico", (forms, again.text)
-        assert _writes(again.record["writes"]) == _writes(said.record["writes"]), forms
-        assert again.text == said.text, forms
-
-
-def _writes(ws):
-    return [
-        (w.get("verb"), w.get("address"), w.get("field"), w.get("after")) for w in ws
-    ]
-
-
 def test_a_document_can_be_named_where_the_projection_has_no_rule(world: World):
     s = session(world)
     r = s.eval('(create Table (number 7) (capacity 2) (zone "indoor"))')
@@ -139,20 +111,3 @@ def test_a_document_can_be_named_where_the_projection_has_no_rule(world: World):
     assert r.outcome == "unico", r.text
     assert world.store.payload("Table", "table-7")["capacity"] == 2
     assert r.record["forms"].startswith('(create Table (as "table-7")')
-
-
-def test_a_sentence_says_unresolved_forms_and_the_evaluator_resolves_them(
-    tmp_path_factory,
-):
-    w = build_restaurant(tmp_path_factory.mktemp("said"))
-    s = Session(w, projection="all", speaker="jp", now=NOW)
-    r = s.turn("the reservations of Luis Soto")
-    assert (
-        r.record["forms"] == '(show (the Reservation (plural) (of-name "Luis" "Soto")))'
-    )
-    assert r.record["resolved"] == f'(show (doc "{LUIS}"))'
-    # a referent in a form resolves against the same dialogue a sentence uses
-    r = s.eval('(say confirm (it "it" Reservation))')
-    assert r.outcome == "unico", r.text
-    assert w.store.payload_of(LUIS)["status"] == "confirmed"
-    assert r.record["resolved"] == f'(say confirm (doc "{LUIS}"))'

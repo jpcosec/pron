@@ -1,0 +1,59 @@
+# The values world of PLAN 11: three facts, three atoms, the projection and the aliases.
+documents:
+- model: Fact
+  name: fact-evento-adverso
+  path: facts/evento-adverso.md
+  payload:
+    topic: evento_adverso
+    statement: An adverse event report is always routed to human review.
+- model: Fact
+  name: fact-medinfo
+  path: facts/medinfo.md
+  payload:
+    topic: medinfo
+    statement: A MedInfo question is answered from the product sheet when one exists.
+- model: Fact
+  name: fact-seguimiento
+  path: facts/seguimiento.md
+  payload:
+    topic: seguimiento
+    statement: A follow-up call happens a week after an adverse event report.
+- model: Atom
+  name: atom-lexicon
+  path: atoms/atom-lexicon.md
+  payload: {system: pron, label: lexicon}
+- model: Atom
+  name: atom-resolve
+  path: atoms/atom-resolve.md
+  payload: {system: pron, label: resolve}
+- model: Atom
+  name: atom-bridge
+  path: atoms/atom-bridge.md
+  payload: {system: legos, label: bridge}
+projection:
+  name: all
+  stores: [local]
+  models: [Fact, Atom]
+  relations: []
+  actions: [create, refresh]
+  aliases: [all]
+  naming: {Fact: 'fact-{topic}', Atom: 'atom-{label}'}
+  display: {Fact: '{topic}: {statement}', Atom: '{system}: {label}'}
+  matching: {neighbors: 3, threshold: 0.55}
+  description: A minimal world for PLAN 11's value-suggestion and glossary tests.
+anchors:
+- symbol: fact
+  forms: [fact, facts]
+  ref: model:Fact
+  steps: []
+  motive: a piece of business knowledge
+- symbol: about
+  forms: [about, 'on', regarding]
+  ref: field:Fact.topic
+  steps: []
+  motive: which topic a fact concerns
+- symbol: atom
+  forms: [atom, atoms]
+  ref: model:Atom
+  steps: []
+  motive: a small piece of knowledge
