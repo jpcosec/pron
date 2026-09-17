@@ -1,0 +1,28 @@
+# Two environments over the same worktrees root, mounted at its host path so each
+# worktree's `.git` file still resolves (the repos' own .git directories are mounted too).
+#   fusion: sldb + kgdb + pron on their `fusion-kgdb` branches
+#   docid:  pron `docid-dockind` against the sldb/kgdb commits pinned in constraints.txt
+x-base: &base
+  build: .
+  volumes:
+    - ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}:${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}
+    - /home/jp/proyectos/pron/.git:/home/jp/proyectos/pron/.git
+    - /home/jp/proyectos/hum-ecosystem/tools/sldb/.git:/home/jp/proyectos/hum-ecosystem/tools/sldb/.git
+    - /home/jp/proyectos/hum-ecosystem/tools/kgdb/.git:/home/jp/proyectos/hum-ecosystem/tools/kgdb/.git
+services:
+  fusion:
+    <<: *base
+    working_dir: ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/pron
+    environment:
+      EDITABLE: >-
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/sldb
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/kgdb
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/pron
+  docid:
+    <<: *base
+    working_dir: ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/pron-docid
+    environment:
+      EDITABLE: >-
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/sldb-pin
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/kgdb-pin
+        ${FUSION_ROOT:-/home/jp/proyectos/_worktrees/fusion}/pron-docid

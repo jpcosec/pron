@@ -1,0 +1,6 @@
+#!/bin/sh
+# tools/docker/run <fusion|docid> [-w DIR] <command...>: one command in that environment.
+here="$(cd "$(dirname "$0")" && pwd)"
+service="$1"; shift
+if [ "$1" = "-w" ]; then wd="-w $2"; shift 2; fi
+exec docker compose -f "$here/compose.yml" run --rm $wd "$service" "$@"
