@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-05
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-05.md
-hash_c: 6391d748b9f0583d7af85ad8446a85b20c0f679374da062eb2b6f24dc412209b
-hash_d: b90b2ebc6e503e37c16c823693e5c3a10aa122e848dfbdc6519819b51e711758
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-lexicon--SpecDoc:spec-05.md
-hash_c: a86a47642952fa9ff5e85345b74f736d8e90b24d8e67693f190a2f741de6b22e
-hash_d: 2ddd09d8b578420f5e8e53488c39ad720be17944272d2755eabe0a8daaea0952
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: status
-path: knowledge/explanations/status.md
-hash_c: 7cf6b228e6b8536a241cf207686083fa0bb9b6cbb12f6eaeef4952c1193032d6
-hash_d: 58a02d6be5a7bcf12d3ac804b70eaea271d1b31c1ef0233f96adeef19c27f6fa
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

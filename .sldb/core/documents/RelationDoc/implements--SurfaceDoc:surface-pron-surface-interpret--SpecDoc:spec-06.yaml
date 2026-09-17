@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-interpret--SpecDoc:spec-06.md
-hash_c: b04ebb774fcc84f59368d376c08cddacc0790345eab8fa1803a8f07a34e44fd3
-hash_d: 098b0472cb2d9be0f378072cd8c3e1baa066b6f8fb907bee0192eb537620b851
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

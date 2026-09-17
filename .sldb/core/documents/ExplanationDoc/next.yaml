@@ -1,9 +1,0 @@
-name: next
-path: knowledge/explanations/next.md
-hash_c: e9ccf9cdf7e4df77f3fe750b0c5cc978e8e72f2d2134a9ed0b64efdd268cc277
-hash_d: 1931a62fec771f354fe728ac9ea8cb379236f8b74dc24a27dcd824a813c8b0c0
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

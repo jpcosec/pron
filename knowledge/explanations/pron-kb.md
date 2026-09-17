@@ -8,10 +8,11 @@
 
 Este repo es también un mundo, y no tiene átomos. Su conocimiento sobre sí mismo ya tiene forma: los capítulos de `source/spec/`, trackeados donde viven como `SpecDoc` con sus secciones indexadas por sldb; los `CliCommandDoc` y `SurfaceDoc` generados del código; y las aristas `implements` de cada módulo hacia los capítulos que su docstring cita. Todo eso lo produce `pron docs` y nada se mantiene a mano.
 
+Solo se versiona lo que se escribe: los capítulos, las explicaciones, las anclas, las proyecciones y el ledger. El store (`.sldb/`), los tipos de relación (`kgdb/`, `knowledge/relations/`) y los documentos generados (`knowledge/surfaces/`, `knowledge/commands/`) son derivados y no están en git: `make world` los reconstruye desde el repo, y `make docs-check` los reconstruye y falla si el README generado no coincide con el versionado.
+
 ```bash
-pron init --world . --pythonpath . --knowledge
+make world                                  # sldb stores init + pron init --knowledge + pron docs
 pron docs --world . --pythonpath .          # spec, comandos, módulos, implements
-pron docs --world . --pythonpath . --check  # sin drift
 pron check --world . --pythonpath .         # lints, incluido que todo módulo cite un capítulo
 pron say "what does the module resolve implement?" --world . --pythonpath .
 ```

@@ -1,9 +1,0 @@
-name: spec-05
-path: source/spec/05-lexico-y-proyeccion.md
-hash_c: ee896f7808b8c7ddba2b4b09faa3f916af888144b895c29d4a47a4af961e91f8
-hash_d: 8b166af595cb6a870c8c17db43065c0540b6d51eeb804dc1e37e216e267984e9
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

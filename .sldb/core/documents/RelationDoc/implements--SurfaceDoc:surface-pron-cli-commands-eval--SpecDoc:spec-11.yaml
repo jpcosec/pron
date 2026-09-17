@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-cli-commands-eval--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-eval--SpecDoc:spec-11.md
-hash_c: f921e1d2e3fd3398d5fbe660d5849547a17c6c265c31caea2c1e95e989eb6862
-hash_d: fb8d069b107bddf62ab892e7f8d8bf97202a5fadf4b1c85cab38c93e3a7bf155
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

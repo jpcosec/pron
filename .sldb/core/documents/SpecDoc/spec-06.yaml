@@ -1,9 +1,0 @@
-name: spec-06
-path: source/spec/06-superficie-y-dialogo.md
-hash_c: 99e99cdb361a682a262145c714f98f1a7cca74b262d881bdf23659ac7a3039e7
-hash_d: 24db5be09a86313090af70263405d69814ddf47b4ee489510b3f4d74d1f777a1
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

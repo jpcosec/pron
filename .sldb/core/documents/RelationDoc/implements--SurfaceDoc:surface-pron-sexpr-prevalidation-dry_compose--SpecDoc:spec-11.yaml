@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_compose--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_compose--SpecDoc:spec-11.md
-hash_c: c4f70c85422a846e7fedee62953d90a934836db066ad92fa36dc120375b17b9e
-hash_d: 95218850261397c5ee9a9432cb5bc14012a43fc40ada9b6cd85cde638a219911
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

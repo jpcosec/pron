@@ -1,9 +1,0 @@
-name: spec-10
-path: source/spec/10-el-shrdlu-sobre-el-modelo.md
-hash_c: d6176d425bf8c43798df138a204c3b33a2e77031970c579056129ef238b6a707
-hash_d: a2021d65b2b60cff4dc1d456b6c37850662bedfc91fe6056225d1f6c7f6b9d60
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-execution-compose_executor--SpecDoc:spec-04
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-compose_executor--SpecDoc:spec-04.md
-hash_c: 5367faf0aac57c0ce40c01bda3c9ccc940d7d6899bd863d4c397e8bf7adc5ebf
-hash_d: 1651457aeeb87624a9ef94028c2c7006259c8a2b22cd21a700074fa0008e8516
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

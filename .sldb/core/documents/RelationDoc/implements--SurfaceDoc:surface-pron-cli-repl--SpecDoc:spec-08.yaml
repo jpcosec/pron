@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-repl--SpecDoc:spec-08.md
-hash_c: 1a53f09899c433fd47d39a435de4ba19df0bfe709585eaaf7eb71a63ba8248ce
-hash_d: 9d0f7fa6891cf4f6c60d6fb129045fd171671b0d363a70fc7bc3d94d36508142
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

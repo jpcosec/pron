@@ -1,6 +1,6 @@
 PYTHON ?= python
 
-.PHONY: check lint audit format-check format typecheck test docs-check
+.PHONY: check lint audit format-check format typecheck test world docs-check
 
 check:
 	$(MAKE) lint format-check typecheck
@@ -27,6 +27,13 @@ typecheck:
 test:
 	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 $(PYTHON) -m pytest -q -p syrupy
 
-docs-check:
+# pron's own world is derived: rebuild the store and the generated docs from the repo
+world:
+	test -f .sldb/core/store_index.yaml || sldb stores init
+	$(PYTHON) -m pron.cli.main init --world . --pythonpath . --knowledge > /dev/null
+	$(PYTHON) -m pron.cli.main docs --world . --pythonpath .
+
+docs-check: world
+	git diff --exit-code -- README.md
 	$(PYTHON) -m pron.cli.main docs --world . --pythonpath . --check
 	$(PYTHON) -m pron.cli.main check --world . --pythonpath .

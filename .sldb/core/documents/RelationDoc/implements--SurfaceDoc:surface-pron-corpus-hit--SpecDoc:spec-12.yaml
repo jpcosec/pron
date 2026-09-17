@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-corpus-hit--SpecDoc:spec-12
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-corpus-hit--SpecDoc:spec-12.md
-hash_c: 11170f59805d5219089712ca15ca35a029f10226e224f32e64e73f17aa68f41c
-hash_d: 6275399b0425f032b4b2c0dd8e807867065bda35cb9f0b5dc4d8977d9c15754d
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

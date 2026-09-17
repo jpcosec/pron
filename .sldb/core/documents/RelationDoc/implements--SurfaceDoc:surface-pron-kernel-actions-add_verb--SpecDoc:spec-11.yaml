@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-kernel-actions-add_verb--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-add_verb--SpecDoc:spec-11.md
-hash_c: fd61f71e2fd477da6b0de327978436809c61c1bfbba05acd4314566ce7ce6d63
-hash_d: c290a58b75bd2c81e2896eaace7c6398724fa6765d4a2ce52c461a91a29242c2
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

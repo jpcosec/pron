@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-planning-compose_slots--SpecDoc:spec-05
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-planning-compose_slots--SpecDoc:spec-05.md
-hash_c: 834cab20aa9ed1c3b03109b943894895d9d8cf4ec7d462f1cc3d9ddc359753d0
-hash_d: 4e173aff3b969076e6e5bd97e6b4db8cde35a9164ca3765c31550c80511bf51d
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: try
-path: knowledge/explanations/try.md
-hash_c: 4021c59ebf78e4da848b7f39c5a2109ae79b208434887f243b0d00c7caf383ec
-hash_d: 0f3db5f8a60c1dc3ae931bbac5771288a5cf1c1c1146d18f833eef59b5f5239b
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

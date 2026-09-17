@@ -1,9 +1,0 @@
-name: spec-12
-path: source/spec/12-pron-para-un-runtime.md
-hash_c: d3e8f23c349c9522695a0c5178aa3a90ff1578f79504088c2a861564c7effb8d
-hash_d: a26166860aabd8282493a60ffed2390f5bfc29982bc78862802051ed96122292
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

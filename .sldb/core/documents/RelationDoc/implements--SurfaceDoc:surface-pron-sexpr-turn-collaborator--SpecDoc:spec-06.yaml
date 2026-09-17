@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-turn-collaborator--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-collaborator--SpecDoc:spec-06.md
-hash_c: 769073bbb3c684fb88926558577760f9f06c5314df1de3a6cea0b3bddb006e8d
-hash_d: 1c0d64a288a3c5afa530ca6d629da5aec190d0258950086ce06272cebf8f135c
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

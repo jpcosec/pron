@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-models-anchor--SpecDoc:spec-01
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-anchor--SpecDoc:spec-01.md
-hash_c: d1315536655613e176fbb287db19211eb737a565720f88a4e64266964e5f7476
-hash_d: 9f2b253fa922f7bf934632cac4e365e6045b74ca3feadff36a25d7c01fa277a3
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

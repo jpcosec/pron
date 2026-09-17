@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-kernel-actions-clean_verb--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-clean_verb--SpecDoc:spec-11.md
-hash_c: 208377c03592513ebe901b7d540ad8ae718ec933eba92709977b1ce5f0747e14
-hash_d: a2356d430af2cb2c5df06bd5db5650921c910e43893725687ea28654bc89ee8e
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

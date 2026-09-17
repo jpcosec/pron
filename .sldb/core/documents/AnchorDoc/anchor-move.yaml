@@ -1,9 +1,0 @@
-name: anchor-move
-path: knowledge/anchors/move.md
-hash_c: 4f1bb69922a066dfd349d1f83d2f7b3f0a8924b11472ebfaa461af70897660ee
-hash_d: b089d343a88a13efbf8244303b69428a2d9276fe21eff2b8c282d7d0b475e4c5
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.anchor
-- workspace.knowledge.anchors

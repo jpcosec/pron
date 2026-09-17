@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-turn-move_order--SpecDoc:spec-13
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-move_order--SpecDoc:spec-13.md
-hash_c: a090607e3b37bf52be83d5338befc386927bb6fb0308dcfd2004f0b7786a7f4d
-hash_d: 00ab2f1c18752fa2a0eda5795eec2c7cff626c45c42a791a9aad9746f04c013e
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: anchor-module
-path: knowledge/anchors/module.md
-hash_c: 0bac4c84a76172b447a9abcbc26f1725d2541b7cc603195ba9d7ed441fddfee2
-hash_d: 624fc09ceaff602f0e7959ff9edd2672bf05c9113127ef1133e968252f0c2d00
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.anchor
-- workspace.knowledge.anchors

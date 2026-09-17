@@ -1,9 +1,0 @@
-name: spec-13
-path: source/spec/13-formas.md
-hash_c: 8a388e99d6209419bbab8cd00ef416139532a1013ade7ceb335e398934698cba
-hash_d: 6ddb9cde9d043701b47b9826b61befc1690a895ccf664b34aba13c95e6c62d91
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

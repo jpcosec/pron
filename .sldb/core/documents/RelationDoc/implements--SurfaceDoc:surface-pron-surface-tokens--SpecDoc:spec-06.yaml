@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-tokens--SpecDoc:spec-06.md
-hash_c: c3be7e094ec9918b01ab9973449fa306a012df13721ff1cc6703838c03493edc
-hash_d: 73c37c97a55327bb7e910cc1c7bf8f6169eae5fd3af6dc7c10308ec18019afa9
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

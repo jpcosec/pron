@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-surface-classifier--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-classifier--SpecDoc:spec-06.md
-hash_c: e4770e6108e809cf4cd0594a5c0381daeda27e464e7d8b10b0bcb297fabfb0c4
-hash_d: 46bf3e6c2bac481806c0cb5958e9b050aa84d2390280f00e0f4e5089b66a2be7
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

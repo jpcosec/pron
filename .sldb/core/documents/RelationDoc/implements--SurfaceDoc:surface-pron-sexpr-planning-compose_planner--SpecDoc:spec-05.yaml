@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-planning-compose_planner--SpecDoc:spec-05
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-planning-compose_planner--SpecDoc:spec-05.md
-hash_c: aa740e637c9d894f61f5521430a8739ea1727112bab6e3580c94970ebb5e160c
-hash_d: db76462ded704791404ba231d6b7953b4d7dfbd8e8d061069b8f907449752072
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: world-declaration
-path: knowledge/explanations/world-declaration.md
-hash_c: 408e5efc94d506efdfec3d663cd5ae9911a53210e88272a976359bc10f422d9a
-hash_d: dd4cfe519ee86703e22a7290143a625cea5cf39a752e50b6b6ccab62065a7825
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

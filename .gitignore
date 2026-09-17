@@ -6,7 +6,12 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .pron/
-.sldb/runtime/
+# pron's own world: `make world` rebuilds the store and everything generated into it
+.sldb/
+kgdb/
+knowledge/commands/
+knowledge/relations/
+knowledge/surfaces/
 views/spec2viz/out/
 views/spec2viz/index.html
 views/spec2viz/offline.html

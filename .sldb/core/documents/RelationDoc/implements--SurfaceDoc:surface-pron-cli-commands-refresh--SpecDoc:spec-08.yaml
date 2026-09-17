@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-cli-commands-refresh--SpecDoc:spec-08
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-refresh--SpecDoc:spec-08.md
-hash_c: 51af0feb02920b02061ff1c52cd98f8d86aebc1d8ef6f27d288fb905d289fdfb
-hash_d: 23bb7567481e37e9af671de54d9e7cf9ef048c0854ffc3852c7229715c64e3bd
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

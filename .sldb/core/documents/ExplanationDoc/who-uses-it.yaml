@@ -1,9 +1,0 @@
-name: who-uses-it
-path: knowledge/explanations/who-uses-it.md
-hash_c: 848762d59a880f2246cbbc9f22f5ce45f0f5666d8483adca0d32f900bcaa9471
-hash_d: daff929a4e0f118824dde47f65f5c67d3ae2197090bf07d12b3a1131fb87d221
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

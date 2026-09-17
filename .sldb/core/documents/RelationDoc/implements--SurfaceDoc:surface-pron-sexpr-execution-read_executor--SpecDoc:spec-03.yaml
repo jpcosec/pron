@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-execution-read_executor--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-read_executor--SpecDoc:spec-03.md
-hash_c: 62b3da623196f4da2453d5216024ad368704cd6a27dd140bd699dcff4a239e7c
-hash_d: 5344726705575d62cb3795ac531ddbb65265d7393da8a2485ba905b2888ca0ae
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

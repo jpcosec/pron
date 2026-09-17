@@ -1,9 +1,0 @@
-name: dependencies
-path: knowledge/explanations/dependencies.md
-hash_c: 88ab0ad4d903b87970104291ce1ec586393f8454c80b507c2da6b678eef5804e
-hash_d: fa114e4193302d5e532e4b90b25bec904fe7cf821148fff18bef5412293f8763
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

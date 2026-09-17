@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-turn-new_sentence--SpecDoc:spec-13
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-new_sentence--SpecDoc:spec-13.md
-hash_c: 6d66d73efd0ed7719e4cf7ced8a7b81d49049b8973ec4b6d3281ebbcee2361c0
-hash_d: de9b2adcfc047cbe6b7c4b4f1febb6640e82fbc10ea4ba6a08f8cb36de8d5e8f
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

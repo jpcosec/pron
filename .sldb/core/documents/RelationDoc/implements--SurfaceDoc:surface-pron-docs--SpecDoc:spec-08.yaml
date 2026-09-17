@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs--SpecDoc:spec-08.md
-hash_c: 8bf9179a29348a445dcf55a60d34b85f59d7ee5edcdc782658cf1b8160245b44
-hash_d: bee24cb9eeeae2d282131097d19e226be6bbb2c9c119a425dc691446b037b608
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

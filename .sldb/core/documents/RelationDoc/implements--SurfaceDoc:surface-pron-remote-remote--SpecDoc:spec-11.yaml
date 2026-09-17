@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-remote-remote--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-remote-remote--SpecDoc:spec-11.md
-hash_c: 8d746ded06adf3f8bcd68bed8a12714d4b91fda58d29bc13df96c67bf7a55b8d
-hash_d: ab40ba0b65f7512799e2017aebcb2226cf010a6af39cf671545c4af03fb93959
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

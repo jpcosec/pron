@@ -38,6 +38,13 @@ PACKAGE_DIR = Path(__file__).parent
 EXPLANATIONS_DIR = Path("knowledge") / "explanations"
 README_PATH = Path("knowledge") / "readme.md"
 README_ID = "readme"
+# documents written where they live, by hand or by a turn: (folder, model, id prefix)
+WRITTEN_FOLDERS = [
+    (EXPLANATIONS_DIR, "ExplanationDoc", ""),
+    (Path("knowledge") / "anchors", "AnchorDoc", "anchor-"),
+    (Path("knowledge") / "projections", "ProjectionDoc", "projection-"),
+    (Path("ledger"), "MoveDoc", ""),
+]
 
 
 def _discover_modules() -> list[str]:
@@ -223,37 +230,41 @@ def _stale_surfaces(world: World, specs, check: bool) -> list[str]:
 
 
 def _hand_written(world: World, check: bool) -> list[str]:
-    """The ExplanationDocs under knowledge/explanations and the ReadmeDoc in
-    knowledge/readme.md are written where they live, like the spec chapters; re-track
-    one when its payload changed."""
-    store = world.store
+    """The documents written where they live — explanations, anchors, projections, the
+    moves of the ledger (spec 07) and the ReadmeDoc — are tracked from their files like the
+    spec chapters; one is re-tracked when its payload changed. This is what lets the whole
+    store be rebuilt from the repo (spec 08 step 9)."""
     changed = []
+    for model, doc_id, path in _written_documents(world.root):
+        if _retrack(world.store, model, doc_id, path, check):
+            changed.append(f"{model} {doc_id}")
+    return changed
+
+
+def _written_documents(root: Path) -> list[tuple[str, str, Path]]:
+    written = [
+        (model, f"{prefix}{path.stem}", path)
+        for folder, model, prefix in WRITTEN_FOLDERS
+        for path in sorted((root / folder).glob("*.md"))
+    ]
+    if (root / README_PATH).is_file():
+        written.append(("ReadmeDoc", README_ID, root / README_PATH))
+    return written
+
+
+def _retrack(store, model: str, doc_id: str, path: Path, check: bool) -> bool:
+    """Whether the document drifted from its file; unless checking, track it again."""
     from sldb.runtime.validation import extract_model_data
 
-    written: list[tuple[str, str, Path]] = []
-    if (world.root / EXPLANATIONS_DIR).is_dir():
-        written += [
-            ("ExplanationDoc", path.stem, path)
-            for path in sorted((world.root / EXPLANATIONS_DIR).glob("*.md"))
-        ]
-    if (world.root / README_PATH).is_file():
-        written.append(("ReadmeDoc", README_ID, world.root / README_PATH))
-    for model, doc_id, path in written:
-        model_type = store.model_type(model)
-        existing = store.doc(model, doc_id)
-        canonical = extract_model_data(model_type, path.read_text(encoding="utf-8"))
-        if (
-            existing is not None
-            and {k: existing.payload.get(k) for k in canonical} == canonical
-        ):
-            continue
-        changed.append(f"{model} {doc_id}")
-        if check:
-            continue
+    existing = store.doc(model, doc_id)
+    canonical = extract_model_data(store.model_type(model), path.read_text(encoding="utf-8"))
+    if existing is not None and {k: existing.payload.get(k) for k in canonical} == canonical:
+        return False
+    if not check:
         if existing is not None:
             store.untrack(doc_id)
         store.track(path, model, doc_id)
-    return changed
+    return True
 
 
 def _render_readme(world: World, check: bool) -> list[str]:

@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-init--SpecDoc:spec-01.md
-hash_c: 39c536b71203fd225bbd225e45830aa70c73b4cdea9489a0e3396b635bfc5585
-hash_d: c7d6550cdefcbd0bbaca89a41a3313116760114af359ef09517027bf13a8b0ae
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

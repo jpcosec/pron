@@ -1,9 +1,0 @@
-name: implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11
-path: knowledge/relations/implements--CliCommandDoc:cmd-pron-serve--SpecDoc:spec-11.md
-hash_c: af9ac4673d1380cdfbe5230abc42ec87bb71518f22fe2bb9f639184f5969952c
-hash_d: 9d33debfdbaa175d64402ea2c7fe57e25e871eb8f0d1aa2db86df0ff7f8e0dcc
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

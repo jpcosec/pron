@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-models-move--SpecDoc:spec-07
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-models-move--SpecDoc:spec-07.md
-hash_c: 1686cc383f41f9e014da75472fc49d94ab019bf8f720429b2e3e5573d27a4a32
-hash_d: c078cce88a1090b94f26267e9e96957aece0b1af7b55ed2a9b57c9fe51c6e446
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,9 +1,0 @@
-name: spec-08
-path: source/spec/08-prerequisitos-y-orden.md
-hash_c: 1a5bfc25c9280f8d34a96522cb0d3eabfd7c5b3ef205efc00b65ff07ef3c5dc6
-hash_d: f25b99b4633062da4b70bb451778938116c202abf7e44af32631ec40710c09b7
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec

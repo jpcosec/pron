@@ -1,9 +1,0 @@
-name: readme
-path: knowledge/readme.md
-hash_c: 67f2a88923b93129b6e871cf57b7fbf222bd7890a7d80a3f20e9002c82207b12
-hash_d: 971db7ea1e6d424de2d21548be292310ff91fcb719ff83a9ba69f3f69c345b33
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.readme
-- workspace.knowledge

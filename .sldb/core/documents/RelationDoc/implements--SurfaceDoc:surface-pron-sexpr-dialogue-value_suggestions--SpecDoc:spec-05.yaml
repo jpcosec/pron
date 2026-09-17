@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-value_suggestions--SpecDoc:spec-05
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-value_suggestions--SpecDoc:spec-05.md
-hash_c: 754a4e24b1d5a65fbee5f953d85d27460c5a4dac8288b1e8d866df9a2a26c8cc
-hash_d: 077b35710c98533f12acd866e0c7eee00d9968276b3088f1a78939ee3f65c48e
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

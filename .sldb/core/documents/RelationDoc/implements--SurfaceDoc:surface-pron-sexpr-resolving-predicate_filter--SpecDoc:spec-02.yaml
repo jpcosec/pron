@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-resolving-predicate_filter--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-predicate_filter--SpecDoc:spec-02.md
-hash_c: 74b5b47b0e9353970b0abcf55fb95b7926b3d94550d0f090361683b851f7b35a
-hash_d: 2d30f10f4c81c3e437a0758976354cc8dbc0745a3c5b03dd13f8cc08f126e10c
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

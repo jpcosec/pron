@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-execution-assert_executor--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-assert_executor--SpecDoc:spec-03.md
-hash_c: 10749b378b2a6928481dea7aa55a592b4622eac35dfdf45da1c66e0630217b9e
-hash_d: 7501287b7953345e569a168f8c4652c70f9dd536545cd1aba5bc514c76bd682e
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

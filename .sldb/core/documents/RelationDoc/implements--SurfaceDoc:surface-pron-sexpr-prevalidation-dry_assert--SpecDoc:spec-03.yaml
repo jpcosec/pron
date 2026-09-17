@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_assert--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_assert--SpecDoc:spec-03.md
-hash_c: 79685ddb6b775e28ae0135d915f9efac5c293b61e73bd2f3143a2e916ce3cf76
-hash_d: 885020bb8cca5425cd627c9543668317dd74e37f735840c89635c12cdd0344d2
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

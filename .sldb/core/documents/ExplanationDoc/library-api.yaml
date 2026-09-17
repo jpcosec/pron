@@ -1,9 +1,0 @@
-name: library-api
-path: knowledge/explanations/library-api.md
-hash_c: 56979b422d2ba16e39a45a09b30935e32b35c4f9d818ae8ddea0d7e716169a29
-hash_d: 3cc208f63483c797858501f9bf4c981a359bd5ae65dde9901ce98a296cc09f3b
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations

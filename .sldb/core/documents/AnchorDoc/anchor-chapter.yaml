@@ -1,9 +1,0 @@
-name: anchor-chapter
-path: knowledge/anchors/chapter.md
-hash_c: 65e6636c6ff78f880750734365f19b68dd3eff839d0df1e165365b349f77abae
-hash_d: 4309e5f92e8183e46efdba4e728b82ca30435c229a1087ad2c612812c805e431
-semantic_tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.anchor
-- workspace.knowledge.anchors
