@@ -6,7 +6,7 @@ A sentence coordinated with "and" is one move with several parts.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Iterator
 
 from pron.kernel.parts.item import Item
 from pron.kernel.parts.noun_phrase import NounPhrase
@@ -29,15 +29,16 @@ class Part:
     notes: list[str] = field(default_factory=list)
 
     def describe(self) -> str:
-        bits = [self.kind]
+        return " · ".join([self.kind, *self._described_bits()])
+
+    def _described_bits(self) -> Iterator[str]:
         if self.verb:
-            bits.append(self.verb.ref)
+            yield self.verb.ref
         if self.subject:
-            bits.append("subject=" + self.subject.describe())
+            yield "subject=" + self.subject.describe()
         if self.object:
-            bits.append("object=" + self.object.describe())
+            yield "object=" + self.object.describe()
         if self.field_name:
-            bits.append(f"{self.field_name}={self.value!r}")
+            yield f"{self.field_name}={self.value!r}"
         if self.payload:
-            bits.append(f"payload={self.payload}")
-        return " · ".join(bits)
+            yield f"payload={self.payload}"

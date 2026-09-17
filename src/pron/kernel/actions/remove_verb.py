@@ -15,7 +15,7 @@ class RemoveVerb:
 
     def dry(self, kernel, export_id, field_name, value, overlay):
         model = model_of(export_id)
-        p = kernel._dry_load(export_id, overlay)
+        p = kernel.dry.load(export_id, overlay)
         head = field_name.split(".")[0] if field_name else None
         if value is not None:
             lst = p.get(head)
@@ -23,11 +23,34 @@ class RemoveVerb:
                 lst.remove(value)
         elif head in p:
             deep_delete(p, field_name)
-        return kernel._dry_save(export_id, model, p, overlay)
+        return kernel.dry.save(export_id, model, p, overlay)
 
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
-        return kernel.remove(export_id, field_name, value)
+        kernel._guard(export_id)
+        if value is None:
+            w = self._field(kernel, export_id, field_name)
+        else:
+            w = self._value(kernel, export_id, field_name, value)
+        if w.done:
+            kernel._after_write(export_id, w)
+        return w
+
+    @staticmethod
+    def _value(kernel, export_id, field_name, value):
+        """One value out of a list field; not done when it is not there."""
+        lst = kernel.store.payload_of(export_id).get(field_name)
+        if not isinstance(lst, list) or value not in lst:
+            return Write("remove", export_id, field_name, done=False, note="not there")
+        before = list(lst)
+        lst.remove(value)
+        kernel.store.update_field_of(export_id, field_name, lst)
+        return Write("remove", export_id, field_name, before, lst, done=True)
+
+    @staticmethod
+    def _field(kernel, export_id, field_name):
+        before = kernel.store.remove_field_of(export_id, field_name)
+        return Write("remove", export_id, field_name, before, None, done=True)
 
     def undo(self, kernel, write):
         if write.get("before") is None:

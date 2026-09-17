@@ -4,13 +4,13 @@
 The constructions are fixed and listed in patterns.yaml; a world never adds one, it
 adds words. A sentence coordinated with "and" is one move with several parts, and that
 split, the search for a verb word among the items, and what is left unattached to any
-noun phrase are all here — the constructions themselves are Interpreter's methods.
+noun phrase are all here — the constructions themselves are classes in
+pron.surface.constructions, one per entry of patterns.yaml.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
 
 import yaml
 
@@ -19,6 +19,7 @@ from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.word import Word
 
+FIELD_KINDS = ("field", "alias-field")
 PATTERNS = yaml.safe_load(
     (Path(__file__).parent / "patterns.yaml").read_text(encoding="utf-8")
 )["constructions"]
@@ -113,8 +114,9 @@ def _implicit_it() -> NounPhrase:
     )
 
 
-def _slot_value(it: Item) -> Any:
-    for key in ("N", "DAY", "TIME", "Z", "X"):
-        if key in it.slots:
-            return it.slots[key]
-    return it.text
+def _field_word(items: list[Item]) -> tuple[Item, Word] | None:
+    """The first word item carrying a field word (or a field alias), and that word."""
+    for it in items:
+        if it.kind == "word" and any(w.kind in FIELD_KINDS for w in it.words):
+            return it, next(w for w in it.words if w.kind in FIELD_KINDS)
+    return None

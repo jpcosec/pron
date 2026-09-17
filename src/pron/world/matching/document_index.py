@@ -50,28 +50,40 @@ class DocumentIndex:
     def index(self, items: Iterable[tuple[str, str, str]]) -> dict[str, int]:
         """items are (key, content_hash, text). Embeds the keys whose hash is new or changed,
         keeps the rest, drops the keys that did not come. Returns {embedded, reused, dropped}."""
-        items = list(items)
+        keep, todo, reused = self._partition(items)
+        keep.update(self._embedded(todo))
+        dropped = len(set(self._entries) - set(keep))
+        self._entries = keep
+        self._save()
+        return {"embedded": len(todo), "reused": reused, "dropped": dropped}
+
+    def _partition(
+        self, items: Iterable[tuple[str, str, str]]
+    ) -> tuple[dict[str, dict], list[tuple[str, str, str]], int]:
+        """(entries kept as they are, items to embed, how many items were reused)."""
         keep: dict[str, dict] = {}
         todo: list[tuple[str, str, str]] = []
         reused = 0
-        for key, h, text in items:
+        for key, h, text in list(items):
             prev = self._entries.get(key)
             if prev is not None and prev.get("hash") == h:
                 keep[key] = prev
                 reused += 1
             else:
                 todo.append((key, h, text))
+        return keep, todo, reused
+
+    def _embedded(self, todo: list[tuple[str, str, str]]) -> dict[str, dict]:
+        """The new entries: a vector each, or the text itself when there is no Embedder."""
         if self.matcher.embedder is None:
-            for key, h, text in todo:
-                keep[key] = {"hash": h, "text": text}
-        elif todo:
-            vectors = self.matcher.embedder.embed([t for _, _, t in todo])
-            for (key, h, _), v in zip(todo, vectors):
-                keep[key] = {"hash": h, "vector": [float(x) for x in v]}
-        dropped = len(set(self._entries) - set(keep))
-        self._entries = keep
-        self._save()
-        return {"embedded": len(todo), "reused": reused, "dropped": dropped}
+            return {key: {"hash": h, "text": text} for key, h, text in todo}
+        if not todo:
+            return {}
+        vectors = self.matcher.embedder.embed([t for _, _, t in todo])
+        return {
+            key: {"hash": h, "vector": [float(x) for x in v]}
+            for (key, h, _), v in zip(todo, vectors)
+        }
 
     def keys(self) -> list[str]:
         return sorted(self._entries)

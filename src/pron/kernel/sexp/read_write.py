@@ -18,9 +18,17 @@ TOKEN = re.compile(r'\s*(?:(\()|(\))|"((?:[^"\\]|\\.)*)"|([^\s()"]+))')
 
 def read(text: str) -> list[Any]:
     """Every top-level expression in text, in order."""
+    tokens = _tokens(text.strip())
+    out, i = [], 0
+    while i < len(tokens):
+        expr, i = _parse(tokens, i)
+        out.append(expr)
+    return out
+
+
+def _tokens(text: str) -> list[tuple[str, Any]]:
     tokens: list[tuple[str, Any]] = []
     pos = 0
-    text = text.strip()
     while pos < len(text):
         m = TOKEN.match(text, pos)
         if m is None or m.end() == pos:
@@ -28,21 +36,21 @@ def read(text: str) -> list[Any]:
                 f"cannot read s-expression at {pos}: {text[pos : pos + 20]!r}"
             )
         pos = m.end()
-        if m.group(1):
-            tokens.append(("(", None))
-        elif m.group(2):
-            tokens.append((")", None))
-        elif m.group(3) is not None:
-            tokens.append(("atom", _unescape(m.group(3))))
-        elif m.group(4) is not None:
-            tokens.append(("atom", _atom(m.group(4))))
+        tokens.append(_token(m))
         if pos < len(text) and text[pos:].strip() == "":
             break
-    out, i = [], 0
-    while i < len(tokens):
-        expr, i = _parse(tokens, i)
-        out.append(expr)
-    return out
+    return tokens
+
+
+def _token(m: re.Match[str]) -> tuple[str, Any]:
+    """A parenthesis, a quoted string, or a bare atom: exactly one of TOKEN's groups matched."""
+    if m.group(1):
+        return ("(", None)
+    if m.group(2):
+        return (")", None)
+    if m.group(3) is not None:
+        return ("atom", _unescape(m.group(3)))
+    return ("atom", _atom(m.group(4)))
 
 
 def read_one(text: str) -> Any:

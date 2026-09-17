@@ -44,6 +44,13 @@ def _line(session: Any, line: str, trace: bool, remote: bool, stdout: IO[str]) -
     if line == ":trace":
         print(f"trace {'off' if trace else 'on'}", file=stdout)
         return not trace
+    if not _command(session, line, remote, stdout):
+        _sentence(session, line, trace, stdout)
+    return trace
+
+
+def _command(session: Any, line: str, remote: bool, stdout: IO[str]) -> bool:
+    """`:help`, `:lexicon [MODEL]` or `:state` answered; False when the line is none of them."""
     if line == ":help":
         print(HELP, file=stdout)
     elif line.startswith(":lexicon"):
@@ -51,8 +58,8 @@ def _line(session: Any, line: str, trace: bool, remote: bool, stdout: IO[str]) -
     elif line == ":state":
         print(_state(session, remote), file=stdout)
     else:
-        _sentence(session, line, trace, stdout)
-    return trace
+        return False
+    return True
 
 
 def _lexicon(session: Any, line: str, remote: bool, stdout: IO[str]) -> None:
