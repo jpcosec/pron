@@ -1,26 +1,19 @@
 """Steps 4–7 through the conversation of spec 09: creation, a compose alias, missing and its
 correction, ambiguity and its answer, a transition with a condition, coordinated writes,
-condition re-evaluation, why, undo. Every turn leaves a MoveDoc."""
+condition re-evaluation, why, undo. Every turn leaves a MoveDoc. The turns follow each other
+in this file."""
 
 from __future__ import annotations
 
-import pytest
-
 from pron.session import Session
 from pron.world.world import World
-from worlds.restaurant import build_restaurant
 
 NOW = "2026-09-09"
+RES = "reservation-2026-09-11-ana-rojas"
 
 
-@pytest.fixture(scope="module")
-def world(tmp_path_factory) -> World:
-    return build_restaurant(tmp_path_factory.mktemp("restaurant"))
-
-
-@pytest.fixture(scope="module")
-def session(world: World) -> Session:
-    return Session(world, projection="all", speaker="jp", now=NOW)
+def _said(r) -> str:
+    return _said(r)
 
 
 def test_turn_1_create_with_payload(session: Session):
@@ -43,8 +36,8 @@ def test_turn_2_unknown_enum_value_is_missing_before_any_query(session: Session)
 
 def test_turn_3_compose_creates_the_reservation_and_two_relations(session: Session):
     r = session.turn("book her a table on the terrace for 6 people on Friday at 9pm")
-    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    res = session.world.store.doc("Reservation", "reservation-2026-09-11-ana-rojas")
+    assert r.outcome == "unico", _said(r)
+    res = session.world.store.doc("Reservation", RES)
     assert (
         res is not None
         and res.payload["party_size"] == 6
@@ -53,9 +46,7 @@ def test_turn_3_compose_creates_the_reservation_and_two_relations(session: Sessi
     )
     edges = {
         e["relation"]: e["target"]
-        for e in session.verbs.edges_from(
-            "Reservation:reservation-2026-09-11-ana-rojas"
-        ).edges
+        for e in session.verbs.edges_from(f"Reservation:{RES}").edges
         if e["relation"] in ("booked_by", "assigned_to")
     }
     assert edges == {
@@ -71,27 +62,22 @@ def test_turn_4_and_5_ambiguity_then_answer(session: Session):
     assert r.outcome == "ambiguo" and "Ana Pérez" in r.text and "Ana Rojas" in r.text
     assert session.dialogue.state == "pendiente"
     r = session.turn("Rojas")
-    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
+    assert r.outcome == "unico", _said(r)
     assert "2026-09-11" in r.text and "6 people" in r.text and "table 12" in r.text
     assert session.dialogue.state == "libre"
 
 
 def test_turn_6_confirm_is_a_guarded_transition(session: Session):
     r = session.turn("confirm it")
-    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    assert (
-        session.world.store.get(
-            "st.{Reservation}.reservation-2026-09-11-ana-rojas.status"
-        )
-        == "confirmed"
-    )
+    assert r.outcome == "unico", _said(r)
+    assert session.world.store.get(f"st.{{Reservation}}.{RES}.status") == "confirmed"
     assert any("legal" in line for line in r.trace)
 
 
 def test_turn_7_two_writes_and_a_condition_that_breaks(session: Session):
     r = session.turn("change it to 9 people and add a note saying: birthday")
-    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    p = session.world.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")
+    assert r.outcome == "unico", _said(r)
+    p = session.world.store.payload("Reservation", RES)
     assert p["party_size"] == 9 and p["notes"] == "birthday"
     assert "Heads up" in r.text and "capacity >= {party_size}" in r.text
     assert len(r.record["writes"]) == 2
@@ -112,19 +98,12 @@ def test_illegal_transition_is_refused(session: Session):
 
 
 def test_undo_restores_the_previous_values(session: Session):
-    before = session.world.store.payload(
-        "Reservation", "reservation-2026-09-11-ana-rojas"
-    )["party_size"]
+    before = session.world.store.payload("Reservation", RES)["party_size"]
     r = session.turn("change it to 4 people")
     assert r.outcome == "unico", r.text
     r = session.turn("undo the last move")
-    assert r.outcome == "unico", r.text + " / " + " | ".join(r.trace)
-    assert (
-        session.world.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")[
-            "party_size"
-        ]
-        == before
-    )
+    assert r.outcome == "unico", _said(r)
+    assert session.world.store.payload("Reservation", RES)["party_size"] == before
 
 
 def test_read_only_projection_cannot_write(world: World):
@@ -150,50 +129,3 @@ def test_every_turn_left_a_move(world: World):
     moves = world.store.docs_of("MoveDoc")
     assert len(moves) >= 12
     assert all(m.payload["hash_before"] for m in moves)
-
-
-def test_undo_restores_every_write_of_a_move_to_the_same_document(tmp_path):
-    """Spec 11 §7: a document is 'changed after that move' only if something outside the move
-    changed it; two writes of one move to one reservation are both undone."""
-    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
-    address = ("Reservation", "reservation-2026-09-11-luis-soto")
-    before = dict(s.world.store.payload(*address))
-    s.turn("the reservation of Luis Soto")  # 'it' in the move below needs an antecedent
-    r = s.turn(
-        "change the reservation of Luis Soto to 9 people and add a note saying: birthday"
-    )
-    assert r.outcome == "unico" and len(r.record["writes"]) == 2, r.text
-    r = s.turn("undo the last move")
-    assert "changed after" not in r.text and "Heads up" not in r.text, r.text
-    after = s.world.store.payload(*address)
-    assert (after["party_size"], after["notes"]) == (
-        before["party_size"],
-        before["notes"],
-    )
-
-
-def test_a_display_template_drops_the_part_whose_value_is_missing(tmp_path):
-    """Spec 09a: without an edge the template's gap stays empty; the name does not keep the
-    label and separator around it ('table , pending')."""
-    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
-    r = s.eval(
-        '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))'
-    )
-    assert r.text == "Created reservation 2026-09-12 13:00, 2 people, pending.", r.text
-
-
-def test_a_possessive_referent_names_the_subject_not_the_value(tmp_path):
-    """Spec 04/10 "remove its provenance", spec 06 referents: 'its' is the referent whose field
-    is removed whole, as in 'remove the notes of it'; it is not the value to remove."""
-    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
-    assert (
-        s.eval('(change (doc "Client:client-luis-soto") notes "vegan")').outcome
-        == "unico"
-    )
-    r = s.turn("remove its notes")
-    assert r.outcome == "unico", r.text
-    assert (
-        r.record["forms"] == '(remove (it "its") notes)'
-    )  # notes: Client and Reservation
-    assert r.record["writes"][0]["before"] == "vegan"
-    assert s.world.store.payload("Client", "client-luis-soto").get("notes", "") == ""

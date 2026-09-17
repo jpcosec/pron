@@ -1,0 +1,35 @@
+from pydantic import Field
+from sldb import StructuredNLDoc
+
+
+class Fact(StructuredNLDoc):
+    """A piece of business knowledge an agent can be asked about."""
+    __family__ = "values"
+    __semantics__ = {"type": ["values", "fact"]}
+    __template__ = """---
+topic: ⸢rev•topic⸥
+---
+
+# ⸢render•topic⸥
+
+⸢rev•statement⸥
+""".strip()
+
+    topic: str = Field(description="What this fact is about, e.g. evento_adverso.")
+    statement: str = Field(description="The fact itself, in plain language.")
+
+
+class Atom(StructuredNLDoc):
+    """A small piece of knowledge that belongs to a system."""
+    __family__ = "values"
+    __semantics__ = {"type": ["values", "atom"]}
+    __template__ = """---
+system: ⸢rev•system⸥
+label: ⸢rev•label⸥
+---
+
+# ⸢render•label⸥
+""".strip()
+
+    system: str = Field(description="Which system this atom belongs to.")
+    label: str = Field(description="A short name for this atom.")

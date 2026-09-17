@@ -18,9 +18,7 @@ def _untouchable() -> Mock:
     return Mock(spec=[])
 
 
-@pytest.mark.parametrize("phase", ["validate", "execute"])
-@pytest.mark.parametrize("operation", ["assert", "change"])
-def test_created_reference_requires_a_preceding_create(phase, operation):
+def _compose_part(operation: str) -> Part:
     step = {
         "do": operation,
         "source": "$created",
@@ -29,24 +27,34 @@ def test_created_reference_requires_a_preceding_create(phase, operation):
         "field": "status",
         "value": "confirmed",
     }
-    part = Part(
+    return Part(
         "compose",
         verb=Word(
             "broken", "alias", "compose", "test", "test", payload={"steps": [step]}
         ),
     )
+
+
+def _run(phase: str, part: Part, kernel: Mock, verbs: Mock) -> None:
+    plan = {"steps": [{}]}
+    if phase == "validate":
+        DryRunner(kernel, verbs, _untouchable(), None)([part], [plan], {})
+    else:
+        edges = EdgeWriter(_untouchable(), verbs, None)
+        ComposeExecutor(kernel, _untouchable(), _untouchable(), _untouchable(), edges)(
+            part, plan, MoveContext(record={"writes": []})
+        )
+
+
+@pytest.mark.parametrize("phase", ["validate", "execute"])
+@pytest.mark.parametrize("operation", ["assert", "change"])
+def test_created_reference_requires_a_preceding_create(phase, operation):
+    part = _compose_part(operation)
     kernel = Mock()
     verbs = Mock()
-    plan = {"steps": [{}]}
 
     with pytest.raises(StoreError, match=r"references \$created before create"):
-        if phase == "validate":
-            DryRunner(kernel, verbs, _untouchable(), None)([part], [plan], {})
-        else:
-            edges = EdgeWriter(_untouchable(), verbs, None)
-            ComposeExecutor(
-                kernel, _untouchable(), _untouchable(), _untouchable(), edges
-            )(part, plan, MoveContext(record={"writes": []}))
+        _run(phase, part, kernel, verbs)
 
     assert kernel.mock_calls == []
     assert verbs.mock_calls == []

@@ -1,0 +1,150 @@
+# The restaurant world of source/spec/09a as its owner declares it: tables and states in short
+# form, the documents it starts with, its relation types, the projection and the aliases.
+states: [pending, confirmed, seated, cancelled]
+tables:
+- {number: 3, capacity: 4, zone: indoor}
+- {number: 5, capacity: 4, zone: indoor}
+- {number: 12, capacity: 6, zone: terrace}
+- {number: 14, capacity: 8, zone: terrace}
+- {number: 20, capacity: 2, zone: terrace}
+documents:
+- model: Client
+  name: client-ana-perez
+  path: clients/ana-perez.md
+  payload: {name: Ana Pérez, phone: 9 1111 0000, notes: ''}
+- model: Client
+  name: client-luis-soto
+  path: clients/luis-soto.md
+  payload: {name: Luis Soto, phone: 9 2222 0000, notes: ''}
+- model: Reservation
+  name: reservation-2026-09-11-luis-soto
+  path: reservations/2026-09-11-luis-soto.md
+  payload: {date: '2026-09-11', time: '20:00', party_size: 4, status: pending, notes: ''}
+relation_types:
+- name: booked_by
+  cardinality: many_to_one
+  axis: WHAT
+  source_types: [Reservation]
+  target_types: [Client]
+  condition: ''
+  description: Who a reservation belongs to. Every reservation is booked by exactly one client.
+- name: assigned_to
+  cardinality: many_to_one
+  axis: WHERE
+  source_types: [Reservation]
+  target_types: [Table]
+  condition: capacity >= {party_size}
+  description: Which table a reservation gets. The table must seat everyone.
+- name: transitions_to
+  cardinality: many_to_many
+  axis: WHEN
+  source_types: [State]
+  target_types: [State]
+  condition: ''
+  description: An allowed move between two states of a status field.
+transitions:
+- [pending, confirmed, party_size <= 8]
+- [pending, cancelled, '']
+- [confirmed, seated, '']
+- [confirmed, cancelled, '']
+relations:
+- [booked_by, 'Reservation:reservation-2026-09-11-luis-soto', 'Client:client-luis-soto']
+- [assigned_to, 'Reservation:reservation-2026-09-11-luis-soto', 'Table:table-3']
+projection:
+  name: all
+  stores: [local]
+  models: [Client, Table, Reservation, State]
+  relations:
+  - {name: booked_by, mode: read and assert}
+  - {name: assigned_to, mode: read and assert}
+  - {name: transitions_to, mode: read}
+  actions: [create, change, add, clean, remove, forget, refresh, undo]
+  aliases: [all]
+  naming:
+    Client: 'client-{name}'
+    Reservation: 'reservation-{date}-{booked_by.name}'
+    RelationDoc: '{relation_type}--{source_id}--{target_id}'
+  display:
+    Client: '{name}'
+    Table: 'table {number}'
+    Reservation: '{date} {time}, {party_size} people, table {assigned_to.number}, {status}'
+  key: {Table: number}
+  matching: {neighbors: 3, threshold: 0.55}
+  description: Everything, read and assert, for the tests.
+anchors:
+- symbol: client
+  forms: [client, clients]
+  ref: (model Client)
+  motive: a person who books
+- symbol: table
+  forms: [table, tables]
+  ref: (model Table)
+  motive: a table in the venue
+- symbol: reservation
+  forms: [reservation, reservations, booking, bookings]
+  ref: (model Reservation)
+  motive: a booking for a date and time
+- symbol: named
+  forms: [named, called, whose name is]
+  ref: (field Client name)
+  motive: the client's name
+- symbol: phone
+  forms: [phone, phone number]
+  ref: (field Client phone)
+  motive: the contact phone number
+- symbol: for N people
+  forms: [for N people, for N, party of N, N people]
+  ref: (field Reservation party_size)
+  motive: how many people
+- symbol: seats N
+  forms: [for N people, for N, seats N, that seats N]
+  ref: (where Table "capacity >= N")
+  motive: a table with room for N people
+- symbol: on the Z
+  forms: [on the Z, in the Z]
+  ref: (where Table "zone = Z")
+  motive: where the table is
+- symbol: on DAY
+  forms: [on DAY, this DAY, next DAY]
+  ref: (field Reservation date)
+  motive: when, as a date
+- symbol: at TIME
+  forms: [at TIME]
+  ref: (field Reservation time)
+  motive: when, as a time
+- symbol: book
+  forms: [book her, book him, book them, make a reservation for]
+  ref: (move (create Reservation) (assert booked_by (created) (it "it" Client)) (assert assigned_to (created) (a Table)))
+  motive: create a reservation for someone and put it at a table
+- symbol: assign
+  forms: [assign, put it at table, seat at]
+  ref: (relation assigned_to)
+  motive: put a reservation at a table
+- symbol: has
+  forms: [has, have, of]
+  ref: (relation booked_by)
+  motive: someone's reservations
+- symbol: confirm
+  forms: [confirm, confirm it]
+  ref: (change (it "it" Reservation) status "confirmed")
+  motive: move the reservation to confirmed
+- symbol: cancel
+  forms: [cancel, cancel it]
+  ref: (change (it "it" Reservation) status "cancelled")
+  motive: cancel the reservation
+- symbol: seat
+  forms: [seat, seat them, they arrived]
+  ref: (change (it "it" Reservation) status "seated")
+  motive: mark that they arrived
+- symbol: fits
+  forms: [fits, fit, fits at]
+  ref: (where Table "capacity >= {party_size}")
+  motive: whether the table has room for the reservation
+- symbol: large
+  forms: [large, big]
+  ref: (where Table "capacity >= 6")
+  motive: tables for six or more
+- symbol: note
+  forms: [note, a note, add a note, note saying]
+  ref: (field Reservation notes)
+  motive: remarks on the reservation
