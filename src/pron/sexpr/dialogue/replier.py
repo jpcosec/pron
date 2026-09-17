@@ -2,7 +2,7 @@
 
 It may be a new order, and then the question is dropped and the order runs; it may call the
 whole thing off; or it answers — the value of the field a create was missing, or which of
-the candidates was meant. An answer fills the hole in the part that asked, and that part is
+the candidates was meant, which is then the singular referent of its class. An answer fills the hole in the part that asked, and that part is
 said again as forms and evaluated like any other move. An answer that picks none, or more
 than one, leaves the question pending and asks it again.
 """
@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from pron.kernel.ids import doc_of
+from pron.kernel.ids import doc_of, model_of
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
 from pron.sexpr.execution.listing import numbered
@@ -82,6 +82,7 @@ class Replier:
         chosen = pending.candidates[picks[0]]
         ctx.trace.append(f"'{sentence.strip()}' → {chosen} (answer to the pending question)")
         self.dialogue.close()
+        self.dialogue.remember([chosen], model_of(address_to_export_id(chosen)))
         _pin(getattr(part, pending.slot, None), chosen)
         return self._resume(part, ctx)
 

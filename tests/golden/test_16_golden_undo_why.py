@@ -46,9 +46,9 @@ DOCUMENTS = [
     "book her a table on the terrace for 6 people on Friday at 9pm",
     "why?",
     UNDO,
-    "confirm it",  # 'it' is still the reservation the undo removed
+    "confirm it",  # the undo removed the reservation: 'it' has no antecedent
     "why?",
-    UNDO,  # the last move with writes is the undo itself
+    UNDO,  # undo again: the move before, the create of Ana Rojas
 ]
 
 

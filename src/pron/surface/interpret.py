@@ -120,3 +120,15 @@ def _field_word(items: list[Item]) -> tuple[Item, Word] | None:
         if it.kind == "word" and any(w.kind in FIELD_KINDS for w in it.words):
             return it, next(w for w in it.words if w.kind in FIELD_KINDS)
     return None
+
+
+def _field_model(found: tuple[Item, Word]) -> str | None:
+    """The class a field word says, or None when the same field is a word of several classes:
+    then the referent's antecedent decides (spec 06)."""
+    item, word = found
+    models = {
+        w.model
+        for w in item.words
+        if w.kind in FIELD_KINDS and w.field_name == word.field_name
+    }
+    return word.model if len(models) == 1 else None

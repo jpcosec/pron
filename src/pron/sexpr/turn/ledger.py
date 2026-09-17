@@ -75,10 +75,17 @@ class Ledger:
         return self.world.store.create("MoveDoc", move_id, payload, path, self.store)
 
     def last_with_write(self, speaker: str | None = None) -> dict[str, Any] | None:
+        """The move an undo takes back (spec 11 §7): the last one with writes that is neither
+        an undo nor already undone, so saying undo again goes one move further back."""
+        records = [
+            (d, d.payload.get("record", {}))
+            for d in self.world.store.docs_of("MoveDoc", self.store)
+        ]
+        undone = {r["undoes"] for _, r in records if r.get("undoes")}
         moves = [
             d
-            for d in self.world.store.docs_of("MoveDoc", self.store)
-            if d.payload.get("record", {}).get("writes")
+            for d, r in records
+            if r.get("writes") and not r.get("undoes") and d.payload.get("id") not in undone
         ]
         if speaker:
             moves = [d for d in moves if d.payload.get("speaker") == speaker]

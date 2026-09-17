@@ -2,7 +2,8 @@
 
 The ledger says which move it was — this speaker's, if there is one — and the kernel
 inverts each of its writes, refusing any document that has changed since. Nothing is
-forced: a write that cannot be taken back is reported, not retried.
+forced: a write that cannot be taken back is reported, not retried. A document the undo took
+out of the store stops being a referent of the dialogue (spec 06).
 """
 
 from __future__ import annotations
@@ -36,11 +37,14 @@ class UndoExecutor:
         ctx.record["undoes"] = move["id"]
         return _text(move, writes)
 
-    @staticmethod
-    def _note(writes: list[Write], ctx: MoveContext) -> None:
+    def _note(self, writes: list[Write], ctx: MoveContext) -> None:
+        """Each inverse traced and recorded; a document it took out of the store is forgotten
+        as an antecedent (spec 06)."""
         for w in writes:
             ctx.trace.append(_line(w))
             ctx.record["writes"].append(w.record())
+            if w.done and w.field_name is None and w.after is None:
+                self.dialogue.forget(w.address)
 
 
 def _line(w: Write) -> str:

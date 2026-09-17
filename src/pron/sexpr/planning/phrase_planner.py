@@ -33,13 +33,18 @@ class PhrasePlanner:
         self.world, self.lex, self.dialogue = world, lex, dialogue
 
     def __call__(
-        self, np: NounPhrase, need_model: str | None, ctx: MoveContext
+        self,
+        np: NounPhrase,
+        need_model: str | None,
+        ctx: MoveContext,
+        classes: list[str] | None = None,
     ) -> Resolution:
+        """classes: when no single class is needed, the ones a referent's antecedent may be."""
         if np.given:
             return self._given(np, ctx)
         need_model = need_model or np.hint
         if np.referent is not None:
-            return self._referent(np, need_model, ctx.trace)
+            return self._referent(np, need_model, ctx.trace, classes)
         return self._query(np, ctx)
 
     # -- said by address (spec 13 §Sustantivos) ------------------------------------------
@@ -76,9 +81,13 @@ class PhrasePlanner:
     # -- a referent of the dialogue (spec 06) --------------------------------------------
 
     def _referent(
-        self, np: NounPhrase, need_model: str | None, trace: list[str]
+        self,
+        np: NounPhrase,
+        need_model: str | None,
+        trace: list[str],
+        classes: list[str] | None,
     ) -> Resolution:
-        found = self._antecedent(np, need_model)
+        found = self._antecedent(np, need_model, classes)
         if isinstance(found, Resolution):
             return found
         if np.number == "singular" and len(found) > 1:
@@ -89,7 +98,7 @@ class PhrasePlanner:
         return Resolution(np, found, "unico", note="referent")
 
     def _antecedent(
-        self, np: NounPhrase, need_model: str | None
+        self, np: NounPhrase, need_model: str | None, classes: list[str] | None
     ) -> list[str] | Resolution:
         assert np.referent is not None
         if np.referent.meta.get("who") == "speaker":
@@ -98,7 +107,7 @@ class PhrasePlanner:
                 note = "I don't know who you are in this world"
                 return Resolution(np, [], "missing", note=note)
             return found
-        family = self.world.family_of(need_model) if need_model else None
+        family = self.world.family_of(need_model) if need_model else classes
         found = self.dialogue.referent(np.number, need_model, family)
         return found or Resolution(np, [], "missing", note=_no_antecedent(np, need_model))
 
