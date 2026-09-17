@@ -427,7 +427,7 @@
         · ls 'st.{Reservation+}' → 1
         · find 'st.{Client+}' --where 'doc ~ "^client-ana-perez$"' → 1
         · kgdb edges_to(Client:client-ana-perez, booked_by) → 0
-      state: libre · singular: {'Client': 'st.{Client}.client-ana-rojas'} · set: ['st.{Client}.client-ana-rojas'] · pending: -
+      state: libre · singular: {'Client': 'st.{Client}.client-ana-perez'} · set: ['st.{Client}.client-ana-perez'] · pending: -
         booked_by                relation         (relation booked_by)
         booked by                relation         (relation booked_by)
         create                   action           (action create)
