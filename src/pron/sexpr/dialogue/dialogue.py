@@ -7,6 +7,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from pron.kernel.ids import address_of
+from pron.sexpr.dialogue.designation import by_label, ordinal, within
 from pron.sexpr.dialogue.pending import Pending
 from pron.world.lexicon import FUNCTION_WORDS
 
@@ -57,6 +59,14 @@ class Dialogue:
             return [self.last_singular]
         return None
 
+    def forget(self, export_id: str) -> None:
+        """A document that left the store (an undone create) is no antecedent any more; "why?" can still ask about it."""
+        gone = address_of(export_id)
+        self.singular = {m: a for m, a in self.singular.items() if a != gone}
+        if self.last_singular == gone:
+            self.last_singular = None
+        self.last_set = [a for a in self.last_set if a != gone]
+
     def speaker_referent(self) -> list[str] | None:
         return [self.speaker_address] if self.speaker_address else None
 
@@ -92,43 +102,9 @@ class Dialogue:
         n = len(self.pending.candidates)
         t = text.strip().lower().rstrip("?.! ")
         if t.isdigit():
-            return _within(int(t) - 1, n)
-        ordinal = _ordinal(t)
-        if ordinal is not None:
-            return _within(ordinal if ordinal >= 0 else n + ordinal, n)
-        return _by_label(t, self.pending.labels, matcher)
+            return within(int(t) - 1, n)
+        nth = ordinal(t)
+        if nth is not None:
+            return within(nth if nth >= 0 else n + nth, n)
+        return by_label(t, self.pending.labels, matcher)
 
-
-def _within(i: int, n: int) -> list[int]:
-    return [i] if 0 <= i < n else []
-
-
-def _ordinal(t: str) -> int | None:
-    """The index an ordinal says — "second", "the second", "the second one" — negative from
-    the end; None when it is not one."""
-    ordinals = FUNCTION_WORDS["designation"]["ordinal"]
-    return next(
-        (
-            idx
-            for word, idx in ordinals.items()
-            if t in (word, f"the {word}", f"the {word} one")
-        ),
-        None,
-    )
-
-
-def _by_label(t: str, labels: list[str], matcher) -> list[int]:
-    """The candidates whose labels a name matches best, when it matches well enough."""
-    if t.startswith("the ") and t.endswith(" one"):
-        t = t[4:-4]
-    ranked = matcher.rank(
-        t,
-        [(str(i), label) for i, label in enumerate(labels)],
-        k=len(labels),
-        threshold=0.0,
-    )
-    if not ranked:
-        return []
-    best = ranked[0][1]
-    winners = [int(k) for k, s in ranked if s >= best - 1e-9]
-    return winners if best >= 0.5 else []

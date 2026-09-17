@@ -1364,7 +1364,7 @@
         'hash_after': '<hash-14>',
         'hash_before': '<hash-14>',
         'id': '<move-18>',
-        'outcome': 'error',
+        'outcome': 'missing',
         'refers_to': '',
         'sentence': 'confirm it',
         'speaker': 'jp',
@@ -1373,11 +1373,10 @@
       }),
       'ledger_record_is_response_record': True,
       'move_id': '<move-18>',
-      'outcome': 'error',
+      'outcome': 'missing',
       'record': dict({
         'edges': list([
         ]),
-        'error': "no Reservation named 'reservation-2026-09-11-ana-rojas'",
         'forms': '(say confirm (it "it" Reservation))',
         'interpretation': dict({
           'forma': 'action',
@@ -1392,22 +1391,24 @@
           'unknown': list([
           ]),
         }),
+        'missing': dict({
+          'candidates': list([
+          ]),
+          'note': "'it' has no antecedent of class Reservation",
+        }),
         'queries': list([
         ]),
-        'resolved': '(say confirm (doc "Reservation:reservation-2026-09-11-ana-rojas"))',
         'trace': list([
           'interpretation: action',
           'forms: (say confirm (it "it" Reservation))',
-          "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
         ]),
         'writes': list([
         ]),
       }),
-      'text': "Could not do that: no Reservation named 'reservation-2026-09-11-ana-rojas'",
+      'text': "'it' has no antecedent of class Reservation.",
       'trace': list([
         'interpretation: action',
         'forms: (say confirm (it "it" Reservation))',
-        "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
       ]),
       'turn': 'confirm it',
       'written': dict({
