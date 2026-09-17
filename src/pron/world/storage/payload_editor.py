@@ -1,6 +1,9 @@
-"""Writing a document's payload by address (spec 04): set, remove, append to and clean one
-field, or rewrite the whole payload. Every write re-renders, round-trips, hashes and
-reindexes through sldb (spec 12 §4); each returns what the field held before, for undo.
+"""Writing a document's payload by address (spec 04), named the ways callers still name a
+document: `(model, name, store)` and the `*_of(export_id)` forms. Every write re-renders,
+round-trips, hashes and reindexes through sldb (spec 12 §4), and returns what the field
+held before, for undo.
+
+The writing itself is `PayloadWriterById`'s: these forms build a `DocId` and delegate.
 """
 
 from __future__ import annotations
@@ -8,43 +11,20 @@ from __future__ import annotations
 import builtins
 from typing import Any
 
-from sldb.api import deep_delete, deep_get, deep_set, save_document_payload
-from sldb.core.exceptions import SLDBPayloadSaveError
-
-from pron.kernel.ids import LOCAL, split_id
-from pron.world.storage.cleaned_list import without_empty_or_repeated
-from pron.world.storage.document_reader import DocumentReader
-from pron.world.store_error import StoreError
+from pron.world.doc_id import LOCAL, DocId
+from pron.world.storage.payload_writer_by_id import PayloadWriterById
 
 
-class PayloadEditor(DocumentReader):
+class PayloadEditor(PayloadWriterById):
     """Field-level and whole-payload writes over the documents of this world's stores."""
-
-    def _save(
-        self, model: str, name: str, payload: dict, store: str | None = LOCAL
-    ) -> None:
-        d = self.doc(model, name, store)
-        if d is None:
-            raise StoreError(f"no {model} named '{name}'")
-        try:
-            save_document_payload(
-                self.sp_of(store), d.model_name, d.name, payload, self.pythonpath
-            )
-        except (
-            SLDBPayloadSaveError
-        ) as exc:  # exits with sldb's message, as `fields` always has
-            raise SystemExit(str(exc)) from exc
 
     def replace(
         self, model: str, name: str, payload: dict, store: str | None = LOCAL
     ) -> None:
-        """Whole-payload rewrite: re-render, roundtrip, hash, reindex — same door as
-        update_field, for callers that already hold a full payload (spec 12 §4)."""
-        self._save(model, name, payload, store)
+        self.replace_at(DocId.of(model, name, store), payload)
 
     def replace_of(self, export_id: str, payload: dict) -> None:
-        store, model, name = split_id(export_id)
-        self.replace(model, name, payload, store)
+        self.replace_at(DocId.parse_plain(export_id), payload)
 
     def update_field(
         self,
@@ -56,33 +36,24 @@ class PayloadEditor(DocumentReader):
         store: str | None = LOCAL,
     ) -> Any:
         """Set one field (dotted path into subfields and list items). Returns the previous value."""
-        p = self.payload(model, name, store)
-        try:
-            before = deep_get(p, field_path)
-        except (KeyError, IndexError):
-            before = None
-        deep_set(p, field_path, value, create=create)
-        self._save(model, name, p, store)
-        return before
+        return self.update_field_at(
+            DocId.of(model, name, store), field_path, value, create
+        )
 
     def update_field_of(
         self, export_id: str, field_path: str, value: Any, create: bool = False
     ) -> Any:
-        store, model, name = split_id(export_id)
-        return self.update_field(model, name, field_path, value, create, store)
+        return self.update_field_at(
+            DocId.parse_plain(export_id), field_path, value, create
+        )
 
     def remove_field(
         self, model: str, name: str, field_path: str, store: str | None = LOCAL
     ) -> Any:
-        p = self.payload(model, name, store)
-        before = deep_get(p, field_path)
-        deep_delete(p, field_path)
-        self._save(model, name, p, store)
-        return before
+        return self.remove_field_at(DocId.of(model, name, store), field_path)
 
     def remove_field_of(self, export_id: str, field_path: str) -> Any:
-        store, model, name = split_id(export_id)
-        return self.remove_field(model, name, field_path, store)
+        return self.remove_field_at(DocId.parse_plain(export_id), field_path)
 
     def append(
         self,
@@ -93,29 +64,16 @@ class PayloadEditor(DocumentReader):
         store: str | None = LOCAL,
     ) -> int:
         """Append to a list field. Returns the index of the new item."""
-        p = self.payload(model, name, store)
-        lst = deep_get(p, field_path)
-        if not isinstance(lst, list):
-            raise StoreError(f"{field_path} is not a list field")
-        lst.append(value)
-        self._save(model, name, p, store)
-        return len(lst) - 1
+        return self.append_at(DocId.of(model, name, store), field_path, value)
 
     def append_of(self, export_id: str, field_path: str, value: Any) -> int:
-        store, model, name = split_id(export_id)
-        return self.append(model, name, field_path, value, store)
+        return self.append_at(DocId.parse_plain(export_id), field_path, value)
 
     def clean(
         self, model: str, name: str, field_path: str, store: str | None = LOCAL
     ) -> builtins.list:
         """Drop the empty and repeated items of a list field. Returns the list as it was."""
-        p = self.payload(model, name, store)
-        lst = deep_get(p, field_path)
-        before = list(lst)
-        deep_set(p, field_path, without_empty_or_repeated(lst))
-        self._save(model, name, p, store)
-        return before
+        return self.clean_at(DocId.of(model, name, store), field_path)
 
     def clean_of(self, export_id: str, field_path: str) -> builtins.list:
-        store, model, name = split_id(export_id)
-        return self.clean(model, name, field_path, store)
+        return self.clean_at(DocId.parse_plain(export_id), field_path)

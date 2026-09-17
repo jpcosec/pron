@@ -1,6 +1,8 @@
-"""Bringing documents into a store and out of it (spec 04): a new document rendered,
-round-tripped and tracked, an existing file tracked again, a document untracked, and a
-payload checked against its model's roundtrip before any of that (spec 11 §7).
+"""Bringing documents into a store and out of it (spec 04), named the ways callers still
+name a document — `(model, name, store)` and `untrack_of(export_id)` — and a payload
+checked against its model's roundtrip before any of that (spec 11 §7).
+
+The tracking itself is `TrackerById`'s: these forms build a `DocId` and delegate.
 """
 
 from __future__ import annotations
@@ -10,16 +12,10 @@ from pathlib import Path
 
 from pydantic import ValidationError
 from pydantic_core import ErrorDetails
-from sldb.api import track_document_file, untrack_document
-from sldb.runtime.validation import (
-    render_model_markdown,
-    validate_model_data_roundtrip,
-    validate_model_input_roundtrip,
-)
+from sldb.runtime.validation import validate_model_data_roundtrip
 
-from pron.kernel.ids import LOCAL, is_local, join_id, split_id
-from pron.world.storage.document_reader import DocumentReader
-from pron.world.store_error import StoreError
+from pron.world.doc_id import LOCAL, DocId
+from pron.world.storage.tracker_by_id import TrackerById
 
 
 def _reason(error: ErrorDetails) -> str:
@@ -27,7 +23,7 @@ def _reason(error: ErrorDetails) -> str:
     return f"{'.'.join(map(str, error['loc']))}: {error['msg']}"
 
 
-class DocumentTracker(DocumentReader):
+class DocumentTracker(TrackerById):
     """Creates, tracks and untracks the documents of this world's stores."""
 
     def validate(
@@ -54,60 +50,15 @@ class DocumentTracker(DocumentReader):
         store: str | None = LOCAL,
     ) -> str:
         """Render, validate and track one new document in a store. Returns the export id."""
-        root = self.root_of(store)
-        model_type = self.registration(model, store).model_type
-        if self.doc(model, name, store) is not None:
-            raise StoreError(
-                f"a {model} named '{name}' already exists"
-                + ("" if is_local(store) else f" in store '{store}'")
-            )
-        rendered = self._rendered(model_type, model, name, payload)
-        path = self._under(root, path)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(rendered + "\n", encoding="utf-8")
-        self._track_registered(model, path, name, store)
-        return join_id(store, model, name)
-
-    @staticmethod
-    def _rendered(model_type, model: str, name: str, payload: dict) -> str:
-        """The document's markdown, refused unless it reads back as the same payload."""
-        rendered = render_model_markdown(model_type, payload)
-        ok, details = validate_model_input_roundtrip(model_type, rendered)
-        if not ok:
-            raise StoreError(
-                f"{model} '{name}' would not round-trip: {json.dumps(details.get('extracted_payload'), default=str)[:200]}"
-            )
-        return rendered
-
-    @staticmethod
-    def _under(root: Path, path: Path) -> Path:
-        """A relative document path is relative to the store's root, never to the process cwd:
-        sldb records paths relative to the root, so a cwd-relative file would be tracked as missing."""
-        path = Path(path)
-        return path if path.is_absolute() else root / path
+        return str(self.create_at(DocId.of(model, name, store), payload, path))
 
     def track(
         self, path: Path, model: str, name: str, store: str | None = LOCAL
     ) -> None:
-        self.registration(
-            model, store
-        )  # imports the model; a linked store's, from its root
-        self._track_registered(
-            model, self._under(self.root_of(store), path), name, store
-        )
-
-    def _track_registered(
-        self, model: str, path: Path, name: str, store: str | None
-    ) -> None:
-        """Track a file of a model already imported (`registration`). Never re-checked here: a
-        new document was round-tripped when rendered, and `track` takes the file as it is."""
-        track_document_file(
-            self.sp_of(store), model, path, name, self.pythonpath, force=True
-        )
+        self.track_at(DocId.of(model, name, store), path)
 
     def untrack(self, name: str, store: str | None = LOCAL) -> None:
-        untrack_document(self.sp_of(store), name, self.pythonpath)
+        self._untrack_named(name, store)
 
     def untrack_of(self, export_id: str) -> None:
-        store, _, name = split_id(export_id)
-        self.untrack(name, store)
+        self.untrack_at(DocId.parse_plain(export_id))
