@@ -8,10 +8,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[docs]
@@ -24,10 +22,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[eval]
@@ -40,10 +36,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[init]
@@ -55,10 +49,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[lexicon]
@@ -70,10 +62,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[refresh]
@@ -85,10 +75,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[repl]
@@ -100,10 +88,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_a_world_that_does_not_exist[say]
@@ -116,10 +102,8 @@
       '--pythonpath',
       '<tmp>',
     ]),
-    'message': 'No store_index.yaml at <tmp>/nowhere/.sldb',
-    'raised': 'FileNotFoundError',
-    'stderr': '',
-    'stdout': '',
+    'exit': 2,
+    'failed': True,
   })
 # ---
 # name: test_commands_on_a_world

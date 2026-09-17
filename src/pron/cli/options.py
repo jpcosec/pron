@@ -4,8 +4,11 @@ is, how a session speaks, and whether it goes through a running server (spec 11 
 from __future__ import annotations
 
 from collections.abc import Callable
+from pathlib import Path
 
 import click
+
+STORE_INDEX = Path(".sldb") / "core" / "store_index.yaml"
 
 
 def stacked(*decorators: Callable) -> Callable:
@@ -19,8 +22,22 @@ def stacked(*decorators: Callable) -> Callable:
     return apply
 
 
+def existing_world(ctx: click.Context, param: click.Parameter, value: str) -> str:
+    """A world is an sldb store (spec 01): without one there is nothing to open."""
+    if not (Path(value) / STORE_INDEX).is_file():
+        raise click.BadParameter(
+            f"no sldb store at {value} (create one there with `sldb stores init`, then `pron init`)"
+        )
+    return value
+
+
 world_options = stacked(
-    click.option("--world", default=".", help="World root (contains .sldb)"),
+    click.option(
+        "--world",
+        default=".",
+        callback=existing_world,
+        help="World root (contains .sldb)",
+    ),
     click.option(
         "--pythonpath",
         default=None,
