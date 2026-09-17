@@ -180,3 +180,18 @@ def test_a_display_template_drops_the_part_whose_value_is_missing(tmp_path):
         '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))'
     )
     assert r.text == "Created reservation 2026-09-12 13:00, 2 people, pending.", r.text
+
+
+def test_a_possessive_referent_names_the_subject_not_the_value(tmp_path):
+    """Spec 04/10 "remove its provenance", spec 06 referents: 'its' is the referent whose field
+    is removed whole, as in 'remove the notes of it'; it is not the value to remove."""
+    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
+    assert (
+        s.eval('(change (doc "Client:client-luis-soto") notes "vegan")').outcome
+        == "unico"
+    )
+    r = s.turn("remove its notes")
+    assert r.outcome == "unico", r.text
+    assert r.record["forms"] == '(remove (it "its" Client) notes)'
+    assert r.record["writes"][0]["before"] == "vegan"
+    assert s.world.store.payload("Client", "client-luis-soto").get("notes", "") == ""

@@ -1591,25 +1591,24 @@
       'record': dict({
         'edges': list([
         ]),
-        'forms': '(add (it "it" AnchorDoc) forms "patron")',
+        'forms': '(add (it "its" AnchorDoc) forms "patron")',
         'interpretation': dict({
           'forma': 'action',
           'items': list([
             "word('add'→(action add))",
             "unknown('patron')",
             "unknown('to')",
-            "unknown('its')",
+            "referent('its')",
             "word('forms'→(field AnchorDoc forms))",
           ]),
           'notes': list([
           ]),
           'parts': list([
-            "action · (action add) · subject=it [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
+            "action · (action add) · subject=its [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
           ]),
           'unknown': list([
             'patron',
             'to',
-            'its',
           ]),
         }),
         'queries': list([
@@ -1617,8 +1616,8 @@
         'resolved': '(add (doc "AnchorDoc:anchor-client") forms "patron")',
         'trace': list([
           'interpretation: action',
-          'forms: (add (it "it" AnchorDoc) forms "patron")',
-          "'it' → st.{AnchorDoc}.anchor-client",
+          'forms: (add (it "its" AnchorDoc) forms "patron")',
+          "'its' → st.{AnchorDoc}.anchor-client",
           "add AnchorDoc:anchor-client.forms: None → 'patron'",
           'refresh: 172 nodes, 340 edges',
         ]),
@@ -1639,8 +1638,8 @@
       'text': 'Done.',
       'trace': list([
         'interpretation: action',
-        'forms: (add (it "it" AnchorDoc) forms "patron")',
-        "'it' → st.{AnchorDoc}.anchor-client",
+        'forms: (add (it "its" AnchorDoc) forms "patron")',
+        "'its' → st.{AnchorDoc}.anchor-client",
         "add AnchorDoc:anchor-client.forms: None → 'patron'",
         'refresh: 172 nodes, 340 edges',
       ]),
@@ -1811,25 +1810,24 @@
       'record': dict({
         'edges': list([
         ]),
-        'forms': '(add (it "it" AnchorDoc) forms "patron")',
+        'forms': '(add (it "its" AnchorDoc) forms "patron")',
         'interpretation': dict({
           'forma': 'action',
           'items': list([
             "word('add'→(action add))",
             "unknown('patron')",
             "unknown('to')",
-            "unknown('its')",
+            "referent('its')",
             "word('forms'→(field AnchorDoc forms))",
           ]),
           'notes': list([
           ]),
           'parts': list([
-            "action · (action add) · subject=it [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
+            "action · (action add) · subject=its [] · forms='patron' · payload={'verb': 'add', 'model': 'AnchorDoc'}",
           ]),
           'unknown': list([
             'patron',
             'to',
-            'its',
           ]),
         }),
         'queries': list([
@@ -1837,8 +1835,8 @@
         'resolved': '(add (doc "AnchorDoc:anchor-client") forms "patron")',
         'trace': list([
           'interpretation: action',
-          'forms: (add (it "it" AnchorDoc) forms "patron")',
-          "'it' → st.{AnchorDoc}.anchor-client",
+          'forms: (add (it "its" AnchorDoc) forms "patron")',
+          "'its' → st.{AnchorDoc}.anchor-client",
           "add AnchorDoc:anchor-client.forms: None → 'patron'",
           'refresh: 172 nodes, 340 edges',
         ]),
@@ -1859,8 +1857,8 @@
       'text': 'Done.',
       'trace': list([
         'interpretation: action',
-        'forms: (add (it "it" AnchorDoc) forms "patron")',
-        "'it' → st.{AnchorDoc}.anchor-client",
+        'forms: (add (it "its" AnchorDoc) forms "patron")',
+        "'its' → st.{AnchorDoc}.anchor-client",
         "add AnchorDoc:anchor-client.forms: None → 'patron'",
         'refresh: 172 nodes, 340 edges',
       ]),
@@ -1899,25 +1897,24 @@
       'record': dict({
         'edges': list([
         ]),
-        'forms': '(remove (it "it" AnchorDoc) forms "patron")',
+        'forms': '(remove (it "its" AnchorDoc) forms "patron")',
         'interpretation': dict({
           'forma': 'action',
           'items': list([
             "word('remove'→(action remove))",
             "unknown('patron')",
             "unknown('from')",
-            "unknown('its')",
+            "referent('its')",
             "word('forms'→(field AnchorDoc forms))",
           ]),
           'notes': list([
           ]),
           'parts': list([
-            "action · (action remove) · subject=it [] · forms='patron' · payload={'verb': 'remove', 'model': 'AnchorDoc'}",
+            "action · (action remove) · subject=its [] · forms='patron' · payload={'verb': 'remove', 'model': 'AnchorDoc'}",
           ]),
           'unknown': list([
             'patron',
             'from',
-            'its',
           ]),
         }),
         'queries': list([
@@ -1925,8 +1922,8 @@
         'resolved': '(remove (doc "AnchorDoc:anchor-client") forms "patron")',
         'trace': list([
           'interpretation: action',
-          'forms: (remove (it "it" AnchorDoc) forms "patron")',
-          "'it' → st.{AnchorDoc}.anchor-client",
+          'forms: (remove (it "its" AnchorDoc) forms "patron")',
+          "'its' → st.{AnchorDoc}.anchor-client",
           "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
           'refresh: 172 nodes, 340 edges',
         ]),
@@ -1953,8 +1950,8 @@
       'text': 'Done.',
       'trace': list([
         'interpretation: action',
-        'forms: (remove (it "it" AnchorDoc) forms "patron")',
-        "'it' → st.{AnchorDoc}.anchor-client",
+        'forms: (remove (it "its" AnchorDoc) forms "patron")',
+        "'its' → st.{AnchorDoc}.anchor-client",
         "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
         'refresh: 172 nodes, 340 edges',
       ]),
@@ -2210,21 +2207,20 @@
       'record': dict({
         'edges': list([
         ]),
-        'forms': '(clean (it "it" AnchorDoc) forms)',
+        'forms': '(clean (it "its" AnchorDoc) forms)',
         'interpretation': dict({
           'forma': 'action',
           'items': list([
             "word('clean'→(action clean))",
-            "unknown('its')",
+            "referent('its')",
             "word('forms'→(field AnchorDoc forms))",
           ]),
           'notes': list([
           ]),
           'parts': list([
-            "action · (action clean) · subject=it [] · forms='its' · payload={'verb': 'clean', 'model': 'AnchorDoc'}",
+            "action · (action clean) · subject=its [] · forms=None · payload={'verb': 'clean', 'model': 'AnchorDoc'}",
           ]),
           'unknown': list([
-            'its',
           ]),
         }),
         'queries': list([
@@ -2232,8 +2228,8 @@
         'resolved': '(clean (doc "AnchorDoc:anchor-client") forms)',
         'trace': list([
           'interpretation: action',
-          'forms: (clean (it "it" AnchorDoc) forms)',
-          "'it' → st.{AnchorDoc}.anchor-client",
+          'forms: (clean (it "its" AnchorDoc) forms)',
+          "'its' → st.{AnchorDoc}.anchor-client",
           "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
           'refresh: 172 nodes, 340 edges',
         ]),
@@ -2261,8 +2257,8 @@
       'text': 'Done.',
       'trace': list([
         'interpretation: action',
-        'forms: (clean (it "it" AnchorDoc) forms)',
-        "'it' → st.{AnchorDoc}.anchor-client",
+        'forms: (clean (it "its" AnchorDoc) forms)',
+        "'its' → st.{AnchorDoc}.anchor-client",
         "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
         'refresh: 172 nodes, 340 edges',
       ]),

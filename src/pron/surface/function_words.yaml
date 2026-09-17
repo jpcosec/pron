@@ -8,8 +8,9 @@ determiners:
   # "the" is listed in both: number is decided by the noun form that follows
 
 referents:
-  singular: [it, that one, the same, the previous one, the last one, this one, her, him]
-  plural: [them, those, all of them, these]
+  # possessives name the same referent: "remove its notes" is "remove the notes of it"
+  singular: [it, its, that one, the same, the previous one, the last one, this one, her, him, his]
+  plural: [them, their, those, all of them, these]
   speaker: [me, my, myself, i]
   user: [the user]
 
