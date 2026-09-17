@@ -10,12 +10,12 @@ from typing import TYPE_CHECKING, Callable
 from pron.kernel.parts.item import Item
 from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.surface.phrases.phrase_words import PREDICATE_STOP, head_model
+from pron.surface.phrases.proper_run import PREPOSITIONS, proper_run
 from pron.surface.phrases.word_modifier import WordModifier
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from pron.world.lexicon import Lexicon
 
-PREPOSITIONS = ("for", "on", "at")
 ReadPhrase = Callable[[list[Item], int], "tuple[NounPhrase | None, int]"]
 
 
@@ -48,7 +48,9 @@ class ModifierReader:
             return self._dated(it, np)
         if _dated_after_preposition(items, j):
             return self._prepositioned(it, items[j + 1], np)
-        if it.kind == "unknown" or (not it.meta.get("marker") and not it.meta.get("kind")):
+        if it.kind == "unknown" or (
+            not it.meta.get("marker") and not it.meta.get("kind")
+        ):
             return self._proper(it, np)
         return 0
 
@@ -88,10 +90,12 @@ class ModifierReader:
             np.items.append(it)  # "of pron": a value of a field of the head
             return 2
         nested = nxt.kind == "det" or head_model(nxt) is not None
-        return (self._nested(items, j, np) if nested else 0) or self._named(items, j, np)
+        return (self._nested(items, j, np) if nested else 0) or self._named(
+            items, j, np
+        )
 
     def _nested(self, items: list[Item], j: int, np: NounPhrase) -> int:
-        """"of the reservations of Luis": a nested phrase."""
+        """ "of the reservations of Luis": a nested phrase."""
         inner, used = self.read_phrase(items, j + 1)
         if inner is None:
             return 0
@@ -100,7 +104,7 @@ class ModifierReader:
         return 1 + used
 
     def _named(self, items: list[Item], j: int, np: NounPhrase) -> int:
-        run = _proper_run(items, j + 1)
+        run = proper_run(items, j + 1)
         if not run:
             return 0
         np.complements.append([x.text for x in run])
@@ -116,22 +120,4 @@ def _dated_after_preposition(items: list[Item], j: int) -> bool:
         and j + 1 < len(items)
         and items[j + 1].kind == "literal"
         and items[j + 1].meta.get("kind") in ("date", "time")
-    )
-
-
-def _proper_run(items: list[Item], j: int) -> list[Item]:
-    """The unknown, number and plain-literal items after "of", up to the next known word, determiner,
-    stop word or dated literal."""
-    run: list[Item] = []
-    while j < len(items) and _proper_token(items[j]):
-        run.append(items[j])
-        j += 1
-    return run
-
-
-def _proper_token(it: Item) -> bool:
-    if it.kind == "unknown":
-        return it.text.lower() not in PREDICATE_STOP | set(PREPOSITIONS)
-    return it.kind == "number" or (
-        it.kind == "literal" and not it.meta.get("marker") and not it.meta.get("kind")
     )

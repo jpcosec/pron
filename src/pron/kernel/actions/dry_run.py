@@ -46,7 +46,9 @@ class DryRun:
         overlay if an earlier step already touched this document, else the document as it
         is now."""
         return json.loads(
-            json.dumps(overlay.get(export_id) or self.kernel.store.payload_of(export_id))
+            json.dumps(
+                overlay.get(export_id) or self.kernel.store.payload_of(export_id)
+            )
         )
 
     def save(

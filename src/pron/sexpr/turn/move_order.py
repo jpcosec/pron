@@ -20,9 +20,7 @@ from pron.kernel.parts.part import Part
 
 def pending_creates(parts: list[Part], write_store: str | None) -> dict[str, str]:
     """The creates of this move with an explicit name, by the export id they will have."""
-    ids = [
-        _create_id(part, write_store) for part in parts if part.payload.get("name")
-    ]
+    ids = [_create_id(part, write_store) for part in parts if part.payload.get("name")]
     return {eid: address_of(eid) for eid in ids if eid is not None}
 
 

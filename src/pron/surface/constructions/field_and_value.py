@@ -49,7 +49,9 @@ class FieldAndValue:
                 if it.slots:
                     return w.field_name, slot_value(it)
                 if k + 1 < len(items) and items[k + 1].kind in VALUE_KINDS:
-                    return w.field_name, items[k + 1].meta.get("value", items[k + 1].text)
+                    return w.field_name, items[k + 1].meta.get(
+                        "value", items[k + 1].text
+                    )
             if w.kind == "value" and (not family or w.model in family):
                 return w.field_name, w.payload["value"]
         return None

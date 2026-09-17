@@ -1,19 +1,16 @@
 PYTHON ?= python
 
-.PHONY: check lint audit format-check format typecheck test world docs-check
+.PHONY: check lint format-check format typecheck test world docs-check
 
 check:
 	$(MAKE) lint format-check typecheck
 	$(MAKE) test
 	$(MAKE) docs-check
 
+# includes standards.md Layer 1 for src/: ≤10 statements per function, ≤100 code lines per file
 lint:
 	$(PYTHON) -m ruff check src tests
-
-# standards.md Layer 1 (size/structure), report-only until the backlog is collapsed
-audit:
-	$(PYTHON) -m ruff check src --select C901,PLR0911,PLR0912,PLR0915 --exit-zero --output-format concise
-	$(PYTHON) tools/check_file_length.py src --report
+	$(PYTHON) tools/check_file_length.py src
 
 format-check:
 	$(PYTHON) -m ruff format --check src tests

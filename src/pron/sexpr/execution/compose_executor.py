@@ -58,7 +58,9 @@ class ComposeExecutor:
         if fn is not None:
             fn(step, resolved)
 
-    def _side(self, step: dict[str, Any], resolved: dict[str, Any], key: str) -> str | None:
+    def _side(
+        self, step: dict[str, Any], resolved: dict[str, Any], key: str
+    ) -> str | None:
         """`$created` is what this composition made, if it has made it yet."""
         if step.get(key) == "$created":
             return self.created

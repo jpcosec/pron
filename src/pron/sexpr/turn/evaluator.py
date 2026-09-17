@@ -41,7 +41,9 @@ class Evaluator:
     def __init__(self, state: ProjectionState):
         self.state, self.tools = state, state.tools
 
-    def __call__(self, expr: Any, ctx: MoveContext, again: Again | None = None) -> Response:
+    def __call__(
+        self, expr: Any, ctx: MoveContext, again: Again | None = None
+    ) -> Response:
         self.expr, self.ctx, self.again = expr, ctx, again
         parts = self._compile()
         if isinstance(parts, Response):

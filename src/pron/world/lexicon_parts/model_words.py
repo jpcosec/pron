@@ -36,7 +36,9 @@ class ModelWords:
     def _model(self, m: str, motive: str) -> None:
         words = self.lex.words
         words.append(
-            Word(m.lower(), "model", word_ref("model", m), motive, f"model {m}", model=m)
+            Word(
+                m.lower(), "model", word_ref("model", m), motive, f"model {m}", model=m
+            )
         )
         split = " ".join(re.findall(r"[A-Z]+(?![a-z])|[A-Z]?[a-z0-9]+", m)).lower()
         if (

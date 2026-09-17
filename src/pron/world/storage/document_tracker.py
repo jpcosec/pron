@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 from pydantic import ValidationError
+from pydantic_core import ErrorDetails
 from sldb.api import track_document_file, untrack_document
 from sldb.runtime.validation import (
     render_model_markdown,
@@ -21,7 +22,7 @@ from pron.world.storage.document_reader import DocumentReader
 from pron.world.store_error import StoreError
 
 
-def _reason(error: dict) -> str:
+def _reason(error: ErrorDetails) -> str:
     """One pydantic complaint as `field: message`."""
     return f"{'.'.join(map(str, error['loc']))}: {error['msg']}"
 

@@ -31,7 +31,10 @@ class GraphRefresher:
         if not light:
             self._update_stores(stores)
         snapshot, report = build_typed_snapshot(
-            self.store.sp, self.store.pythonpath, exclude_tags, previous=self._previous_snapshot()
+            self.store.sp,
+            self.store.pythonpath,
+            exclude_tags,
+            previous=self._previous_snapshot(),
         )
         self._save(snapshot)
         return report
@@ -70,6 +73,8 @@ class GraphRefresher:
                 for n in data.get("nodes", [])
                 if n.get("schema")
             ]
-            return GraphSnapshot(version="1.0", nodes=nodes, metadata=data.get("graph") or {})
+            return GraphSnapshot(
+                version="1.0", nodes=nodes, metadata=data.get("graph") or {}
+            )
         except Exception:  # noqa: BLE001 - a previous snapshot is an optimization, never load-bearing
             return None

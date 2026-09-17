@@ -111,4 +111,3 @@ class Dialogue:
         if nth is not None:
             return within(nth if nth >= 0 else n + nth, n)
         return by_label(t, self.pending.labels, matcher)
-

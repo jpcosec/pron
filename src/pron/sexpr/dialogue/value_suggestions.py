@@ -31,7 +31,12 @@ class ValueSuggestions:
     def __init__(
         self, projection: dict[str, Any], lex: Lexicon, world: World, matcher: Matcher
     ):
-        self.projection, self.lex, self.world, self.matcher = projection, lex, world, matcher
+        self.projection, self.lex, self.world, self.matcher = (
+            projection,
+            lex,
+            world,
+            matcher,
+        )
 
     def __call__(self, word: str, trace: list[str]) -> list[Suggestion]:
         self.values = FieldValues.of(self.projection, self.lex, self.matcher)

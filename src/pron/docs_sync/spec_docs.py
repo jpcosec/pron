@@ -17,7 +17,10 @@ class SpecDocs:
         self.root = root
 
     def __call__(self) -> list[dict[str, Any]]:
-        return [self._spec(path) for path in sorted((self.root / SPEC_DIR).glob("[0-9][0-9]*.md"))]
+        return [
+            self._spec(path)
+            for path in sorted((self.root / SPEC_DIR).glob("[0-9][0-9]*.md"))
+        ]
 
     @staticmethod
     def _spec(path: Path) -> dict[str, Any]:

@@ -54,7 +54,9 @@ class WrittenDocs:
 
         store = self.world.store
         existing = store.doc(model, doc_id)
-        canonical = extract_model_data(store.model_type(model), path.read_text(encoding="utf-8"))
+        canonical = extract_model_data(
+            store.model_type(model), path.read_text(encoding="utf-8")
+        )
         if not drifted(existing, canonical):
             return False
         if not self.check:

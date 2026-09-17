@@ -150,7 +150,11 @@ def test_store_model_editing_surface() -> None:
 def test_ids_split_qualified() -> None:
     assert pron.kernel.ids.split_id("A:Reserva:mesa-1") == ("A", "Reserva", "mesa-1")
     assert pron.kernel.ids.split_id("Reserva:mesa-1") == (None, "Reserva", "mesa-1")
-    assert pron.kernel.ids.split_id("local:Reserva:mesa-1") == (None, "Reserva", "mesa-1")
+    assert pron.kernel.ids.split_id("local:Reserva:mesa-1") == (
+        None,
+        "Reserva",
+        "mesa-1",
+    )
 
 
 def test_ids_join_and_address() -> None:

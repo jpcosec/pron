@@ -36,7 +36,10 @@ class ForgetVerb:
             export_id,
             before=payload,
             done=True,
-            extra={"path": str(path), "hash_c": kernel.expected_hash.get(export_id, "")},
+            extra={
+                "path": str(path),
+                "hash_c": kernel.expected_hash.get(export_id, ""),
+            },
         )
 
     def undo(self, kernel, write):

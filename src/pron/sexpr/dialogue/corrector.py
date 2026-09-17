@@ -49,7 +49,10 @@ def _fits(it: Item, hole: dict[str, Any], known: set[str]) -> set[str]:
     """The values of the hole's field this item says, directly or through a predicate alias."""
     found: set[str] = set()
     for w in it.words:
-        if w.kind == "value" and (w.model, w.field_name) == (hole["model"], hole["field"]):
+        if w.kind == "value" and (w.model, w.field_name) == (
+            hole["model"],
+            hole["field"],
+        ):
             found.add(w.form)
         elif w.kind == "alias-predicate" and w.model == hole["model"]:
             # "on the Z" with Z a value of the field

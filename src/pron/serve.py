@@ -52,7 +52,9 @@ class Server:
         self.names = WorldNames(name0, self.world)
         self.pool = SessionPool(self.world)
         self.lock = threading.Lock()
-        self.socket = SocketServing(Path(sock) if sock else socket_path(self.world.root))
+        self.socket = SocketServing(
+            Path(sock) if sock else socket_path(self.world.root)
+        )
         self.dispatch = RequestDispatcher(self)
         for name, r, _ in entries[1:]:
             self.mount(name, r)
@@ -136,7 +138,10 @@ class Server:
 
     def _roots(self) -> list[Path]:
         """The daemon's own root and every linked store's: each gets a link to the socket."""
-        return [self.world.root, *(sp.parent for sp in self.world.store.linked().values())]
+        return [
+            self.world.root,
+            *(sp.parent for sp in self.world.store.linked().values()),
+        ]
 
     def stop(self) -> None:
         self.socket.stop()

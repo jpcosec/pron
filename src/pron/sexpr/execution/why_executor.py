@@ -29,7 +29,12 @@ class WhyExecutor:
     def __init__(
         self, ledger: Ledger, dialogue: Dialogue, display: Display, verbs: Verbs
     ):
-        self.ledger, self.dialogue, self.display, self.verbs = ledger, dialogue, display, verbs
+        self.ledger, self.dialogue, self.display, self.verbs = (
+            ledger,
+            dialogue,
+            display,
+            verbs,
+        )
 
     def __call__(self, part: Part, ctx: MoveContext) -> str:
         target = why_target(part, self.dialogue)

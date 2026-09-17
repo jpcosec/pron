@@ -70,7 +70,9 @@ class AliasWords:
         lex = self.lex
         models, relations = models_and_relations(ref)
         for m in models:
-            if m not in lex.models and not set(lex.world.family_of(m)) & set(lex.models):
+            if m not in lex.models and not set(lex.world.family_of(m)) & set(
+                lex.models
+            ):
                 return False
         if any(r not in lex.relation_types for r in relations):
             return False

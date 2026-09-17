@@ -65,9 +65,7 @@ class DryAssert:
     def _condition(
         self, condition: str, s: str, t: str, overlay: dict[str, dict[str, Any]]
     ) -> None:
-        holds, query = self.verbs.condition_holds(
-            condition, s, over=t, overlay=overlay
-        )
+        holds, query = self.verbs.condition_holds(condition, s, over=t, overlay=overlay)
         self.kernel.notes.append(query)
         if not holds:
             raise StoreError(

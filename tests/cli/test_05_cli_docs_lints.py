@@ -93,8 +93,12 @@ def own(tmp_path_factory) -> World:
     explanations the README composes, built from scratch."""
     root = tmp_path_factory.mktemp("pron-own") / "world"
     shutil.copytree(PRON_REPO / "source", root / "source")
-    shutil.copytree(PRON_REPO / "knowledge" / "explanations", root / "knowledge" / "explanations")
-    shutil.copy2(PRON_REPO / "knowledge" / "readme.md", root / "knowledge" / "readme.md")
+    shutil.copytree(
+        PRON_REPO / "knowledge" / "explanations", root / "knowledge" / "explanations"
+    )
+    shutil.copy2(
+        PRON_REPO / "knowledge" / "readme.md", root / "knowledge" / "readme.md"
+    )
     from sldb.cli import main as sldb_main
 
     assert sldb_main(["stores", "init", "--path", str(root)]) == 0
@@ -148,7 +152,9 @@ def test_the_readme_is_composed_from_the_explanations(own: World):
     readme = own.root / "README.md"
     text = readme.read_text(encoding="utf-8")
     assert text.startswith("# pron\n\n## ¿Qué es pron?\n\n")
-    assert "- knowledge/explanations/" not in text  # the paths are the declaration, not the README
+    assert (
+        "- knowledge/explanations/" not in text
+    )  # the paths are the declaration, not the README
 
     # the drift: edit one explanation where it lives
     path = own.root / "knowledge" / "explanations" / "what-is-pron.md"

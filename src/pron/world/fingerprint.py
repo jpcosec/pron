@@ -27,7 +27,10 @@ class WorldFingerprint:
         times (spec 11 §5, §_move, §_refresh) recomputes the expensive part (per-model
         schema) once, not once per read (PLAN 15 M4)."""
         idx = self.store.store_index()
-        key = (idx.hash_a, tuple(sorted((s.name, self._linked_hash_a(s.name)) for s in idx.stores)))
+        key = (
+            idx.hash_a,
+            tuple(sorted((s.name, self._linked_hash_a(s.name)) for s in idx.stores)),
+        )
         cached = self._cache
         if cached is not None and cached[0] == key:
             return cached[1]

@@ -109,7 +109,9 @@ class PhrasePlanner:
             return found
         family = self.world.family_of(need_model) if need_model else classes
         found = self.dialogue.referent(np.number, need_model, family)
-        return found or Resolution(np, [], "missing", note=_no_antecedent(np, need_model))
+        return found or Resolution(
+            np, [], "missing", note=_no_antecedent(np, need_model)
+        )
 
     # -- the query the phrase describes (spec 02) ----------------------------------------
 

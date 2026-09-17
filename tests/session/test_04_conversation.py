@@ -192,6 +192,8 @@ def test_a_possessive_referent_names_the_subject_not_the_value(tmp_path):
     )
     r = s.turn("remove its notes")
     assert r.outcome == "unico", r.text
-    assert r.record["forms"] == '(remove (it "its") notes)'  # notes: Client and Reservation
+    assert (
+        r.record["forms"] == '(remove (it "its") notes)'
+    )  # notes: Client and Reservation
     assert r.record["writes"][0]["before"] == "vegan"
     assert s.world.store.payload("Client", "client-luis-soto").get("notes", "") == ""

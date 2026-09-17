@@ -32,7 +32,11 @@ class ImplementsEdges:
             for d in self.store.docs_of("RelationDoc")
             if d.payload.get("relation_type") == "implements"
         }
-        changed = [self._add(name, src, tgt) for name, (src, tgt) in wanted.items() if name not in existing]
+        changed = [
+            self._add(name, src, tgt)
+            for name, (src, tgt) in wanted.items()
+            if name not in existing
+        ]
         for name in sorted(existing - set(wanted)):
             changed.append(f"RelationDoc {name} (stale)")
             if not self.check:

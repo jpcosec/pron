@@ -85,7 +85,9 @@ class Ledger:
         moves = [
             d
             for d, r in records
-            if r.get("writes") and not r.get("undoes") and d.payload.get("id") not in undone
+            if r.get("writes")
+            and not r.get("undoes")
+            and d.payload.get("id") not in undone
         ]
         if speaker:
             moves = [d for d in moves if d.payload.get("speaker") == speaker]

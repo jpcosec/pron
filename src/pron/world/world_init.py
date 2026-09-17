@@ -55,7 +55,9 @@ class WorldInit:
         types_added = self._knowledge_relation_types() if with_knowledge else []
         # a model registered without documents leaves its index hash behind until the next update
         self.store.update_index()
-        from_template = WorldTemplate(self.root, self.pythonpath)(template) if template else []
+        from_template = (
+            WorldTemplate(self.root, self.pythonpath)(template) if template else []
+        )
         return {
             "kgdb": kgdb_report.summary(),
             "pron_models_added": added,
@@ -78,12 +80,21 @@ class WorldInit:
             name = f"rt-{rt['name']}"
             if self.store.doc("RelationTypeDoc", name) is not None:
                 continue
-            payload = {"title": rt["name"], "direction": "directed", "condition": "", **rt}
+            payload = {
+                "title": rt["name"],
+                "direction": "directed",
+                "condition": "",
+                **rt,
+            }
             self.store.create(
                 "RelationTypeDoc",
                 name,
                 payload,
-                self.store.root / "knowledge" / "relations" / "types" / f"{rt['name']}.md",
+                self.store.root
+                / "knowledge"
+                / "relations"
+                / "types"
+                / f"{rt['name']}.md",
             )
             added.append(rt["name"])
         return added

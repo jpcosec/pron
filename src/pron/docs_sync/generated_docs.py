@@ -19,7 +19,9 @@ NEEDED_MODELS = {
     "ReadmeDoc": "pron.models:ReadmeDoc",
 }
 
-Plan = tuple[str, list[dict[str, Any]], "str | None"]  # (model, payloads, folder or None: tracked in place)
+Plan = tuple[
+    str, list[dict[str, Any]], "str | None"
+]  # (model, payloads, folder or None: tracked in place)
 
 
 class GeneratedDocs:
@@ -59,7 +61,12 @@ class GeneratedDocs:
         return changed
 
     def _write(
-        self, model: str, spec: dict[str, Any], payload: dict[str, Any], folder: str | None, existing: Any
+        self,
+        model: str,
+        spec: dict[str, Any],
+        payload: dict[str, Any],
+        folder: str | None,
+        existing: Any,
     ) -> None:
         if self.check:
             return
@@ -69,5 +76,8 @@ class GeneratedDocs:
             self.store.track(spec["_path"], model, spec["id"])
         else:
             self.store.create(
-                model, spec["id"], payload, self.world.root / folder / f"{spec['id']}.md"
+                model,
+                spec["id"],
+                payload,
+                self.world.root / folder / f"{spec['id']}.md",
             )

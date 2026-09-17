@@ -128,7 +128,9 @@ def test_a_write_through_the_server_is_a_real_move(server: Server):
     assert s.turn("the clients").outcome == "unico"
 
 
-def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(world: World):
+def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(
+    world: World,
+):
     """A session with defer_refresh (spec 11 §8) answers without the graph refresh: the
     world keeps it pending, and the first graph read — the server's settle, or any caller
     of world.graph — runs it and sees the node the write made."""
@@ -141,7 +143,9 @@ def test_a_deferred_session_records_the_refresh_and_a_graph_read_settles_it(worl
     assert r.outcome == "unico", r.text
     assert "graph refresh deferred until after the response" in r.trace, r.trace
     assert world.has_pending_refresh
-    assert world.graph.has_node(doc_id("Client:client-settled-dee"))  # the read settles it
+    assert world.graph.has_node(
+        doc_id("Client:client-settled-dee")
+    )  # the read settles it
     assert not world.has_pending_refresh
 
 

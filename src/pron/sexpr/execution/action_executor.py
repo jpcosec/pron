@@ -36,7 +36,7 @@ class ActionExecutor:
         self, part: Part, plan: dict[str, Any], ctx: MoveContext
     ) -> tuple[str, bool]:
         verb = action_verb(part)
-        if not self.kernel.allowed(verb):
+        if verb is None or not self.kernel.allowed(verb):
             raise StoreError(f"in this session I cannot {verb}")
         if verb == "create":
             return self._create(part, ctx), True
@@ -58,14 +58,12 @@ class ActionExecutor:
     # -- the same verb over every target -------------------------------------------------
 
     def _batch(
-        self, verb: str | None, part: Part, plan: dict[str, Any], ctx: MoveContext
+        self, verb: str, part: Part, plan: dict[str, Any], ctx: MoveContext
     ) -> tuple[str, bool]:
         targets = plan["subject"].export_ids()
         self._precheck(verb, part, targets)
         writes = [self._one(verb, part, e, ctx) for e in targets]
-        self.dialogue.remember(
-            plan["subject"].addresses, plan["subject"].phrase.model
-        )
+        self.dialogue.remember(plan["subject"].addresses, plan["subject"].phrase.model)
         self.dialogue.last_written = targets[0] if targets else None
         done = [w for w in writes if w.done]
         skipped = [w for w in writes if not w.done]
@@ -81,7 +79,7 @@ class ActionExecutor:
                     raise StoreError("change requires a field")
                 self.kernel.coerce(model_of(e), part.field_name, part.value)
 
-    def _one(self, verb: str | None, part: Part, e: str, ctx: MoveContext) -> Write:
+    def _one(self, verb: str, part: Part, e: str, ctx: MoveContext) -> Write:
         if verb in ("change", "add", "remove", "clean") and part.field_name is None:
             raise StoreError(f"{verb} requires a field")
         action = VERBS.get(verb)

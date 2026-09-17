@@ -48,6 +48,8 @@ class LeftoverPredicates:
             np.predicates.append(f'{fld} = "{it.meta["value"]}"')
 
     def _date_field(self, model: str | None) -> str | None:
+        if model is None:
+            return None
         return next(
             (
                 f["name"]

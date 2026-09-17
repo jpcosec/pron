@@ -38,9 +38,7 @@ class UnknownWords:
         ctx.trace.append(self._line(word, names, values))
         return self._answer(word, [f"*{s}*" for *_, s in values] + names)
 
-    def _values(
-        self, word: str, near: list, trace: list[str]
-    ) -> list[Suggestion]:
+    def _values(self, word: str, near: list, trace: list[str]) -> list[Suggestion]:
         """Values are only ranked when no near word is one already."""
         if any(w.kind == "value" for w, _ in near):
             return []

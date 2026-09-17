@@ -33,7 +33,9 @@ def field_classes(part: Part, lex: Lexicon) -> list[str] | None:
     if part.kind != "action" or part.field_name is None:
         return None
     return [
-        m for m in lex.models if any(w.field_name == part.field_name for w in lex.fields_of(m))
+        m
+        for m in lex.models
+        if any(w.field_name == part.field_name for w in lex.fields_of(m))
     ]
 
 

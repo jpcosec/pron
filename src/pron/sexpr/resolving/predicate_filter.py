@@ -25,7 +25,11 @@ class PredicateFilter:
         self.world, self.lex = world, lex
 
     def __call__(
-        self, found: list[str], model: str | None, predicates: list[str], ctx: MoveContext
+        self,
+        found: list[str],
+        model: str | None,
+        predicates: list[str],
+        ctx: MoveContext,
     ) -> list[str]:
         assert model is not None
         keep: set[str] | None = None
@@ -37,9 +41,7 @@ class PredicateFilter:
     def _hits(self, model: str, where: str, ctx: MoveContext) -> set[str]:
         hits: set[str] = set()
         for sc in (_scope(s, model) for s in self.lex.stores):
-            got = {
-                address_to_export_id(a) for a in self.world.store.find(sc, where)
-            }
+            got = {address_to_export_id(a) for a in self.world.store.find(sc, where)}
             q = f"find '{sc}' --where '{where}' → {len(got)}"
             ctx.trace.append(q)
             ctx.record["queries"].append(q)

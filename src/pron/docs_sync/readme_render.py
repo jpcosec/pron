@@ -37,9 +37,15 @@ class ReadmeRender:
 
         cwd = Path.cwd()
         try:
-            os.chdir(self.world.root)  # composition child paths resolve from the process cwd
-            rendered = render_model_markdown(self.world.store.model_type("ReadmeDoc"), payload)
+            os.chdir(
+                self.world.root
+            )  # composition child paths resolve from the process cwd
+            rendered = render_model_markdown(
+                self.world.store.model_type("ReadmeDoc"), payload
+            )
         finally:
             os.chdir(cwd)
-        rendered = re.sub(r"\n{3,}", "\n\n", rendered)  # the dropped parts list leaves a hole
+        rendered = re.sub(
+            r"\n{3,}", "\n\n", rendered
+        )  # the dropped parts list leaves a hole
         return rendered if rendered.endswith("\n") else rendered + "\n"

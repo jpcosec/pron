@@ -134,10 +134,12 @@ legos declara `pron` como dependencia y habla con esta versión: su `PronWorld` 
 
 ## Next
 
-- **Colapsar las fases del movimiento.** Las clases de `sexpr/` todavía leen la `Session`
-  entera y llaman a sus privados; cada una debe recibir solo lo que usa, y `trace`/`record`
-  viajar en un contexto del movimiento. La red de caracterización (`tests/golden/`) clava
-  el comportamiento mientras tanto. La superficie pública (el constructor y `turn()`) está
-  clavada por spec 12 y `tests/session/test_12_runtime_surface.py`; no tocarla.
-- **Tamaño.** `make audit` reporta lo que todavía supera 100 líneas por archivo o 10
-  sentencias por función; cuando quede limpio, esas reglas pasan a `make lint`.
+- **Tests bajo las reglas de tamaño.** `make lint` exige al código ≤100 líneas por archivo
+  y ≤10 sentencias por función; los tests están exentos y todavía no las cumplen (los
+  mundos de prueba y los guiones golden son los más largos).
+- **Referentes de una lectura sin ambigüedad.** "what reservations does Ana Pérez have?"
+  no deja a Ana Pérez como referente singular; una respuesta elegida en una pendiente sí.
+- **kgdb por la CLI de sldb.** pron ya usa `sldb.api`; kgdb todavía llama las clases de la
+  CLI de sldb, y por eso `pron init` sigue imprimiendo sus "Registered".
+- La superficie pública (el constructor de `Session` y `turn()`) está clavada por spec 12
+  y `tests/session/test_12_runtime_surface.py`; no tocarla.

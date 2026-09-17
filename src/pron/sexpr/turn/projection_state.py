@@ -26,7 +26,11 @@ class ProjectionState:
     """The loaded projection, the hash it was loaded at, and the ledger of the session."""
 
     def __init__(
-        self, world: World, settings: ProjectionSettings, matcher: Matcher, dialogue: Dialogue
+        self,
+        world: World,
+        settings: ProjectionSettings,
+        matcher: Matcher,
+        dialogue: Dialogue,
     ):
         self.world, self.settings = world, settings
         self.matcher, self.dialogue = matcher, dialogue

@@ -37,7 +37,9 @@ class WorldTemplate:
             self.store.update_index()
         return added
 
-    def _copy_folder(self, src_dir: Path, sub: str, model: str, prefix: str) -> list[str]:
+    def _copy_folder(
+        self, src_dir: Path, sub: str, model: str, prefix: str
+    ) -> list[str]:
         added: list[str] = []
         for src in sorted(src_dir.glob("*.md")):
             name = prefix + src.stem

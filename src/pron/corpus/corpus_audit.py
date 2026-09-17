@@ -21,7 +21,9 @@ class CorpusAudit:
         entries = {e.id: e for e in self.corpus.entries()}
         indexed = self.corpus.index.entries_by_hash()
         missing = sorted(k for k in entries if k not in indexed)
-        stale = sorted(k for k, e in entries.items() if k in indexed and indexed[k] != e.hash)
+        stale = sorted(
+            k for k, e in entries.items() if k in indexed and indexed[k] != e.hash
+        )
         orphan = sorted(k for k in indexed if k not in entries)
         return {
             "embedder": self.corpus.matcher.id(),

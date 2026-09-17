@@ -56,7 +56,9 @@ class SpokenForms:
         model = self.lex.models[0]
         singular = self.model_form(model)
         out: list[str] = [f"the {self._plural(model, singular) or singular}"]
-        value_word = next((w for w in self.lex.of_kind("value") if w.model == model), None)
+        value_word = next(
+            (w for w in self.lex.of_kind("value") if w.model == model), None
+        )
         if value_word is not None:
             out.append(self._with_value(model, singular, value_word))
         if "create" in self.lex.actions:
@@ -71,6 +73,10 @@ class SpokenForms:
     def _plural(self, model: str, singular: str) -> str | None:
         """A model word for the same model other than its singular form, if there is one."""
         return next(
-            (w.form for w in self.lex.of_kind("model") if w.model == model and w.form != singular),
+            (
+                w.form
+                for w in self.lex.of_kind("model")
+                if w.model == model and w.form != singular
+            ),
             None,
         )

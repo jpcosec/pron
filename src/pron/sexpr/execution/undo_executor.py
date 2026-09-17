@@ -58,7 +58,6 @@ def _line(w: Write) -> str:
 
 def _text(move: dict[str, Any], writes: list[Write]) -> str:
     skipped = [w.note for w in writes if not w.done]
-    return (
-        f"Undid {move['id']} ({len([w for w in writes if w.done])} write(s))."
-        + (" Not touched: " + "; ".join(skipped) + "." if skipped else "")
+    return f"Undid {move['id']} ({len([w for w in writes if w.done])} write(s))." + (
+        " Not touched: " + "; ".join(skipped) + "." if skipped else ""
     )

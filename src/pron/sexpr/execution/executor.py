@@ -60,7 +60,9 @@ class Executor:
         return edges(part, plan, ctx), True
 
     def _x_action(self, part, plan, ctx) -> tuple[str, bool]:
-        return ActionExecutor(self.t.kernel, self.t.dialogue, self.t.display)(part, plan, ctx)
+        return ActionExecutor(self.t.kernel, self.t.dialogue, self.t.display)(
+            part, plan, ctx
+        )
 
     def _x_compose(self, part, plan, ctx) -> tuple[str, bool]:
         t = self.t

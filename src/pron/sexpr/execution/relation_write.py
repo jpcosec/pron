@@ -20,10 +20,14 @@ if TYPE_CHECKING:
 class EdgeWriter:
     """The RelationDocs of a move, written with the projection's naming for them."""
 
-    def __init__(self, projection: dict[str, Any], verbs: Verbs, write_store: str | None):
+    def __init__(
+        self, projection: dict[str, Any], verbs: Verbs, write_store: str | None
+    ):
         self.projection, self.verbs, self.write_store = projection, verbs, write_store
 
-    def __call__(self, relation: str, source: str, target: str, ctx: MoveContext) -> None:
+    def __call__(
+        self, relation: str, source: str, target: str, ctx: MoveContext
+    ) -> None:
         """Create the RelationDoc for one edge, trace it, and record it for undo."""
         naming = (self.projection.get("naming") or {}).get("RelationDoc")
         doc_name, _ = self.verbs.assert_edge(relation, source, target, naming)

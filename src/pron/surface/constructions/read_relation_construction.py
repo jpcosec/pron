@@ -37,7 +37,12 @@ class ReadRelationConstruction:
         return part
 
     def _sides(
-        self, part: Part, w: Word, items: list[Item], nps: list[NounPhrase], lex: "Lexicon"
+        self,
+        part: Part,
+        w: Word,
+        items: list[Item],
+        nps: list[NounPhrase],
+        lex: "Lexicon",
     ) -> None:
         rt = lex.relation_types.get(w.relation or "", {})
         sources = set(rt.get("source_types") or [])

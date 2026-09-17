@@ -29,7 +29,9 @@ class Asker:
     def __init__(self, display: Display, dialogue: Dialogue):
         self.display, self.dialogue = display, dialogue
 
-    def choice(self, part: Part, role: str, res: Resolution, ctx: MoveContext) -> Response:
+    def choice(
+        self, part: Part, role: str, res: Resolution, ctx: MoveContext
+    ) -> Response:
         """A noun that named more than one document: the session asks which one."""
         labels = self.display.names(res.candidates)
         self.dialogue.open(self._choice_pending(part, role, res, labels, ctx.sentence))

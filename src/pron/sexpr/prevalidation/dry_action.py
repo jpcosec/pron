@@ -32,7 +32,7 @@ class DryAction:
         overlay: dict[str, dict[str, Any]],
     ) -> None:
         verb = action_verb(part)
-        if not self.kernel.allowed(verb):
+        if verb is None or not self.kernel.allowed(verb):
             raise StoreError(f"in this session I cannot {verb}")
         if verb == "create":
             self._create(part, overlay)
@@ -48,14 +48,12 @@ class DryAction:
             overlay[self._named(part)] = full
 
     def _named(self, part: Part) -> str:
-        assert part.subject is not None
-        return join_id(
-            self.write_store, part.subject.model, part.payload["name"]
-        )
+        assert part.subject is not None and part.subject.model is not None
+        return join_id(self.write_store, part.subject.model, part.payload["name"])
 
     def _writes(
         self,
-        verb: str | None,
+        verb: str,
         part: Part,
         plan: dict[str, Any],
         overlay: dict[str, dict[str, Any]],

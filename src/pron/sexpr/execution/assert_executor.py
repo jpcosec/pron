@@ -27,7 +27,12 @@ class AssertExecutor:
     def __init__(
         self, lex: Lexicon, display: Display, dialogue: Dialogue, edges: EdgeWriter
     ):
-        self.lex, self.display, self.dialogue, self.edges = lex, display, dialogue, edges
+        self.lex, self.display, self.dialogue, self.edges = (
+            lex,
+            display,
+            dialogue,
+            edges,
+        )
 
     def __call__(self, part: Part, plan: dict[str, Any], ctx: MoveContext) -> str:
         assert part.verb is not None and part.verb.relation is not None

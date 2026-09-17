@@ -54,7 +54,11 @@ class Corpus:
     def index_path(self) -> Path:
         safe = self.matcher.id().replace("/", "_").replace(":", "_")
         text_id = self.projection.text_id
-        name = f"docs.{safe}.json" if text_id == "summary" else f"docs.{text_id}.{safe}.json"
+        name = (
+            f"docs.{safe}.json"
+            if text_id == "summary"
+            else f"docs.{text_id}.{safe}.json"
+        )
         return self.world.derived_dir / name
 
     @property

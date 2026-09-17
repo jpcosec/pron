@@ -27,9 +27,7 @@ class WordModifier:
     def __init__(self, lex: "Lexicon") -> None:
         self.lex = lex
 
-    def __call__(
-        self, it: Item, following: list[Item] | None, np: NounPhrase
-    ) -> int:
+    def __call__(self, it: Item, following: list[Item] | None, np: NounPhrase) -> int:
         """Returns the items used: 0 when no word of the item modifies this phrase."""
         assert np.model is not None
         following = following or []

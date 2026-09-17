@@ -17,10 +17,14 @@ class SessionOps:
         self.server = server
 
     def say(self, name: str, req: dict[str, Any], foreign: bool) -> dict[str, Any]:
-        return self._response(self.server.pool.session(name, req, foreign).turn(req["sentence"]))
+        return self._response(
+            self.server.pool.session(name, req, foreign).turn(req["sentence"])
+        )
 
     def eval(self, name: str, req: dict[str, Any], foreign: bool) -> dict[str, Any]:
-        return self._response(self.server.pool.session(name, req, foreign).eval(req["forms"]))
+        return self._response(
+            self.server.pool.session(name, req, foreign).eval(req["forms"])
+        )
 
     @staticmethod
     def _response(r: Any) -> dict[str, Any]:

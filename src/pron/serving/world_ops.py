@@ -63,7 +63,10 @@ class WorldOps:
         self._in_projection(name, req, req["model"])
         world = self.server.world
         world.store.begin_operation()
-        return {"ok": True, "payload": world.store.payload(req["model"], req["doc"], name)}
+        return {
+            "ok": True,
+            "payload": world.store.payload(req["model"], req["doc"], name),
+        }
 
     def _in_projection(self, name: str, req: dict[str, Any], model: str) -> None:
         """A payload read names a projection or none; with one, the model must be in it (01)."""
@@ -79,7 +82,10 @@ class WorldOps:
             raise PermissionError(f"{model} is not in projection {pname!r}")
 
     def graph(self, name: str, req: dict[str, Any], foreign: bool) -> dict[str, Any]:
-        return {"ok": True, "result": _call(self.server.world.graph, GRAPH_METHODS, req)}
+        return {
+            "ok": True,
+            "result": _call(self.server.world.graph, GRAPH_METHODS, req),
+        }
 
     def world(self, name: str, req: dict[str, Any], foreign: bool) -> dict[str, Any]:
         return {"ok": True, "result": _call(self.server.world, WORLD_METHODS, req)}

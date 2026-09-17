@@ -8,7 +8,7 @@
 ├── INDEX.md              este índice
 ├── CHANGELOG.md          versiones tageadas
 ├── pyproject.toml        paquete `pron`; extra `dev` (pytest, syrupy, ruff, mypy)
-├── Makefile              check · lint · audit · test · world · docs-check
+├── Makefile              check · lint · format · typecheck · test · world · docs-check
 ├── constraints.txt       commits de sldb y kgdb contra los que se prueba (la CI lo lee acá)
 ├── .github/workflows/    CI: `make check`
 │
@@ -32,7 +32,7 @@
 ├── docs/                 documentación para personas
 │   ├── spec2viz/         diagramas: specs/*.yml → `python build.py` → index.html, offline.html
 │   └── HANDOFF.md        traspaso entre sesiones (2026-09-09, histórico)
-└── tools/                herramientas de desarrollo: check_file_length.py (`make audit`), merkle_bench.py
+└── tools/                herramientas de desarrollo: check_file_length.py (`make lint`), merkle_bench.py
 ```
 
 ## Lo que no está en git

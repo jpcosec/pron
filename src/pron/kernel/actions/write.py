@@ -42,4 +42,6 @@ def restore_field(kernel: "Kernel", write: dict[str, Any]) -> Write:
     before = kernel.store.update_field_of(
         write["address"], write["field"], write["before"]
     )
-    return Write("undo", write["address"], write["field"], before, write["before"], done=True)
+    return Write(
+        "undo", write["address"], write["field"], before, write["before"], done=True
+    )

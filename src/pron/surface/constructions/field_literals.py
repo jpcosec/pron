@@ -43,7 +43,11 @@ class FieldLiterals:
         """The first field word of the item that belongs to the model gives its value, if any."""
         it = items[k]
         w = next(
-            (w for w in it.words if w.kind in FIELD_KINDS and not self._foreign(w, model)),
+            (
+                w
+                for w in it.words
+                if w.kind in FIELD_KINDS and not self._foreign(w, model)
+            ),
             None,
         )
         if w is None:

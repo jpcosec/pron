@@ -14,12 +14,18 @@ class PendingRefresh:
         self._pending: tuple[set[str] | None, bool] | None = None  # (stores, light)
 
     def defer(self, stores: list[str] | None, light: bool) -> None:
-        wanted = None if stores is None else set(stores)  # None: every store, as in refresh
+        wanted = (
+            None if stores is None else set(stores)
+        )  # None: every store, as in refresh
         if self._pending is None:
             self._pending = (wanted, light)
         else:
             pending_stores, pending_light = self._pending
-            union = None if pending_stores is None or wanted is None else pending_stores | wanted
+            union = (
+                None
+                if pending_stores is None or wanted is None
+                else pending_stores | wanted
+            )
             self._pending = (union, pending_light and light)
 
     @property

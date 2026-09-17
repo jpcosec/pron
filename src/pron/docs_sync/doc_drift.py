@@ -9,4 +9,6 @@ from typing import Any
 
 def drifted(existing: Any, canonical: dict[str, Any]) -> bool:
     """True unless the document exists and holds every canonical field as its source says."""
-    return existing is None or {k: existing.payload.get(k) for k in canonical} != canonical
+    return (
+        existing is None or {k: existing.payload.get(k) for k in canonical} != canonical
+    )

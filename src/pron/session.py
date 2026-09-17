@@ -65,7 +65,9 @@ class Session:
         self.matcher = Matcher(embedder)
         self.state = ProjectionState(world, settings, self.matcher, self.dialogue)
         self.ledger = self.state.ledger
-        self._said = ""  # the sentence the last move said; a pending question refers to it
+        self._said = (
+            ""  # the sentence the last move said; a pending question refers to it
+        )
 
     projection = _loaded("projection")
     write_store = _loaded("write_store")
@@ -81,9 +83,7 @@ class Session:
 
     def turn(self, sentence: str) -> Response:
         """One sentence: the surface resolves it to forms (spec 13) and the forms are evaluated."""
-        return self._move(
-            sentence, lambda ctx: SentenceTurn(self.state)(sentence, ctx)
-        )
+        return self._move(sentence, lambda ctx: SentenceTurn(self.state)(sentence, ctx))
 
     def eval(self, forms: str) -> Response:
         """One move written as forms (spec 13), with the same permissions, pre-validation, writes,

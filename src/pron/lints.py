@@ -22,7 +22,11 @@ class Lints:
         lex = Lexicon(self.world, self.world.projection("all"))
         problems = self._aliases()
         # every word of the lexicon has a motive
-        problems += [f"lexicon: '{w.form}' ({w.ref}) has no motive" for w in lex.words if not w.motive.strip()]
+        problems += [
+            f"lexicon: '{w.form}' ({w.ref}) has no motive"
+            for w in lex.words
+            if not w.motive.strip()
+        ]
         problems += self._store_integrity() + self._deskops_models()
         problems += self._relation_endpoints() + self._move_hashes() + self._own_docs()
         return problems
@@ -89,7 +93,10 @@ class Lints:
             return []
         from pron.docs import synchronize_docs
 
-        problems = [f"docs drift: {change}" for change in synchronize_docs(self.world, check=True)]
+        problems = [
+            f"docs drift: {change}"
+            for change in synchronize_docs(self.world, check=True)
+        ]
         implemented = {
             d.payload["source_id"]
             for d in self.store.docs_of("RelationDoc")

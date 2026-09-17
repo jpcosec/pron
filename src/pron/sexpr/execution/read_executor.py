@@ -32,9 +32,19 @@ class ReadExecutor:
     """One relation read, answered."""
 
     def __init__(
-        self, world: World, lex: Lexicon, verbs: Verbs, dialogue: Dialogue, display: Display
+        self,
+        world: World,
+        lex: Lexicon,
+        verbs: Verbs,
+        dialogue: Dialogue,
+        display: Display,
     ):
-        self.world, self.verbs, self.dialogue, self.display = world, verbs, dialogue, display
+        self.world, self.verbs, self.dialogue, self.display = (
+            world,
+            verbs,
+            dialogue,
+            display,
+        )
         self.leftovers = LeftoverPredicates(world, lex)
         self.predicates = PredicateFilter(world, lex)
 

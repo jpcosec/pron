@@ -21,13 +21,17 @@ class FunctionWordTable:
         for kind, forms in fw["interrogatives"].items():
             for f in forms:
                 self.function.setdefault(normalize(f), ("wh", {"question": kind}))
-        for key, kind in (("conjunction", "conj"), ("negation", "negation"), ("preposition_of", "of")):
+        for key, kind in (
+            ("conjunction", "conj"),
+            ("negation", "negation"),
+            ("preposition_of", "of"),
+        ):
             for f in fw[key]:
                 self.function[normalize(f)] = (kind, {})
         self.numbers = {k: v for k, v in fw["numbers"]["words"].items()}
 
     def _determiners(self, determiners: dict[str, list[str]]) -> None:
-        """"the" carries no number: the noun form that follows decides it."""
+        """ "the" carries no number: the noun form that follows decides it."""
         for num, forms in determiners.items():
             for f in forms:
                 self.function[normalize(f)] = (

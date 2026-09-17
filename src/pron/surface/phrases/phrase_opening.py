@@ -38,7 +38,7 @@ class PhraseOpening:
         return self.i < len(self.items)
 
     def _genitive(self) -> None:
-        """"Ana's reservations": the possessor's tokens become a complement of the head."""
+        """ "Ana's reservations": the possessor's tokens become a complement of the head."""
         items, i = self.items, self.i
         if items[i].kind != "unknown":
             return
@@ -65,14 +65,16 @@ class PhraseOpening:
 
     def _referent(self, it: Item) -> tuple[NounPhrase, int] | None:
         if it.kind == "referent" and it.meta.get("who") in ("singular", "plural"):
-            np = NounPhrase(None, self.det, it.number or "singular", referent=it, items=[it])
+            np = NounPhrase(
+                None, self.det, it.number or "singular", referent=it, items=[it]
+            )
             return np, self.i - self.start + 1
         if it.kind == "word" and it.words and it.words[0].kind in SWALLOWING_ALIASES:
             return self._swallowed_pronoun(it)
         return None
 
     def _swallowed_pronoun(self, it: Item) -> tuple[NounPhrase, int] | None:
-        """"confirm it", "book her": the alias form swallowed the pronoun; it is still a referent."""
+        """ "confirm it", "book her": the alias form swallowed the pronoun; it is still a referent."""
         last = it.text.split()[-1].lower()
         number = PRONOUNS.get(last)
         if not number or self.det is not None:

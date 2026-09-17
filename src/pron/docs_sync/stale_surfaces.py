@@ -20,7 +20,9 @@ class StaleSurfaces:
     def __call__(self, specs: list[dict[str, Any]]) -> list[str]:
         store = self.world.store
         wanted = {spec["id"] for spec in specs}
-        stale = sorted(d.name for d in store.docs_of("SurfaceDoc") if d.name not in wanted)
+        stale = sorted(
+            d.name for d in store.docs_of("SurfaceDoc") if d.name not in wanted
+        )
         generated = (self.world.root / "knowledge" / "surfaces").resolve()
         for name in [] if self.check else stale:
             path = store.doc_path("SurfaceDoc", name)

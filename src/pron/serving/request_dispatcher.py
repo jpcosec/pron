@@ -64,7 +64,11 @@ class RequestDispatcher:
     def _daemon(self, op: str, req: dict[str, Any]) -> dict[str, Any]:
         server = self.server
         if op == "worlds":
-            return {"ok": True, "worlds": server.worlds(), "default": server.names.own()}
+            return {
+                "ok": True,
+                "worlds": server.worlds(),
+                "default": server.names.own(),
+            }
         if op == "mount":
             world = server.mount(req["name"], req["root"], req.get("pythonpath"))
             return {"ok": True, "world": world}

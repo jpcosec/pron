@@ -37,7 +37,9 @@ class ReadmeDoc(StructuredNLDoc):
 ⸢render•parts_render⸥
 """.strip()
 
-    title: str = Field(description="The project name the README opens with, e.g. 'pron'.")
+    title: str = Field(
+        description="The project name the README opens with, e.g. 'pron'."
+    )
     parts: list[str] = Field(
         description=(
             "Paths of the ExplanationDoc files, in README order. Relative paths resolve "

@@ -36,9 +36,7 @@ class DryCompose:
         assert part.verb is not None
         self.overlay = overlay
         self.created_model: str | None = None
-        self.literals = {
-            k: v for k, v in part.payload.items() if not k.startswith("_")
-        }
+        self.literals = {k: v for k, v in part.payload.items() if not k.startswith("_")}
         steps = part.verb.payload.get("steps", [])
         for step, resolved in zip(steps, plan["steps"]):
             self._step(step, resolved)
@@ -62,11 +60,13 @@ class DryCompose:
         self.created_model = step["model"]
         if self.created_model is None:
             raise StoreError("create requires a model")
-        self.kernel.dry_create(self.created_model, self._fields(), self.overlay)
+        self.kernel.dry_create(
+            self.created_model, self._fields(self.created_model), self.overlay
+        )
 
-    def _fields(self) -> dict[str, Any]:
+    def _fields(self, model: str) -> dict[str, Any]:
         """The literals of the sentence this model has a field for."""
-        names = {f["name"] for f in self.kernel.schema(self.created_model)}
+        names = {f["name"] for f in self.kernel.schema(model)}
         return {k: v for k, v in self.literals.items() if k in names}
 
     def _do_assert(self, step, resolved, created_id: str | None) -> None:

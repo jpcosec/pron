@@ -48,7 +48,11 @@ class CreateVerb:
         name = self._name(kernel, model, payload, related, name)
         full = kernel.fields.coerced(model, payload)
         kernel.roundtrip(model, full, kernel.write_store)
-        path = kernel.store.root_of(kernel.write_store) / f"{model.lower()}s" / f"{name}.md"
+        path = (
+            kernel.store.root_of(kernel.write_store)
+            / f"{model.lower()}s"
+            / f"{name}.md"
+        )
         export_id = kernel.store.create(model, name, full, path, kernel.write_store)
         w = Write("create", export_id, after=full, done=True, extra={"path": str(path)})
         kernel._after_write(export_id, w)

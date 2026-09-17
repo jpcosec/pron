@@ -34,7 +34,9 @@ class StructuralQuery(DocumentReader):
                 self.sp, scope, where, resolve_model_ref, self.pythonpath
             )
         except WherePredicateError as e:
-            raise StoreError(str(e)) from e  # an unparseable predicate is an error, never an empty set
+            raise StoreError(
+                str(e)
+            ) from e  # an unparseable predicate is an error, never an empty set
 
     def list(self, address: str) -> builtins.list[str]:
         return list_structural(self.sp, address, resolve_model_ref, self.pythonpath)

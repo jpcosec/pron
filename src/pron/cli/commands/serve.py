@@ -53,7 +53,9 @@ def command(
     """
     from pron.remote import socket_path
 
-    entries = [_entry(spec, pythonpath) for spec in world]
+    entries: list[tuple[str, str | Path, str | None]] = [
+        _entry(spec, pythonpath) for spec in world
+    ]
     sock = Path(socket) if socket else socket_path(entries[0][1])
     if stop:
         return _stop(sock)
@@ -95,7 +97,7 @@ def _mount(sock: Path, mount: str, pythonpath: str | None) -> int:
     return 0
 
 
-def _serve(sock: Path, entries: list[tuple[str, str, str | None]]) -> int:
+def _serve(sock: Path, entries: list[tuple[str, str | Path, str | None]]) -> int:
     from pron.serve import Server
 
     server = Server(sock=sock, worlds=entries)

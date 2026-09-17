@@ -80,7 +80,9 @@ class Replier:
             listing = numbered(pending.labels)
             return Response(f"Still pending. Which one? {listing}", "ambiguo")
         chosen = pending.candidates[picks[0]]
-        ctx.trace.append(f"'{sentence.strip()}' → {chosen} (answer to the pending question)")
+        ctx.trace.append(
+            f"'{sentence.strip()}' → {chosen} (answer to the pending question)"
+        )
         self.dialogue.close()
         self.dialogue.remember([chosen], model_of(address_to_export_id(chosen)))
         _pin(getattr(part, pending.slot, None), chosen)
