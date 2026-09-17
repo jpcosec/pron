@@ -8,12 +8,7 @@ model excluded); otherwise every read says so and callers fall back to sldb.
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-from typing import Any
-
-GRAPH_RELPATH = Path(".pron") / "graph.nx.json"
-LEDGER_MODEL = "MoveDoc"
+from pron.world.graph_file import GraphFile
 
 
 def doc_id(export_id: str) -> str:
@@ -52,85 +47,9 @@ def bare(node_id: str) -> str:
     return node_id
 
 
-class Graph:
-    """Reads the node-link JSON kgdb saved, without networkx: nodes by id, edges indexed by
-    source and by target. Reading a file format is not assembling a graph."""
-
-    def __init__(self, root: str | Path) -> None:
-        self.path = Path(root).resolve() / GRAPH_RELPATH
-        self._nodes: dict[str, dict[str, Any]] | None = None
-        self._out: dict[str, list[dict[str, Any]]] = {}
-        self._in: dict[str, list[dict[str, Any]]] = {}
-
-    def available(self) -> bool:
-        return self.path.exists()
-
-    def load(self) -> dict[str, dict[str, Any]]:
-        if self._nodes is None:
-            data = json.loads(self.path.read_text(encoding="utf-8"))
-            self._nodes = {n["id"]: n for n in data.get("nodes", [])}
-            self._out, self._in = {}, {}
-            for link in data.get("links", data.get("edges", [])):
-                e = {
-                    "source": link["source"],
-                    "target": link["target"],
-                    "relation": link.get("relation", link.get("key")),
-                    "metadata": link.get("metadata", {}) or {},
-                }
-                self._out.setdefault(e["source"], []).append(e)
-                self._in.setdefault(e["target"], []).append(e)
-        return self._nodes
-
-    def reload(self) -> None:
-        self._nodes = None
-
-    def metadata(self) -> dict[str, Any]:
-        data = json.loads(self.path.read_text(encoding="utf-8"))
-        return data.get("graph", {}) or {}
-
-    def built_from(self) -> dict[str, str]:
-        """Model name -> hash_b the snapshot was built from (ledger excluded)."""
-        models = self.metadata().get("models", {}) or {}
-        return {k: v for k, v in models.items() if k != LEDGER_MODEL}
-
-    def is_fresh(self, current_models: dict[str, str]) -> bool:
-        if not self.available():
-            return False
-        current = {k: v for k, v in current_models.items() if k != LEDGER_MODEL}
-        return self.built_from() == current
-
-    def has_node(self, node_id: str) -> bool:
-        return node_id in self.load()
-
-    def node(self, node_id: str) -> dict[str, Any]:
-        return self.load().get(node_id, {}).get("schema", {}) or {}
-
-    def edges_from(
-        self, node_id: str, relation: str | None = None
-    ) -> list[dict[str, Any]]:
-        """Outgoing edges: [{source, target, relation, metadata}]."""
-        self.load()
-        return [
-            dict(e)
-            for e in self._out.get(node_id, [])
-            if relation is None or e["relation"] == relation
-        ]
-
-    def edges_to(
-        self, node_id: str, relation: str | None = None
-    ) -> list[dict[str, Any]]:
-        self.load()
-        return [
-            dict(e)
-            for e in self._in.get(node_id, [])
-            if relation is None or e["relation"] == relation
-        ]
-
-    def exists(self, source: str, target: str, relation: str) -> dict[str, Any] | None:
-        for e in self.edges_from(source, relation):
-            if e["target"] == target:
-                return e
-        return None
+class Graph(GraphFile):
+    """The typed graph of a world: the file kgdb saved (`GraphFile`) and the walks over it,
+    each one parametrized by a relation name."""
 
     # -- navigation (spec 10 §2): every walk is parametrized by a relation name -------------
     # Nothing here knows which relations a world declares; kgdb's structural ones
@@ -175,15 +94,21 @@ class Graph:
         frontier = [node_id]
         level = 0
         while frontier and (depth is None or level < depth):
-            nxt: list[str] = []
-            for n in frontier:
-                for child in self.sources(n, relation):
-                    if child not in seen and child != node_id:
-                        seen.add(child)
-                        nxt.append(child)
-            frontier = nxt
+            frontier = self._next_level(frontier, relation, seen, node_id)
             level += 1
         return sorted(seen)
+
+    def _next_level(
+        self, frontier: list[str], relation: str, seen: set[str], origin: str
+    ) -> list[str]:
+        """The children of a frontier not seen yet (and never the origin), marked seen."""
+        nxt: list[str] = []
+        for n in frontier:
+            for child in self.sources(n, relation):
+                if child not in seen and child != origin:
+                    seen.add(child)
+                    nxt.append(child)
+        return nxt
 
     def neighbors_via(
         self,
