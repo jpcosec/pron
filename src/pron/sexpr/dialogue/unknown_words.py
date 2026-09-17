@@ -8,28 +8,34 @@ answer nobody expected can be explained without running anything again.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.interpretation import Interpretation
 from pron.kernel.parts.response import Response
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.dialogue.parse_hint import cannot_parse_hint
+
+if TYPE_CHECKING:
+    from pron.sexpr.dialogue.value_suggestions import ValueSuggestions
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.world.lexicon import Lexicon
+    from pron.world.matching.matcher import Matcher
 
 Suggestion = tuple[str, str, str, str]
 
 
-class UnknownWords(Collaborator):
+class UnknownWords:
     """What to say back about the first word of a sentence that is not in the lexicon."""
 
-    def __call__(
-        self, interp: Interpretation, trace: list[str], record: dict[str, Any]
-    ) -> Response:
+    def __init__(self, lex: Lexicon, matcher: Matcher, suggestions: ValueSuggestions):
+        self.lex, self.matcher, self.suggestions = lex, matcher, suggestions
+
+    def __call__(self, interp: Interpretation, ctx: MoveContext) -> Response:
         word = interp.unknown[0].text
-        near = self.s.lex.near(word)
-        values = self._values(word, near, trace)
-        self._record(word, near, values, record)
+        near = self.lex.near(word)
+        values = self._values(word, near, ctx.trace)
+        self._record(word, near, values, ctx.record)
         names = [f"*{w.form}*" for w, _ in near]
-        trace.append(self._line(word, names, values))
+        ctx.trace.append(self._line(word, names, values))
         return self._answer(word, [f"*{s}*" for *_, s in values] + names)
 
     def _values(
@@ -38,7 +44,7 @@ class UnknownWords(Collaborator):
         """Values are only ranked when no near word is one already."""
         if any(w.kind == "value" for w, _ in near):
             return []
-        return self.s._value_word_suggestions(word, trace)
+        return self.suggestions(word, trace)
 
     def _record(
         self,
@@ -50,7 +56,7 @@ class UnknownWords(Collaborator):
         record["missing"] = {
             "word": word,
             "near": [w.form for w, _ in near],
-            "matcher": self.s.matcher.id(),
+            "matcher": self.matcher.id(),
         }
         if values:
             record["missing"]["values"] = [
@@ -60,7 +66,7 @@ class UnknownWords(Collaborator):
 
     def _line(self, word: str, names: list[str], values: list[Suggestion]) -> str:
         return (
-            f"'{word}' is not in the projection · near ({self.s.matcher.id()}): "
+            f"'{word}' is not in the projection · near ({self.matcher.id()}): "
             f"{', '.join(names) or 'nothing'}"
             + (
                 "; value candidates: " + ", ".join(sent for *_, sent in values)
@@ -75,7 +81,7 @@ class UnknownWords(Collaborator):
             + (
                 f" Did you mean {' or '.join(offers)}?"
                 if offers
-                else " " + cannot_parse_hint(self.s.lex)
+                else " " + cannot_parse_hint(self.lex)
             ),
             "missing",
         )

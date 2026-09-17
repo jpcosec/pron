@@ -13,24 +13,24 @@ from typing import TYPE_CHECKING, Any
 from pron.kernel.ids import join_id
 
 if TYPE_CHECKING:
-    from pron.session import Session
+    from pron.sexpr.resolving.verbs import Verbs
+    from pron.sexpr.turn.move_context import MoveContext
 
 
-def write_edge(
-    session: "Session",
-    relation: str,
-    source: str,
-    target: str,
-    trace: list[str],
-    record: dict[str, Any],
-) -> None:
-    """Create the RelationDoc for one edge, trace it, and record it for undo."""
-    naming = (session.projection.get("naming") or {}).get("RelationDoc")
-    doc_name, _ = session.verbs.assert_edge(relation, source, target, naming)
-    trace.append(f"docs create --model RelationDoc {doc_name}")
-    record["writes"].append(
-        relation_write(session.write_store, relation, source, target, doc_name)
-    )
+class EdgeWriter:
+    """The RelationDocs of a move, written with the projection's naming for them."""
+
+    def __init__(self, projection: dict[str, Any], verbs: Verbs, write_store: str | None):
+        self.projection, self.verbs, self.write_store = projection, verbs, write_store
+
+    def __call__(self, relation: str, source: str, target: str, ctx: MoveContext) -> None:
+        """Create the RelationDoc for one edge, trace it, and record it for undo."""
+        naming = (self.projection.get("naming") or {}).get("RelationDoc")
+        doc_name, _ = self.verbs.assert_edge(relation, source, target, naming)
+        ctx.trace.append(f"docs create --model RelationDoc {doc_name}")
+        ctx.record["writes"].append(
+            relation_write(self.write_store, relation, source, target, doc_name)
+        )
 
 
 def relation_write(

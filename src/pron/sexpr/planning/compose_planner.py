@@ -9,31 +9,33 @@ projection has to allow every verb the steps do, or the whole composition is ref
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
 from pron.kernel.parts.word import Word
 from pron.sexpr.dialogue.asker import Asker
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.planning.compose_slots import ComposeSlots
 from pron.sexpr.planning.phrase_planner import PhrasePlanner
 from pron.sexpr.resolving.resolution import Resolution
 
+if TYPE_CHECKING:
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.sexpr.turn.turn_tools import TurnTools
 
-class ComposePlanner(Collaborator):
+
+class ComposePlanner:
     """A composition's steps, resolved; or the question or refusal that stops it."""
 
-    def __call__(
-        self,
-        part: Part,
-        trace: list[str],
-        record: dict[str, Any],
-        pending: dict[str, str] | None = None,
-    ) -> dict[str, Any] | Response:
+    def __init__(self, tools: TurnTools):
+        self.kernel, self.lex, self.world = tools.kernel, tools.lex, tools.world
+        self.phrases = PhrasePlanner(tools.world, tools.lex, tools.dialogue)
+        self.asker = Asker(tools.display, tools.dialogue)
+
+    def __call__(self, part: Part, ctx: MoveContext) -> dict[str, Any] | Response:
         assert part.verb is not None
-        self.part, self.trace, self.record, self.pending = part, trace, record, pending
-        self.slots = ComposeSlots(self.s)(part)
+        self.part, self.ctx = part, ctx
+        self.slots = ComposeSlots(self.world)(part)
         steps = self._steps(part.verb.payload.get("steps", []))
         if isinstance(steps, Response):
             return steps
@@ -72,11 +74,11 @@ class ComposePlanner(Collaborator):
         return self._resolve(np, model, slot_key)
 
     def _resolve(self, np, model: str, slot_key: str) -> Resolution | Response:
-        res = PhrasePlanner(self.s)(np, model, self.trace, self.record, self.pending)
+        res = self.phrases(np, model, self.ctx)
         if res.outcome == "ambiguo":
-            return Asker(self.s).choice(self.part, slot_key, res, self.record)
+            return self.asker.choice(self.part, slot_key, res, self.ctx)
         if res.outcome == "missing":
-            return Asker(self.s).missing(res, self.record)
+            return self.asker.missing(res, self.ctx)
         return res
 
     # -- what this session lets a composition do (spec 05) -------------------------------
@@ -84,7 +86,7 @@ class ComposePlanner(Collaborator):
     def _permitted(self, word: Word) -> Response | None:
         steps = word.payload.get("steps", [])
         for verb in ("create", "change"):
-            if not self.s.kernel.allowed(verb) and self._any_step(steps, verb):
+            if not self.kernel.allowed(verb) and self._any_step(steps, verb):
                 return Response(f"In this session I cannot {verb}.", "missing")
         return self._assertable(steps)
 
@@ -98,7 +100,7 @@ class ComposePlanner(Collaborator):
         return None
 
     def _may_assert(self, relation: Any) -> bool:
-        mode = self.s.lex.relation_types.get(relation, {}).get("mode", "read")
+        mode = self.lex.relation_types.get(relation, {}).get("mode", "read")
         return "assert" in mode
 
     @staticmethod

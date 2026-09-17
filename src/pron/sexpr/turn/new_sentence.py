@@ -10,57 +10,53 @@ understood, the sentence itself is understood again, not the forms it said the f
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING
 
 from pron.kernel.parts.interpretation import Interpretation
 from pron.kernel.parts.response import Response
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.dialogue.parse_hint import cannot_parse_hint
 from pron.sexpr.dialogue.unknown_words import UnknownWords
+from pron.sexpr.dialogue.value_suggestions import ValueSuggestions
+from pron.sexpr.turn.evaluator import Evaluator
 from pron.surface.render import said
 
+if TYPE_CHECKING:
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.sexpr.turn.projection_state import ProjectionState
 
-class NewSentence(Collaborator):
+
+class NewSentence:
     """One sentence that does not answer a pending question, understood and run."""
 
-    def __call__(
-        self,
-        sentence: str,
-        trace: list[str],
-        record: dict[str, Any],
-        retry: bool = False,
-    ) -> Response:
-        self.s._sentence = sentence
-        interp = self.s.interpreter.interpret(sentence)
-        record["interpretation"] = interp.to_record()
-        trace.append("interpretation: " + interp.forma)
-        unclear = self._unclear(interp, trace, record)
+    def __init__(self, state: ProjectionState):
+        self.state, self.tools = state, state.tools
+
+    def __call__(self, sentence: str, ctx: MoveContext) -> Response:
+        ctx.sentence = sentence
+        interp = self.tools.interpreter.interpret(sentence)
+        ctx.record["interpretation"] = interp.to_record()
+        ctx.trace.append("interpretation: " + interp.forma)
+        unclear = self._unclear(interp, ctx)
         if unclear is not None:
             return unclear
-        return self._evaluate(sentence, interp, trace, record, retry)
+        return self._evaluate(sentence, interp, ctx)
 
     def _evaluate(
-        self,
-        sentence: str,
-        interp: Interpretation,
-        trace: list[str],
-        record: dict[str, Any],
-        retry: bool,
+        self, sentence: str, interp: Interpretation, ctx: MoveContext
     ) -> Response:
-        """The forms the sentence says; if the world moves meanwhile, the sentence again."""
-        return self.s._eval(
-            said(interp.parts, self.s),
-            trace,
-            record,
-            retry=retry,
-            again=lambda: self.s._new_sentence(sentence, trace, record, retry=True),
+        """The forms the sentence says; if the world moves meanwhile, the sentence again,
+        over the projection as it was loaded again."""
+        return Evaluator(self.state)(
+            said(interp.parts, self.tools),
+            ctx,
+            again=lambda: NewSentence(self.state)(sentence, ctx),
         )
 
-    def _unclear(
-        self, interp: Interpretation, trace: list[str], record: dict[str, Any]
-    ) -> Response | None:
+    def _unclear(self, interp: Interpretation, ctx: MoveContext) -> Response | None:
+        t = self.tools
         if interp.unknown and all(p.kind in ("none", "nominal") for p in interp.parts):
-            return UnknownWords(self.s)(interp, trace, record)
+            suggestions = ValueSuggestions(t.projection, t.lex, t.world, t.matcher)
+            return UnknownWords(t.lex, t.matcher, suggestions)(interp, ctx)
         if any(p.kind == "none" for p in interp.parts):
-            return Response(cannot_parse_hint(self.s.lex), "missing")
+            return Response(cannot_parse_hint(t.lex), "missing")
         return None

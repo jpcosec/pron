@@ -9,6 +9,7 @@ import pytest
 from pron.world.lexicon import Lexicon
 from pron.sexpr.resolving.resolve import resolve
 from pron.session import Session
+from pron.sexpr.dialogue.value_suggestions import ValueSuggestions
 from pron.surface.nouns import find_noun_phrases
 from pron.surface.classifier import Classifier
 from pron.world.world import World
@@ -164,7 +165,8 @@ def test_i_an_unknown_word_never_offers_the_ledger_or_pron_bookkeeping(world: Wo
     for internal in ("MoveDoc", "AnchorDoc", "ProjectionDoc"):
         if internal not in fresh.lex.models:
             fresh.lex.models.append(internal)
-    offered = fresh._value_word_suggestions("evento_adversso", [])
+    suggest = ValueSuggestions(fresh.projection, fresh.lex, fresh.world, fresh.matcher)
+    offered = suggest("evento_adversso", [])
     assert offered, "the real Fact value must still be offered"
     assert all(
         model not in {"MoveDoc", "AnchorDoc", "ProjectionDoc"} for model, *_ in offered

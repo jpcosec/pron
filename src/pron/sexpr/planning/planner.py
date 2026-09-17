@@ -10,48 +10,45 @@ required fields to check.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
 from pron.sexpr.dialogue.asker import Asker
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.planning.compose_planner import ComposePlanner
+from pron.sexpr.planning.needed_model import needed_model
 from pron.sexpr.planning.phrase_planner import PhrasePlanner
 from pron.sexpr.resolving.resolution import Resolution
 
+if TYPE_CHECKING:
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.sexpr.turn.turn_tools import TurnTools
 
-class Planner(Collaborator):
+
+class Planner:
     """A part's plan: what each of its roles resolved to, or the answer that stops it."""
 
-    def __call__(
-        self,
-        part: Part,
-        trace: list[str],
-        record: dict[str, Any],
-        pending: dict[str, str] | None = None,
-    ) -> dict[str, Any] | Response:
+    def __init__(self, tools: TurnTools):
+        self.tools = tools
+        self.phrases = PhrasePlanner(tools.world, tools.lex, tools.dialogue)
+        self.asker = Asker(tools.display, tools.dialogue)
+
+    def __call__(self, part: Part, ctx: MoveContext) -> dict[str, Any] | Response:
         if part.kind in ("undo", "refresh", "why"):
             return {}
         if part.kind == "compose":
-            return ComposePlanner(self.s)(part, trace, record, pending)
-        plan = self._roles(part, trace, record, pending)
+            return ComposePlanner(self.tools)(part, ctx)
+        plan = self._roles(part, ctx)
         if isinstance(plan, Response):
             return plan
-        asked = self._create_data(part, record)
+        asked = self._create_data(part, ctx)
         return asked if asked is not None else plan
 
-    def _roles(
-        self,
-        part: Part,
-        trace: list[str],
-        record: dict[str, Any],
-        pending: dict[str, str] | None,
-    ) -> dict[str, Any] | Response:
+    def _roles(self, part: Part, ctx: MoveContext) -> dict[str, Any] | Response:
         """Subject first, then object: the first that cannot be resolved stops the part."""
         plan: dict[str, Any] = {}
         for role in ("subject", "object"):
-            res = self._role(part, role, trace, record, pending)
+            res = self._role(part, role, ctx)
             if isinstance(res, Response):
                 return res
             if res is not None:
@@ -59,48 +56,28 @@ class Planner(Collaborator):
         return plan
 
     def _role(
-        self,
-        part: Part,
-        role: str,
-        trace: list[str],
-        record: dict[str, Any],
-        pending: dict[str, str] | None,
+        self, part: Part, role: str, ctx: MoveContext
     ) -> Resolution | Response | None:
         np = getattr(part, role)
         if np is None or _is_new_subject(part, role):
             return None  # a create's subject does not exist yet: nothing to resolve
-        need_model = self.needed_model(part, role)
-        res = PhrasePlanner(self.s)(np, need_model, trace, record, pending)
+        need_model = needed_model(part, role, self.tools.lex)
+        res = self.phrases(np, need_model, ctx)
         if res.outcome == "ambiguo":
-            return Asker(self.s).choice(part, role, res, record)
+            return self.asker.choice(part, role, res, ctx)
         if res.outcome == "missing":
-            return Asker(self.s).missing(res, record)
+            return self.asker.missing(res, ctx)
         return res
 
-    def _create_data(self, part: Part, record: dict[str, Any]) -> Response | None:
+    def _create_data(self, part: Part, ctx: MoveContext) -> Response | None:
         """A create the sentence left incomplete asks for the first field it still needs."""
         if not _is_new_subject(part, "subject"):
             return None
         assert part.subject is not None and part.subject.model is not None
-        missing = self.s.kernel.required_missing(
+        missing = self.tools.kernel.required_missing(
             part.subject.model, part.payload["fields"]
         )
-        return Asker(self.s).data(part, missing[0], record) if missing else None
-
-    # -- the class a role needs (spec 02, 05) --------------------------------------------
-
-    def needed_model(self, part: Part, role: str) -> str | None:
-        """What class this role has to be: a relation says it, an action's model says it."""
-        if part.kind in ("read", "assert") and part.verb is not None and part.verb.relation:
-            return self._relation_model(part.verb.relation, role)
-        if part.kind == "action":
-            return part.payload.get("model") or (part.verb.model if part.verb else None)
-        return None
-
-    def _relation_model(self, relation: str, role: str) -> str | None:
-        rt = self.s.lex.relation_types.get(relation, {})
-        types = rt.get("source_types" if role == "subject" else "target_types") or []
-        return types[0] if types else None
+        return self.asker.data(part, missing[0], ctx) if missing else None
 
 
 def _is_new_subject(part: Part, role: str) -> bool:

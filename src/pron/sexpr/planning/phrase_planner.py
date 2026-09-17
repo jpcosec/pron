@@ -10,52 +10,53 @@ move (spec 07).
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING
 
 from pron.kernel.ids import model_of
 from pron.kernel.parts.noun_phrase import NounPhrase
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.turn.note_reads import note_reads
 from pron.sexpr.resolving.resolution import Resolution, address_to_export_id
 from pron.sexpr.resolving.resolve import resolve
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.world.lexicon import Lexicon
+    from pron.world.world import World
 
-class PhrasePlanner(Collaborator):
+
+class PhrasePlanner:
     """One noun phrase, resolved to the addresses it names."""
 
+    def __init__(self, world: World, lex: Lexicon, dialogue: Dialogue):
+        self.world, self.lex, self.dialogue = world, lex, dialogue
+
     def __call__(
-        self,
-        np: NounPhrase,
-        need_model: str | None,
-        trace: list[str],
-        record: dict[str, Any],
-        pending: dict[str, str] | None = None,
+        self, np: NounPhrase, need_model: str | None, ctx: MoveContext
     ) -> Resolution:
         if np.given:
-            return self._given(np, record, pending or {})
+            return self._given(np, ctx)
         need_model = need_model or np.hint
         if np.referent is not None:
-            return self._referent(np, need_model, trace)
-        return self._query(np, trace, record)
+            return self._referent(np, need_model, ctx.trace)
+        return self._query(np, ctx)
 
     # -- said by address (spec 13 §Sustantivos) ------------------------------------------
 
-    def _given(
-        self, np: NounPhrase, record: dict[str, Any], pending: dict[str, str]
-    ) -> Resolution:
+    def _given(self, np: NounPhrase, ctx: MoveContext) -> Resolution:
         for a in np.given:
-            gone = self._absent(address_to_export_id(a), pending)
+            gone = self._absent(address_to_export_id(a), ctx.pending_creates)
             if gone is not None:
                 return Resolution(np, [], "missing", note=gone)
-        note_reads(self.s.world, np.given, record)
+        note_reads(self.world, np.given, ctx.record)
         return self._by_address(np)
 
     def _absent(self, eid: str, pending: dict[str, str]) -> str | None:
         if eid in pending:
             return None  # a create of this move the store has not written yet
         try:
-            self.s.world.store.payload_of(eid)
+            self.world.store.payload_of(eid)
         except StoreError:
             return f"there is no {eid}"
         return None
@@ -92,26 +93,24 @@ class PhrasePlanner(Collaborator):
     ) -> list[str] | Resolution:
         assert np.referent is not None
         if np.referent.meta.get("who") == "speaker":
-            found = self.s.dialogue.speaker_referent()
+            found = self.dialogue.speaker_referent()
             if not found:
                 note = "I don't know who you are in this world"
                 return Resolution(np, [], "missing", note=note)
             return found
-        family = self.s.world.family_of(need_model) if need_model else None
-        found = self.s.dialogue.referent(np.number, need_model, family)
+        family = self.world.family_of(need_model) if need_model else None
+        found = self.dialogue.referent(np.number, need_model, family)
         return found or Resolution(np, [], "missing", note=_no_antecedent(np, need_model))
 
     # -- the query the phrase describes (spec 02) ----------------------------------------
 
-    def _query(
-        self, np: NounPhrase, trace: list[str], record: dict[str, Any]
-    ) -> Resolution:
-        res = resolve(np, self.s.lex)
-        trace.extend(res.queries)
-        record["queries"].extend(res.queries)
+    def _query(self, np: NounPhrase, ctx: MoveContext) -> Resolution:
+        res = resolve(np, self.lex)
+        ctx.trace.extend(res.queries)
+        ctx.record["queries"].extend(res.queries)
         if res.note:
-            trace.append(res.note)
-        note_reads(self.s.world, res.addresses + res.also_read, record)
+            ctx.trace.append(res.note)
+        note_reads(self.world, res.addresses + res.also_read, ctx.record)
         return res
 
 

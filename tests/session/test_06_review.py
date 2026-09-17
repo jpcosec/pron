@@ -12,6 +12,7 @@ import pytest
 
 from pron.world.lexicon import Lexicon
 from pron.session import Session
+from pron.sexpr.prevalidation.prevalidator import Prevalidator
 from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
@@ -123,21 +124,21 @@ def test_the_projection_cuts_aliases_whose_target_is_outside_it(world: World):
 
 def test_hash_mundo_is_read_again_before_executing(world: World, monkeypatch):
     s = Session(world, projection="all", speaker="jp", now=NOW)
-    original = Session._prevalidate
+    original = Prevalidator.__call__
     calls = []
 
-    def racing(self, parts, plans, trace, record):
+    def racing(self, parts, plans, ctx):
         if not calls:  # the first time through: the world changes between understanding and executing
             calls.append(1)
-            self.world.store.create(
+            s.world.store.create(
                 "Table",
                 "table-99",
                 {"number": 99, "capacity": 2, "zone": "indoor"},
-                self.world.root / "tables" / "99.md",
+                s.world.root / "tables" / "99.md",
             )
-        return original(self, parts, plans, trace, record)
+        return original(self, parts, plans, ctx)
 
-    monkeypatch.setattr(Session, "_prevalidate", racing)
+    monkeypatch.setattr(Prevalidator, "__call__", racing)
     r = s.turn("the large tables")
     assert r.outcome == "unico", r.text
     assert any("changed while understanding" in line for line in r.trace), r.trace

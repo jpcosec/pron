@@ -10,17 +10,22 @@ is no payload to check the transition against.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import join_id
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.prevalidation.dry_assert import DryAssert
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
 
-class DryCompose(Collaborator):
+
+class DryCompose:
     """A composition's steps, simulated in the order they will run."""
+
+    def __init__(self, kernel: Kernel, write_store: str | None, dry_assert: DryAssert):
+        self.kernel, self.write_store, self.dry_assert = kernel, write_store, dry_assert
 
     def __call__(
         self,
@@ -51,23 +56,23 @@ class DryCompose(Collaborator):
     def _created_id(self) -> str | None:
         if self.created_model is None:
             return None
-        return join_id(self.s.write_store, self.created_model, "$created")
+        return join_id(self.write_store, self.created_model, "$created")
 
     def _do_create(self, step, resolved, created_id: str | None) -> None:
         self.created_model = step["model"]
         if self.created_model is None:
             raise StoreError("create requires a model")
-        self.s.kernel.dry_create(self.created_model, self._fields(), self.overlay)
+        self.kernel.dry_create(self.created_model, self._fields(), self.overlay)
 
     def _fields(self) -> dict[str, Any]:
         """The literals of the sentence this model has a field for."""
-        names = {f["name"] for f in self.s.kernel.schema(self.created_model)}
+        names = {f["name"] for f in self.kernel.schema(self.created_model)}
         return {k: v for k, v in self.literals.items() if k in names}
 
     def _do_assert(self, step, resolved, created_id: str | None) -> None:
         src = _ids(step, resolved, "source", created_id)
         tgt = _ids(step, resolved, "target", created_id)
-        DryAssert(self.s)(step["relation"], src, tgt, self.overlay)
+        self.dry_assert(step["relation"], src, tgt, self.overlay)
 
     def _do_change(self, step, resolved, created_id: str | None) -> None:
         on_created = step.get("target") == "$created"
@@ -75,7 +80,7 @@ class DryCompose(Collaborator):
         if tgt is None:
             raise StoreError("composition references $created before create")
         if not tgt.endswith(":$created"):
-            self.s.kernel.dry_run(
+            self.kernel.dry_run(
                 "change", tgt, step["field"], step["value"], self.overlay
             )
 

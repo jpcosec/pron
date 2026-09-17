@@ -9,92 +9,85 @@ than one, leaves the question pending and asks it again.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING
 
 from pron.kernel.ids import doc_of
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.execution.listing import numbered
 from pron.sexpr.dialogue.pending import Pending
 from pron.sexpr.resolving.resolution import address_to_export_id
+from pron.sexpr.turn.evaluator import Evaluator
+from pron.sexpr.turn.new_sentence import NewSentence
 from pron.surface.render import said
 
+if TYPE_CHECKING:
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.sexpr.turn.projection_state import ProjectionState
 
-class Replier(Collaborator):
+
+class Replier:
     """The reply to a pending question, and the move it refers to."""
 
-    def __call__(
-        self, sentence: str, trace: list[str], record: dict[str, Any]
-    ) -> tuple[Response, str]:
-        pending = self.s.dialogue.pending
+    def __init__(self, state: ProjectionState):
+        self.state, self.tools = state, state.tools
+        self.dialogue = self.tools.dialogue
+
+    def __call__(self, sentence: str, ctx: MoveContext) -> tuple[Response, str]:
+        pending = self.dialogue.pending
         assert pending is not None
         if self._is_order(sentence):
-            return self._order(sentence, pending, trace, record), pending.move_id
+            return self._order(sentence, pending, ctx), pending.move_id
         if sentence.strip().lower().rstrip("?.! ") in ("none", "neither", "no"):
-            self.s.dialogue.close()
+            self.dialogue.close()
             return Response("Cancelled.", "unico"), pending.move_id
-        return self._answer(pending, sentence, trace, record), pending.move_id
+        return self._answer(pending, sentence, ctx), pending.move_id
 
-    def _answer(
-        self, pending: Pending, sentence: str, trace: list[str], record: dict[str, Any]
-    ) -> Response:
+    def _answer(self, pending: Pending, sentence: str, ctx: MoveContext) -> Response:
         """The value of the missing field, or which of the candidates was meant."""
         part: Part = pending.state["part"]
         if pending.kind == "data":
-            return self._data(part, pending, sentence, trace, record)
-        return self._choice(part, pending, sentence, trace, record)
+            return self._data(part, pending, sentence, ctx)
+        return self._choice(part, pending, sentence, ctx)
 
     def _is_order(self, sentence: str) -> bool:
-        interp = self.s.interpreter.interpret(sentence)
+        interp = self.tools.interpreter.interpret(sentence)
         kinds = [w.kind for i in interp.items for w in i.words]
-        return self.s.dialogue.classify_reply(sentence, kinds) == "order"
+        return self.dialogue.classify_reply(sentence, kinds) == "order"
 
-    def _order(
-        self, sentence: str, pending: Pending, trace: list[str], record: dict[str, Any]
-    ) -> Response:
-        trace.append("pending dropped: a new order")
-        self.s.dialogue.close()
-        record["dropped_pending"] = pending.sentence
-        return self.s._new_sentence(sentence, trace, record)
+    def _order(self, sentence: str, pending: Pending, ctx: MoveContext) -> Response:
+        ctx.trace.append("pending dropped: a new order")
+        self.dialogue.close()
+        ctx.record["dropped_pending"] = pending.sentence
+        return NewSentence(self.state)(sentence, ctx)
 
     def _data(
-        self,
-        part: Part,
-        pending: Pending,
-        sentence: str,
-        trace: list[str],
-        record: dict[str, Any],
+        self, part: Part, pending: Pending, sentence: str, ctx: MoveContext
     ) -> Response:
         value = sentence.strip()
         part.payload["fields"][pending.field_name] = value
-        self.s.dialogue.close()
-        trace.append(
+        self.dialogue.close()
+        ctx.trace.append(
             f"{pending.field_name} = {value!r} (answer to the pending question)"
         )
-        return self._resume(part, trace, record)
+        return self._resume(part, ctx)
 
     def _choice(
-        self,
-        part: Part,
-        pending: Pending,
-        sentence: str,
-        trace: list[str],
-        record: dict[str, Any],
+        self, part: Part, pending: Pending, sentence: str, ctx: MoveContext
     ) -> Response:
-        picks = self.s.dialogue.pick(sentence, self.s.matcher)
+        picks = self.dialogue.pick(sentence, self.tools.matcher)
         if len(picks) != 1:
             listing = numbered(pending.labels)
             return Response(f"Still pending. Which one? {listing}", "ambiguo")
         chosen = pending.candidates[picks[0]]
-        trace.append(f"'{sentence.strip()}' → {chosen} (answer to the pending question)")
-        self.s.dialogue.close()
+        ctx.trace.append(f"'{sentence.strip()}' → {chosen} (answer to the pending question)")
+        self.dialogue.close()
         _pin(getattr(part, pending.slot, None), chosen)
-        return self._resume(part, trace, record)
+        return self._resume(part, ctx)
 
-    def _resume(self, part: Part, trace: list[str], record: dict[str, Any]) -> Response:
+    def _resume(self, part: Part, ctx: MoveContext) -> Response:
         """The answer filled the hole: the part is said again as forms and evaluated."""
-        return self.s._eval(said([part], self.s), trace, record)
+        return Evaluator(self.state)(said([part], self.tools), ctx)
 
 
 def _pin(np, chosen: str) -> None:

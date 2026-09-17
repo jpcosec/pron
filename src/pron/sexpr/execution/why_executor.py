@@ -9,36 +9,38 @@ the question is about whatever was last written or last talked about.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import address_of
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.resolving.resolution import address_to_export_id
 
+if TYPE_CHECKING:
+    from pron.kernel.display import Display
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.sexpr.resolving.verbs import Verbs
+    from pron.sexpr.turn.ledger import Ledger
+    from pron.sexpr.turn.move_context import MoveContext
 
-class WhyExecutor(Collaborator):
+
+class WhyExecutor:
     """What the ledger and the graph say about one document."""
 
-    def __call__(self, part: Part, trace: list[str], record: dict[str, Any]) -> str:
-        target = self.target(part)
+    def __init__(
+        self, ledger: Ledger, dialogue: Dialogue, display: Display, verbs: Verbs
+    ):
+        self.ledger, self.dialogue, self.display, self.verbs = ledger, dialogue, display, verbs
+
+    def __call__(self, part: Part, ctx: MoveContext) -> str:
+        target = why_target(part, self.dialogue)
         if not target:
             return "Why what? Say something first."
-        bits = self._from_ledger(target, trace)
-        bits += self._from_edges(target, record)
+        bits = self._from_ledger(target, ctx.trace)
+        bits += self._from_edges(target, ctx.record)
         return (" · ".join(bits) or f"No record explains {target}.") + "."
 
-    def target(self, part: Part) -> str | None:
-        """The document named, or the last one written, or the last one talked about."""
-        if "target" in part.payload:
-            return part.payload["target"]
-        return self.s.dialogue.last_written or (
-            self.s.dialogue.last_singular
-            and address_to_export_id(self.s.dialogue.last_singular)
-        )
-
     def _from_ledger(self, target: str, trace: list[str]) -> list[str]:
-        moves = self.s.ledger.about(target)
+        moves = self.ledger.about(target)
         if not moves:
             return []
         m = moves[-1]
@@ -51,7 +53,7 @@ class WhyExecutor(Collaborator):
         if not why_edges:
             return []
         grounds = ", ".join(
-            self.s.display.name(address_of(e["target"])) for e in why_edges
+            self.display.name(address_of(e["target"])) for e in why_edges
         )
         return ["grounded by " + grounds]
 
@@ -59,9 +61,18 @@ class WhyExecutor(Collaborator):
         """The edges leaving the document on the WHY and PROVENANCE axes."""
         return [
             e
-            for e in self.s.verbs.edges_from(target).edges
+            for e in self.verbs.edges_from(target).edges
             if e["metadata"].get("axis") in ("WHY", "PROVENANCE")
         ]
+
+
+def why_target(part: Part, dialogue: Dialogue) -> str | None:
+    """The document named, or the last one written, or the last one talked about."""
+    if "target" in part.payload:
+        return part.payload["target"]
+    return dialogue.last_written or (
+        dialogue.last_singular and address_to_export_id(dialogue.last_singular)
+    )
 
 
 def _because(m: dict[str, Any], target: str) -> str:

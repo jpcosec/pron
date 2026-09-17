@@ -11,28 +11,34 @@ from typing import TYPE_CHECKING, Any
 from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.kernel.parts.part import Part
 from pron.kernel.sexp.read_write import Sym
+from pron.sexpr.execution.why_executor import why_target
 from pron.sexpr.forms.compiler import NOUN_HEADS, _is_clause
 from pron.sexpr.forms.form_error import FormError
+from pron.sexpr.planning.compose_slots import ComposeSlots
+from pron.sexpr.planning.needed_model import needed_model
+from pron.sexpr.resolving.leftover_predicates import LeftoverPredicates
 from pron.sexpr.resolving.resolution import address_to_export_id
 
 if TYPE_CHECKING:
-    from pron.session import Session
+    from pron.sexpr.turn.turn_tools import TurnTools
 
 
 # -- what a sentence says: parts → forms, nouns unresolved -------------------------------------
 
 
-def said(parts: list[Part], session: "Session") -> Any:
-    forms = [said_part(p, session) for p in parts]
+def said(parts: list[Part], tools: TurnTools) -> Any:
+    """tools: the lexicon, world and dialogue of the move, for the class each role needs,
+    the slots of a composition and the predicates a read left over."""
+    forms = [said_part(p, tools) for p in parts]
     return forms[0] if len(forms) == 1 else [Sym("move"), *forms]
 
 
-def said_part(part: Part, session: "Session") -> list[Any]:
+def said_part(part: Part, tools: TurnTools) -> list[Any]:
     k = part.kind
     if k == "nominal":
         return [
             Sym("show"),
-            noun_form(part.subject, session._needed_model(part, "subject")),
+            noun_form(part.subject, needed_model(part, "subject", tools.lex)),
         ]
     if k == "read":
         assert part.verb is not None and part.verb.relation is not None
@@ -45,12 +51,12 @@ def said_part(part: Part, session: "Session") -> list[Any]:
         )
         form: list[Any] = [Sym(head), Sym(part.verb.relation)]
         if given is not None:
-            form.append(noun_form(given, session._needed_model(part, given_role)))
+            form.append(noun_form(given, needed_model(part, given_role, tools.lex)))
         asked_np = part.subject if asked == "subject" else part.object
         if asked_np is not None and asked_np is not given:
             if asked_np.model:
                 form.append([Sym("of"), Sym(asked_np.model)])
-            for where in session._leftover_predicates(asked_np, part.leftovers):
+            for where in LeftoverPredicates(tools.world, tools.lex)(asked_np, part.leftovers):
                 form.append([Sym("where"), where])
         return form
     if k == "assert":
@@ -58,8 +64,8 @@ def said_part(part: Part, session: "Session") -> list[Any]:
         return [
             Sym("assert"),
             Sym(part.verb.relation),
-            noun_form(part.subject, session._needed_model(part, "subject")),
-            noun_form(part.object, session._needed_model(part, "object")),
+            noun_form(part.subject, needed_model(part, "subject", tools.lex)),
+            noun_form(part.object, needed_model(part, "object", tools.lex)),
         ]
     if k == "action":
         verb = part.payload.get(
@@ -76,7 +82,7 @@ def said_part(part: Part, session: "Session") -> list[Any]:
                 *named,
                 *_fields(part.payload["fields"]),
             ]
-        subject = noun_form(part.subject, session._needed_model(part, "subject"))
+        subject = noun_form(part.subject, needed_model(part, "subject", tools.lex))
         if part.payload.get("alias") and part.verb is not None:
             return [Sym("say"), Sym(part.verb.payload["symbol"]), subject]
         form = [Sym(verb), subject]
@@ -88,7 +94,7 @@ def said_part(part: Part, session: "Session") -> list[Any]:
     if k == "compose":
         assert part.verb is not None
         form = [Sym("say"), Sym(part.verb.payload["symbol"])]
-        for slot, np in session._compose_slots(part).items():
+        for slot, np in ComposeSlots(tools.world)(part).items():
             model = slot[1:].partition(":")[2]
             form.append([Sym("slot"), slot, noun_form(np, model or None)])
         if part.payload.get("_name"):
@@ -141,18 +147,18 @@ def noun_form(np: NounPhrase | None, model: str | None = None) -> list[Any]:
 # -- what a move did: every noun as the addresses it resolved to -------------------------------
 
 
-def resolved(parts: list[Part], plans: list[dict[str, Any]], session: "Session") -> Any:
+def resolved(parts: list[Part], plans: list[dict[str, Any]], tools: TurnTools) -> Any:
     """Evaluating this on the same world in the same state leaves the same writes, without the
     dialogue."""
     forms = [
-        _by_address(said_part(p, session), p, plan, session)
+        _by_address(said_part(p, tools), p, plan, tools)
         for p, plan in zip(parts, plans)
     ]
     return forms[0] if len(forms) == 1 else [Sym("move"), *forms]
 
 
 def _by_address(
-    form: list[Any], part: Part, plan: dict[str, Any], session: "Session"
+    form: list[Any], part: Part, plan: dict[str, Any], tools: TurnTools
 ) -> list[Any]:
     def doc(res: Any) -> list[Any]:
         return [Sym("doc"), *res.export_ids()]
@@ -186,7 +192,7 @@ def _by_address(
                         ]
                     )
     elif k == "why":
-        target = session._why_target(part)
+        target = why_target(part, tools.dialogue)
         return [Sym("why"), [Sym("doc"), target]] if target else form
     return form
 

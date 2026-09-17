@@ -47,7 +47,8 @@ from pron.sexpr.forms.unknown_word import UnknownWord
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:
-    from pron.session import Session
+    from pron.world.lexicon import Lexicon
+    from pron.world.world import World
 
 NOUN_HEADS = ("doc", "the", "a", "all", "find", "it", "them", "me")
 REFERENT_HEADS = {"it": "singular", "them": "plural", "me": "speaker"}
@@ -77,9 +78,8 @@ class Compiler:
     """Turns forms into the parts a session plans and runs. Names are checked against the
     session's lexicon: a model, a relation or an alias outside the projection does not exist."""
 
-    def __init__(self, session: "Session"):
-        self.s = session
-        self.lex = session.lex
+    def __init__(self, lex: Lexicon, world: World):
+        self.lex, self.world = lex, world
 
     def compile(self, expr: Any) -> list[Part]:
         if isinstance(expr, str) and not isinstance(expr, Sym):
@@ -158,7 +158,7 @@ class Compiler:
 
     def _need_model(self, model: str) -> None:
         if model not in self.lex.models and not (
-            set(self.s.world.family_of(model)) & set(self.lex.models)
+            set(self.world.family_of(model)) & set(self.lex.models)
         ):
             raise UnknownWord(f"I don't have that word: {model}")
 

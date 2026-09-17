@@ -9,30 +9,33 @@ and in the move's queries, whether the check passed or not.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
+from pron.sexpr.prevalidation.dry_runner import DryRunner
+
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
+    from pron.sexpr.turn.move_context import MoveContext
 
 
-class Prevalidator(Collaborator):
+class Prevalidator:
     """The whole move simulated, and what the simulation verified."""
 
+    def __init__(self, kernel: Kernel, dry_runner: DryRunner):
+        self.kernel, self.dry_runner = kernel, dry_runner
+
     def __call__(
-        self,
-        parts: list[Part],
-        plans: list[dict[str, Any]],
-        trace: list[str],
-        record: dict[str, Any],
+        self, parts: list[Part], plans: list[dict[str, Any]], ctx: MoveContext
     ) -> None:
         overlay: dict[str, dict[str, Any]] = {}
         try:
-            self.s._dry_parts(parts, plans, overlay)
+            self.dry_runner(parts, plans, overlay)
         finally:
-            self._notes(trace, record)
+            self._notes(ctx)
 
-    def _notes(self, trace: list[str], record: dict[str, Any]) -> None:
-        if self.s.kernel.notes:
-            trace.extend("pre-validation: " + n for n in self.s.kernel.notes)
-            record["queries"].extend(self.s.kernel.notes)
-            self.s.kernel.notes = []
+    def _notes(self, ctx: MoveContext) -> None:
+        if self.kernel.notes:
+            ctx.trace.extend("pre-validation: " + n for n in self.kernel.notes)
+            ctx.record["queries"].extend(self.kernel.notes)
+            self.kernel.notes = []

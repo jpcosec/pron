@@ -8,13 +8,20 @@ nothing is guessed: the form said which phrase goes where.
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
+
+if TYPE_CHECKING:
+    from pron.world.world import World
 
 
-class ComposeSlots(Collaborator):
+class ComposeSlots:
     """Which noun phrase of the sentence fills each slot of a composition."""
+
+    def __init__(self, world: World):
+        self.world = world
 
     def __call__(self, part: Part) -> dict[str, NounPhrase]:
         assert part.verb is not None
@@ -55,7 +62,7 @@ class ComposeSlots(Collaborator):
 
     def _of_family(self, nps: list[NounPhrase], model: str) -> NounPhrase | None:
         return next(
-            (n for n in nps if n.model and model in self.s.world.family_of(n.model)),
+            (n for n in nps if n.model and model in self.world.family_of(n.model)),
             None,
         )
 

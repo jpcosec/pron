@@ -7,34 +7,40 @@ forced: a write that cannot be taken back is reported, not retried.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.actions.write import Write
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.sexpr.turn.ledger import Ledger
+    from pron.sexpr.turn.move_context import MoveContext
 
-class UndoExecutor(Collaborator):
+
+class UndoExecutor:
     """The last move with writes, inverted."""
 
-    def __call__(self, trace: list[str], record: dict[str, Any]) -> str:
-        if not self.s.kernel.allowed("undo"):
+    def __init__(self, kernel: Kernel, ledger: Ledger, dialogue: Dialogue):
+        self.kernel, self.ledger, self.dialogue = kernel, ledger, dialogue
+
+    def __call__(self, ctx: MoveContext) -> str:
+        if not self.kernel.allowed("undo"):
             raise StoreError("in this session I cannot undo")
-        move = self.s.ledger.last_with_write(self.s.dialogue.speaker or None)
+        move = self.ledger.last_with_write(self.dialogue.speaker or None)
         if move is None:
             return "Nothing to undo."
-        writes = self.s.kernel.undo(move)
-        self._note(writes, trace, record)
-        record["undoes"] = move["id"]
+        writes = self.kernel.undo(move)
+        self._note(writes, ctx)
+        ctx.record["undoes"] = move["id"]
         return _text(move, writes)
 
     @staticmethod
-    def _note(
-        writes: list[Write], trace: list[str], record: dict[str, Any]
-    ) -> None:
+    def _note(writes: list[Write], ctx: MoveContext) -> None:
         for w in writes:
-            trace.append(_line(w))
-            record["writes"].append(w.record())
+            ctx.trace.append(_line(w))
+            ctx.record["writes"].append(w.record())
 
 
 def _line(w: Write) -> str:

@@ -8,17 +8,22 @@ part of the same move that names it sees it. Every other verb is its own `Verb.d
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import join_id
 from pron.kernel.parts.part import Part
 from pron.sexpr.prevalidation.action_verb import action_verb
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
 
-class DryAction(Collaborator):
+
+class DryAction:
     """One action part, simulated over the overlay the move has built so far."""
+
+    def __init__(self, kernel: Kernel, write_store: str | None):
+        self.kernel, self.write_store = kernel, write_store
 
     def __call__(
         self,
@@ -27,7 +32,7 @@ class DryAction(Collaborator):
         overlay: dict[str, dict[str, Any]],
     ) -> None:
         verb = action_verb(part)
-        if not self.s.kernel.allowed(verb):
+        if not self.kernel.allowed(verb):
             raise StoreError(f"in this session I cannot {verb}")
         if verb == "create":
             self._create(part, overlay)
@@ -36,7 +41,7 @@ class DryAction(Collaborator):
 
     def _create(self, part: Part, overlay: dict[str, dict[str, Any]]) -> None:
         assert part.subject is not None and part.subject.model is not None
-        full = self.s.kernel.dry_create(
+        full = self.kernel.dry_create(
             part.subject.model, part.payload["fields"], overlay
         )
         if part.payload.get("name"):
@@ -45,7 +50,7 @@ class DryAction(Collaborator):
     def _named(self, part: Part) -> str:
         assert part.subject is not None
         return join_id(
-            self.s.write_store, part.subject.model, part.payload["name"]
+            self.write_store, part.subject.model, part.payload["name"]
         )
 
     def _writes(
@@ -56,4 +61,4 @@ class DryAction(Collaborator):
         overlay: dict[str, dict[str, Any]],
     ) -> None:
         for e in plan["subject"].export_ids():
-            self.s.kernel.dry_run(verb, e, part.field_name, part.value, overlay)
+            self.kernel.dry_run(verb, e, part.field_name, part.value, overlay)

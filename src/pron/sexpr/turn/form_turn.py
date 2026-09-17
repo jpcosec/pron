@@ -8,29 +8,35 @@ sentence says, with the same permissions, pre-validation, writes, refresh and un
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING
 
 from pron.kernel.parts.response import Response
 from pron.kernel.sexp.read_write import SexpError, read_one
-from pron.sexpr.turn.collaborator import Collaborator
+from pron.sexpr.turn.evaluator import Evaluator
+
+if TYPE_CHECKING:
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.sexpr.turn.projection_state import ProjectionState
 
 
-class FormTurn(Collaborator):
+class FormTurn:
     """One move written as forms, inside its move: the answer, and no move it refers to."""
 
-    def __call__(
-        self, forms: str, trace: list[str], record: dict[str, Any]
-    ) -> tuple[Response, str]:
-        self.s._sentence = forms
-        self._drop_pending(trace, record)
+    def __init__(self, state: ProjectionState):
+        self.state = state
+
+    def __call__(self, forms: str, ctx: MoveContext) -> tuple[Response, str]:
+        ctx.sentence = forms
+        self._drop_pending(ctx)
         try:
             expr = read_one(forms)
         except SexpError as e:
             return Response(f"Could not read that: {e}", "error"), ""
-        return self.s._eval(expr, trace, record), ""
+        return Evaluator(self.state)(expr, ctx), ""
 
-    def _drop_pending(self, trace: list[str], record: dict[str, Any]) -> None:
-        if self.s.dialogue.pending is not None:
-            trace.append("pending dropped: a new move")
-            record["dropped_pending"] = self.s.dialogue.pending.sentence
-            self.s.dialogue.close()
+    def _drop_pending(self, ctx: MoveContext) -> None:
+        dialogue = self.state.dialogue
+        if dialogue.pending is not None:
+            ctx.trace.append("pending dropped: a new move")
+            ctx.record["dropped_pending"] = dialogue.pending.sentence
+            dialogue.close()

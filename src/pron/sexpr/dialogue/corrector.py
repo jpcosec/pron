@@ -8,21 +8,28 @@ ended and was recorded; this is a new move that says which one it corrects.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.interpretation import Interpretation
 from pron.kernel.parts.item import Item
-from pron.sexpr.turn.collaborator import Collaborator
+
+if TYPE_CHECKING:
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.surface.interpreter import Interpreter
+    from pron.world.lexicon import Lexicon
 
 
-class Corrector(Collaborator):
+class Corrector:
     """The corrected sentence, or None when this sentence is not a correction."""
 
+    def __init__(self, interpreter: Interpreter, lex: Lexicon, dialogue: Dialogue):
+        self.interpreter, self.lex, self.dialogue = interpreter, lex, dialogue
+
     def __call__(self, sentence: str) -> str | None:
-        hole = self.s.dialogue.last_missing
+        hole = self.dialogue.last_missing
         if not hole or not hole.get("field"):
             return None
-        interp = self.s.interpreter.interpret(sentence)
+        interp = self.interpreter.interpret(sentence)
         if any(p.kind not in ("none", "nominal") for p in interp.parts):
             return None
         values = self._values(interp, hole)
@@ -31,7 +38,7 @@ class Corrector(Collaborator):
         return hole["sentence"].replace(hole["text"], values.pop())
 
     def _values(self, interp: Interpretation, hole: dict[str, Any]) -> set[str]:
-        known = {w.form for w in self.s.lex.values_of(hole["model"], hole["field"])}
+        known = {w.form for w in self.lex.values_of(hole["model"], hole["field"])}
         values: set[str] = set()
         for it in interp.items:
             values |= _fits(it, hole, known)

@@ -10,15 +10,22 @@ phrase itself is copied first: the predicates belong to this read, not to the ph
 from __future__ import annotations
 
 from copy import deepcopy
+from typing import TYPE_CHECKING
 
 from pron.kernel.parts.item import Item
 from pron.kernel.parts.noun_phrase import NounPhrase
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.surface.nouns import _word_modifier
 
+if TYPE_CHECKING:
+    from pron.world.lexicon import Lexicon
+    from pron.world.world import World
 
-class LeftoverPredicates(Collaborator):
+
+class LeftoverPredicates:
     """What a read's extra modifiers add to the side it asks about."""
+
+    def __init__(self, world: World, lex: Lexicon):
+        self.world, self.lex = world, lex
 
     def __call__(self, np: NounPhrase, leftovers: list[Item]) -> list[str]:
         """The phrase's own predicates plus the leftovers'; none without leftovers."""
@@ -33,7 +40,7 @@ class LeftoverPredicates(Collaborator):
         if it.kind == "literal" and it.meta.get("kind") == "date":
             self._date(it, np)
         elif it.kind == "word":
-            _word_modifier(it, None, np, self.s.lex)
+            _word_modifier(it, None, np, self.lex)
 
     def _date(self, it: Item, np: NounPhrase) -> None:
         fld = self._date_field(np.model)
@@ -44,7 +51,7 @@ class LeftoverPredicates(Collaborator):
         return next(
             (
                 f["name"]
-                for f in self.s.world.schema(model, self.s.lex.stores)
+                for f in self.world.schema(model, self.lex.stores)
                 if f["name"] == "date"
             ),
             None,

@@ -9,18 +9,28 @@ have left.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.sexpr.prevalidation.dry_action import DryAction
 from pron.sexpr.prevalidation.dry_assert import DryAssert
 from pron.sexpr.prevalidation.dry_compose import DryCompose
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
+    from pron.sexpr.resolving.verbs import Verbs
+    from pron.world.lexicon import Lexicon
 
-class DryRunner(Collaborator):
+
+class DryRunner:
     """part.kind → the simulation for that kind of part."""
+
+    def __init__(
+        self, kernel: Kernel, verbs: Verbs, lex: Lexicon, write_store: str | None
+    ):
+        self.kernel, self.write_store = kernel, write_store
+        self.dry_assert = DryAssert(verbs, lex, kernel)
 
     def __call__(
         self,
@@ -34,11 +44,11 @@ class DryRunner(Collaborator):
                 fn(part, plan, overlay)
 
     def _d_action(self, part, plan, overlay) -> None:
-        DryAction(self.s)(part, plan, overlay)
+        DryAction(self.kernel, self.write_store)(part, plan, overlay)
 
     def _d_assert(self, part, plan, overlay) -> None:
         assert part.verb is not None and part.verb.relation is not None
-        DryAssert(self.s)(
+        self.dry_assert(
             part.verb.relation,
             plan["subject"].export_ids(),
             plan["object"].export_ids(),
@@ -46,8 +56,8 @@ class DryRunner(Collaborator):
         )
 
     def _d_compose(self, part, plan, overlay) -> None:
-        DryCompose(self.s)(part, plan, overlay)
+        DryCompose(self.kernel, self.write_store, self.dry_assert)(part, plan, overlay)
 
     def _d_undo(self, part, plan, overlay) -> None:
-        if not self.s.kernel.allowed("undo"):
+        if not self.kernel.allowed("undo"):
             raise StoreError("in this session I cannot undo")

@@ -10,26 +10,41 @@ relation exists: "Created reservation for Ana, on the terrace, for Friday."
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import address_of, model_of
 from pron.kernel.parts.part import Part
 from pron.kernel.actions.write import Write
-from pron.sexpr.turn.collaborator import Collaborator
-from pron.sexpr.execution.relation_write import write_edge
 from pron.world.store_error import StoreError
+
+if TYPE_CHECKING:
+    from pron.kernel.display import Display
+    from pron.kernel.kernel import Kernel
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.sexpr.execution.relation_write import EdgeWriter
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.world.world import World
 
 BEFORE_CREATE = "composition references $created before create"
 
 
-class ComposeExecutor(Collaborator):
+class ComposeExecutor:
     """A composition's steps, written in order, and the one sentence they add up to."""
 
-    def __call__(
-        self, part: Part, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
-    ) -> str:
+    def __init__(
+        self,
+        kernel: Kernel,
+        world: World,
+        display: Display,
+        dialogue: Dialogue,
+        edges: EdgeWriter,
+    ):
+        self.kernel, self.world, self.edges = kernel, world, edges
+        self.display, self.dialogue = display, dialogue
+
+    def __call__(self, part: Part, plan: dict[str, Any], ctx: MoveContext) -> str:
         assert part.verb is not None
-        self.part, self.plan, self.trace, self.record = part, plan, trace, record
+        self.part, self.plan, self.ctx = part, plan, ctx
         self.steps = part.verb.payload.get("steps", [])
         self.literals = {k: v for k, v in part.payload.items() if not k.startswith("_")}
         self.created: str | None = None
@@ -56,11 +71,11 @@ class ComposeExecutor(Collaborator):
         fields, related = self._fields(model), self._related()
         self._require(model, fields)
         name = self.part.payload.get("_name")
-        w = self.s.kernel.create(model, fields, related, name=name)
+        w = self.kernel.create(model, fields, related, name=name)
         self._note_created(model, w)
 
     def _fields(self, model: str) -> dict[str, Any]:
-        names = {f["name"] for f in self.s.kernel.schema(model)}
+        names = {f["name"] for f in self.kernel.schema(model)}
         return {k: v for k, v in self.literals.items() if k in names}
 
     def _related(self) -> dict[str, Any]:
@@ -69,18 +84,18 @@ class ComposeExecutor(Collaborator):
         for later, later_res in zip(self.steps, self.plan["steps"]):
             if _asserts_from_created(later, later_res):
                 tid = later_res["target"].export_ids()[0]
-                related[later["relation"]] = self.s.world.store.payload_of(tid)
+                related[later["relation"]] = self.world.store.payload_of(tid)
         return related
 
     def _require(self, model: str, fields: dict[str, Any]) -> None:
-        missing = self.s.kernel.required_missing(model, fields)
+        missing = self.kernel.required_missing(model, fields)
         if missing:
             raise StoreError(f"{model} needs {', '.join(missing)}")
 
     def _note_created(self, model: str, w: Write) -> None:
         self.created = w.address
-        self.trace.append(f"docs create --model {model} {self.created} {w.after}")
-        self.record["writes"].append(w.record())
+        self.ctx.trace.append(f"docs create --model {model} {self.created} {w.after}")
+        self.ctx.record["writes"].append(w.record())
         self.texts.append(model.lower())  # named at the end, once its relations exist
 
     # -- assert and change -----------------------------------------------------------------
@@ -91,15 +106,15 @@ class ComposeExecutor(Collaborator):
         if src is None or tgt is None:
             raise StoreError(BEFORE_CREATE)
         rel = step["relation"]
-        write_edge(self.s, rel, src, tgt, self.trace, self.record)
-        self.texts.append(f"{rel.replace('_', ' ')} {self.s.display.name(tgt)}")
+        self.edges(rel, src, tgt, self.ctx)
+        self.texts.append(f"{rel.replace('_', ' ')} {self.display.name(tgt)}")
 
     def _do_change(self, step: dict[str, Any], resolved: dict[str, Any]) -> None:
         tgt = self._side(step, resolved, "target")
         if tgt is None:
             raise StoreError(BEFORE_CREATE)
-        w = self.s.kernel.change(tgt, step["field"], step["value"])
-        self.record["writes"].append(w.record())
+        w = self.kernel.change(tgt, step["field"], step["value"])
+        self.ctx.record["writes"].append(w.record())
 
     # -- what it all said --------------------------------------------------------------------
 
@@ -107,9 +122,9 @@ class ComposeExecutor(Collaborator):
         if not self.created:
             return "Done: " + "; ".join(self.texts) + "."
         model, addr = model_of(self.created), address_of(self.created)
-        self.texts[0] = f"{model.lower()} {self.s.display.name(addr)}"
-        self.s.dialogue.remember([addr], model)
-        self.s.dialogue.last_written = self.created
+        self.texts[0] = f"{model.lower()} {self.display.name(addr)}"
+        self.dialogue.remember([addr], model)
+        self.dialogue.last_written = self.created
         return f"Created {self.texts[0]}{self._rest()}." + self._also()
 
     def _rest(self) -> str:
@@ -125,7 +140,7 @@ class ComposeExecutor(Collaborator):
         ]
         if not alt:
             return ""
-        name = self.s.display.names(alt[0].candidates)[0]
+        name = self.display.names(alt[0].candidates)[0]
         return f" {name.capitalize()} would also work."
 
 

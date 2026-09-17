@@ -8,15 +8,22 @@ is still `$created` has no document yet, so cardinality is not asked of it.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import model_of
-from pron.sexpr.turn.collaborator import Collaborator
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.kernel import Kernel
+    from pron.sexpr.resolving.verbs import Verbs
+    from pron.world.lexicon import Lexicon
 
-class DryAssert(Collaborator):
+
+class DryAssert:
     """Every source × target pair of one assert, checked without writing."""
+
+    def __init__(self, verbs: Verbs, lex: Lexicon, kernel: Kernel):
+        self.verbs, self.lex, self.kernel = verbs, lex, kernel
 
     def __call__(
         self,
@@ -25,8 +32,8 @@ class DryAssert(Collaborator):
         targets: list[str],
         overlay: dict[str, dict[str, Any]],
     ) -> None:
-        rt = self.s.verbs.relation_type(rel)
-        if "assert" not in self.s.lex.relation_types.get(rel, {}).get("mode", "read"):
+        rt = self.verbs.relation_type(rel)
+        if "assert" not in self.lex.relation_types.get(rel, {}).get("mode", "read"):
             raise StoreError(
                 f"in this session I can tell you about {rel}, not assert it"
             )
@@ -42,7 +49,7 @@ class DryAssert(Collaborator):
         t: str,
         overlay: dict[str, dict[str, Any]],
     ) -> None:
-        ok, why = self.s.verbs.applies(rel, model_of(s), model_of(t))
+        ok, why = self.verbs.applies(rel, model_of(s), model_of(t))
         if not ok:
             raise StoreError(why)
         if not s.endswith(":$created") and not t.endswith(":$created"):
@@ -51,17 +58,17 @@ class DryAssert(Collaborator):
             self._condition(rt["condition"], s, t, overlay)
 
     def _cardinality(self, rel: str, s: str, t: str) -> None:
-        ok, why = self.s.verbs.cardinality_ok(rel, s, t)
+        ok, why = self.verbs.cardinality_ok(rel, s, t)
         if not ok:
             raise StoreError(why)
 
     def _condition(
         self, condition: str, s: str, t: str, overlay: dict[str, dict[str, Any]]
     ) -> None:
-        holds, query = self.s.verbs.condition_holds(
+        holds, query = self.verbs.condition_holds(
             condition, s, over=t, overlay=overlay
         )
-        self.s.kernel.notes.append(query)
+        self.kernel.notes.append(query)
         if not holds:
             raise StoreError(
                 f"condition '{condition}' does not hold for {s} → {t} ({query})"

@@ -8,47 +8,51 @@ can take it back, and said out loud as the sentence it is.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
-from pron.sexpr.turn.collaborator import Collaborator
-from pron.sexpr.execution.relation_write import write_edge
 from pron.world.store_error import StoreError
 
+if TYPE_CHECKING:
+    from pron.kernel.display import Display
+    from pron.sexpr.dialogue.dialogue import Dialogue
+    from pron.sexpr.execution.relation_write import EdgeWriter
+    from pron.sexpr.turn.move_context import MoveContext
+    from pron.world.lexicon import Lexicon
 
-class AssertExecutor(Collaborator):
+
+class AssertExecutor:
     """The edges one assert part writes."""
 
-    def __call__(
-        self, part: Part, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
-    ) -> str:
+    def __init__(
+        self, lex: Lexicon, display: Display, dialogue: Dialogue, edges: EdgeWriter
+    ):
+        self.lex, self.display, self.dialogue, self.edges = lex, display, dialogue, edges
+
+    def __call__(self, part: Part, plan: dict[str, Any], ctx: MoveContext) -> str:
         assert part.verb is not None and part.verb.relation is not None
         rel = part.verb.relation
         self._allowed(rel)
-        texts = self._edges(rel, plan, trace, record)
+        texts = self._edges(rel, plan, ctx)
         subject = plan["subject"]
-        self.s.dialogue.remember(subject.addresses, subject.phrase.model)
+        self.dialogue.remember(subject.addresses, subject.phrase.model)
         return "Done: " + "; ".join(texts) + "."
 
     def _allowed(self, rel: str) -> None:
-        mode = self.s.lex.relation_types.get(rel, {}).get("mode", "read")
+        mode = self.lex.relation_types.get(rel, {}).get("mode", "read")
         if "assert" not in mode:
             raise StoreError(
                 f"in this session I can tell you about {rel}, not assert it"
             )
 
-    def _edges(
-        self, rel: str, plan: dict[str, Any], trace: list[str], record: dict[str, Any]
-    ) -> list[str]:
+    def _edges(self, rel: str, plan: dict[str, Any], ctx: MoveContext) -> list[str]:
         return [
-            self._edge(rel, s, t, trace, record)
+            self._edge(rel, s, t, ctx)
             for s in plan["subject"].export_ids()
             for t in plan["object"].export_ids()
         ]
 
-    def _edge(
-        self, rel: str, s: str, t: str, trace: list[str], record: dict[str, Any]
-    ) -> str:
-        write_edge(self.s, rel, s, t, trace, record)
-        name = self.s.display.name
+    def _edge(self, rel: str, s: str, t: str, ctx: MoveContext) -> str:
+        self.edges(rel, s, t, ctx)
+        name = self.display.name
         return f"{name(s)} {rel.replace('_', ' ')} {name(t)}"
