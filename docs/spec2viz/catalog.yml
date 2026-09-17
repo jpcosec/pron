@@ -7,22 +7,22 @@ diagram_store:
   project_name: legos/pron
   items:
   - id: codigo-capas
-    title: Código · capas y módulos
-    desc: El código de src/pron organizado por capa (tabla "Capas" de README.md), de afuera hacia adentro. No es la arquitectura objetivo de source/spec, sino el mapeo actual entre capas y archivos.
+    title: Código · paquetes y el recorrido de un turno
+    desc: El código de src/pron por eje (kernel, world, surface, sexpr) y sexpr/ partido en las fases del turno. No es la arquitectura objetivo de source/spec, sino el mapeo actual entre piezas y carpetas.
     category: pron · código
-    nav: Código · capas y módulos
+    nav: Código · paquetes
     type: component
     src: out/mermaid/codigo.capas.mmd
     mmd: out/mermaid/codigo.capas.mmd
     specs:
     - specs/codigo.capas.yml
     notes:
-    - 'Entrada: client.py (PronClient, biblioteca estándar, habla por .pron/serve.sock), cli/main.py y cli/repl.py.'
-    - 'session.py es la fachada pública (Session, el turno entero), clavada por spec 12 y tests/test_12_runtime_surface.py.'
-    - 'mundo (world.py, store.py, graph.py) abre el store y refresca el grafo; léxico (lexicon.py, embedder.py) deriva las palabras de models/.'
-    - 'surface/ clasifica la oración y pide contra resolve.py (sustantivos) y verbs.py (verbos transitivos y de acción).'
-    - 'kernel.py hace las escrituras de sldb con guardas y deshacer; dialogue.py y ledger.py sostienen la pendiente y el MoveDoc por turno.'
-    - 'docs.py genera la KB de pron (SpecDoc, CliCommandDoc, SurfaceDoc) desde el propio código; forms.py (spec 13) da lectura de solo lectura a runtimes como legos.'
+    - 'Entrada: cli/ (un comando por archivo en cli/commands/), remote/ (cliente del daemon, solo biblioteca estándar, habla por .pron/serve.sock) y serve.py.'
+    - 'session.py es la fachada pública (Session, el turno entero), clavada por spec 12 y tests/session/test_12_runtime_surface.py; cada fase del turno vive en sexpr/turn/.'
+    - 'world/ abre el store y refresca el grafo (world.py, store.py, graph.py); lexicon.py y matching/ derivan las palabras.'
+    - 'surface/ convierte la oración en partes; sexpr/forms/ compila las formas; sexpr/resolving/ resuelve sustantivos contra sldb y verbos transitivos contra kgdb.'
+    - 'sexpr/planning/, sexpr/prevalidation/ y sexpr/execution/ son el movimiento; kernel/kernel.py y kernel/actions/ hacen las escrituras con guardas y deshacer.'
+    - 'sexpr/dialogue/ sostiene la pendiente y los referentes; sexpr/turn/ledger.py escribe el MoveDoc por turno; docs.py genera la KB de pron desde el código.'
   - id: target-components
     title: Objetivo · componentes
     desc: Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.

@@ -86,16 +86,17 @@ Los átomos de v1 se quedan en la rama `v1-code-and-kb`, como material históric
 
 ## Capas
 
-| capa | qué hace | dónde |
+| capa | qué hace | dónde (`src/pron/`) |
 |---|---|---|
-| mundo | abre un store, lee su declaración, refresca su grafo | `world.py`, `store.py`, `graph.py` |
-| léxico | deriva las palabras del store y las corta por la proyección | `lexicon.py`, `embedder.py` |
+| primitivas | los datos del turno, el lector de formas, los verbos de acción y el kernel que escribe en sldb con guardas y deshacer | `kernel/` (`parts/`, `sexp/`, `actions/`, `kernel.py`) |
+| mundo | abre un store, lee su declaración, refresca su grafo | `world/world.py`, `world/store.py`, `world/graph.py` |
+| léxico | deriva las palabras del store y las corta por la proyección | `world/lexicon.py`, `world/matching/` |
 | superficie | clasifica, arma frases nominales, interpreta construcciones fijas | `surface/` |
-| sustantivos | dirección + predicados → sldb | `resolve.py` |
-| verbos | lee aristas, verifica contra el `RelationTypeDoc`, afirma, transiciones | `verbs.py` |
-| kernel | las escrituras de sldb, con guardas y deshacer | `kernel.py` |
-| diálogo y ledger | la pendiente, los referentes, el `MoveDoc` por turno | `dialogue.py`, `ledger.py` |
-| sesión | el turno entero | `session.py` |
+| formas | la forma leída se compila a partes | `sexpr/forms/` |
+| sustantivos y verbos | dirección + predicados → sldb; aristas, `RelationTypeDoc`, condiciones, transiciones | `sexpr/resolving/` |
+| el movimiento | planificar, prevalidar, ejecutar por tipo de parte | `sexpr/planning/`, `sexpr/prevalidation/`, `sexpr/execution/` |
+| diálogo y ledger | la pendiente, los referentes, el `MoveDoc` por turno | `sexpr/dialogue/`, `sexpr/turn/ledger.py` |
+| sesión | el turno entero | `session.py`, `sexpr/turn/` |
 
 ## Como librería para un runtime
 
@@ -133,8 +134,10 @@ legos declara `pron` como dependencia y habla con esta versión: su `PronWorld` 
 
 ## Next
 
-- **Colapsar el camino dry-run.** `_dry_parts`/`_plan_compose` duplica a `_execute`/`_compose`
-  en `session.py`, y esa duplicación ya produjo un bug. Orden seguro: test de caracterización
-  que afirme que ambos caminos coinciden sobre un corpus de oraciones, y recién después
-  colapsar el par. La superficie pública (el constructor y `turn()`) ya está clavada por
-  spec 12 y `tests/test_12_runtime_surface.py`; no tocarla.
+- **Colapsar las fases del movimiento.** Las clases de `sexpr/` todavía leen la `Session`
+  entera y llaman a sus privados; cada una debe recibir solo lo que usa, y `trace`/`record`
+  viajar en un contexto del movimiento. La red de caracterización (`tests/golden/`) clava
+  el comportamiento mientras tanto. La superficie pública (el constructor y `turn()`) está
+  clavada por spec 12 y `tests/session/test_12_runtime_surface.py`; no tocarla.
+- **Tamaño.** `make audit` reporta lo que todavía supera 100 líneas por archivo o 10
+  sentencias por función; cuando quede limpio, esas reglas pasan a `make lint`.

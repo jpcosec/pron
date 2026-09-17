@@ -9,7 +9,7 @@ Regla general: un runtime usa lo que está acá y nada más. Lo que no está nom
 **En proceso.** El runtime importa `pron` y abre el mundo. Paga los imports de sldb una vez por proceso, y desde ahí un turno cuesta lo de una sesión caliente (11 §8 da los números).
 
 ```python
-from pron.world import World
+from pron.world.world import World
 from pron.session import Session
 
 world = World(root, pythonpath)                    # root contiene .sldb

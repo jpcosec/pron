@@ -1,17 +1,14 @@
 id: pron.codigo.capas
-title: pron — código · capas y módulos
+title: pron — código · paquetes y el recorrido de un turno
 type: component
-version: '1.0'
+version: '2.0'
 metadata:
   description: >
-    El código de src/pron organizado por capa (tabla "Capas" de README.md), de
-    afuera hacia adentro: mundo (abre el store y refresca el grafo), léxico
-    (deriva palabras de los modelos), superficie (interpreta la oración),
-    sustantivos y verbos (resuelven contra sldb y kgdb), kernel (las
-    escrituras), diálogo y ledger (la pendiente y el registro por turno), y
-    sesión (el turno entero, la fachada pública). No es la arquitectura
-    objetivo de source/spec — ese diagrama es target.components.yml — sino el
-    mapeo actual entre capas y archivos.
+    El código de src/pron por eje: kernel/ (primitivas y escrituras), world/ (el mundo
+    desde sldb), surface/ (lenguaje natural → formas) y sexpr/ (formas ↔ sldb/kgdb),
+    con sexpr/ partido en las fases del turno. No es la arquitectura objetivo de
+    source/spec — ese diagrama es target.components.yml — sino el mapeo actual entre
+    esas piezas y sus carpetas.
 style:
   theme: default
 data:
@@ -19,91 +16,95 @@ data:
     entrada:
       label: Entrada
       kind: boundary
-      contains: [client, cli, repl]
-    client:
-      label: "client.py · PronClient · biblioteca estándar, habla por .pron/serve.sock"
-      kind: bridge
+      contains: [cli, remote, serve]
     cli:
-      label: "cli/main.py · pron init, refresh, say, docs, check"
+      label: "cli/ · un comando por archivo en commands/ · init, refresh, lexicon, say, eval, repl, serve, check, docs"
       kind: bridge
-    repl:
-      label: "cli/repl.py · pron repl"
+    remote:
+      label: "remote/ · RemoteSession · solo biblioteca estándar, habla por .pron/serve.sock"
+      kind: bridge
+    serve:
+      label: "serve.py · Server · el daemon con los mundos abiertos"
       kind: bridge
     sesion:
-      label: "session.py · Session · el turno entero · fachada pública clavada por spec 12"
+      label: "session.py · Session · turn() y eval(), fachada clavada por spec 12"
       kind: core
+    world:
+      label: world/ · el mundo desde sldb
+      kind: layer
+      contains: [mundo, lexico]
     mundo:
-      label: "world.py, store.py, graph.py · World · abre el store, lee su declaración, refresca el grafo"
+      label: "world.py, store.py, graph.py · abre el store, lee su declaración, refresca el grafo"
       kind: layer
     lexico:
-      label: "lexicon.py, embedder.py · deriva las palabras del store y las corta por la proyección"
+      label: "lexicon.py, matching/ · las palabras salen de los modelos y los RelationTypeDoc"
       kind: layer
-    superficie:
-      label: "surface/ · tokens, nouns, dates, interpret, function_words.yaml, patterns.yaml · clasifica, arma frases nominales, interpreta construcciones fijas"
+    surface:
+      label: "surface/ · classifier, nouns, dates, interpreter, render · oración → partes → formas"
       kind: surface
-    sustantivos:
-      label: "resolve.py · dirección + predicados → sldb"
+    sexpr:
+      label: sexpr/ · formas ↔ sldb/kgdb, una carpeta por fase del turno
       kind: layer
-    verbos:
-      label: "verbs.py · lee aristas, verifica contra el RelationTypeDoc, afirma, transiciones"
-      kind: layer
-    kernel:
-      label: "kernel.py · las escrituras de sldb, con guardas y deshacer"
+      contains: [turn, forms, resolving, planning, prevalidation, execution, dialogue]
+    turn:
+      label: "turn/ · Move, SentenceTurn, FormTurn, Evaluator, move_order, ledger · el turno de punta a punta y su MoveDoc"
       kind: core
-    dialogo_ledger:
-      label: "dialogue.py, ledger.py · la pendiente, los referentes, el MoveDoc por turno"
-      kind: infra
-    modelos:
-      label: "models/ · anchor, explanation, move, projection, readme, spec"
-      kind: external
-    apoyo:
-      label: Apoyo
-      kind: boundary
-      contains: [docs_py, forms, response, display, refs, ids, sexp, corpus]
-    docs_py:
-      label: "docs.py · KB de pron · SpecDoc, CliCommandDoc, SurfaceDoc, aristas implements"
-      kind: infra
     forms:
-      label: "forms.py · spec 13 · lectura de solo lectura para runtimes (legos)"
+      label: "forms/ · Compiler, refs · la forma leída se compila a partes"
+      kind: core
+    resolving:
+      label: "resolving/ · resolve, Verbs · sustantivos por dirección en sldb, aristas y condiciones en kgdb"
+      kind: core
+    planning:
+      label: "planning/ · Planner, ComposePlanner · resolver cada frase antes de ejecutar"
+      kind: core
+    prevalidation:
+      label: "prevalidation/ · Prevalidator, DryRunner · simular el movimiento entero antes de escribir"
+      kind: core
+    execution:
+      label: "execution/ · un ejecutor por tipo de parte · read, assert, action, compose, undo, why"
+      kind: core
+    dialogue:
+      label: "dialogue/ · Dialogue, Pending, Asker, Replier, Corrector · la pendiente y los referentes"
       kind: infra
-    response:
-      label: "response.py · respuesta en natural"
-      kind: infra
-    display:
-      label: "display.py · formato de salida"
-      kind: infra
-    refs:
-      label: "refs.py · referentes (ese, la anterior)"
-      kind: infra
-    ids:
-      label: "ids.py · naming de documentos"
-      kind: infra
+    kernel:
+      label: kernel/ · primitivas
+      kind: layer
+      contains: [parts, sexp, actions, kernelpy]
+    parts:
+      label: "parts/ · Part, NounPhrase, Item, Word, Response · los datos que viajan por el turno"
+      kind: config
     sexp:
-      label: "sexp.py · s-expressions internas"
-      kind: infra
-    corpus:
-      label: "corpus.py · oraciones de prueba / regresión"
-      kind: infra
-    mundo_sldb:
+      label: "sexp/ · read_write, Sym · el lector y escritor de s-expressions"
+      kind: config
+    actions:
+      label: "actions/ · Verb y un objeto por verbo de acción (dry, execute, undo)"
+      kind: core
+    kernelpy:
+      label: "kernel.py · Kernel · las escrituras de sldb con guardas y deshacer"
+      kind: core
+    sldb_kgdb:
       label: sldb + kgdb · el mundo, fuera de este repo
       kind: external
   edges:
-    - {from: client, to: sesion, relation: uses, label: "World(root, pythonpath) + turn()"}
     - {from: cli, to: sesion, relation: uses}
-    - {from: repl, to: sesion, relation: uses}
-    - {from: sesion, to: mundo, relation: abre}
-    - {from: sesion, to: lexico, relation: deriva}
-    - {from: sesion, to: superficie, relation: interpreta}
-    - {from: superficie, to: sustantivos, relation: pide, label: "dirección + predicados"}
-    - {from: superficie, to: verbos, relation: pide, label: verbo transitivo o de acción}
-    - {from: sustantivos, to: mundo_sldb, relation: reads}
-    - {from: verbos, to: mundo_sldb, relation: reads, label: "RelationTypeDoc, RelationDoc"}
-    - {from: verbos, to: kernel, relation: ejecuta}
-    - {from: kernel, to: mundo_sldb, relation: writes}
-    - {from: sesion, to: dialogo_ledger, relation: registra}
-    - {from: lexico, to: modelos, relation: reads}
-    - {from: mundo, to: mundo_sldb, relation: refresca}
-    - {from: sesion, to: refs, relation: resuelve}
-    - {from: sesion, to: response, relation: arma}
-    - {from: docs_py, to: modelos, relation: genera, label: "SpecDoc, CliCommandDoc, SurfaceDoc"}
-    - {from: forms, to: mundo, relation: reads, label: "sesiones de solo lectura · World.payload"}
+    - {from: serve, to: sesion, relation: uses}
+    - {from: remote, to: serve, relation: talks, label: .pron/serve.sock}
+    - {from: sesion, to: turn, relation: runs}
+    - {from: turn, to: surface, relation: interpreta, label: una oración}
+    - {from: surface, to: forms, relation: produce, label: formas}
+    - {from: turn, to: forms, relation: compila}
+    - {from: turn, to: planning, relation: planifica}
+    - {from: planning, to: resolving, relation: resuelve}
+    - {from: turn, to: prevalidation, relation: prevalida}
+    - {from: prevalidation, to: actions, relation: "dry"}
+    - {from: turn, to: execution, relation: ejecuta}
+    - {from: execution, to: kernelpy, relation: escribe}
+    - {from: kernelpy, to: actions, relation: execute}
+    - {from: turn, to: dialogue, relation: pregunta}
+    - {from: resolving, to: sldb_kgdb, relation: reads}
+    - {from: kernelpy, to: sldb_kgdb, relation: writes}
+    - {from: mundo, to: sldb_kgdb, relation: refresca}
+    - {from: lexico, to: mundo, relation: reads}
+    - {from: surface, to: lexico, relation: reads}
+    - {from: turn, to: parts, relation: uses}
