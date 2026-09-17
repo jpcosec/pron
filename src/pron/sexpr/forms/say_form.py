@@ -48,7 +48,9 @@ def _action(compiler: Compiler, symbol: Any, w: Word, args: tuple[Any, ...]) -> 
 
 def _relation(compiler: Compiler, symbol: Any, w: Word, args: tuple[Any, ...]) -> Part:
     if len(args) != 2:
-        raise FormError(f"(say {symbol} SUBJECT OBJECT): a relation alias takes two nouns")
+        raise FormError(
+            f"(say {symbol} SUBJECT OBJECT): a relation alias takes two nouns"
+        )
     return Part(
         "assert", subject=compiler.noun(args[0]), object=compiler.noun(args[1]), verb=w
     )

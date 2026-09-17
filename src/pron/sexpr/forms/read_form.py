@@ -30,7 +30,11 @@ class ReadForm:
             asked_model = self._clause(compiler, part, item, asked_model)
         if asked_model is not None or part.payload["where"]:
             where = list(part.payload["where"])
-            setattr(part, self.asked, NounPhrase(asked_model, None, "plural", predicates=where))
+            setattr(
+                part,
+                self.asked,
+                NounPhrase(asked_model, None, "plural", predicates=where),
+            )
         return part
 
     def _clause(

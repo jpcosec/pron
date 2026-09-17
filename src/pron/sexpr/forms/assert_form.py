@@ -13,7 +13,9 @@ if TYPE_CHECKING:
 class AssertForm:
     head = "assert"
 
-    def __call__(self, compiler: Compiler, relation: Any, subject: Any, obj: Any) -> Part:
+    def __call__(
+        self, compiler: Compiler, relation: Any, subject: Any, obj: Any
+    ) -> Part:
         w = compiler.words.relation(str(relation))
         return Part(
             "assert", subject=compiler.noun(subject), object=compiler.noun(obj), verb=w
