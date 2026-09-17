@@ -6,6 +6,23 @@ diagram_store:
   brand_subtitle: La arquitectura objetivo de pron, proyección gráfica de source/spec. Sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb. La v1 está en la rama v1-code-and-kb.
   project_name: legos/pron
   items:
+  - id: codigo-capas
+    title: Código · capas y módulos
+    desc: El código de src/pron organizado por capa (tabla "Capas" de README.md), de afuera hacia adentro. No es la arquitectura objetivo de source/spec, sino el mapeo actual entre capas y archivos.
+    category: pron · código
+    nav: Código · capas y módulos
+    type: component
+    src: out/mermaid/codigo.capas.mmd
+    mmd: out/mermaid/codigo.capas.mmd
+    specs:
+    - specs/codigo.capas.yml
+    notes:
+    - 'Entrada: client.py (PronClient, biblioteca estándar, habla por .pron/serve.sock), cli/main.py y cli/repl.py.'
+    - 'session.py es la fachada pública (Session, el turno entero), clavada por spec 12 y tests/test_12_runtime_surface.py.'
+    - 'mundo (world.py, store.py, graph.py) abre el store y refresca el grafo; léxico (lexicon.py, embedder.py) deriva las palabras de models/.'
+    - 'surface/ clasifica la oración y pide contra resolve.py (sustantivos) y verbs.py (verbos transitivos y de acción).'
+    - 'kernel.py hace las escrituras de sldb con guardas y deshacer; dialogue.py y ledger.py sostienen la pendiente y el MoveDoc por turno.'
+    - 'docs.py genera la KB de pron (SpecDoc, CliCommandDoc, SurfaceDoc) desde el propio código; forms.py (spec 13) da lectura de solo lectura a runtimes como legos.'
   - id: target-components
     title: Objetivo · componentes
     desc: Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.

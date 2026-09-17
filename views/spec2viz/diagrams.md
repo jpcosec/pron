@@ -2,6 +2,65 @@
 
 La arquitectura objetivo de pron, proyección gráfica de source/spec. Sustantivos por dirección en sldb, verbos transitivos como modelos de relación de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acción como escrituras de sldb. La v1 está en la rama v1-code-and-kb.
 
+## Código · capas y módulos
+
+El código de src/pron organizado por capa (tabla "Capas" de README.md), de afuera hacia adentro. No es la arquitectura objetivo de source/spec, sino el mapeo actual entre capas y archivos.
+
+- Entrada: client.py (PronClient, biblioteca estándar, habla por .pron/serve.sock), cli/main.py y cli/repl.py.
+- session.py es la fachada pública (Session, el turno entero), clavada por spec 12 y tests/test_12_runtime_surface.py.
+- mundo (world.py, store.py, graph.py) abre el store y refresca el grafo; léxico (lexicon.py, embedder.py) deriva las palabras de models/.
+- surface/ clasifica la oración y pide contra resolve.py (sustantivos) y verbs.py (verbos transitivos y de acción).
+- kernel.py hace las escrituras de sldb con guardas y deshacer; dialogue.py y ledger.py sostienen la pendiente y el MoveDoc por turno.
+- docs.py genera la KB de pron (SpecDoc, CliCommandDoc, SurfaceDoc) desde el propio código; forms.py (spec 13) da lectura de solo lectura a runtimes como legos.
+
+```mermaid
+graph TD
+    subgraph entrada ["Entrada"]
+        client["client.py · PronClient · biblioteca estándar, habla por .pron/serve.sock"]
+        cli["cli/main.py · pron init, refresh, say, docs, check"]
+        repl["cli/repl.py · pron repl"]
+    end
+    sesion["session.py · Session · el turno entero · fachada pública clavada por spec 12"]
+    mundo["world.py, store.py, graph.py · World · abre el store, lee su declaración, refresca el grafo"]
+    lexico["lexicon.py, embedder.py · deriva las palabras del store y las corta por la proyección"]
+    superficie["surface/ · tokens, nouns, dates, interpret, function_words.yaml, patterns.yaml · clasifica, arma frases nominales, interpreta construcciones fijas"]
+    sustantivos["resolve.py · dirección + predicados → sldb"]
+    verbos["verbs.py · lee aristas, verifica contra el RelationTypeDoc, afirma, transiciones"]
+    kernel["kernel.py · las escrituras de sldb, con guardas y deshacer"]
+    dialogo_ledger["dialogue.py, ledger.py · la pendiente, los referentes, el MoveDoc por turno"]
+    modelos["models/ · anchor, explanation, move, projection, readme, spec"]
+    subgraph apoyo ["Apoyo"]
+        docs_py["docs.py · KB de pron · SpecDoc, CliCommandDoc, SurfaceDoc, aristas implements"]
+        forms["forms.py · spec 13 · lectura de solo lectura para runtimes (legos)"]
+        response["response.py · respuesta en natural"]
+        display["display.py · formato de salida"]
+        refs["refs.py · referentes (ese, la anterior)"]
+        ids["ids.py · naming de documentos"]
+        sexp["sexp.py · s-expressions internas"]
+        corpus["corpus.py · oraciones de prueba / regresión"]
+    end
+    mundo_sldb["sldb + kgdb · el mundo, fuera de este repo"]
+    client -->|"World(root, pythonpath) + turn()"| sesion
+    cli -->|"uses"| sesion
+    repl -->|"uses"| sesion
+    sesion -->|"abre"| mundo
+    sesion -->|"deriva"| lexico
+    sesion -->|"interpreta"| superficie
+    superficie -->|"dirección + predicados"| sustantivos
+    superficie -->|"verbo transitivo o de acción"| verbos
+    sustantivos -->|"reads"| mundo_sldb
+    verbos -->|"RelationTypeDoc, RelationDoc"| mundo_sldb
+    verbos -->|"ejecuta"| kernel
+    kernel -->|"writes"| mundo_sldb
+    sesion -->|"registra"| dialogo_ledger
+    lexico -->|"reads"| modelos
+    mundo -->|"refresca"| mundo_sldb
+    sesion -->|"resuelve"| refs
+    sesion -->|"arma"| response
+    docs_py -->|"SpecDoc, CliCommandDoc, SurfaceDoc"| modelos
+    forms -->|"sesiones de solo lectura · World.payload"| mundo
+```
+
 ## Objetivo · componentes
 
 Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.
@@ -15,7 +74,7 @@ Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no 
 - El kernel son los verbos de acción y cada uno es una operación de sldb que ya existe: docs create, fields update y append, docs untrack, stores update.
 - La declaración del mundo es store_index.yaml: modelos registrados, stores enlazados, predicados. La proyección es la parte de eso que una sesión puede nombrar.
 - El por qué se lee de las aristas del eje WHY, HOW y PROVENANCE que los predicados del store le dan a cada verbo, más el ledger.
-- Los sustantivos del mundo de pron son sus propios modelos: átomo, comando, superficie, anchor. Hoy los átomos están tipados con el AtomDoc de deskops y hay trece modelos de deskops registrados sin documentos; los dos salen, deskops es otra instancia sobre el núcleo, no la fuente de los modelos de pron.
+- Los sustantivos del mundo de pron son sus propios modelos: comando, superficie, anchor, proyección, move, spec, más los dos de kgdb. pron no tiene átomos: los AtomDoc de v1 quedaron en la rama histórica (08, decidido 2026-09-09).
 - El kgdb ingest unificado (nodos, nodos relation_type, aristas desde RelationDoc y links, ledger excluido, hash_mundo, integridad como error) es el prerrequisito de source/spec/08; hoy sus dos mitades existen por separado.
 
 ```mermaid

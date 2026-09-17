@@ -1,0 +1,45 @@
+graph TD
+    subgraph entrada ["Entrada"]
+        client["client.py · PronClient · biblioteca estándar, habla por .pron/serve.sock"]
+        cli["cli/main.py · pron init, refresh, say, docs, check"]
+        repl["cli/repl.py · pron repl"]
+    end
+    sesion["session.py · Session · el turno entero · fachada pública clavada por spec 12"]
+    mundo["world.py, store.py, graph.py · World · abre el store, lee su declaración, refresca el grafo"]
+    lexico["lexicon.py, embedder.py · deriva las palabras del store y las corta por la proyección"]
+    superficie["surface/ · tokens, nouns, dates, interpret, function_words.yaml, patterns.yaml · clasifica, arma frases nominales, interpreta construcciones fijas"]
+    sustantivos["resolve.py · dirección + predicados → sldb"]
+    verbos["verbs.py · lee aristas, verifica contra el RelationTypeDoc, afirma, transiciones"]
+    kernel["kernel.py · las escrituras de sldb, con guardas y deshacer"]
+    dialogo_ledger["dialogue.py, ledger.py · la pendiente, los referentes, el MoveDoc por turno"]
+    modelos["models/ · anchor, explanation, move, projection, readme, spec"]
+    subgraph apoyo ["Apoyo"]
+        docs_py["docs.py · KB de pron · SpecDoc, CliCommandDoc, SurfaceDoc, aristas implements"]
+        forms["forms.py · spec 13 · lectura de solo lectura para runtimes (legos)"]
+        response["response.py · respuesta en natural"]
+        display["display.py · formato de salida"]
+        refs["refs.py · referentes (ese, la anterior)"]
+        ids["ids.py · naming de documentos"]
+        sexp["sexp.py · s-expressions internas"]
+        corpus["corpus.py · oraciones de prueba / regresión"]
+    end
+    mundo_sldb["sldb + kgdb · el mundo, fuera de este repo"]
+    client -->|"World(root, pythonpath) + turn()"| sesion
+    cli -->|"uses"| sesion
+    repl -->|"uses"| sesion
+    sesion -->|"abre"| mundo
+    sesion -->|"deriva"| lexico
+    sesion -->|"interpreta"| superficie
+    superficie -->|"dirección + predicados"| sustantivos
+    superficie -->|"verbo transitivo o de acción"| verbos
+    sustantivos -->|"reads"| mundo_sldb
+    verbos -->|"RelationTypeDoc, RelationDoc"| mundo_sldb
+    verbos -->|"ejecuta"| kernel
+    kernel -->|"writes"| mundo_sldb
+    sesion -->|"registra"| dialogo_ledger
+    lexico -->|"reads"| modelos
+    mundo -->|"refresca"| mundo_sldb
+    sesion -->|"resuelve"| refs
+    sesion -->|"arma"| response
+    docs_py -->|"SpecDoc, CliCommandDoc, SurfaceDoc"| modelos
+    forms -->|"sesiones de solo lectura · World.payload"| mundo

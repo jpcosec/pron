@@ -453,7 +453,7 @@
     <div class="sidebar-scroll">
       <div class="sidebar-card">
         <div class="sidebar-card-title">Controles</div>
-        <div class="catalog-toolbar"><div class="catalog-toolbar-row"><label>Tipo<select data-filter="tipo"><option value="">Todos</option><option value="component">component</option><option value="sequence">sequence</option><option value="state">state</option></select></label><label>Proyecto<select data-filter="proyecto"><option value="">Todos</option></select></label><label>Categoría<select data-filter="categoría"><option value="">Todos</option><option value="pron · objetivo">pron · objetivo</option></select></label><label>Búsqueda<input type="search" id="catalog-search" placeholder="Título, tag o descripción"></label></div><div class="catalog-tags"><button type="button" class="tag-chip" data-tag="type:component">type:component</button><button type="button" class="tag-chip" data-tag="type:sequence">type:sequence</button><button type="button" class="tag-chip" data-tag="type:state">type:state</button></div></div>
+        <div class="catalog-toolbar"><div class="catalog-toolbar-row"><label>Tipo<select data-filter="tipo"><option value="">Todos</option><option value="component">component</option><option value="sequence">sequence</option><option value="state">state</option></select></label><label>Proyecto<select data-filter="proyecto"><option value="">Todos</option></select></label><label>Categoría<select data-filter="categoría"><option value="">Todos</option><option value="pron · código">pron · código</option><option value="pron · objetivo">pron · objetivo</option></select></label><label>Búsqueda<input type="search" id="catalog-search" placeholder="Título, tag o descripción"></label></div><div class="catalog-tags"><button type="button" class="tag-chip" data-tag="type:component">type:component</button><button type="button" class="tag-chip" data-tag="type:sequence">type:sequence</button><button type="button" class="tag-chip" data-tag="type:state">type:state</button></div></div>
       </div>
 
       <div class="sidebar-sticky-actions">
@@ -475,7 +475,8 @@
       <div class="sidebar-card">
         <div class="sidebar-card-title">Navegación</div>
         <nav>
-          <div class="nav-category"><span>pron · objetivo</span><a href="#target-components-c751b3a3">Objetivo · componentes</a><a href="#target-turno-c751b3a3">Objetivo · una conversación</a><a href="#target-dialogo-c751b3a3">Objetivo · el diálogo</a></div>
+          <div class="nav-category"><span>pron · código</span><a href="#codigo-capas-c751b3a3">Código · capas y módulos</a></div>
+<div class="nav-category"><span>pron · objetivo</span><a href="#target-components-c751b3a3">Objetivo · componentes</a><a href="#target-turno-c751b3a3">Objetivo · una conversación</a><a href="#target-dialogo-c751b3a3">Objetivo · el diálogo</a></div>
         </nav>
       </div>
     </div>
@@ -497,7 +498,63 @@
       <div class="catalog-title">Arquitectura de pron</div>
       <div class="catalog-meta">Filtros y acordeón en el sidebar izquierdo. El panel de detalle también abre a la izquierda.</div>
     </div>
-    <div class="category-block" data-category-block="pron · objetivo"><div class="macro-separator"><h2>— pron · objetivo —</h2></div><section id="target-components-c751b3a3" data-spec="specs/target.components.yml" data-type="component" data-project="" data-category="pron · objetivo" data-tags="type:component" data-view-id="target-components" class="catalog-item">
+    <div class="category-block" data-category-block="pron · código"><div class="macro-separator"><h2>— pron · código —</h2></div><section id="codigo-capas-c751b3a3" data-spec="specs/codigo.capas.yml" data-type="component" data-project="" data-category="pron · código" data-tags="type:component" data-view-id="codigo-capas" class="catalog-item">
+  <div class="lbl"></div>
+  <h2>Código · capas y módulos</h2>
+  <p class="desc">El código de src/pron organizado por capa (tabla &quot;Capas&quot; de README.md), de afuera hacia adentro. No es la arquitectura objetivo de source/spec, sino el mapeo actual entre capas y archivos.</p>
+  <div class="section-meta"><span class="meta-badge">component</span><span class="meta-badge subtle">type:component</span></div>
+  <div class="board">
+    <pre class="mermaid">
+      graph TD
+          subgraph entrada [&quot;Entrada&quot;]
+              client[&quot;client.py · PronClient · biblioteca estándar, habla por .pron/serve.sock&quot;]
+              cli[&quot;cli/main.py · pron init, refresh, say, docs, check&quot;]
+              repl[&quot;cli/repl.py · pron repl&quot;]
+          end
+          sesion[&quot;session.py · Session · el turno entero · fachada pública clavada por spec 12&quot;]
+          mundo[&quot;world.py, store.py, graph.py · World · abre el store, lee su declaración, refresca el grafo&quot;]
+          lexico[&quot;lexicon.py, embedder.py · deriva las palabras del store y las corta por la proyección&quot;]
+          superficie[&quot;surface/ · tokens, nouns, dates, interpret, function_words.yaml, patterns.yaml · clasifica, arma frases nominales, interpreta construcciones fijas&quot;]
+          sustantivos[&quot;resolve.py · dirección + predicados → sldb&quot;]
+          verbos[&quot;verbs.py · lee aristas, verifica contra el RelationTypeDoc, afirma, transiciones&quot;]
+          kernel[&quot;kernel.py · las escrituras de sldb, con guardas y deshacer&quot;]
+          dialogo_ledger[&quot;dialogue.py, ledger.py · la pendiente, los referentes, el MoveDoc por turno&quot;]
+          modelos[&quot;models/ · anchor, explanation, move, projection, readme, spec&quot;]
+          subgraph apoyo [&quot;Apoyo&quot;]
+              docs_py[&quot;docs.py · KB de pron · SpecDoc, CliCommandDoc, SurfaceDoc, aristas implements&quot;]
+              forms[&quot;forms.py · spec 13 · lectura de solo lectura para runtimes (legos)&quot;]
+              response[&quot;response.py · respuesta en natural&quot;]
+              display[&quot;display.py · formato de salida&quot;]
+              refs[&quot;refs.py · referentes (ese, la anterior)&quot;]
+              ids[&quot;ids.py · naming de documentos&quot;]
+              sexp[&quot;sexp.py · s-expressions internas&quot;]
+              corpus[&quot;corpus.py · oraciones de prueba / regresión&quot;]
+          end
+          mundo_sldb[&quot;sldb + kgdb · el mundo, fuera de este repo&quot;]
+          client --&gt;|&quot;World(root, pythonpath) + turn()&quot;| sesion
+          cli --&gt;|&quot;uses&quot;| sesion
+          repl --&gt;|&quot;uses&quot;| sesion
+          sesion --&gt;|&quot;abre&quot;| mundo
+          sesion --&gt;|&quot;deriva&quot;| lexico
+          sesion --&gt;|&quot;interpreta&quot;| superficie
+          superficie --&gt;|&quot;dirección + predicados&quot;| sustantivos
+          superficie --&gt;|&quot;verbo transitivo o de acción&quot;| verbos
+          sustantivos --&gt;|&quot;reads&quot;| mundo_sldb
+          verbos --&gt;|&quot;RelationTypeDoc, RelationDoc&quot;| mundo_sldb
+          verbos --&gt;|&quot;ejecuta&quot;| kernel
+          kernel --&gt;|&quot;writes&quot;| mundo_sldb
+          sesion --&gt;|&quot;registra&quot;| dialogo_ledger
+          lexico --&gt;|&quot;reads&quot;| modelos
+          mundo --&gt;|&quot;refresca&quot;| mundo_sldb
+          sesion --&gt;|&quot;resuelve&quot;| refs
+          sesion --&gt;|&quot;arma&quot;| response
+          docs_py --&gt;|&quot;SpecDoc, CliCommandDoc, SurfaceDoc&quot;| modelos
+          forms --&gt;|&quot;sesiones de solo lectura · World.payload&quot;| mundo
+    </pre>
+  </div>
+  <div class="gap-notes"><strong>Gaps de implementación</strong><ul><li>Entrada: client.py (PronClient, biblioteca estándar, habla por .pron/serve.sock), cli/main.py y cli/repl.py.</li><li>session.py es la fachada pública (Session, el turno entero), clavada por spec 12 y tests/test_12_runtime_surface.py.</li><li>mundo (world.py, store.py, graph.py) abre el store y refresca el grafo; léxico (lexicon.py, embedder.py) deriva las palabras de models/.</li><li>surface/ clasifica la oración y pide contra resolve.py (sustantivos) y verbs.py (verbos transitivos y de acción).</li><li>kernel.py hace las escrituras de sldb con guardas y deshacer; dialogue.py y ledger.py sostienen la pendiente y el MoveDoc por turno.</li><li>docs.py genera la KB de pron (SpecDoc, CliCommandDoc, SurfaceDoc) desde el propio código; forms.py (spec 13) da lectura de solo lectura a runtimes como legos.</li></ul></div>
+</section></div>
+<div class="category-block" data-category-block="pron · objetivo"><div class="macro-separator"><h2>— pron · objetivo —</h2></div><section id="target-components-c751b3a3" data-spec="specs/target.components.yml" data-type="component" data-project="" data-category="pron · objetivo" data-tags="type:component" data-view-id="target-components" class="catalog-item">
   <div class="lbl"></div>
   <h2>Objetivo · componentes</h2>
   <p class="desc">Pron pide por dirección, recorre aristas y escribe documentos. No resuelve, no filtra, no declara verbos. Los sustantivos son st.{Modelo+}.doc.campo más un predicado; los verbos transitivos son los modelos de relación de kgdb (RelationTypeDoc, RelationDoc), que sldb almacena como documentos y el ingest de kgdb ensambla; los verbos de acción son docs create, fields update y refrescar.</p>
@@ -695,7 +752,7 @@
       },
       flowchart: { htmlLabels: true, curve: 'basis', subGraphTitleMargin: { top: 0, bottom: 32 } }
     });
-    window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 3};
+    window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 4};
 
     const popover = document.getElementById('hover-popover');
     const popoverTitle = document.getElementById('popover-title');
@@ -1318,6 +1375,6 @@
     });
   </script>
 
-<script>window.ATOMS_DB = {}; window.ATOMS_BY_VIEW = {"target-components-c751b3a3": {}, "target-turno-c751b3a3": {}, "target-dialogo-c751b3a3": {}}; window.COVERAGE_BY_VIEW = {"target-components-c751b3a3": {"view_id": "target-components-c751b3a3", "view_node_id": null, "diagram_type": "component", "title": "Objetivo \u00b7 componentes", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-turno-c751b3a3": {"view_id": "target-turno-c751b3a3", "view_node_id": null, "diagram_type": "sequence", "title": "Objetivo \u00b7 una conversaci\u00f3n", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-dialogo-c751b3a3": {"view_id": "target-dialogo-c751b3a3", "view_node_id": null, "diagram_type": "state", "title": "Objetivo \u00b7 el di\u00e1logo", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}}; window.SPEC2VIZ_ATOM_WARNINGS = []; window.SPEC2VIZ_COVERAGE_WARNINGS = [{"scope": "kgdb", "message": "KGDB snapshot not found; coverage projection is empty."}]; window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 3};</script>
+<script>window.ATOMS_DB = {}; window.ATOMS_BY_VIEW = {"codigo-capas-c751b3a3": {}, "target-components-c751b3a3": {}, "target-turno-c751b3a3": {}, "target-dialogo-c751b3a3": {}}; window.COVERAGE_BY_VIEW = {"codigo-capas-c751b3a3": {"view_id": "codigo-capas-c751b3a3", "view_node_id": null, "diagram_type": "component", "title": "C\u00f3digo \u00b7 capas y m\u00f3dulos", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-components-c751b3a3": {"view_id": "target-components-c751b3a3", "view_node_id": null, "diagram_type": "component", "title": "Objetivo \u00b7 componentes", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-turno-c751b3a3": {"view_id": "target-turno-c751b3a3", "view_node_id": null, "diagram_type": "sequence", "title": "Objetivo \u00b7 una conversaci\u00f3n", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}, "target-dialogo-c751b3a3": {"view_id": "target-dialogo-c751b3a3", "view_node_id": null, "diagram_type": "state", "title": "Objetivo \u00b7 el di\u00e1logo", "source_ref": "", "scope": "", "summary": {"total_elements": 0, "elements_fully_covered": 0, "avg_coverage_ratio": 0.0, "expected_facet_count": 0, "covered_facet_count": 0, "missing_facet_count": 0}, "elements": []}}; window.SPEC2VIZ_ATOM_WARNINGS = []; window.SPEC2VIZ_COVERAGE_WARNINGS = [{"scope": "kgdb", "message": "KGDB snapshot not found; coverage projection is empty."}]; window.SPEC2VIZ_CATALOG = {"title": "Arquitectura de pron", "brand_name": "pron", "brand_subtitle": "La arquitectura objetivo de pron, proyecci\u00f3n gr\u00e1fica de source/spec. Sustantivos por direcci\u00f3n en sldb, verbos transitivos como modelos de relaci\u00f3n de kgdb almacenados en sldb y ensamblados por su ingest, verbos de acci\u00f3n como escrituras de sldb. La v1 est\u00e1 en la rama v1-code-and-kb.", "project_name": "legos/pron", "item_count": 4};</script>
 </body>
 </html>

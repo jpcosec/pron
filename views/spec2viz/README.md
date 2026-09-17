@@ -1,6 +1,6 @@
 # pron — Diagramas de arquitectura
 
-Vistas de la arquitectura objetivo de `pron`, proyección gráfica de [`source/spec`](../../source/spec/README.md). Cuando el spec cambie, se edita el `specs/*.yml` correspondiente y se regenera todo con `build.py`; no se editan los archivos de `out/` ni los HTML directamente. La vista de la arquitectura v1 está en la rama `v1-code-and-kb`.
+Vistas de `pron`: la arquitectura objetivo, proyección gráfica de [`source/spec`](../../source/spec/README.md) (`target.*.yml`), y las capas reales de código (`codigo.capas.yml`, mapeo de la tabla "Capas" de [`../../README.md`](../../README.md)). Cuando el spec o el código cambien, se edita el `specs/*.yml` correspondiente y se regenera todo con `build.py`; no se editan los archivos de `out/` ni los HTML directamente. La vista de la arquitectura v1 está en la rama `v1-code-and-kb`.
 
 - [Catálogo navegable de spec2viz](index.html): filtros, navegación y herramientas del visor nativo. Carga Mermaid desde el CDN configurado por spec2viz.
 - [Visor sin conexión](offline.html): el SVG está integrado en un único HTML, sin dependencias de red.

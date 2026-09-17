@@ -1,0 +1,109 @@
+id: pron.codigo.capas
+title: pron — código · capas y módulos
+type: component
+version: '1.0'
+metadata:
+  description: >
+    El código de src/pron organizado por capa (tabla "Capas" de README.md), de
+    afuera hacia adentro: mundo (abre el store y refresca el grafo), léxico
+    (deriva palabras de los modelos), superficie (interpreta la oración),
+    sustantivos y verbos (resuelven contra sldb y kgdb), kernel (las
+    escrituras), diálogo y ledger (la pendiente y el registro por turno), y
+    sesión (el turno entero, la fachada pública). No es la arquitectura
+    objetivo de source/spec — ese diagrama es target.components.yml — sino el
+    mapeo actual entre capas y archivos.
+style:
+  theme: default
+data:
+  nodes:
+    entrada:
+      label: Entrada
+      kind: boundary
+      contains: [client, cli, repl]
+    client:
+      label: "client.py · PronClient · biblioteca estándar, habla por .pron/serve.sock"
+      kind: bridge
+    cli:
+      label: "cli/main.py · pron init, refresh, say, docs, check"
+      kind: bridge
+    repl:
+      label: "cli/repl.py · pron repl"
+      kind: bridge
+    sesion:
+      label: "session.py · Session · el turno entero · fachada pública clavada por spec 12"
+      kind: core
+    mundo:
+      label: "world.py, store.py, graph.py · World · abre el store, lee su declaración, refresca el grafo"
+      kind: layer
+    lexico:
+      label: "lexicon.py, embedder.py · deriva las palabras del store y las corta por la proyección"
+      kind: layer
+    superficie:
+      label: "surface/ · tokens, nouns, dates, interpret, function_words.yaml, patterns.yaml · clasifica, arma frases nominales, interpreta construcciones fijas"
+      kind: surface
+    sustantivos:
+      label: "resolve.py · dirección + predicados → sldb"
+      kind: layer
+    verbos:
+      label: "verbs.py · lee aristas, verifica contra el RelationTypeDoc, afirma, transiciones"
+      kind: layer
+    kernel:
+      label: "kernel.py · las escrituras de sldb, con guardas y deshacer"
+      kind: core
+    dialogo_ledger:
+      label: "dialogue.py, ledger.py · la pendiente, los referentes, el MoveDoc por turno"
+      kind: infra
+    modelos:
+      label: "models/ · anchor, explanation, move, projection, readme, spec"
+      kind: external
+    apoyo:
+      label: Apoyo
+      kind: boundary
+      contains: [docs_py, forms, response, display, refs, ids, sexp, corpus]
+    docs_py:
+      label: "docs.py · KB de pron · SpecDoc, CliCommandDoc, SurfaceDoc, aristas implements"
+      kind: infra
+    forms:
+      label: "forms.py · spec 13 · lectura de solo lectura para runtimes (legos)"
+      kind: infra
+    response:
+      label: "response.py · respuesta en natural"
+      kind: infra
+    display:
+      label: "display.py · formato de salida"
+      kind: infra
+    refs:
+      label: "refs.py · referentes (ese, la anterior)"
+      kind: infra
+    ids:
+      label: "ids.py · naming de documentos"
+      kind: infra
+    sexp:
+      label: "sexp.py · s-expressions internas"
+      kind: infra
+    corpus:
+      label: "corpus.py · oraciones de prueba / regresión"
+      kind: infra
+    mundo_sldb:
+      label: sldb + kgdb · el mundo, fuera de este repo
+      kind: external
+  edges:
+    - {from: client, to: sesion, relation: uses, label: "World(root, pythonpath) + turn()"}
+    - {from: cli, to: sesion, relation: uses}
+    - {from: repl, to: sesion, relation: uses}
+    - {from: sesion, to: mundo, relation: abre}
+    - {from: sesion, to: lexico, relation: deriva}
+    - {from: sesion, to: superficie, relation: interpreta}
+    - {from: superficie, to: sustantivos, relation: pide, label: "dirección + predicados"}
+    - {from: superficie, to: verbos, relation: pide, label: verbo transitivo o de acción}
+    - {from: sustantivos, to: mundo_sldb, relation: reads}
+    - {from: verbos, to: mundo_sldb, relation: reads, label: "RelationTypeDoc, RelationDoc"}
+    - {from: verbos, to: kernel, relation: ejecuta}
+    - {from: kernel, to: mundo_sldb, relation: writes}
+    - {from: sesion, to: dialogo_ledger, relation: registra}
+    - {from: lexico, to: modelos, relation: reads}
+    - {from: mundo, to: mundo_sldb, relation: refresca}
+    - {from: sesion, to: refs, relation: resuelve}
+    - {from: sesion, to: response, relation: arma}
+    - {from: docs_py, to: modelos, relation: genera, label: "SpecDoc, CliCommandDoc, SurfaceDoc"}
+    - {from: forms, to: mundo, relation: reads, label: "sesiones de solo lectura · World.payload"}
