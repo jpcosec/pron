@@ -12,7 +12,7 @@ from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.kernel.parts.part import Part
 from pron.kernel.sexp.read_write import Sym
 from pron.sexpr.execution.why_executor import why_target
-from pron.sexpr.forms.compiler import NOUN_HEADS, _is_clause
+from pron.sexpr.forms.syntax import NOUN_HEADS, is_clause as _is_clause
 from pron.sexpr.forms.form_error import FormError
 from pron.sexpr.planning.compose_slots import ComposeSlots
 from pron.sexpr.planning.needed_model import needed_model
