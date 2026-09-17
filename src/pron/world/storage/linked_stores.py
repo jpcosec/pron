@@ -7,11 +7,11 @@ each store lives, never what a store holds.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
-from types import SimpleNamespace
 
-from sldb.cli.commands.store_update import update_store
-from sldb.cli.store_context import get_store_context
+from sldb.api import StoreUpdateReport, link_store, open_store, update_store_indexes
+from sldb.core.exceptions import SLDBStoreError
 from sldb.store import documents_hash
 from sldb.store.io import load_store_index
 from sldb.store.layout import project_root as _project_root, store_exists
@@ -26,7 +26,8 @@ class LinkedStores:
 
     def __init__(self, root: str | Path, pythonpath: str | None = None) -> None:
         self.root = Path(root).resolve()
-        self.sp, self.project_root = get_store_context(str(self.root / ".sldb"))
+        location = open_store(self.root / ".sldb")
+        self.sp, self.project_root = location.store_path, location.project_root
         self.pythonpath = pythonpath or str(self.root)
 
     def begin_operation(self) -> None:
@@ -74,26 +75,31 @@ class LinkedStores:
         )
 
     def link(self, name: str, other_root: str | Path) -> bool:
-        """Link another world's store under a name (sldb stores add). False when already linked."""
-        from sldb.cli.commands.store_add import _link_store
-
+        """Link another world's store under a name (sldb stores add). False when already linked;
+        a root that holds no store is refused."""
         if name in self.linked():
             return False
-        _link_store(
-            self.sp, self.project_root, Path(other_root).resolve() / ".sldb", name
-        )
+        try:
+            link_store(self.sp, Path(other_root).resolve() / ".sldb", name)
+        except SLDBStoreError as exc:
+            raise StoreError(str(exc)) from exc
         return True
 
     def store_index(self, store: str | None = LOCAL):
         return load_store_index(self.sp_of(store))
 
-    def update_index(self, store: str | None = LOCAL) -> None:
-        """sldb `stores update` over one store: re-read and re-hash every tracked file."""
-        update_store(
-            SimpleNamespace(
-                store=str(self.sp_of(store)),
-                pythonpath=self.pythonpath,
-                wait=False,
-                verbose=False,
+    def update_index(self, store: str | None = LOCAL) -> StoreUpdateReport:
+        """sldb `stores update` over one store: re-read and re-hash every tracked file. What
+        it had to skip (a model that no longer imports, a file gone) is said on stderr."""
+        report = update_store_indexes(self.sp_of(store), self.pythonpath)
+        if report.skipped_models:
+            print(
+                f"Skipped broken models: {', '.join(report.skipped_models)}",
+                file=sys.stderr,
             )
-        )
+        if report.skipped_documents:
+            print(
+                f"Skipped missing documents: {', '.join(report.skipped_documents)}",
+                file=sys.stderr,
+            )
+        return report

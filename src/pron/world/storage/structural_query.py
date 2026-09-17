@@ -9,7 +9,7 @@ from __future__ import annotations
 import builtins
 from typing import Any
 
-from sldb.cli.model_utils import resolve_model_ref
+from sldb.api import resolve_model_ref
 from sldb.store.query import (
     find_structural,
     get_structural,

@@ -11,7 +11,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from sldb.cli.model_utils import resolve_model_ref
+from sldb.api import resolve_model_ref
 from sldb.store.io import load_documents_index
 from sldb.store.query import load_runtime_documents
 

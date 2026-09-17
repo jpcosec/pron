@@ -6,15 +6,17 @@ where that store lives, so every lookup here takes the store it asks.
 from __future__ import annotations
 
 import builtins
-from types import SimpleNamespace
 from typing import Any
 
 from pydantic import BaseModel
 
-from sldb.cli.commands.model import ModelCLI
-from sldb.cli.graph_ops import ast_for_target
-from sldb.cli.model_utils import registered_model
-from sldb.cli.serve.schema import field_descriptor
+from sldb.api import (
+    RegisteredModel,
+    add_model,
+    describe_model,
+    describe_model_fields,
+    load_registered_model,
+)
 from sldb.core.exceptions import SLDBModelError
 from sldb.store.io import load_documents_index, load_models_index
 
@@ -44,24 +46,28 @@ class ModelRegistry(LinkedStores):
 
     def model_type(self, name: str, store: str | None = LOCAL) -> type[BaseModel]:
         try:
-            return registered_model(self.sp_of(store), name, self.pythonpath)[0]
+            return load_registered_model(
+                self.sp_of(store), name, self.pythonpath
+            ).model_type
         except Exception:  # noqa: BLE001 - a linked store's models import from where that store lives
             if is_local(store):
                 raise
-            return registered_model(self.sp_of(store), name, str(self.root_of(store)))[
-                0
-            ]
+            return load_registered_model(
+                self.sp_of(store), name, str(self.root_of(store))
+            ).model_type
 
-    def registration(self, model: str, store: str | None = LOCAL) -> tuple:
-        """sldb's (model type, store entry, models index) for tracking a document of `model`."""
-        pythonpath = (
-            self.pythonpath if is_local(store) else self._pythonpath_for(store, model)
+    def registration(self, model: str, store: str | None = LOCAL) -> RegisteredModel:
+        """sldb's model type, store entry and store index for tracking a document of `model`."""
+        return load_registered_model(
+            self.sp_of(store), model, self.pythonpath_for(store, model)
         )
-        return registered_model(self.sp_of(store), model, pythonpath)
 
-    def _pythonpath_for(self, store: str | None, model: str) -> str:
+    def pythonpath_for(self, store: str | None, model: str) -> str:
+        """Where `model` imports from: this world's pythonpath, or a linked store's own root."""
+        if is_local(store):
+            return self.pythonpath
         try:
-            registered_model(self.sp_of(store), model, self.pythonpath)
+            load_registered_model(self.sp_of(store), model, self.pythonpath)
             return self.pythonpath
         except Exception:  # noqa: BLE001
             return str(self.root_of(store))
@@ -70,27 +76,14 @@ class ModelRegistry(LinkedStores):
         self, name: str, store: str | None = LOCAL
     ) -> builtins.list[dict[str, Any]]:
         """Fields of a model: name, kind, required, enum, annotation, description."""
-        model_type = self.model_type(name, store)
-        out = []
-        for fname, finfo in model_type.model_fields.items():
-            d = field_descriptor(fname, finfo)
-            d["annotation"] = getattr(
-                finfo.annotation, "__name__", repr(finfo.annotation)
-            )
-            d["description"] = finfo.description or ""
-            out.append(d)
-        return out
+        return [  # `enum` only when the field has one, as sldb serve's schema endpoint
+            f.model_dump(exclude_none=True)
+            for f in describe_model_fields(self.model_type(name, store))
+        ]
 
     def register_model(self, ref: str) -> bool:
         try:
-            ModelCLI().add(
-                SimpleNamespace(
-                    model=ref,
-                    store=str(self.sp),
-                    pythonpath=self.pythonpath,
-                    canonical=False,
-                )
-            )
+            add_model(self.sp, ref, self.pythonpath)
         except SLDBModelError:
             return False
         return True
@@ -118,4 +111,5 @@ class ModelRegistry(LinkedStores):
 
     def model_detail(self, name: str, store: str | None = LOCAL) -> dict[str, Any]:
         """The model as sldb's `models show` builds it: `{"model": {...fields, version...}}`."""
-        return ast_for_target(str(self.sp_of(store)), self.pythonpath, f"models/{name}")
+        description = describe_model(self.sp_of(store), name, self.pythonpath)
+        return {"model": description.model_dump()}

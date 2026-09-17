@@ -4,7 +4,7 @@ transition checked the same way in the dry run and in the real write.
 
 from __future__ import annotations
 
-from sldb.cli.dict_utils import deep_set
+from sldb.api import deep_set
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write, restore_field

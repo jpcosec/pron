@@ -280,9 +280,6 @@
       'exit': 0,
       'stderr': '',
       'stdout': '''
-        Updated store at <tmp>/world/.sldb
-        Semantic index: 0 processed, 0 missing
-        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
         graph: 176 nodes, 356 edges, 14 relation types
   
       ''',
@@ -359,12 +356,6 @@
       'stdout': '''
         Registered 'RelationTypeDoc'
         Registered 'RelationDoc'
-        Registered 'AnchorDoc'
-        Registered 'ProjectionDoc'
-        Registered 'MoveDoc'
-        Updated store at <tmp>/fresh/.sldb
-        Semantic index: 0 processed, 0 missing
-        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
         {
           "kgdb": "models added: 2 \u00b7 builtin relation types written: 11 \u00b7 predicates added: 11",
           "pron_models_added": [
@@ -389,9 +380,6 @@
       'exit': 0,
       'stderr': '',
       'stdout': '''
-        Updated store at <tmp>/fresh/.sldb
-        Semantic index: 0 processed, 0 missing
-        Sections index: 0 processed, 0 missing, 0 empty, 0 unparseable headings
         {
           "kgdb": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 predicates added: 0",
           "pron_models_added": [],

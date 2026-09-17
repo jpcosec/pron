@@ -4,7 +4,7 @@ to undo.
 
 from __future__ import annotations
 
-from sldb.cli.dict_utils import deep_get
+from sldb.api import deep_get
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write

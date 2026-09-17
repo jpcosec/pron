@@ -8,8 +8,8 @@ from __future__ import annotations
 import builtins
 from typing import Any
 
-from sldb.cli.commands.fields_save import save_payload
-from sldb.cli.dict_utils import deep_delete, deep_get, deep_set
+from sldb.api import deep_delete, deep_get, deep_set, save_document_payload
+from sldb.core.exceptions import SLDBPayloadSaveError
 
 from pron.kernel.ids import LOCAL, split_id
 from pron.world.storage.cleaned_list import without_empty_or_repeated
@@ -26,7 +26,14 @@ class PayloadEditor(DocumentReader):
         d = self.doc(model, name, store)
         if d is None:
             raise StoreError(f"no {model} named '{name}'")
-        save_payload(d, payload, str(self.sp_of(store)), self.pythonpath)
+        try:
+            save_document_payload(
+                self.sp_of(store), d.model_name, d.name, payload, self.pythonpath
+            )
+        except (
+            SLDBPayloadSaveError
+        ) as exc:  # exits with sldb's message, as `fields` always has
+            raise SystemExit(str(exc)) from exc
 
     def replace(
         self, model: str, name: str, payload: dict, store: str | None = LOCAL

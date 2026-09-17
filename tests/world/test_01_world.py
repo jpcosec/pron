@@ -181,3 +181,16 @@ def test_create_with_relative_path_lands_under_the_world_root(
         world.store.doc_path("Client", "client-rel")
         == world.root / "clients" / "rel.md"
     )
+
+
+def test_update_index_says_on_stderr_what_it_skipped(tmp_path, capsys):
+    """sldb's library API prints nothing: an update is silent on stdout, and only what it
+    had to skip (a tracked file gone) is said, on stderr."""
+    world = build_restaurant(tmp_path / "restaurant")
+    missing = world.store.doc_path("Table", "table-3")
+    missing.unlink()
+    capsys.readouterr()
+    report = world.store.update_index()
+    out = capsys.readouterr()
+    assert report.skipped_documents and out.out == ""
+    assert "Skipped missing documents:" in out.err

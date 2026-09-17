@@ -18,7 +18,7 @@ def pending_matches(
     lends its runtime shape, the payload is the pending one."""
     from sldb.store.query_engine.filter import DocumentFilter
     from sldb.store.query_engine.where_parse import WherePredicateError
-    from sldb.cli.model_utils import resolve_model_ref
+    from sldb.api import resolve_model_ref
 
     sample = next(iter(store.docs_of(model, in_store or "local")), None) or next(
         iter(store.docs_of(model, "*")), None

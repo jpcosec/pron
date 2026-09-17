@@ -7,17 +7,14 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from types import SimpleNamespace
 
 from pydantic import ValidationError
-from sldb.cli.commands.doc import DocCLI
-from sldb.cli.model_utils import resolve_model_ref
+from sldb.api import track_document_file, untrack_document
 from sldb.runtime.validation import (
     render_model_markdown,
     validate_model_data_roundtrip,
     validate_model_input_roundtrip,
 )
-from sldb.store.ops import track_document
 
 from pron.kernel.ids import LOCAL, is_local, join_id, split_id
 from pron.world.storage.document_reader import DocumentReader
@@ -57,17 +54,17 @@ class DocumentTracker(DocumentReader):
     ) -> str:
         """Render, validate and track one new document in a store. Returns the export id."""
         root = self.root_of(store)
-        registration = self.registration(model, store)
+        model_type = self.registration(model, store).model_type
         if self.doc(model, name, store) is not None:
             raise StoreError(
                 f"a {model} named '{name}' already exists"
                 + ("" if is_local(store) else f" in store '{store}'")
             )
-        rendered = self._rendered(registration[0], model, name, payload)
+        rendered = self._rendered(model_type, model, name, payload)
         path = self._under(root, path)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(rendered + "\n", encoding="utf-8")
-        self._track_registered(registration, path, name, store)
+        self._track_registered(model, path, name, store)
         return join_id(store, model, name)
 
     @staticmethod
@@ -91,32 +88,24 @@ class DocumentTracker(DocumentReader):
     def track(
         self, path: Path, model: str, name: str, store: str | None = LOCAL
     ) -> None:
-        root = self.root_of(store)
-        registration = self.registration(model, store)
-        self._track_registered(registration, self._under(root, path), name, store)
+        self.registration(
+            model, store
+        )  # imports the model; a linked store's, from its root
+        self._track_registered(
+            model, self._under(self.root_of(store), path), name, store
+        )
 
     def _track_registered(
-        self, registration: tuple, path: Path, name: str, store: str | None
+        self, model: str, path: Path, name: str, store: str | None
     ) -> None:
-        model_type, entry, idx = registration
-        track_document(
-            self.sp_of(store),
-            self.root_of(store),
-            idx,
-            model_type,
-            entry,
-            path,
-            name,
-            resolve_model_ref,
-            self.pythonpath,
+        """Track a file of a model already imported (`registration`). Never re-checked here: a
+        new document was round-tripped when rendered, and `track` takes the file as it is."""
+        track_document_file(
+            self.sp_of(store), model, path, name, self.pythonpath, force=True
         )
 
     def untrack(self, name: str, store: str | None = LOCAL) -> None:
-        DocCLI().untrack(
-            SimpleNamespace(
-                doc=name, store=str(self.sp_of(store)), pythonpath=self.pythonpath
-            )
-        )
+        untrack_document(self.sp_of(store), name, self.pythonpath)
 
     def untrack_of(self, export_id: str) -> None:
         store, _, name = split_id(export_id)

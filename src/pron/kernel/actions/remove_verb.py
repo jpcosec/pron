@@ -4,7 +4,7 @@ when no value is named, and put back what was there to undo.
 
 from __future__ import annotations
 
-from sldb.cli.dict_utils import deep_delete
+from sldb.api import deep_delete
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write
