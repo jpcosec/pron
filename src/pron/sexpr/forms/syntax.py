@@ -49,3 +49,15 @@ def unvalue(v: Any) -> Any:
     if isinstance(v, Sym):
         return str(v)
     return v
+
+
+def value_form(v: Any) -> Any:
+    """A value as Python holds it, as a form writes it: a list or tuple is `(list …)`."""
+    if isinstance(v, (list, tuple)):
+        return [Sym("list"), *[value_form(x) for x in v]]
+    return v
+
+
+def fields_form(fields: dict[str, Any]) -> list[Any]:
+    """`(field value) …`, in the order the fields were given."""
+    return [[Sym(k), value_form(v)] for k, v in fields.items()]
