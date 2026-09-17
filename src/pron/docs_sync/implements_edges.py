@@ -46,9 +46,11 @@ class ImplementsEdges:
         wanted: dict[str, tuple[str, str]] = {}
         for model, specs, _ in plans[1:]:
             for spec in specs:
-                for target in filter(None, (chapters.get(c.lower()) for c in spec.get("_cites", []))):
-                    src, tgt = f"{model}:{spec['id']}", f"SpecDoc:{target}"
-                    wanted[f"implements--{src}--{tgt}"] = (src, tgt)
+                for cite in spec.get("_cites", []):
+                    target = chapters.get(cite.lower())
+                    if target:
+                        src, tgt = f"{model}:{spec['id']}", f"SpecDoc:{target}"
+                        wanted[f"implements--{src}--{tgt}"] = (src, tgt)
         return wanted
 
     def _add(self, name: str, src: str, tgt: str) -> str:

@@ -60,7 +60,8 @@ class ReadRelationConstruction:
     ) -> None:
         """The interrogated phrase is the side its model's family stands on."""
         sources, targets = sides
-        if set(lex.world.family_of(interrogated.model)) & sources:
+        # an interrogated phrase always has a head model: find_noun_phrases builds it from one
+        if set(lex.world.family_of(interrogated.model)) & sources:  # type: ignore[arg-type]
             part.subject = interrogated
             part.object = _proper_phrase(named, targets, nps)
             part.payload["asked"] = "subject"
