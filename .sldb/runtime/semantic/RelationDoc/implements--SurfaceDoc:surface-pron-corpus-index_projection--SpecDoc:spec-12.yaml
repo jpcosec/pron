@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-corpus-index_projection--SpecDoc:spec-12.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 8460db6e24ed5aa289832a5d65c6643d3ba7688654f68276dcfe58ac01d8fa49

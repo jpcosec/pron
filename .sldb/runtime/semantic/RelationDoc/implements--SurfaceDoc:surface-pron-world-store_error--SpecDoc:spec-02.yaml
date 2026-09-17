@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-store_error--SpecDoc:spec-02.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 6e92bf8271069d510199877f586289e63c255d696ed6f3130668d695ac6605ad

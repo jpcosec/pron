@@ -1,8 +1,0 @@
-model: AnchorDoc
-path: knowledge/anchors/chapter.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.anchor
-- workspace.knowledge.anchors
-hash_c: 65e6636c6ff78f880750734365f19b68dd3eff839d0df1e165365b349f77abae

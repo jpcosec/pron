@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-prevalidator--SpecDoc:spec-11.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: eb0fb0e348c00434dc9756df5fe9d49f03af301bc9fff4c526e53c828e37cbb8

@@ -1,8 +1,0 @@
-model: ProjectionDoc
-path: knowledge/projections/all.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.projection
-- workspace.knowledge.projections
-hash_c: 444c1cf78742b4ebec608ce76cdae0802f9785690a24ce8e4d0939e7e8af402e

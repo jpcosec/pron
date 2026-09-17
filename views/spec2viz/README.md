@@ -9,7 +9,7 @@ Vistas de `pron`: la arquitectura objetivo, proyección gráfica de [`source/spe
 
 ## Fuentes y regeneración
 
-`specs/*.yml` son las fuentes semánticas de los diagramas. `catalog.yml` contiene sus descripciones y notas de interpretación. Los archivos de `out/`, los HTML y `diagrams.md` son generados.
+`specs/*.yml` son las fuentes semánticas de los diagramas. `catalog.yml` contiene sus descripciones y notas de interpretación. Los archivos de `out/`, los HTML y `diagrams.md` son generados y no se versionan: los enlaces de arriba existen después de correr `python build.py`.
 
 Desde este directorio, con `spec2viz`, `mmdc`, Python y PyYAML disponibles:
 

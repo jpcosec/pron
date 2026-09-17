@@ -1,8 +1,0 @@
-model: SpecDoc
-path: source/spec/01-mundo.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec
-hash_c: dae319f84d4146672ba8c6174cc94f17dbd001d098be45f1820e7be443cf779c

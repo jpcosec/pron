@@ -1,8 +1,0 @@
-model: ExplanationDoc
-path: knowledge/explanations/verify-changes.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations
-hash_c: 279389d8ef92b4569f0011512a9d58c351d523704e49e94ee4d93ebd9da3c4c4

@@ -1,9 +1,0 @@
-stateDiagram-v2
-    state "Libre · sin pendiente" as libre
-    state "Pendiente · candidatos guardados, Meaning con hueco" as pendiente
-    [*] --> libre
-    libre --> libre : único o missing
-    libre --> pendiente : ambiguo
-    pendiente --> libre : calza un candidato
-    pendiente --> pendiente : no calza
-    pendiente --> libre : orden nueva

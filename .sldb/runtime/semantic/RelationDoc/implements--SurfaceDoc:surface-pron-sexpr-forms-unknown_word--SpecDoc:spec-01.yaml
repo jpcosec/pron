@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-unknown_word--SpecDoc:spec-01.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 9028c7d08e5d43ada5dd27e4463561581a766e8a45ccfc021c2aeab4cb893c53

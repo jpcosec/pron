@@ -1,8 +1,0 @@
-model: SpecDoc
-path: source/spec/08-prerequisitos-y-orden.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec
-hash_c: 1a5bfc25c9280f8d34a96522cb0d3eabfd7c5b3ef205efc00b65ff07ef3c5dc6

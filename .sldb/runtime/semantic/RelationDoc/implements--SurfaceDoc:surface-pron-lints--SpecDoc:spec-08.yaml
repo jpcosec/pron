@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 9c04258f2236429fce7cb8983876a133c3f03b533a2c01562b3c41190e2d77f1

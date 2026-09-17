@@ -1,8 +1,0 @@
-model: SpecDoc
-path: source/spec/13-formas.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.spec
-- workspace.source.spec
-hash_c: 8a388e99d6209419bbab8cd00ef416139532a1013ade7ceb335e398934698cba

@@ -1,6 +1,13 @@
+# derived: rebuilt by tools, never versioned
 __pycache__/
 *.pyc
 *.egg-info/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .pron/
-.sldb/runtime/cache/
+.sldb/runtime/
+views/spec2viz/out/
+views/spec2viz/index.html
+views/spec2viz/offline.html
+views/spec2viz/diagrams.md

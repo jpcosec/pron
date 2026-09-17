@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-planning-compose_slots--SpecDoc:spec-05.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 834cab20aa9ed1c3b03109b943894895d9d8cf4ec7d462f1cc3d9ddc359753d0

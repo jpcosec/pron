@@ -1,8 +1,0 @@
-model: ExplanationDoc
-path: knowledge/explanations/how-it-works.md
-tags:
-- representation.markdown
-- source.document.markdown
-- type.knowledge.explanation
-- workspace.knowledge.explanations
-hash_c: 48e45765f280ca18fce94351d2c9fcb546289c2a87fe3bddfdd45e8b152026ed
