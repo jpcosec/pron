@@ -1,5 +1,10 @@
 """How objects are shown (spec 10): the projection's display templates, `{rel.field}` following an edge.
 
+A template is parts between separators (`, ` or `; `). A missing value leaves its gap empty
+(spec 09a), and a part all of whose gaps are empty is left out with its separator: a
+reservation without a table is "2026-09-12 13:00, 2 people, pending", not
+"…, table , pending". A template with nothing left falls back to the untemplated name.
+
 `render_name` is the same substitution used the other way round: a projection's naming rule
 turned into the document name a `create` writes.
 """
@@ -12,6 +17,7 @@ from typing import Any
 from pron.kernel.ids import export_id, split_id
 
 FIELD_RE = re.compile(r"\{([A-Za-z_][\w]*)(?:\.([A-Za-z_][\w]*))?\}")
+SEPARATOR_RE = re.compile(r"(\s*[,;]\s*)")
 
 
 class Display:
@@ -26,12 +32,12 @@ class Display:
         if d is None:
             return address
         template = self.templates.get(model)
-        if not template:
-            for fld in ("title", "name"):
-                if fld in d.payload:
-                    return str(d.payload[fld])
-            return doc
-        return self.render(template, model, doc, d.payload, export_id(address))
+        rendered = (
+            self.render(template, model, doc, d.payload, export_id(address))
+            if template
+            else ""
+        )
+        return rendered or untemplated_name(doc, d.payload)
 
     def render(
         self,
@@ -41,7 +47,7 @@ class Display:
         payload: dict[str, Any],
         eid: str | None = None,
     ) -> str:
-        def sub(m: re.Match) -> str:
+        def value(m: re.Match) -> str:
             head, sub_field = m.group(1), m.group(2)
             if sub_field is None:
                 return str(payload.get(head, ""))
@@ -57,10 +63,33 @@ class Display:
             td = self.world.store.doc_of(targets[0])
             return str(td.payload.get(sub_field, "")) if td else ""
 
-        return FIELD_RE.sub(sub, template).strip()
+        pieces = SEPARATOR_RE.split(template)  # part, separator, part, …
+        kept: list[str] = []
+        for i in range(0, len(pieces), 2):
+            if text := render_part(pieces[i], value):
+                kept += [pieces[i - 1] if kept else "", text]
+        return "".join(kept).strip()
 
     def names(self, addresses: list[str]) -> list[str]:
         return [self.name(a) for a in addresses]
+
+
+def render_part(part: str, value) -> str:
+    """One part of a display template; empty if it has gaps and all of them are empty. A part
+    with some gaps empty closes the spaces they leave."""
+    values = {m.group(0): value(m) for m in FIELD_RE.finditer(part)}
+    if values and not any(values.values()):
+        return ""
+    text = FIELD_RE.sub(lambda m: values[m.group(0)], part)
+    return " ".join(text.split()) if "" in values.values() else text
+
+
+def untemplated_name(doc: str, payload: dict[str, Any]) -> str:
+    """Spec 10: without a template, `title` if the document has one (or `name`), else its name."""
+    for fld in ("title", "name"):
+        if fld in payload:
+            return str(payload[fld])
+    return doc
 
 
 def split_address(address: str) -> tuple[str | None, str, str]:

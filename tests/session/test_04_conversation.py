@@ -170,3 +170,13 @@ def test_undo_restores_every_write_of_a_move_to_the_same_document(tmp_path):
         before["party_size"],
         before["notes"],
     )
+
+
+def test_a_display_template_drops_the_part_whose_value_is_missing(tmp_path):
+    """Spec 09a: without an edge the template's gap stays empty; the name does not keep the
+    label and separator around it ('table , pending')."""
+    s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
+    r = s.eval(
+        '(create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))'
+    )
+    assert r.text == "Created reservation 2026-09-12 13:00, 2 people, pending.", r.text

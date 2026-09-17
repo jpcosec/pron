@@ -254,7 +254,7 @@ key:
 matching: {neighbors: 3, threshold: 0.55}
 ```
 
-`transitions_to` está en modo `read`: nadie declara transiciones nuevas por oración en esta sesión. `{booked_by.name}` y `{assigned_to.number}` en las plantillas siguen una arista y leen un campo del destino; sin arista, la plantilla deja el hueco vacío.
+`transitions_to` está en modo `read`: nadie declara transiciones nuevas por oración en esta sesión. `{booked_by.name}` y `{assigned_to.number}` en las plantillas siguen una arista y leen un campo del destino; sin arista, la plantilla deja el hueco vacío. En `display`, una parte de la plantilla (entre `, ` o `; `) cuyos huecos quedaron todos vacíos se omite con su separador, y si no queda nada se usa el nombre sin plantilla (10): una reserva sin mesa se muestra `2026-09-12 13:00, 2 people, pending`, no `…, table , pending`.
 
 ## Los alias · documentos de `AnchorDoc`
 

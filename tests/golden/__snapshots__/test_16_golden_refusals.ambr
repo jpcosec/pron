@@ -290,7 +290,7 @@
           }),
         ]),
       }),
-      'text': 'Created reservation 2026-09-12 20:00, 6 people, table , pending.',
+      'text': 'Created reservation 2026-09-12 20:00, 6 people, pending.',
       'trace': list([
         'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "20:00") (party_size 6))',
         "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '20:00', 'party_size': 6}",

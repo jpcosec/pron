@@ -621,7 +621,7 @@
           }),
         ]),
       }),
-      'text': 'Created reservation 2026-09-12 13:00, 2 people, table , pending.',
+      'text': 'Created reservation 2026-09-12 13:00, 2 people, pending.',
       'trace': list([
         'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
         "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '13:00', 'party_size': 2}",
@@ -961,7 +961,7 @@
           }),
         ]),
       }),
-      'text': 'Created client Nueva Una. Created reservation 2026-09-10 21:00, 3 people, table , pending. Done: 2026-09-10 21:00, 3 people, table , pending booked by Nueva Una.',
+      'text': 'Created client Nueva Una. Created reservation 2026-09-10 21:00, 3 people, pending. Done: 2026-09-10 21:00, 3 people, pending booked by Nueva Una.',
       'trace': list([
         'pending dropped: a new move',
         'forms: (move (create Client (as "x1") (name "Nueva Una") (phone "111")) (create Reservation (as "x2") (date "2026-09-10") (time "21:00") (party_size 3)) (assert booked_by (doc "Reservation:x2") (doc "Client:x1")))',
