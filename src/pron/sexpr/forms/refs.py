@@ -13,16 +13,20 @@ kernel (action verb). An alias writes its own:
           (assert assigned_to (created) (a Table)))         the sentence, (a M) its phrase of class M
 
 The seven older string forms (model:M, field:M.f, predicate:M:<where>, relation:R,
-action:<verb> M.f=v, doc:M:name, compose with steps) are read and turned into these.
+action:<verb> M.f=v, doc:M:name, compose with steps) are read and turned into these
+(pron.sexpr.forms.legacy_ref); the steps of a composed sentence are pron.sexpr.forms.composed_steps.
 """
 
 from __future__ import annotations
 
 import re
-from typing import Any
+from typing import Any, Callable
 
-from pron.kernel.sexp.read_write import Sym, read_one, write
+from pron.kernel.sexp.read_write import read_one, write
+from pron.sexpr.forms.composed_steps import step_of
+from pron.sexpr.forms.legacy_ref import legacy_form
 from pron.sexpr.forms.ref import Ref
+from pron.sexpr.forms.syntax import form_head
 
 KERNEL_WRITES = ("change", "add", "remove", "clean", "forget")
 
@@ -32,150 +36,52 @@ def parse(ref: str, steps: list[dict[str, Any]] | None = None) -> Ref:
     text = str(ref).strip()
     if text.startswith("("):
         return of_form(read_one(text))
-    return of_form(_legacy(text, steps or []))
+    return of_form(legacy_form(text, steps or []))
 
 
 def of_form(form: Any) -> Ref:
-    head = _head(form)
-    if head == "model":
-        return Ref(form, "model", model=str(form[1]))
-    if head == "field":
-        return Ref(form, "field", model=str(form[1]), field_name=str(form[2]))
-    if head == "value":
-        return Ref(
-            form, "value", model=str(form[1]), field_name=str(form[2]), value=form[3]
-        )
-    if head == "where":
-        return Ref(form, "predicate", model=str(form[1]), where=str(form[2]))
-    if head == "relation":
-        return Ref(form, "relation", relation=str(form[1]))
-    if head == "action":
-        return Ref(form, "action", verb=str(form[1]))
-    if head == "doc":
-        eid = str(form[1])
-        return Ref(form, "doc", model=eid.split(":", 1)[0])
-    if head in KERNEL_WRITES:
-        target = form[1]
-        model = (
-            str(target[2])
-            if _head(target) in ("it", "them") and len(target) > 2
-            else None
-        )
-        return Ref(
-            form,
-            "action",
-            model=model,
-            field_name=str(form[2]) if len(form) > 2 else None,
-            verb=head,
-            value=form[3] if len(form) > 3 else None,
-        )
-    if head in ("move", "create", "assert"):
-        body = form[1:] if head == "move" else [form]
-        return Ref(form, "compose", steps=[_step(s) for s in body])
-    raise ValueError(f"not a ref: {write(form)}")
+    head = form_head(form, ValueError)
+    if head not in KINDS:
+        raise ValueError(f"not a ref: {write(form)}")
+    return KINDS[head](form)
 
 
-def _step(form: Any) -> dict[str, Any]:
-    head = _head(form)
-    if head == "create":
-        return {"do": "create", "model": str(form[1]), "fields": "$literals"}
-    if head == "assert":
-        return {
-            "do": "assert",
-            "relation": str(form[1]),
-            "source": _slot(form[2]),
-            "target": _slot(form[3]),
-        }
-    if head == "change":
-        return {
-            "do": "change",
-            "target": _slot(form[1]),
-            "field": str(form[2]),
-            "value": form[3],
-        }
-    raise ValueError(
-        f"a composed sentence takes create, assert and change, not ({head} …)"
+def _kernel_write(form: Any) -> Ref:
+    """(change (it "it" M) field value): the model is the referent's class, when it names one."""
+    target = form[1]
+    model = (
+        str(target[2])
+        if form_head(target, ValueError) in ("it", "them") and len(target) > 2
+        else None
+    )
+    return Ref(
+        form,
+        "action",
+        model=model,
+        field_name=str(form[2]) if len(form) > 2 else None,
+        verb=str(form[0]),
+        value=form[3] if len(form) > 3 else None,
     )
 
 
-def _slot(noun: Any) -> str:
-    head = _head(noun)
-    if head == "created":
-        return "$created"
-    if head in ("it", "them"):
-        return f"$referent:{noun[2]}" if len(noun) > 2 else "$referent:"
-    if head in ("a", "the", "all"):
-        return f"$object:{noun[1]}"
-    raise ValueError(
-        f"a slot of a composed sentence is (created), (it …) or (a M), not ({head} …)"
-    )
+def _compose(form: Any) -> Ref:
+    body = form[1:] if form_head(form, ValueError) == "move" else [form]
+    return Ref(form, "compose", steps=[step_of(s) for s in body])
 
 
-def _noun_of_slot(slot: str) -> Any:
-    if slot == "$created":
-        return [Sym("created")]
-    kind, _, model = slot[1:].partition(":")
-    if kind == "referent":
-        return [Sym("it"), "it"] + ([Sym(model)] if model else [])
-    return [Sym("a"), Sym(model)]
-
-
-def _legacy(ref: str, steps: list[dict[str, Any]]) -> Any:
-    head, _, rest = ref.partition(":")
-    if head == "model":
-        return [Sym("model"), Sym(rest)]
-    if head == "field":
-        m, f = rest.split(".", 1)
-        return [Sym("field"), Sym(m), Sym(f)]
-    if head == "value":
-        mf, v = rest.split("=", 1)
-        m, f = mf.split(".", 1)
-        return [Sym("value"), Sym(m), Sym(f), v]
-    if head == "predicate":
-        m, where = rest.split(":", 1)
-        return [Sym("where"), Sym(m), where]
-    if head == "relation":
-        return [Sym("relation"), Sym(rest)]
-    if head == "doc":
-        return [Sym("doc"), rest]
-    if head == "action":
-        verb, _, assign = rest.partition(" ")
-        if not assign:
-            return [Sym("action"), Sym(verb)]
-        mf, value = assign.split("=", 1)
-        m, f = mf.split(".", 1)
-        return [Sym(verb), [Sym("it"), "it", Sym(m)], Sym(f), value]
-    if ref == "compose":
-        body = []
-        for s in steps:
-            if s.get("do") == "create":
-                body.append([Sym("create"), Sym(s["model"])])
-            elif s.get("do") == "assert":
-                body.append(
-                    [
-                        Sym("assert"),
-                        Sym(s["relation"]),
-                        _noun_of_slot(s["source"]),
-                        _noun_of_slot(s["target"]),
-                    ]
-                )
-            elif s.get("do") == "change":
-                body.append(
-                    [
-                        Sym("change"),
-                        _noun_of_slot(s["target"]),
-                        Sym(s["field"]),
-                        s["value"],
-                    ]
-                )
-        return [Sym("move"), *body]
-    raise ValueError(f"not a ref: {ref!r}")
-
-
-def _head(form: Any) -> str:
-    if not isinstance(form, list) or not form or not isinstance(form[0], Sym):
-        raise ValueError(f"not a form: {write(form)}")
-    return str(form[0])
+KINDS: dict[str, Callable[[Any], Ref]] = {
+    "model": lambda f: Ref(f, "model", model=str(f[1])),
+    "field": lambda f: Ref(f, "field", model=str(f[1]), field_name=str(f[2])),
+    "value": lambda f: Ref(
+        f, "value", model=str(f[1]), field_name=str(f[2]), value=f[3]
+    ),
+    "where": lambda f: Ref(f, "predicate", model=str(f[1]), where=str(f[2])),
+    "relation": lambda f: Ref(f, "relation", relation=str(f[1])),
+    "action": lambda f: Ref(f, "action", verb=str(f[1])),
+    "doc": lambda f: Ref(f, "doc", model=str(f[1]).split(":", 1)[0]),
+    **{verb: _kernel_write for verb in KERNEL_WRITES},
+    **{head: _compose for head in ("move", "create", "assert")},
+}
 
 
 def models_and_relations(ref: Ref) -> tuple[set[str], set[str]]:
@@ -187,11 +93,18 @@ def models_and_relations(ref: Ref) -> tuple[set[str], set[str]]:
             models.add(s["model"])
         if s.get("relation"):
             relations.add(s["relation"])
-        for key in ("source", "target"):
-            slot = s.get(key)
-            if isinstance(slot, str) and ":" in slot and slot.split(":", 1)[1]:
-                models.add(slot.split(":", 1)[1])
+        models |= _slot_models(s)
     return models, relations
+
+
+def _slot_models(step: dict[str, Any]) -> set[str]:
+    """The classes the source and target slots of a step name, `$object:M` → M."""
+    slots = (step.get(key) for key in ("source", "target"))
+    return {
+        slot.split(":", 1)[1]
+        for slot in slots
+        if isinstance(slot, str) and ":" in slot and slot.split(":", 1)[1]
+    }
 
 
 SLOT_WORDS = re.compile(r"\b(N|X|Z|DAY|TIME)\b")
