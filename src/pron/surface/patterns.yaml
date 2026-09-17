@@ -1,6 +1,6 @@
 # The constructions pron understands, in the order they are tried (spec 11 §1).
 # These are pron's, not a world's: a world adds sentences through compose aliases.
-# Each entry names a construction implemented in pron.surface.interpret and gives
+# Each entry names a construction implemented in pron.surface.constructions and gives
 # the example shown when a sentence matches nothing ("I can understand: …").
 constructions:
   - {name: undo,             example: "undo the last move"}
