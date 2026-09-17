@@ -35,23 +35,33 @@ def request(
     """One request to a running server. Raises ConnectionError when nobody listens."""
     with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
         s.settimeout(timeout)
-        try:
-            s.connect(str(path))
-        except OSError as e:
-            raise ConnectionError(f"no pron server at {path}: {e}") from e
-        s.sendall(json.dumps(req, ensure_ascii=False).encode("utf-8") + b"\n")
-        chunks = []
-        while True:
-            chunk = s.recv(65536)
-            if not chunk:
-                break
-            chunks.append(chunk)
-            if chunk.endswith(b"\n"):
-                break
-    resp = json.loads(b"".join(chunks).decode("utf-8"))
+        _send(s, path, req)
+        raw = _receive(s)
+    resp = json.loads(raw.decode("utf-8"))
     if not resp.get("ok"):
         raise RuntimeError(resp.get("error", "the server refused"))
     return resp
+
+
+def _send(s: socket.socket, path: str | Path, req: dict[str, Any]) -> None:
+    try:
+        s.connect(str(path))
+    except OSError as e:
+        raise ConnectionError(f"no pron server at {path}: {e}") from e
+    s.sendall(json.dumps(req, ensure_ascii=False).encode("utf-8") + b"\n")
+
+
+def _receive(s: socket.socket) -> bytes:
+    """The answer line: chunks until the newline that ends it, or until the server closes."""
+    chunks = []
+    while True:
+        chunk = s.recv(65536)
+        if not chunk:
+            break
+        chunks.append(chunk)
+        if chunk.endswith(b"\n"):
+            break
+    return b"".join(chunks)
 
 
 def alive(path: str | Path) -> bool:
