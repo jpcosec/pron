@@ -158,7 +158,7 @@ class Lexicon:
                 continue
             mode = allowed.get(name, "read and assert")
             payload = {**rt, "mode": mode}
-            for form in {name, name.replace("_", " ")}:
+            for form in dict.fromkeys((name, name.replace("_", " "))):
                 self.words.append(
                     Word(
                         form,

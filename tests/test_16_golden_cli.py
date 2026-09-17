@@ -12,7 +12,7 @@ import pytest
 import test_05_cli_docs_lints as cli_docs_lints
 from sldb.cli import main as sldb_main
 
-from golden.cli import invoke, relation_forms
+from golden.cli import invoke
 from golden.normalize import Normalizer
 from golden.run import NOW, restaurant
 from pron.cli.repl import run as repl
@@ -102,10 +102,7 @@ def test_repl(tmp_path, snapshot):
     lines = ":help\n\ncreate a client named Ana Rojas, phone 9 5555 1234\n:trace\nwhat reservations does Ana have?\n1\n:state\n:lexicon Client\n:quit\nnever read\n"
     out = io.StringIO()
     code = repl(session, world.root.name, "all", stdin=io.StringIO(lines), stdout=out)
-    assert (
-        Normalizer(tmp_path)({"exit": code, "stdout": relation_forms(out.getvalue())})
-        == snapshot
-    )
+    assert Normalizer(tmp_path)({"exit": code, "stdout": out.getvalue()}) == snapshot
 
 
 def test_serve_prints_its_worlds(tmp_path: Path, capsys, snapshot):
