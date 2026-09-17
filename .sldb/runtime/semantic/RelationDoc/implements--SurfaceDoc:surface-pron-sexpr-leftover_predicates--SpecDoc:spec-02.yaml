@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-leftover_predicates--SpecDoc:spec-02.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: da4edda6a52d8d2161576820638ade9d730b4a7a3fe80d4ece43517179a68cc3

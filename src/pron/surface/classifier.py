@@ -11,11 +11,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from pron.kernel.item import Item
-from pron.kernel.word import Word
+from pron.kernel.parts.item import Item
+from pron.kernel.parts.word import Word
 from pron.surface.dates import parse_day, parse_time
 from pron.surface.tokens import tokenize
-from pron.world.difflib_matcher import normalize
+from pron.world.matching.difflib_matcher import normalize
 from pron.world.lexicon import FUNCTION_WORDS, Lexicon
 
 MAX_FORM_WORDS = 5

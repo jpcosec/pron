@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-remove_verb--SpecDoc:spec-11.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 7bccd532a17bf4ab690d1da6065980335dbb8425bdb0cf1deab9fe9ddefbb4d2

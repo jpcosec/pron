@@ -1,0 +1,86 @@
+doc_name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+sections:
+- path: source-id-surfacedoc-surface-pron-sexpr-dialogue-unknown-words-target-id-specdoc-spec-06-relation-type-implements-condition
+  title: 'source_id: SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words
+
+    target_id: SpecDoc:spec-06
+
+    relation_type: implements
+
+    condition: '''''
+  breadcrumbs:
+  - 'source_id: SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words
+
+    target_id: SpecDoc:spec-06
+
+    relation_type: implements
+
+    condition: '''''
+  about:
+  - 'source_id: SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words
+
+    target_id: SpecDoc:spec-06
+
+    relation_type: implements
+
+    condition: '''''
+  - source id surfacedoc surface pron sexpr dialogue unknown words target id specdoc
+    spec 06 relation type implements condition
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: source-id-surfacedoc-surface-pron-sexpr-dialogue-unknown-words-target-id-specdoc-spec-06-relation-type-implements-condition
+  level: 2
+  line_start: 2
+  line_end: 7
+- path: implements-surfacedoc-surface-pron-sexpr-dialogue-unknown-words-specdoc-spec-06
+  title: implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+  about:
+  - implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+  - implements surfacedoc surface pron sexpr dialogue unknown words specdoc spec 06
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: implements-surfacedoc-surface-pron-sexpr-dialogue-unknown-words-specdoc-spec-06
+  level: 1
+  line_start: 8
+  line_end: 12
+- path: implements-surfacedoc-surface-pron-sexpr-dialogue-unknown-words-specdoc-spec-06/notes
+  title: Notes
+  breadcrumbs:
+  - implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+  - Notes
+  about:
+  - implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+  - implements surfacedoc surface pron sexpr dialogue unknown words specdoc spec 06
+  - Notes
+  - notes
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  semantic_tags:
+  - layer.topology
+  - representation.markdown
+  - source.document.markdown
+  - type.relation.instance
+  slug: notes
+  level: 2
+  line_start: 10
+  line_end: 12
+hash_c: b3cbc98f455e6ce40e40386758fb086749a80456fcbed44a7a8a03a7b7bbfd0d
+sections_version: '2'

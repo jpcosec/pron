@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-sexp-read_write--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-sexp-read_write--SpecDoc:spec-06.md
+hash_c: 59b41fc713cc658f2b0ebafe958cea74cf278f89e2a1cc82814e9ff82ecc0eb0
+hash_d: b205958269e91391896570a1a062d87d7c959c79458d9f83a813656bc4295715
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

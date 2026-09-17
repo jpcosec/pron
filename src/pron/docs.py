@@ -200,10 +200,26 @@ def synchronize_docs(world: World, check: bool = False) -> list[str]:
                 store.create(
                     model, spec["id"], payload, world.root / folder / f"{spec['id']}.md"
                 )
+    changed += _stale_surfaces(world, plans[2][1], check)
     changed += _hand_written(world, check)
     changed += _render_readme(world, check)
     changed += _implements_edges(world, plans, check)
     return changed
+
+
+def _stale_surfaces(world: World, specs, check: bool) -> list[str]:
+    """A SurfaceDoc whose module no longer exists goes: untracked, and the file generated for
+    it under knowledge/surfaces deleted. With check, report the drift and write nothing."""
+    store = world.store
+    wanted = {spec["id"] for spec in specs}
+    stale = sorted(d.name for d in store.docs_of("SurfaceDoc") if d.name not in wanted)
+    generated = (world.root / "knowledge" / "surfaces").resolve()
+    for name in [] if check else stale:
+        path = store.doc_path("SurfaceDoc", name)
+        store.untrack(name)
+        if path is not None and path.resolve().parent == generated:
+            path.unlink(missing_ok=True)
+    return [f"SurfaceDoc {name} (stale)" for name in stale]
 
 
 def _hand_written(world: World, check: bool) -> list[str]:

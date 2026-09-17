@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-dry_runner--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dry_runner--SpecDoc:spec-11.md
-hash_c: 44499b67e441288a11b0b0c42b055871b101a3fad0ff2d9c74d884ebce447e92
-hash_d: 199f4d3a69cfaf7f90fda10d915256398af6de414405b144bfad88e9ec148e01
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

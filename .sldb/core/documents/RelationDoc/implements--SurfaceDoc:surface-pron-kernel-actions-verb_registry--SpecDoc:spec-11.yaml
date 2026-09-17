@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-actions-verb_registry--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-verb_registry--SpecDoc:spec-11.md
+hash_c: 60557efd87e6c8fead11fc59cc135389618ee8c392ab14efaf6cb398ed230749
+hash_d: f8b96e2c0c93e1ee5a233b5b610cc202fb413b653cefa83cfc7694b7caf8ce7e
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

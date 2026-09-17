@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-verbs--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-verbs--SpecDoc:spec-03.md
-hash_c: 01c04ee0aa9fd673884d931c06c97d2bdea46d674b3eed948a3a8f078d9f0839
-hash_d: a6f00626afbd82b3f8a9ea555d6cd42eae19cae4847f7080ef6baa37febf418f
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

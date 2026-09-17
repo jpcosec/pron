@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-dry_assert--SpecDoc:spec-03
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dry_assert--SpecDoc:spec-03.md
-hash_c: 13e8cf2befd9e5024fa34eeec474f80fb64289685f8bcab92e7c75cc9f29aa21
-hash_d: 8b037932c1ed2e5e3a1b3e550113b543b576fbccf1e6d5eaedfaf89f894be70e
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

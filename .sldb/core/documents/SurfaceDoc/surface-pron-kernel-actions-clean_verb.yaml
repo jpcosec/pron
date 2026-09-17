@@ -1,0 +1,14 @@
+name: surface-pron-kernel-actions-clean_verb
+path: knowledge/surfaces/surface-pron-kernel-actions-clean_verb.md
+hash_c: b4b28496f9ba63fd6992e772abc9876f8c81c360006eea98f76fe55f67871698
+hash_d: 862474ececcc74a2129bc41ce1a3465a29ccb4d2ba2c206db88a782e25f6ce1c
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

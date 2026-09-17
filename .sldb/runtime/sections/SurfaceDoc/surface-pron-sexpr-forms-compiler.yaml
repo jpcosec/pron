@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-forms-compiler
+sections:
+- path: sexpr-forms-compiler
+  title: sexpr.forms.compiler
+  breadcrumbs:
+  - sexpr.forms.compiler
+  about:
+  - sexpr.forms.compiler
+  - sexpr forms compiler
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-forms-compiler
+  level: 1
+  line_start: 14
+  line_end: 52
+- path: sexpr-forms-compiler/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.forms.compiler
+  - Purpose
+  about:
+  - sexpr.forms.compiler
+  - sexpr forms compiler
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 22
+- path: sexpr-forms-compiler/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.forms.compiler
+  - How It Works
+  about:
+  - sexpr.forms.compiler
+  - sexpr forms compiler
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 23
+  line_end: 49
+- path: sexpr-forms-compiler/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.forms.compiler
+  - Commands
+  about:
+  - sexpr.forms.compiler
+  - sexpr forms compiler
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 50
+  line_end: 52
+hash_c: 37ffbbe7666503c2bc5671370a284fb70e4f56ff3eb41ecc51f2d71b474a43fb
+sections_version: '2'

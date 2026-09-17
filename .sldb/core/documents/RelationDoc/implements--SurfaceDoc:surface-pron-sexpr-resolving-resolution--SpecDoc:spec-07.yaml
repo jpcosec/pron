@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-resolving-resolution--SpecDoc:spec-07
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-resolution--SpecDoc:spec-07.md
+hash_c: 3a3aaf8b5d50861ff37add47fd3a1924e889ad3c7fb04ea9ffcf6cee7cb27d5f
+hash_d: b42182ad9993906bb17f5d7a29375fb1ca3528c39bc2298e7989f0e665aaa455
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

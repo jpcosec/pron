@@ -1,0 +1,14 @@
+name: surface-pron-kernel-actions-add_verb
+path: knowledge/surfaces/surface-pron-kernel-actions-add_verb.md
+hash_c: 86ea84e356c4eeb4828f1286ecb23f1a085b205bb544bdbe5462583af1b3c036
+hash_d: a01a3be95727c54cf01a4067ee6c757db8a689d08021ea4ae4eceab9b60749c9
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

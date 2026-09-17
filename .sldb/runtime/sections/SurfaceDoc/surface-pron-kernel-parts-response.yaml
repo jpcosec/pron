@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-parts-response
+sections:
+- path: kernel-parts-response
+  title: kernel.parts.response
+  breadcrumbs:
+  - kernel.parts.response
+  about:
+  - kernel.parts.response
+  - kernel parts response
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-parts-response
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: kernel-parts-response/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.parts.response
+  - Purpose
+  about:
+  - kernel.parts.response
+  - kernel parts response
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-parts-response/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.parts.response
+  - How It Works
+  about:
+  - kernel.parts.response
+  - kernel parts response
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-parts-response/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.parts.response
+  - Commands
+  about:
+  - kernel.parts.response
+  - kernel parts response
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: 0f1ad41f0f60b9cdafbe5500d54328a78f4a315bffc243c1725b20c7890478a6
+sections_version: '2'

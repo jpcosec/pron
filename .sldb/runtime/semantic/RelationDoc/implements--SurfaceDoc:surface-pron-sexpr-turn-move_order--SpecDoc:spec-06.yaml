@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-move_order--SpecDoc:spec-06.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 439645f5c465108e58418ea6a7972ac0e77e8cfe09b5a70e7d58612b151bc33d

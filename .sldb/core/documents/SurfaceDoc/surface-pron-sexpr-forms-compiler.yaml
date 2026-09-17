@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-forms-compiler
+path: knowledge/surfaces/surface-pron-sexpr-forms-compiler.md
+hash_c: 37ffbbe7666503c2bc5671370a284fb70e4f56ff3eb41ecc51f2d71b474a43fb
+hash_d: 40589b1a10655affa6da2c19e69f1b6d8d29d7cdbabf2ed4ee4acba21a15f413
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

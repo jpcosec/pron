@@ -14,10 +14,10 @@ from typing import Any
 
 import yaml
 
-from pron.kernel.item import Item
-from pron.kernel.noun_phrase import NounPhrase
-from pron.kernel.part import Part
-from pron.kernel.word import Word
+from pron.kernel.parts.item import Item
+from pron.kernel.parts.noun_phrase import NounPhrase
+from pron.kernel.parts.part import Part
+from pron.kernel.parts.word import Word
 
 PATTERNS = yaml.safe_load(
     (Path(__file__).parent / "patterns.yaml").read_text(encoding="utf-8")

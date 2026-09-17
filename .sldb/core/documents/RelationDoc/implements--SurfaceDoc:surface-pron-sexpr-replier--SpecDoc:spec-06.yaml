@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-replier--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-replier--SpecDoc:spec-06.md
-hash_c: ff679bbf25ea0f167ce7e909c1570f62eb1dd34d7eaa31a841918b92bc2d2af3
-hash_d: fcce5c6af3169cd6517eb67534411c0e5f5f3af172e8c0dbf4609f242c01923a
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

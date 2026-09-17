@@ -1,0 +1,133 @@
+doc_name: surface-pron-world-matching-document_index
+sections:
+- path: world-matching-document-index
+  title: world.matching.document_index
+  breadcrumbs:
+  - world.matching.document_index
+  about:
+  - world.matching.document_index
+  - world matching document index
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: world-matching-document-index
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: world-matching-document-index/purpose
+  title: Purpose
+  breadcrumbs:
+  - world.matching.document_index
+  - Purpose
+  about:
+  - world.matching.document_index
+  - world matching document index
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: world-matching-document-index/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - world.matching.document_index
+  - How It Works
+  about:
+  - world.matching.document_index
+  - world matching document index
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: world-matching-document-index/commands
+  title: Commands
+  breadcrumbs:
+  - world.matching.document_index
+  - Commands
+  about:
+  - world.matching.document_index
+  - world matching document index
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 8e96a412e4a436c993ad649cc6a29e6e76b87a0d4066de34ac163a87847436bd
+sections_version: '2'

@@ -1,0 +1,13 @@
+model: SurfaceDoc
+path: knowledge/surfaces/surface-pron-sexpr-planning-planner.md
+tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces
+hash_c: 630c4bd55a001a9a3fdce503f961d32c1802c521343d59155c11e20d3d86bc01

@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dialogue-replier
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-replier.md
+hash_c: 2eecbfb2a8442d02790d6ac0ec074e7e29fe39b32c030b3b40b68f0b2e54954d
+hash_d: 95a824ecea30e183205f5988a5e97f31321a16bff3d3e0321d856165f1cae5f2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

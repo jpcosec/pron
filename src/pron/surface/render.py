@@ -8,12 +8,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from pron.kernel.noun_phrase import NounPhrase
-from pron.kernel.part import Part
-from pron.kernel.sexp import Sym
-from pron.sexpr.compiler import NOUN_HEADS, _is_clause
-from pron.sexpr.form_error import FormError
-from pron.sexpr.resolution import address_to_export_id
+from pron.kernel.parts.noun_phrase import NounPhrase
+from pron.kernel.parts.part import Part
+from pron.kernel.sexp.read_write import Sym
+from pron.sexpr.forms.compiler import NOUN_HEADS, _is_clause
+from pron.sexpr.forms.form_error import FormError
+from pron.sexpr.resolving.resolution import address_to_export_id
 
 if TYPE_CHECKING:
     from pron.session import Session

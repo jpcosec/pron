@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-execution-why_executor
+path: knowledge/surfaces/surface-pron-sexpr-execution-why_executor.md
+hash_c: cc4a16f40c9ba213d62e16675752f3554938c5505fa3aa41ac9d7155414695fe
+hash_d: db5729ba25862404a425192df56069f8d192103e241c54a045eefbb5e9cf7bdd
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

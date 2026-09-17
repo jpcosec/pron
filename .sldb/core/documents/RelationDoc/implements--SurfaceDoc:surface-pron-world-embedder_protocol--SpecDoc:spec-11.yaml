@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-world-embedder_protocol--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-embedder_protocol--SpecDoc:spec-11.md
-hash_c: 050a1d0a92869d1e9291bef93df52918735f59a11a979349a531eceefc8a2c5c
-hash_d: 9e55cebe71945001acbd0e7ba58d4e6ae82afa880e556b9f3242c2649de629fb
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_runner--SpecDoc:spec-11.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: ab581aa04316a7e4cd9cfaee9291877057fef3be0998e5ac323efc79875e4906

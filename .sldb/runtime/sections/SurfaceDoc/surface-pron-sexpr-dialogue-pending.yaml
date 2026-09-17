@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-dialogue-pending
+sections:
+- path: sexpr-dialogue-pending
+  title: sexpr.dialogue.pending
+  breadcrumbs:
+  - sexpr.dialogue.pending
+  about:
+  - sexpr.dialogue.pending
+  - sexpr dialogue pending
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-dialogue-pending
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-dialogue-pending/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.dialogue.pending
+  - Purpose
+  about:
+  - sexpr.dialogue.pending
+  - sexpr dialogue pending
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: sexpr-dialogue-pending/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.dialogue.pending
+  - How It Works
+  about:
+  - sexpr.dialogue.pending
+  - sexpr dialogue pending
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: sexpr-dialogue-pending/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.dialogue.pending
+  - Commands
+  about:
+  - sexpr.dialogue.pending
+  - sexpr dialogue pending
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 690f8f2554a0695ad441a98c8ebc1e494d5c56b95e1bab12be538aaf97643aba
+sections_version: '2'

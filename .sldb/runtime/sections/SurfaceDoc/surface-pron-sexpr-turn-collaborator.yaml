@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-turn-collaborator
+sections:
+- path: sexpr-turn-collaborator
+  title: sexpr.turn.collaborator
+  breadcrumbs:
+  - sexpr.turn.collaborator
+  about:
+  - sexpr.turn.collaborator
+  - sexpr turn collaborator
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-turn-collaborator
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-turn-collaborator/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.turn.collaborator
+  - Purpose
+  about:
+  - sexpr.turn.collaborator
+  - sexpr turn collaborator
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-turn-collaborator/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.turn.collaborator
+  - How It Works
+  about:
+  - sexpr.turn.collaborator
+  - sexpr turn collaborator
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-turn-collaborator/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.turn.collaborator
+  - Commands
+  about:
+  - sexpr.turn.collaborator
+  - sexpr turn collaborator
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 8ff4d12ba9cb557388877dab36b96d7c0cb02b27d9b0d0de1bf1602197073538
+sections_version: '2'

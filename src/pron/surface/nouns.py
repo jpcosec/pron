@@ -18,9 +18,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from pron.kernel.item import Item
-from pron.kernel.noun_phrase import NounPhrase
-from pron.kernel.word import Word
+from pron.kernel.parts.item import Item
+from pron.kernel.parts.noun_phrase import NounPhrase
+from pron.kernel.parts.word import Word
 from pron.world.lexicon import Lexicon
 
 PREDICATE_STOP = {"and", "to", "as", "with"}

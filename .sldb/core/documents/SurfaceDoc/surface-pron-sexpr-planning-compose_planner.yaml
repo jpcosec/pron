@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-planning-compose_planner
+path: knowledge/surfaces/surface-pron-sexpr-planning-compose_planner.md
+hash_c: fffbdc2e368e92585aa95182878983affc3529d102f9ad192094eb8fa4bf03c3
+hash_d: 1a5afb87b60daf7b46562559c8846a63a470aea01dabc6de75f840292a903521
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

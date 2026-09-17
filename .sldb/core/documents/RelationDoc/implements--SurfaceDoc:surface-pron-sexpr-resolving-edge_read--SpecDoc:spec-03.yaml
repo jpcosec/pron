@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-resolving-edge_read--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-edge_read--SpecDoc:spec-03.md
+hash_c: 731e49ea62584761d40d5e219843d4910054f766e2aa768a5d06e40e74e54c9f
+hash_d: 25b6bfefa21a9e69125856da7a8c4dff59b830a48455ad7e776ee525d791830c
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

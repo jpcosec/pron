@@ -9,10 +9,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from pron.kernel.interpretation import Interpretation
-from pron.kernel.item import Item
-from pron.kernel.noun_phrase import NounPhrase
-from pron.kernel.part import Part
+from pron.kernel.parts.interpretation import Interpretation
+from pron.kernel.parts.item import Item
+from pron.kernel.parts.noun_phrase import NounPhrase
+from pron.kernel.parts.part import Part
 from pron.surface.classifier import Classifier
 from pron.surface.interpret import (
     PATTERNS,

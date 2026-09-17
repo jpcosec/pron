@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dialogue-dialogue
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-dialogue.md
+hash_c: bc492103e2d0d57e7696ae392943ccb9819fc92b7400e37153ecff5539de02a7
+hash_d: dfc269888fc7d28affe9e0bf30b4dab862d60a6e2ebb83a755a281d2ed074977
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

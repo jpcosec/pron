@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-compose_executor--SpecDoc:spec-04.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: d7eb0dcd008ddf730910aaac958e76701e5d70a2d316327908c0331cf625b95c

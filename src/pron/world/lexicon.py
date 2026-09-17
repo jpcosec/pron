@@ -11,11 +11,11 @@ from typing import Any, Iterable
 
 import yaml
 
-from pron.kernel.sexp import Sym, write
-from pron.kernel.word import Word
-from pron.sexpr.refs import models_and_relations, parse as parse_ref
-from pron.world.difflib_matcher import normalize
-from pron.world.matcher import Matcher
+from pron.kernel.sexp.read_write import Sym, write
+from pron.kernel.parts.word import Word
+from pron.sexpr.forms.refs import models_and_relations, parse as parse_ref
+from pron.world.matching.difflib_matcher import normalize
+from pron.world.matching.matcher import Matcher
 from pron.world.world import World
 
 FUNCTION_WORDS = yaml.safe_load(

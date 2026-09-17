@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-verbs--SpecDoc:spec-03.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 35e31c37473574d25f7097c563fe67e754011413c5b2296cae762de5216db9e0

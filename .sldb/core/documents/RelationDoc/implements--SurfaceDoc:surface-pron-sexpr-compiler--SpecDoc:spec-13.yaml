@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-compiler--SpecDoc:spec-13
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-compiler--SpecDoc:spec-13.md
-hash_c: 085a2241670bbf79689c9dd7e3487daa60bc6defb6dd9c24352c3a475547242f
-hash_d: 4b04fb01aaea9dd291cc6ea4c62e1eb784c47db66384b49dbaaf79e6eeec0692
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

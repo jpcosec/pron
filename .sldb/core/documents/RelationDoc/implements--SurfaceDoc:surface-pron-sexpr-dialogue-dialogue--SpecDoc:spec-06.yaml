@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-dialogue--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-dialogue--SpecDoc:spec-06.md
+hash_c: b473966b4ab0fd48fa8535b52c6ac0d64129d882e809024163302bba152bc714
+hash_d: bc92fa0c2fdb2a787875dadc0c2d381e9699377e8d792bd9f3e2e68437f3c4a1
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

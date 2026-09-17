@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-planning-compose_slots
+sections:
+- path: sexpr-planning-compose-slots
+  title: sexpr.planning.compose_slots
+  breadcrumbs:
+  - sexpr.planning.compose_slots
+  about:
+  - sexpr.planning.compose_slots
+  - sexpr planning compose slots
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-planning-compose-slots
+  level: 1
+  line_start: 14
+  line_end: 29
+- path: sexpr-planning-compose-slots/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.planning.compose_slots
+  - Purpose
+  about:
+  - sexpr.planning.compose_slots
+  - sexpr planning compose slots
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-planning-compose-slots/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.planning.compose_slots
+  - How It Works
+  about:
+  - sexpr.planning.compose_slots
+  - sexpr planning compose slots
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: sexpr-planning-compose-slots/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.planning.compose_slots
+  - Commands
+  about:
+  - sexpr.planning.compose_slots
+  - sexpr planning compose slots
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 27
+  line_end: 29
+hash_c: 5731b2f91b550735f7ad17a622d00c77f6f61dad0ff96e05808e07bd6cb5ea90
+sections_version: '2'

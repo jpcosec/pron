@@ -1,0 +1,13 @@
+model: SurfaceDoc
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-replier.md
+tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces
+hash_c: 2eecbfb2a8442d02790d6ac0ec074e7e29fe39b32c030b3b40b68f0b2e54954d

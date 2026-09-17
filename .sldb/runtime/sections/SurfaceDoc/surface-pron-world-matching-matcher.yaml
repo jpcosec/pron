@@ -1,0 +1,133 @@
+doc_name: surface-pron-world-matching-matcher
+sections:
+- path: world-matching-matcher
+  title: world.matching.matcher
+  breadcrumbs:
+  - world.matching.matcher
+  about:
+  - world.matching.matcher
+  - world matching matcher
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: world-matching-matcher
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: world-matching-matcher/purpose
+  title: Purpose
+  breadcrumbs:
+  - world.matching.matcher
+  - Purpose
+  about:
+  - world.matching.matcher
+  - world matching matcher
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: world-matching-matcher/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - world.matching.matcher
+  - How It Works
+  about:
+  - world.matching.matcher
+  - world matching matcher
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: world-matching-matcher/commands
+  title: Commands
+  breadcrumbs:
+  - world.matching.matcher
+  - Commands
+  about:
+  - world.matching.matcher
+  - world matching matcher
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 31
+hash_c: 458eae1eb2e0a9b9acce2701f235d67682f4bf74d0c1695d6f73d8d7697caeee
+sections_version: '2'

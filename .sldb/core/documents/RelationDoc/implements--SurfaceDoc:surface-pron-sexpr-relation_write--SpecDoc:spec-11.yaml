@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-relation_write--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-relation_write--SpecDoc:spec-11.md
-hash_c: a8392edeb1448eb4b2ea9fae91f6a362283c1399ec90b73c8326f353d6045344
-hash_d: fced4387c2dca05a2f19f6aaca54fcdf60db814caed2cfea07552d5178b3c7ca
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

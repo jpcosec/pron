@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-kernel-parts-word--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-parts-word--SpecDoc:spec-05.md
+hash_c: ca273cb16a2e5090f0bbc41b411a972d8223ed302e6d003c44bfb676612c0a27
+hash_d: 8e18869e806b7cd9f4249c745b03b539f2816728afd8f41a109eed951dbe6e10
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

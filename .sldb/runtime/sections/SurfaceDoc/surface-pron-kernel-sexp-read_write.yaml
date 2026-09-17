@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-sexp-read_write
+sections:
+- path: kernel-sexp-read-write
+  title: kernel.sexp.read_write
+  breadcrumbs:
+  - kernel.sexp.read_write
+  about:
+  - kernel.sexp.read_write
+  - kernel sexp read write
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-sexp-read-write
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: kernel-sexp-read-write/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.sexp.read_write
+  - Purpose
+  about:
+  - kernel.sexp.read_write
+  - kernel sexp read write
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-sexp-read-write/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.sexp.read_write
+  - How It Works
+  about:
+  - kernel.sexp.read_write
+  - kernel sexp read write
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-sexp-read-write/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.sexp.read_write
+  - Commands
+  about:
+  - kernel.sexp.read_write
+  - kernel sexp read write
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 30
+hash_c: 6f40a01da3d79d2062faaa0b0c498f19d5fe3742daa904afc250c6c36810e3d4
+sections_version: '2'

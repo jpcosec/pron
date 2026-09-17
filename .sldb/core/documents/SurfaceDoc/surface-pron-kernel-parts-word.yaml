@@ -1,0 +1,14 @@
+name: surface-pron-kernel-parts-word
+path: knowledge/surfaces/surface-pron-kernel-parts-word.md
+hash_c: ca59b287ef2b3ad262ebd464dbab0a1c7672976a0931f22c84faa6df5cac2eee
+hash_d: d7850bc2bec977c51ea2f003ce9b27cc3899417c05c4a5874248d35962cb6733
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

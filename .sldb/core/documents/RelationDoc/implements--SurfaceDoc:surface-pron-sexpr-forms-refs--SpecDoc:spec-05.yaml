@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-refs--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-refs--SpecDoc:spec-05.md
+hash_c: 3635cdf0e81315835bcc7c1f901e48a1282e58e1aa12951b647ac4390351bd19
+hash_d: 3520b94dce16ca590fff1d037b0784451606534cbb6342c4fa0f21cb57a49ec7
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

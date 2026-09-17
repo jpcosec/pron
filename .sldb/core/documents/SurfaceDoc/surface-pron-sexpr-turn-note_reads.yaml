@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-turn-note_reads
+path: knowledge/surfaces/surface-pron-sexpr-turn-note_reads.md
+hash_c: 56e4762d782ea4e591ec206787beff18a06edbb4b66c0d7e6374ea15855bf8cf
+hash_d: d2cb8dde9e20ae0629ba763d4c9a7d14e6cd5311ae5a4c288ba254c6ee3d9b51
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

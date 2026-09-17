@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-actions-forget_verb
+sections:
+- path: kernel-actions-forget-verb
+  title: kernel.actions.forget_verb
+  breadcrumbs:
+  - kernel.actions.forget_verb
+  about:
+  - kernel.actions.forget_verb
+  - kernel actions forget verb
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-actions-forget-verb
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: kernel-actions-forget-verb/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.actions.forget_verb
+  - Purpose
+  about:
+  - kernel.actions.forget_verb
+  - kernel actions forget verb
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: kernel-actions-forget-verb/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.actions.forget_verb
+  - How It Works
+  about:
+  - kernel.actions.forget_verb
+  - kernel actions forget verb
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: kernel-actions-forget-verb/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.actions.forget_verb
+  - Commands
+  about:
+  - kernel.actions.forget_verb
+  - kernel actions forget verb
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: aed69a1c8a25a021acdc78aaf52790ef39b1930949a089d0e70d81000a2afa7a
+sections_version: '2'

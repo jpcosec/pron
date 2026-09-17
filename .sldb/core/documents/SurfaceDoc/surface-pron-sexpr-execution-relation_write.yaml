@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-execution-relation_write
+path: knowledge/surfaces/surface-pron-sexpr-execution-relation_write.md
+hash_c: 5bb829227049a37fc98905d17888cd1332a965a24618301f8e56f570f494547c
+hash_d: 5f1d2b4576760094f7d732cfb65b1181c4a0252b34e027c30f2a71a2ce3920d5
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

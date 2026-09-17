@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-prevalidation-action_verb
+path: knowledge/surfaces/surface-pron-sexpr-prevalidation-action_verb.md
+hash_c: 2bf51de4b73feed9a1f7fd63be3c7c54e7df45afea6c04177fcca8f8cee81653
+hash_d: 50994e0b9f84b76ab65799ab1970b48a2ebfa04664493b3683968620989db345
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

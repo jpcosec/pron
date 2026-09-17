@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-assert_executor--SpecDoc:spec-03.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 10749b378b2a6928481dea7aa55a592b4622eac35dfdf45da1c66e0630217b9e

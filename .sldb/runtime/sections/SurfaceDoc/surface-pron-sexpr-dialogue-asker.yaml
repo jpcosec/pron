@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-dialogue-asker
+sections:
+- path: sexpr-dialogue-asker
+  title: sexpr.dialogue.asker
+  breadcrumbs:
+  - sexpr.dialogue.asker
+  about:
+  - sexpr.dialogue.asker
+  - sexpr dialogue asker
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-dialogue-asker
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-dialogue-asker/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.dialogue.asker
+  - Purpose
+  about:
+  - sexpr.dialogue.asker
+  - sexpr dialogue asker
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-dialogue-asker/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.dialogue.asker
+  - How It Works
+  about:
+  - sexpr.dialogue.asker
+  - sexpr dialogue asker
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-dialogue-asker/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.dialogue.asker
+  - Commands
+  about:
+  - sexpr.dialogue.asker
+  - sexpr dialogue asker
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 2b64d5ed87c76971c0befbc0fe9e8b7336270ff64132f728321f5e5687d9a1cc
+sections_version: '2'

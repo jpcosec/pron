@@ -20,31 +20,31 @@ from typing import Any
 
 from pron.kernel.display import Display
 from pron.kernel.ids import is_local
-from pron.kernel.item import Item
+from pron.kernel.parts.item import Item
 from pron.kernel.kernel import Kernel
-from pron.kernel.noun_phrase import NounPhrase
-from pron.kernel.part import Part
-from pron.kernel.response import Response  # noqa: F401 - re-exported: session.Response is the public name
-from pron.sexpr.compose_executor import ComposeExecutor
-from pron.sexpr.compose_slots import ComposeSlots
-from pron.sexpr.dialogue import Dialogue
-from pron.sexpr.dry_runner import DryRunner
-from pron.sexpr.evaluator import Evaluator
-from pron.sexpr.form_turn import FormTurn
-from pron.sexpr.ledger import Ledger
-from pron.sexpr.leftover_predicates import LeftoverPredicates
-from pron.sexpr.move import Body, Move
-from pron.sexpr.new_sentence import NewSentence
-from pron.sexpr.planner import Planner
-from pron.sexpr.prevalidator import Prevalidator
-from pron.sexpr.sentence_turn import SentenceTurn
-from pron.sexpr.value_suggestions import ValueSuggestions
-from pron.sexpr.verbs import Verbs
-from pron.sexpr.why_executor import WhyExecutor
+from pron.kernel.parts.noun_phrase import NounPhrase
+from pron.kernel.parts.part import Part
+from pron.kernel.parts.response import Response  # noqa: F401 - re-exported: session.Response is the public name
+from pron.sexpr.execution.compose_executor import ComposeExecutor
+from pron.sexpr.planning.compose_slots import ComposeSlots
+from pron.sexpr.dialogue.dialogue import Dialogue
+from pron.sexpr.prevalidation.dry_runner import DryRunner
+from pron.sexpr.turn.evaluator import Evaluator
+from pron.sexpr.turn.form_turn import FormTurn
+from pron.sexpr.turn.ledger import Ledger
+from pron.sexpr.resolving.leftover_predicates import LeftoverPredicates
+from pron.sexpr.turn.move import Body, Move
+from pron.sexpr.turn.new_sentence import NewSentence
+from pron.sexpr.planning.planner import Planner
+from pron.sexpr.prevalidation.prevalidator import Prevalidator
+from pron.sexpr.turn.sentence_turn import SentenceTurn
+from pron.sexpr.dialogue.value_suggestions import ValueSuggestions
+from pron.sexpr.resolving.verbs import Verbs
+from pron.sexpr.execution.why_executor import WhyExecutor
 from pron.surface.interpreter import Interpreter
-from pron.world.embedder_protocol import Embedder
+from pron.world.matching.embedder_protocol import Embedder
 from pron.world.lexicon import Lexicon
-from pron.world.matcher import Matcher
+from pron.world.matching.matcher import Matcher
 from pron.world.world import World
 
 

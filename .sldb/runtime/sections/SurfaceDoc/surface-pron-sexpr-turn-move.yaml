@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-turn-move
+sections:
+- path: sexpr-turn-move
+  title: sexpr.turn.move
+  breadcrumbs:
+  - sexpr.turn.move
+  about:
+  - sexpr.turn.move
+  - sexpr turn move
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-turn-move
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-turn-move/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.turn.move
+  - Purpose
+  about:
+  - sexpr.turn.move
+  - sexpr turn move
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-turn-move/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.turn.move
+  - How It Works
+  about:
+  - sexpr.turn.move
+  - sexpr turn move
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-turn-move/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.turn.move
+  - Commands
+  about:
+  - sexpr.turn.move
+  - sexpr turn move
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: c294bd5813c4b6f89d7742c7d76410b033f23b7646591ffc5eb82c9185f01e50
+sections_version: '2'

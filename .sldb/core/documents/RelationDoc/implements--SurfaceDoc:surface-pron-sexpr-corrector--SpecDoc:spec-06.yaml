@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-corrector--SpecDoc:spec-06
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-corrector--SpecDoc:spec-06.md
-hash_c: a23956203f8cac58a25c1f4b7f7607efbe207fba6e1d7bf4222d5e2d9771500b
-hash_d: 65f65403e13387099bc962e134c11f20c044bc8c2c5c33779edf6bcc638ba83c
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

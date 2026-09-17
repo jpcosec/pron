@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-turn-new_sentence
+path: knowledge/surfaces/surface-pron-sexpr-turn-new_sentence.md
+hash_c: 70b2f624f91ac260a220594371a9be89ed7f9bef5ba2abb1cf15c378012db53f
+hash_d: e44c91759019006d11580a991217816b3a33554ed3023bbefd74152a17bf71ea
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

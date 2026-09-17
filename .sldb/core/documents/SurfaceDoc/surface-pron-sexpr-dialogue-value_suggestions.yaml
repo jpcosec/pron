@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dialogue-value_suggestions
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-value_suggestions.md
+hash_c: 8187a9f4855a4ded5593a076b99beaed7a5cea20ed068a7094e627ef87fbc9ce
+hash_d: d08b989958d2912b60ef5b2ffe0afe3e5e5aa83b38ba76dee904e0ce6fc15c1f
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

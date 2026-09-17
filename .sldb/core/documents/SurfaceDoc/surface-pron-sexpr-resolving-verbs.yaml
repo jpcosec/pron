@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-resolving-verbs
+path: knowledge/surfaces/surface-pron-sexpr-resolving-verbs.md
+hash_c: 72f4cafd47f0d643d695127fc6a34e139b7ce8062530b9c9075908f31a24b6c1
+hash_d: d6efd04652daaf8851574d9ff8b1ca7e5e191824b6b5e8e003deaaa67709d6b4
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

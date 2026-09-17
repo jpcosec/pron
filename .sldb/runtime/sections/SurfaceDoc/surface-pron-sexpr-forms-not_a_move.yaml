@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-forms-not_a_move
+sections:
+- path: sexpr-forms-not-a-move
+  title: sexpr.forms.not_a_move
+  breadcrumbs:
+  - sexpr.forms.not_a_move
+  about:
+  - sexpr.forms.not_a_move
+  - sexpr forms not a move
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-forms-not-a-move
+  level: 1
+  line_start: 14
+  line_end: 26
+- path: sexpr-forms-not-a-move/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.forms.not_a_move
+  - Purpose
+  about:
+  - sexpr.forms.not_a_move
+  - sexpr forms not a move
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-forms-not-a-move/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.forms.not_a_move
+  - How It Works
+  about:
+  - sexpr.forms.not_a_move
+  - sexpr forms not a move
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 23
+- path: sexpr-forms-not-a-move/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.forms.not_a_move
+  - Commands
+  about:
+  - sexpr.forms.not_a_move
+  - sexpr forms not a move
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 24
+  line_end: 26
+hash_c: 036d75acf28496b0f33999fa68163c9ac617db40df5d58d1f441ebc0cda00977
+sections_version: '2'

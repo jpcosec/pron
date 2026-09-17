@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-phrase_planner--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-phrase_planner--SpecDoc:spec-02.md
-hash_c: ec289b118d6c53611dd52123d01380cc598d004011299a02c782ae6b614585ac
-hash_d: 5cf35663047cae8d16937488444599f0250ceba3e748b8255dd96a85d53b373b
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

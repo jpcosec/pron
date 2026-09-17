@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-verbs--SpecDoc:spec-03.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 01c04ee0aa9fd673884d931c06c97d2bdea46d674b3eed948a3a8f078d9f0839

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-execution-relation_write
+sections:
+- path: sexpr-execution-relation-write
+  title: sexpr.execution.relation_write
+  breadcrumbs:
+  - sexpr.execution.relation_write
+  about:
+  - sexpr.execution.relation_write
+  - sexpr execution relation write
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-execution-relation-write
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-execution-relation-write/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.execution.relation_write
+  - Purpose
+  about:
+  - sexpr.execution.relation_write
+  - sexpr execution relation write
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-execution-relation-write/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.execution.relation_write
+  - How It Works
+  about:
+  - sexpr.execution.relation_write
+  - sexpr execution relation write
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: sexpr-execution-relation-write/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.execution.relation_write
+  - Commands
+  about:
+  - sexpr.execution.relation_write
+  - sexpr execution relation write
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 27
+  line_end: 30
+hash_c: 5bb829227049a37fc98905d17888cd1332a965a24618301f8e56f570f494547c
+sections_version: '2'

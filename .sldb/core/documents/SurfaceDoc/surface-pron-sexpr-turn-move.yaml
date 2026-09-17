@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-turn-move
+path: knowledge/surfaces/surface-pron-sexpr-turn-move.md
+hash_c: c294bd5813c4b6f89d7742c7d76410b033f23b7646591ffc5eb82c9185f01e50
+hash_d: b4c2651a1a1cc97f04d36f079554dcd6b2674872221162409c5a529f55797519
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

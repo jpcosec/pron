@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-asker--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-asker--SpecDoc:spec-06.md
+hash_c: cb13a9a810ef394752ecb53898f4aba67d6336f88f48ac7113664ec037662034
+hash_d: 9a94eeb89c8ff874e0677f909f6bdf77a916df3698c5c331a7fffa6ebf2a4ee6
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

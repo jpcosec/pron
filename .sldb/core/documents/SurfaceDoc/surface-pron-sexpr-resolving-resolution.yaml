@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-resolving-resolution
+path: knowledge/surfaces/surface-pron-sexpr-resolving-resolution.md
+hash_c: 46299e5112660ef474db6faf85f6db0b8ab58ef09f2197b4947ea64adbc34d12
+hash_d: ce68930044a34c689621115f1c49f579f9b25d316453a4e0e861f3f7a83e68fb
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

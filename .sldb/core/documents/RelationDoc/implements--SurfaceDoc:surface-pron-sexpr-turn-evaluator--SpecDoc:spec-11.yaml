@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-evaluator--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-evaluator--SpecDoc:spec-11.md
+hash_c: 6a43ff228cfeefdde36e4332a5e91a5572fcae5897501ad77835507187662847
+hash_d: 6f4631b80dec9379bd99b938143f13e015b49f122717af07fc52ba59b5bc9a93
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

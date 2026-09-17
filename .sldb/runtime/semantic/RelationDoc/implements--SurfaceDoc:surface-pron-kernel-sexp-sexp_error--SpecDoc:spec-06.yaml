@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-sexp-sexp_error--SpecDoc:spec-06.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 8d91b49a0a5b69ab0486dbd34e99912c5da01dd9196b7b62261a128ff3ef1233

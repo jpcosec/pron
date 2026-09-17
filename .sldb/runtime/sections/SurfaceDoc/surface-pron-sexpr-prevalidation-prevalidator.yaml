@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-prevalidation-prevalidator
+sections:
+- path: sexpr-prevalidation-prevalidator
+  title: sexpr.prevalidation.prevalidator
+  breadcrumbs:
+  - sexpr.prevalidation.prevalidator
+  about:
+  - sexpr.prevalidation.prevalidator
+  - sexpr prevalidation prevalidator
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-prevalidation-prevalidator
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-prevalidation-prevalidator/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.prevalidation.prevalidator
+  - Purpose
+  about:
+  - sexpr.prevalidation.prevalidator
+  - sexpr prevalidation prevalidator
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-prevalidation-prevalidator/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.prevalidation.prevalidator
+  - How It Works
+  about:
+  - sexpr.prevalidation.prevalidator
+  - sexpr prevalidation prevalidator
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 27
+- path: sexpr-prevalidation-prevalidator/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.prevalidation.prevalidator
+  - Commands
+  about:
+  - sexpr.prevalidation.prevalidator
+  - sexpr prevalidation prevalidator
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 0e9b814f9ac0263f9ab722dd598f6cfbd979cbfe82038130932f1b0e0f16a381
+sections_version: '2'

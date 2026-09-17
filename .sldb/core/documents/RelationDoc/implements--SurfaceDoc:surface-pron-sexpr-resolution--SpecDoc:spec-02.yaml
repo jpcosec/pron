@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-resolution--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolution--SpecDoc:spec-02.md
-hash_c: 577e6f1b6f2f28e1725664f3f350f063fcaee6813f0089e0e8debf2b7913aa99
-hash_d: 721d92c82eb3d32a22d773d3503d7ff3586bff0042de8e8cf2bd5aa80af32af0
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

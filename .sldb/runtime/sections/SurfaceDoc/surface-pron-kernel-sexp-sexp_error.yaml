@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-sexp-sexp_error
+sections:
+- path: kernel-sexp-sexp-error
+  title: kernel.sexp.sexp_error
+  breadcrumbs:
+  - kernel.sexp.sexp_error
+  about:
+  - kernel.sexp.sexp_error
+  - kernel sexp sexp error
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-sexp-sexp-error
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: kernel-sexp-sexp-error/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.sexp.sexp_error
+  - Purpose
+  about:
+  - kernel.sexp.sexp_error
+  - kernel sexp sexp error
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-sexp-sexp-error/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.sexp.sexp_error
+  - How It Works
+  about:
+  - kernel.sexp.sexp_error
+  - kernel sexp sexp error
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-sexp-sexp-error/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.sexp.sexp_error
+  - Commands
+  about:
+  - kernel.sexp.sexp_error
+  - kernel sexp sexp error
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: 33a4b390ff9d4a4f1b78aef6474c9635f40f9a18f72bff1b07606d4220f565ab
+sections_version: '2'

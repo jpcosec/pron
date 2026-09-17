@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-planning-compose_planner
+sections:
+- path: sexpr-planning-compose-planner
+  title: sexpr.planning.compose_planner
+  breadcrumbs:
+  - sexpr.planning.compose_planner
+  about:
+  - sexpr.planning.compose_planner
+  - sexpr planning compose planner
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-planning-compose-planner
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-planning-compose-planner/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.planning.compose_planner
+  - Purpose
+  about:
+  - sexpr.planning.compose_planner
+  - sexpr planning compose planner
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: sexpr-planning-compose-planner/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.planning.compose_planner
+  - How It Works
+  about:
+  - sexpr.planning.compose_planner
+  - sexpr planning compose planner
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 27
+- path: sexpr-planning-compose-planner/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.planning.compose_planner
+  - Commands
+  about:
+  - sexpr.planning.compose_planner
+  - sexpr planning compose planner
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: fffbdc2e368e92585aa95182878983affc3529d102f9ad192094eb8fa4bf03c3
+sections_version: '2'

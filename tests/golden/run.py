@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Callable
 
-from pron.kernel.response import Response
+from pron.kernel.parts.response import Response
 from pron.session import Session
 from pron.world.world import World
 from golden.normalize import Normalizer

@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-action_verb--SpecDoc:spec-13.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 367f583c6892dd2871cc0684e361f772c98d6631775c17f62e90274255c76e4c

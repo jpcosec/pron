@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dialogue-parse_hint
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-parse_hint.md
+hash_c: 85b1736d3b90ea81582008dec75c8d67a50ea6bf3508616f83f1f877555a5065
+hash_d: 0018ecfd6f5b1afd8ccb88a3d4e1537f8f4d66c89ce2f9e743be7ff53b3fd7ee
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

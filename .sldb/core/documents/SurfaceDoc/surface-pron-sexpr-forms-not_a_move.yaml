@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-forms-not_a_move
+path: knowledge/surfaces/surface-pron-sexpr-forms-not_a_move.md
+hash_c: 036d75acf28496b0f33999fa68163c9ac617db40df5d58d1f441ebc0cda00977
+hash_d: f824a5bfb6938b0a46bebb0ef35a5657e7ce8e4257f682544425698b00841022
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

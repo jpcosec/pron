@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-document_index--SpecDoc:spec-05.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: bc4bf204c587775057b86ea77eeedf4de16c21be5cd3eb2a13a4c483e3d15d67

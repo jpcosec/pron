@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-predicate_filter--SpecDoc:spec-02.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 74b5b47b0e9353970b0abcf55fb95b7926b3d94550d0f090361683b851f7b35a

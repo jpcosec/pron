@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-phrase_planner--SpecDoc:spec-07.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: a4ede33d5d576675c31b7cfa6398b61f6efdae66635699119cb3eda8aef282d8

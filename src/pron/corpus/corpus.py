@@ -21,8 +21,8 @@ from pron.corpus.corpus_entry import CorpusEntry
 from pron.corpus.hit import Hit
 from pron.corpus.index_projection import IndexProjection
 from pron.kernel.ids import join_id
-from pron.world.document_index import DocumentIndex
-from pron.world.matcher import Matcher
+from pron.world.matching.document_index import DocumentIndex
+from pron.world.matching.matcher import Matcher
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from pron.world.world import World

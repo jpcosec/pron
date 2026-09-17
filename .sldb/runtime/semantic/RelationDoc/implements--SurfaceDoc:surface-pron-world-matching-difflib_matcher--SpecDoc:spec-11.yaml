@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-difflib_matcher--SpecDoc:spec-11.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: d3bbcff9b1966fdb1f102ebc19939755a19dbc3824c296a42667d8b168966053

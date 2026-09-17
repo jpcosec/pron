@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-sentence_turn--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-sentence_turn--SpecDoc:spec-06.md
+hash_c: 0e8c0604eeca8822a24594f107164455b927549603645d7b23e270b054deed35
+hash_d: 0b6356d5b1374fa0fbd5586abb95d6c8acef33018504f9c159fa219b413e6344
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

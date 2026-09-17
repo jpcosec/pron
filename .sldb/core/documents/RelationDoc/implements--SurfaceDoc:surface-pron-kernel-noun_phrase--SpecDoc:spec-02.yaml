@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-kernel-noun_phrase--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-noun_phrase--SpecDoc:spec-02.md
-hash_c: 9628228eabdae04eea8f89c9409651ac3f0b0f8e4ee0e54aab83ca39d1a2c986
-hash_d: 4874fc46b04ea74697f70fc4655b9e566842eca974250a0d7de882ba195613b0
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

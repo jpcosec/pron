@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-form_error--SpecDoc:spec-13
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-form_error--SpecDoc:spec-13.md
-hash_c: 7f96b8b25ac42bdd818e61573fb384368e5885166c2ae38d1d2d7ac2cb19909a
-hash_d: c599f72e98e76ae65c5b2813944860d50c7a55a0f2b849845565d42243e5b334
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

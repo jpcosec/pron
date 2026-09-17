@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-leftover_predicates--SpecDoc:spec-02
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-leftover_predicates--SpecDoc:spec-02.md
-hash_c: da4edda6a52d8d2161576820638ade9d730b4a7a3fe80d4ece43517179a68cc3
-hash_d: 9f29f9b3f5bb5c129b8059164157948995509c84acfcaa9e6cc60edd90b0aaa2
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-dialogue-pending
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-pending.md
+hash_c: 690f8f2554a0695ad441a98c8ebc1e494d5c56b95e1bab12be538aaf97643aba
+hash_d: 864d8da03136b903b08ca3d81c224534402055c7daa765062a1cbc2024c48165
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-dialogue-dialogue
+sections:
+- path: sexpr-dialogue-dialogue
+  title: sexpr.dialogue.dialogue
+  breadcrumbs:
+  - sexpr.dialogue.dialogue
+  about:
+  - sexpr.dialogue.dialogue
+  - sexpr dialogue dialogue
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-dialogue-dialogue
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: sexpr-dialogue-dialogue/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.dialogue.dialogue
+  - Purpose
+  about:
+  - sexpr.dialogue.dialogue
+  - sexpr dialogue dialogue
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: sexpr-dialogue-dialogue/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.dialogue.dialogue
+  - How It Works
+  about:
+  - sexpr.dialogue.dialogue
+  - sexpr dialogue dialogue
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: sexpr-dialogue-dialogue/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.dialogue.dialogue
+  - Commands
+  about:
+  - sexpr.dialogue.dialogue
+  - sexpr dialogue dialogue
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: bc492103e2d0d57e7696ae392943ccb9819fc92b7400e37153ecff5539de02a7
+sections_version: '2'

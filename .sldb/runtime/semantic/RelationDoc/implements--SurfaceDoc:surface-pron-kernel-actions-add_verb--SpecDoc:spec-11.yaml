@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-add_verb--SpecDoc:spec-11.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: fd61f71e2fd477da6b0de327978436809c61c1bfbba05acd4314566ce7ce6d63

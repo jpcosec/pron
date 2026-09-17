@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-edge_read--SpecDoc:spec-03.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 731e49ea62584761d40d5e219843d4910054f766e2aa768a5d06e40e74e54c9f

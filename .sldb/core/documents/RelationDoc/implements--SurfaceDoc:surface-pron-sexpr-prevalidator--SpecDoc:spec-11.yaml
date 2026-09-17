@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-prevalidator--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidator--SpecDoc:spec-11.md
-hash_c: 6caf8e9741f95cfe97e521255fdd6a3e5a3235e5902190f47a568a702188479d
-hash_d: c4dfe6e8454fab337f32540d07e20d5f6e2f1c211324b092d01f218ad56e89af
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

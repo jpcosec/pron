@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-parse_hint--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-parse_hint--SpecDoc:spec-13.md
+hash_c: b28abb81484f60aa461a9b2058890d103755656fee62ff4f75b17abeb88137b8
+hash_d: c201b0e42d6019a523a1b08d2185216dfac3809d7ab25954542abca41416d526
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

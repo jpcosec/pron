@@ -14,7 +14,7 @@ def run_lints(world: World) -> list[str]:
 
     # every alias names something as a form (spec 05, 13)
     if "AnchorDoc" in models:
-        from pron.sexpr.refs import parse as parse_ref
+        from pron.sexpr.forms.refs import parse as parse_ref
 
         for d in store.docs_of("AnchorDoc"):
             try:

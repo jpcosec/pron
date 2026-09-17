@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-execution-assert_executor
+sections:
+- path: sexpr-execution-assert-executor
+  title: sexpr.execution.assert_executor
+  breadcrumbs:
+  - sexpr.execution.assert_executor
+  about:
+  - sexpr.execution.assert_executor
+  - sexpr execution assert executor
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-execution-assert-executor
+  level: 1
+  line_start: 14
+  line_end: 29
+- path: sexpr-execution-assert-executor/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.execution.assert_executor
+  - Purpose
+  about:
+  - sexpr.execution.assert_executor
+  - sexpr execution assert executor
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-execution-assert-executor/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.execution.assert_executor
+  - How It Works
+  about:
+  - sexpr.execution.assert_executor
+  - sexpr execution assert executor
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 26
+- path: sexpr-execution-assert-executor/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.execution.assert_executor
+  - Commands
+  about:
+  - sexpr.execution.assert_executor
+  - sexpr execution assert executor
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 27
+  line_end: 29
+hash_c: 05ff950ce4abc536e089e00e79b4f6c4ff8a4824ad09417f315d95dfbcc2b3fb
+sections_version: '2'

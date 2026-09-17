@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-kernel-change_verb--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-change_verb--SpecDoc:spec-11.md
-hash_c: 406bd83ddc19fb6dea7bcaad9ffdf9bc2c839bf0e7517609750e04e488c9350f
-hash_d: 467f28c36d4732c8103aea53dbe5259f7d06b04be19b976fa18814a0f8386585
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

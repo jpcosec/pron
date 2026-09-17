@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-actions-add_verb
+sections:
+- path: kernel-actions-add-verb
+  title: kernel.actions.add_verb
+  breadcrumbs:
+  - kernel.actions.add_verb
+  about:
+  - kernel.actions.add_verb
+  - kernel actions add verb
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-actions-add-verb
+  level: 1
+  line_start: 14
+  line_end: 28
+- path: kernel-actions-add-verb/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.actions.add_verb
+  - Purpose
+  about:
+  - kernel.actions.add_verb
+  - kernel actions add verb
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 20
+- path: kernel-actions-add-verb/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.actions.add_verb
+  - How It Works
+  about:
+  - kernel.actions.add_verb
+  - kernel actions add verb
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 21
+  line_end: 25
+- path: kernel-actions-add-verb/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.actions.add_verb
+  - Commands
+  about:
+  - kernel.actions.add_verb
+  - kernel actions add verb
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 26
+  line_end: 28
+hash_c: 86ea84e356c4eeb4828f1286ecb23f1a085b205bb544bdbe5462583af1b3c036
+sections_version: '2'

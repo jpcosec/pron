@@ -7,7 +7,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from pron.kernel.response import Response
+from pron.kernel.parts.response import Response
 from pron.remote.client import request
 from pron.remote.remote_graph import RemoteGraph
 from pron.remote.remote_world import RemoteWorld

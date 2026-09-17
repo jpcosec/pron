@@ -1,0 +1,14 @@
+name: surface-pron-sexpr-prevalidation-dry_compose
+path: knowledge/surfaces/surface-pron-sexpr-prevalidation-dry_compose.md
+hash_c: 4568775ab03aa876e56773a1eea157db7de2ad3491a5df721f0c648a1e79cf65
+hash_d: f96019e5b51f192a378e22c6865b2d0eef4880a52517b5fa99b5b3e34d83cc14
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

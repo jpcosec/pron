@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-not_a_move--SpecDoc:spec-13.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 79c78028c5e10e143ba92e2f183dd2313725ca6fdcb641246799da49d931bfa7

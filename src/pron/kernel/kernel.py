@@ -18,9 +18,9 @@ from pron.kernel.ids import (
     split_relation_doc_id,
     store_of,
 )
-from pron.kernel.verb_registry import VERBS
-from pron.kernel.write import Write
-from pron.sexpr.verbs import Verbs
+from pron.kernel.actions.verb_registry import VERBS
+from pron.kernel.actions.write import Write
+from pron.sexpr.resolving.verbs import Verbs
 from pron.world.store_error import StoreError
 
 __all__ = ["Kernel", "Write"]
@@ -98,7 +98,7 @@ class Kernel:
         overlay: dict[str, dict[str, Any]],
     ) -> dict[str, Any]:
         """What a write would leave, without writing (spec 11 §7); each verb's `Verb.dry`
-        (pron.kernel.verb) knows its own coercion and transition. A verb outside the registry
+        (pron.kernel.actions.verb) knows its own coercion and transition. A verb outside the registry
         (none in practice: `_action` rejects it at execution) leaves the payload untouched
         but still round-tripped."""
         v = VERBS.get(verb)

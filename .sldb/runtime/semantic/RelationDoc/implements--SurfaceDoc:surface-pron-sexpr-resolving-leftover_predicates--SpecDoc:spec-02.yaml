@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-leftover_predicates--SpecDoc:spec-02.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: f101b6fa55bfaddbb3fb7d52cd7eac17e3dba130e101e2b451b04a8b186e8c43

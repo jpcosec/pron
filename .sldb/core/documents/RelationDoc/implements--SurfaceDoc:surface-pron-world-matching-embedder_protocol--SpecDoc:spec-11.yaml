@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-matching-embedder_protocol--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-embedder_protocol--SpecDoc:spec-11.md
+hash_c: 7d98ddc2599ae8246c38dfb9b4d7f38a308e2422e248b6f859470198e4961493
+hash_d: 52a43f951af2495b483865cece950b7f5021d8b496dbab978760624ec700e27c
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

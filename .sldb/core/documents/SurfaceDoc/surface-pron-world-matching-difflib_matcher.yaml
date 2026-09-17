@@ -1,0 +1,14 @@
+name: surface-pron-world-matching-difflib_matcher
+path: knowledge/surfaces/surface-pron-world-matching-difflib_matcher.md
+hash_c: 0bf79299e8cbf1e16a9b816731300c5c5aa4150f3978ef81176fdeb6a916d2aa
+hash_d: 4eb3181d42e9a005c659fe83c133654a7af780aa4936fc1fc669f0c32b7a4327
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

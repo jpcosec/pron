@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-forms-ref
+sections:
+- path: sexpr-forms-ref
+  title: sexpr.forms.ref
+  breadcrumbs:
+  - sexpr.forms.ref
+  about:
+  - sexpr.forms.ref
+  - sexpr forms ref
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-forms-ref
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: sexpr-forms-ref/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.forms.ref
+  - Purpose
+  about:
+  - sexpr.forms.ref
+  - sexpr forms ref
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: sexpr-forms-ref/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.forms.ref
+  - How It Works
+  about:
+  - sexpr.forms.ref
+  - sexpr forms ref
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: sexpr-forms-ref/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.forms.ref
+  - Commands
+  about:
+  - sexpr.forms.ref
+  - sexpr forms ref
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 572ab5d2857f9114c13cfa83c3bbca58201354120fa1ad1860b402d28569c452
+sections_version: '2'

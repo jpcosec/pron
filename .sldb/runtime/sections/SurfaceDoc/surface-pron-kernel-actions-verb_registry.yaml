@@ -1,0 +1,133 @@
+doc_name: surface-pron-kernel-actions-verb_registry
+sections:
+- path: kernel-actions-verb-registry
+  title: kernel.actions.verb_registry
+  breadcrumbs:
+  - kernel.actions.verb_registry
+  about:
+  - kernel.actions.verb_registry
+  - kernel actions verb registry
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: kernel-actions-verb-registry
+  level: 1
+  line_start: 14
+  line_end: 30
+- path: kernel-actions-verb-registry/purpose
+  title: Purpose
+  breadcrumbs:
+  - kernel.actions.verb_registry
+  - Purpose
+  about:
+  - kernel.actions.verb_registry
+  - kernel actions verb registry
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 21
+- path: kernel-actions-verb-registry/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - kernel.actions.verb_registry
+  - How It Works
+  about:
+  - kernel.actions.verb_registry
+  - kernel actions verb registry
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 22
+  line_end: 27
+- path: kernel-actions-verb-registry/commands
+  title: Commands
+  breadcrumbs:
+  - kernel.actions.verb_registry
+  - Commands
+  about:
+  - kernel.actions.verb_registry
+  - kernel actions verb registry
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 28
+  line_end: 30
+hash_c: 38c0232ef292edec3d294d968457d5b4c790edb1d379dfc2d3180560a70accd5
+sections_version: '2'

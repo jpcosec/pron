@@ -1,0 +1,133 @@
+doc_name: surface-pron-sexpr-turn-evaluator
+sections:
+- path: sexpr-turn-evaluator
+  title: sexpr.turn.evaluator
+  breadcrumbs:
+  - sexpr.turn.evaluator
+  about:
+  - sexpr.turn.evaluator
+  - sexpr turn evaluator
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: sexpr-turn-evaluator
+  level: 1
+  line_start: 14
+  line_end: 31
+- path: sexpr-turn-evaluator/purpose
+  title: Purpose
+  breadcrumbs:
+  - sexpr.turn.evaluator
+  - Purpose
+  about:
+  - sexpr.turn.evaluator
+  - sexpr turn evaluator
+  - Purpose
+  - purpose
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: purpose
+  level: 2
+  line_start: 16
+  line_end: 19
+- path: sexpr-turn-evaluator/how-it-works
+  title: How It Works
+  breadcrumbs:
+  - sexpr.turn.evaluator
+  - How It Works
+  about:
+  - sexpr.turn.evaluator
+  - sexpr turn evaluator
+  - How It Works
+  - how it works
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: how-it-works
+  level: 2
+  line_start: 20
+  line_end: 28
+- path: sexpr-turn-evaluator/commands
+  title: Commands
+  breadcrumbs:
+  - sexpr.turn.evaluator
+  - Commands
+  about:
+  - sexpr.turn.evaluator
+  - sexpr turn evaluator
+  - Commands
+  - commands
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  semantic_tags:
+  - domain:system_architecture
+  - entity:module
+  - impl:here
+  - kind:software
+  - representation.markdown
+  - source.document.markdown
+  - system:pron
+  - type.knowledge.surface
+  - workspace.knowledge.surfaces
+  slug: commands
+  level: 2
+  line_start: 29
+  line_end: 31
+hash_c: 010a050da72a046bd1183cd7602ba46439b4f259193cd28d3e41c7688ae71d40
+sections_version: '2'

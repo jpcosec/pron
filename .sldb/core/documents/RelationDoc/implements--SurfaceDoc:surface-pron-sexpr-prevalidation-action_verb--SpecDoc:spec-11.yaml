@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-prevalidation-action_verb--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-action_verb--SpecDoc:spec-11.md
+hash_c: 24c2169b498546b0d0917a502b2b8cfd70a38bdc708cb13b234b9ca03cd5f5bd
+hash_d: 80e350eeeb33e906c63d348ffb3259fb75c40ca2735bd098a9c7ff08271e68c1
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

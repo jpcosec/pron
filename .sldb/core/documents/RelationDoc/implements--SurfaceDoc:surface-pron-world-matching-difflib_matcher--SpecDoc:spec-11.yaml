@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-matching-difflib_matcher--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-difflib_matcher--SpecDoc:spec-11.md
+hash_c: d3bbcff9b1966fdb1f102ebc19939755a19dbc3824c296a42667d8b168966053
+hash_d: 01937944a5313f1985451a303fadd8a6f9a108d6c8f9cac42544ba03cac7ceb0
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

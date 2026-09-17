@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-kernel-forget_verb--SpecDoc:spec-11
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-forget_verb--SpecDoc:spec-11.md
-hash_c: 987452d8d47e1fb906648cb9f41fbb1652fac8adb6c47cc035978fa81298bde5
-hash_d: db2248520e0031171693e752f118f7c97b287551460bf5878bb7b4a59a51ff8d
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

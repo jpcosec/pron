@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-note_reads--SpecDoc:spec-07.md
-hash_c: bb7a0eeeb96ffeb892131e0aa691d48e9292c135d80ffc5953dc71e04c0edd7d
-hash_d: 25945308465b99d142f34a81b0ff0c4da1b2bbaf6dda77e3424adbd16e1cbdfd
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-world-matching-document_index--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-document_index--SpecDoc:spec-05.md
+hash_c: bc4bf204c587775057b86ea77eeedf4de16c21be5cd3eb2a13a4c483e3d15d67
+hash_d: 93e382123d94fdce1394e7dfcc52e788b15e258c2b9d759b6016a554b4dbdb7c
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

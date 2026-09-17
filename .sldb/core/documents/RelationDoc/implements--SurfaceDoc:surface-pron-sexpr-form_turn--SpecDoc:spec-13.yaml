@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-form_turn--SpecDoc:spec-13
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-form_turn--SpecDoc:spec-13.md
-hash_c: 6b2f18feba347a6c309b15255b0f2d0acc90781700b5738c9c012c5f8162604a
-hash_d: bb06253d12901edc0525a6eb2f0a1a82f3254ff9c0c64b344c3256330f0b42a9
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

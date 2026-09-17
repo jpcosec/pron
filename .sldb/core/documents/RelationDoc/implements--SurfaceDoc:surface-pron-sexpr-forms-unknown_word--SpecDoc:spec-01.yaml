@@ -1,0 +1,9 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-unknown_word--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-unknown_word--SpecDoc:spec-01.md
+hash_c: 9028c7d08e5d43ada5dd27e4463561581a766e8a45ccfc021c2aeab4cb893c53
+hash_d: 5f51619373ab6aa6badd21919b1a3d0580bbf5fcb953d07335435e67b662e5b1
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

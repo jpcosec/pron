@@ -1,0 +1,8 @@
+model: RelationDoc
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-form_turn--SpecDoc:spec-13.md
+tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance
+hash_c: 57b1332f6f363b1c7210171b793b002c56b609ec95f9096c2897e8d584fa0d30

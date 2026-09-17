@@ -1,9 +1,0 @@
-name: implements--SurfaceDoc:surface-pron-sexpr-ledger--SpecDoc:spec-07
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-ledger--SpecDoc:spec-07.md
-hash_c: 1da6fef18cfcab260f154742edb0cfb9c638a9408f43c56b37fe3b9f63262eee
-hash_d: cfe458a9f63c8119fade1e107cfd416c3ad81a96af1de1a2d7a522d58c8a6888
-semantic_tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance

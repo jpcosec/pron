@@ -1,8 +1,0 @@
-model: RelationDoc
-path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-sentence_turn--SpecDoc:spec-06.md
-tags:
-- layer.topology
-- representation.markdown
-- source.document.markdown
-- type.relation.instance
-hash_c: 4bf0f417c4240dc6f5251fa7bd33302e511272fb5a5c36ebd3bde24f82575ac6
