@@ -2,15 +2,16 @@
 # against. pron installs them editable from sibling checkouts (sldb, kgdb), so a sibling
 # moving under pron silently changes pron's test floor — pin here, verify here.
 #
-# Verified against (suites), 2026-09-17, pron <A4-sha> (fusion-kgdb: sldb.api.edges replaces
+# Verified against (suites), 2026-09-17, pron fusion-kgdb (A4: sldb.api.edges replaces
 # .pron/graph.nx.json + kgdb; EdgeReader has one door):
 #   - sldb fusion-kgdb ffd7d19 (models: RelationDoc/RelationTypeDoc to sldb.models; store:
 #     edge index as per-document shards, synced on every write; api: sldb.api.edges +
 #     `sldb edges`), 4 commits on f48a154, 744 passed, 5 failed (the floor's 5, none new);
 #   - kgdb fusion-kgdb 81e81bc (kgdb.models reexports from sldb; init_world delegates to
 #     sldb.api.init_relations; parity test), 2 commits on 66f6c0e, 57 passed;
-#   pron: <N> passed, <M> snapshots (see briefs/A4.RESULT.md for the golden diff). No more
-#   kgdb or networkx dependency: pron reads sldb.api.load_edge_index directly.
+#   pron: 201 passed, 1 skipped, 30 golden snapshots (11 moved; see briefs/A4.RESULT.md for
+#   the diff). No more kgdb or networkx dependency: pron reads sldb.api.load_edge_index
+#   directly.
 #
 # Verified against (suites), 2026-09-17, pron 591a86f (sldb.api instead of sldb.cli classes):
 #   - kgdb 5effed5; sldb 23f78c5 (api: typed sldb.api library package; the CLI uses it): 195 passed.
