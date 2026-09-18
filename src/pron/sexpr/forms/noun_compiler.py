@@ -38,17 +38,21 @@ class NounCompiler:
             return _referent(form, head)
         return self._described(form, head)
 
+    def negated(self, form: Any) -> NounPhrase:
+        """The noun of a `forget`: `(doc "RelationDoc:…" …)` names edges to negate, whose
+        relations the session must assert (spec 14 §4); any other noun as usual."""
+        ids = [str(x) for x in form[1:]] if form_head(form) == "doc" else []
+        if not ids or any(model_of(e) != "RelationDoc" for e in ids):
+            return self(form)
+        for eid in ids:
+            self.words.need_negatable(eid)
+        return _given_phrase(ids)
+
     def _given(self, form: Any) -> NounPhrase:
         ids = [str(x) for x in form[1:]]
         for eid in ids:
             self.words.need_model(model_of(eid))
-        np = NounPhrase(
-            model_of(ids[0]) if ids else None,
-            "the",
-            "singular" if len(ids) == 1 else "plural",
-        )
-        np.given = [address_of(e) for e in ids]
-        return np
+        return _given_phrase(ids)
 
     def _described(self, form: Any, head: str) -> NounPhrase:
         model = str(form[1])
@@ -64,6 +68,16 @@ class NounCompiler:
 
     def _of(self, np: NounPhrase, clause: Any) -> None:
         np.complements.append(self(clause[1]))
+
+
+def _given_phrase(ids: list[str]) -> NounPhrase:
+    np = NounPhrase(
+        model_of(ids[0]) if ids else None,
+        "the",
+        "singular" if len(ids) == 1 else "plural",
+    )
+    np.given = [address_of(e) for e in ids]
+    return np
 
 
 def _referent(form: Any, head: str) -> NounPhrase:
