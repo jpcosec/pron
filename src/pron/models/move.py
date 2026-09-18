@@ -12,7 +12,7 @@ from sldb import StructuredNLDoc
 class MoveDoc(StructuredNLDoc):
     """A turn: who said what, how it was interpreted, what was asked of the world,
     what was written, what came out, and the world's fingerprint before and after.
-    Tagged type.pron.move so kgdb's ingest leaves it out of the graph.
+    Tagged type.pron.move so it is excluded from the typed edge index.
     """
 
     __family__ = "ledger"

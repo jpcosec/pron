@@ -8,7 +8,7 @@ __pycache__/
 .pron/
 # pron's own world: `make world` rebuilds the store and everything generated into it
 .sldb/
-kgdb/
+sldb/
 knowledge/commands/
 knowledge/relations/
 knowledge/surfaces/

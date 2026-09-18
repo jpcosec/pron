@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pron"
 version = "1.0.0"
-description = "pron: a SHRDLU over an sldb world — nouns by address in sldb, transitive verbs as kgdb relation models, action verbs as sldb writes"
+description = "pron: a SHRDLU over an sldb world — nouns by address in sldb, transitive verbs as relation models read through sldb's typed edge index, action verbs as sldb writes"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,7 +13,6 @@ dependencies = [
     "pydantic>=2",
     "PyYAML>=6",
     "sldb",
-    "kgdb",
 ]
 
 [project.optional-dependencies]
@@ -62,6 +61,6 @@ warn_redundant_casts = true
 no_implicit_optional = true
 
 [[tool.mypy.overrides]]
-module = ["sldb.*", "kgdb.*", "networkx.*"]
+module = ["sldb.*"]
 follow_imports = "skip"
 ignore_missing_imports = true
