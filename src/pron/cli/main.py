@@ -9,7 +9,7 @@ import sys
 
 import click
 
-from pron.cli.commands import check, docs, init, lexicon, refresh, repl, say, serve
+from pron.cli.commands import check, docs, init, lexicon, mcp, refresh, repl, say, serve
 from pron.cli.commands import eval as evaluate
 
 cli = click.Group(
@@ -17,7 +17,7 @@ cli = click.Group(
     help="pron: a SHRDLU over an sldb world.",
     context_settings={"help_option_names": ["-h", "--help"]},
 )
-for module in (init, refresh, lexicon, say, evaluate, repl, serve, check, docs):
+for module in (init, refresh, lexicon, say, evaluate, repl, serve, mcp, check, docs):
     cli.add_command(module.command)
 
 

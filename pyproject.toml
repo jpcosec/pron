@@ -16,6 +16,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+mcp = ["mcp>=2.2"]
 dev = ["pytest==8.3.4", "syrupy==6.1.1", "ruff==0.14.0", "mypy==1.14.1", "types-PyYAML"]
 
 [project.scripts]
