@@ -3,9 +3,9 @@
 suggest, entries of the corpus, and whether the model is the ledger.
 
 pron has no code per model of a world: a world's models all get the default kind, and the
-only kinds declared here are pron's and kgdb's own bookkeeping. The registry answers by
-model NAME and imports no model class, so asking it costs nothing (`import pron` stays
-free of pydantic).
+only kinds declared here are pron's and sldb's own relation bookkeeping. The registry
+answers by model NAME and imports no model class, so asking it costs nothing (`import pron`
+stays free of pydantic).
 """
 
 from __future__ import annotations
@@ -16,8 +16,8 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class DocKind:
     """The policy of one model. The default — every flag but `is_ledger` on — is a model of
-    the world; `type_tag` is the semantic tag kgdb's ingest is told to leave out when the
-    model stays out of the graph."""
+    the world; `type_tag` is the semantic tag sldb's edge index is told to leave out when
+    the model stays out of the graph."""
 
     model: str
     in_graph: bool = True
@@ -28,9 +28,10 @@ class DocKind:
     type_tag: str | None = None
 
 
-# kgdb's relation bookkeeping and pron's projections and anchors are never words of the
-# lexicon nor a source of values; the ledger is a word (one asks about moves), but its
-# values are this very conversation's past sentences, and it stays out of the graph.
+# sldb's relation bookkeeping (RelationTypeDoc, RelationDoc — spec 03) and pron's projections
+# and anchors are never words of the lexicon nor a source of values; the ledger is a word
+# (one asks about moves), but its values are this very conversation's past sentences, and it
+# stays out of the graph.
 _DECLARED: dict[str, DocKind] = {
     k.model: k
     for k in (
@@ -55,7 +56,7 @@ def kind_of(model: str) -> DocKind:
 
 
 def declared() -> tuple[DocKind, ...]:
-    """The kinds pron declares: its own bookkeeping models and kgdb's."""
+    """The kinds pron declares: its own bookkeeping models and sldb's relation ones."""
     return tuple(_DECLARED.values())
 
 
@@ -71,5 +72,5 @@ def ledger_model() -> str:
 
 
 def tags_outside_graph() -> tuple[str, ...]:
-    """The semantic tags kgdb's ingest leaves out: those of the models not in the graph."""
+    """The semantic tags sldb's edge index leaves out: those of the models not in the graph."""
     return tuple(k.type_tag for k in declared() if not k.in_graph and k.type_tag)

@@ -42,7 +42,9 @@ class Graph:
         constant callers could reasonably override, and the registry it reads (spec 05, 07)
         is pron's own, not sldb's."""
         self.sp = sp
-        self.exclude_tags = tags_outside_graph() if exclude_tags is None else exclude_tags
+        self.exclude_tags = (
+            tags_outside_graph() if exclude_tags is None else exclude_tags
+        )
 
     def reload(self) -> None:
         """Kept for callers; the index invalidates itself by the shards' own signature, not

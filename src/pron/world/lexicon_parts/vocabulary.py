@@ -16,6 +16,8 @@ FUNCTION_WORDS = yaml.safe_load(
         encoding="utf-8"
     )
 )
+
+
 def word_ref(head: str, *names: str) -> str:
     """`(head name …)`: what a model, field, relation or action word names, as a form."""
     return write([Sym(head), *[Sym(n) for n in names]])
