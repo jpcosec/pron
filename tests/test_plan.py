@@ -7,7 +7,7 @@ own file, and the engine that runs it has never heard of a reservation.
 
 from __future__ import annotations
 
-from plnr import read_one, run
+from plnr import MemoryWorld, WorldError, read_one, run
 
 
 def test_a_plan_that_holds_reports_its_values(world, theorems):
@@ -123,3 +123,31 @@ def test_a_plan_reports_the_variables_of_the_goal_and_no_others(world, theorems)
 def test_a_refused_plan_reports_no_answers(world, theorems):
     plan = run(read_one("(goal (free ?t))"), world, theorems, budget=1)
     assert plan.answers() == {}
+
+
+class Rude(MemoryWorld):
+    """A world that cannot answer, the way a store does when a name is not there."""
+
+    def payload(self, _doc):
+        raise WorldError("no such document named 'nothing'", absent=True)
+
+
+class Refusing(MemoryWorld):
+    """A world whose reads fail for a reason that is not a missing name."""
+
+    def matches(self, _doc, _predicate):
+        raise WorldError("no evaluator understands the predicate: 'gibberish'")
+
+
+def test_a_name_the_world_does_not_have_is_a_refusal_not_a_crash():
+    plan = run(read_one("(goal (field nothing title ?t))"), Rude())
+    assert not plan
+    assert plan.failure == "absent"
+    assert "no such document" in plan.reason
+
+
+def test_a_world_that_refuses_is_an_error_not_a_missing_noun():
+    plan = run(read_one('(goal (where nothing "gibberish"))'), Refusing())
+    assert not plan
+    assert plan.failure == "world"
+    assert "gibberish" in plan.reason

@@ -13,7 +13,7 @@ from collections.abc import Iterator
 from dataclasses import dataclass, field
 from typing import Any
 
-from plnr.errors import Exhausted, GoalError
+from plnr.errors import Exhausted, GoalError, WorldError
 from plnr.goals import Budget, Engine, Trace
 from plnr.sexp import Sym, write
 from plnr.terms import Bindings, Step, ground, variables
@@ -30,6 +30,7 @@ class Plan:
     writes: list[Any] = field(default_factory=list)
     trace: list[str] = field(default_factory=list)
     reason: str = ""
+    failure: str = ""  # "" | malformed | budget | world | absent | none
     spent: int = 0
     wanted: list[str] = field(default_factory=list)
 
@@ -75,13 +76,15 @@ def run(
     wanted = variables(goal)
     engine = Engine(world, theorems, budget=Budget(budget), trace=Trace(enabled=trace))
 
-    def refusal(reason: str) -> Plan:
-        """One shape of refusal, three reasons: no solution, malformed, out of budget."""
+    def refusal(reason: str, failure: str) -> Plan:
+        """One shape of refusal, four reasons: no solution, malformed, out of budget, and a
+        world that could not answer. All four are answers, none is an exception."""
         return Plan(
             False,
             None,
             trace=list(engine.trace),
             reason=reason,
+            failure=failure,
             spent=engine.budget.spent,
             wanted=wanted,
         )
@@ -89,11 +92,14 @@ def run(
     try:
         found = engine.prove(goal, overlay=Overlay(entry))
     except Exhausted as e:
-        return refusal(str(e))
+        return refusal(str(e), "budget")
+    except WorldError as e:
+        failure = "absent" if e.absent else "world"
+        return refusal(f"the world could not answer: {e}", failure)
     except GoalError as e:
-        return refusal(f"malformed goal: {e}")
+        return refusal(f"malformed goal: {e}", "malformed")
     if found is None:
-        return refusal("the goal has no solution over this world")
+        return refusal("the goal has no solution over this world", "none")
     bindings, ov = found
     return Plan(
         True,

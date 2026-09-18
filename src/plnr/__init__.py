@@ -15,7 +15,7 @@ fixed table of cases.
 
 from __future__ import annotations
 
-from plnr.errors import Exhausted, GoalError
+from plnr.errors import Exhausted, GoalError, WorldError
 from plnr.goals import Budget, Engine, Trace
 from plnr.plan import Plan, run, solutions
 from plnr.sexp import SexpError, Sym, read_all, read_one, write
@@ -41,6 +41,7 @@ __all__ = [
     "Theorems",
     "Trace",
     "World",
+    "WorldError",
     "ground",
     "is_var",
     "payload_matches",

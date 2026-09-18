@@ -77,10 +77,23 @@ El mundo de los tests vive en `worlds/restaurant.theorems` (las reglas, con una 
 de estado y un "book" compuestos como teoremas) y `worlds/restaurant.py` (los documentos).
 
 ```bash
-python -m pytest -q tests     # 107 tests
+python -m pytest -q tests     # 111 tests
 make check                    # ruff + formato + mypy + tests + largo de archivo
 python examples/demo.py       # busca y muestra lo que escribiría, sin escribir
 ```
+
+## Contra un mundo que ya existe
+
+El motor no sabe de ningún mundo: `plnr.World` son cuatro preguntas y un predicado, y el
+host las contesta. Un host que se niega sube `WorldError` (con `absent=True` cuando el
+nombre no está) en vez de dejar escapar su propia excepción: una búsqueda que revienta no es
+una respuesta, y `Plan.failure` dice cuál de las cuatro cosas pasó —`none`, `malformed`,
+`budget`, `world`, `absent`.
+
+Con eso, `examples/cobranza.theorems.yaml` corre contra la KB real de un agente de cobranza
+(47 átomos, `grounded_by` y `uses_tool` autoradas, un flujo de pasos con `transitions_to`):
+"cómo se paga la factura", que en la superficie de pron no tenía palabra, sale de las reglas
+del mundo y de los campos de sus átomos.
 
 El porqué de cada pieza y su equivalencia con MicroPlanner (THCONSE, THANTE, THUSE, THFIND,
 el trail que acá no hace falta) están en [`DESIGN.md`](DESIGN.md).
