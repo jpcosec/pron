@@ -26,7 +26,7 @@
 │   ├── golden/           red de caracterización (syrupy): respuesta, trace, record y CLI por guion
 │   └── worlds/           mundos de prueba (el restaurante del spec 09a, valores)
 │
-├── source/spec/          la especificación, en capítulos (01-mundo … 13-formas)
+├── source/spec/          la especificación, en capítulos (01-mundo … 14-superficie-mcp)
 ├── knowledge/            lo que se escribe del mundo de pron: explanations/, anchors/, projections/, readme.md
 ├── ledger/               MoveDoc de los turnos dichos sobre este mundo
 │
