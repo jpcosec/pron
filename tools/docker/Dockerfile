@@ -11,7 +11,7 @@ ENV PATH=/venv/bin:$PATH PIP_DISABLE_PIP_VERSION_CHECK=1
 RUN pip install --no-cache-dir "setuptools>=68" wheel \
     "pydantic>=2" "markdown-it-py>=3.0" "mdit-py-plugins>=0.4" "linkify-it-py>=2.0" "jinja2>=3.1" \
     "PyYAML>=6" "click>=8.1" "networkx>=3.0" \
-    jsonschema pytest==8.3.4 pytest-cov syrupy==6.1.1 ruff==0.14.0 mypy==1.14.1 types-PyYAML build
+    jsonschema "mcp>=1.27" pytest==8.3.4 pytest-cov syrupy==6.1.1 ruff==0.14.0 mypy==1.14.1 types-PyYAML build
 RUN git config --global --add safe.directory '*'
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

@@ -29,6 +29,7 @@ La v1 (código, KB, store, tests) vive entera en la rama `v1-code-and-kb` y el t
 | 11 | [Decisiones de implementación](11-decisiones-de-implementacion.md) | parser, embeddings, fechas, el ingest de kgdb, cambios durante el turno, identidad, fallo parcial: qué decide pron y qué aporta la aplicación |
 | 12 | [pron para un runtime externo](12-pron-para-un-runtime.md) | lo que un runtime (kinesis, una superficie como graph_ui, un servidor) puede usar de pron: sesión en proceso o por socket, la respuesta y sus outcomes, documentos por dirección, el mundo, permisos, el socket, qué es estable |
 | 13 | [Formas](13-formas.md) | el lenguaje de pron: s-expressions que nombran las palabras del léxico, que la superficie produce desde una oración y que un runtime escribe directo; evaluarlas resuelve, pregunta, escribe y registra |
+| 14 | [La superficie MCP](14-superficie-mcp.md) | la superficie de los agentes: un servidor MCP multi-mundo que traduce argumentos tipados a formas, direcciones `kb://` literales y semánticas, y la escalera de mutabilidad hasta las reglas y los modelos |
 
 Si hay que leer uno solo, es el 09: fija con ejemplos cada decisión que los otros enuncian. El 10 y el 11 se leen antes de implementar; el 12 es el único que un runtime externo necesita.
 
