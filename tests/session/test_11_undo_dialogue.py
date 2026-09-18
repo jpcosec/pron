@@ -6,6 +6,8 @@ from __future__ import annotations
 from pron.session import Session
 from worlds.restaurant import build_restaurant
 
+from pron.world.doc_id import DocId
+
 NOW = "2026-09-09"
 ANA = "reservation-2026-09-11-ana-rojas"
 
@@ -31,8 +33,8 @@ def test_undo_again_takes_back_the_move_before(tmp_path):
     r = session.turn("undo the last move")
     assert "(1 write(s))" in r.text, r.text
     assert r.record["undoes"] != first.record["undoes"]
-    assert session.world.store.doc("Client", "client-ana-rojas") is None
-    assert session.world.store.doc("Reservation", ANA) is None
+    assert session.world.store.doc(DocId.of("Client", "client-ana-rojas")) is None
+    assert session.world.store.doc(DocId.of("Reservation", ANA)) is None
 
 
 def test_nothing_left_to_undo(tmp_path):

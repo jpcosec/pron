@@ -7,6 +7,7 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
+from pron.world.doc_id import DocId
 from pron.world.store import Store
 
 TEMPLATE_DIRS = {
@@ -43,12 +44,12 @@ class WorldTemplate:
         added: list[str] = []
         for src in sorted(src_dir.glob("*.md")):
             name = prefix + src.stem
-            if self.store.doc(model, name) is not None:
+            if self.store.doc(DocId.of(model, name)) is not None:
                 continue
             dst = self.root / "knowledge" / sub / src.name
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(src, dst)
-            self.store.track(dst, model, name)
+            self.store.track(DocId.of(model, name), dst)
             self.store.invalidate()
             added.append(f"{model}:{name}")
         return added

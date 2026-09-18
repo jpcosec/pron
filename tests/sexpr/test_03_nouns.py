@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 
+from pron.world.doc_id import DocId
 from pron.world.lexicon import Lexicon
 from pron.sexpr.resolving.resolve import resolve
 from pron.surface.nouns import find_noun_phrases
@@ -89,8 +90,7 @@ def test_key_field_names_an_object(clf, lex):
 def test_singular_with_two_matches_is_ambiguous_with_candidates(clf, lex, world):
     assert resolve(phrase(clf, lex, "the client Ana"), lex).outcome == "unico"
     world.store.create(
-        "Client",
-        "client-ana-rojas",
+        DocId.of("Client", "client-ana-rojas"),
         {"name": "Ana Rojas", "phone": "9 5555 1234", "notes": ""},
         world.root / "clients" / "ana-rojas.md",
     )

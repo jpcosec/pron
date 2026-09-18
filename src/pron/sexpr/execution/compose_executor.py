@@ -15,6 +15,7 @@ from typing import TYPE_CHECKING, Any
 from pron.kernel.ids import address_of, model_of
 from pron.kernel.parts.part import Part
 from pron.kernel.actions.write import Write
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:
@@ -85,8 +86,8 @@ class ComposeExecutor:
         related: dict[str, Any] = {}
         for later, later_res in zip(self.steps, self.plan["steps"]):
             if _asserts_from_created(later, later_res):
-                tid = later_res["target"].export_ids()[0]
-                related[later["relation"]] = self.world.store.payload_of(tid)
+                tid = DocId.parse_plain(later_res["target"].export_ids()[0])
+                related[later["relation"]] = self.world.store.payload(tid)
         return related
 
     def _require(self, model: str, fields: dict[str, Any]) -> None:

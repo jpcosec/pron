@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING, Any
 from pron.kernel.actions.write import Write
 from pron.kernel.display import render_name
 from pron.kernel.ids import join_id
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
@@ -53,7 +54,8 @@ class CreateVerb:
             / f"{model.lower()}s"
             / f"{name}.md"
         )
-        export_id = kernel.store.create(model, name, full, path, kernel.write_store)
+        new = DocId.of(model, name, kernel.write_store)
+        export_id = str(kernel.store.create(new, full, path))
         w = Write("create", export_id, after=full, done=True, extra={"path": str(path)})
         kernel._after_write(export_id, w)
         return w

@@ -17,6 +17,7 @@ from pron.kernel.parts.noun_phrase import NounPhrase
 from pron.sexpr.turn.note_reads import note_reads
 from pron.sexpr.resolving.resolution import Resolution, address_to_export_id
 from pron.sexpr.resolving.resolve import resolve
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:
@@ -61,7 +62,7 @@ class PhrasePlanner:
         if eid in pending:
             return None  # a create of this move the store has not written yet
         try:
-            self.world.store.payload_of(eid)
+            self.world.store.payload(DocId.parse_plain(eid))
         except StoreError:
             return f"there is no {eid}"
         return None

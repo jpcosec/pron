@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import Any
 
 from pron.sexpr.resolving.resolution import address_to_export_id
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 
@@ -22,6 +23,8 @@ def note_reads(world, addresses: list[str], record: dict[str, Any]) -> None:
         if eid in seen or ":" not in eid:
             continue
         try:
-            reads.append({"address": eid, "hash_c": world.store.hash_of(eid)})
+            reads.append(
+                {"address": eid, "hash_c": world.store.hash_c(DocId.parse_plain(eid))}
+            )
         except StoreError:
             continue

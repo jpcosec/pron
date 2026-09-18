@@ -9,6 +9,7 @@ import re
 
 
 from pron.session import Session
+from pron.world.doc_id import DocId
 
 NOW = "2026-09-09"
 RES = "reservation-2026-09-11-ana-rojas"
@@ -28,7 +29,7 @@ def test_a_fragment_that_fits_the_hole_corrects_the_missing_turn(session: Sessio
         r.record["corrects"]["move"] == missing_move
         and "terrace" in r.record["corrects"]["sentence"]
     )
-    assert session.world.store.doc("Reservation", RES) is not None
+    assert session.world.store.doc(DocId.of("Reservation", RES)) is not None
     move = session.ledger.get(r.move_id)
     assert move["refers_to"] == missing_move
 
@@ -39,10 +40,10 @@ def test_the_created_object_is_named_once_its_relations_exist(session: Session):
 
 
 def test_a_coordinated_move_is_validated_whole_before_the_first_write(session: Session):
-    before = session.world.store.payload("Reservation", RES)
+    before = session.world.store.payload(DocId.of("Reservation", RES))
     r = session.turn("change it to 100 people and confirm it")
     assert r.outcome == "error" and "party_size <= 8" in r.text, r.text
-    after = session.world.store.payload("Reservation", RES)
+    after = session.world.store.payload(DocId.of("Reservation", RES))
     assert (
         after["party_size"] == before["party_size"] == 6
         and after["status"] == "pending"
@@ -55,8 +56,8 @@ def test_undo_does_not_touch_a_document_changed_since_the_move(session: Session)
     r = session.turn("change it to 5 people")
     assert r.outcome == "unico", r.text
     session.world.store.update_field(
-        "Reservation", RES, "party_size", 7
+        DocId.of("Reservation", RES), "party_size", 7
     )  # someone else, outside pron
     r = session.turn("undo the last move")
     assert r.outcome == "unico" and "Not touched" in r.text, r.text
-    assert session.world.store.payload("Reservation", RES)["party_size"] == 7
+    assert session.world.store.payload(DocId.of("Reservation", RES))["party_size"] == 7

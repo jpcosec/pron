@@ -6,6 +6,8 @@ from __future__ import annotations
 from pron.session import Session
 from worlds.restaurant import build_restaurant
 
+from pron.world.doc_id import DocId
+
 NOW = "2026-09-09"
 LUIS = ("Reservation", "reservation-2026-09-11-luis-soto")
 
@@ -14,7 +16,7 @@ def test_undo_restores_every_write_of_a_move_to_the_same_document(tmp_path):
     """Spec 11 §7: a document is 'changed after that move' only if something outside the move
     changed it; two writes of one move to one reservation are both undone."""
     s = Session(build_restaurant(tmp_path), projection="all", speaker="jp", now=NOW)
-    before = dict(s.world.store.payload(*LUIS))
+    before = dict(s.world.store.payload(DocId.of(*LUIS)))
     s.turn("the reservation of Luis Soto")  # 'it' in the move below needs an antecedent
     r = s.turn(
         "change the reservation of Luis Soto to 9 people and add a note saying: birthday"
@@ -22,7 +24,7 @@ def test_undo_restores_every_write_of_a_move_to_the_same_document(tmp_path):
     assert r.outcome == "unico" and len(r.record["writes"]) == 2, r.text
     r = s.turn("undo the last move")
     assert "changed after" not in r.text and "Heads up" not in r.text, r.text
-    after = s.world.store.payload(*LUIS)
+    after = s.world.store.payload(DocId.of(*LUIS))
     assert (after["party_size"], after["notes"]) == (
         before["party_size"],
         before["notes"],
@@ -53,4 +55,7 @@ def test_a_possessive_referent_names_the_subject_not_the_value(tmp_path):
         r.record["forms"] == '(remove (it "its") notes)'
     )  # notes: Client and Reservation
     assert r.record["writes"][0]["before"] == "vegan"
-    assert s.world.store.payload("Client", "client-luis-soto").get("notes", "") == ""
+    assert (
+        s.world.store.payload(DocId.of("Client", "client-luis-soto")).get("notes", "")
+        == ""
+    )

@@ -9,6 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from pron.docs_sync.doc_drift import drifted
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 EXPLANATIONS_DIR = Path("knowledge") / "explanations"
@@ -53,7 +54,7 @@ class WrittenDocs:
         from sldb.runtime.validation import extract_model_data
 
         store = self.world.store
-        existing = store.doc(model, doc_id)
+        existing = store.doc(DocId.of(model, doc_id))
         canonical = extract_model_data(
             store.model_type(model), path.read_text(encoding="utf-8")
         )
@@ -61,6 +62,6 @@ class WrittenDocs:
             return False
         if not self.check:
             if existing is not None:
-                store.untrack(doc_id)
-            store.track(path, model, doc_id)
+                store.untrack(DocId.of(model, doc_id))
+            store.track(DocId.of(model, doc_id), path)
         return True

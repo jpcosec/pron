@@ -10,6 +10,7 @@ import cli.own_world as own_world
 from pron.docs import synchronize_docs
 from pron.lints import run_lints
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 NOW = "2026-09-09"
@@ -31,10 +32,10 @@ def test_own_knowledge_base_is_derived_from_the_repo(own: World):
     )
     assert synchronize_docs(own, check=True) == []
     # the spec chapter is tracked where it lives and its sections are addressable
-    doc = own.store.doc("SpecDoc", "spec-02")
+    doc = own.store.doc(DocId.of("SpecDoc", "spec-02"))
     assert doc is not None and doc.path.endswith("source/spec/02-sustantivos.md")
     assert (
-        own.store.doc("CliCommandDoc", "cmd-pron-say")
+        own.store.doc(DocId.of("CliCommandDoc", "cmd-pron-say"))
         .payload["synopsis"]
         .startswith("Say one sentence")
     )
@@ -43,8 +44,10 @@ def test_own_knowledge_base_is_derived_from_the_repo(own: World):
 
 def _surface_of_a_gone_module(own: World, gone: str) -> Path:
     path = own.root / "knowledge" / "surfaces" / f"{gone}.md"
-    payload = dict(own.store.payload("SurfaceDoc", "surface-pron-session"), id=gone)
-    own.store.create("SurfaceDoc", gone, dict(payload, surface="gone"), path)
+    payload = dict(
+        own.store.payload(DocId.of("SurfaceDoc", "surface-pron-session")), id=gone
+    )
+    own.store.create(DocId.of("SurfaceDoc", gone), dict(payload, surface="gone"), path)
     return path
 
 
@@ -55,9 +58,9 @@ def test_the_surface_of_a_module_that_no_longer_exists_is_pruned(own: World):
     gone = "surface-pron-gone"
     path = _surface_of_a_gone_module(own, gone)
     assert synchronize_docs(own, check=True) == [f"SurfaceDoc {gone} (stale)"]
-    assert path.exists() and own.store.doc("SurfaceDoc", gone) is not None
+    assert path.exists() and own.store.doc(DocId.of("SurfaceDoc", gone)) is not None
     assert f"SurfaceDoc {gone} (stale)" in synchronize_docs(own)
-    assert not path.exists() and own.store.doc("SurfaceDoc", gone) is None
+    assert not path.exists() and own.store.doc(DocId.of("SurfaceDoc", gone)) is None
     assert synchronize_docs(own, check=True) == []
 
 
@@ -98,8 +101,7 @@ def test_the_readme_is_composed_from_the_explanations(own: World):
 
 def _anchor(own: World, symbol: str, forms: list[str], ref: str, motive: str) -> None:
     own.store.create(
-        "AnchorDoc",
-        f"anchor-{symbol}",
+        DocId.of("AnchorDoc", f"anchor-{symbol}"),
         {"symbol": symbol, "forms": forms, "ref": ref, "steps": [], "motive": motive},
         own.root / "knowledge" / "anchors" / f"{symbol}.md",
     )

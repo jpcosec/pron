@@ -3,11 +3,10 @@
 Every method is a call into sldb's library. sldb caches the runtime documents by the
 store's hash chain, so reading them here costs nothing and is never stale. A world's store
 may link other stores (spec 01 §Un mundo en varios stores), so a document is named by a
-`DocId` — store, model, name — and every operation on one document has one form that takes
-it (`doc_at`, `payload_at`, `hash_at`, `path_at`, `create_at`, `track_at`, `untrack_at`,
-`replace_at`, `update_field_at`, `remove_field_at`, `append_at`, `clean_at`, `matches_at`).
-The older forms delegate to it: `(model, name, store)`, with `None` or "local" for the
-local store, and `*_of(export_id)`, which take the id `store:Model:doc`.
+`DocId` — store, model, name, with no store for the local one — and every operation on one
+document takes it: `doc`, `payload`, `hash_c`, `doc_path`, `create`, `track`, `untrack`,
+`replace`, `update_field`, `remove_field`, `append`, `clean`, `matches`. Whoever holds the
+string `store:Model:doc` (a socket, a ledger record) parses it at its own edge.
 
 Model editing (`model_catalog`, `model_detail`, `model_template_edit`, `model_fields_add`,
 `model_fields_remove`, `model_validate_draft`, `model_promote`) is the same door for a

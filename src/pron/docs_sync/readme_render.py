@@ -9,6 +9,7 @@ import re
 from pathlib import Path
 
 from pron.docs_sync.written_docs import README_ID
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 
@@ -20,7 +21,7 @@ class ReadmeRender:
         self.check = check
 
     def __call__(self) -> list[str]:
-        doc = self.world.store.doc("ReadmeDoc", README_ID)
+        doc = self.world.store.doc(DocId.of("ReadmeDoc", README_ID))
         if doc is None:
             return []
         rendered = self._rendered(dict(doc.payload))

@@ -7,6 +7,8 @@ from __future__ import annotations
 
 from golden.run import LUIS, play, restaurant
 
+from pron.world.doc_id import DocId
+
 WRITES = [
     "the clients",
     "create a client named Zoe Lee, phone 1",
@@ -23,7 +25,9 @@ NOT_ALLOWED = [
 
 
 def _changed_outside(world) -> str:
-    world.store.update_field("Reservation", LUIS.split(":")[1], "party_size", 7)
+    world.store.update_field(
+        DocId.of("Reservation", LUIS.split(":")[1]), "party_size", 7
+    )
     return "party_size of Luis Soto's reservation set to 7 outside pron"
 
 

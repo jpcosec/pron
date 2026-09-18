@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 Plan = tuple[str, list[dict[str, Any]], Any]
@@ -23,7 +24,7 @@ class ImplementsEdges:
         """`plans[0]` holds the SpecDocs; the rest, the documents that cite them."""
         if (
             "RelationDoc" not in self.world.model_names()
-            or self.store.doc("RelationTypeDoc", "rt-implements") is None
+            or self.store.doc(DocId.of("RelationTypeDoc", "rt-implements")) is None
         ):
             return ["relation type implements not declared: run pron init --knowledge"]
         wanted = self._wanted(plans)
@@ -40,7 +41,7 @@ class ImplementsEdges:
         for name in sorted(existing - set(wanted)):
             changed.append(f"RelationDoc {name} (stale)")
             if not self.check:
-                self.store.untrack(name)
+                self.store.untrack(DocId.of("RelationDoc", name))
         return changed
 
     @staticmethod
@@ -60,8 +61,7 @@ class ImplementsEdges:
     def _add(self, name: str, src: str, tgt: str) -> str:
         if not self.check:
             self.store.create(
-                "RelationDoc",
-                name,
+                DocId.of("RelationDoc", name),
                 {
                     "title": name,
                     "source_id": src,

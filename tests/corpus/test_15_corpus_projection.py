@@ -7,6 +7,8 @@ from pron.corpus import fields_text, summary_text
 from pron.kernel.ids import join_id, split_id
 from corpus.restaurant_corpus import corpus_of
 
+from pron.world.doc_id import DocId
+
 
 # -- the projection is the only thing the consumer declares -------------------------------
 
@@ -60,4 +62,6 @@ def test_an_entry_carries_its_parts_so_no_consumer_splits_an_id(world):
 
 def test_the_hash_of_an_entry_is_the_stores_content_hash(world):
     for entry in corpus_of(world).entries()[:3]:
-        assert entry.hash == world.store.hash_c(entry.model, entry.name, entry.store)
+        assert entry.hash == world.store.hash_c(
+            DocId.of(entry.model, entry.name, entry.store)
+        )

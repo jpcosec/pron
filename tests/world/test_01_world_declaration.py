@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from sldb.cli import main as sldb_main
 
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 
@@ -51,4 +52,4 @@ def test_addresses_and_fields_read_by_address(world: World):
         "st.{Table}.table-14",
         "st.{Table}.table-20",
     ]
-    assert world.store.hash_c("Table", "table-12")
+    assert world.store.hash_c(DocId.of("Table", "table-12"))

@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from pron.kernel.ids import LOCAL
+from pron.world.doc_id import DocId
 from pron.world.doc_kind import tags_outside_graph
 from pron.world.fingerprint import WorldFingerprint
 from pron.world.graph import Graph
@@ -47,7 +48,7 @@ class World(WorldDeclaration):
         its own sldb operation, so what the files say right now is what comes back, never
         what an earlier request of this World cached."""
         self.store.begin_operation()
-        return self.store.payload(model, name, store)
+        return self.store.payload(DocId.of(model, name, store))
 
     def hash_mundo(self) -> str:
         """Fingerprint of what the lexicon and the graph depend on: every model but the

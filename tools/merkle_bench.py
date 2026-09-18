@@ -71,6 +71,7 @@ def cmd_generate(args: argparse.Namespace) -> None:
     (root / "bench_models.py").write_text(BENCH_MODEL_SOURCE, encoding="utf-8")
     pythonpath = str(root)
     from sldb.cli import main as sldb_main
+    from pron.world.doc_id import DocId
     from pron.world.store import Store
     from pron.world.world import World, init_world
 
@@ -84,8 +85,7 @@ def cmd_generate(args: argparse.Namespace) -> None:
     for i in range(args.n):
         name = f"note-{i:05d}"
         store.create(
-            "BenchNote",
-            name,
+            DocId.of("BenchNote", name),
             {"title": f"Note {i}", "body": f"Generated body for bench note {i}."},
             docs_dir / f"{name}.md",
         )

@@ -8,6 +8,7 @@ from sldb.api import deep_get
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 
@@ -28,12 +29,12 @@ class AddVerb:
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
         kernel._guard(export_id)
-        lst = kernel.store.payload_of(export_id).get(field_name)
+        lst = kernel.store.payload(DocId.parse_plain(export_id)).get(field_name)
         if isinstance(lst, list) and value in lst:
             return Write(
                 "add", export_id, field_name, lst, lst, done=False, note="already there"
             )
-        idx = kernel.store.append_of(export_id, field_name, value)
+        idx = kernel.store.append(DocId.parse_plain(export_id), field_name, value)
         w = Write(
             "add", export_id, field_name, None, value, done=True, extra={"index": idx}
         )
@@ -41,10 +42,14 @@ class AddVerb:
         return w
 
     def undo(self, kernel, write):
-        lst = kernel.store.payload_of(write["address"]).get(write["field"], [])
+        lst = kernel.store.payload(DocId.parse_plain(write["address"])).get(
+            write["field"], []
+        )
         if write["after"] in lst:
             lst.remove(write["after"])
-            kernel.store.update_field_of(write["address"], write["field"], lst)
+            kernel.store.update_field(
+                DocId.parse_plain(write["address"]), write["field"], lst
+            )
         return Write(
             "undo", write["address"], write["field"], write["after"], None, done=True
         )
