@@ -93,3 +93,28 @@ Pendiente (mismo orden del handoff previo): 4 proyecciones (`ProjectionDoc` expl
 ## Nota 2026-09-15: el checkpoint anterior no está en el repo
 
 El checkpoint del 2026-09-14 describe `source_symbols.py`, `source_graph.py` y cambios en `world.py`/`graph.py`/`verbs.py`/`display.py`/`lexicon.py`/`resolve.py`/`session.py`, más la prueba `test_source_contains_and_imports_answer_through_pron`. Nada de eso existe en ningún commit, en ningún objeto inalcanzable de git ni en ningún archivo del disco (se buscó `source_symbols.py` en todo el sistema): cuando se commiteó (`38baa62`), lo único sin commitear era este archivo y el arreglo de `payload["asked"]` en `surface/interpret.py`. Ese trabajo hay que rehacerlo. Después se mezcló `sexp-core` (formas, capítulo 13) en `ae2d0a3`.
+
+## Nota 2026-09-18: plnr — metas sobre los stores, y una KB real
+
+Se ha agregado la capa de metas: una forma `(goal PATRÓN …)` no la resuelve pron, la prueba el
+mundo con reglas que declara como `TheoremDoc` (patrón + cuerpo de formas). La búsqueda corre
+sobre un overlay y no escribe; lo que afirma lo escribe el kernel al cerrar el plan, con un
+refresh y el `MoveDoc` de siempre. Es MicroPlanner (`THGOAL`/`THCONSE`/`THANTE`/`THUSE`/`THFIND`)
+sobre un store sin transacciones: retroceder es no leer la rama que falló.
+
+Vive en la rama `plnr-integration` (nace en `5a9aaed`, 2 commits) con el motor en la rama
+`plnr` de `/home/jp/proyectos/pron-plnr`, instalado editable. 266 tests verdes, lint, tipos y
+`docs-check` incluidos; los capítulos 01, 03 y 13 lo dicen.
+
+Probado contra la KB real de `AgentsKBs/knowledge_antonia-cobranza` (copia en /tmp), con 10
+reglas propias: "cómo se paga la factura" y "cómo reconocer que el mensaje es real" —las dos
+preguntas que la nota del 2026-09-17 deja como límite de `say`— salen por metas, porque leen
+campos y aristas y no un léxico cerrado. También `grounded_by`/`uses_tool` y el flujo de pasos.
+
+Lo que esa KB rompió y quedó arreglado: el símbolo del anfitrión (plnr ahora acepta la clase
+`Sym` de pron), las aristas leídas hacia atrás que salían con source y target cambiados, los
+nombres cortos de documento (`atom-cobranza-pago`), las excepciones del host que reventaban la
+búsqueda en vez de ser respuesta (`WorldError` + `Plan.failure`), y `find` sobre una variable
+que no ocurre en su meta (occurs check).
+
+Detalle completo, contratos y pendientes: [`docs/PLNR.md`](PLNR.md).

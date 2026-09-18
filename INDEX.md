@@ -32,6 +32,7 @@
 ├── docs/                 documentación para personas
 │   ├── spec2viz/         diagramas: specs/*.yml → `python build.py` → index.html, offline.html
 │   ├── ROADMAP-v2.md     el camino de pron y sldb v1 hacia kimun (sldb v2); parte por unificar el store
+│   ├── PLNR.md           las metas: (goal …) probado por reglas del mundo (TheoremDoc)
 │   └── HANDOFF.md        traspaso entre sesiones (2026-09-09, histórico)
 └── tools/                herramientas de desarrollo: check_file_length.py (`make lint`), merkle_bench.py
 ```
