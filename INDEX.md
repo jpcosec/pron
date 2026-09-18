@@ -19,9 +19,10 @@
 │   ├── sexpr/            formas ↔ sldb/kgdb: turn/ forms/ resolving/ planning/ prevalidation/ execution/ dialogue/
 │   ├── cli/              `pron`, un comando por archivo en commands/
 │   ├── remote/           cliente del daemon (`pron serve`), solo biblioteca estándar
+│   ├── mcp/              `pron mcp`: la superficie de los agentes (spec 14), lecturas kb://, escrituras como formas, la escalera
 │   ├── corpus/  models/  índice de oraciones; modelos de documento de pron
 │   └── session.py …      el turno (Session), serve, docs, lints
-├── tests/                en espejo del código: world/ sexpr/ session/ cli/ remote/ corpus/
+├── tests/                en espejo del código: world/ sexpr/ session/ cli/ remote/ corpus/ mcp_surface/ mcp_writes/ mcp_wiring/
 │   ├── golden/           red de caracterización (syrupy): respuesta, trace, record y CLI por guion
 │   └── worlds/           mundos de prueba (el restaurante del spec 09a, valores)
 │

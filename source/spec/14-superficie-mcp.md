@@ -28,7 +28,7 @@ Un servidor, varios mundos, y **el mundo es argumento de cada tool**. A diferenc
 
 Las sesiones viven en el servidor, una por `(mundo, speaker)`. Una sesión es un diálogo (06): una forma que queda `ambiguo` o pide un dato deja su pendiente ahí, y la respuesta dice cuál es; el agente la resuelve con otra forma más precisa (un `(doc …)` en vez de un `(the …)`), nunca contestando con texto.
 
-El SDK es el oficial de MCP para Python, con `FastMCP`. Es una dependencia opcional (`pip install pron[mcp]`), importada solo en `pron.mcp`: `import pron` no la carga.
+El SDK es el oficial de MCP para Python, versión 2.x (`MCPServer`, que en la 1.x se llamaba `FastMCP`). Es una dependencia opcional (`pip install pron[mcp]`, `mcp>=2.2`), importada solo en `pron.mcp`: `import pron` no la carga.
 
 ## 2. Direcciones
 
