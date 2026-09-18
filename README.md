@@ -98,7 +98,13 @@ del mundo y de los campos de sus átomos.
 El porqué de cada pieza y su equivalencia con MicroPlanner (THCONSE, THANTE, THUSE, THFIND,
 el trail que acá no hace falta) están en [`DESIGN.md`](DESIGN.md).
 
+## Dónde se usa
+
+La integración con pron —`(goal …)` como una forma, `TheoremDoc` como documento del mundo,
+el commit por los verbos del kernel— vive en la rama `plnr-integration` de
+`/home/jp/proyectos/_worktrees/plnr/pron`, y está contada en `docs/PLNR.md` de esa rama.
+
 ## Estado
 
-Primera versión. Concurrencia, cacheo de lecturas y un committedor contra un store real no
-están: el paquete termina en `Plan`.
+Primera versión. Concurrencia y cacheo de lecturas no están: el paquete termina en `Plan`, y
+quien commitea es el consumidor (pron lo hace con `src/pron/plnr/commit.py`).
