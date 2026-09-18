@@ -14,6 +14,7 @@ from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import is_local, qualify, relativize, scope as _scope
 from pron.sexpr.resolving.edge_read import EdgeRead
+from pron.world.doc_id import DocId
 from pron.world.graph import doc_id
 
 if TYPE_CHECKING:
@@ -78,7 +79,7 @@ class EdgeReader:
     def _edge(self, address: str) -> dict[str, Any] | None:
         name = address.split("}.", 1)[1]
         store = address.split(":", 1)[0] if ":st.{" in address else "local"
-        d = self.store.doc("RelationDoc", name, store)
+        d = self.store.doc(DocId.of("RelationDoc", name, store))
         if d is None:
             return None
         p = d.payload

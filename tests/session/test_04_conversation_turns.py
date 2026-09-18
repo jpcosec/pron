@@ -6,6 +6,7 @@ in this file."""
 from __future__ import annotations
 
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 NOW = "2026-09-09"
@@ -24,7 +25,7 @@ def test_turn_1_create_with_payload(session: Session):
         session.world.store.get("st.{Client}.client-ana-rojas.phone") == "9 5555 1234"
     )
     assert r.record["writes"][0]["verb"] == "create"
-    assert session.world.store.doc("MoveDoc", r.move_id) is not None
+    assert session.world.store.doc(DocId.of("MoveDoc", r.move_id)) is not None
 
 
 def test_turn_2_unknown_enum_value_is_missing_before_any_query(session: Session):
@@ -37,7 +38,7 @@ def test_turn_2_unknown_enum_value_is_missing_before_any_query(session: Session)
 def test_turn_3_compose_creates_the_reservation_and_two_relations(session: Session):
     r = session.turn("book her a table on the terrace for 6 people on Friday at 9pm")
     assert r.outcome == "unico", _said(r)
-    res = session.world.store.doc("Reservation", RES)
+    res = session.world.store.doc(DocId.of("Reservation", RES))
     assert (
         res is not None
         and res.payload["party_size"] == 6
@@ -77,7 +78,7 @@ def test_turn_6_confirm_is_a_guarded_transition(session: Session):
 def test_turn_7_two_writes_and_a_condition_that_breaks(session: Session):
     r = session.turn("change it to 9 people and add a note saying: birthday")
     assert r.outcome == "unico", _said(r)
-    p = session.world.store.payload("Reservation", RES)
+    p = session.world.store.payload(DocId.of("Reservation", RES))
     assert p["party_size"] == 9 and p["notes"] == "birthday"
     assert "Heads up" in r.text and "capacity >= {party_size}" in r.text
     assert len(r.record["writes"]) == 2
@@ -98,12 +99,15 @@ def test_illegal_transition_is_refused(session: Session):
 
 
 def test_undo_restores_the_previous_values(session: Session):
-    before = session.world.store.payload("Reservation", RES)["party_size"]
+    before = session.world.store.payload(DocId.of("Reservation", RES))["party_size"]
     r = session.turn("change it to 4 people")
     assert r.outcome == "unico", r.text
     r = session.turn("undo the last move")
     assert r.outcome == "unico", _said(r)
-    assert session.world.store.payload("Reservation", RES)["party_size"] == before
+    assert (
+        session.world.store.payload(DocId.of("Reservation", RES))["party_size"]
+        == before
+    )
 
 
 def test_read_only_projection_cannot_write(world: World):
@@ -113,8 +117,7 @@ def test_read_only_projection_cannot_write(world: World):
         relations=[{"name": "booked_by", "mode": "read"}],
     )
     world.store.create(
-        "ProjectionDoc",
-        "projection-reader",
+        DocId.of("ProjectionDoc", "projection-reader"),
         dict(proj, name="reader"),
         world.root / "knowledge" / "projections" / "reader.md",
     )

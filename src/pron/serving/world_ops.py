@@ -9,6 +9,7 @@ import os
 from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import is_local
+from pron.world.doc_id import DocId
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from pron.serve import Server
@@ -64,7 +65,7 @@ class WorldOps:
         world.store.begin_operation()
         return {
             "ok": True,
-            "payload": world.store.payload(req["model"], req["doc"], name),
+            "payload": world.store.payload(DocId.of(req["model"], req["doc"], name)),
         }
 
     def _in_projection(self, name: str, req: dict[str, Any], model: str) -> None:

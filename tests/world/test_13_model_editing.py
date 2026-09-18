@@ -11,6 +11,7 @@ from pathlib import Path
 
 import pytest
 
+from pron.world.doc_id import DocId
 from pron.world.store import Store
 from pron.world.store_error import StoreError
 from pron.world.world import World
@@ -105,14 +106,14 @@ def test_model_promote_installs_draft_bumps_version_and_is_visible_immediately(
 
 
 def test_replace_rewrites_whole_payload(world: World):
-    before = world.store.payload("Table", "table-3")
+    before = world.store.payload(DocId.of("Table", "table-3"))
     new_zone = "terrace" if before["zone"] != "terrace" else "indoor"
-    world.store.replace("Table", "table-3", {**before, "zone": new_zone})
-    assert world.store.payload("Table", "table-3")["zone"] == new_zone
+    world.store.replace(DocId.of("Table", "table-3"), {**before, "zone": new_zone})
+    assert world.store.payload(DocId.of("Table", "table-3"))["zone"] == new_zone
 
 
 def test_replace_of_matches_replace(world: World):
-    before = world.store.payload("Table", "table-5")
+    before = world.store.payload(DocId.of("Table", "table-5"))
     new_zone = "terrace" if before["zone"] != "terrace" else "indoor"
-    world.store.replace_of("Table:table-5", {**before, "zone": new_zone})
-    assert world.store.payload_of("Table:table-5")["zone"] == new_zone
+    world.store.replace(DocId.parse("Table:table-5"), {**before, "zone": new_zone})
+    assert world.store.payload(DocId.parse("Table:table-5"))["zone"] == new_zone

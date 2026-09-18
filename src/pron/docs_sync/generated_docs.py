@@ -9,6 +9,7 @@ from __future__ import annotations
 from typing import Any
 
 from pron.docs_sync.doc_drift import drifted
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 NEEDED_MODELS = {
@@ -51,7 +52,7 @@ class GeneratedDocs:
         changed: list[str] = []
         for spec in specs:
             payload = {k: v for k, v in spec.items() if not k.startswith("_")}
-            existing = self.store.doc(model, spec["id"])
+            existing = self.store.doc(DocId.of(model, spec["id"]))
             canonical = extract_model_data(
                 model_type, render_model_markdown(model_type, payload)
             )
@@ -70,14 +71,11 @@ class GeneratedDocs:
     ) -> None:
         if self.check:
             return
+        doc_id = DocId.of(model, spec["id"])
         if existing is not None:
-            self.store.untrack(spec["id"])
+            self.store.untrack(doc_id)
         if folder is None:
-            self.store.track(spec["_path"], model, spec["id"])
+            self.store.track(doc_id, spec["_path"])
         else:
-            self.store.create(
-                model,
-                spec["id"],
-                payload,
-                self.world.root / folder / f"{spec['id']}.md",
-            )
+            path = self.world.root / folder / f"{spec['id']}.md"
+            self.store.create(doc_id, payload, path)

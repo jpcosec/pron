@@ -8,6 +8,7 @@ import pytest
 
 from pron.remote import RemoteSession, alive, request, socket_path
 from pron.serve import Server
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from worlds.bare import init_bare
 
@@ -64,8 +65,7 @@ def _expose_booking(restaurant: World) -> None:
         ],
     )
     restaurant.store.create(
-        "ProjectionDoc",
-        "projection-booking",
+        DocId.of("ProjectionDoc", "projection-booking"),
         proj,
         restaurant.root / "knowledge" / "projections" / "booking.md",
     )

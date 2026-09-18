@@ -7,6 +7,7 @@ import pytest
 
 from pron.remote import RemoteSession, alive, request, socket_path
 from pron.serve import Server
+from pron.world.doc_id import DocId
 from pron.world.graph import doc_id
 from pron.world.world import World
 
@@ -33,8 +34,7 @@ def test_socket_path_is_under_the_world_unless_too_long(world: World, tmp_path):
 def test_payload_respects_the_session_projection(server: Server):
     proj = dict(server.world.projection("all"), name="tables-only", models=["Table"])
     server.world.store.create(
-        "ProjectionDoc",
-        "projection-tables-only",
+        DocId.of("ProjectionDoc", "projection-tables-only"),
         proj,
         server.world.root / "knowledge" / "projections" / "tables-only.md",
     )

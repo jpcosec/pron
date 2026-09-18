@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
@@ -24,8 +25,7 @@ def test_graph_is_built_fresh_and_typed(world: World):
 def test_hash_mundo_ignores_the_ledger_but_sees_a_schema_change(world: World):
     before = world.hash_mundo()
     world.store.create(
-        "MoveDoc",
-        "move-test-1",
+        DocId.of("MoveDoc", "move-test-1"),
         {
             "id": "move-test-1",
             "at": "2026-09-09T00:00:00Z",
@@ -43,7 +43,7 @@ def test_hash_mundo_ignores_the_ledger_but_sees_a_schema_change(world: World):
     )
     assert world.hash_mundo() == before
     assert world.graph_is_fresh()
-    world.store.update_field("Table", "table-20", "capacity", 3)
+    world.store.update_field(DocId.of("Table", "table-20"), "capacity", 3)
     assert world.hash_mundo() != before
     # the write already resynced the edge shard it touched (spec 11 §5): no refresh needed
     assert world.graph_is_fresh()
@@ -58,16 +58,15 @@ def test_create_with_relative_path_lands_under_the_world_root(
     relative to the root, so a cwd-relative file would be tracked as missing."""
     monkeypatch.chdir(tmp_path)
     world.store.create(
-        "Client",
-        "client-rel",
+        DocId.of("Client", "client-rel"),
         {"name": "Rel", "phone": "1", "notes": ""},
         Path("clients") / "rel.md",
     )
     assert (world.root / "clients" / "rel.md").exists()
     assert not (tmp_path / "clients").exists()
-    assert world.store.doc("Client", "client-rel") is not None
+    assert world.store.doc(DocId.of("Client", "client-rel")) is not None
     assert (
-        world.store.doc_path("Client", "client-rel")
+        world.store.doc_path(DocId.of("Client", "client-rel"))
         == world.root / "clients" / "rel.md"
     )
 
@@ -76,7 +75,7 @@ def test_update_index_says_on_stderr_what_it_skipped(tmp_path, capsys):
     """sldb's library API prints nothing: an update is silent on stdout, and only what it
     had to skip (a tracked file gone) is said, on stderr."""
     world = build_restaurant(tmp_path / "restaurant")
-    missing = world.store.doc_path("Table", "table-3")
+    missing = world.store.doc_path(DocId.of("Table", "table-3"))
     missing.unlink()
     capsys.readouterr()
     report = world.store.update_index()

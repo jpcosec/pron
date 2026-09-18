@@ -6,6 +6,7 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
+from pron.world.doc_id import DocId
 from pron.world.graph import bare, doc_id, kind, tag_id
 from pron.world.world import World
 
@@ -104,8 +105,7 @@ def test_a_pron_write_keeps_the_graph_fresh_without_a_refresh(world: World):
     assert world.graph_is_fresh()
     assert world.refresh_if_stale() is False
     world.store.create(
-        "Client",
-        "client-stale",
+        DocId.of("Client", "client-stale"),
         {"name": "Stale", "phone": "0", "notes": ""},
         Path("clients") / "stale.md",
     )

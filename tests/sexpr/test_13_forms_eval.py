@@ -7,6 +7,7 @@ import pytest
 
 from pron.session import Session
 from pron.kernel.sexp.read_write import Sym, read, read_one, write
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
@@ -60,7 +61,7 @@ def test_an_assertion_goes_through_the_condition(world: World):
 def _undo_puts_it_back(s: Session, world: World) -> None:
     r = s.eval("(undo)")
     assert r.outcome == "unico", r.text
-    assert world.store.payload_of(LUIS)["status"] == "pending"
+    assert world.store.payload(DocId.parse(LUIS))["status"] == "pending"
 
 
 def test_a_transition_is_checked_and_undone(world: World):
@@ -69,8 +70,8 @@ def test_a_transition_is_checked_and_undone(world: World):
     assert r.outcome == "error" and "transition" in r.text, r.text
     r = s.eval(f'(say confirm (doc "{LUIS}"))')
     assert r.outcome == "unico", r.text
-    assert world.store.payload_of(LUIS)["status"] == "confirmed"
-    move = world.store.payload("MoveDoc", r.move_id)
+    assert world.store.payload(DocId.parse(LUIS))["status"] == "confirmed"
+    move = world.store.payload(DocId.of("MoveDoc", r.move_id))
     assert move["sentence"] == f'(say confirm (doc "{LUIS}"))'
     _undo_puts_it_back(s, world)
 
@@ -109,5 +110,5 @@ def test_a_document_can_be_named_where_the_projection_has_no_rule(world: World):
     assert r.outcome == "error" and "say the name" in r.text
     r = s.eval('(create Table (as "table-7") (number 7) (capacity 2) (zone "indoor"))')
     assert r.outcome == "unico", r.text
-    assert world.store.payload("Table", "table-7")["capacity"] == 2
+    assert world.store.payload(DocId.of("Table", "table-7"))["capacity"] == 2
     assert r.record["forms"].startswith('(create Table (as "table-7")')

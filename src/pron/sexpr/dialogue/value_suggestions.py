@@ -14,7 +14,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 from pron.sexpr.resolving.field_values import FieldValues
-from pron.world.lexicon import UNSUGGESTED_MODELS
+from pron.world.doc_kind import kind_of
 
 if TYPE_CHECKING:
     from pron.world.lexicon import Lexicon
@@ -42,7 +42,7 @@ class ValueSuggestions:
         self.values = FieldValues.of(self.projection, self.lex, self.matcher)
         scored: list[Scored] = []
         for model in self.lex.models:
-            if model not in UNSUGGESTED_MODELS:
+            if kind_of(model).suggests_values:
                 scored += self._model(word, model, trace)
         scored.sort(key=lambda t: -t[0])
         return self._best(scored)

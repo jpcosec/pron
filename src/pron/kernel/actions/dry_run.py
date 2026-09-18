@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING, Any
 
 from pron.kernel.actions.verb_registry import VERBS
 from pron.kernel.ids import model_of, store_of
+from pron.world.doc_id import DocId
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from pron.kernel.kernel import Kernel
@@ -47,7 +48,8 @@ class DryRun:
         is now."""
         return json.loads(
             json.dumps(
-                overlay.get(export_id) or self.kernel.store.payload_of(export_id)
+                overlay.get(export_id)
+                or self.kernel.store.payload(DocId.parse(export_id))
             )
         )
 

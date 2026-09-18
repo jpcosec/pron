@@ -8,6 +8,7 @@ from typing import Any, Callable
 
 from pron.kernel.parts.response import Response
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from golden.normalize import Normalizer
 from worlds.restaurant import build_restaurant
@@ -29,8 +30,7 @@ def restaurant(base: Path, projection: str = "all", **kw) -> tuple[World, Sessio
     ]
     add_projection(world, "creator", actions=["create"], relations=read)
     world.store.create(
-        "AnchorDoc",
-        "anchor-prebook",
+        DocId.of("AnchorDoc", "anchor-prebook"),
         {
             "symbol": "prebook",
             "forms": ["prebook her", "prebook him"],
@@ -46,7 +46,7 @@ def restaurant(base: Path, projection: str = "all", **kw) -> tuple[World, Sessio
 def add_projection(world: World, name: str, **overrides: Any) -> None:
     proj = dict(world.projection("all"), name=name, **overrides)
     path = world.root / "knowledge" / "projections" / f"{name}.md"
-    world.store.create("ProjectionDoc", f"projection-{name}", proj, path)
+    world.store.create(DocId.of("ProjectionDoc", f"projection-{name}"), proj, path)
 
 
 def play(session: Session, steps: list[Step], base: Path) -> list[dict[str, Any]]:
@@ -65,7 +65,9 @@ def _step(session: Session, step: Step) -> dict[str, Any]:
 
 
 def capture(session: Session, r: Response) -> dict[str, Any]:
-    move = session.world.store.doc("MoveDoc", r.move_id) if r.move_id else None
+    move = (
+        session.world.store.doc(DocId.of("MoveDoc", r.move_id)) if r.move_id else None
+    )
     ledger = dict(move.payload) if move else None
     ledger_record = ledger.pop("record", None) if ledger else None
     return {
@@ -86,6 +88,6 @@ def _written(world: World, writes: list[dict[str, Any]]) -> dict[str, Any]:
     out: dict[str, Any] = {}
     for w in writes:
         model, _, name = (w.get("address") or "").partition(":")
-        doc = world.store.doc(model, name) if name else None
+        doc = world.store.doc(DocId.of(model, name)) if name else None
         out[w.get("address") or "?"] = doc.payload if doc else None
     return out

@@ -16,12 +16,6 @@ FUNCTION_WORDS = yaml.safe_load(
         encoding="utf-8"
     )
 )
-INTERNAL_MODELS = {"RelationTypeDoc", "RelationDoc", "ProjectionDoc", "AnchorDoc"}
-# never a source of values to offer or promote: pron's and sldb's own relation bookkeeping,
-# and the ledger, whose values are this very conversation's past sentences
-UNSUGGESTED_MODELS = INTERNAL_MODELS | {"MoveDoc"}
-
-
 def word_ref(head: str, *names: str) -> str:
     """`(head name …)`: what a model, field, relation or action word names, as a form."""
     return write([Sym(head), *[Sym(n) for n in names]])

@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write, restore_field
+from pron.world.doc_id import DocId
 from pron.world.storage.cleaned_list import without_empty_or_repeated
 
 
@@ -24,13 +25,13 @@ class CleanVerb:
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
         kernel._guard(export_id)
-        before = kernel.store.clean_of(export_id, field_name)
+        before = kernel.store.clean(DocId.parse(export_id), field_name)
         w = Write(
             "clean",
             export_id,
             field_name,
             before,
-            kernel.store.payload_of(export_id).get(field_name),
+            kernel.store.payload(DocId.parse(export_id)).get(field_name),
             done=True,
         )
         kernel._after_write(export_id, w)

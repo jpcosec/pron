@@ -8,6 +8,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 
+from pron.world.doc_id import DocId
+
 if TYPE_CHECKING:
     from pron.kernel.kernel import Kernel
 
@@ -39,9 +41,8 @@ class Write:
 def restore_field(kernel: "Kernel", write: dict[str, Any]) -> Write:
     """Undo for a verb whose inverse is simply setting the field back to what it was
     (`change`, `clean`): both leave the field as one value and are undone the same way."""
-    before = kernel.store.update_field_of(
-        write["address"], write["field"], write["before"]
-    )
+    doc_id = DocId.parse(write["address"])
+    before = kernel.store.update_field(doc_id, write["field"], write["before"])
     return Write(
         "undo", write["address"], write["field"], before, write["before"], done=True
     )

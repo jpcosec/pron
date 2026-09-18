@@ -10,6 +10,7 @@ from sldb.runtime.validation import render_model_markdown
 from pron.models.anchor import AnchorDoc
 from pron.models.projection import ProjectionDoc
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World, apply_template
 from worlds.bare import init_bare
 
@@ -76,7 +77,7 @@ def test_a_turn_records_what_it_read_with_its_hash(restaurant: World):
     )
     assert all(len(h) == 64 for h in reads.values())
     assert reads["Client:client-luis-soto"] == restaurant.store.hash_c(
-        "Client", "client-luis-soto"
+        DocId.of("Client", "client-luis-soto")
     )
     move = s.ledger.get(r.move_id)
     assert move["record"]["reads"] == r.record["reads"]

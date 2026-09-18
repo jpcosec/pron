@@ -7,6 +7,7 @@ from __future__ import annotations
 import pytest
 
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from worlds.restaurant import build_restaurant
 
@@ -30,15 +31,15 @@ def test_move_asserts_between_two_creates(world: World):
         ' (assert booked_by (doc "Reservation:x2") (doc "Client:x1")))'
     )
     assert r.outcome == "unico", r.text + " | " + " | ".join(r.trace)
-    assert world.store.payload_of("Client:x1")["name"] == "Nueva Una"
-    assert world.store.payload_of("Reservation:x2")["party_size"] == 3
+    assert world.store.payload(DocId.parse("Client:x1"))["name"] == "Nueva Una"
+    assert world.store.payload(DocId.parse("Reservation:x2"))["party_size"] == 3
     edges = [
         e
         for e in s.verbs.edges_from("Reservation:x2").edges
         if e["relation"] == "booked_by"
     ]
     assert edges and edges[0]["target"] == "Client:x1"
-    move = world.store.payload("MoveDoc", r.move_id)
+    move = world.store.payload(DocId.of("MoveDoc", r.move_id))
     assert any(w["verb"] == "create" for w in move["record"]["writes"])
 
 
@@ -65,8 +66,8 @@ def test_a_name_nobody_creates_is_still_missing(world: World):
         ' (assert booked_by (doc "Reservation:never") (doc "Client:x3")))'
     )
     assert r.outcome == "missing", r.text
-    assert world.store.doc("Client", "x3") is None
-    assert world.store.doc("Reservation", "never") is None
+    assert world.store.doc(DocId.of("Client", "x3")) is None
+    assert world.store.doc(DocId.of("Reservation", "never")) is None
 
 
 def test_undo_of_a_move_with_creates_and_assert(world: World):
@@ -79,8 +80,8 @@ def test_undo_of_a_move_with_creates_and_assert(world: World):
     assert r.outcome == "unico", r.text + " | " + " | ".join(r.trace)
     u = s.eval("(undo)")
     assert u.outcome == "unico", u.text
-    assert world.store.doc("Client", "x5") is None
-    assert world.store.doc("Reservation", "x6") is None
+    assert world.store.doc(DocId.of("Client", "x5")) is None
+    assert world.store.doc(DocId.of("Reservation", "x6")) is None
     edges = [
         e
         for e in s.verbs.edges_from("Reservation:x6").edges

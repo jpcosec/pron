@@ -20,6 +20,7 @@ from pron.kernel.actions.verb_registry import VERBS
 from pron.kernel.actions.write import Write
 from pron.kernel.field_coercion import FieldCoercion
 from pron.sexpr.resolving.verbs import Verbs
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 __all__ = ["Kernel", "Write"]
@@ -46,20 +47,19 @@ class Kernel:
     # -- guards ------------------------------------------------------------------------
 
     def expect(self, export_id: str) -> None:
-        self.expected_hash[export_id] = self.store.hash_of(export_id)
+        self.expected_hash[export_id] = self.store.hash_c(DocId.parse(export_id))
 
     def _guard(self, export_id: str) -> None:
         expected = self.expected_hash.get(export_id)
-        current = self.store.hash_of(export_id)
+        current = self.store.hash_c(DocId.parse(export_id))
         if expected is not None and expected != current:
             raise StoreError(f"{export_id} changed since it was read; not writing")
 
     def _after_write(self, export_id: str, w: Write) -> None:
         """Replace the expected hash by the one sldb left, record it in the write for undo, and
         re-evaluate the conditions around the document."""
-        self.expected_hash[export_id] = w.extra["hash_c"] = self.store.hash_of(
-            export_id
-        )
+        current = self.store.hash_c(DocId.parse(export_id))
+        self.expected_hash[export_id] = w.extra["hash_c"] = current
         self.warnings += self.verbs.broken_conditions(export_id)
 
     def roundtrip(self, model: str, payload: dict[str, Any], store: str | None) -> None:

@@ -9,9 +9,8 @@ import hashlib
 import json
 from typing import Any
 
+from pron.world.doc_kind import ledger_model
 from pron.world.store import Store
-
-LEDGER_MODEL = "MoveDoc"
 
 
 class WorldFingerprint:
@@ -56,8 +55,9 @@ class WorldFingerprint:
 
     def _model_parts(self, idx: Any) -> list[Any]:
         parts: list[Any] = []
+        ledger = ledger_model()
         for m in sorted(idx.models, key=lambda m: m.name):
-            if m.name == LEDGER_MODEL:
+            if m.name == ledger:
                 continue
             mi = self.store.models_index(m.name)
             try:

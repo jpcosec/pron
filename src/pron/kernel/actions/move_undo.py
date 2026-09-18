@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING, Any
 from pron.kernel.actions.verb_registry import VERBS
 from pron.kernel.actions.write import Write
 from pron.kernel.ids import split_relation_doc_id
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
@@ -85,10 +86,7 @@ class MoveUndo:
     def _current_hash(self, address: str) -> str:
         """The hash_c a document has now; a RelationDoc id carries a name with colons, so
         split_id cannot parse it and hash_c is asked directly (spec 03)."""
-        rel = split_relation_doc_id(address)
-        if rel is not None:
-            return self.kernel.store.hash_c("RelationDoc", rel[1], rel[0])
-        return self.kernel.store.hash_of(address)
+        return self.kernel.store.hash_c(DocId.parse(address))
 
     def _refuse_orphans(self, address: str, dropping: set[str]) -> None:
         dependents = [
@@ -122,11 +120,7 @@ class MoveUndo:
 
     def _untrack(self, w: dict[str, Any]) -> Write:
         address = w["address"]
-        rel = split_relation_doc_id(address)
-        if rel is not None:
-            self.kernel.store.untrack(rel[1], rel[0])
-        else:
-            self.kernel.store.untrack_of(address)
+        self.kernel.store.untrack(DocId.parse(address))
         return Write(
             "undo", address, None, w.get("after"), None, done=True, note="untracked"
         )

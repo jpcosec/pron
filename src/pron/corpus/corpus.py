@@ -22,6 +22,7 @@ from pron.corpus.corpus_entry import CorpusEntry
 from pron.corpus.hit import Hit
 from pron.corpus.index_projection import IndexProjection
 from pron.kernel.ids import join_id
+from pron.world.doc_id import DocId
 from pron.world.matching.document_index import DocumentIndex
 from pron.world.matching.matcher import Matcher
 
@@ -95,7 +96,7 @@ class Corpus:
             name=record.name,
             store=store,
             text=text,
-            hash=self.world.store.hash_c(model, record.name, store),
+            hash=self.world.store.hash_c(DocId.of(model, record.name, store)),
             payload=payload,
             tags=tuple(record.semantic_tags or ()),
         )

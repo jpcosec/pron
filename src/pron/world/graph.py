@@ -14,6 +14,7 @@ from typing import Any
 from sldb.api import load_edge_index
 from sldb.store.edge_index.edge_index import EdgeIndex
 
+from pron.world.doc_kind import tags_outside_graph
 from pron.world.graph_ids import (  # noqa: F401 - re-exported: callers import ids from here
     bare,
     doc_id,
@@ -23,9 +24,6 @@ from pron.world.graph_ids import (  # noqa: F401 - re-exported: callers import i
     relation_type_id,
     tag_id,
 )
-
-# TODO(docid-dockind): once that branch lands, exclude_tags becomes doc_kind.tags_outside_graph().
-EXCLUDE_TAGS: tuple[str, ...] = ("type.pron.move",)
 
 
 class Graph:
@@ -37,10 +35,14 @@ class Graph:
     """
 
     def __init__(
-        self, sp: str | Path, exclude_tags: tuple[str, ...] = EXCLUDE_TAGS
+        self, sp: str | Path, exclude_tags: tuple[str, ...] | None = None
     ) -> None:
+        """`exclude_tags` defaults to `doc_kind.tags_outside_graph()`, resolved here rather
+        than baked into the signature: a tuple built once at import time would not be a
+        constant callers could reasonably override, and the registry it reads (spec 05, 07)
+        is pron's own, not sldb's."""
         self.sp = sp
-        self.exclude_tags = exclude_tags
+        self.exclude_tags = tags_outside_graph() if exclude_tags is None else exclude_tags
 
     def reload(self) -> None:
         """Kept for callers; the index invalidates itself by the shards' own signature, not

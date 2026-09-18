@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from pron.kernel.ids import LOCAL, convert_record, is_local, qualify, relativize
+from pron.world.doc_id import DocId
 from pron.world.world import LEDGER_DIR, World
 
 
@@ -72,7 +73,8 @@ class Ledger:
             ),  # written as the store reads itself
         }
         path = self.world.store.root_of(self.store) / LEDGER_DIR / f"{move_id}.md"
-        return self.world.store.create("MoveDoc", move_id, payload, path, self.store)
+        move = DocId.of("MoveDoc", move_id, self.store)
+        return str(self.world.store.create(move, payload, path))
 
     def last_with_write(self, speaker: str | None = None) -> dict[str, Any] | None:
         """The move an undo takes back (spec 11 §7): the last one with writes that is neither
@@ -116,7 +118,7 @@ class Ledger:
         return sorted(out, key=lambda p: p.get("at", ""))
 
     def get(self, move_id: str) -> dict[str, Any] | None:
-        d = self.world.store.doc("MoveDoc", move_id, self.store)
+        d = self.world.store.doc(DocId.of("MoveDoc", move_id, self.store))
         return self._qualified(d.payload) if d else None
 
 

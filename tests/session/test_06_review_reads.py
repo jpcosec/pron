@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from pron.session import Session
 from pron.sexpr.prevalidation.prevalidator import Prevalidator
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 NOW = "2026-09-09"
@@ -21,8 +22,7 @@ def _racing_prevalidator(world: World):
         if not calls:  # the first time through: the world changes between understanding and executing
             calls.append(1)
             world.store.create(
-                "Table",
-                "table-99",
+                DocId.of("Table", "table-99"),
                 {"number": 99, "capacity": 2, "zone": "indoor"},
                 world.root / "tables" / "99.md",
             )
@@ -65,7 +65,9 @@ def test_a_complement_names_a_related_document_and_crosses_its_edges(world: Worl
     r = s.turn("confirm the reservation of Luis Soto")
     assert r.outcome == "unico" and "Done" in r.text, _said(r)
     assert (
-        world.store.payload("Reservation", "reservation-2026-09-11-luis-soto")["status"]
+        world.store.payload(
+            DocId.of("Reservation", "reservation-2026-09-11-luis-soto")
+        )["status"]
         == "confirmed"
     )
     r = s.turn("the reservations of Nadie Nunca")
@@ -79,7 +81,8 @@ def test_a_read_only_session_writes_nothing_whatever_the_projection_allows(
     assert s.turn("the clients").outcome == "unico"
     r = s.turn("create a client named Zoe Lee, phone 1")
     assert (
-        r.outcome == "missing" and world.store.doc("Client", "client-zoe-lee") is None
+        r.outcome == "missing"
+        and world.store.doc(DocId.of("Client", "client-zoe-lee")) is None
     ), r.text
     r = s.turn("confirm the reservation of Luis Soto")
     assert r.outcome == "missing", r.text

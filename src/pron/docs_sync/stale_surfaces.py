@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 
@@ -25,8 +26,9 @@ class StaleSurfaces:
         )
         generated = (self.world.root / "knowledge" / "surfaces").resolve()
         for name in [] if self.check else stale:
-            path = store.doc_path("SurfaceDoc", name)
-            store.untrack(name)
+            surface = DocId.of("SurfaceDoc", name)
+            path = store.doc_path(surface)
+            store.untrack(surface)
             if path is not None and path.resolve().parent == generated:
                 path.unlink(missing_ok=True)
         return [f"SurfaceDoc {name} (stale)" for name in stale]

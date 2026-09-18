@@ -12,17 +12,14 @@ from __future__ import annotations
 from typing import Any, Iterable
 
 from pron.kernel.parts.word import Word
+from pron.world.doc_kind import kind_of
 from pron.world.lexicon_parts.alias_words import AliasWords
 from pron.world.lexicon_parts.document_values import DocumentValues
 from pron.world.lexicon_parts.model_words import ModelWords
 from pron.world.lexicon_parts.relation_words import RelationWords
 from pron.world.lexicon_parts.spoken_forms import SpokenForms
 from pron.world.lexicon_parts.verbs_for import VerbsFor
-from pron.world.lexicon_parts.vocabulary import (  # noqa: F401 - read from pron.world.lexicon
-    FUNCTION_WORDS,
-    INTERNAL_MODELS,
-    UNSUGGESTED_MODELS,
-)
+from pron.world.lexicon_parts.vocabulary import FUNCTION_WORDS  # noqa: F401 - read from pron.world.lexicon
 from pron.world.matching.difflib_matcher import normalize
 from pron.world.matching.matcher import Matcher
 from pron.world.world import World
@@ -148,4 +145,4 @@ def projection_models(world: World, projection: dict[str, Any]) -> list[str]:
     wanted = projection.get("models") or []
     if wanted:
         return [m for m in wanted if m in known]
-    return [m for m in known if m not in INTERNAL_MODELS]
+    return [m for m in known if kind_of(m).in_lexicon]

@@ -7,6 +7,8 @@ from __future__ import annotations
 from pron.session import Session
 from worlds.restaurant import build_restaurant
 
+from pron.world.doc_id import DocId
+
 NOW = "2026-09-09"
 LUIS = "Reservation:reservation-2026-09-11-luis-soto"
 
@@ -60,5 +62,5 @@ def test_a_sentence_says_unresolved_forms_and_the_evaluator_resolves_them(
     # a referent in a form resolves against the same dialogue a sentence uses
     r = s.eval('(say confirm (it "it" Reservation))')
     assert r.outcome == "unico", r.text
-    assert w.store.payload_of(LUIS)["status"] == "confirmed"
+    assert w.store.payload(DocId.parse(LUIS))["status"] == "confirmed"
     assert r.record["resolved"] == f'(say confirm (doc "{LUIS}"))'

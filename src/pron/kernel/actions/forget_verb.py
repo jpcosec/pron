@@ -7,8 +7,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from pron.kernel.ids import split_id
 from pron.kernel.actions.write import Write
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 
@@ -21,16 +21,16 @@ class ForgetVerb:
         return kernel.dry.load(export_id, overlay)
 
     def execute(self, kernel, export_id, field_name, value):
-        store, model, doc = split_id(export_id)
-        path = kernel.store.doc_path(model, doc, store)
-        payload = kernel.store.payload_of(export_id)
+        doc_id = DocId.parse(export_id)
+        path = kernel.store.doc_path(doc_id)
+        payload = kernel.store.payload(doc_id)
         dependents = kernel.dependents(export_id)
         if dependents:
             raise StoreError(
                 f"{export_id} is an endpoint of {len(dependents)} relation(s); negate them first"
             )
         kernel._guard(export_id)
-        kernel.store.untrack_of(export_id)
+        kernel.store.untrack(doc_id)
         return Write(
             "forget",
             export_id,
@@ -44,9 +44,8 @@ class ForgetVerb:
 
     def undo(self, kernel, write):
         path = Path(write.get("path", ""))
-        store, model, doc = split_id(write["address"])
         if path.exists():
-            kernel.store.track(path, model, doc, store)
+            kernel.store.track(DocId.parse(write["address"]), path)
             return Write(
                 "undo",
                 write["address"],

@@ -11,6 +11,7 @@ from typing import Any
 import yaml
 from sldb.cli import main as sldb_main
 
+from pron.world.doc_id import DocId
 from pron.world.world import World, init_world
 
 DATA = Path(__file__).parent / "data"
@@ -53,7 +54,7 @@ def start_world(
 
 def create_docs(world: World, root: Path, docs: list[Doc]) -> None:
     for model, name, payload, path in docs:
-        world.store.create(model, name, payload, root / path)
+        world.store.create(DocId.of(model, name), payload, root / path)
 
 
 def declared_docs(data: dict[str, Any]) -> list[Doc]:
