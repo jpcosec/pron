@@ -8,6 +8,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from pron.world.doc_id import DocId
 from pron.world.store import Store
 from pron.world.world_template import WorldTemplate
 
@@ -78,7 +79,7 @@ class WorldInit:
         added = []
         for rt in KNOWLEDGE_RELATION_TYPES:
             name = f"rt-{rt['name']}"
-            if self.store.doc("RelationTypeDoc", name) is not None:
+            if self.store.doc(DocId.of("RelationTypeDoc", name)) is not None:
                 continue
             payload = {
                 "title": rt["name"],
@@ -87,8 +88,7 @@ class WorldInit:
                 **rt,
             }
             self.store.create(
-                "RelationTypeDoc",
-                name,
+                DocId.of("RelationTypeDoc", name),
                 payload,
                 self.store.root
                 / "knowledge"

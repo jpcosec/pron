@@ -9,8 +9,9 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pron.world.doc_kind import ledger_model
+
 GRAPH_RELPATH = Path(".pron") / "graph.nx.json"
-LEDGER_MODEL = "MoveDoc"
 
 
 class GraphFile:
@@ -52,12 +53,12 @@ class GraphFile:
     def built_from(self) -> dict[str, str]:
         """Model name -> hash_b the snapshot was built from (ledger excluded)."""
         models = self.metadata().get("models", {}) or {}
-        return {k: v for k, v in models.items() if k != LEDGER_MODEL}
+        return {k: v for k, v in models.items() if k != ledger_model()}
 
     def is_fresh(self, current_models: dict[str, str]) -> bool:
         if not self.available():
             return False
-        current = {k: v for k, v in current_models.items() if k != LEDGER_MODEL}
+        current = {k: v for k, v in current_models.items() if k != ledger_model()}
         return self.built_from() == current
 
     def has_node(self, node_id: str) -> bool:

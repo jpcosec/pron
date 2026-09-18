@@ -6,6 +6,7 @@ from __future__ import annotations
 from pron.remote import RemoteSession
 from pron.serve import Server
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.graph import doc_id
 from pron.world.world import World
 
@@ -16,7 +17,7 @@ def test_a_write_through_the_server_is_a_real_move(server: Server):
     s = RemoteSession(server.path, projection="all", speaker="jp", now=NOW)
     r = s.turn("create a client named Zed Lee, phone 9 5555 0000")
     assert r.outcome == "unico" and r.record["writes"], r.text
-    assert server.world.store.doc("Client", "client-zed-lee") is not None
+    assert server.world.store.doc(DocId.of("Client", "client-zed-lee")) is not None
     assert s.turn("the clients").outcome == "unico"
 
 

@@ -14,6 +14,8 @@ from pathlib import Path
 from typing import Any
 
 from pron.kernel.ids import LOCAL
+from pron.world.doc_id import DocId
+from pron.world.doc_kind import tags_outside_graph
 from pron.world.fingerprint import WorldFingerprint
 from pron.world.graph import Graph
 from pron.world.graph_refresher import GraphRefresher
@@ -46,7 +48,7 @@ class World(WorldDeclaration):
         its own sldb operation, so what the files say right now is what comes back, never
         what an earlier request of this World cached."""
         self.store.begin_operation()
-        return self.store.payload(model, name, store)
+        return self.store.payload(DocId.of(model, name, store))
 
     def hash_mundo(self) -> str:
         """Fingerprint of what the lexicon and the graph depend on: every model but the
@@ -100,9 +102,7 @@ class World(WorldDeclaration):
         self.refresh_if_stale()
         return report
 
-    def refresh_if_stale(
-        self, exclude_tags: tuple[str, ...] = ("type.pron.move",)
-    ) -> bool:
+    def refresh_if_stale(self, exclude_tags: tuple[str, ...] | None = None) -> bool:
         """Refresh only when the graph is missing or was built from other model hashes.
         Returns whether it refreshed."""
         if self.graph_is_fresh():
@@ -131,7 +131,7 @@ class World(WorldDeclaration):
 
     def refresh(
         self,
-        exclude_tags: tuple[str, ...] = ("type.pron.move",),
+        exclude_tags: tuple[str, ...] | None = None,
         stores: list[str] | None = None,
         light: bool = False,
     ) -> dict[str, Any]:
@@ -150,7 +150,8 @@ class World(WorldDeclaration):
         A refresh here supersedes any pending deferral (spec 11 §8): it rebuilds the same
         graph from the same store, so the deferral is dropped and no later settle repeats it."""
         self._pending.clear()
-        report = self._refresher(exclude_tags, stores, light)
+        tags = tags_outside_graph() if exclude_tags is None else exclude_tags
+        report = self._refresher(tags, stores, light)
         self.graph.reload()
         self.store.invalidate()
         return report

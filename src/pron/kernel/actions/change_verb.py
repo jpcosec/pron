@@ -8,6 +8,7 @@ from sldb.api import deep_set
 
 from pron.kernel.ids import model_of
 from pron.kernel.actions.write import Write, restore_field
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 
@@ -29,10 +30,12 @@ class ChangeVerb:
         assert field_name is not None
         model = model_of(export_id)
         value = kernel.coerce(model, field_name, value)
-        before = kernel.store.payload_of(export_id).get(field_name.split(".")[0])
+        before = kernel.store.payload(DocId.parse(export_id)).get(
+            field_name.split(".")[0]
+        )
         self._transition(kernel, model, field_name, export_id, before, value)
         kernel._guard(export_id)
-        before = kernel.store.update_field_of(export_id, field_name, value)
+        before = kernel.store.update_field(DocId.parse(export_id), field_name, value)
         w = Write("change", export_id, field_name, before, value, done=True)
         kernel._after_write(export_id, w)
         return w

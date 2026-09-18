@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from pron.world.doc_id import DocId
 from pron.world.graph import bare, doc_id, kind, tag_id
 from pron.world.world import World
 
@@ -102,8 +103,7 @@ def test_refresh_if_stale_only_refreshes_when_needed(world: World, tmp_path: Pat
     assert world.refresh_if_stale() is False
     assert world.derived_dir == world.root / ".pron" and world.derived_dir.is_dir()
     world.store.create(
-        "Client",
-        "client-stale",
+        DocId.of("Client", "client-stale"),
         {"name": "Stale", "phone": "0", "notes": ""},
         Path("clients") / "stale.md",
     )

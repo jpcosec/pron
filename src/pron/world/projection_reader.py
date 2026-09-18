@@ -8,6 +8,7 @@ from __future__ import annotations
 from typing import Any
 
 from pron.kernel.ids import is_local
+from pron.world.doc_id import DocId
 from pron.world.store import Store
 from pron.world.store_error import StoreError
 
@@ -23,7 +24,7 @@ class ProjectionReader:
         `home`, the projection is read from that linked store and its 'local' means that
         store: a node's own projections work the same alone and through a daemon (12 §6)."""
         d = (
-            self.store.doc("ProjectionDoc", f"projection-{name}", home)
+            self.store.doc(DocId.of("ProjectionDoc", f"projection-{name}", home))
             if "ProjectionDoc" in self.store.model_names(home)
             else None
         )

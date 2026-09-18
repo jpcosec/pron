@@ -9,6 +9,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 from pron.kernel.ids import model_of, relativize
+from pron.world.doc_id import DocId
 from pron.world.store_error import StoreError
 
 if TYPE_CHECKING:
@@ -46,9 +47,8 @@ class EdgeAssertion:
         )
         path = self.store.root_of(self.write_store) / "relations" / f"{doc_name}.md"
         payload = _payload(name, src, tgt)
-        return doc_name, self.store.create(
-            "RelationDoc", doc_name, payload, path, self.write_store
-        )
+        new = DocId.of("RelationDoc", doc_name, self.write_store)
+        return doc_name, str(self.store.create(new, payload, path))
 
     def _check(self, name: str, source: str, target: str) -> None:
         rt = self.checks.relation_type(name)
@@ -73,9 +73,8 @@ class EdgeAssertion:
         for e in self.reader.sldb("source_id", source, name).edges:
             if e["target"] == target:
                 rel_doc = e["metadata"]["relation_doc"]
-                self.store.untrack(
-                    rel_doc, e["metadata"].get("relation_store", "local")
-                )
+                store = e["metadata"].get("relation_store", "local")
+                self.store.untrack(DocId.of("RelationDoc", rel_doc, store))
                 return rel_doc, "untracked"
         for e in self.reader.edges_from(source, name).edges:
             if e["target"] == target and e["metadata"].get("origin") == "link":

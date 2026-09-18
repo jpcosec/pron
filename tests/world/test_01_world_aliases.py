@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pron.sexpr.forms.refs import parse
+from pron.world.doc_id import DocId
 from pron.world.world import World
 
 OLD_BOOK_STEPS = [
@@ -23,7 +24,7 @@ OLD_BOOK_STEPS = [
 
 
 def test_a_composed_alias_is_a_form_that_round_trips(world: World):
-    d = world.store.doc("AnchorDoc", "anchor-book")
+    d = world.store.doc(DocId.of("AnchorDoc", "anchor-book"))
     assert d.payload["ref"].startswith("(move (create Reservation)")
     assert parse(d.payload["ref"]).steps[1] == {
         "do": "assert",

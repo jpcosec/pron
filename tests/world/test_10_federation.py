@@ -10,6 +10,7 @@ import pytest
 
 from pron.kernel.ids import address_of, split_id
 from pron.session import Session
+from pron.world.doc_id import DocId
 from pron.world.world import World
 from worlds.bare import init_bare
 from worlds.restaurant import build_restaurant
@@ -37,8 +38,7 @@ def _orchestrator_projection(d: World, root: Path) -> None:
         ],
     )
     d.store.create(
-        "ProjectionDoc",
-        "projection-orq",
+        DocId.of("ProjectionDoc", "projection-orq"),
         proj,
         root / "knowledge" / "projections" / "orq.md",
     )
@@ -66,21 +66,27 @@ def _reads_at_home(s: Session, daemon: World) -> None:
     assert r.outcome == "unico" and "table 12" in r.text, _said(r)
     assert any("A:st.{Table+}" in q for q in r.trace)  # the scope names the store
     assert all(split_id(x["address"])[0] == "A" for x in r.record["reads"])
-    assert daemon.store.doc("MoveDoc", r.move_id, "A") is not None  # the ledger is A's
-    assert daemon.store.doc("MoveDoc", r.move_id) is None
+    assert (
+        daemon.store.doc(DocId.of("MoveDoc", r.move_id, "A")) is not None
+    )  # the ledger is A's
+    assert daemon.store.doc(DocId.of("MoveDoc", r.move_id)) is None
 
 
 def _writes_at_home(s: Session, daemon: World, a: World) -> None:
     r = s.turn("create a client named Ana Rojas, phone 9 5555 1234")
     assert r.outcome == "unico", r.text
-    assert a.store.doc("Client", "client-ana-rojas") is not None  # written in A's store
-    assert daemon.store.doc("Client", "client-ana-rojas") is None
+    assert (
+        a.store.doc(DocId.of("Client", "client-ana-rojas")) is not None
+    )  # written in A's store
+    assert daemon.store.doc(DocId.of("Client", "client-ana-rojas")) is None
     r = s.turn("book her a table on the terrace for 6 people on Friday at 9pm")
     assert r.outcome == "unico" and "table 12" in r.text, _said(r)
     assert (
         a.store.doc(
-            "RelationDoc",
-            "booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas",
+            DocId.of(
+                "RelationDoc",
+                "booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas",
+            )
         )
         is not None
     )  # written as A reads itself
@@ -96,7 +102,9 @@ def test_a_session_at_home_in_a_linked_store_lives_there(daemon: World, nodes):
     r = s.turn("confirm it")
     assert (
         r.outcome == "unico"
-        and a.store.payload("Reservation", "reservation-2026-09-11-ana-rojas")["status"]
+        and a.store.payload(
+            DocId.of("Reservation", "reservation-2026-09-11-ana-rojas")
+        )["status"]
         == "confirmed"
     )
 

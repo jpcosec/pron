@@ -5,6 +5,7 @@ identifier known split into words."""
 from __future__ import annotations
 
 
+from pron.world.doc_id import DocId
 from pron.world.lexicon import Lexicon
 from pron.session import Session
 from pron.world.world import World
@@ -24,8 +25,7 @@ def test_a_compose_alias_respects_the_relation_permissions(world: World):
         ],
     )
     world.store.create(
-        "ProjectionDoc",
-        "projection-creator",
+        DocId.of("ProjectionDoc", "projection-creator"),
         proj,
         world.root / "knowledge" / "projections" / "creator.md",
     )
@@ -33,7 +33,10 @@ def test_a_compose_alias_respects_the_relation_permissions(world: World):
     assert s.turn("the client Luis Soto").outcome == "unico"
     r = s.turn("book him a table on the terrace for 2 people on Saturday at 8pm")
     assert r.outcome == "missing" and "not assert" in r.text, r.text
-    assert world.store.doc("Reservation", "reservation-2026-09-12-luis-soto") is None
+    assert (
+        world.store.doc(DocId.of("Reservation", "reservation-2026-09-12-luis-soto"))
+        is None
+    )
 
 
 def test_the_projection_cuts_aliases_whose_target_is_outside_it(world: World):
@@ -45,8 +48,7 @@ def test_the_projection_cuts_aliases_whose_target_is_outside_it(world: World):
         actions=[],
     )
     world.store.create(
-        "ProjectionDoc",
-        "projection-clients",
+        DocId.of("ProjectionDoc", "projection-clients"),
         proj,
         world.root / "knowledge" / "projections" / "clients.md",
     )

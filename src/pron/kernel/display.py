@@ -15,6 +15,7 @@ import re
 from typing import Any
 
 from pron.kernel.ids import export_id, split_id
+from pron.world.doc_id import DocId
 
 FIELD_RE = re.compile(r"\{([A-Za-z_][\w]*)(?:\.([A-Za-z_][\w]*))?\}")
 SEPARATOR_RE = re.compile(r"(\s*[,;]\s*)")
@@ -28,7 +29,7 @@ class Display:
 
     def name(self, address: str) -> str:
         store, model, doc = split_address(address)
-        d = self.world.store.doc(model, doc, store)
+        d = self.world.store.doc(DocId.of(model, doc, store))
         if d is None:
             return address
         template = self.templates.get(model)
@@ -60,7 +61,7 @@ class Display:
             )
             if not targets:
                 return ""
-            td = self.world.store.doc_of(targets[0])
+            td = self.world.store.doc(DocId.parse(targets[0]))
             return str(td.payload.get(sub_field, "")) if td else ""
 
         pieces = SEPARATOR_RE.split(template)  # part, separator, part, …

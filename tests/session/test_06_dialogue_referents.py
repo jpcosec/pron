@@ -6,6 +6,8 @@ from __future__ import annotations
 from pron.session import Session
 from worlds.restaurant import build_restaurant
 
+from pron.world.doc_id import DocId
+
 NOW = "2026-09-09"
 
 
@@ -27,4 +29,4 @@ def test_a_field_of_several_classes_takes_the_class_of_the_antecedent(tmp_path):
     r = session.turn("remove the notes of it")
     assert r.outcome == "unico", r.text
     assert r.record["writes"][0]["address"] == luis
-    assert session.world.store.payload_of(luis).get("notes", "") == ""
+    assert session.world.store.payload(DocId.parse(luis)).get("notes", "") == ""
