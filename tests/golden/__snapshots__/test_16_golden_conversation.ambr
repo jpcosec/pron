@@ -40,7 +40,7 @@
         'trace': list([
           'interpretation: undo',
           'forms: (undo)',
-          'refresh: 171 nodes, 337 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
         ]),
@@ -49,7 +49,7 @@
       'trace': list([
         'interpretation: undo',
         'forms: (undo)',
-        'refresh: 171 nodes, 337 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -94,7 +94,7 @@
         'trace': list([
           'interpretation: refresh',
           'forms: (refresh)',
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
         ]),
@@ -103,7 +103,7 @@
       'trace': list([
         'interpretation: refresh',
         'forms: (refresh)',
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'refresh',
       'written': dict({
@@ -212,7 +212,7 @@
           'interpretation: action',
           'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
           "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-          'refresh: 176 nodes, 356 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -236,7 +236,7 @@
         'interpretation: action',
         'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
         "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-        'refresh: 176 nodes, 356 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
       'written': dict({
@@ -311,7 +311,7 @@
           "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
           'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
           'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-          'refresh: 180 nodes, 374 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -364,7 +364,7 @@
         "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
         'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
         'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-        'refresh: 180 nodes, 374 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
       'written': dict({
@@ -450,7 +450,7 @@
           "find 'st.{Reservation+}' --where 'party_size <= 8'",
           'pending → confirmed is legal (party_size <= 8)',
           "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
-          'refresh: 181 nodes, 377 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -479,7 +479,7 @@
         "find 'st.{Reservation+}' --where 'party_size <= 8'",
         'pending → confirmed is legal (party_size <= 8)',
         "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
-        'refresh: 181 nodes, 377 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'confirm it',
       'written': dict({
@@ -537,7 +537,7 @@
           'forms: (change (it "it") party_size 9)',
           "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
           'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -558,7 +558,7 @@
         'forms: (change (it "it") party_size 9)',
         "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
         'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'change it to 9 people',
       'written': dict({
@@ -613,7 +613,7 @@
           'forms: (change (it "it" Reservation) notes "birthday")',
           "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
           "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -634,7 +634,7 @@
         'forms: (change (it "it" Reservation) notes "birthday")',
         "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
         "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'add a note saying: birthday',
       'written': dict({
@@ -742,7 +742,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo Reservation:reservation-2026-09-11-ana-rojas.notes: 'birthday' → ''",
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-8>',
         'writes': list([
@@ -762,7 +762,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo Reservation:reservation-2026-09-11-ana-rojas.notes: 'birthday' → ''",
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -867,7 +867,7 @@
           'forms: (add (it "its" AnchorDoc) forms "patron")',
           "'its' → st.{AnchorDoc}.anchor-client",
           "add AnchorDoc:anchor-client.forms: None → 'patron'",
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -889,7 +889,7 @@
         'forms: (add (it "its" AnchorDoc) forms "patron")',
         "'its' → st.{AnchorDoc}.anchor-client",
         "add AnchorDoc:anchor-client.forms: None → 'patron'",
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'add patron to its forms',
       'written': dict({
@@ -957,7 +957,7 @@
           'forms: (forget (the Table (named "5")))',
           "find 'st.{Table+}' --where 'number = 5' → 1",
           'forget Table:table-5',
-          'refresh: 179 nodes, 368 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -983,7 +983,7 @@
         'forms: (forget (the Table (named "5")))',
         "find 'st.{Table+}' --where 'number = 5' → 1",
         'forget Table:table-5',
-        'refresh: 179 nodes, 368 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'forget table 5',
       'written': dict({
@@ -1116,7 +1116,7 @@
         'trace': list([
           'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
           "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '13:00', 'party_size': 2}",
-          'refresh: 183 nodes, 384 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1140,7 +1140,7 @@
       'trace': list([
         'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "13:00") (party_size 2))',
         "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '13:00', 'party_size': 2}",
-        'refresh: 183 nodes, 384 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'written': dict({
         'Reservation:walk-in': dict({
@@ -1208,7 +1208,7 @@
           "find 'st.{Table+}' --where 'number = 20' → 1",
           "pre-validation: find 'st.{Table+}' --where 'capacity >= 2'",
           'docs create --model RelationDoc assigned_to--Reservation:walk-in--Table:table-20',
-          'refresh: 183 nodes, 385 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1231,7 +1231,7 @@
         "find 'st.{Table+}' --where 'number = 20' → 1",
         "pre-validation: find 'st.{Table+}' --where 'capacity >= 2'",
         'docs create --model RelationDoc assigned_to--Reservation:walk-in--Table:table-20',
-        'refresh: 183 nodes, 385 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'assign it to table 20',
       'written': dict({
@@ -1300,7 +1300,7 @@
         'queries': list([
           'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
           'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
           'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
         ]),
         'reads': list([
@@ -1323,7 +1323,7 @@
           'forms: (sources booked_by (the Client (named "Luis")) (of Reservation) (where "date = \\"2026-09-11\\""))',
           'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
           'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
           'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
         ]),
         'writes': list([
@@ -1335,7 +1335,7 @@
         'forms: (sources booked_by (the Client (named "Luis")) (of Reservation) (where "date = \\"2026-09-11\\""))',
         'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
         'find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
-        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         'find \'st.{Reservation+}\' --where \'date = "2026-09-11"\' → 2',
       ]),
       'turn': 'what reservations does Luis Soto have for Friday?',
@@ -1455,7 +1455,7 @@
         'trace': list([
           'interpretation: refresh',
           'forms: (refresh)',
-          'refresh: 183 nodes, 385 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
         ]),
@@ -1464,7 +1464,7 @@
       'trace': list([
         'interpretation: refresh',
         'forms: (refresh)',
-        'refresh: 183 nodes, 385 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'refresh',
       'written': dict({
@@ -1524,7 +1524,7 @@
           'interpretation: action',
           'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
           "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-          'refresh: 175 nodes, 353 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1548,7 +1548,7 @@
         'interpretation: action',
         'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
         "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-        'refresh: 175 nodes, 353 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
       'written': dict({
@@ -1699,7 +1699,7 @@
           "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
           'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
           'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-          'refresh: 180 nodes, 374 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1753,7 +1753,7 @@
         "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
         'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
         'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-        'refresh: 180 nodes, 374 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'on the terrace',
       'written': dict({
@@ -1896,7 +1896,7 @@
         'queries': list([
           "ls 'st.{Reservation+}' → 2",
           'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+          'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -1918,7 +1918,7 @@
           'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
           "ls 'st.{Reservation+}' → 2",
           'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+          'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
         ]),
         'writes': list([
         ]),
@@ -1929,7 +1929,7 @@
         'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
         "ls 'st.{Reservation+}' → 2",
         'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-        'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+        'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
       ]),
       'turn': 'Rojas',
       'written': dict({
@@ -1992,7 +1992,7 @@
           "find 'st.{Reservation+}' --where 'party_size <= 8'",
           'pending → confirmed is legal (party_size <= 8)',
           "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
-          'refresh: 181 nodes, 377 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -2021,7 +2021,7 @@
         "find 'st.{Reservation+}' --where 'party_size <= 8'",
         'pending → confirmed is legal (party_size <= 8)',
         "change Reservation:reservation-2026-09-11-ana-rojas.status: 'pending' → 'confirmed'",
-        'refresh: 181 nodes, 377 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'confirm it',
       'written': dict({
@@ -2085,7 +2085,7 @@
           "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
           'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
           "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -2118,7 +2118,7 @@
         "'it' → st.{Reservation}.reservation-2026-09-11-ana-rojas",
         'change Reservation:reservation-2026-09-11-ana-rojas.party_size: 6 → 9',
         "change Reservation:reservation-2026-09-11-ana-rojas.notes: '' → 'birthday'",
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'change it to 9 people and add a note saying: birthday',
       'written': dict({

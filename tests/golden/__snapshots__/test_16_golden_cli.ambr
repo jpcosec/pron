@@ -280,7 +280,7 @@
       'exit': 0,
       'stderr': '',
       'stdout': '''
-        graph: 176 nodes, 356 edges, 14 relation types
+        edges: 0 written, 0 reused, 0 models walked
   
       ''',
     }),
@@ -354,10 +354,8 @@
       'exit': 0,
       'stderr': '',
       'stdout': '''
-        Registered 'RelationTypeDoc'
-        Registered 'RelationDoc'
         {
-          "kgdb": "models added: 2 \u00b7 builtin relation types written: 11 \u00b7 predicates added: 11",
+          "relations": "models added: 2 \u00b7 builtin relation types written: 11 \u00b7 predicates added: 11",
           "pron_models_added": [
             "pron.models:AnchorDoc",
             "pron.models:ProjectionDoc",
@@ -381,7 +379,7 @@
       'stderr': '',
       'stdout': '''
         {
-          "kgdb": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 predicates added: 0",
+          "relations": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 predicates added: 0",
           "pron_models_added": [],
           "relation_types_added": [],
           "template_added": []
@@ -414,7 +412,7 @@
         · forms: (sources booked_by (the Client (where "doc ~ \"^client-ana-perez$\"")) (of Reservation))
         · ls 'st.{Reservation+}' → 1
         · find 'st.{Client+}' --where 'doc ~ "^client-ana-perez$"' → 1
-        · kgdb edges_to(Client:client-ana-perez, booked_by) → 0
+        · sldb edges_to(Client:client-ana-perez, booked_by) → 0
       state: libre · singular: {'Client': 'st.{Client}.client-ana-perez'} · set: ['st.{Client}.client-ana-perez'] · pending: -
         booked_by                relation         (relation booked_by)
         booked by                relation         (relation booked_by)

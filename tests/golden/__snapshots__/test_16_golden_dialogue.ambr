@@ -87,7 +87,7 @@
           "phone = '9 3333 4444' (answer to the pending question)",
           'forms: (create Client (name "Zoe Lee") (phone "9 3333 4444"))',
           "docs create --model Client Client:client-zoe-lee {'name': 'Zoe Lee', 'phone': '9 3333 4444'}",
-          'refresh: 176 nodes, 356 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -111,7 +111,7 @@
         "phone = '9 3333 4444' (answer to the pending question)",
         'forms: (create Client (name "Zoe Lee") (phone "9 3333 4444"))',
         "docs create --model Client Client:client-zoe-lee {'name': 'Zoe Lee', 'phone': '9 3333 4444'}",
-        'refresh: 176 nodes, 356 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': '9 3333 4444',
       'written': dict({
@@ -396,7 +396,7 @@
           'interpretation: action',
           'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
           "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-          'refresh: 180 nodes, 372 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -420,7 +420,7 @@
         'interpretation: action',
         'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
         "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-        'refresh: 180 nodes, 372 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
       'written': dict({
@@ -571,7 +571,7 @@
           "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
           'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
           'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-          'refresh: 184 nodes, 390 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -625,7 +625,7 @@
         "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
         'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
         'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-        'refresh: 184 nodes, 390 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'on the terrace',
       'written': dict({
@@ -757,7 +757,7 @@
           'interpretation: action',
           'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
           "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-          'refresh: 175 nodes, 353 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -781,7 +781,7 @@
         'interpretation: action',
         'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
         "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-        'refresh: 175 nodes, 353 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
       'written': dict({
@@ -856,7 +856,7 @@
           "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
           'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
           'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-          'refresh: 180 nodes, 374 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -909,7 +909,7 @@
         "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
         'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
         'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-        'refresh: 180 nodes, 374 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
       'written': dict({
@@ -1085,7 +1085,7 @@
         'queries': list([
           "ls 'st.{Reservation+}' → 2",
           'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+          'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -1107,7 +1107,7 @@
           'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
           "ls 'st.{Reservation+}' → 2",
           'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-          'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+          'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
         ]),
         'writes': list([
         ]),
@@ -1118,7 +1118,7 @@
         'forms: (sources booked_by (the Client (where "doc ~ \\"^client-ana-rojas$\\"")) (of Reservation))',
         "ls 'st.{Reservation+}' → 2",
         'find \'st.{Client+}\' --where \'doc ~ "^client-ana-rojas$"\' → 1',
-        'kgdb edges_to(Client:client-ana-rojas, booked_by) → 1',
+        'sldb edges_to(Client:client-ana-rojas, booked_by) → 1',
       ]),
       'turn': 'Rojas',
       'written': dict({
@@ -1398,7 +1398,7 @@
           'interpretation: action',
           'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
           "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
-          'refresh: 184 nodes, 390 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1423,7 +1423,7 @@
         'interpretation: action',
         'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
         "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
-        'refresh: 184 nodes, 390 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Eva Diaz, phone 9 4444 0000',
       'written': dict({

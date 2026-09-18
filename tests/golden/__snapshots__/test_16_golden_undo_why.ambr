@@ -40,7 +40,7 @@
         'trace': list([
           'interpretation: undo',
           'forms: (undo)',
-          'refresh: 171 nodes, 337 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
         ]),
@@ -49,7 +49,7 @@
       'trace': list([
         'interpretation: undo',
         'forms: (undo)',
-        'refresh: 171 nodes, 337 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -105,7 +105,7 @@
           'interpretation: action',
           'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
           "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
-          'refresh: 176 nodes, 356 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -129,7 +129,7 @@
         'interpretation: action',
         'forms: (create Client (name "Eva Diaz") (phone "9 4444 0000"))',
         "docs create --model Client Client:client-eva-diaz {'name': 'Eva Diaz', 'phone': '9 4444 0000'}",
-        'refresh: 176 nodes, 356 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Eva Diaz, phone 9 4444 0000',
       'written': dict({
@@ -235,7 +235,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo Client:client-eva-diaz: {'name': 'Eva Diaz', 'phone': '9 4444 0000'} → None",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-2>',
         'writes': list([
@@ -258,7 +258,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo Client:client-eva-diaz: {'name': 'Eva Diaz', 'phone': '9 4444 0000'} → None",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -310,7 +310,7 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -329,9 +329,9 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
           'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 3',
-          'refresh: 173 nodes, 343 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -353,9 +353,9 @@
         '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
         '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
         '  ∩ → 1',
-        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 3',
-        'refresh: 173 nodes, 343 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'change the reservation of Luis Soto to 3 people',
       'written': dict({
@@ -463,7 +463,7 @@
           'interpretation: undo',
           'forms: (undo)',
           'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 3 → 4',
-          'refresh: 173 nodes, 343 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-5>',
         'writes': list([
@@ -483,7 +483,7 @@
         'interpretation: undo',
         'forms: (undo)',
         'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 3 → 4',
-        'refresh: 173 nodes, 343 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -545,7 +545,7 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -564,11 +564,11 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
           "'it' → st.{Reservation}.reservation-2026-09-11-luis-soto",
           'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 9',
           "change Reservation:reservation-2026-09-11-luis-soto.notes: '' → 'birthday'",
-          'refresh: 174 nodes, 346 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -600,11 +600,11 @@
         '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
         '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
         '  ∩ → 1',
-        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         "'it' → st.{Reservation}.reservation-2026-09-11-luis-soto",
         'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 9',
         "change Reservation:reservation-2026-09-11-luis-soto.notes: '' → 'birthday'",
-        'refresh: 174 nodes, 346 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'change the reservation of Luis Soto to 9 people and add a note saying: birthday',
       'written': dict({
@@ -713,7 +713,7 @@
           'forms: (undo)',
           "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
           'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 9 → 4',
-          'refresh: 174 nodes, 346 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-8>',
         'writes': list([
@@ -743,7 +743,7 @@
         'forms: (undo)',
         "undo Reservation:reservation-2026-09-11-luis-soto.notes: 'birthday' → ''",
         'undo Reservation:reservation-2026-09-11-luis-soto.party_size: 9 → 4',
-        'refresh: 174 nodes, 346 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -806,7 +806,7 @@
           'forms: (forget (the Table (named "20")))',
           "find 'st.{Table+}' --where 'number = 20' → 1",
           'forget Table:table-20',
-          'refresh: 171 nodes, 334 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -832,7 +832,7 @@
         'forms: (forget (the Table (named "20")))',
         "find 'st.{Table+}' --where 'number = 20' → 1",
         'forget Table:table-20',
-        'refresh: 171 nodes, 334 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'forget table 20',
       'written': dict({
@@ -934,7 +934,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo Table:table-20: None → {'number': 20, 'capacity': 2, 'zone': 'terrace'}",
-          'refresh: 174 nodes, 346 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-11>',
         'writes': list([
@@ -958,7 +958,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo Table:table-20: None → {'number': 20, 'capacity': 2, 'zone': 'terrace'}",
-        'refresh: 174 nodes, 346 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -1019,7 +1019,7 @@
           'interpretation: action',
           'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
           "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-          'refresh: 178 nodes, 362 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1043,7 +1043,7 @@
         'interpretation: action',
         'forms: (create Client (name "Ana Rojas") (phone "9 5555 1234"))',
         "docs create --model Client Client:client-ana-rojas {'name': 'Ana Rojas', 'phone': '9 5555 1234'}",
-        'refresh: 178 nodes, 362 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'create a client named Ana Rojas, phone 9 5555 1234',
       'written': dict({
@@ -1118,7 +1118,7 @@
           "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
           'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
           'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-          'refresh: 182 nodes, 380 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1171,7 +1171,7 @@
         "docs create --model Reservation Reservation:reservation-2026-09-11-ana-rojas {'date': '2026-09-11', 'time': '21:00', 'party_size': 6}",
         'docs create --model RelationDoc booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas',
         'docs create --model RelationDoc assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12',
-        'refresh: 182 nodes, 380 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
       'written': dict({
@@ -1297,7 +1297,7 @@
           "undo RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Table:table-12', 'relation_type': 'assigned_to'} → None",
           "undo RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Client:client-ana-rojas', 'relation_type': 'booked_by'} → None",
           "undo Reservation:reservation-2026-09-11-ana-rojas: {'date': '2026-09-11', 'time': '21:00', 'party_size': 6} → None",
-          'refresh: 178 nodes, 362 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-15>',
         'writes': list([
@@ -1349,7 +1349,7 @@
         "undo RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Table:table-12', 'relation_type': 'assigned_to'} → None",
         "undo RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas: {'source_id': 'Reservation:reservation-2026-09-11-ana-rojas', 'target_id': 'Client:client-ana-rojas', 'relation_type': 'booked_by'} → None",
         "undo Reservation:reservation-2026-09-11-ana-rojas: {'date': '2026-09-11', 'time': '21:00', 'party_size': 6} → None",
-        'refresh: 178 nodes, 362 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -1509,7 +1509,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo Client:client-ana-rojas: {'name': 'Ana Rojas', 'phone': '9 5555 1234'} → None",
-          'refresh: 174 nodes, 346 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-14>',
         'writes': list([
@@ -1532,7 +1532,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo Client:client-ana-rojas: {'name': 'Ana Rojas', 'phone': '9 5555 1234'} → None",
-        'refresh: 174 nodes, 346 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -1635,7 +1635,7 @@
           'forms: (add (it "its" AnchorDoc) forms "patron")',
           "'its' → st.{AnchorDoc}.anchor-client",
           "add AnchorDoc:anchor-client.forms: None → 'patron'",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1657,7 +1657,7 @@
         'forms: (add (it "its" AnchorDoc) forms "patron")',
         "'its' → st.{AnchorDoc}.anchor-client",
         "add AnchorDoc:anchor-client.forms: None → 'patron'",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'add patron to its forms',
       'written': dict({
@@ -1770,7 +1770,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo AnchorDoc:anchor-client.forms: 'patron' → None",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-2>',
         'writes': list([
@@ -1790,7 +1790,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo AnchorDoc:anchor-client.forms: 'patron' → None",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -1854,7 +1854,7 @@
           'forms: (add (it "its" AnchorDoc) forms "patron")',
           "'its' → st.{AnchorDoc}.anchor-client",
           "add AnchorDoc:anchor-client.forms: None → 'patron'",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1876,7 +1876,7 @@
         'forms: (add (it "its" AnchorDoc) forms "patron")',
         "'its' → st.{AnchorDoc}.anchor-client",
         "add AnchorDoc:anchor-client.forms: None → 'patron'",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'add patron to its forms',
       'written': dict({
@@ -1941,7 +1941,7 @@
           'forms: (remove (it "its" AnchorDoc) forms "patron")',
           "'its' → st.{AnchorDoc}.anchor-client",
           "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -1969,7 +1969,7 @@
         'forms: (remove (it "its" AnchorDoc) forms "patron")',
         "'its' → st.{AnchorDoc}.anchor-client",
         "remove AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'clients']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'remove patron from its forms',
       'written': dict({
@@ -2081,7 +2081,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo AnchorDoc:anchor-client.forms: None → ['client', 'clients', 'patron']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-6>',
         'writes': list([
@@ -2105,7 +2105,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo AnchorDoc:anchor-client.forms: None → ['client', 'clients', 'patron']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -2158,7 +2158,7 @@
         'trace': list([
           'forms: (change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
           "change AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'client', '', 'clients']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -2186,7 +2186,7 @@
       'trace': list([
         'forms: (change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
         "change AnchorDoc:anchor-client.forms: ['client', 'clients', 'patron'] → ['client', 'client', '', 'clients']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'written': dict({
         'AnchorDoc:anchor-client': dict({
@@ -2247,7 +2247,7 @@
           'forms: (clean (it "its" AnchorDoc) forms)',
           "'its' → st.{AnchorDoc}.anchor-client",
           "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -2276,7 +2276,7 @@
         'forms: (clean (it "its" AnchorDoc) forms)',
         "'its' → st.{AnchorDoc}.anchor-client",
         "clean AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → ['client', 'clients']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'clean its forms',
       'written': dict({
@@ -2388,7 +2388,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo AnchorDoc:anchor-client.forms: ['client', 'clients'] → ['client', 'client', '', 'clients']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-10>',
         'writes': list([
@@ -2416,7 +2416,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo AnchorDoc:anchor-client.forms: ['client', 'clients'] → ['client', 'client', '', 'clients']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -2478,7 +2478,7 @@
           'forms: (remove (it "it" AnchorDoc) forms)',
           "'it' → st.{AnchorDoc}.anchor-client",
           "remove AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → None",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -2504,7 +2504,7 @@
         'forms: (remove (it "it" AnchorDoc) forms)',
         "'it' → st.{AnchorDoc}.anchor-client",
         "remove AnchorDoc:anchor-client.forms: ['client', 'client', '', 'clients'] → None",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'remove the forms',
       'written': dict({
@@ -2614,7 +2614,7 @@
           'interpretation: undo',
           'forms: (undo)',
           "undo AnchorDoc:anchor-client.forms: None → ['client', 'client', '', 'clients']",
-          'refresh: 172 nodes, 340 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-13>',
         'writes': list([
@@ -2639,7 +2639,7 @@
         'interpretation: undo',
         'forms: (undo)',
         "undo AnchorDoc:anchor-client.forms: None → ['client', 'client', '', 'clients']",
-        'refresh: 172 nodes, 340 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({

@@ -270,7 +270,7 @@
         'trace': list([
           'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "20:00") (party_size 6))',
           "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '20:00', 'party_size': 6}",
-          'refresh: 175 nodes, 353 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -294,7 +294,7 @@
       'trace': list([
         'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "20:00") (party_size 6))',
         "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '20:00', 'party_size': 6}",
-        'refresh: 175 nodes, 353 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'written': dict({
         'Reservation:walk-in': dict({
@@ -603,7 +603,7 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -622,9 +622,9 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
           'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 5',
-          'refresh: 177 nodes, 359 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'writes': list([
           dict({
@@ -646,9 +646,9 @@
         '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
         '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
         '  ∩ → 1',
-        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 5',
-        'refresh: 177 nodes, 359 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'change the reservation of Luis Soto to 5 people',
       'written': dict({
@@ -705,7 +705,7 @@
           'interpretation: undo',
           'forms: (undo)',
           'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
-          'refresh: 178 nodes, 362 edges',
+          'refresh: 0 shards written, 0 reused',
         ]),
         'undoes': '<move-6>',
         'writes': list([
@@ -726,7 +726,7 @@
         'interpretation: undo',
         'forms: (undo)',
         'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
-        'refresh: 178 nodes, 362 edges',
+        'refresh: 0 shards written, 0 reused',
       ]),
       'turn': 'undo the last move',
       'written': dict({
@@ -780,7 +780,7 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         ]),
         'reads': list([
           dict({
@@ -799,7 +799,7 @@
           '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
           '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
           '  ∩ → 1',
-          'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+          'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
         ]),
         'writes': list([
         ]),
@@ -811,7 +811,7 @@
         '  find \'st.{Client+}\' --where \'doc ~ "luis"\' → 1',
         '  find \'st.{Client+}\' --where \'doc ~ "soto"\' → 1',
         '  ∩ → 1',
-        'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
+        'sldb edges_to(Client:client-luis-soto, booked_by) → 1',
       ]),
       'turn': 'the reservation of Luis Soto',
       'written': dict({
