@@ -113,10 +113,6 @@ class ReadExecutor:
         ctx.trace.extend(r.queries)
         ctx.record["queries"].extend(r.queries)
         ctx.record["edges"].extend(r.edges)
-        if r.source == "sldb":
-            ctx.trace.append(
-                "edges read from the RelationDocs in sldb: the graph is not fresh"
-            )
 
     # -- the extra modifiers on the asked side -------------------------------------------
 

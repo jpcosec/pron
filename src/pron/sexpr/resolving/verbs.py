@@ -1,7 +1,7 @@
-"""Transitive verbs (spec 03): read edges from kgdb with a fallback to the RelationDocs
-in sldb; verify a verb against its RelationTypeDoc in sldb; evaluate conditions with
-sldb over the subject; assert by creating a RelationDoc; transitions as guarded field
-changes. pron never assembles edges.
+"""Transitive verbs (spec 03): read edges from sldb's typed edge index; verify a verb
+against its RelationTypeDoc in sldb; evaluate conditions with sldb over the subject;
+assert by creating a RelationDoc; transitions as guarded field changes. pron never
+assembles edges.
 
 `Verbs` is what the kernel, the display and the phases of a move hold; each concern is its
 own class — `EdgeReader`, `RelationChecks`, `ConditionCheck`, `EdgeAssertion`, `StateMachine`.

@@ -1,14 +1,18 @@
-"""Reading edges (spec 03): from the typed graph kgdb built when it is fresh and holds the
-document, else from the RelationDocs in sldb, in every store of the projection. Either way
-the edges have one shape — source, target, relation, metadata — and the read says which
-door answered and the exact queries it took. pron never assembles edges.
+"""Reading edges (spec 03): from sldb's typed edge index, the one door — it already includes
+the authored edges (RelationDocs, `origin: relation_doc`) and federates the stores of the
+projection itself. Edges have one shape — source, target, relation, metadata — and the read
+says the exact queries it took. pron never assembles edges.
+
+`sldb()` is a second, narrower door kept on purpose: reading the RelationDocs straight,
+without the index, for pre-validation of an edge that may not be written yet (state
+machine guards, cardinality and uniqueness checks before `assert_edge` creates one).
 """
 
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from pron.kernel.ids import is_local, qualify, relativize, scope as _scope, store_of
+from pron.kernel.ids import is_local, qualify, relativize, scope as _scope
 from pron.sexpr.resolving.edge_read import EdgeRead
 from pron.world.graph import doc_id
 
@@ -20,7 +24,7 @@ SIDES = {"from": "source_id", "to": "target_id"}
 
 
 class EdgeReader:
-    """The edges from and to a document, through kgdb or sldb."""
+    """The edges from and to a document, through sldb's edge index."""
 
     def __init__(self, lex: Lexicon, stores: list[str]):
         self.lex, self.world, self.store = lex, lex.world, lex.world.store
@@ -33,30 +37,20 @@ class EdgeReader:
         return self._read("to", export_id, relation)
 
     def _read(self, direction: str, export_id: str, relation: str | None) -> EdgeRead:
-        if not self._in_graph(export_id):
-            return self.sldb(SIDES[direction], export_id, relation)
         read = getattr(self.world.graph, f"edges_{direction}")
         edges = read(doc_id(export_id), relation)
-        query = f"kgdb edges_{direction}({export_id}, {relation or '*'}) → {len(edges)}"
-        return EdgeRead([_strip(e) for e in edges], "graph", [query])
-
-    def _in_graph(self, export_id: str) -> bool:
-        """The typed graph covers the local store; a linked store's document is read from sldb."""
-        return (
-            is_local(store_of(export_id))
-            and self.world.graph_is_fresh()
-            and self.world.graph.has_node(doc_id(export_id))
-        )
+        query = f"sldb edges_{direction}({export_id}, {relation or '*'}) → {len(edges)}"
+        return EdgeRead([_strip(e) for e in edges], [query])
 
     def sldb(self, side: str, export_id: str, relation: str | None) -> EdgeRead:
-        """The authored edges as documents, in every store of the projection, when the graph
-        is absent, stale, or does not hold the document."""
+        """The authored edges as documents, in every store of the projection, read straight
+        from their RelationDocs rather than the index (see module docstring)."""
         queries: list[str] = []
         found: list[str] = []
         for s in self.stores:
             found += self._in_store(s, side, export_id, relation, queries)
         edges = [e for e in (self._edge(a) for a in found) if e is not None]
-        return EdgeRead(edges, "sldb", queries)
+        return EdgeRead(edges, queries)
 
     def _in_store(
         self,

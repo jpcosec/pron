@@ -1,7 +1,7 @@
 """A complement read through a relation (spec 02, 03): "the reservations of Luis" are the
 heads related to what "of Luis" names. For each relation type between the head's family and
-another class, the complement is resolved in that class and the edges are read — from kgdb,
-or the RelationDocs in sldb; the first relation and class that take the complement answer.
+another class, the complement is resolved in that class and the edges are read from sldb's
+typed edge index; the first relation and class that take the complement answer.
 """
 
 from __future__ import annotations
