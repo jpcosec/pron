@@ -1,6 +1,6 @@
 """What pron does with a model's documents, declared once (spec 05, 07, 10, 12 §5b): the
-registry answers by model name, a world's models get the default, and the five older
-constants read from it."""
+registry answers by model name, a world's models get the default, and every caller that
+used to read one of the five old constants asks the registry directly now."""
 
 from __future__ import annotations
 
@@ -12,8 +12,6 @@ from pathlib import Path
 from pron.corpus import IndexProjection
 from pron.world import doc_kind
 from pron.world.doc_kind import DocKind, kind_of
-from pron.world.graph_file import LEDGER_MODEL
-from pron.world.lexicon_parts.vocabulary import INTERNAL_MODELS, UNSUGGESTED_MODELS
 from pron.world.world import World
 
 BOOKKEEPING = {"RelationTypeDoc", "RelationDoc", "ProjectionDoc", "AnchorDoc"}
@@ -48,12 +46,16 @@ def test_the_tag_left_out_of_the_graph_is_the_one_move_doc_carries():
     assert doc_kind.tags_outside_graph() == (f"type.{family}.{leaf}",)
 
 
-def test_the_older_constants_read_from_doc_kind():
-    assert LEDGER_MODEL == "MoveDoc"
-    assert INTERNAL_MODELS == BOOKKEEPING
-    assert UNSUGGESTED_MODELS == BOOKKEEPING | {"MoveDoc"}
-    assert World.refresh.__defaults__[0] == ("type.pron.move",)
-    assert World.refresh_if_stale.__defaults__ == (("type.pron.move",),)
+def test_the_five_old_constants_are_gone():
+    import pron.world.graph_file as graph_file
+    import pron.world.lexicon_parts.vocabulary as vocabulary
+
+    assert not hasattr(graph_file, "LEDGER_MODEL")
+    assert not hasattr(vocabulary, "INTERNAL_MODELS")
+    assert not hasattr(vocabulary, "UNSUGGESTED_MODELS")
+    # no tuple baked in at import time: World resolves exclude_tags from DocKind each call
+    assert World.refresh.__defaults__ == (None, None, False)
+    assert World.refresh_if_stale.__defaults__ == (None,)
 
 
 def test_a_projection_with_no_models_admits_what_doc_kind_puts_in_the_corpus(

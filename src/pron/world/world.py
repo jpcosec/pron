@@ -102,9 +102,7 @@ class World(WorldDeclaration):
         self.refresh_if_stale()
         return report
 
-    def refresh_if_stale(
-        self, exclude_tags: tuple[str, ...] = tags_outside_graph()
-    ) -> bool:
+    def refresh_if_stale(self, exclude_tags: tuple[str, ...] | None = None) -> bool:
         """Refresh only when the graph is missing or was built from other model hashes.
         Returns whether it refreshed."""
         if self.graph_is_fresh():
@@ -133,7 +131,7 @@ class World(WorldDeclaration):
 
     def refresh(
         self,
-        exclude_tags: tuple[str, ...] = tags_outside_graph(),
+        exclude_tags: tuple[str, ...] | None = None,
         stores: list[str] | None = None,
         light: bool = False,
     ) -> dict[str, Any]:
@@ -152,7 +150,8 @@ class World(WorldDeclaration):
         A refresh here supersedes any pending deferral (spec 11 §8): it rebuilds the same
         graph from the same store, so the deferral is dropped and no later settle repeats it."""
         self._pending.clear()
-        report = self._refresher(exclude_tags, stores, light)
+        tags = tags_outside_graph() if exclude_tags is None else exclude_tags
+        report = self._refresher(tags, stores, light)
         self.graph.reload()
         self.store.invalidate()
         return report

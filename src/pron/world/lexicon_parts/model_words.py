@@ -10,8 +10,9 @@ from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.word import Word
 from pron.kernel.sexp.read_write import Sym, write
+from pron.world.doc_kind import kind_of
 from pron.world.lexicon_parts.document_values import DocumentValues
-from pron.world.lexicon_parts.vocabulary import UNSUGGESTED_MODELS, word_ref
+from pron.world.lexicon_parts.vocabulary import word_ref
 
 if TYPE_CHECKING:  # pragma: no cover - typing only
     from pron.world.lexicon import Lexicon
@@ -74,7 +75,7 @@ class ModelWords:
         if (
             fname in ("system", "tags")
             and f["kind"] in ("string", "stringlist")
-            and m not in UNSUGGESTED_MODELS
+            and kind_of(m).suggests_values
         ):
             # spec 05 / PLAN 11 P3: values already used in a "system" or "tags" field
             # are lexicon too, unlike other free text (never entered otherwise).
