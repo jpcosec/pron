@@ -14,8 +14,9 @@ ACTIONS = ("create", "change", "add", "clean", "remove", "forget", "refresh", "u
 class ProjectionDoc(StructuredNLDoc):
     """What a session can name and do: which stores, models, relation types (with
     read or read-and-assert mode), action verbs and aliases enter; how new documents
-    are named, how objects are displayed, which field identifies them, and how
-    strict the approximate matching is.
+    are named, how objects are displayed, which field identifies them, how
+    strict the approximate matching is, and how far its sessions may change the
+    world (its level of mutability).
     """
 
     __family__ = "knowledge"
@@ -35,6 +36,7 @@ display: ⸢rev•display⸥
 key: ⸢rev•key⸥
 matching: ⸢rev•matching⸥
 exposed: ⸢optrev•exposed⸥
+mutability: ⸢optrev•mutability⸥
 ---
 
 # ⸢render•name⸥
@@ -85,6 +87,12 @@ exposed: ⸢optrev•exposed⸥
         default=False,
         description="Whether sessions from other worlds may open this projection: the world's interface lexicon (spec 01, 12). Off, only the world's own clients can.",
     )
+    mutability: int = Field(
+        default=1,
+        ge=0,
+        le=3,
+        description="How far a session of this projection may change its world (spec 14 §5): 0 reads, 1 documents and edges, 2 also relation types, 3 also models.",
+    )
     description: str = Field(
         default="", description="Who this projection is for and what it leaves out."
     )
@@ -94,3 +102,9 @@ exposed: ⸢optrev•exposed⸥
     def _absent_is_off(cls, v: Any) -> Any:
         """A projection written before the field existed has no `exposed` line: off."""
         return False if v is None or v == "" else v
+
+    @field_validator("mutability", mode="before")
+    @classmethod
+    def _absent_is_content(cls, v: Any) -> Any:
+        """A projection written before the field existed has no `mutability` line: level 1."""
+        return 1 if v is None or v == "" else v

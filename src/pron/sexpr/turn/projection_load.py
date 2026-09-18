@@ -2,8 +2,9 @@
 
 The projection is read from the session's home store; the first of its stores is where the
 session writes. A read-only session sees the same projection with no actions and every
-relation in mode read, so nothing said in it writes (spec 05). With an embedder, the
-lexicon's vectors are cached per hash_mundo, home, projection and matcher.
+relation in mode read, so nothing said in it writes (spec 05), and its level of mutability is
+0 (spec 14 §5). With an embedder, the lexicon's vectors are cached per hash_mundo, home,
+projection and matcher.
 """
 
 from __future__ import annotations
@@ -46,13 +47,15 @@ class ProjectionLoad:
         self.display = Display(self.world, self.projection, self.verbs)
 
     def _read_only(self, stores: list[str]) -> dict[str, Any]:
-        """The projection with no actions and every relation in mode read (spec 05)."""
+        """The projection with no actions, every relation in mode read (spec 05) and level 0
+        of mutability (spec 14 §5)."""
         names = [r["name"] for r in self.projection.get("relations") or []] or list(
             self.world.relation_types(stores)
         )
         return dict(
             self.projection,
             actions=[],
+            mutability=0,
             relations=[{"name": n, "mode": "read"} for n in names],
         )
 
