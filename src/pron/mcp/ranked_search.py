@@ -35,12 +35,11 @@ class RankedSearch:
             ),
         )
 
-    def __call__(
-        self, text: str, limit: int | None = None, among: Sequence[str] | None = None
-    ) -> dict[str, Any]:
+    def __call__(self, text: str, among: Sequence[str] | None = None) -> dict[str, Any]:
+        """Every scored document, best first: the caller pages them (spec 14 §3.3)."""
         entries = DocEntries(self.mount)
         rows = []
-        for hit in self.corpus.rank(text, k=limit, among=among):
+        for hit in self.corpus.rank(text, among=among):
             doc_id = DocId.parse(hit.id)
             if self.mount.admits(doc_id):
                 rows.append({**entries.entry(doc_id, hit.payload), "score": hit.score})

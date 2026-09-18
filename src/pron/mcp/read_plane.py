@@ -14,6 +14,7 @@ from pron.mcp.kb_uri import KbUri
 from pron.mcp.literal_reads import LiteralReads
 from pron.mcp.mount import Mount
 from pron.mcp.neighbors import Neighbors
+from pron.mcp.page import SEARCH_LIMIT, Page
 from pron.mcp.ranked_search import RankedSearch
 from pron.mcp.semantic_reads import SemanticReads
 from pron.mcp.world_mounts import WorldMounts
@@ -38,29 +39,29 @@ class ReadPlane:
     def worlds_list(self) -> dict[str, Any]:
         return {"worlds": [self.mounts[n].summary() for n in self.mounts.names()]}
 
-    def get(self, uri: str) -> dict[str, Any]:
-        """Any address of spec 14 §2, the same read as the resource of that URI."""
-        address = KbUri.parse(uri)
+    def get(
+        self, uri: str, limit: int | None = None, offset: int = 0
+    ) -> dict[str, Any]:
+        """Any address of spec 14 §2, the same read as the resource of that URI; a set comes
+        paged (the ten best of a search, fifty of any other set)."""
+        address, page = KbUri.parse(uri), Page(limit, offset)
         mount = self.mounts[address.world]
         mount.world.store.begin_operation()
         if address.plane == "search":
-            answer = self.search(address.world, address.path[1:])
+            answer = self.search(address.world, address.path[1:], page)
         elif not address.segments:
             answer = {"world": mount.summary()}
         else:
-            answer = PLANES[address.plane](mount)(address.segments)
+            answer = page.cut(PLANES[address.plane](mount)(address.segments))
         return {"uri": uri, "world": address.world, **answer}
 
     def search(
-        self,
-        world: str,
-        text: str,
-        limit: int | None = None,
-        among: list[str] | None = None,
+        self, world: str, text: str, page: Page, among: list[str] | None = None
     ) -> dict[str, Any]:
+        """Ranked search (spec 14 §3.3), the ten best unless the page says otherwise."""
         if world not in self._search:
             self._search[world] = RankedSearch(self.mounts[world])
-        return self._search[world](text, limit, among)
+        return page.cut(self._search[world](text, among), SEARCH_LIMIT)
 
     def find(
         self,
@@ -68,16 +69,16 @@ class ReadPlane:
         model: str,
         where: list[str] | None = None,
         text: str | None = None,
-        limit: int | None = None,
+        page: Page = Page(),
     ) -> dict[str, Any]:
         """Documents of a model (and its family) by sldb predicates, intersected (spec 02);
         with `text`, ranked (spec 14 §3.3)."""
         ids = Finder(self.mounts[world])(model, where or [])
         if text:
-            return {"world": world, **self.search(world, text, limit, ids)}
+            return {"world": world, **self.search(world, text, page, ids)}
         entries = DocEntries(self.mounts[world])
-        rows = [entries.entry(DocId.parse(i)) for i in ids[:limit]]
-        return {"world": world, "model": model, "documents": rows}
+        rows = [entries.entry(DocId.parse(i)) for i in ids]
+        return {"world": world, "model": model, **page.cut({"documents": rows})}
 
     def read(self, world: str, id: str) -> dict[str, Any]:
         """The whole document by id (`Modelo:doc`)."""

@@ -34,6 +34,8 @@ El SDK es el oficial de MCP para Python, con `FastMCP`. Es una dependencia opcio
 
 Toda lectura se nombra con una URI `kb://`. Una URI **literal** resuelve a un solo destino; una **semántica** resuelve a un conjunto. Toda respuesta que trae documentos trae, por cada uno, su dirección literal, para que el agente baje de un conjunto a un documento y siga navegando.
 
+Un conjunto llega **paginado**: a lo sumo 50 documentos (los 10 mejores si es una búsqueda rankeada), con `total` y, si quedaron documentos después de la página, `truncated: true`. La URI no lleva el límite; lo llevan los argumentos `limit` y `offset` de `kb_get` y `kb_find`, y un resource devuelve la primera página.
+
 ### 2.1 Plano literal
 
 | URI | resuelve a |
@@ -84,14 +86,14 @@ Las lecturas no pasan por formas y no dejan `MoveDoc`: son lecturas por direcci�
 | tool | hace |
 |---|---|
 | `worlds_list()` | los mundos del servidor: nombre, raíz, modelos |
-| `kb_get(uri)` | resuelve cualquier URI de §2; es la misma lectura que el resource de esa URI, para clientes que solo usan tools |
-| `kb_find(world, model, where?, text?, limit?)` | documentos de un modelo por predicados de sldb (`where`, lista, intersección; 02) y, con `text`, ordenados por §3.3 |
+| `kb_get(uri, limit?, offset?)` | resuelve cualquier URI de §2; es la misma lectura que el resource de esa URI, para clientes que solo usan tools |
+| `kb_find(world, model, where?, text?, limit?, offset?)` | documentos de un modelo por predicados de sldb (`where`, lista, intersección; 02) y, con `text`, ordenados por §3.3 |
 | `kb_read(world, id)` | el documento completo por id (`Modelo:doc`) |
 | `kb_neighbors(world, id, relation?, direction?)` | las aristas de un documento, con `origin` y condición (10 §2.4) |
 
 ### 3.3 Búsqueda rankeada
 
-`?{texto}` y `kb_find(text=…)` ordenan documentos por similitud con el índice del corpus (`pron.corpus`: embeddings si hay puerto, `difflib` si no, y la respuesta dice cuál). Es la única entrada de texto libre: devuelve direcciones con puntaje, no interpreta nada y no escribe en el mundo. El índice vive en `.pron/`, derivado y fuera de git.
+`?{texto}` y `kb_find(text=…)` ordenan documentos por similitud con el índice del corpus (`pron.corpus`: embeddings si hay puerto, `difflib` si no, y la respuesta dice cuál). Es la única entrada de texto libre: devuelve direcciones con puntaje, no interpreta nada y no escribe en el mundo. Trae los 10 mejores salvo que `limit` diga otra cosa: un corpus entero con puntaje no es algo que un agente pueda leer. El índice vive en `.pron/`, derivado y fuera de git.
 
 ## 4. Tools de escritura
 
@@ -158,4 +160,5 @@ Los niveles se acumulan: la proyección sigue mandando dentro de cada uno. Un ni
 - Montar un mundo no escribe en él.
 - Un selector semántico es un predicado declarado en el mundo; lo que el mundo no declara no resuelve.
 - Toda respuesta con documentos trae la dirección literal de cada uno.
+- Todo conjunto trae su `total` y llega cortado a una página; lo que se cortó lo dice `truncated`.
 - El nivel de una sesión sale de su proyección, nunca de un argumento del tool.

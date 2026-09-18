@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from pron.mcp.page import Page
 from pron.mcp.read_plane import ReadPlane
 from pron.mcp.tool_table import ToolTable
 
@@ -26,13 +27,17 @@ class ReadTools:
         """The worlds of this server: name, root, projection and the models it names."""
         return self.plane.worlds_list()
 
-    def kb_get(self, uri: str) -> dict[str, Any]:
+    def kb_get(
+        self, uri: str, limit: int | None = None, offset: int = 0
+    ) -> dict[str, Any]:
         """Resolve any kb:// address: kb://{world}/{Model}[/{doc}[/{field}[/{i}]]] (literal),
         kb://{world}/[{Model}/]@{value} (a tag or enumerated value), @family/{family},
         @{Model:doc}/{relation}/~{relation}… (walks), selectors joined by & (intersection),
         kb://{world}/?{text} (ranked search), and _schema, _ledger/recent, _store/integrity,
-        _transitions/{Model}/{state}. Every document comes with its literal address."""
-        return self.plane.get(uri)
+        _transitions/{Model}/{state}. Every document comes with its literal address. A set
+        comes with its total and at most `limit` documents from `offset` (by default the 10
+        best of a search, 50 of any other set), `truncated: true` when more follow."""
+        return self.plane.get(uri, limit, offset)
 
     def kb_find(
         self,
@@ -41,10 +46,13 @@ class ReadTools:
         where: list[str] | None = None,
         text: str | None = None,
         limit: int | None = None,
+        offset: int = 0,
     ) -> dict[str, Any]:
         """Documents of a model (and its family) matching every sldb --where predicate in
-        `where` (e.g. "capacity >= 6"); with `text`, ranked by similarity to it."""
-        return self.plane.find(world, model, where, text, limit)
+        `where` (e.g. "capacity >= 6"); with `text`, ranked by similarity to it. At most
+        `limit` documents from `offset` (by default the 10 best with `text`, else 50), with
+        the total and `truncated: true` when more follow."""
+        return self.plane.find(world, model, where, text, Page(limit, offset))
 
     def kb_read(self, world: str, id: str) -> dict[str, Any]:
         """One whole document by id, Model:doc (or store:Model:doc for a linked store)."""
