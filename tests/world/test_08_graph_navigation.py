@@ -3,6 +3,7 @@ its own (spec 05, 10, 11 §2), and the graph kept fresh against the store."""
 
 from __future__ import annotations
 
+import shutil
 from pathlib import Path
 
 from pron.world.graph import bare, doc_id, kind, tag_id
@@ -97,18 +98,28 @@ def test_transitions_are_a_walk_too(world: World):
 # -- world ------------------------------------------------------------------------------------
 
 
-def test_refresh_if_stale_only_refreshes_when_needed(world: World, tmp_path: Path):
+def test_a_pron_write_keeps_the_graph_fresh_without_a_refresh(world: World):
+    """Every write goes through sldb's own API, which resyncs the edge shard it touches in
+    the same operation (spec 11 §5): pron never needs an explicit refresh to see it."""
     assert world.graph_is_fresh()
     assert world.refresh_if_stale() is False
-    assert world.derived_dir == world.root / ".pron" and world.derived_dir.is_dir()
     world.store.create(
         "Client",
         "client-stale",
         {"name": "Stale", "phone": "0", "notes": ""},
         Path("clients") / "stale.md",
     )
+    assert world.graph_is_fresh()
+    assert world.graph.has_node(doc_id("Client:client-stale"))
+    assert world.refresh_if_stale() is False
+
+
+def test_refresh_if_stale_catches_a_shard_lost_outside_sldb(world: World):
+    """`stale` names documents whose shard is missing or built from another hash_c: the one
+    case a write outside sldb's own API (or by-hand tampering) can leave behind."""
+    assert world.graph_is_fresh()
+    assert world.derived_dir == world.root / ".pron" and world.derived_dir.is_dir()
+    shutil.rmtree(world.store.sp / "runtime" / "edges")
     assert not world.graph_is_fresh()
     assert world.refresh_if_stale() is True
-    assert world.graph_is_fresh() and world.graph.has_node(
-        doc_id("Client:client-stale")
-    )
+    assert world.graph_is_fresh() and world.graph.has_node(doc_id("Table:table-3"))

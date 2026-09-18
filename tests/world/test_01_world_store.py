@@ -45,7 +45,8 @@ def test_hash_mundo_ignores_the_ledger_but_sees_a_schema_change(world: World):
     assert world.graph_is_fresh()
     world.store.update_field("Table", "table-20", "capacity", 3)
     assert world.hash_mundo() != before
-    assert not world.graph_is_fresh()
+    # the write already resynced the edge shard it touched (spec 11 §5): no refresh needed
+    assert world.graph_is_fresh()
     world.refresh()
     assert world.graph_is_fresh()
 
