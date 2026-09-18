@@ -1,4 +1,4 @@
-"""Making a store a pron world (spec 01, spec 08 step 9): kgdb's typed relations plus pron's
+"""Making a store a pron world (spec 01, spec 08 step 9): sldb's typed relations plus pron's
 own models, the ledger and derived folders, and, for pron's own knowledge base, SpecDoc and
 the relation type `implements`.
 """
@@ -46,9 +46,9 @@ class WorldInit:
     def __call__(
         self, with_knowledge: bool = False, template: str | Path | None = None
     ) -> dict[str, Any]:
-        from kgdb.world import init_world as kgdb_init
+        from sldb.api import init_relations
 
-        kgdb_report = kgdb_init(self.store.sp, self.store.pythonpath)
+        relations_report = init_relations(self.store.sp, self.store.pythonpath)
         refs = PRON_MODELS + (KNOWLEDGE_MODELS if with_knowledge else ())
         added = [ref for ref in refs if self.store.register_model(ref)]
         self._folders()
@@ -59,7 +59,7 @@ class WorldInit:
             WorldTemplate(self.root, self.pythonpath)(template) if template else []
         )
         return {
-            "kgdb": kgdb_report.summary(),
+            "relations": relations_report.summary(),
             "pron_models_added": added,
             "relation_types_added": types_added,
             "template_added": from_template,
@@ -106,7 +106,7 @@ def init_world(
     with_knowledge: bool = False,
     template: str | Path | None = None,
 ) -> dict[str, Any]:
-    """Make a store a pron world: kgdb's typed relations plus pron's own models. With
+    """Make a store a pron world: sldb's typed relations plus pron's own models. With
     with_knowledge, also what pron's own knowledge base needs: SpecDoc and the relation
     type `implements` (a module or command implements a spec chapter). With a template,
     the world is born with the words, projections and relation types the template holds."""

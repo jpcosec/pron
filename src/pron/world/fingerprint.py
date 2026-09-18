@@ -9,8 +9,9 @@ import hashlib
 import json
 from typing import Any
 
-from pron.world.graph_file import LEDGER_MODEL
 from pron.world.store import Store
+
+LEDGER_MODEL = "MoveDoc"
 
 
 class WorldFingerprint:

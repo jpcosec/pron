@@ -2,10 +2,10 @@
 refreshes its derived graph. Nothing here is knowledge of any particular world.
 
 What a World does is spread over pron.world: its declaration (`WorldDeclaration`), its
-fingerprint (`WorldFingerprint`), its projections (`ProjectionReader`), the graph rebuild
-(`GraphRefresher`) and the refresh deferred past a response (`PendingRefresh`); making a
-store a world is `WorldInit` and `WorldTemplate`, reached through `init_world` and
-`apply_template`.
+fingerprint (`WorldFingerprint`), its projections (`ProjectionReader`), its typed graph
+(`Graph`, sldb's own edge index) and the refresh deferred past a response
+(`PendingRefresh`); making a store a world is `WorldInit` and `WorldTemplate`, reached
+through `init_world` and `apply_template`.
 """
 
 from __future__ import annotations
@@ -13,10 +13,11 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from pron.kernel.ids import LOCAL
+from sldb.api import rebuild_edges
+
+from pron.kernel.ids import LOCAL, is_local
 from pron.world.fingerprint import WorldFingerprint
 from pron.world.graph import Graph
-from pron.world.graph_refresher import GraphRefresher
 from pron.world.pending_refresh import PendingRefresh
 from pron.world.projection_reader import ProjectionReader
 from pron.world.store import Store
@@ -31,9 +32,8 @@ class World(WorldDeclaration):
     def __init__(self, root: str | Path, pythonpath: str | None = None) -> None:
         self.root = Path(root).resolve()
         super().__init__(Store(self.root, pythonpath))
-        self._graph = Graph(self.root)
+        self._graph = Graph(self.store.sp)
         self._fingerprint = WorldFingerprint(self.store)
-        self._refresher = GraphRefresher(self.root, self.store)
         self._pending = PendingRefresh()
         self._projections = ProjectionReader(self.store)
 
@@ -71,7 +71,7 @@ class World(WorldDeclaration):
         return self._graph
 
     def graph_is_fresh(self) -> bool:
-        return self.graph.is_fresh(self.model_hashes())
+        return not self.graph.stale
 
     @property
     def derived_dir(self) -> Path:
@@ -100,14 +100,12 @@ class World(WorldDeclaration):
         self.refresh_if_stale()
         return report
 
-    def refresh_if_stale(
-        self, exclude_tags: tuple[str, ...] = ("type.pron.move",)
-    ) -> bool:
-        """Refresh only when the graph is missing or was built from other model hashes.
-        Returns whether it refreshed."""
+    def refresh_if_stale(self) -> bool:
+        """Refresh only when sldb reports a document whose shard is missing or out of hash
+        (a write made outside sldb). Returns whether it refreshed."""
         if self.graph_is_fresh():
             return False
-        self.refresh(exclude_tags)
+        self.refresh()
         return True
 
     # -- deferred refresh (serve: respond, then settle) ----------------------------------
@@ -131,26 +129,34 @@ class World(WorldDeclaration):
 
     def refresh(
         self,
-        exclude_tags: tuple[str, ...] = ("type.pron.move",),
         stores: list[str] | None = None,
         light: bool = False,
     ) -> dict[str, Any]:
         """stores update on the local store and on every store in `stores` (default: the
-        linked ones too), then kgdb's typed ingest into .pron/graph.nx.json. Library calls
-        only. kgdb and networkx are imported here, not at module load: a session that only
-        reads never pays for them.
+        linked ones too), then `sldb.api.rebuild_edges` brings the edge index current.
+        Library calls only.
 
         `light` (PLAN 15 capa 8): skip stores update entirely — for the refresh right after
         a write that went through sldb's own API, whose indexes (hash_c/hash_d/hash_b/hash_a,
-        semantic and sections shards for the documents it touched) are already current; a
-        full `stores update` there would only re-read and re-hash every tracked file to catch
-        a hand edit that cannot exist yet. The explicit `(refresh)` verb and `refresh_if_stale`
-        keep the full path — the one that actually notices an edit made outside pron.
+        semantic, sections and edges shards for the documents it touched) are already
+        current: `rebuild_edges` there finds nothing to do. A full `stores update` there
+        would only re-read and re-hash every tracked file to catch a hand edit that cannot
+        exist yet. The explicit `(refresh)` verb and `refresh_if_stale` keep the full path —
+        the one that actually notices an edit made outside pron.
 
-        A refresh here supersedes any pending deferral (spec 11 §8): it rebuilds the same
-        graph from the same store, so the deferral is dropped and no later settle repeats it."""
+        A refresh here supersedes any pending deferral (spec 11 §8): it brings the same
+        index of the same store current, so the deferral is dropped and no later settle
+        repeats it."""
         self._pending.clear()
-        report = self._refresher(exclude_tags, stores, light)
+        if not light:
+            self._update_stores(stores)
+        report = rebuild_edges(self.store.sp, self.store.pythonpath)
         self.graph.reload()
         self.store.invalidate()
-        return report
+        return report.model_dump()
+
+    def _update_stores(self, stores: list[str] | None) -> None:
+        for s in stores if stores is not None else self.store.names():
+            self.store.update_index(s)
+        if stores is not None and not any(is_local(s) for s in stores):
+            self.store.update_index()

@@ -1,68 +1,100 @@
-"""The only door to kgdb: read edges of the typed graph the projector built (spec 03, 10).
+"""The typed graph of a world (spec 03, 10): sldb's own edge index, the one door to edges.
 
-pron never writes to kgdb. The graph lives at <world>/.pron/graph.nx.json, built by
-`kgdb ingest --store` through its library (see pron.world.world.World.refresh). It is fresh
-when the model hashes it was built from are the store's current ones (the ledger's
-model excluded); otherwise every read says so and callers fall back to sldb.
+pron never writes to it and never assembles it: `sldb.api.load_edge_index` composes it from
+per-document shards that every sldb write already keeps current (spec 11 §5). Reading never
+rebuilds, and is memoized by the shards' own signature, not by anything this class remembers
+— so every method here composes fresh and is still cheap on a warm store.
 """
 
 from __future__ import annotations
 
-from pron.world.graph_file import GraphFile
+from pathlib import Path
+from typing import Any
+
+from sldb.api import load_edge_index
+from sldb.store.edge_index.edge_index import EdgeIndex
+
+from pron.world.graph_ids import (  # noqa: F401 - re-exported: callers import ids from here
+    bare,
+    doc_id,
+    field_id,
+    kind,
+    model_id,
+    relation_type_id,
+    tag_id,
+)
+
+# TODO(docid-dockind): once that branch lands, exclude_tags becomes doc_kind.tags_outside_graph().
+EXCLUDE_TAGS: tuple[str, ...] = ("type.pron.move",)
 
 
-def doc_id(export_id: str) -> str:
-    return f"sldb://document/{export_id}"
+class Graph:
+    """The typed graph of one store (and the stores it links): sldb's edge index, and the
+    walks over it, each one parametrized by a relation name.
 
+    Nothing here knows which relations a world declares; sldb's structural ones
+    (semantic_parent, tagged_as, has_document, ...) are just the usual arguments.
+    """
 
-def model_id(name: str) -> str:
-    return f"sldb://model/{name}"
+    def __init__(
+        self, sp: str | Path, exclude_tags: tuple[str, ...] = EXCLUDE_TAGS
+    ) -> None:
+        self.sp = sp
+        self.exclude_tags = exclude_tags
 
+    def reload(self) -> None:
+        """Kept for callers; the index invalidates itself by the shards' own signature, not
+        by anything cached here."""
 
-def relation_type_id(name: str) -> str:
-    return f"sldb://relation_type/{name}"
+    def _idx(self) -> EdgeIndex:
+        return load_edge_index(
+            self.sp, include_linked=True, exclude_tags=self.exclude_tags
+        )
 
+    @property
+    def stale(self) -> list[str]:
+        """Export ids of tracked documents whose shard is missing or built from another
+        hash_c: a write made outside sldb. Empty on a world where every write went through
+        pron's own Store."""
+        return self._idx().stale
 
-def field_id(model: str, field: str) -> str:
-    return f"sldb://field/{model}.{field}"
+    def available(self) -> bool:
+        return True
 
+    # -- the four primitives everything else below is written on --------------------------
 
-def tag_id(tag: str) -> str:
-    return f"sldb://semantic_tag/{tag}"
+    def has_node(self, node_id: str) -> bool:
+        return self._idx().node(node_id) is not None
 
-
-def kind(node_id: str) -> str | None:
-    """The `<kind>` of an `sldb://<kind>/...` id (document, model, semantic_tag, section, field, ...)."""
-    if node_id.startswith("sldb://"):
-        rest = node_id[len("sldb://") :]
-        return rest.split("/", 1)[0] if "/" in rest else None
-    return None
-
-
-def bare(node_id: str) -> str:
-    """The id without its `sldb://<kind>/` prefix; an id without one passes through."""
-    if node_id.startswith("sldb://"):
-        rest = node_id[len("sldb://") :]
-        return rest.split("/", 1)[1] if "/" in rest else rest
-    return node_id
-
-
-class Graph(GraphFile):
-    """The typed graph of a world: the file kgdb saved (`GraphFile`) and the walks over it,
-    each one parametrized by a relation name."""
-
-    # -- navigation (spec 10 §2): every walk is parametrized by a relation name -------------
-    # Nothing here knows which relations a world declares; kgdb's structural ones
-    # (semantic_parent, tagged_as, has_document, ...) are just the usual arguments.
+    def node(self, node_id: str) -> dict[str, Any]:
+        found = self._idx().node(node_id)
+        return found.model_dump() if found is not None else {}
 
     def node_type(self, node_id: str) -> str | None:
-        identity = self.node(node_id).get("identity", {}) or {}
-        return identity.get("node_type")
+        found = self._idx().node(node_id)
+        return found.node_type if found is not None else None
 
     def nodes_of_type(self, node_type: str) -> list[str]:
-        """Ids of the nodes whose identity.node_type is `node_type`; a document's type is its
-        model name."""
-        return sorted(n for n in self.load() if self.node_type(n) == node_type)
+        """Ids of the nodes whose class is `node_type`; a document's type is its model name."""
+        return [n.id for n in self._idx().nodes_of_type(node_type)]
+
+    def edges_from(
+        self, node_id: str, relation: str | None = None
+    ) -> list[dict[str, Any]]:
+        return [e.model_dump() for e in self._idx().edges_from(node_id, relation)]
+
+    def edges_to(
+        self, node_id: str, relation: str | None = None
+    ) -> list[dict[str, Any]]:
+        return [e.model_dump() for e in self._idx().edges_to(node_id, relation)]
+
+    def exists(self, source: str, target: str, relation: str) -> dict[str, Any] | None:
+        for e in self.edges_from(source, relation):
+            if e["target"] == target:
+                return e
+        return None
+
+    # -- navigation (spec 10 §2): every walk is parametrized by a relation name -------------
 
     def targets(self, node_id: str, relation: str) -> list[str]:
         return sorted({e["target"] for e in self.edges_from(node_id, relation)})

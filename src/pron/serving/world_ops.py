@@ -28,7 +28,6 @@ GRAPH_METHODS = (
     "parent",
     "descendants",
     "neighbors_via",
-    "built_from",
     "available",
 )
 WORLD_METHODS = (
