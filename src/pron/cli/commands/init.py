@@ -26,7 +26,7 @@ def command(
 ) -> int:
     """Make a store a pron world.
 
-    Runs kgdb init (typed relations) and registers pron's models: AnchorDoc, ProjectionDoc,
+    Prepares sldb's typed relations and registers pron's models: AnchorDoc, ProjectionDoc,
     MoveDoc; with --knowledge also SpecDoc, the command and module docs, and the relation
     type implements, for pron's own knowledge base. Idempotent.
 

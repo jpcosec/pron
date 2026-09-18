@@ -91,5 +91,7 @@ class ProjectionState:
             trace.append("graph refresh deferred until after the response")
         else:
             report = self.world.refresh(stores=stores, light=not full)
-            trace.append(f"refresh: {report['nodes']} nodes, {report['edges']} edges")
+            trace.append(
+                f"refresh: {report['docs_written']} shards written, {report['docs_reused']} reused"
+            )
         self.hash = self.world.hash_mundo()
