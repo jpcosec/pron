@@ -16,6 +16,7 @@ PRON_MODELS = (
     "pron.models:AnchorDoc",
     "pron.models:ProjectionDoc",
     "pron.models:MoveDoc",
+    "pron.models:TheoremDoc",
 )
 KNOWLEDGE_MODELS = (
     "pron.models:SpecDoc",

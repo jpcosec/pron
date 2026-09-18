@@ -270,7 +270,7 @@
         'trace': list([
           'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "20:00") (party_size 6))',
           "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '20:00', 'party_size': 6}",
-          'refresh: 175 nodes, 353 edges',
+          'refresh: 183 nodes, 363 edges',
         ]),
         'writes': list([
           dict({
@@ -294,7 +294,7 @@
       'trace': list([
         'forms: (create Reservation (as "walk-in") (date "2026-09-12") (time "20:00") (party_size 6))',
         "docs create --model Reservation Reservation:walk-in {'date': '2026-09-12', 'time': '20:00', 'party_size': 6}",
-        'refresh: 175 nodes, 353 edges',
+        'refresh: 183 nodes, 363 edges',
       ]),
       'written': dict({
         'Reservation:walk-in': dict({
@@ -624,7 +624,7 @@
           '  ∩ → 1',
           'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
           'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 5',
-          'refresh: 177 nodes, 359 edges',
+          'refresh: 185 nodes, 369 edges',
         ]),
         'writes': list([
           dict({
@@ -648,7 +648,7 @@
         '  ∩ → 1',
         'kgdb edges_to(Client:client-luis-soto, booked_by) → 1',
         'change Reservation:reservation-2026-09-11-luis-soto.party_size: 4 → 5',
-        'refresh: 177 nodes, 359 edges',
+        'refresh: 185 nodes, 369 edges',
       ]),
       'turn': 'change the reservation of Luis Soto to 5 people',
       'written': dict({
@@ -705,7 +705,7 @@
           'interpretation: undo',
           'forms: (undo)',
           'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
-          'refresh: 178 nodes, 362 edges',
+          'refresh: 186 nodes, 372 edges',
         ]),
         'undoes': '<move-6>',
         'writes': list([
@@ -726,7 +726,7 @@
         'interpretation: undo',
         'forms: (undo)',
         'undo Reservation:reservation-2026-09-11-luis-soto.party_size: None → None (Reservation:reservation-2026-09-11-luis-soto changed after that move; not touched)',
-        'refresh: 178 nodes, 362 edges',
+        'refresh: 186 nodes, 372 edges',
       ]),
       'turn': 'undo the last move',
       'written': dict({

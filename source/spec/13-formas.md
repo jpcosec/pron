@@ -41,10 +41,25 @@ Un modelo, un tipo de relación o un alias fuera de la proyección es `missing` 
 | `(say alias SUST)` | un alias de acción (05) |
 | `(say alias SUJETO OBJETO)` | un alias de relación |
 | `(say alias (slot "$referent:M" SUST) (slot "$object:M" SUST [(alternatives "id" …)]) [(as "nombre")] (campo valor) …)` | un alias compuesto con sus huecos llenos y sus literales por campo |
+| `(goal PATRÓN …)` | una meta que el mundo prueba con sus reglas documentadas (03 §Reglas): `(goal (free ?t))`, `(goal (book Ana table-12 reservation-1 2026-09-20 21:00 6))` |
 | `(undo)`, `(refresh)`, `(why [SUST])` | los verbos sin objeto del kernel y "why?" (07) |
 | `(move FORMA …)` | varias partes, un movimiento y un refresh (06 §Coordinación) |
 
 Un sustantivo solo no es un movimiento: pron responde error y sugiere `(show SUST)`; una cabeza desconocida cercana a una conocida también se sugiere.
+
+**Metas.** Una forma con cabeza `goal` no la resuelve pron: la prueba el mundo, con reglas
+que el mundo declara como documentos (03 §Reglas). Dentro de una meta hay combinadores
+—`(and G …)`, `(or G …)`, `(not G)`, `(find N VAR G)`, `(bind VAR FORMA)`, `(succeed)`,
+`(fail)`— y hojas que son lecturas del mundo: `(is DOC MODELO)`, `(where DOC "predicado")`,
+`(field DOC CAMPO VALOR)`, `(edge RELACIÓN SRC TGT)`, `(compare OP A B)`. `(use NOMBRE …)`
+dentro de una meta dice con qué reglas probarla, y nada más que con esas.
+
+La búsqueda corre entera sobre un overlay: lee sldb y kgdb y no escribe. Lo que afirma
+—`(assert-doc MODELO DOC)`, `(assert-field DOC CAMPO VALOR)`, `(assert-edge RELACIÓN SRC
+TGT)`— queda pendiente, y es el mismo kernel (04) el que lo escribe cuando el plan entero
+cerró, con el mismo refresh, el mismo `MoveDoc` y el mismo `undo`. Una meta que el mundo no
+puede probar es `missing`; una meta mal formada, o una búsqueda que agota su presupuesto, es
+`error`. Ni una ni otra escriben nada.
 
 Valores: cadenas, números, `true`, `false`, `nil`, y listas como `(list v …)`.
 

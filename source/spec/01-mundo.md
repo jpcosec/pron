@@ -26,6 +26,8 @@ El mundo propio de pron declara sus sustantivos:
 - `SpecDoc`: cada capítulo de esta especificación, trackeado donde vive; sldb indexa sus secciones, así que "la regla de los determinantes" es una dirección de sección.
 - `CliCommandDoc` y `SurfaceDoc`: los comandos y módulos documentados desde el código.
 - `AnchorDoc`: alias de léxico (ver 05).
+- `TheoremDoc`: una regla del mundo —patrón y cuerpo— con la que se prueban las metas de 13
+  (ver 03 §Reglas).
 - Y una relación, `implements`, de módulo o comando → capítulo, derivada de las referencias "spec NN" en los docstrings. Es la rama directa del código a lo que debe hacer. No hay un modelo de "átomo": el conocimiento de pron sobre sí mismo ya tiene la forma de su spec y de sus docs, y sldb lo hace direccionable sin aplanarlo a afirmaciones sueltas.
 
 Y registra los modelos de relación de kgdb (`RelationTypeDoc`, `RelationDoc`) para poder autorar verbos. No registra modelos de deskops ni de ningún otro escritorio: deskops es otra instancia sobre el mismo núcleo, y podría ser *un* mundo para pron, nunca la fuente de sus modelos.

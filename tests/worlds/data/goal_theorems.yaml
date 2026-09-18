@@ -1,0 +1,93 @@
+# The rules of the restaurant world, as documents of that world. Nothing in src/pron knows
+# a name written here: the goal engine reads these TheoremDocs and nothing else. The
+# transition pair is what pron's state machine does in code, said with rules instead.
+- name: table-is-free
+  kind: consequent
+  pattern: "(free ?t)"
+  body: |
+    (goal (is ?t Table))
+    (not (goal (edge assigned_to ?r ?t)))
+  motive: A table nobody is seated at.
+
+- name: table-fits
+  kind: consequent
+  pattern: "(fits ?t ?people)"
+  body: |
+    (goal (is ?t Table))
+    (goal (field ?t capacity ?capacity))
+    (goal (compare >= ?capacity ?people))
+  motive: A table with room for that many people.
+
+- name: state-of
+  kind: consequent
+  pattern: "(state-of ?machine ?value ?state)"
+  body: |
+    (goal (is ?state State))
+    (goal (field ?state machine ?machine))
+    (goal (field ?state name ?value))
+  motive: The State document a machine names for one value.
+
+- name: guard-of-transition
+  kind: consequent
+  pattern: "(guard ?src ?tgt ?condition)"
+  body: |
+    (goal (is ?edge RelationDoc))
+    (goal (field ?edge source_id ?src))
+    (goal (field ?edge target_id ?tgt))
+    (goal (field ?edge condition ?condition))
+  motive: The condition a transitions_to edge carries, read from its RelationDoc.
+
+- name: transition-open
+  kind: consequent
+  pattern: "(transition ?doc ?field ?machine ?from ?to)"
+  body: |
+    (goal (field ?doc ?field ?from))
+    (goal (state-of ?machine ?from ?src))
+    (goal (state-of ?machine ?to ?tgt))
+    (goal (edge transitions_to ?src ?tgt))
+    (goal (guard ?src ?tgt ""))
+  motive: A transition whose edge carries no condition.
+
+- name: transition-guarded
+  kind: consequent
+  pattern: "(transition ?doc ?field ?machine ?from ?to)"
+  body: |
+    (goal (field ?doc ?field ?from))
+    (goal (state-of ?machine ?from ?src))
+    (goal (state-of ?machine ?to ?tgt))
+    (goal (edge transitions_to ?src ?tgt))
+    (goal (guard ?src ?tgt ?condition))
+    (goal (compare != ?condition ""))
+    (goal (where ?doc ?condition))
+  motive: A transition whose edge carries a condition, and the condition holds.
+
+- name: book
+  kind: consequent
+  pattern: "(book ?client ?table ?reservation ?date ?time ?people)"
+  body: |
+    (goal (fits ?table ?people))
+    (goal (field ?table zone "terrace"))
+    (not (goal (edge assigned_to ?anyone ?table)))
+    (assert-doc Reservation ?reservation)
+    (assert-field ?reservation date ?date)
+    (assert-field ?reservation time ?time)
+    (assert-field ?reservation party_size ?people)
+    (assert-field ?reservation status "pending")
+    (assert-edge booked_by ?reservation ?client)
+    (assert-edge assigned_to ?reservation ?table)
+  motive: Seat a party at a free terrace table that fits them.
+
+- name: confirm
+  kind: consequent
+  pattern: "(confirm ?doc)"
+  body: |
+    (goal (transition ?doc status "Reservation.status" pending confirmed))
+    (assert-field ?doc status "confirmed")
+  motive: Move a pending reservation to confirmed, if its transition allows it.
+
+- name: note-the-booking
+  kind: antecedent
+  pattern: "(edge assigned_to ?reservation ?table)"
+  body: |
+    (assert-field ?reservation notes "assigned by a goal")
+  motive: "A reservation that got a table is noted as such: what follows from an assertion."

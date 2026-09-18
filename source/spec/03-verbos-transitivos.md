@@ -67,6 +67,27 @@ Las relaciones autoradas son documentos, así que su verdad está en sldb y ahí
 
 Con el grafo viejo, pron lee aristas autoradas desde sldb y marca la respuesta; las aristas de prosa y los recorridos quedan como "no disponible hasta refrescar". Ninguna escritura queda bloqueada por un grafo viejo, porque ninguna escritura depende del grafo.
 
+## Reglas
+
+Una **regla** es un documento `TheoremDoc` del mundo: un patrón y un cuerpo de formas. Una
+regla `consequent` prueba una meta que calza con su patrón; una regla `antecedent` dispara
+cuando algo que calza con su patrón se afirma — lo que sigue *porque* se afirmó. Las reglas
+son de cada mundo y no del motor: un mundo sin reglas se sigue interrogando con las
+primitivas de 13.
+
+```
+(theorem table-is-free consequent (free ?t)
+  (goal (is ?t Table))
+  (not (goal (edge assigned_to ?r ?t))))
+```
+
+Así, lo que en el motor era un caso propio —una transición de estado, la condición de una
+arista, un movimiento compuesto de 05— puede declararse como regla: la transición es la
+existencia de la arista `transitions_to` entre los dos documentos `State` y la condición de
+esa arista sobre el sujeto, dicho con metas. La búsqueda prueba, retrocede y elige reglas; lo
+que verifica mientras busca queda en la traza y en las `queries` del `MoveDoc` (07), y solo
+lo que cerró se escribe, por los verbos de 04.
+
 ## Los verbos que ya existen sin declararse
 
 Los links con predicado dentro del texto, `[implements:: [[x]]]`, son aristas autoradas en línea. sldb los recupera con `docs recover` y les da el eje del predicado registrado. pron los trata como verbos transitivos leídos, no escritos: para afirmar uno se escribe un `RelationDoc`, no se edita prosa. Cada arista leída dice de dónde viene, `RelationDoc` o link, y eso decide si se puede negar por oración.
@@ -84,3 +105,6 @@ Un verbo con eje WHY o PROVENANCE responde "why?"; uno con eje HOW responde "how
 - Ninguna arista de dominio existe en kgdb sin un `RelationDoc` o un link con predicado que la origine.
 - pron nunca ensambla aristas. Si el grafo no está o está viejo, las aristas autoradas se leen desde los `RelationDoc` en sldb y la traza lo dice; las de prosa y los recorridos esperan al refresh.
 - Un verbo no verificado contra `source_types` y `target_types` no se escribe.
+- Ninguna regla de ningún mundo vive en el código de pron: las reglas del mundo son
+  documentos suyos, y una meta se prueba con lo que el mundo declara, nunca con un caso del
+  motor.

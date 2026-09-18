@@ -280,7 +280,7 @@
       'exit': 0,
       'stderr': '',
       'stdout': '''
-        graph: 176 nodes, 356 edges, 14 relation types
+        graph: 184 nodes, 366 edges, 14 relation types
   
       ''',
     }),
@@ -361,7 +361,8 @@
           "pron_models_added": [
             "pron.models:AnchorDoc",
             "pron.models:ProjectionDoc",
-            "pron.models:MoveDoc"
+            "pron.models:MoveDoc",
+            "pron.models:TheoremDoc"
           ],
           "relation_types_added": [],
           "template_added": []

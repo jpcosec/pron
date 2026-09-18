@@ -14,6 +14,7 @@ from typing import TYPE_CHECKING, Any
 
 from pron.kernel.parts.part import Part
 from pron.kernel.parts.response import Response
+from pron.plnr.plan_planning import PlanPlanner
 from pron.sexpr.dialogue.asker import Asker
 from pron.sexpr.planning.compose_planner import ComposePlanner
 from pron.sexpr.planning.needed_model import field_classes, needed_model
@@ -38,6 +39,8 @@ class Planner:
             return {}
         if part.kind == "compose":
             return ComposePlanner(self.tools)(part, ctx)
+        if part.kind == "plan":
+            return PlanPlanner(self.tools, self.tools.write_store)(part, ctx)
         plan = self._roles(part, ctx)
         if isinstance(plan, Response):
             return plan

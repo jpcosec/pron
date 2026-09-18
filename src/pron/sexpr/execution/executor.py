@@ -19,6 +19,7 @@ from pron.sexpr.execution.read_executor import ReadExecutor
 from pron.sexpr.execution.relation_write import EdgeWriter
 from pron.sexpr.execution.undo_executor import UndoExecutor
 from pron.sexpr.execution.why_executor import WhyExecutor
+from pron.plnr.plan_execution import PlanExecutor
 
 if TYPE_CHECKING:
     from pron.sexpr.turn.move_context import MoveContext
@@ -75,6 +76,9 @@ class Executor:
 
     def _x_undo(self, part, plan, ctx) -> tuple[str, bool]:
         return UndoExecutor(self.t.kernel, self.t.ledger, self.t.dialogue)(ctx), True
+
+    def _x_plan(self, part, plan, ctx) -> tuple[str, bool]:
+        return PlanExecutor(self.t)(plan, ctx)
 
     def _x_why(self, part, plan, ctx) -> tuple[str, bool]:
         why = WhyExecutor(self.t.ledger, self.t.dialogue, self.t.display, self.t.verbs)

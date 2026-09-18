@@ -32,6 +32,8 @@ class SaidPart:
             "assert": self._assert,
             "action": self._action,
             "compose": self._compose,
+            # a goal is a form of its own (spec 13): it was never resolved into nouns
+            "plan": lambda p: [Sym("goal"), p.payload["goal"]],
             "why": _why,
             "undo": lambda p: [Sym(p.kind)],
             "refresh": lambda p: [Sym(p.kind)],

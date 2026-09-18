@@ -21,6 +21,7 @@ def test_store_passes_integrity_and_lists_exactly_the_declared_models(world: Wor
         "AnchorDoc",
         "ProjectionDoc",
         "MoveDoc",
+        "TheoremDoc",
     }
 
 
