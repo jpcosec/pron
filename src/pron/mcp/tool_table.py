@@ -47,9 +47,10 @@ class ToolTable:
     def __getitem__(self, name: str) -> ToolSpec:
         return self.specs[name]
 
-    def call(self, name: str, **args: Any) -> Any:
-        """A tool by name, through the gate: what the server runs, and what tests can too."""
-        return self.guarded(self.specs[name])(**args)
+    def call(self, tool: str, /, **args: Any) -> Any:
+        """A tool by name, through the gate: what the server runs, and what tests can too.
+        Positional-only, so a tool may take an argument called `name`."""
+        return self.guarded(self.specs[tool])(**args)
 
     def guarded(self, spec: ToolSpec) -> Callable[..., Any]:
         """The tool's function behind the gate, with the function's own signature."""

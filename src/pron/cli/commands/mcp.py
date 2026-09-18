@@ -32,8 +32,11 @@ def command(
 
     Each --world is mounted as its own World, never linked into another and never written
     to for mounting; the world is an argument of every tool. Reads are kb:// addresses
-    (kb_get and the resources) and the read tools; no tool takes a sentence. Needs the
-    optional dependency: pip install pron[mcp].
+    (kb_get and the resources) and the read tools; no tool takes a sentence. Writes are
+    forms compiled from JSON: content (level 1), relation types (level 2), and models
+    generated under --pythonpath (level 3, only with confirm); the projection's
+    `mutability` is the highest level its sessions may use. kb_audit runs pron check,
+    check_edges and --audit. Needs the optional dependency: pip install pron[mcp].
 
     Usage:
       pron mcp --world restaurant=../restaurant --world ./other --pythonpath .

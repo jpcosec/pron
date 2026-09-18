@@ -7,10 +7,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from pron.mcp.audit_tool import AuditTool
+from pron.mcp.ladder_gate import LadderGate
+from pron.mcp.model_tools import ModelTools
 from pron.mcp.read_plane import ReadPlane
 from pron.mcp.read_tools import ReadTools
 from pron.mcp.tool_table import ToolTable
 from pron.mcp.world_mounts import WorldMounts
+from pron.mcp.write_tools import WriteTools
 
 
 @dataclass
@@ -30,8 +34,12 @@ class McpApp:
         speaker: str = "mcp",
         audit: str | None = None,
     ) -> "McpApp":
-        """Mount the worlds (writing nothing) and fill the tool table."""
+        """Mount the worlds (writing nothing), fill the tool table and put the ladder of
+        mutability at its door (spec 14 §5)."""
         mounts = WorldMounts(worlds, pythonpath, projection, speaker)
-        app = McpApp(mounts, ReadPlane(mounts), ToolTable(), audit)
+        app = McpApp(mounts, ReadPlane(mounts), ToolTable(LadderGate(mounts)), audit)
         ReadTools(app.plane).register(app.tools)
+        AuditTool(app).register(app.tools)
+        WriteTools(app).register(app.tools)
+        ModelTools(app).register(app.tools)
         return app

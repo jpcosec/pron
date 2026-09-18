@@ -76,8 +76,9 @@ def test_neighbors_carry_origin_condition_and_the_other_address(app):
 
 
 def test_the_read_tools_are_in_the_table_at_level_zero(app):
-    assert [s.name for s in app.tools] == list(NAMES)
-    assert {s.level for s in app.tools} == {0}
+    reads = [s for s in app.tools if s.name in NAMES]
+    assert [s.name for s in reads] == [s.name for s in app.tools][: len(NAMES)]
+    assert [s.name for s in reads] == list(NAMES) and {s.level for s in reads} == {0}
     assert "kb://" in app.tools["kb_get"].description
 
 

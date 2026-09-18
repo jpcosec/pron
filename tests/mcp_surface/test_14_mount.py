@@ -75,7 +75,8 @@ def test_worlds_list_names_roots_and_models(app, world):
 
 
 def test_importing_pron_and_its_read_plane_does_not_load_the_sdk():
-    code = "import sys, pron, pron.cli.main, pron.mcp.app; print('mcp' in sys.modules)"
+    modules = "pron, pron.cli.main, pron.mcp, pron.mcp.read_plane, pron.mcp.writes"
+    code = f"import sys, {modules}, pron.mcp.app; print('mcp' in sys.modules)"
     env = {**os.environ, "PYTHONPATH": str(Path(pron.__file__).parents[1])}
     out = subprocess.run(
         [sys.executable, "-c", code],

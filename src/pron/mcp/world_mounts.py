@@ -64,3 +64,8 @@ class WorldMounts:
             mount = self[world]
             self._sessions[key] = Session(mount.world, self.projection, speaker=who)
         return self._sessions[key]
+
+    def forget_sessions(self, world: str) -> None:
+        """Drop the world's sessions (its models changed): the next call opens a new one."""
+        for key in [k for k in self._sessions if k[0] == world]:
+            del self._sessions[key]
