@@ -153,3 +153,14 @@ def test_a_bare_pattern_says_the_same_as_goal(world, theorems):
 def test_a_bare_head_nothing_proves_is_still_an_error(world, theorems):
     with pytest.raises(GoalError):
         solutions(read_one("(delicious ?t)"), world, theorems)
+
+
+def test_find_wants_a_variable_that_occurs_in_its_goal(world):
+    """A count of a variable nobody binds is not a question, and binding it to its own list
+    is a stack that never ends."""
+    with pytest.raises(GoalError):
+        solutions(read_one("(find all ?x (goal (is ?t Table)))"), world)
+
+
+def test_a_variable_is_never_bound_to_a_form_containing_it(world):
+    assert solutions(read_one("(bind ?x (pair ?x ?y))"), world) == []

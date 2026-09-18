@@ -81,17 +81,33 @@ def walk(form: Any, b: Bindings) -> Any:
     return form
 
 
+def occurs(name: str, form: Any, b: Bindings) -> bool:
+    """Does this variable occur in the form, following what is already bound?"""
+    form = walk(form, b)
+    if is_var(form):
+        return str(form) == name
+    if isinstance(form, list):
+        return any(occurs(name, x, b) for x in form)
+    return False
+
+
 def unify(left: Any, right: Any, b: Bindings) -> Bindings | None:
     """The binding that makes the two forms equal, or None when there is none.
 
     Two-way: a goal and a theorem's pattern both carry variables. Values read from the
     world arrive ground, so against them this is plain matching.
+
+    A variable is never bound to a form that contains it — the occurs check, and not a
+    nicety: `(find all ?x (goal …))` with ?x in nothing would bind ?x to a list holding ?x,
+    and following that binding is a stack that never ends.
     """
     left, right = walk(left, b), walk(right, b)
     if is_var(left):
-        return b if left == right else b.with_(left, right)
+        if left == right:
+            return b
+        return None if occurs(str(left), right, b) else b.with_(left, right)
     if is_var(right):
-        return b.with_(right, left)
+        return None if occurs(str(right), left, b) else b.with_(right, left)
     if isinstance(left, list) or isinstance(right, list):
         if not (isinstance(left, list) and isinstance(right, list)):
             return None

@@ -32,7 +32,7 @@ from plnr.assertions import ASSERTIONS, assert_pending
 from plnr.errors import Exhausted, GoalError
 from plnr.primitives import PRIMITIVES
 from plnr.sexp import Sym, is_symbol, write
-from plnr.terms import EMPTY, Bindings, Step, ground, is_var, refresh, unify
+from plnr.terms import EMPTY, Bindings, Step, ground, is_var, refresh, unify, variables
 from plnr.theorems import Theorem, Theorems
 from plnr.world import Overlay, World
 
@@ -204,6 +204,10 @@ class Engine:
         count, var, inner = goal[1], goal[2], goal[3]
         if not is_var(var):
             raise GoalError("(find …) needs a variable")
+        if str(var) not in variables(inner):
+            raise GoalError(
+                f"(find …) cannot collect {write(var)}: it does not occur in {write(inner)}"
+            )
         wanted, at_least = _count(count)
         found: list[Any] = []
         self.trace.enter(depth, f"find {write(count)} {var} {write(inner)}")
