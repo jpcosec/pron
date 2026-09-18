@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from plnr import Plan, run
+from plnr import Plan, run, write
 
 from pron.kernel.parts.response import Response
 from pron.plnr.pron_world import PronWorld
@@ -35,7 +35,7 @@ class PlanPlanner:
 
     def __call__(self, part: Part, ctx: MoveContext) -> dict[str, Any] | Response:
         goal = part.payload["goal"]
-        ctx.trace.append("goal: " + str(goal))
+        ctx.trace.append("goal: " + write(goal))
         plan = run(
             goal,
             self.world,
@@ -51,12 +51,20 @@ class PlanPlanner:
             "goals": plan.spent,
             "writes": plan.as_forms(),
             "reason": plan.reason,
+            "failure": plan.failure,
         }
         ctx.trace.extend("plan: " + line for line in plan.trace)
         ctx.record["queries"].extend(self.world.queries)
         self.world.queries = []
 
     def _refuse(self, plan: Plan) -> Response:
-        if plan.reason and not plan.reason.startswith("the goal has no solution"):
+        """What pron calls missing is a world that has nothing for the goal, or a name it
+        does not know; a malformed goal, a search out of budget and a store that refused are
+        errors."""
+        if plan.failure == "absent":
+            return Response(
+                f"Nothing in this world answers that: {plan.reason}", "missing"
+            )
+        if plan.failure in ("malformed", "budget", "world"):
             return Response(f"Could not do that: {plan.reason}", "error")
         return Response("Nothing in this world answers that.", "missing")

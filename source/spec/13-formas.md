@@ -81,7 +81,14 @@ La pendiente es de la evaluación, no de la superficie: un `(the …)` ambiguo o
 
 - En proceso, `session.eval(formas) -> Response` (12 §2).
 - Por socket, la operación `eval` con `forms`, y `RemoteSession.eval(formas)`. Un cliente de otro mundo no la tiene: hablarle a otro mundo es por oraciones (12 §6).
-- Por CLI, `pron eval '(…)'`.
+- Por CLI, `pron eval '(…)'`. Una meta se dice igual que cualquier otra forma, contra
+  cualquier mundo, incluidas las KB de un agente:
+
+```
+$ pron eval --world /tmp/kb-cobranza --pythonpath ~/AntonIA/repos/AgentsKBs \
+      '(goal (answer-of atom-cobranza-pago ?t ?a))'
+?t = "Cómo se paga la factura" ?a = "El pago se hace por el mismo sistema de pago de siempre…"
+```
 
 ## Invariantes
 
