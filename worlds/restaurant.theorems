@@ -1,0 +1,71 @@
+; The rules of one world, as documents of that world. Nothing in src/plnr knows a single
+; name written here: not "Table", not "status", not "assigned_to". Reading this file is
+; what teaches the engine what a transition is in this world.
+
+; -- what a class is -------------------------------------------------------------------
+
+(theorem table-is-free consequent
+  (free ?t)
+  (goal (is ?t Table))
+  (not (goal (edge assigned_to ?r ?t))))
+
+(theorem table-fits consequent
+  (fits ?t ?people)
+  (goal (is ?t Table))
+  (goal (field ?t capacity ?cap))
+  (goal (compare >= ?cap ?people)))
+
+; -- a transition, as a rule and not as a special case of the engine -------------------
+;
+; The engine has no notion of a state machine. Here one is three goals: the state
+; documents exist, an edge joins them, and the edge's condition holds over the subject.
+
+(theorem transition-legal consequent
+  (transition ?doc ?field ?from ?to)
+  (goal (field ?doc ?field ?from))
+  (goal (state-of ?field ?from ?src))
+  (goal (state-of ?field ?to ?tgt))
+  (goal (edge transitions_to ?src ?tgt))
+  (goal (condition-holds ?src ?tgt ?doc)))
+
+(theorem state-of consequent
+  (state-of ?field ?value ?state)
+  (goal (is ?state State))
+  (goal (field ?state machine ?field))
+  (goal (field ?state name ?value)))
+
+(theorem condition-none consequent
+  (condition-holds ?src ?tgt ?doc)
+  (not (goal (guard ?src ?tgt ?predicate))))
+
+(theorem condition-met consequent
+  (condition-holds ?src ?tgt ?doc)
+  (goal (guard ?src ?tgt ?predicate))
+  (goal (where ?doc ?predicate)))
+
+(theorem guard-of-edge consequent
+  (guard ?src ?tgt ?predicate)
+  (goal (is ?g Guard))
+  (goal (field ?g from ?src))
+  (goal (field ?g to ?tgt))
+  (goal (field ?g predicate ?predicate)))
+
+; -- booking: the composed move of spec 05, as a rule instead of a construction ---------
+
+(theorem book consequent
+  (book ?client ?people ?zone ?reservation ?table)
+  (goal (is ?client Client))
+  (goal (free ?table))
+  (goal (fits ?table ?people))
+  (goal (field ?table zone ?zone))
+  (assert-doc Reservation ?reservation)
+  (assert-field ?reservation party_size ?people)
+  (assert-field ?reservation status "pending")
+  (assert-edge booked_by ?reservation ?client)
+  (assert-edge assigned_to ?reservation ?table))
+
+; -- forward chaining: what follows once an edge is asserted ----------------------------
+
+(theorem note-assignment antecedent
+  (edge assigned_to ?reservation ?table)
+  (assert-field ?table busy true))

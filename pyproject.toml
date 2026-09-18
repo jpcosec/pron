@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plnr"
+version = "0.1.0"
+description = "A goal search between s-expressions and a document store: theorems as data, backtracking on an overlay, nothing written until a plan holds."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 96
+src = ["src", "tests", "worlds"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "PLR0915", "PLR0913"]
+
+[tool.ruff.lint.per-file-ignores]
+# the public entry points and the antecedent loop are wide on purpose: their arguments are
+# the whole state of a search, and bundling them would hide it
+"src/plnr/plan.py" = ["PLR0913"]
+"src/plnr/assertions.py" = ["PLR0913"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src"]
+strict = true
