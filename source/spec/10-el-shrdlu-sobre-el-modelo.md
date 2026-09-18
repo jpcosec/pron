@@ -1,6 +1,6 @@
 # 10 · El SHRDLU sobre el modelo
 
-Los documentos anteriores dicen qué es un sustantivo, un verbo y un movimiento. Este dice cómo se monta la gramática sobre un modelo concreto sin escribir código por modelo: cómo los campos se vuelven propiedades de las que se puede hablar, cómo una relación llega a kgdb en bytes, y cómo conviven el SHRDLU y `graph_ui`, dos superficies sobre las mismas formas.
+Los documentos anteriores dicen qué es un sustantivo, un verbo y un movimiento. Este dice cómo se monta la gramática sobre un modelo concreto sin escribir código por modelo: cómo los campos se vuelven propiedades de las que se puede hablar, cómo una relación llega al índice de aristas de sldb en bytes, y cómo conviven el SHRDLU y `graph_ui`, dos superficies sobre las mismas formas.
 
 ## 1. Los campos son las propiedades del objeto
 
@@ -29,13 +29,13 @@ Reglas que completan la tabla:
 
 Todo esto se deriva del esquema en el momento de cargar el léxico. Registrar un modelo nuevo en el mundo alcanza para que sus campos se puedan preguntar, usar como adjetivo y escribir; los alias y las plantillas de `display` son lo único que alguien escribe a mano, y son documentos.
 
-## 2. Cómo una relación llega a kgdb
+## 2. Cómo una relación llega al índice de aristas
 
 La relación es un documento de sldb desde que se afirma hasta que se lee como arista. El camino en bytes:
 
 ### 2.1 El tipo, una vez por mundo
 
-Un `RelationTypeDoc` de kgdb, trackeado en el store del mundo, por ejemplo `relations/types/assigned_to.md`:
+Un `RelationTypeDoc` de sldb, trackeado en el store del mundo, por ejemplo `relations/types/assigned_to.md`:
 
 ```yaml
 name: assigned_to
@@ -61,29 +61,26 @@ condition: ""
 
 `condition` vacía: hereda la del tipo. Se llena solo cuando esta arista tiene una regla distinta.
 
-Los ids son `Modelo:nombre`, el id de exportación de sldb, y son los mismos que kgdb usa dentro de `sldb://document/Modelo:nombre`. Cuando el mundo tiene stores enlazados, el id completo es `store:Modelo:nombre` con el nombre del store tal como está en `store_index.stores`, y `local:` se omite: `Modelo:nombre` siempre es del store propio. Dos documentos con el mismo modelo y nombre en stores distintos son dos objetos distintos, y pron los distingue en referentes, intersecciones y aristas por ese prefijo; en la respuesta en natural, cuando hay choque, agrega el store ("table 12 del store *north-branch*"). Un `RelationDoc` puede apuntar a otro store con el prefijo; su ingest lo resuelve contra el snapshot de ese store. El nombre del documento es `<tipo>--<origen>--<destino>`, así una arista se puede buscar por dirección (`find 'st.{RelationDoc}' --where 'source_id = "…"'`) sin pasar por kgdb, y dos afirmaciones iguales chocan en el nombre en vez de duplicarse.
+Los ids son `Modelo:nombre`, el id de exportación de sldb, y son los mismos que el índice de aristas usa dentro de `sldb://document/Modelo:nombre`. Cuando el mundo tiene stores enlazados, el id completo es `store:Modelo:nombre` con el nombre del store tal como está en `store_index.stores`, y `local:` se omite: `Modelo:nombre` siempre es del store propio. Dos documentos con el mismo modelo y nombre en stores distintos son dos objetos distintos, y pron los distingue en referentes, intersecciones y aristas por ese prefijo; en la respuesta en natural, cuando hay choque, agrega el store ("table 12 del store *north-branch*"). Un `RelationDoc` puede apuntar a otro store con el prefijo; el índice lo resuelve contra los stores enlazados, calificando el id del extremo. El nombre del documento es `<tipo>--<origen>--<destino>`, así una arista se puede buscar por dirección (`find 'st.{RelationDoc}' --where 'source_id = "…"'`) sin pasar por el índice, y dos afirmaciones iguales chocan en el nombre en vez de duplicarse.
 
-### 2.3 Del store al grafo
+### 2.3 Del store al índice de aristas
 
-El refresh (04) corre tres cosas:
+El índice de aristas no es un snapshot aparte: es un índice del store, como el semántico o el de secciones (03). Cada escritura de sldb sobre un documento (`create`, `save payload`, `untrack`) deja al día, en la misma operación, el shard de aristas de ese documento — no hay un comando que "correr" para que una arista aparezca (04). `sldb.api.rebuild_edges` solo tiene trabajo cuando algo tocó el store por fuera de sldb. Lo que ese índice compone:
 
-1. `sldb stores update`: índices semánticos y de secciones al día.
-2. `sldb stores semantic-export`: cada documento trackeado, incluidos los `RelationDoc` y `RelationTypeDoc`, sale como entrada con id, modelo, tags y hashes.
-3. `kgdb ingest`: **un solo comando** que construye el snapshot con:
-   - un nodo `sldb://document/Modelo:nombre` por documento de contenido, con `node_type` = el modelo, sus tags y sus secciones, como hoy;
-   - un nodo `sldb://relation_type/<name>` por `RelationTypeDoc`, con `source_types`, `target_types`, cardinalidad y eje, y **aristas `applies_to_source` y `applies_to_target`** desde ese nodo a cada `sldb://model/<M>` que nombra: así los verbos de una clase son sus aristas entrantes;
-   - un nodo `sldb://field/<M>.<f>` por campo de cada modelo, con tipo y descripción, y una arista `has_field` desde el modelo; una arista `extends` de cada modelo a sus `base_models`;
-   - un nodo `sldb://anchor/<symbol>` por `AnchorDoc` y una arista `names` a lo que la forma de su `ref` nombra (modelo, campo, tipo de relación; en un `(move …)`, una por paso). Con esto el grafo contesta "¿qué puedo hacer con una reserva?" con `edges_to(sldb://model/Reservation)` filtrado por `applies_to_*` y `names`, más las aristas de sus ancestros por `extends`, sin que nadie registre verbos por sustantivo;
-   - **una arista por `RelationDoc`**, colgada del nodo origen: `relation_type`, y en `metadata` el id del `RelationDoc`, la condición y `origin: relation_doc`. El `RelationDoc` no es nodo;
-   - una arista por link con predicado en prosa, con `origin: link`, documento y sección de donde salió;
-   - los documentos con tag `type.pron.move` excluidos;
-   - integridad referencial: una arista cuyo origen o destino no existe es error del ingest, y el lint de pron lo convierte en fallo de build.
+- un nodo `sldb://document/Modelo:nombre` por documento de contenido, con `node_type` = el modelo, sus tags y sus secciones;
+- un nodo `sldb://relation_type/<name>` por `RelationTypeDoc`, con `source_types`, `target_types`, cardinalidad y eje, y **aristas `applies_to_source` y `applies_to_target`** desde ese nodo a cada `sldb://model/<M>` que nombra: así los verbos de una clase son sus aristas entrantes;
+- un nodo `sldb://field/<M>.<f>` por campo de cada modelo, con tipo y descripción, y una arista `has_field` desde el modelo; una arista `extends` de cada modelo a sus `base_models`;
+- un nodo `sldb://anchor/<symbol>` por `AnchorDoc` y una arista `names` a lo que la forma de su `ref` nombra (modelo, campo, tipo de relación; en un `(move …)`, una por paso). Con esto el índice contesta "¿qué puedo hacer con una reserva?" con `edges_to(sldb://model/Reservation)` filtrado por `applies_to_*` y `names`, más las aristas de sus ancestros por `extends`, sin que nadie registre verbos por sustantivo;
+- **una arista por `RelationDoc`**, colgada del nodo origen: `relation_type`, y en `metadata` el id del `RelationDoc`, la condición y `origin: relation_doc`. El `RelationDoc` no es nodo;
+- una arista por link con predicado en prosa, con `origin: link`, documento y sección de donde salió;
+- los documentos con tag `type.pron.move` excluidos de lo que pron lee como grafo (`doc_kind.tags_outside_graph()`, 07) — el índice los tiene, es la lectura la que filtra;
+- integridad referencial: una arista cuyo origen o destino no existe se reporta (`check_edges`), nunca revienta la lectura — el índice siempre se puede componer.
 
-El snapshot guarda en `metadata` el `hash_mundo` con que se construyó. Hoy kgdb tiene las dos mitades por separado, `ingest-sldb` y `assemble_authored_graph`, y ninguna en el mismo comando; unirlas es el prerrequisito de 08.
+Cada uno de esos aportes vive en el shard de quien lo produce (el documento, el modelo o el store), así que editar un documento reescribe solo su propio shard, nunca el índice entero (03).
 
 ### 2.4 Cómo pron lo lee
 
-Solo con tres preguntas al grafo: `edges_from(nodo, tipo)`, `edges_to(nodo, tipo)`, y "is there an edge from A to B of type T?". Cada arista devuelta trae su `origin` y su condición, y con eso pron sabe si se puede negar por oración (solo `relation_doc`) y si hay que evaluar algo antes de aceptarla como legal. Cualquier consulta más rica ("todo lo relacionado con X a dos saltos") es `scope` de kgdb y entra al léxico solo si un alias la nombra.
+Solo con tres preguntas al índice de aristas: `edges_from(nodo, tipo)`, `edges_to(nodo, tipo)`, y "is there an edge from A to B of type T?". Cada arista devuelta trae su `origin` y su condición, y con eso pron sabe si se puede negar por oración (solo `relation_doc`) y si hay que evaluar algo antes de aceptarla como legal. Cualquier consulta más rica ("todo lo relacionado con X a dos saltos") existe como método de `Graph` (`descendants`, `neighbors_via`, 12) pero no entra al léxico salvo que un alias la nombre.
 
 ### 2.5 Estados
 
@@ -91,7 +88,7 @@ Un campo `Literal` se vuelve una máquina cuando el mundo tiene un modelo `State
 
 ## 3. Dos superficies sobre el mismo mundo
 
-El SHRDLU no es la única superficie del mundo. `graph_ui`, el editor visual de grafos de kgdb, es otra al mismo nivel: el SHRDLU convierte oraciones en formas (06) y proyecta lenguaje; `graph_ui` convierte gestos en formas y proyecta visualizaciones. Ninguna pasa por la otra; las dos terminan en la misma evaluación (13), con los mismos permisos, verificaciones, `MoveDoc` y `undo`. Cada una tiene su propio vocabulario sobre los mismos nombres del mundo: el SHRDLU, el léxico (05), que dice cómo se dice cada forma; `graph_ui`, su vocabulario visual, que dice cómo se dibuja y con qué gesto se escribe. Por debajo de las dos queda el CLI de sldb, que no es una superficie de pron sino el sustrato.
+El SHRDLU no es la única superficie del mundo. `graph_ui`, el editor visual del grafo tipado de sldb, es otra al mismo nivel: el SHRDLU convierte oraciones en formas (06) y proyecta lenguaje; `graph_ui` convierte gestos en formas y proyecta visualizaciones. Ninguna pasa por la otra; las dos terminan en la misma evaluación (13), con los mismos permisos, verificaciones, `MoveDoc` y `undo`. Cada una tiene su propio vocabulario sobre los mismos nombres del mundo: el SHRDLU, el léxico (05), que dice cómo se dice cada forma; `graph_ui`, su vocabulario visual, que dice cómo se dibuja y con qué gesto se escribe. Por debajo de las dos queda el CLI de sldb, que no es una superficie de pron sino el sustrato.
 
 Hoy `graph_ui` todavía escribe por debajo de las formas: habla a sldb por `pron.Store` (12 §4), lee `schema()`/`docs()` para dibujar formularios y aristas, escribe por `create`/`replace`/`untrack`, y edita modelos con `model_template_edit`/`model_fields_add`/`model_fields_remove`/`model_validate_draft`/`model_promote`. Un `RelationDoc` se crea como cualquier documento, con `source_id`, `target_id` y `relation_type` como enum. Las escrituras de datos pasan a formas; la edición de esquema no tiene forma y sigue por `pron.Store`.
 
@@ -101,7 +98,7 @@ Reglas de convivencia:
 - **pron detecta lo que no hizo.** Antes de cada turno compara `hash_mundo`; si cambió y no fue por su último movimiento, recarga léxico y proyección, marca el grafo como viejo hasta el próximo refresh, y el ledger recibe un movimiento `externo` con la lista de documentos cuyo `hash_d` cambió. "why is it at 9 people?" puede responder "it changed outside pron between 21:03 and 21:10". Una superficie que escribe por formas no es externa: su movimiento está en el ledger.
 - **pron lee antes de escribir.** Un `fields update` va precedido por un `get` del campo; el valor anterior va al `MoveDoc`. Si dos superficies escriben el mismo campo en la misma ventana, gana el último y el ledger lo muestra; no hay bloqueo de documento, solo el `store_lock` de sldb sobre los índices.
 - **El refresh es de quien escribe.** Una forma refresca como cualquier movimiento; quien escribe por `pron.Store` corre el refresh o deja el grafo viejo, y pron lo dirá al leer. La política es la misma que para el agente expansor (01).
-- **Ninguna superficie tiene mundo propio.** Los formularios de `graph_ui` salen de `/schema`, sus enums son los `Literal`, sus relaciones son los `RelationTypeDoc`; el léxico del SHRDLU sale de lo mismo. Lo que una superficie agrega (palabras, alias, formas de decir; símbolos, trazos, gestos) no agrega capacidades: nombra formas. Una escritura por `pron.Store` no pasa por la verificación de `source_types` ni por la condición; el ingest de kgdb la rechaza si los extremos no existen, y pron la reporta como arista con condición incumplida cuando la lee.
+- **Ninguna superficie tiene mundo propio.** Los formularios de `graph_ui` salen de `/schema`, sus enums son los `Literal`, sus relaciones son los `RelationTypeDoc`; el léxico del SHRDLU sale de lo mismo. Lo que una superficie agrega (palabras, alias, formas de decir; símbolos, trazos, gestos) no agrega capacidades: nombra formas. Una escritura por `pron.Store` no pasa por la verificación de `source_types` ni por la condición; el índice de sldb la reporta como arista sin extremos válidos si no existen (`check_edges`, un reporte, no un rechazo — el índice siempre se puede leer), y pron la reporta como arista con condición incumplida cuando la lee.
 
 ## 4. Lo que hay que construir, en orden
 

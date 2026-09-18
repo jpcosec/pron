@@ -2,7 +2,7 @@
 
 ## Qué es un verbo
 
-Un verbo transitivo es un tipo de relación entre dos sustantivos. Lo declara kgdb con su modelo `RelationTypeDoc`, en un documento cuyo nombre en el store es `rt-<name>` (`rt-booked_by`, `rt-implements`): en sldb el nombre de un documento es único en todo el store, no por modelo, y el prefijo evita que un tipo de relación choque con cualquier otro documento que se llame como él. El campo `name` va sin prefijo, y es el que dice el hablante:
+Un verbo transitivo es un tipo de relación entre dos sustantivos. Lo declara sldb con su modelo `RelationTypeDoc`, en un documento cuyo nombre en el store es `rt-<name>` (`rt-booked_by`, `rt-implements`): en sldb el nombre de un documento es único en todo el store, no por modelo, y el prefijo evita que un tipo de relación choque con cualquier otro documento que se llame como él. El campo `name` va sin prefijo, y es el que dice el hablante:
 
 | campo | significado gramatical |
 |---|---|
@@ -15,7 +15,7 @@ Un verbo transitivo es un tipo de relación entre dos sustantivos. Lo declara kg
 
 Su instancia es un `RelationDoc`: `source_id`, `target_id`, `relation_type`, y opcionalmente una condición. Es una arista autorada, y es un documento más del store de sldb.
 
-Los dos modelos son de kgdb. pron los registra en su mundo para poder autorarlos; sldb los guarda; el ingest de kgdb los ensambla en el grafo. pron no toca kgdb para escribir.
+Los dos modelos son de sldb. pron los registra en su mundo para poder autorarlos; sldb los guarda y mantiene su propio índice de aristas a partir de ellos — un índice del store, no un sistema aparte. pron nunca escribe ese índice: lo compone sldb, del lado de abajo, cada vez que se lee.
 
 ## Leer un verbo
 
@@ -23,18 +23,18 @@ Los dos modelos son de kgdb. pron los registra en su mundo para poder autorarlos
 
 1. resolver X a una dirección (02);
 2. verificar que `implements` está en la proyección y que la clase de X está en `source_types`;
-3. `edges_from(nodo(X), implements)` en kgdb;
+3. `edges_from(nodo(X), implements)`, contra el índice de aristas de sldb;
 4. mostrar los targets con su nombre natural.
 
-"who implements X?" es lo mismo con `edges_to`. "can X move to Y?" es si existe la arista `flows_to` de X a Y y, si trae condición, si la condición se cumple. kgdb no sabe qué es una transición; solo tiene la arista.
+"who implements X?" es lo mismo con `edges_to`. "can X move to Y?" es si existe la arista `flows_to` de X a Y y, si trae condición, si la condición se cumple. El índice de aristas no sabe qué es una transición; solo tiene la arista.
 
 ## Condiciones
 
-Una condición es un predicado `--where` de sldb. Se declara en el `RelationTypeDoc`, campo `condition`, y vale para todas las aristas de ese tipo; un `RelationDoc` puede traer la suya y entonces reemplaza a la del tipo. Los dos campos son un prerrequisito sobre los modelos de kgdb (08). Se evalúa con sldb, nunca en pron, sobre el **sujeto de la oración en su estado actual**: la arista es legal para ese sujeto si `find <alcance del sujeto> --where <condición>` devuelve su dirección. Una condición puede nombrar campos del sujeto entre llaves, `capacity >= {party_size}`, y entonces se evalúa sobre el objeto con los valores del sujeto sustituidos antes de llamar a sldb. Una arista sin condición es legal siempre que exista.
+Una condición es un predicado `--where` de sldb. Se declara en el `RelationTypeDoc`, campo `condition`, y vale para todas las aristas de ese tipo; un `RelationDoc` puede traer la suya y entonces reemplaza a la del tipo. Se evalúa con sldb, nunca en pron, sobre el **sujeto de la oración en su estado actual**: la arista es legal para ese sujeto si `find <alcance del sujeto> --where <condición>` devuelve su dirección. Una condición puede nombrar campos del sujeto entre llaves, `capacity >= {party_size}`, y entonces se evalúa sobre el objeto con los valores del sujeto sustituidos antes de llamar a sldb. Una arista sin condición es legal siempre que exista.
 
 Después de una escritura, pron reevalúa las condiciones de las aristas que salen del documento escrito **y de las que entran a él**: bajar la capacidad de una mesa afecta la `assigned_to` que apunta a esa mesa, aunque la condición la lea la reserva. El costo está acotado por las aristas del documento; el resultado es un aviso, nunca una acción (04).
 
-Con varios stores en la proyección (01), las aristas se buscan en todos y un `RelationDoc` nuevo va al primero, el mismo donde la sesión crea documentos; sus extremos llevan el id con store (`A:Reserva:doc`). El grafo tipado de kgdb cubre el store propio; un documento de un store enlazado se lee por sus `RelationDoc`, y la traza lo dice.
+Con varios stores en la proyección (01), las aristas se buscan en todos y un `RelationDoc` nuevo va al primero, el mismo donde la sesión crea documentos; sus extremos llevan el id con store (`A:Reserva:doc`). El índice de aristas de sldb ya federa: recorre los stores enlazados y califica sus ids (`A:Modelo:doc`), así que un `RelationDoc` local puede apuntar a un documento de otro store y `edges_from`/`edges_to` lo resuelven igual, sin distinguir de dónde viene cada extremo.
 
 Una **transición** es el caso en que el verbo es "cambiar el campo de estado": la oración "confirm the reservation" es `fields update …/status "confirmed"`, permitida solo si existe una arista `transitions_to` desde el estado actual al nuevo y su condición se cumple sobre la reserva. Los estados son documentos de un modelo `State`, las transiciones son `RelationDoc` entre ellos, y el objeto que transiciona solo cambia un campo.
 
@@ -45,7 +45,7 @@ Una **transición** es el caso en que el verbo es "cambiar el campo de estado": 
 1. resolver X e Y;
 2. verificar contra el `RelationTypeDoc`: la clase de X en `source_types`, la de Y en `target_types`, la cardinalidad no violada;
 3. `docs create --model RelationDoc` con `source_id`, `target_id`, `relation_type`;
-4. refresh (04). La arista aparece cuando el ingest de kgdb vuelve a correr.
+4. refresh (04) — el `docs create` ya deja el shard de aristas del `RelationDoc` al día en la misma operación; la arista es visible sin esperar nada más. El refresh del turno sigue corriendo igual, pero no tiene trabajo salvo que algo haya tocado el store por fuera de sldb.
 
 Crear el sujeto y afirmar el verbo en un mismo movimiento ("book Ana a table") no es un comportamiento implícito del verbo: lo declara un alias compuesto, un `(move …)` con sus pasos y huecos (05). Cada paso exige su permiso: `create` en `actions`, `assert` en la relación.
 
@@ -53,7 +53,7 @@ Negar un verbo, "X ya no implementa Y", es `docs untrack` del `RelationDoc` corr
 
 ## Qué se verifica dónde
 
-Las relaciones autoradas son documentos, así que su verdad está en sldb y ahí se verifica; kgdb es la vista derivada con la que se lee y se recorre.
+Las relaciones autoradas son documentos: su verdad está en sldb, y el índice de aristas es una vista derivada de esos mismos documentos — no un segundo sistema con su propio ciclo de vida.
 
 | pregunta | dónde | cómo |
 |---|---|---|
@@ -62,10 +62,10 @@ Las relaciones autoradas son documentos, así que su verdad está en sldb y ahí
 | ¿la cardinalidad lo permite? | sldb | la misma consulta, contando |
 | ¿es legal la transición? | sldb | la arista `transitions_to` como `RelationDoc` desde el estado actual, y su condición sobre el sujeto |
 | ¿se cumple la condición? | sldb | `find <alcance> --where <condición>` |
-| ¿qué implementa X? ¿quién? | kgdb | `edges_from`, `edges_to`; cae a sldb si el grafo no está o está viejo, y la traza lo dice |
-| aristas de links en prosa, recorridos por tags o alcance | kgdb | solo con grafo fresco |
+| ¿qué implementa X? ¿quién? | sldb | `edges_from`, `edges_to` sobre el índice de aristas |
+| aristas de links en prosa, recorridos por tags o alcance | sldb | lo mismo: el índice ya las incluye |
 
-Con el grafo viejo, pron lee aristas autoradas desde sldb y marca la respuesta; las aristas de prosa y los recorridos quedan como "no disponible hasta refrescar". Ninguna escritura queda bloqueada por un grafo viejo, porque ninguna escritura depende del grafo.
+Cada escritura de sldb (`create`, `save payload`, `untrack`, `stores update`) deja al día el shard de aristas del documento que tocó, en la misma operación: leer una arista nunca dispara una reconstrucción ni cae a una segunda puerta. Una edición de un documento por **fuera** de sldb (un archivo tocado a mano) no se refleja en el índice hasta el próximo refresh — `edges_from`/`edges_to` pueden devolver la arista vieja durante esa ventana; el índice lo sabe (`stale`, 04) pero no lo esconde en la lectura. Es el mismo riesgo que ya existe para cualquier otro campo de un documento editado por fuera de sldb (07 §5), no uno nuevo de las aristas. Ninguna escritura queda bloqueada por eso, porque ninguna escritura depende de que el índice esté al día.
 
 ## Los verbos que ya existen sin declararse
 
@@ -81,6 +81,6 @@ Un verbo con eje WHY o PROVENANCE responde "why?"; uno con eje HOW responde "how
 
 ## Invariantes
 
-- Ninguna arista de dominio existe en kgdb sin un `RelationDoc` o un link con predicado que la origine.
-- pron nunca ensambla aristas. Si el grafo no está o está viejo, las aristas autoradas se leen desde los `RelationDoc` en sldb y la traza lo dice; las de prosa y los recorridos esperan al refresh.
+- Ninguna arista de dominio existe en el índice de sldb sin un `RelationDoc` o un link con predicado que la origine.
+- pron nunca ensambla aristas: las compone sldb. Si el índice está viejo (un documento tocado por fuera de sldb), la lectura puede devolver una arista desactualizada hasta el próximo refresh, y `stale` (04) lo dice.
 - Un verbo no verificado contra `source_types` y `target_types` no se escribe.

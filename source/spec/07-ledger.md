@@ -8,7 +8,7 @@ Cada turno deja un movimiento con:
 - el estado del diálogo antes y después;
 - las direcciones y predicados pedidos a sldb, y lo que devolvieron;
 - el verbo, sujeto y objeto resueltos;
-- las aristas leídas de kgdb, o la escritura hecha en sldb con el valor anterior y el nuevo;
+- las aristas leídas del índice de sldb, o la escritura hecha en sldb con el valor anterior y el nuevo;
 - la salida del grounding: único, ambiguo o missing, con los candidatos o los cercanos;
 - el `hash_mundo` antes y después (ver abajo).
 
@@ -25,17 +25,17 @@ Escribir un `MoveDoc` cambia el `hash_a` del store. Si el léxico y el grafo dep
 | huella | qué cubre | quién la calcula | qué invalida |
 |---|---|---|---|
 | `hash_a` | todo el store | sldb | nada en pron; es la huella de integridad |
-| `hash_mundo` | por cada modelo menos `MoveDoc`: nombre, versión, `hash_b` y su esquema (campos, tipos, descripciones, como los da `serve /schema`); la lista de predicados; la lista de stores enlazados con el `hash_mundo` de cada uno | pron, desde los índices del store y el esquema de los modelos | el léxico, los embeddings y la frescura del snapshot de kgdb |
-| `hash_b` de `MoveDoc` | el ledger | sldb | nada: los movimientos no son nodos del grafo y sus valores no entran al léxico |
+| `hash_mundo` | por cada modelo menos `MoveDoc`: nombre, versión, `hash_b` y su esquema (campos, tipos, descripciones, como los da `serve /schema`); la lista de predicados; la lista de stores enlazados con el `hash_mundo` de cada uno | pron, desde los índices del store y el esquema de los modelos | el léxico y los embeddings; no el índice de aristas, que se invalida por documento (abajo) |
+| `hash_b` de `MoveDoc` | el ledger | sldb | nada: los movimientos no son nodos del índice de aristas y sus valores no entran al léxico |
 
-El snapshot de kgdb registra el `hash_mundo` con que se construyó. Los `MoveDoc` llevan el tag `type.pron.move` y el ingest de kgdb los excluye, así que registrar no desfasa el grafo.
+El índice de aristas no tiene una huella única "con la que se construyó": cada documento invalida su propio shard por su `hash_c`/`hash_d` (03). Los `MoveDoc` llevan el tag `type.pron.move`, y ese tag queda fuera del índice que pron lee (`doc_kind.tags_outside_graph()`), así que registrar un movimiento nunca desactualiza nada.
 
 El ledger sí está en el léxico como **modelo**: `MoveDoc` tiene alias ("move", "moves") y sus campos se preguntan como los de cualquier otro (10 §1), por eso "today's moves on the repl" funciona. Lo que queda fuera de la frescura es su contenido: escribir un movimiento nuevo no agrega palabras, no cambia el esquema y no crea aristas, así que no invalida nada.
 
 ## Orden dentro de un turno
 
 1. interpretar (06);
-2. ejecutar: leer sldb o kgdb, o escribir sldb (04);
+2. ejecutar: leer sldb (documentos o su índice de aristas), o escribir sldb (04);
 3. si hubo escritura: refresh, y `hash_mundo` nuevo;
 4. escribir el `MoveDoc` con `hash_mundo` antes y después;
 5. responder.

@@ -4,7 +4,7 @@ Los modelos y documentos que sustentan la conversación de 09. Es *una* declarac
 
 Todo lo declarado está en inglés, identificadores, descripciones, motivos y formas de alias, por decisión del 2026-09-08 (11 §0): permite modelos de embeddings chicos y una sola tabla de palabras funcionales. El español es una capa de alias que se agrega después, sin tocar los modelos.
 
-Todo lo que sigue es sintaxis real de sldb v1 y de los modelos de relación de kgdb, salvo dos cosas marcadas como prerrequisito: el campo `condition` en `RelationTypeDoc` y `RelationDoc`, y el modelo `ProjectionDoc`, que es de pron y todavía no existe.
+Todo lo que sigue es sintaxis real de sldb v1 y de sus modelos de relación (`RelationTypeDoc`, `RelationDoc` — spec 03), salvo dos cosas marcadas como prerrequisito: el campo `condition` en `RelationTypeDoc` y `RelationDoc`, y el modelo `ProjectionDoc`, que es de pron y todavía no existe.
 
 ## Los modelos de contenido · `restaurant/models.py`
 
@@ -102,7 +102,7 @@ name: ⸢rev•name⸥
 
 La convención que une `Reservation.status` con `State` es el par `(machine, name)`: el valor `confirmed` es el documento de `State` con `machine = "Reservation.status"` y `name = "confirmed"`, acá `state-reservation-confirmed` (10 §2.5).
 
-## Los tipos de relación · documentos de `RelationTypeDoc` (modelo de kgdb)
+## Los tipos de relación · documentos de `RelationTypeDoc` (modelo de sldb, spec 03)
 
 `relations/types/booked_by.md`
 
@@ -218,14 +218,14 @@ sldb models add restaurant.models:Client      --store .sldb --pythonpath .
 sldb models add restaurant.models:Table       --store .sldb --pythonpath .
 sldb models add restaurant.models:Reservation --store .sldb --pythonpath .
 sldb models add restaurant.models:State       --store .sldb --pythonpath .
-sldb models add kgdb.models:RelationTypeDoc   --store .sldb
-sldb models add kgdb.models:RelationDoc       --store .sldb
+sldb models add sldb.models:RelationTypeDoc   --store .sldb
+sldb models add sldb.models:RelationDoc       --store .sldb
 sldb models add pron.models:AnchorDoc         --store .sldb
 sldb models add pron.models:ProjectionDoc     --store .sldb
 sldb models add pron.models:MoveDoc           --store .sldb
 ```
 
-Los modelos de kgdb y de pron son de esos paquetes; el restaurante solo los registra.
+Los modelos de relación son de sldb, los otros tres de pron; el restaurante solo los registra.
 
 ## La proyección · `ProjectionDoc` (modelo de pron)
 

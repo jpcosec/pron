@@ -28,7 +28,7 @@ El mundo propio de pron declara sus sustantivos:
 - `AnchorDoc`: alias de léxico (ver 05).
 - Y una relación, `implements`, de módulo o comando → capítulo, derivada de las referencias "spec NN" en los docstrings. Es la rama directa del código a lo que debe hacer. No hay un modelo de "átomo": el conocimiento de pron sobre sí mismo ya tiene la forma de su spec y de sus docs, y sldb lo hace direccionable sin aplanarlo a afirmaciones sueltas.
 
-Y registra los modelos de relación de kgdb (`RelationTypeDoc`, `RelationDoc`) para poder autorar verbos. No registra modelos de deskops ni de ningún otro escritorio: deskops es otra instancia sobre el mismo núcleo, y podría ser *un* mundo para pron, nunca la fuente de sus modelos.
+Y registra los modelos de relación de sldb (`RelationTypeDoc`, `RelationDoc`) para poder autorar verbos. No registra modelos de deskops ni de ningún otro escritorio: deskops es otra instancia sobre el mismo núcleo, y podría ser *un* mundo para pron, nunca la fuente de sus modelos.
 
 ## Proyección
 
@@ -68,4 +68,4 @@ Expandir el mundo es registrar un modelo, trackear documentos, declarar un `Rela
 
 - El mundo se lee desde `store_index.yaml` y los índices del store, nunca desde un archivo de configuración propio de pron.
 - El `hash_mundo` (07) es el token de frescura: una sesión que lo vio cambiar debe recargar léxico y proyección.
-- Ningún modelo del mundo de pron vive fuera del repo de pron o de kgdb.
+- Ningún modelo del mundo de pron vive fuera del repo de pron o de sldb.

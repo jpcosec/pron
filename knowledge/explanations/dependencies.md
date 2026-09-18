@@ -6,7 +6,6 @@
 
 ## Answer
 
-- [sldb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `a508034`.
-- [kgdb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `5effed5`.
+- [sldb](https://github.com/jpcosec/hum-ecosystem) — ver `constraints.txt` para el commit exacto. Ya no depende de kgdb: sus tipos de relación y su grafo de aristas se fusionaron dentro de sldb.
 
 ## Sources

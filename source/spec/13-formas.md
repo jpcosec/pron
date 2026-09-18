@@ -13,7 +13,7 @@ Las superficies están al mismo nivel sobre las formas: el SHRDLU (06) proyecta 
 
 ## Sustantivos
 
-Un sustantivo sin resolver es lo que dijo la oración; evaluarlo lo resuelve contra sldb, kgdb y el diálogo, exactamente como 02 y 06 describen.
+Un sustantivo sin resolver es lo que dijo la oración; evaluarlo lo resuelve contra sldb (documentos e índice de aristas) y el diálogo, exactamente como 02 y 06 describen.
 
 | forma | qué nombra |
 |---|---|

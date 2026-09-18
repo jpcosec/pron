@@ -97,21 +97,20 @@ Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero c
 | `projection(name="all")` | `-> dict` | el payload de un `ProjectionDoc`, o `all` sintetizada |
 | `hash_mundo()` | `-> str` | la huella de lo que el léxico y el grafo dependen (11 §5); cambia con cualquier escritura fuera del ledger |
 | `model_hashes()` | `-> dict[str, str]` | modelo → `hash_b` |
-| `graph_is_fresh()` | `-> bool` | si el grafo tipado corresponde a los `hash_b` actuales |
-| `refresh()`, `refresh_if_stale()` | `-> dict`, `-> bool` | reconstruir el grafo (siempre; solo si no corresponde). Importan kgdb y networkx; nada más lo hace |
+| `graph_is_fresh()` | `-> bool` | si el índice de aristas de sldb no tiene ningún documento desactualizado (`stale`, 03) |
+| `refresh()`, `refresh_if_stale()` | `-> dict`, `-> bool` | poner al día el índice de aristas (siempre; solo si algo está desactualizado). Nada de sldb importa kgdb ni networkx |
 | `derived_dir` | `Path` | `.pron/`, fuera de git, para lo que el runtime derive |
 
 **Identificadores de nodo.** El grafo usa los ids de la exportación de sldb, y `pron.graph` da las funciones que los arman: `doc_id("Reservation:reservation-x") == "sldb://document/Reservation:reservation-x"`, `model_id("Reservation") == "sldb://model/Reservation"`, `relation_type_id("booked_by") == "sldb://relation_type/booked_by"`, `field_id("Reservation", "status") == "sldb://field/Reservation.status"`. Un `export_id` es `Modelo:nombre` local, o `store:Modelo:nombre` cuando la sesión habla a través de un daemon con stores enlazados; `pron.ids` los parte y arma (`split_id`, `join_id`, `store_of`, `scope`, `address_of`; `None` y `"local"` significan lo mismo). Todo método del grafo recibe y devuelve estos ids completos.
 
-**`World.graph` (`Graph`)**, leído de `.pron/graph.nx.json` sin networkx. Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que kgdb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
+**`World.graph` (`Graph`)** compone el índice de aristas de sldb en cada lectura — sin archivo propio, sin networkx (03 §Qué se verifica dónde). Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que sldb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
 
 | método | firma | devuelve |
 |---|---|---|
-| `available()` | `-> bool` | si hay archivo de grafo |
-| `built_from()` | `-> dict[str, str]` | modelo → `hash_b` con que se construyó |
+| `available()` | `-> bool` | siempre `True`: el índice se compone al leer, no hay archivo que pueda faltar |
 | `has_node(node_id)` | `-> bool` | |
-| `node(node_id)` | `-> dict` | el nodo como kgdb lo exportó (`identity`, `schema`…), `{}` si no existe |
-| `node_type(node_id)` | `-> str \| None` | `identity.node_type`; para un documento, su modelo |
+| `node(node_id)` | `-> dict` | el nodo como el índice lo registró (`id`, `node_type`, `semantics`), `{}` si no existe |
+| `node_type(node_id)` | `-> str \| None` | `node_type`; para un documento, su modelo |
 | `nodes_of_type(node_type)` | `-> list[str]` | ids, ordenados |
 | `edges_from(node_id, relation=None)`, `edges_to(node_id, relation=None)` | `-> list[dict]` | aristas salientes / entrantes, filtradas por relación si se da |
 | `exists(source, target, relation)` | `-> dict \| None` | la arista, o nada |
@@ -121,7 +120,7 @@ Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero c
 | `descendants(node_id, relation="semantic_parent", depth=None)` | `-> list[str]` | alcanzables siguiendo la relación hacia atrás, sin `node_id` |
 | `neighbors_via(node_id, out_relation, in_relation=None, exclude_prefixes=(), same_kind=True)` | `-> list[str]` | los que comparten un destino de `out_relation` con `node_id` |
 
-Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametriza por nombre de relación. Las estructurales de kgdb (`semantic_parent`, `tagged_as`, `has_document`, `has_model`, …) son argumentos como cualquier otro.
+Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametriza por nombre de relación. Las estructurales de sldb (`semantic_parent`, `tagged_as`, `has_document`, `has_model`, …) son argumentos como cualquier otro.
 
 **Ciclo de vida.** Un runtime que monta un mundo no decide qué es inicializarlo: `world.is_ready()` dice si ese store ya es un mundo de pron, y `world.ensure_ready(template=None)` lo hace uno si no lo era y deja el grafo fresco, en una sola llamada idempotente. Devuelve lo que hizo `init_world`, o `None` si el mundo ya estaba. Qué modelos y tipos de relación requiere un mundo es interior de pron y cambia con él: un consumidor que lo averigua preguntando por un modelo por nombre está leyendo el interior.
 

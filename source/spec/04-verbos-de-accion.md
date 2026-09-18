@@ -12,7 +12,7 @@ Los verbos de acción cambian el mundo sin relacionar dos cosas. Son exactamente
 | `clean` | `fields clean docs/<doc>/<lista> --dedupe` | "drop the duplicate tags" |
 | `remove` | `fields remove docs/<doc>/<campo>` | "remove its provenance" |
 | `forget` | `docs untrack <doc>` | "forget that atom" |
-| `refresh` | `stores update` + `semantic-export` + `kgdb ingest` | "refresh" |
+| `refresh` | `stores update` + `sldb.api.rebuild_edges` | "refresh" |
 | `undo` | las escrituras inversas registradas en el último `MoveDoc` con escritura (11 §7) | "undo the last move" |
 
 Afirmar un verbo transitivo (03) es `create` con modelo `RelationDoc`. Una transición de máquina de estados es solo `change` del campo de estado, permitida porque ya existe una arista `transitions_to` desde el estado actual y su condición se cumple (03); no crea ninguna arista.
@@ -23,14 +23,13 @@ Toda escritura por campo re-renderiza el documento desde el payload nuevo, verif
 
 ## Refresh
 
-Después de cualquier escritura el mundo está desfasado del grafo. El refresh es una sola función del proyector:
+Una escritura que pasa por la propia API de sldb (03) deja al día, en la misma operación, el shard de aristas del documento que tocó: no hay desfase que esperar. El refresh es una sola función del proyector:
 
-1. `sldb stores update` (índices semánticos y de secciones);
-2. `sldb stores semantic-export` (nodos, tags, secciones, DAG);
-3. `kgdb ingest` sobre ese export **y** sobre los `RelationDoc` del store (aristas autoradas, integridad referencial);
-4. registrar el `hash_mundo` nuevo en el snapshot (07).
+1. `sldb stores update` (índices semánticos y de secciones) — se salta cuando la escritura ya fue por la API de sldb, cuyos índices ya están al día (`light`, 11);
+2. `sldb.api.rebuild_edges` sobre el store: revisa el índice de aristas y reconstruye lo que falte o esté desactualizado. Tras una escritura propia no encuentra nada que hacer — el trabajo real es para cuando algo tocó el store por fuera de sldb;
+3. registrar el `hash_mundo` nuevo (07).
 
-Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron compara el `hash_mundo` del store con el del snapshot antes de leer kgdb y avisa si el grafo está viejo, en vez de servirlo como verdad. El ledger (07) queda fuera de esa huella, así que registrar un movimiento no desfasa nada.
+Cuándo corre depende de la aplicación: síncrono al final de cada verbo de acción en un REPL, o diferido si el mundo lo expande otro agente. Lo que no depende de la aplicación: pron pregunta al índice de aristas si tiene algo desactualizado (`stale`, 03) antes de servir una lectura como verdad, en vez de asumirla al día. Esto es independiente de `hash_mundo`: `hash_mundo` es la huella de los modelos y las clases del mundo (07), no de las aristas; el ledger (07) queda fuera de esa huella, así que registrar un movimiento no desfasa nada.
 
 Después de escribir, pron reevalúa las condiciones de las aristas que salen del sujeto y de las que entran a él (03) y avisa de las que dejaron de cumplirse. No deshace ni decide: "table 12 seats 6 and the party is now 9" es información, y qué hacer con eso es la próxima oración.
 

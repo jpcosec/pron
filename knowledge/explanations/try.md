@@ -7,7 +7,7 @@
 ## Answer
 
 ```bash
-pip install -e .            # sldb y kgdb del ecosistema, instalados editables
+pip install -e .            # sldb del ecosistema, instalado editable
 python -m pytest -q tests   # cada test monta un mundo real desde cero
 ```
 

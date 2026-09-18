@@ -1,6 +1,6 @@
 # 09 · Una conversación, paso a paso
 
-Ocho oraciones sobre un mundo que no es pron: las reservas de un restaurante, declarado entero en 09a (modelos, tipos de relación, transiciones, proyección y alias). Para cada una: cómo se clasifican las palabras, qué interpretación parcial queda, qué se le pregunta al mundo y qué contesta, qué se descarta con eso, qué operación se hace y qué se registra. Las llamadas a sldb y kgdb son las reales. Las oraciones están en inglés porque el mundo está declarado en inglés (11 §0); la prosa que las explica sigue en español.
+Ocho oraciones sobre un mundo que no es pron: las reservas de un restaurante, declarado entero en 09a (modelos, tipos de relación, transiciones, proyección y alias). Para cada una: cómo se clasifican las palabras, qué interpretación parcial queda, qué se le pregunta al mundo y qué contesta, qué se descarta con eso, qué operación se hace y qué se registra. Las llamadas a sldb son las reales. Las oraciones están en inglés porque el mundo está declarado en inglés (11 §0); la prosa que las explica sigue en español.
 
 ## El mundo
 
@@ -13,7 +13,7 @@ Un store en `~/worlds/restaurant/.sldb`, declarado por alguien que no es pron. M
 | `Reservation` | `date`, `time`, `party_size`, `status: Literal[pending, confirmed, seated, cancelled]`, `notes` | reservation, reservations, booking; `party_size` ← "for N people" |
 | `State` | `machine`, `name`, `description` | uno por valor del `Literal`, con `machine: Reservation.status` |
 
-Modelos de relación de kgdb, registrados en el store:
+Modelos de relación de sldb, registrados en el store:
 
 | `RelationTypeDoc` | source → target | cardinalidad | eje | alias |
 |---|---|---|---|---|
@@ -83,7 +83,7 @@ sldb docs create --model Client -o clients/ana-rojas.md --name client-ana-rojas 
 
 El nombre del documento sale de la regla `naming` del `ProjectionDoc`, `client-{name}`; si chocara con uno existente, pron lo diría antes de crear.
 
-**Refresh.** `stores update`, `semantic-export`, `kgdb ingest`.
+**Refresh.** `stores update`, `sldb.api.rebuild_edges` — sin nada que hacer: `docs create` ya dejó al día el shard de aristas del documento nuevo.
 
 **Respuesta.** "Created client Ana Rojas." La dirección `st.{Client}.client-ana-rojas` queda como referente singular de clase `Client`.
 
@@ -178,12 +178,12 @@ Hay pendiente de elección. "Rojas" no tiene verbo ni determinante: se prueba co
 **Consulta al grafo y al mundo.**
 
 ```
-kgdb edges_to("sldb://document/Client:client-ana-rojas", "booked_by")   → Reservation:reservation-2026-09-11-ana-rojas
+sldb edges_to("sldb://document/Client:client-ana-rojas", "booked_by")   → Reservation:reservation-2026-09-11-ana-rojas
 find 'st.{Reservation}' --where 'date = "2026-09-11"'                    → reservation-2026-09-11-ana-rojas, reservation-2026-09-11-luis-soto
 ∩                                                                         → reservation-2026-09-11-ana-rojas
 ```
 
-La intersección cruza la lista que dio kgdb con la que dio sldb: direcciones, no payloads. Si el grafo no estuviera fresco, la primera lista saldría de `find st.{RelationDoc} --where 'target_id = "Client:client-ana-rojas"'` ∩ `relation_type = "booked_by"`, y la traza lo diría (03).
+La intersección cruza la lista que dio el índice de aristas con la que dio la consulta estructural: direcciones, no payloads, las dos de sldb (03). Si el índice tuviera algo desactualizado, la primera lista podría venir de un documento tocado por fuera de sldb, y la traza lo diría igual.
 
 **Respuesta.** "One: Friday the 11th at 21:00, 6 people, table 12, pending." El resultado es un conjunto de una dirección; un conjunto de exactamente un elemento califica también como antecedente singular (06), así que queda disponible para "it" y para "that reservation".
 
@@ -273,7 +273,7 @@ Antes de ofrecer alternativas pron evalúa la misma condición sobre las otras m
 - Un valor de campo enumerado que no existe es missing en el léxico, antes de consultar sldb. Un nombre propio se busca en sldb y cero resultados es missing después de consultar.
 - Un missing termina el turno, pero un fragmento que calza con el hueco registrado se lee como corrección y reinterpreta la oración entera.
 - Crear es un verbo de acción con payload; los campos obligatorios que falten abren una pendiente de dato por campo. Crear un sujeto y afirmar verbos sobre él en un movimiento es un alias `compose` con sus pasos escritos.
-- Dos restricciones son dos consultas y una intersección de direcciones, también cuando una lista viene de kgdb y otra de sldb.
+- Dos restricciones son dos consultas y una intersección de direcciones, también cuando una lista viene del índice de aristas y otra de una consulta estructural.
 - Una transición es cambiar el campo de estado, permitida por una arista `transitions_to` y su condición, ambas verificadas en sldb, con o sin grafo.
 - Un mundo agrega verbos sin código de dos maneras: un alias de acción con campo y valor fijos ("confirm"), o un `RelationTypeDoc` que es un verbo transitivo nuevo; y oraciones nuevas con un alias `compose`.
 - Después de una escritura pron reevalúa las condiciones de las aristas del sujeto en las dos direcciones y avisa; no deshace ni decide.

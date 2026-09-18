@@ -20,7 +20,7 @@ Los **valores** también son léxico cuando el campo los acota: los miembros de 
 
 ## De dónde se lee el léxico
 
-Las fuentes de arriba son documentos y esquemas de sldb, y el ingest de kgdb las materializa como aristas: `has_field`, `extends`, `applies_to_source`, `applies_to_target`, `names` (10 §2.3). Con el grafo fresco, el léxico de una clase es una sola consulta, sus aristas entrantes y las de sus ancestros; sin grafo o con grafo viejo, pron lo deriva desde sldb con las consultas de la tabla, y la traza lo dice. Nunca se registra un verbo por sustantivo: la pregunta "¿qué puedo hacer con X?" se contesta recorriendo, no leyendo una lista.
+Las fuentes de arriba son documentos y esquemas de sldb, y su propio índice de aristas las materializa: `has_field`, `extends`, `applies_to_source`, `applies_to_target`, `names` (10 §2.3). El léxico de una clase es una sola consulta a ese índice, sus aristas entrantes y las de sus ancestros; si el índice tiene algo desactualizado (03), pron lo deriva desde sldb con las consultas de la tabla, y la traza lo dice. Nunca se registra un verbo por sustantivo: la pregunta "¿qué puedo hacer con X?" se contesta recorriendo, no leyendo una lista.
 
 ## Anchors: la forma en lengua natural
 

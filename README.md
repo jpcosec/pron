@@ -2,18 +2,18 @@
 
 ## ¿Qué es pron?
 
-Un SHRDLU sobre un mundo que ya existe. Los documentos de sldb son los objetos, los modelos de relación de kgdb son los verbos transitivos, las escrituras de sldb son los verbos de acción. pron convierte oraciones en direcciones, aristas y escrituras, sostiene el diálogo cuando una oración no alcanza, y registra cada movimiento.
+Un SHRDLU sobre un mundo que ya existe. Los documentos de sldb son los objetos, sus modelos de relación (`RelationTypeDoc`, `RelationDoc`) son los verbos transitivos, las escrituras de sldb son los verbos de acción. pron convierte oraciones en direcciones, aristas y escrituras, sostiene el diálogo cuando una oración no alcanza, y registra cada movimiento.
 
 El nombre es Mapudungun: el cordel anudado con que se llevaba el registro.
 
 ## Cómo funciona
 
-pron no guarda nada del mundo por su cuenta: sldb es el store de documentos (los sustantivos, cada uno con dirección y campos) y kgdb es el grafo de relaciones tipadas (los verbos transitivos, declarados en `RelationTypeDoc` y afirmados como `RelationDoc`). pron traduce entre una oración y esas dos cosas; no tiene su propia base de datos ni su propio esquema.
+pron no guarda nada del mundo por su cuenta: sldb es el store de documentos (los sustantivos, cada uno con dirección y campos) y también el grafo de relaciones tipadas (los verbos transitivos, declarados en `RelationTypeDoc` y afirmados como `RelationDoc` — un índice de aristas del propio store, no un sistema aparte). pron traduce entre una oración y eso; no tiene su propia base de datos ni su propio esquema.
 
 El diccionario con el que entiende una oración no está escrito en el código de pron: sale de los datos, cada vez que se carga un mundo.
 
 - **Sustantivos** — de los modelos de sldb: el nombre del modelo, sus campos, los valores que ya existen (`lexicon.py`).
-- **Verbos transitivos** — de los `RelationTypeDoc` de kgdb: cada tipo de relación declarado se vuelve una palabra-verbo (`booked_by`, `implements`), en modo lectura o lectura-y-afirmación según lo que la proyección permita.
+- **Verbos transitivos** — de los `RelationTypeDoc` de sldb: cada tipo de relación declarado se vuelve una palabra-verbo (`booked_by`, `implements`), en modo lectura o lectura-y-afirmación según lo que la proyección permita.
 - **Verbos de acción** (`create`, `change`, `add`, `remove`, `forget`…) y la gramática (`the`, `it`, `who`, `on`) son lo único fijo de pron, iguales para cualquier mundo (spec 04, 11 §0).
 
 Un turno (`Session.turn`, spec 06/07/11) sigue siempre el mismo camino:
@@ -23,12 +23,12 @@ Un turno (`Session.turn`, spec 06/07/11) sigue siempre el mismo camino:
 3. **Resolver los sustantivos** — cada frase nominal de las formas se convierte en direcciones concretas de sldb (`find --where`, un referente como "it", o una dirección exacta). Si hay ambigüedad, se abre una pregunta pendiente en vez de adivinar.
 4. **Prevalidar** — antes de escribir nada, se simula el movimiento completo (coerción de tipos, transiciones de estado, condiciones de las aristas) contra una copia en memoria; si algo fallaría, no se toca el store.
 5. **Ejecutar** — recién ahí se escribe de verdad: `docs create`, `fields update`, un `RelationDoc` nuevo.
-6. **Refrescar** — el grafo de kgdb se reconstruye a partir de lo que sldb acaba de guardar.
+6. **Refrescar** — el índice de aristas de sldb se pone al día con lo que se acaba de guardar (cada escritura ya lo hace por su cuenta; refrescar solo importa cuando algo tocó el store por fuera de pron).
 7. **Registrar** — todo el turno (qué se leyó, qué se escribió, el hash del mundo antes y después) queda en un `MoveDoc` (el ledger); ahí se apoya "¿por qué?".
 
 El estado propio de una sesión es mínimo: si hay o no una pregunta pendiente, y los referentes recientes ("it", "the previous one"). Nada más persiste entre turnos que no esté ya en sldb o en el ledger.
 
-Afuera de pron: **sldb** (el store de documentos y direcciones), **kgdb** (el grafo de relaciones tipadas, derivado y de solo lectura), **graph_ui** (otra superficie, gestos en vez de oraciones, que produce las mismas formas de spec 13) y **legos** (consume pron como librería, sin pasar por ninguna superficie — ver §Quién lo usa).
+Afuera de pron: **sldb** (el store de documentos y direcciones, y su grafo de relaciones tipadas), **graph_ui** (otra superficie, gestos en vez de oraciones, que produce las mismas formas de spec 13) y **legos** (consume pron como librería, sin pasar por ninguna superficie — ver §Quién lo usa).
 
 Las capas de código que implementan cada paso están en la tabla de la siguiente sección (§Capas); una versión dibujada de este mismo recorrido, con un turno completo de ejemplo, está en [`docs/spec2viz`](docs/spec2viz/README.md) (`offline.html`, sin dependencias de red).
 
@@ -41,7 +41,7 @@ Lo que un mundo declara está en inglés por ahora (spec 11 §0); la prosa del s
 ## Probar
 
 ```bash
-pip install -e .            # sldb y kgdb del ecosistema, instalados editables
+pip install -e .            # sldb del ecosistema, instalado editable
 python -m pytest -q tests   # cada test monta un mundo real desde cero
 ```
 
@@ -50,9 +50,9 @@ python -m pytest -q tests   # cada test monta un mundo real desde cero
 Un mundo es un store de sldb. Sobre cualquier store:
 
 ```bash
-pron init --world . --pythonpath .          # kgdb init + los modelos de pron
-pron refresh --world .                      # índices de sldb + grafo tipado de kgdb en .pron/
-# Derivados, fuera de git: .pron/ (grafo, vectores) y .sldb/runtime/cache/ (payloads extraídos por sldb)
+pron init --world . --pythonpath .          # registra los tipos de relación + los modelos de pron
+pron refresh --world .                      # índices de sldb, incluido el de aristas
+# Derivados, fuera de git: .pron/ (vectores) y .sldb/runtime/ (payloads extraídos, aristas, secciones)
 pron lexicon --world . [Model]              # qué se puede decir · los verbos de una clase
 pron say "the large tables on the terrace" --world . --trace
 pron repl --world . --speaker me
@@ -67,13 +67,13 @@ Un turno frío cuesta medio segundo, casi todo imports y la primera carga del st
 
 ## Un mundo se declara con documentos
 
-Un mundo se declara con documentos, nunca con código de pron: modelos `StructuredNLDoc`, `RelationTypeDoc` de kgdb para los verbos, `RelationDoc` para las aristas, `AnchorDoc` para las palabras, `ProjectionDoc` para lo que una sesión puede nombrar. El ejemplo completo está en [`source/spec/09a`](source/spec/09a-el-mundo-del-restaurante.md) y montado como fixture en `tests/worlds/restaurant.py`.
+Un mundo se declara con documentos, nunca con código de pron: modelos `StructuredNLDoc`, `RelationTypeDoc` de sldb para los verbos, `RelationDoc` para las aristas, `AnchorDoc` para las palabras, `ProjectionDoc` para lo que una sesión puede nombrar. El ejemplo completo está en [`source/spec/09a`](source/spec/09a-el-mundo-del-restaurante.md) y montado como fixture en `tests/worlds/restaurant.py`.
 
 ## La KB de pron
 
 Este repo es también un mundo, y no tiene átomos. Su conocimiento sobre sí mismo ya tiene forma: los capítulos de `source/spec/`, trackeados donde viven como `SpecDoc` con sus secciones indexadas por sldb; los `CliCommandDoc` y `SurfaceDoc` generados del código; y las aristas `implements` de cada módulo hacia los capítulos que su docstring cita. Todo eso lo produce `pron docs` y nada se mantiene a mano.
 
-Solo se versiona lo que se escribe: los capítulos, las explicaciones, las anclas, las proyecciones y el ledger. El store (`.sldb/`), los tipos de relación (`kgdb/`, `knowledge/relations/`) y los documentos generados (`knowledge/surfaces/`, `knowledge/commands/`) son derivados y no están en git: `make world` los reconstruye desde el repo, y `make docs-check` los reconstruye y falla si el README generado no coincide con el versionado.
+Solo se versiona lo que se escribe: los capítulos, las explicaciones, las anclas, las proyecciones y el ledger. El store (`.sldb/`), los tipos de relación (`sldb/relation_types/`, `knowledge/relations/`) y los documentos generados (`knowledge/surfaces/`, `knowledge/commands/`) son derivados y no están en git: `make world` los reconstruye desde el repo, y `make docs-check` los reconstruye y falla si el README generado no coincide con el versionado.
 
 ```bash
 make world                                  # sldb stores init + pron init --knowledge + pron docs
@@ -102,9 +102,9 @@ Los átomos de v1 se quedan en la rama `v1-code-and-kb`, como material históric
 
 Un runtime que ya tiene su propio parser (un LLM, por ejemplo) no necesita la superficie de pron, pero sí lo que hay debajo, para no armar su propio grafo ni su propio índice:
 
-- `World(root, pythonpath)`: abre el mundo; `refresh()` reconstruye el grafo tipado (`stores update` + ingest de kgdb, por librería) y `refresh_if_stale()` solo cuando los `hash_b` de los modelos cambiaron; `derived_dir` es `.pron/`, fuera de git, para lo que el consumidor derive.
+- `World(root, pythonpath)`: abre el mundo; `refresh()` pone al día el índice de aristas de sldb (`stores update` + `sldb.api.rebuild_edges`, por librería) y `refresh_if_stale()` solo cuando sldb reporta un documento cuyo shard está ausente o desactualizado (una escritura hecha por fuera de sldb); `derived_dir` es `.pron/`, fuera de git, para lo que el consumidor derive.
 - `World.store` (`Store`): la única puerta a sldb: documentos cacheados, `find(scope, where)`, `matches`, `schema`, y escrituras con roundtrip (`create`, `update_field`, `append`, `untrack`).
-- `World.graph` (`Graph`): lee el grafo persistido sin networkx. Además de `edges_from`/`edges_to`: `nodes_of_type`, `targets`/`sources`, `roots(node_type, relation)`, `children`/`parent`/`descendants` (por defecto sobre `semantic_parent`) y `neighbors_via(node, relation, exclude_prefixes=...)` para hermanos por tag. Todo parametrizado por nombre de relación; pron no sabe cuáles declara un mundo.
+- `World.graph` (`Graph`): compone el índice de aristas de sldb en cada lectura, sin persistir nada propio ni depender de networkx. Además de `edges_from`/`edges_to`: `nodes_of_type`, `targets`/`sources`, `roots(node_type, relation)`, `children`/`parent`/`descendants` (por defecto sobre `semantic_parent`) y `neighbors_via(node, relation, exclude_prefixes=...)` para hermanos por tag. Todo parametrizado por nombre de relación; pron no sabe cuáles declara un mundo.
 - `DocumentIndex(Matcher(embedder), cache_path)`: documentos rankeados por similitud. `index([(key, hash, text)])` embebe solo lo que cambió y persiste los vectores en un archivo derivado; `rank(query, k, threshold)` devuelve `[(key, score)]`. Sin embedder rankea con difflib y el archivo lo dice.
 
 ## Verificar cambios
@@ -125,8 +125,7 @@ Para regenerar documentación tras un cambio de contrato, usa `pron docs --world
 
 ## Dependencias
 
-- [sldb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `a508034`.
-- [kgdb](https://github.com/jpcosec/hum-ecosystem) fijado al commit `5effed5`.
+- [sldb](https://github.com/jpcosec/hum-ecosystem) — ver `constraints.txt` para el commit exacto. Ya no depende de kgdb: sus tipos de relación y su grafo de aristas se fusionaron dentro de sldb.
 
 ## Quién lo usa
 
