@@ -141,3 +141,15 @@ def test_the_budget_counts_goals(world):
     engine = Engine(world, budget=Budget(100))
     list(engine.solve(read_one('(goal (where ?t "capacity >= 6"))')))
     assert 0 < engine.budget.spent <= 100
+
+
+def test_a_bare_pattern_says_the_same_as_goal(world, theorems):
+    """`(is ?t Table)` and `(goal (is ?t Table))` are one question with two spellings."""
+    bare = answers("(is ?t Table)", world)
+    wrapped = answers("(goal (is ?t Table))", world)
+    assert bare == wrapped == ["t10", "t12", "t14"]
+
+
+def test_a_bare_head_nothing_proves_is_still_an_error(world, theorems):
+    with pytest.raises(GoalError):
+        solutions(read_one("(delicious ?t)"), world, theorems)

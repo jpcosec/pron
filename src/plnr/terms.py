@@ -12,7 +12,7 @@ from __future__ import annotations
 from collections.abc import Iterator, Mapping
 from typing import TYPE_CHECKING, Any
 
-from plnr.sexp import Sym, write
+from plnr.sexp import Sym, is_symbol, write
 
 if TYPE_CHECKING:
     from plnr.world import Overlay
@@ -53,7 +53,8 @@ EMPTY = Bindings()
 
 
 def is_var(x: Any) -> bool:
-    return isinstance(x, Sym) and x.startswith("?")
+    """A variable is a symbol whose name starts with '?', whoever read the form."""
+    return is_symbol(x) and str(x).startswith("?")
 
 
 def ground(form: Any, b: Bindings) -> Any:

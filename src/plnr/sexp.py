@@ -24,6 +24,16 @@ class SexpError(ValueError):
     """Text that is not an s-expression."""
 
 
+def is_symbol(x: Any) -> bool:
+    """A symbol, whoever read it: anything that is a str subclass but not a plain str.
+
+    A string literal is a plain str, and that is the whole distinction this layer needs — so
+    a host that has its own Sym class (pron does) hands its forms over without converting
+    them.
+    """
+    return isinstance(x, str) and type(x) is not str
+
+
 _CONSTANTS: dict[str, Any] = {"true": True, "false": False, "nil": None}
 _BREAK = "();"
 
@@ -108,7 +118,7 @@ def read_one(text: str) -> Any:
 
 def write(form: Any) -> str:
     """A form as text, readable back by read_one."""
-    if isinstance(form, Sym):
+    if is_symbol(form):
         return str(form)
     if isinstance(form, bool):
         return "true" if form else "false"

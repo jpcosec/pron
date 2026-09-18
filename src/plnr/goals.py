@@ -10,7 +10,8 @@ shared.
     (and G ...)                  every one, threading bindings and overlay left to right
     (or G ...)                   the first that succeeds, then the next on backtracking
     (not G)                      succeeds once when G has no solution; binds nothing
-    (goal PATTERN [(use N ...)]) prove PATTERN: primitives first, then theorems
+    (goal PATTERN [(use N ...)]) prove PATTERN: primitives first, then theorems;
+                                 any other head means the same as (goal FORM)
     (find N VAR G)               N solutions of G; N is a number, all, or (at-least N)
     (bind VAR FORM)              bind VAR to FORM as it stands, grounded
     (fail) (succeed)             the two constants
@@ -30,7 +31,7 @@ from plnr import primitives
 from plnr.assertions import ASSERTIONS, assert_pending
 from plnr.errors import Exhausted, GoalError
 from plnr.primitives import PRIMITIVES
-from plnr.sexp import Sym, write
+from plnr.sexp import Sym, is_symbol, write
 from plnr.terms import EMPTY, Bindings, Step, ground, is_var, refresh, unify
 from plnr.theorems import Theorem, Theorems
 from plnr.world import Overlay, World
@@ -49,7 +50,7 @@ __all__ = [
 
 
 def head_of(form: Any) -> str:
-    if not isinstance(form, list) or not form or not isinstance(form[0], Sym):
+    if not isinstance(form, list) or not form or not is_symbol(form[0]):
         raise GoalError(f"not a goal: {write(form)}")
     return str(form[0])
 
@@ -130,7 +131,9 @@ class Engine:
         elif head in ASSERTIONS:
             yield from assert_pending(self, goal, b, ov, depth)
         else:
-            raise GoalError(f"unknown goal: ({head} …)")
+            # a head nobody defines is a pattern to prove: `(ready ?t)` says the same as
+            # `(goal (ready ?t))`. What nothing can prove is still an error, not a "no".
+            yield from self._goal([Sym("goal"), goal], b, ov, depth)
 
     def prove(
         self, goal: Any, b: Bindings | None = None, overlay: Overlay | None = None
@@ -265,7 +268,7 @@ class Engine:
 
 def _count(count: Any) -> tuple[int | None, bool]:
     """How many solutions `find` wants: a number, `all`, or `(at-least N)`."""
-    if isinstance(count, Sym) and str(count) == "all":
+    if is_symbol(count) and str(count) == "all":
         return None, False
     if isinstance(count, bool):
         raise GoalError("(find …) count must be a number, all, or (at-least N)")

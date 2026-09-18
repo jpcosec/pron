@@ -15,6 +15,9 @@ dev = ["pytest>=8", "ruff", "mypy"]
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+plnr = ["py.typed"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src", "."]
