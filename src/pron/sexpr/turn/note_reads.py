@@ -24,7 +24,7 @@ def note_reads(world, addresses: list[str], record: dict[str, Any]) -> None:
             continue
         try:
             reads.append(
-                {"address": eid, "hash_c": world.store.hash_c(DocId.parse_plain(eid))}
+                {"address": eid, "hash_c": world.store.hash_c(DocId.parse(eid))}
             )
         except StoreError:
             continue

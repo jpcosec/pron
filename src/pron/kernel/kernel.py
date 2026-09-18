@@ -47,18 +47,18 @@ class Kernel:
     # -- guards ------------------------------------------------------------------------
 
     def expect(self, export_id: str) -> None:
-        self.expected_hash[export_id] = self.store.hash_c(DocId.parse_plain(export_id))
+        self.expected_hash[export_id] = self.store.hash_c(DocId.parse(export_id))
 
     def _guard(self, export_id: str) -> None:
         expected = self.expected_hash.get(export_id)
-        current = self.store.hash_c(DocId.parse_plain(export_id))
+        current = self.store.hash_c(DocId.parse(export_id))
         if expected is not None and expected != current:
             raise StoreError(f"{export_id} changed since it was read; not writing")
 
     def _after_write(self, export_id: str, w: Write) -> None:
         """Replace the expected hash by the one sldb left, record it in the write for undo, and
         re-evaluate the conditions around the document."""
-        current = self.store.hash_c(DocId.parse_plain(export_id))
+        current = self.store.hash_c(DocId.parse(export_id))
         self.expected_hash[export_id] = w.extra["hash_c"] = current
         self.warnings += self.verbs.broken_conditions(export_id)
 

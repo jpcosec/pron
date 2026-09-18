@@ -86,7 +86,7 @@ class ComposeExecutor:
         related: dict[str, Any] = {}
         for later, later_res in zip(self.steps, self.plan["steps"]):
             if _asserts_from_created(later, later_res):
-                tid = DocId.parse_plain(later_res["target"].export_ids()[0])
+                tid = DocId.parse(later_res["target"].export_ids()[0])
                 related[later["relation"]] = self.world.store.payload(tid)
         return related
 

@@ -56,10 +56,12 @@ def test_what_is_not_an_export_id_is_refused():
 
 
 def test_a_relation_doc_id_is_only_whole_through_parse():
-    """The split blind to the model takes the first two colons, whatever the model is: that
-    is `split_id`, as it has always been. `parse` knows a RelationDoc's name has colons."""
+    """The split blind to the model (`parse_plain`) takes the first two colons, whatever the
+    model is — wrong for a local RelationDoc id, whose name has colons of its own. `parse`
+    tries the RelationDoc form first and reads the name whole; `pron.kernel.ids`' helpers
+    go through `parse`, not `parse_plain` (12 §5)."""
     blind = DocId.parse_plain(f"RelationDoc:{RELATION}")
-    assert blind.store == "RelationDoc"
+    assert blind.store == "RelationDoc"  # the bug parse_plain still has, on its own
     assert DocId.parse_relation("Table:table-3") is None
     assert DocId.parse_relation(f"A:RelationDoc:{RELATION}") == DocId(
         "A", "RelationDoc", RELATION

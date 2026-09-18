@@ -30,14 +30,12 @@ class ChangeVerb:
         assert field_name is not None
         model = model_of(export_id)
         value = kernel.coerce(model, field_name, value)
-        before = kernel.store.payload(DocId.parse_plain(export_id)).get(
+        before = kernel.store.payload(DocId.parse(export_id)).get(
             field_name.split(".")[0]
         )
         self._transition(kernel, model, field_name, export_id, before, value)
         kernel._guard(export_id)
-        before = kernel.store.update_field(
-            DocId.parse_plain(export_id), field_name, value
-        )
+        before = kernel.store.update_field(DocId.parse(export_id), field_name, value)
         w = Write("change", export_id, field_name, before, value, done=True)
         kernel._after_write(export_id, w)
         return w

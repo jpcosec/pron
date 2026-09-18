@@ -49,7 +49,7 @@ class DryRun:
         return json.loads(
             json.dumps(
                 overlay.get(export_id)
-                or self.kernel.store.payload(DocId.parse_plain(export_id))
+                or self.kernel.store.payload(DocId.parse(export_id))
             )
         )
 

@@ -25,13 +25,13 @@ class CleanVerb:
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
         kernel._guard(export_id)
-        before = kernel.store.clean(DocId.parse_plain(export_id), field_name)
+        before = kernel.store.clean(DocId.parse(export_id), field_name)
         w = Write(
             "clean",
             export_id,
             field_name,
             before,
-            kernel.store.payload(DocId.parse_plain(export_id)).get(field_name),
+            kernel.store.payload(DocId.parse(export_id)).get(field_name),
             done=True,
         )
         kernel._after_write(export_id, w)

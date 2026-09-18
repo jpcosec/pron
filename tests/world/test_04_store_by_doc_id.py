@@ -91,3 +91,49 @@ def test_untrack_and_track_take_the_document_out_and_back(world: World):
     assert store.doc(NEW) is None
     store.track(NEW, path)
     assert store.payload(NEW)["number"] == 77
+
+
+RELATION_PAYLOAD = {
+    "title": "client-ana-perez likes table-3",
+    "source_id": "Client:client-ana-perez",
+    "target_id": "Table:table-3",
+    "relation_type": "likes",
+    "condition": "",
+    "notes": "",
+}
+
+
+def test_parse_reads_a_relation_docs_local_id_where_parse_plain_would_misparse_it(
+    world: World,
+):
+    """A RelationDoc's name carries the ids of its two ends, colons and all (12 §5): the
+    blind split at the first two colons (`DocId.parse_plain`) reads a LOCAL one (no store
+    prefix) wrong — it takes 'RelationDoc' itself for the store. `DocId.parse` reads the
+    name whole, so a caller that only has the export id string (a write's `address`, a
+    session's `subject`) finds the document either way."""
+    store, rel_name = world.store, "likes--Client:client-ana-perez--Table:table-3"
+    rel = DocId.of("RelationDoc", rel_name)
+    store.create(rel, RELATION_PAYLOAD, world.root / "relations" / f"{rel_name}.md")
+    local_export_id = str(rel)  # "RelationDoc:likes--Client:...--Table:..."
+    assert local_export_id == f"RelationDoc:{rel_name}"
+    assert (
+        DocId.parse_plain(local_export_id).model != "RelationDoc"
+    )  # the bug: misparsed
+    assert DocId.parse(local_export_id) == rel
+    assert (
+        store.payload(DocId.parse(local_export_id))["title"]
+        == RELATION_PAYLOAD["title"]
+    )
+
+
+def test_qualify_and_relativize_a_relation_docs_id_through_kernel_ids(world: World):
+    """`pron.kernel.ids.qualify`/`relativize` go through `DocId.parse` now (12 §5): a
+    federated RelationDoc id round-trips the same as any other document's."""
+    from pron.kernel import ids
+
+    rel_name = "likes--Client:client-ana-perez--Table:table-3"
+    local_id = f"RelationDoc:{rel_name}"
+    federated_id = f"A:RelationDoc:{rel_name}"
+    assert ids.qualify(local_id, "A") == federated_id
+    assert ids.relativize(federated_id, "A") == local_id
+    assert ids.split_id(local_id) == (None, "RelationDoc", rel_name)

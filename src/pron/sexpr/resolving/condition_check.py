@@ -40,9 +40,7 @@ class ConditionCheck:
         if not condition.strip():
             return True, ""
         overlay = overlay or {}
-        s_payload = overlay.get(subject) or self.store.payload(
-            DocId.parse_plain(subject)
-        )
+        s_payload = overlay.get(subject) or self.store.payload(DocId.parse(subject))
         where = BRACE_RE.sub(lambda m: str(s_payload.get(m.group(1), "")), condition)
         target = over or subject
         if target in overlay:
@@ -61,7 +59,7 @@ class ConditionCheck:
     ) -> tuple[bool, str]:
         t_store, t_model, t_doc = split_id(target)
         ok = (
-            self.store.matches(DocId.parse_plain(target), where, payload)
+            self.store.matches(DocId.parse(target), where, payload)
             if t_doc != "$created"
             else pending_matches(self.store, t_model, where, payload, t_store)
         )

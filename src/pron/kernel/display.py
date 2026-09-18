@@ -61,7 +61,7 @@ class Display:
             )
             if not targets:
                 return ""
-            td = self.world.store.doc(DocId.parse_plain(targets[0]))
+            td = self.world.store.doc(DocId.parse(targets[0]))
             return str(td.payload.get(sub_field, "")) if td else ""
 
         pieces = SEPARATOR_RE.split(template)  # part, separator, part, …

@@ -48,15 +48,19 @@ def test_every_entry_is_identified_as_the_world_exports_it(world):
         assert entry.id != entry.name
 
 
-def test_an_entry_carries_its_parts_so_no_consumer_splits_an_id(world):
+def test_an_entry_carries_its_parts_directly_without_splitting_the_id(world):
     """A document name may itself hold a colon (a RelationDoc is named after the two ends
-    it joins), and then an export id cannot be split back: 'RelationDoc:r--A:b' reads as
-    store 'RelationDoc'. An entry carries store, model and name apart for that reason."""
+    it joins): reading such an id back apart needs `DocId.parse`, which knows to read a
+    RelationDoc's name whole (12 §5) — `split_id` goes through it, so it reads correctly
+    too. An entry never has to split at all: it carries store, model and name directly from
+    the world, not parsed back out of the id it prints."""
     entries = {e.name: e for e in corpus_of(world).entries()}
     tricky = [e for n, e in entries.items() if ":" in n]
     assert tricky, "the restaurant has relation documents"
     for entry in tricky:
-        assert split_id(entry.id)[1] != entry.model  # the ambiguity, stated
+        assert (
+            split_id(entry.id)[1] == entry.model
+        )  # DocId.parse reads it correctly now
         assert entry.model == "RelationDoc"
 
 

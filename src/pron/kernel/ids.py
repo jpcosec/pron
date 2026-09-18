@@ -6,8 +6,9 @@ one of a store linked into it; an address is `st.{Model}.doc` or `store:st.{Mode
 pron splits an id by hand.
 
 The implementation is `pron.world.doc_id.DocId`; these are its string-in, string-out
-forms. They split blind to the model (`DocId.parse_plain`), as they always have: only
-`split_relation_doc_id` reads a RelationDoc's id whole.
+forms. They parse with `DocId.parse`, which reads a RelationDoc's id whole (its name
+embeds the ids of its two ends, colons and all) and only then falls back to the blind
+split at the first two colons that every other id gets.
 """
 
 from __future__ import annotations
@@ -19,7 +20,7 @@ __all__ = ["LOCAL", "DocId", "is_local"]
 
 def split_id(export_id: str) -> tuple[str | None, str, str]:
     """('A', 'Model', 'doc') for 'A:Model:doc'; (None, 'Model', 'doc') for 'Model:doc'."""
-    d = DocId.parse_plain(export_id)
+    d = DocId.parse(export_id)
     return d.store, d.model, d.name
 
 
@@ -54,7 +55,7 @@ def scope(store: str | None, model: str, family: bool = True) -> str:
 
 
 def address_of(export_id: str) -> str:
-    return DocId.parse_plain(export_id).address
+    return DocId.parse(export_id).address
 
 
 def export_id(address: str) -> str:
@@ -71,13 +72,13 @@ def export_id(address: str) -> str:
 
 def relativize(export_id: str, store: str | None) -> str:
     """The id as the documents of `store` write it (`DocId.relativize`)."""
-    d = DocId.parse_plain(export_id)
+    d = DocId.parse(export_id)
     return _unless_same(export_id, d, d.relativize(store))
 
 
 def qualify(export_id: str, store: str | None) -> str:
     """The id as a session that links `store` names it (`DocId.qualify`)."""
-    d = DocId.parse_plain(export_id)
+    d = DocId.parse(export_id)
     return _unless_same(export_id, d, d.qualify(store))
 
 

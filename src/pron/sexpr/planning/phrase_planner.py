@@ -62,7 +62,7 @@ class PhrasePlanner:
         if eid in pending:
             return None  # a create of this move the store has not written yet
         try:
-            self.world.store.payload(DocId.parse_plain(eid))
+            self.world.store.payload(DocId.parse(eid))
         except StoreError:
             return f"there is no {eid}"
         return None

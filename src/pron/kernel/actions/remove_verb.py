@@ -40,23 +40,23 @@ class RemoveVerb:
     @staticmethod
     def _value(kernel, export_id, field_name, value):
         """One value out of a list field; not done when it is not there."""
-        lst = kernel.store.payload(DocId.parse_plain(export_id)).get(field_name)
+        lst = kernel.store.payload(DocId.parse(export_id)).get(field_name)
         if not isinstance(lst, list) or value not in lst:
             return Write("remove", export_id, field_name, done=False, note="not there")
         before = list(lst)
         lst.remove(value)
-        kernel.store.update_field(DocId.parse_plain(export_id), field_name, lst)
+        kernel.store.update_field(DocId.parse(export_id), field_name, lst)
         return Write("remove", export_id, field_name, before, lst, done=True)
 
     @staticmethod
     def _field(kernel, export_id, field_name):
-        before = kernel.store.remove_field(DocId.parse_plain(export_id), field_name)
+        before = kernel.store.remove_field(DocId.parse(export_id), field_name)
         return Write("remove", export_id, field_name, before, None, done=True)
 
     def undo(self, kernel, write):
         if write.get("before") is None:
             return None
-        doc_id, before = DocId.parse_plain(write["address"]), write["before"]
+        doc_id, before = DocId.parse(write["address"]), write["before"]
         create = not isinstance(before, list)  # a scalar's field was deleted whole
         kernel.store.update_field(doc_id, write["field"], before, create=create)
         return Write(

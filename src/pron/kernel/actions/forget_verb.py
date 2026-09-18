@@ -21,7 +21,7 @@ class ForgetVerb:
         return kernel.dry.load(export_id, overlay)
 
     def execute(self, kernel, export_id, field_name, value):
-        doc_id = DocId.parse_plain(export_id)
+        doc_id = DocId.parse(export_id)
         path = kernel.store.doc_path(doc_id)
         payload = kernel.store.payload(doc_id)
         dependents = kernel.dependents(export_id)
@@ -45,7 +45,7 @@ class ForgetVerb:
     def undo(self, kernel, write):
         path = Path(write.get("path", ""))
         if path.exists():
-            kernel.store.track(DocId.parse_plain(write["address"]), path)
+            kernel.store.track(DocId.parse(write["address"]), path)
             return Write(
                 "undo",
                 write["address"],

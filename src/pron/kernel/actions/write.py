@@ -41,7 +41,7 @@ class Write:
 def restore_field(kernel: "Kernel", write: dict[str, Any]) -> Write:
     """Undo for a verb whose inverse is simply setting the field back to what it was
     (`change`, `clean`): both leave the field as one value and are undone the same way."""
-    doc_id = DocId.parse_plain(write["address"])
+    doc_id = DocId.parse(write["address"])
     before = kernel.store.update_field(doc_id, write["field"], write["before"])
     return Write(
         "undo", write["address"], write["field"], before, write["before"], done=True

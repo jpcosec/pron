@@ -29,12 +29,12 @@ class AddVerb:
     def execute(self, kernel, export_id, field_name, value):
         assert field_name is not None
         kernel._guard(export_id)
-        lst = kernel.store.payload(DocId.parse_plain(export_id)).get(field_name)
+        lst = kernel.store.payload(DocId.parse(export_id)).get(field_name)
         if isinstance(lst, list) and value in lst:
             return Write(
                 "add", export_id, field_name, lst, lst, done=False, note="already there"
             )
-        idx = kernel.store.append(DocId.parse_plain(export_id), field_name, value)
+        idx = kernel.store.append(DocId.parse(export_id), field_name, value)
         w = Write(
             "add", export_id, field_name, None, value, done=True, extra={"index": idx}
         )
@@ -42,13 +42,13 @@ class AddVerb:
         return w
 
     def undo(self, kernel, write):
-        lst = kernel.store.payload(DocId.parse_plain(write["address"])).get(
+        lst = kernel.store.payload(DocId.parse(write["address"])).get(
             write["field"], []
         )
         if write["after"] in lst:
             lst.remove(write["after"])
             kernel.store.update_field(
-                DocId.parse_plain(write["address"]), write["field"], lst
+                DocId.parse(write["address"]), write["field"], lst
             )
         return Write(
             "undo", write["address"], write["field"], write["after"], None, done=True
