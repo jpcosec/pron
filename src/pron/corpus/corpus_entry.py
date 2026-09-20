@@ -1,23 +1,9 @@
-"""One document of the corpus (spec 12 §5b), identified as the world exports it: the export
-id (`Model:doc`, `store:Model:doc`), never the bare name — two stores of a federated world
-may hold the same document name.
+"""One document of the corpus (spec 12 §5b), re-exported from sldb: identified as the
+world exports it, never by the bare name.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Any
+from sldb.api.corpus.corpus_entry import CorpusEntry
 
-
-@dataclass(frozen=True)
-class CorpusEntry:
-    """One document of the corpus, identified as the world exports it."""
-
-    id: str
-    model: str
-    name: str
-    store: str | None
-    text: str
-    hash: str
-    payload: dict[str, Any] = field(default_factory=dict)
-    tags: tuple[str, ...] = ()
+__all__ = ["CorpusEntry"]

@@ -64,12 +64,11 @@ def test_the_five_old_constants_are_gone():
     assert Graph.__init__.__defaults__ == (None,)
 
 
-def test_a_projection_with_no_models_admits_what_doc_kind_puts_in_the_corpus(
-    monkeypatch,
-):
+def test_a_projection_with_no_models_admits_every_model():
+    """The corpus moved to sldb: a projection with no models admits everything, and the
+    consumer narrows it with `models` or `exclude_models`, never through pron's DocKind."""
     assert IndexProjection().admits("Table") and IndexProjection().admits("MoveDoc")
-    monkeypatch.setitem(doc_kind._DECLARED, "Table", DocKind("Table", in_corpus=False))
-    assert not IndexProjection().admits("Table")
+    assert not IndexProjection.of(exclude_models=["Table"]).admits("Table")
     assert IndexProjection.of(models=["Table"]).admits("Table")
 
 

@@ -1,13 +1,9 @@
-"""The approximate-matching port (spec 11 §2): an application injects an Embedder; without
-one, pron falls back to difflib and says so in the trace. It never executes anything, it
-only ranks neighbors to offer.
+"""The approximate-matching port, re-exported from sldb (spec 11 §2): an application
+injects an Embedder; without one pron falls back to difflib.
 """
 
 from __future__ import annotations
 
-from typing import Protocol, Sequence
+from sldb.api.matching.embedder_protocol import Embedder
 
-
-class Embedder(Protocol):
-    def id(self) -> str: ...
-    def embed(self, texts: Sequence[str]) -> list[list[float]]: ...
+__all__ = ["Embedder"]
