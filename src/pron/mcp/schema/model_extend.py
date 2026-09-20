@@ -13,6 +13,7 @@ from pron.mcp.schema.field_decl import FieldDecl
 from pron.mcp.writes.arg_error import ArgError
 from pron.world.store_error import StoreError
 from pron.world.world import World
+from sldb.core.exceptions import SLDBModelError
 
 
 class ModelExtend:
@@ -38,7 +39,7 @@ class ModelExtend:
                 "draft": draft.text(),
                 "validation": self.store.model_validate_draft(name),
             }
-        except (ArgError, StoreError) as exc:
+        except (ArgError, StoreError, SLDBModelError) as exc:
             draft.restore()
             return _error(f"the draft of {name} does not validate: {exc}")
         if not confirm:
