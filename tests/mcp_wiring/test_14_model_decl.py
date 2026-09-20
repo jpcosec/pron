@@ -4,12 +4,12 @@ way pron's models are, and that module checked by import and roundtrip."""
 from __future__ import annotations
 
 import pytest
+from sldb.core.exceptions import SLDBModelError
 
 from mcp_wiring.wired import DISH
 from pron.mcp.schema.field_decl import FieldDecl
 from pron.mcp.schema.model_check import ModelCheck
 from pron.mcp.schema.model_source import ModelSource
-from pron.mcp.writes.arg_error import ArgError
 
 
 @pytest.mark.parametrize(
@@ -24,7 +24,7 @@ from pron.mcp.writes.arg_error import ArgError
     ],
 )
 def test_a_field_that_is_not_one_is_refused(raw):
-    with pytest.raises(ArgError):
+    with pytest.raises(SLDBModelError):
         FieldDecl.of(raw)
 
 
@@ -40,7 +40,7 @@ def test_a_field_becomes_its_line():
 
 def test_a_model_needs_a_camel_name_and_distinct_fields():
     for name, fields in [("dish", DISH), ("Dish", []), ("Dish", [DISH[0], DISH[0]])]:
-        with pytest.raises(ArgError):
+        with pytest.raises(SLDBModelError):
             ModelSource.of(name, fields, None, None)
 
 
