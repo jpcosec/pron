@@ -103,7 +103,7 @@ Una precisión sobre `read_only`: impide toda escritura sobre el dominio, pero c
 
 **Identificadores de nodo.** El grafo usa los ids de la exportación de sldb, y `pron.graph` da las funciones que los arman: `doc_id("Reservation:reservation-x") == "sldb://document/Reservation:reservation-x"`, `model_id("Reservation") == "sldb://model/Reservation"`, `relation_type_id("booked_by") == "sldb://relation_type/booked_by"`, `field_id("Reservation", "status") == "sldb://field/Reservation.status"`. Un `export_id` es `Modelo:nombre` local, o `store:Modelo:nombre` cuando la sesión habla a través de un daemon con stores enlazados; `pron.ids` los parte y arma (`split_id`, `join_id`, `store_of`, `scope`, `address_of`; `None` y `"local"` significan lo mismo). Todo método del grafo recibe y devuelve estos ids completos.
 
-**`World.graph` (`Graph`)** compone el índice de aristas de sldb en cada lectura — sin archivo propio, sin networkx (03 §Qué se verifica dónde). Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que sldb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
+**`World.graph` (`Graph`)** compone el índice de aristas de sldb en cada lectura — sin archivo propio, sin networkx (03 §Qué se verifica dónde). Los recorridos por relación viven en la capa de grafo de sldb (`sldb.api.graph`); pron los consume y delega cada método, no los implementa. Una arista es siempre `{"source": id, "target": id, "relation": str, "metadata": dict}`; `metadata` trae lo que sldb registró (`origin`, `relation_doc`, `condition`, `axis` en las autoradas).
 
 | método | firma | devuelve |
 |---|---|---|
@@ -128,9 +128,9 @@ Nada del grafo sabe qué relaciones declara un mundo: toda caminata se parametri
 
 ## 5b. El corpus indexado
 
-Un runtime que recupera documentos por significado no arma el índice: declara su política y pron mantiene el resto. `pron.corpus` da dos piezas.
+Un runtime que recupera documentos por significado no arma el índice: declara su política y el sustrato mantiene el resto. El corpus indexado y el puerto de matching viven en sldb (`sldb.api.corpus`, `sldb.api.matching`); `pron.corpus` los reexporta, y su `Corpus` adapta el `World` de pron al corpus por store de sldb.
 
-`IndexProjection.of(models=None, exclude_models=(), text=summary_text, text_id="summary", stores=None)` es lo único que el consumidor declara: qué modelos entran al corpus (`models` los admite, `exclude_models` los quita) y cómo se lee el texto que representa a un documento (`text`, un `payload -> str`; `summary_text` y `fields_text(*campos)` son los dos usos corrientes). `text_id` nombra esa representación: cambiarla invalida el índice igual que cambiar de embedder, y cada una guarda su archivo aparte. Un documento cuyo texto sale vacío no entra.
+`IndexProjection.of(models=None, exclude_models=(), text=summary_text, text_id="summary", stores=None)` es lo único que el consumidor declara: qué modelos entran al corpus (`models` los admite, sin `models` entran todos; `exclude_models` los quita) y cómo se lee el texto que representa a un documento (`text`, un `payload -> str`; `summary_text` y `fields_text(*campos)` son los dos usos corrientes). `text_id` nombra esa representación: cambiarla invalida el índice igual que cambiar de embedder, y cada una guarda su archivo aparte. Un documento cuyo texto sale vacío no entra.
 
 `Corpus(world, projection, embedder=None, matcher=None)` ejecuta esa política:
 
@@ -170,7 +170,7 @@ Un runtime que crea muchos mundos de la misma clase les da su vocabulario con un
 
 ## 9. Qué es estable
 
-Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13, `record["forms"]` y `record["resolved"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, `is_ready` y `ensure_ready`, `IndexProjection`, `Corpus`, `CorpusEntry` y `Hit` con las firmas de §5b, las funciones de id de `pron.graph` y de `pron.ids`, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
+Estable, y cambia solo con este documento: las firmas de `Session` (incluido `eval`), `RemoteSession` (incluido `eval`), `Response` y sus cinco campos, las formas del capítulo 13, `record["forms"]` y `record["resolved"]`, los cuatro `outcome`, las claves de `record` nombradas arriba, la clave de sesión remota, `world` y `home` y la regla de las proyecciones expuestas, `world.store.payload`, los métodos de `World` y `Graph` con las firmas y resultados de §5, `is_ready` y `ensure_ready`, y las funciones de id de `pron.graph` y de `pron.ids`. El corpus y el matching son del sustrato: `IndexProjection`, `Corpus`, `CorpusEntry`, `Hit`, `Matcher` y `DocumentIndex` viven en sldb (`sldb.api.corpus`, `sldb.api.matching`) y pron los reexporta, las funciones y clases de `pron.client`, las operaciones del socket, `socket_path`, y `init_world(template=)` / `apply_template` con la forma de la plantilla.
 
 Interior, sin promesa: el léxico, la superficie, `resolve`, `verbs`, `kernel`, `dialogue`, `ledger`, `display`, la forma de los `AnchorDoc` y `ProjectionDoc` más allá de lo que dicen 01 y 05, y el formato de `.pron/graph.nx.json`.
 
