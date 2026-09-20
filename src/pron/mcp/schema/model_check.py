@@ -4,6 +4,11 @@ The substrate owns the check now (ADR 2026-09-20): this re-exports sldb's `Model
 instead of keeping its own copy.
 """
 
-from sldb.api.model_create.model_check import EXAMPLES, ModelCheck, example, example_payload
+from sldb.api.model_create.model_check import (
+    EXAMPLES,
+    ModelCheck,
+    example,
+    example_payload,
+)
 
 __all__ = ["EXAMPLES", "ModelCheck", "example", "example_payload"]

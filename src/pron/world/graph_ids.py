@@ -5,10 +5,10 @@
 from __future__ import annotations
 
 from sldb.api import (
-    bare,
+    bare,  # noqa: F401 - re-exported (the id parser callers import from here)
     doc_node_id,
     field_node_id,
-    kind,
+    kind,  # noqa: F401 - re-exported (the id parser callers import from here)
     model_node_id,
     relation_type_node_id,
     tag_node_id,
