@@ -34,6 +34,7 @@ class ReadmeRender:
         return ["README.md out of date"]
 
     def _rendered(self, payload: dict) -> str:
+        # Excepción deliberada: sldb.api no expone render/extract de markdown de modelos; solo lo hace sldb.runtime.validation.
         from sldb.runtime.validation import render_model_markdown
 
         cwd = Path.cwd()

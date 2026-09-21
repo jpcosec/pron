@@ -11,6 +11,8 @@ from pathlib import Path
 from pydantic import ValidationError
 from pydantic_core import ErrorDetails
 from sldb.api import track_document_file, untrack_document
+
+# Excepción deliberada: sldb.api no expone render de markdown ni validación round-trip; solo lo hace sldb.runtime.validation.
 from sldb.runtime.validation import (
     render_model_markdown,
     validate_model_data_roundtrip,

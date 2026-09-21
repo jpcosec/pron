@@ -12,6 +12,8 @@ import json
 from pathlib import Path
 
 from sldb.api import resolve_model_ref
+
+# Excepción deliberada: sldb.api no expone lectura de índices ni del caché de documentos runtime; solo lookup por nombre.
 from sldb.store.io import load_documents_index
 from sldb.store.query import load_runtime_documents
 

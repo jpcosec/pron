@@ -51,6 +51,7 @@ class WrittenDocs:
 
     def _retrack(self, model: str, doc_id: str, path: Path) -> bool:
         """Whether the document drifted from its file; unless checking, track it again."""
+        # Excepción deliberada: sldb.api no expone extract de markdown de modelos; solo lo hace sldb.runtime.validation.
         from sldb.runtime.validation import extract_model_data
 
         store = self.world.store

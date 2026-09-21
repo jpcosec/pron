@@ -45,6 +45,7 @@ class GeneratedDocs:
         return changed
 
     def __call__(self, plan: Plan) -> list[str]:
+        # Excepción deliberada: sldb.api no expone render/extract de markdown de modelos; solo lo hace sldb.runtime.validation.
         from sldb.runtime.validation import extract_model_data, render_model_markdown
 
         model, specs, folder = plan

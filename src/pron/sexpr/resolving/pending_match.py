@@ -16,9 +16,11 @@ def pending_matches(
 ) -> bool:
     """sldb's evaluator over a document that does not exist yet: any document of the model
     lends its runtime shape, the payload is the pending one."""
+    from sldb.api import resolve_model_ref
+
+    # Excepción deliberada: sldb.api no expone el evaluador `--where` sobre payloads aun no salvados; solo existe en query_engine.
     from sldb.store.query_engine.filter import DocumentFilter
     from sldb.store.query_engine.where_parse import WherePredicateError
-    from sldb.api import resolve_model_ref
 
     sample = next(iter(store.docs_of(model, in_store or "local")), None) or next(
         iter(store.docs_of(model, "*")), None

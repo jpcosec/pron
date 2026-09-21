@@ -18,6 +18,8 @@ from sldb.api import (
     load_registered_model,
 )
 from sldb.core.exceptions import SLDBModelError
+
+# Excepción deliberada: sldb.api no expone lectura de índices en bruto (models/documents); solo modelos registrados.
 from sldb.store.io import load_documents_index, load_models_index
 
 from pron.kernel.ids import LOCAL, is_local

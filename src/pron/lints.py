@@ -48,6 +48,8 @@ class Lints:
     def _store_integrity(self) -> list[str]:
         """The store's own integrity: every tracked document matches its index (sldb stores check)."""
         from sldb.api import resolve_model_ref
+
+        # Excepción deliberada: sldb.api no expone la diagnosis de integridad del store (solo `check_edges`/journal).
         from sldb.store.diagnostics import diagnose_store
 
         store = self.store

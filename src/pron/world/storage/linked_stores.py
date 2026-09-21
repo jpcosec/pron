@@ -12,6 +12,8 @@ from pathlib import Path
 
 from sldb.api import StoreUpdateReport, link_store, open_store, update_store_indexes
 from sldb.core.exceptions import SLDBStoreError
+
+# Excepción deliberada (mismo criterio que graph_ui/sldb_adapter.py): sldb.api no expone el ciclo de operación ni índices/paths internos; el resto se llama por sldb.api.
 from sldb.store import documents_hash
 from sldb.store.io import load_store_index
 from sldb.store.layout import project_root as _project_root, store_exists

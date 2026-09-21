@@ -10,6 +10,8 @@ import builtins
 from typing import Any
 
 from sldb.api import resolve_model_ref
+
+# Excepción deliberada: sldb.api no expone queries estructurales por address ni el evaluador `--where`; solo APIs de nodos/edges.
 from sldb.store.query import (
     find_structural,
     get_structural,

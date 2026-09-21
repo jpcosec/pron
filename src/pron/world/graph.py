@@ -12,7 +12,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from sldb.api import load_edge_index
+from sldb.api import EdgeIndex, load_edge_index
 from sldb.api.graph import (
     children,
     descendants,
@@ -23,7 +23,6 @@ from sldb.api.graph import (
     sources,
     targets,
 )
-from sldb.store.edge_index.edge_index import EdgeIndex
 
 from pron.world.doc_kind import tags_outside_graph
 from pron.world.graph_ids import (  # noqa: F401 - re-exported: callers import ids from here
