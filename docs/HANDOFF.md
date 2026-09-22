@@ -93,3 +93,38 @@ Pendiente (mismo orden del handoff previo): 4 proyecciones (`ProjectionDoc` expl
 ## Nota 2026-09-15: el checkpoint anterior no está en el repo
 
 El checkpoint del 2026-09-14 describe `source_symbols.py`, `source_graph.py` y cambios en `world.py`/`graph.py`/`verbs.py`/`display.py`/`lexicon.py`/`resolve.py`/`session.py`, más la prueba `test_source_contains_and_imports_answer_through_pron`. Nada de eso existe en ningún commit, en ningún objeto inalcanzable de git ni en ningún archivo del disco (se buscó `source_symbols.py` en todo el sistema): cuando se commiteó (`38baa62`), lo único sin commitear era este archivo y el arreglo de `payload["asked"]` en `surface/interpret.py`. Ese trabajo hay que rehacerlo. Después se mezcló `sexp-core` (formas, capítulo 13) en `ae2d0a3`.
+
+## Nota 2026-09-17 — superficie `say` vs KB de átomos (AgentsKBs/antonia-cobranza)
+
+Al interrogar el mundo `knowledge_antonia-cobranza` con preguntas libres en inglés
+("how do I pay the invoice?", "is this message real?", "why do I receive the
+reminder?"), `say` falla a nivel de léxico ("I don't have \"pay\""), aunque la KB
+tenga el conocimiento. Causa: el léxico de `say` resuelve sustantivos por
+clase + tokens de título/identificador, no por paráfrasis; los átomos de
+`kb_models` (DomainAtom/RuleAtom con campo `answer`) no son consultables por
+pregunta conversacional, solo por fraseo canónico ("the domainatom pago").
+
+Esto no es KB faltante: el compilador del agente consume los campos `answer` de
+los átomos, no la superficie `say`. Quedó anotado como límite de superficie de
+pron, no como bug de los mundos. Si algún día se quiere interrogar por
+paráfrasis, el hueco está en `surface/` + `world/lexicon_parts/` (hoy solo los
+valores de `system`/`tags` entran al léxico como palabras, y solo para sugerir,
+no para resolver identidad).
+
+Resolución propuesta (jp, 2026-09-21): cuando el léxico no resuelve una palabra,
+no responder un "I don't have \"pay\"" seco. La respuesta tiene dos partes:
+
+1. "Did you mean a, b, c, d?" — las opciones más cercanas del léxico reconocido.
+   El ranking de candidatos viene de embeddings, no de heurística a mano:
+   comparar el token desconocido contra las entradas del léxico usando el
+   índice semántico del store (el mismo que alimenta la búsqueda semántica de
+   sldb, expuesta en `sldb serve` vía `GET /find` — pron ya habla con `sldb.api`,
+   ver `src/pron/world/world.py`).
+2. "Here is the full recognized lexicon" — a pedido, el vocabulario completo que
+   sí reconoce la superficie (ya vive armado en `world/lexicon_parts/`, p.
+   ej. `vocabulary.py`, `model_words.py`, `relation_words.py`).
+
+Punto de enganche: los `UnknownWord("I don't have that word: ...")` que hoy
+abortan la interpretación salen de `src/pron/sexpr/forms/form_words.py`; ahí (o
+en el catch que los convierte en respuesta) es donde el error debería cargarse
+con candidatos y ofrecer el léxico, en vez de cortar el turno.
