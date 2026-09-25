@@ -1,5 +1,13 @@
 # Changelog
 
+## Sin publicar
+
+- `pron serve --listen HOST:PORT`: el daemon atiende además por TCP, con el mismo
+  protocolo, a un cliente que no comparte su sistema de archivos (spec 12 §7).
+  `request`, `alive`, `RemoteSession`, `RemoteGraph` y `RemoteWorld` aceptan `HOST:PORT`
+  donde iba la ruta del socket; `pron.remote.tcp_address` dice cuál es
+  (`tests/remote/test_07_serve_tcp.py`).
+
 ## 1.0.0 — 2026-09-10
 
 First tagged release. pron exists by its own right: SHRDLU over an sldb store whose

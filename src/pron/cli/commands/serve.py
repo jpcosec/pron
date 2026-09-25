@@ -25,6 +25,11 @@ import click
     default=None,
     help="Socket path (default: the first world's .pron/serve.sock)",
 )
+@click.option(
+    "--listen",
+    default=None,
+    help="HOST:PORT to answer over TCP too, for clients outside this filesystem",
+)
 @click.option("--stop", is_flag=True, help="Stop the server listening at the socket")
 @click.option(
     "--mount", default=None, help="NAME=PATH to add a world to the running daemon"
@@ -33,6 +38,7 @@ def command(
     world: tuple[str, ...],
     pythonpath: str | None,
     socket: str | None,
+    listen: str | None,
     stop: bool,
     mount: str | None,
 ) -> int:
@@ -44,10 +50,12 @@ def command(
     other world gets a .pron/serve.sock pointing at it. A caller from another world may
     open only the projections a world exposes. Runs in the foreground until --stop is
     sent from another shell or the process is interrupted; --mount NAME=PATH adds a world
-    to a running daemon.
+    to a running daemon; --listen HOST:PORT answers the same requests over TCP too, for a
+    client in another container or machine (nothing authenticates: keep it on a private
+    network).
 
     Usage:
-      pron serve --world . [--world other=../other] [--pythonpath .] [--socket PATH]
+      pron serve --world . [--world other=../other] [--pythonpath .] [--socket PATH] [--listen HOST:PORT]
       pron serve --world . --mount other=../other
       pron serve --world . --stop
     """
@@ -61,7 +69,7 @@ def command(
         return _stop(sock)
     if mount:
         return _mount(sock, mount, pythonpath)
-    return _serve(sock, entries)
+    return _serve(sock, entries, listen)
 
 
 def _entry(spec: str, pythonpath: str | None) -> tuple[str, str, str | None]:
@@ -97,13 +105,17 @@ def _mount(sock: Path, mount: str, pythonpath: str | None) -> int:
     return 0
 
 
-def _serve(sock: Path, entries: list[tuple[str, str | Path, str | None]]) -> int:
+def _serve(
+    sock: Path, entries: list[tuple[str, str | Path, str | None]], listen: str | None
+) -> int:
     from pron.serve import Server
 
-    server = Server(sock=sock, worlds=entries)
+    server = Server(sock=sock, worlds=entries, listen=listen)
     worlds = ", ".join(f"{n}={root}" for n, root in server.worlds().items())
     print(
-        f"pron serve · worlds {worlds} · socket {sock} · pid {os.getpid()}", flush=True
+        f"pron serve · worlds {worlds} · socket {sock}"
+        f"{f' · tcp {listen}' if listen else ''} · pid {os.getpid()}",
+        flush=True,
     )
     server.serve_forever()
     return 0

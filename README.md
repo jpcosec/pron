@@ -58,6 +58,7 @@ pron say "the large tables on the terrace" --world . --trace
 pron repl --world . --speaker me
 pron serve --world . [--world otro=../otro]  # un store abierto, el de ., con ../otro enlazado como mundo 'otro'; say, repl y los runtimes hablan por .pron/serve.sock
 pron serve --world . --mount tercero=../tercero   # agrega un mundo a un daemon corriendo
+pron serve --world . --listen 0.0.0.0:8200   # además por TCP, para un cliente en otro contenedor (red privada: no autentica)
 pron serve --world . --stop
 pron init --world . --template DIR          # un mundo nuevo con las palabras, proyecciones y relaciones de la plantilla
 pron check --world .                        # los lints

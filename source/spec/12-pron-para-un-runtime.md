@@ -162,7 +162,9 @@ pron no decide quién es el hablante ni qué proyección le toca. Eso lo elige e
 
 Protocolo: una conexión por petición, un objeto JSON por línea en cada sentido. Operaciones: `say`, `eval` (con `forms`), `payload`, `lexicon`, `state`, `close` (descartar el diálogo de esa clave), `graph` y `world` (`method` de la lista de §5 más `args` por nombre), `refresh`, `ping`, `worlds`, `mount`, `stop`. Un cliente de otro mundo solo puede `say`, `lexicon`, `state`, `close`, `ping`, `worlds`. Las que hablan de una sesión llevan los cinco parámetros de §2. Toda respuesta trae `ok`; con `ok: false`, `error`. `pron.client.request(sock, {...})` hace una petición y levanta `ConnectionError` si nadie escucha y `RuntimeError` si el servidor rechazó; `alive(sock)` dice si hay servidor, y un archivo de socket huérfano no engaña.
 
-El servidor atiende de a una petición. No autentica: habla como el hablante que el cliente dice ser. Quién puede tocar el socket es del sistema de archivos y del runtime.
+Con `--listen HOST:PORT` el daemon atiende **además** por TCP las mismas operaciones con el mismo protocolo: es la puerta de un cliente que no comparte su sistema de archivos (otro contenedor, otra máquina). Donde va la ruta de un socket, el cliente acepta `HOST:PORT`: `request`, `alive`, `RemoteSession`, `RemoteGraph` y `RemoteWorld`; `tcp_address(x)` dice cuál de las dos es. El socket Unix sigue existiendo, y `stop` cierra las dos puertas.
+
+El servidor atiende de a una petición. No autentica: habla como el hablante que el cliente dice ser. Quién puede tocar el socket es del sistema de archivos y del runtime. Por TCP no hay sistema de archivos que lo decida: quién llega a ese puerto es de la red del runtime (una red privada entre contenedores), nunca un puerto público.
 
 ## 8. Plantilla de mundo
 

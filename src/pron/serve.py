@@ -43,6 +43,7 @@ class Server:
         pythonpath: str | None = None,
         sock: str | Path | None = None,
         worlds: list[tuple[str, str | Path, str | None]] | None = None,
+        listen: str | None = None,
     ):
         """The daemon's store is `root` (or the first of `worlds`); every other world is
         linked into it under its name, so one store serves them all."""
@@ -53,7 +54,7 @@ class Server:
         self.pool = SessionPool(self.world)
         self.lock = threading.Lock()
         self.socket = SocketServing(
-            Path(sock) if sock else socket_path(self.world.root)
+            Path(sock) if sock else socket_path(self.world.root), listen
         )
         self.dispatch = RequestDispatcher(self)
         for name, r, _ in entries[1:]:
