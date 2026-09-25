@@ -29,11 +29,24 @@ def socket_path(root: str | Path) -> Path:
     )
 
 
+def tcp_address(address: str | Path) -> tuple[str, int] | None:
+    """(host, port) when the address is `HOST:PORT`, None when it is a socket path: a server
+    in another container or machine is reached by TCP, one on this machine by its socket
+    (spec 12 §7)."""
+    text = str(address)
+    host, sep, port = text.rpartition(":")
+    if sep and host and "/" not in text and port.isdigit():
+        return host, int(port)
+    return None
+
+
 def request(
     path: str | Path, req: dict[str, Any], timeout: float = 600.0
 ) -> dict[str, Any]:
-    """One request to a running server. Raises ConnectionError when nobody listens."""
-    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+    """One request to a running server, at its socket path or at `HOST:PORT`. Raises
+    ConnectionError when nobody listens."""
+    family = socket.AF_INET if tcp_address(path) else socket.AF_UNIX
+    with socket.socket(family, socket.SOCK_STREAM) as s:
         s.settimeout(timeout)
         _send(s, path, req)
         raw = _receive(s)
@@ -45,7 +58,7 @@ def request(
 
 def _send(s: socket.socket, path: str | Path, req: dict[str, Any]) -> None:
     try:
-        s.connect(str(path))
+        s.connect(tcp_address(path) or str(path))
     except OSError as e:
         raise ConnectionError(f"no pron server at {path}: {e}") from e
     s.sendall(json.dumps(req, ensure_ascii=False).encode("utf-8") + b"\n")
@@ -65,8 +78,8 @@ def _receive(s: socket.socket) -> bytes:
 
 
 def alive(path: str | Path) -> bool:
-    """Whether a server answers at that socket."""
-    if not Path(path).exists():
+    """Whether a server answers at that socket, or at that `HOST:PORT`."""
+    if tcp_address(path) is None and not Path(path).exists():
         return False
     try:
         return bool(request(path, {"op": "ping"}, timeout=5.0).get("ok"))

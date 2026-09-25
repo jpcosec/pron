@@ -4,6 +4,7 @@ from pron.remote.client import (
     alive,
     request,
     socket_path,
+    tcp_address,
 )
 from pron.remote.remote_graph import RemoteGraph
 from pron.remote.remote_session import RemoteSession
@@ -18,4 +19,5 @@ __all__ = [
     "alive",
     "request",
     "socket_path",
+    "tcp_address",
 ]

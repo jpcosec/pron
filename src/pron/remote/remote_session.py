@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from pron.kernel.parts.response import Response
-from pron.remote.client import request
+from pron.remote.client import request, tcp_address
 from pron.remote.remote_graph import RemoteGraph
 from pron.remote.remote_world import RemoteWorld
 
@@ -31,7 +31,7 @@ class RemoteSession:
         """world: which of the server's worlds to speak to (name or root; the server's default
         when None). home: the caller's own world; when it differs from `world`, only that
         world's exposed projections open (spec 12 §6)."""
-        self.path = Path(path)
+        self.path = path if tcp_address(path) else Path(path)
         self.base = {
             "projection": projection,
             "speaker": speaker,

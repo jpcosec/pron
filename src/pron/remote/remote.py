@@ -7,7 +7,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from pron.remote.client import request
+from pron.remote.client import request, tcp_address
 
 
 class _Remote:
@@ -16,7 +16,7 @@ class _Remote:
     op = ""
 
     def __init__(self, path: str | Path, base: dict[str, Any] | None = None):
-        self.path = Path(path)
+        self.path = path if tcp_address(path) else Path(path)
         self.base = dict(base or {})
 
     def call(self, method: str, **args: Any) -> Any:
