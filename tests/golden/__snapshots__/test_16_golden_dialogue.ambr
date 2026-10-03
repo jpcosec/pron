@@ -1547,6 +1547,7 @@
           'matcher': 'difflib',
           'near': list([
             'semantic equivalent',
+            'composes',
             'topic',
           ]),
           'values': list([
@@ -1569,15 +1570,15 @@
         ]),
         'trace': list([
           'interpretation: none',
-          "'evento' is not in the projection · near (difflib): *semantic equivalent*, *topic*; value candidates: the fact about evento_adverso, the fact about seguimiento",
+          "'evento' is not in the projection · near (difflib): *semantic equivalent*, *composes*, *topic*; value candidates: the fact about evento_adverso, the fact about seguimiento",
         ]),
         'writes': list([
         ]),
       }),
-      'text': 'I don\'t have "evento". Did you mean *the fact about evento_adverso* or *the fact about seguimiento* or *semantic equivalent* or *topic*?',
+      'text': 'I don\'t have "evento". Did you mean *the fact about evento_adverso* or *the fact about seguimiento* or *semantic equivalent* or *composes* or *topic*?',
       'trace': list([
         'interpretation: none',
-        "'evento' is not in the projection · near (difflib): *semantic equivalent*, *topic*; value candidates: the fact about evento_adverso, the fact about seguimiento",
+        "'evento' is not in the projection · near (difflib): *semantic equivalent*, *composes*, *topic*; value candidates: the fact about evento_adverso, the fact about seguimiento",
       ]),
       'turn': 'evento adverso',
       'written': dict({

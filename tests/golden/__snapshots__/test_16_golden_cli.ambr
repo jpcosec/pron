@@ -355,11 +355,12 @@
       'stderr': '',
       'stdout': '''
         {
-          "relations": "models added: 2 \u00b7 builtin relation types written: 11 \u00b7 predicates added: 11",
+          "relations": "models added: 2 \u00b7 builtin relation types written: 14 \u00b7 predicates added: 14",
           "pron_models_added": [
             "pron.models:AnchorDoc",
             "pron.models:ProjectionDoc",
-            "pron.models:MoveDoc"
+            "pron.models:MoveDoc",
+            "pron.models:TheoremDoc"
           ],
           "relation_types_added": [],
           "template_added": []
