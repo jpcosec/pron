@@ -67,6 +67,27 @@ Las relaciones autoradas son documentos: su verdad está en sldb, y el índice d
 
 Cada escritura de sldb (`create`, `save payload`, `untrack`, `stores update`) deja al día el shard de aristas del documento que tocó, en la misma operación: leer una arista nunca dispara una reconstrucción ni cae a una segunda puerta. Una edición de un documento por **fuera** de sldb (un archivo tocado a mano) no se refleja en el índice hasta el próximo refresh — `edges_from`/`edges_to` pueden devolver la arista vieja durante esa ventana; el índice lo sabe (`stale`, 04) pero no lo esconde en la lectura. Es el mismo riesgo que ya existe para cualquier otro campo de un documento editado por fuera de sldb (07 §5), no uno nuevo de las aristas. Ninguna escritura queda bloqueada por eso, porque ninguna escritura depende de que el índice esté al día.
 
+## Reglas
+
+Una **regla** es un documento `TheoremDoc` del mundo: un patrón y un cuerpo de formas. Una
+regla `consequent` prueba una meta que calza con su patrón; una regla `antecedent` dispara
+cuando algo que calza con su patrón se afirma — lo que sigue *porque* se afirmó. Las reglas
+son de cada mundo y no del motor: un mundo sin reglas se sigue interrogando con las
+primitivas de 13.
+
+```
+(theorem table-is-free consequent (free ?t)
+  (goal (is ?t Table))
+  (not (goal (edge assigned_to ?r ?t))))
+```
+
+Así, lo que en el motor era un caso propio —una transición de estado, la condición de una
+arista, un movimiento compuesto de 05— puede declararse como regla: la transición es la
+existencia de la arista `transitions_to` entre los dos documentos `State` y la condición de
+esa arista sobre el sujeto, dicho con metas. La búsqueda prueba, retrocede y elige reglas; lo
+que verifica mientras busca queda en la traza y en las `queries` del `MoveDoc` (07), y solo
+lo que cerró se escribe, por los verbos de 04.
+
 ## Los verbos que ya existen sin declararse
 
 Los links con predicado dentro del texto, `[implements:: [[x]]]`, son aristas autoradas en línea. sldb los recupera con `docs recover` y les da el eje del predicado registrado. pron los trata como verbos transitivos leídos, no escritos: para afirmar uno se escribe un `RelationDoc`, no se edita prosa. Cada arista leída dice de dónde viene, `RelationDoc` o link, y eso decide si se puede negar por oración.
@@ -84,3 +105,6 @@ Un verbo con eje WHY o PROVENANCE responde "why?"; uno con eje HOW responde "how
 - Ninguna arista de dominio existe en el índice de sldb sin un `RelationDoc` o un link con predicado que la origine.
 - pron nunca ensambla aristas: las compone sldb. Si el índice está viejo (un documento tocado por fuera de sldb), la lectura puede devolver una arista desactualizada hasta el próximo refresh, y `stale` (04) lo dice.
 - Un verbo no verificado contra `source_types` y `target_types` no se escribe.
+- Ninguna regla de ningún mundo vive en el código de pron: las reglas del mundo son
+  documentos suyos, y una meta se prueba con lo que el mundo declara, nunca con un caso del
+  motor.

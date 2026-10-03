@@ -8,6 +8,7 @@ from pron.sexpr.forms.assert_form import AssertForm
 from pron.sexpr.forms.bare_form import BareForm
 from pron.sexpr.forms.create_form import CreateForm
 from pron.sexpr.forms.form import Form
+from pron.sexpr.forms.goal_form import GoalForm
 from pron.sexpr.forms.read_form import ReadForm
 from pron.sexpr.forms.say_form import SayForm
 from pron.sexpr.forms.show_form import ShowForm
@@ -31,5 +32,6 @@ FORMS: dict[str, Form] = {
         BareForm("undo"),
         BareForm("refresh"),
         WhyForm(),
+        GoalForm(),
     )
 }

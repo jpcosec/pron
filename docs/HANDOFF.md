@@ -128,3 +128,27 @@ Punto de enganche: los `UnknownWord("I don't have that word: ...")` que hoy
 abortan la interpretación salen de `src/pron/sexpr/forms/form_words.py`; ahí (o
 en el catch que los convierte en respuesta) es donde el error debería cargarse
 con candidatos y ofrecer el léxico, en vez de cortar el turno.
+## Nota 2026-09-18: plnr — metas sobre los stores, y una KB real
+
+Se ha agregado la capa de metas: una forma `(goal PATRÓN …)` no la resuelve pron, la prueba el
+mundo con reglas que declara como `TheoremDoc` (patrón + cuerpo de formas). La búsqueda corre
+sobre un overlay y no escribe; lo que afirma lo escribe el kernel al cerrar el plan, con un
+refresh y el `MoveDoc` de siempre. Es MicroPlanner (`THGOAL`/`THCONSE`/`THANTE`/`THUSE`/`THFIND`)
+sobre un store sin transacciones: retroceder es no leer la rama que falló.
+
+Vive en la rama `plnr-integration` (nace en `5a9aaed`, 2 commits) con el motor en la rama
+`plnr` de `/home/jp/proyectos/pron-plnr`, instalado editable. 266 tests verdes, lint, tipos y
+`docs-check` incluidos; los capítulos 01, 03 y 13 lo dicen.
+
+Probado contra la KB real de `AgentsKBs/knowledge_antonia-cobranza` (copia en /tmp), con 10
+reglas propias: "cómo se paga la factura" y "cómo reconocer que el mensaje es real" —las dos
+preguntas que la nota del 2026-09-17 deja como límite de `say`— salen por metas, porque leen
+campos y aristas y no un léxico cerrado. También `grounded_by`/`uses_tool` y el flujo de pasos.
+
+Lo que esa KB rompió y quedó arreglado: el símbolo del anfitrión (plnr ahora acepta la clase
+`Sym` de pron), las aristas leídas hacia atrás que salían con source y target cambiados, los
+nombres cortos de documento (`atom-cobranza-pago`), las excepciones del host que reventaban la
+búsqueda en vez de ser respuesta (`WorldError` + `Plan.failure`), y `find` sobre una variable
+que no ocurre en su meta (occurs check).
+
+Detalle completo, contratos y pendientes: [`docs/PLNR.md`](PLNR.md).

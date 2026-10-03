@@ -27,6 +27,7 @@ MOVE_HEADS = (
     "undo",
     "refresh",
     "why",
+    "goal",
     "move",
 )
 
