@@ -12,7 +12,7 @@ dependencies = [
     "click>=8.1",
     "pydantic>=2",
     "PyYAML>=6",
-    "sldb",
+    "structuredLanguageDB>=0.1.12",
 ]
 
 [project.optional-dependencies]
