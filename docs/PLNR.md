@@ -19,14 +19,22 @@ aplicado a un store que no está en memoria y que no tiene transacciones.
 
 ## Dónde vive
 
-| qué | dónde | rama | HEAD |
-|---|---|---|---|
-| el motor | `/home/jp/proyectos/pron-plnr` | `plnr` | `cf76404` |
-| la integración en pron | `/home/jp/proyectos/_worktrees/plnr/pron` | `plnr-integration` | `27a97d0` |
+Todo en `master` de pron desde el merge de la rama `plnr` (2026-10-18):
 
-El motor se instala editable, como sldb y kgdb: `pip install -e /home/jp/proyectos/pron-plnr`.
-La rama de integración sale de `5a9aaed`; `master` la pasó por 15 commits después, así que
-al mergear mirar `world_init.py` (`PRON_MODELS`) y los snapshots dorados, que es donde toca.
+| qué | dónde |
+|---|---|
+| el motor | `src/plnr/`, paquete top-level de la misma distribución que pron |
+| sus tests | `tests/plnr_engine/` (con su mundo de prueba en `engine_worlds/`) |
+| su ejemplo | `examples/plnr/` |
+| su diseño y README | `docs/plnr/DESIGN.md`, `docs/plnr/README.md` |
+| la integración en pron | `src/pron/plnr/`, tests en `tests/plnr/` |
+
+`pip install -e .` en pron instala los dos paquetes (`packages.find` con `pron*` y `plnr*`), así
+que `from plnr import ...` resuelve sin instalar nada aparte. El motor conserva sus propias
+reglas: límite de líneas por archivo (`tools/check_plnr_file_length.py`, también como test) en
+vez del de pron, y sin las cotas de complejidad de la capa 1 de pron en ruff.
+
+La rama `plnr` sigue existiendo; qué hacer con ella lo decide el dueño.
 
 ## Qué se agregó a pron
 

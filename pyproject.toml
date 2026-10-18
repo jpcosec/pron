@@ -26,11 +26,15 @@ pron = "pron.cli.main:main"
 Homepage = "https://github.com/jpcosec/pron"
 Repository = "https://github.com/jpcosec/pron"
 
+# Two top-level packages in one distribution: pron and plnr, the goal engine it evaluates
+# `(goal ...)` with (merged from the plnr branch; it keeps its own rules, see docs/plnr/).
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["pron*", "plnr*"]
 
 [tool.setuptools.package-data]
 pron = ["surface/*.yaml"]
+plnr = ["py.typed"]
 
 [tool.pytest.ini_options]
 addopts = "--strict-config --strict-markers"
@@ -45,6 +49,14 @@ target-version = "py311"
 # File length is checked by tools/check_file_length.py in `make lint`.
 [tool.ruff.lint]
 extend-select = ["C901", "PLR0911", "PLR0912", "PLR0915"]
+
+# The plnr engine (src/plnr, its tests and examples) came from its own repo with its own rules:
+# a file-length limit per file (tools/check_plnr_file_length.py, also run as a test) instead of
+# pron's Layer 1 statement and complexity limits, which it was never written against.
+[tool.ruff.lint.per-file-ignores]
+"src/plnr/**" = ["C901", "PLR0911", "PLR0912", "PLR0915"]
+"tests/plnr_engine/**" = ["C901", "PLR0911", "PLR0912", "PLR0915"]
+"examples/plnr/**" = ["C901", "PLR0911", "PLR0912", "PLR0915"]
 
 [tool.ruff.lint.pylint]
 max-statements = 10  # approximates "no function over 10 lines of logic"

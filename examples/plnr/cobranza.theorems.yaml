@@ -1,0 +1,86 @@
+# Las reglas de una KB real (AgentsKBs/knowledge_antonia-cobranza, el agente de cobranza de
+# Antonia): se copian bajo knowledge/theorems/ del mundo como documentos TheoremDoc y el
+# motor las lee de ahí. Nada de esto vive en el código de pron: la KB nombra sus documentos
+# "atom-cobranza-pago", la meta los nombra igual, y lo que sostiene cada paso de la
+# conversación sale de sus propias aristas (grounded_by, uses_tool, transitions_to).
+- name: atoms-with-axis
+  kind: consequent
+  pattern: "(atoms-with-axis ?axis ?atom)"
+  body: |
+    (goal (is ?atom DomainAtom))
+    (goal (field ?atom five_wh_one_plus ?axis))
+  motive: Los átomos que contestan un eje de la pregunta (how, why, when…).
+
+- name: answer-of
+  kind: consequent
+  pattern: "(answer-of ?atom ?title ?answer)"
+  body: |
+    (goal (is ?atom DomainAtom))
+    (goal (field ?atom title ?title))
+    (goal (field ?atom answer ?answer))
+  motive: El título y la respuesta de un átomo, sin el cuerpo del documento.
+
+- name: tagged-atoms
+  kind: consequent
+  pattern: "(tagged-atoms ?predicate ?atom ?title)"
+  body: |
+    (goal (is ?atom DomainAtom))
+    (goal (where ?atom ?predicate))
+    (goal (field ?atom title ?title))
+  motive: Los átomos que pasan un predicado de sldb, por ejemplo un tag.
+
+- name: grounded-by
+  kind: consequent
+  pattern: "(grounded ?step ?source)"
+  body: |
+    (goal (edge grounded_by ?step ?source))
+  motive: Qué sostiene un paso de la conversación.
+
+- name: grounded-answers
+  kind: consequent
+  pattern: "(grounded-answers ?step ?atom ?answer)"
+  body: |
+    (goal (edge grounded_by ?step ?atom))
+    (goal (field ?atom answer ?answer))
+  motive: "La respuesta de cada átomo que sostiene un paso: la arista cruza al payload."
+
+- name: step-tools
+  kind: consequent
+  pattern: "(step-tools ?step ?tool ?title)"
+  body: |
+    (goal (edge uses_tool ?step ?tool))
+    (goal (field ?tool title ?title))
+  motive: Con qué herramientas cuenta un paso.
+
+- name: reach-one
+  kind: consequent
+  pattern: "(reach ?from ?to)"
+  body: |
+    (goal (edge transitions_to ?from ?to))
+  motive: Un paso del flujo de la conversación.
+
+- name: reach-two
+  kind: consequent
+  pattern: "(reach ?from ?to)"
+  body: |
+    (goal (edge transitions_to ?from ?middle))
+    (goal (edge transitions_to ?middle ?to))
+  motive: Dos pasos del flujo.
+
+- name: reach-three
+  kind: consequent
+  pattern: "(reach ?from ?to)"
+  body: |
+    (goal (edge transitions_to ?from ?a))
+    (goal (edge transitions_to ?a ?b))
+    (goal (edge transitions_to ?b ?to))
+  motive: Tres pasos del flujo.
+
+- name: answer-about
+  kind: consequent
+  pattern: "(answer-about ?axis ?title ?answer)"
+  body: |
+    (goal (atoms-with-axis ?axis ?atom))
+    (goal (field ?atom title ?title))
+    (goal (field ?atom answer ?answer))
+  motive: "Cómo se contesta una pregunta de ese eje, con el título del átomo que la sostiene."

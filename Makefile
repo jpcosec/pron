@@ -9,8 +9,9 @@ check:
 
 # includes standards.md Layer 1 for src/ and tests/: ≤10 statements per function, ≤100 code lines per file
 lint:
-	$(PYTHON) -m ruff check src tests
-	$(PYTHON) tools/check_file_length.py src tests
+	$(PYTHON) -m ruff check src tests examples tools/check_plnr_file_length.py
+	$(PYTHON) tools/check_file_length.py src/pron tests
+	$(PYTHON) tools/check_plnr_file_length.py
 
 format-check:
 	$(PYTHON) -m ruff format --check src tests

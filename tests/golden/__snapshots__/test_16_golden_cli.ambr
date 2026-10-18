@@ -355,7 +355,7 @@
       'stderr': '',
       'stdout': '''
         {
-          "relations": "models added: 2 \u00b7 builtin relation types written: 14 \u00b7 predicates added: 14",
+          "relations": "models added: 2 \u00b7 builtin relation types written: 15 \u00b7 updated: 0 \u00b7 predicates added: 15",
           "pron_models_added": [
             "pron.models:AnchorDoc",
             "pron.models:ProjectionDoc",
@@ -380,7 +380,7 @@
       'stderr': '',
       'stdout': '''
         {
-          "relations": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 predicates added: 0",
+          "relations": "models added: 0 \u00b7 builtin relation types written: 0 \u00b7 updated: 0 \u00b7 predicates added: 0",
           "pron_models_added": [],
           "relation_types_added": [],
           "template_added": []

@@ -5,7 +5,7 @@ the way an unresolved noun is — `missing` when the world had nothing to say, `
 goal itself was malformed or the budget ran out — and nothing is executed. What holds is kept
 in the plan of the part, ready for the executor.
 
-The search reads sldb and kgdb and writes nothing: it works over an overlay.
+The search reads sldb (documents and its edge index) and writes nothing: it works over an overlay.
 """
 
 from __future__ import annotations

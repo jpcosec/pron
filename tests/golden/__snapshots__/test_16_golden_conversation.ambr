@@ -369,6 +369,8 @@
       'turn': 'book her a table on the terrace for 6 people on Friday at 9pm',
       'written': dict({
         'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'assigned_to',
@@ -377,6 +379,8 @@
           'title': 'Reservation:reservation-2026-09-11-ana-rojas assigned_to Table:table-12',
         }),
         'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'booked_by',
@@ -1236,6 +1240,8 @@
       'turn': 'assign it to table 20',
       'written': dict({
         'RelationDoc:assigned_to--Reservation:walk-in--Table:table-20': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'assigned_to',
@@ -1758,6 +1764,8 @@
       'turn': 'on the terrace',
       'written': dict({
         'RelationDoc:assigned_to--Reservation:reservation-2026-09-11-ana-rojas--Table:table-12': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'assigned_to',
@@ -1766,6 +1774,8 @@
           'title': 'Reservation:reservation-2026-09-11-ana-rojas assigned_to Table:table-12',
         }),
         'RelationDoc:booked_by--Reservation:reservation-2026-09-11-ana-rojas--Client:client-ana-rojas': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'booked_by',

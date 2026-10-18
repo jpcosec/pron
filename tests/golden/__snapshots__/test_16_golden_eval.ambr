@@ -702,6 +702,8 @@
       ]),
       'written': dict({
         'RelationDoc:assigned_to--Reservation:walk-in--Table:table-20': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'assigned_to',
@@ -977,6 +979,8 @@
           'phone': '111',
         }),
         'RelationDoc:booked_by--Reservation:x2--Client:x1': dict({
+          'attributes': dict({
+          }),
           'condition': '',
           'notes': '',
           'relation_type': 'booked_by',

@@ -18,3 +18,8 @@ docs/spec2viz/offline.html
 docs/spec2viz/diagrams.md
 # local Claude Code agent worktrees
 .claude/worktrees/
+# from the plnr engine's own .gitignore
+*.py[cod]
+build/
+dist/
+.venv/

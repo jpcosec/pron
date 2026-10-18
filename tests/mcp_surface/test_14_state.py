@@ -29,7 +29,12 @@ def test_the_schema_has_the_projection_models_and_every_relation_type(get):
 def test_integrity_is_what_pron_check_and_the_edge_index_say(get):
     answer = get("kb://rest/_store/integrity")
     assert answer["ok"] is True
-    assert answer["lints"] == [] and answer["edges"] == {"errors": [], "stale": []}
+    assert answer["lints"] == []
+    # sldb's edge check report: clean means every finding list is empty, including the ones
+    # sldb adds over time (linked stores, untracked builtins), not just errors and stale.
+    edges = answer["edges"]
+    assert {"errors", "stale"} <= edges.keys()
+    assert all(found == [] for found in edges.values()), edges
 
 
 def test_transitions_from_a_state_with_their_conditions(get):

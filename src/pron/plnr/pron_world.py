@@ -1,8 +1,8 @@
 """The world of pron seen by the goal engine (plnr.World, spec 02, 03).
 
-Five questions, and every one of them goes to sldb or to kgdb — never to Python over the
-documents. `matches` is sldb's own `--where`; `edges` is pron's EdgeReader, which decides
-between the typed graph and the RelationDocs in sldb and says which door answered.
+Five questions, and every one of them goes to sldb — never to Python over the documents.
+`matches` is sldb's own `--where`; `edges` is pron's EdgeReader over sldb's edge index (the
+graph layer that was kgdb, which already holds the RelationDocs), and says the query it took.
 
 Documents are named by export id (`Model:name`, `A:Model:name`), the same as everywhere else
 in pron, so a goal and a form name the same thing.
@@ -100,8 +100,8 @@ class PronWorld:
         source: str | None = None,
         target: str | None = None,
     ) -> Iterator[Edge]:
-        """The edges around one end. kgdb answers when it is fresh and holds the document;
-        else the RelationDocs do, and the trace keeps the query either way."""
+        """The edges around one end, read through sldb's edge index (pron's one door to
+        edges, which already holds the authored RelationDocs); the trace keeps the query."""
         if source is not None:
             return self._edges("edges_from", source, relation)
         if target is not None:
