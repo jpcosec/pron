@@ -10,13 +10,14 @@ import os
 import sys
 from pathlib import Path
 
-import anyio
 import pytest
 
 import pron
 from mcp_wiring.wired import DISH, LUIS, restaurant
 
+# anyio comes with the `mcp` extra: import it only once mcp is known to be there.
 stdio = pytest.importorskip("mcp.client.stdio")
+import anyio  # noqa: E402
 from mcp import ClientSession  # noqa: E402
 
 EVA = "Client:client-eva-rojas"
