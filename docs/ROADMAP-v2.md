@@ -17,7 +17,7 @@ Las tres derivan del store de sldb; ninguna tiene identidad propia.
 
 | capa | dónde vive | quién la escribe | frescura |
 |---|---|---|---|
-| documentos (fuente de verdad) | `.sldb/` + los markdown (`knowledge/`, `ledger/`, `source/spec/`, `kgdb/relation_types/`) | sldb, por `pron.world.store.Store` | `hash_a` store, `hash_b` modelo, `hash_c` documento |
+| documentos (fuente de verdad) | `.sldb/` + los markdown (`knowledge/`, `ledger/`, `source/spec/`, `sldb/relation_types/`) | sldb, por `pron.world.store.Store` | `hash_a` store, `hash_b` modelo, `hash_c` documento |
 | grafo tipado | `.pron/graph.nx.json` | `GraphRefresher` → `kgdb.ingest.typed.build_typed_snapshot` | `hash_b` por modelo, **solo store local** |
 | índice del corpus | `.pron/docs[.<text>].<embedder>.json` | `Corpus.refresh()` → `DocumentIndex` | `hash_c` por documento, **federado** |
 
@@ -167,7 +167,7 @@ como hash del texto markdown.
 ## 5. Fase 3 — kgdb adentro del store (repo: **sldb v1**) · acá se decide A o B
 
 Es el eslabón más barato, y la razón es verificable: **el grafo ya es una función pura del
-store**. `build_typed_snapshot` se alimenta enteramente de `export_kgdb_semantic_payload`;
+store**. `build_typed_snapshot` se alimenta enteramente de `export_semantic_payload`;
 los `RelationTypeDoc` y `RelationDoc` ya son documentos de sldb. Las aristas **ya viven en el
 store**; lo único que vive afuera es su **índice** (`.pron/graph.nx.json`).
 
