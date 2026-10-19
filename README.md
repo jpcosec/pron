@@ -126,7 +126,8 @@ Para regenerar documentación tras un cambio de contrato, usa `pron docs --world
 
 ## Dependencias
 
-- [sldb](https://github.com/jpcosec/hum-ecosystem) — ver `constraints.txt` para el commit exacto. Ya no depende de kgdb: sus tipos de relación y su grafo de aristas se fusionaron dentro de sldb.
+- Python 3.12 o superior.
+- [sldb](https://github.com/jpcosec/sldb) (la distribución `structuredLanguageDB>=0.1.12`); la CI lo instala desde `main`, sin releases todavía. Ya no depende de kgdb: sus tipos de relación y su grafo de aristas se fusionaron dentro de sldb.
 - plnr, el motor de metas que evalúa `(goal …)`: viene dentro de pron (`src/plnr/`, misma distribución), no se instala aparte. Ver [`docs/PLNR.md`](docs/PLNR.md).
 
 ## Quién lo usa

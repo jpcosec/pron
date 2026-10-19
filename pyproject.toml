@@ -7,7 +7,7 @@ name = "pron"
 version = "1.0.0"
 description = "pron: a SHRDLU over an sldb world — nouns by address in sldb, transitive verbs as relation models read through sldb's typed edge index, action verbs as sldb writes"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "click>=8.1",
     "pydantic>=2",
@@ -42,7 +42,7 @@ pythonpath = ["src", "tests"]
 testpaths = ["tests"]
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 
 # Layer 1 of standards.md (hum-ecosystem/tools/sldb), size/structure only: blocking for the
 # code and the tests alike (a test world's declaration lives in data files, not in code).
@@ -67,7 +67,7 @@ max-returns = 6
 max-complexity = 8
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 files = ["src/pron"]
 warn_unused_ignores = true
 warn_redundant_casts = true

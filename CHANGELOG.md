@@ -2,6 +2,10 @@
 
 ## Sin publicar
 
+- Python 3.12 o superior (`requires-python >=3.12`; ruff `py312`, mypy `3.12`): 3.10 llega a fin
+  de vida. La CI corre `make check` en 3.12 y 3.13, con sldb instalado desde `main`.
+- `constraints.txt` se retira: fijaba sldb y kgdb a commits que ya no existen, y la CI fallaba en
+  ese paso desde la fusión de kgdb en sldb.
 - `pron serve --listen HOST:PORT`: el daemon atiende además por TCP, con el mismo
   protocolo, a un cliente que no comparte su sistema de archivos (spec 12 §7).
   `request`, `alive`, `RemoteSession`, `RemoteGraph` y `RemoteWorld` aceptan `HOST:PORT`

@@ -9,8 +9,7 @@
 ├── CHANGELOG.md          versiones tageadas
 ├── pyproject.toml        paquete `pron`; extra `dev` (pytest, syrupy, ruff, mypy)
 ├── Makefile              check · lint · format · typecheck · test · world · docs-check
-├── constraints.txt       commits de sldb y kgdb contra los que se prueba (la CI lo lee acá)
-├── .github/workflows/    CI: `make check`
+├── .github/workflows/    CI: `make check` en Python 3.12 y 3.13, con sldb desde main
 │
 ├── src/pron/             el código, por eje
 │   ├── kernel/           primitivas: parts/ (datos del turno), sexp/ (lector de formas), actions/ (verbos de acción), el Kernel

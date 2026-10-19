@@ -1,7 +1,7 @@
 # Two environments over the same worktrees root, mounted at its host path so each
 # worktree's `.git` file still resolves (the repos' own .git directories are mounted too).
 #   fusion: sldb + kgdb + pron on their `fusion-kgdb` branches
-#   docid:  pron `docid-dockind` against the sldb/kgdb commits pinned in constraints.txt
+#   docid:  pron `docid-dockind` against the sldb/kgdb commits it was pinned to (constraints.txt, retired 2026-10-19)
 x-base: &base
   build: .
   volumes:

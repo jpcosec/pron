@@ -8,32 +8,21 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: jpcosec/pron
-          path: pron
-      - uses: actions/checkout@v4
-        with:
-          repository: jpcosec/sldb
-          path: sldb
-      - uses: actions/checkout@v4
-        with:
-          repository: jpcosec/kgdb
-          path: kgdb
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-      - name: Pin sibling revisions (constraints.txt)
-        run: |
-          cd pron
-          while read -r repo rev _; do
-            case "$repo" in sldb|kgdb) git -C "../$repo" checkout -q "$rev";; esac
-          done < constraints.txt
+          python-version: ${{ matrix.python-version }}
+          cache: pip
       - name: Install
+        # sldb comes from main: there are no releases until the whole suite is ready, and
+        # pron follows the sldb the rest of the suite runs on.
         run: |
-          python -m pip install -e ../sldb
-          python -m pip install -e ../kgdb
-          python -m pip install -e ".[dev]"
+          python -m pip install "structuredLanguageDB @ git+https://github.com/jpcosec/sldb@main"
+          python -m pip install -e ".[dev,mcp]"
       - name: check (lints + typecheck + tests + docs)
         run: make check
