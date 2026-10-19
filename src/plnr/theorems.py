@@ -92,7 +92,9 @@ class Theorems:
                 return t
         raise TheoremError(f"no theorem named {name!r}")
 
-    def consequents(self, head: str, use: Iterable[str] | None = None) -> Iterator[Theorem]:
+    def consequents(
+        self, head: str, use: Iterable[str] | None = None
+    ) -> Iterator[Theorem]:
         """The consequent theorems that could prove a goal with this head.
 
         `use` is THUSE: when given, only those names are tried, in the order given, so a

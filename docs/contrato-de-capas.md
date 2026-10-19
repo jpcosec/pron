@@ -131,14 +131,14 @@ restante se conserva y se anota solo cuando sldb.api no tiene equivalente alguno
 El comentario de `linked_stores.py:17` deja constancia del precedente del
 ecosistema: `graph_ui/frontends/mindmap/sldb_adapter.py` usa el mismo criterio.
 
-## (d) Enforcer: `tests/test_layer_contract.py`
+## (d) Enforcer: `tests/test_layer_contract.py` y `tests/test_layer_passthrough.py`
 
 Recorre `src/pron/**/*.py`, parsea con `ast` y falla si un módulo fuera de la
 lista permitida importa una capa interior (`sldb.store`, `sldb.runtime`,
 `sldb.core`, `sldb.cli`), o si importa un nombre nuevo de una capa interior ya
 permitida, o si una entrada permitida deja de existir (evita reglas muertas).
 
-Además, `test_no_new_api_passthrough_leaks` fija la lista de passthroughs de
+Además, `test_no_new_api_passthrough_leaks` (`tests/test_layer_passthrough.py`) fija la lista de passthroughs de
 `sldb.api` (nombres que sldb re-exporta directo desde `sldb.store` sin
 implementar) y falla si alguien toma prestado uno nuevo desde `sldb.api` para
 "arreglar" un cruce moviendo la cadena del import: ese movimiento no es un
@@ -149,7 +149,7 @@ Procedimiento para un cruce nuevo legítimo: añadir el import con su comentario
 y documentarlo en (b)/(c) de este archivo. Sin esos tres pasos el test es rojo.
 
 ```bash
-pytest tests/test_layer_contract.py    # rojo si hay un cruce no documentado
+pytest tests/test_layer_contract.py tests/test_layer_passthrough.py    # rojo si hay un cruce no documentado
 ```
 
 Fuera del alcance de este test (por diseño): `sldb.api` (capa pública, permitida),

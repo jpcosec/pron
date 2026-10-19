@@ -21,6 +21,7 @@ INTERIOR_LAYERS = ("store", "runtime", "core", "cli")
 
 # Excepciones deliberadas: (archivo relativo a src/, módulo interior, nombres importados).
 # Cada entrada corresponde a una fila de docs/contrato-de-capas.md, sección (b).
+# fmt: off
 ALLOWED = {
     ("pron/docs_sync/generated_docs.py", "sldb.runtime.validation", frozenset({"extract_model_data", "render_model_markdown"})),
     ("pron/docs_sync/readme_render.py", "sldb.runtime.validation", frozenset({"render_model_markdown"})),
@@ -46,71 +47,44 @@ ALLOWED = {
     ("pron/world/storage/structural_query.py", "sldb.store.query_engine.filter", frozenset({"DocumentFilter"})),
     ("pron/world/storage/structural_query.py", "sldb.store.query_engine.where_parse", frozenset({"WherePredicateError"})),
 }
+# fmt: on
+
+
+def _is_interior(module: str | None) -> bool:
+    """El módulo es de una capa interior de sldb (sldb.<capa>... con capa en INTERIOR_LAYERS)."""
+    return (
+        module is not None
+        and module.startswith("sldb.")
+        and module.split(".")[1] in INTERIOR_LAYERS
+    )
+
+
+def _crossings(node: ast.AST) -> list[tuple[str, frozenset[str]]]:
+    """(módulo interior, nombres importados) que un nodo import/from-import trae de sldb."""
+    if (
+        isinstance(node, ast.ImportFrom)
+        and node.module is not None
+        and _is_interior(node.module)
+    ):
+        return [(node.module, frozenset(a.name for a in node.names))]
+    if isinstance(node, ast.Import):
+        return [
+            (a.name, frozenset({a.asname or a.name}))
+            for a in node.names
+            if _is_interior(a.name)
+        ]
+    return []
 
 
 def _interior_imports(py: Path) -> set[tuple[str, str, frozenset[str]]]:
     """(archivo relativo, módulo interior, nombres importados) para cada cruce de capa."""
     rel = py.relative_to(SRC).as_posix()
     tree = ast.parse(py.read_text(encoding="utf-8"), filename=str(py))
-    found: set[tuple[str, str, frozenset[str]]] = set()
-    for node in ast.walk(tree):
-        if isinstance(node, ast.ImportFrom) and node.module and node.module.startswith("sldb."):
-            layer = node.module.split(".")[1]
-            if layer in INTERIOR_LAYERS:
-                names = frozenset(a.name for a in node.names)
-                found.add((rel, node.module, names))
-        elif isinstance(node, ast.Import):
-            for alias in node.names:
-                if alias.name.startswith("sldb."):
-                    layer = alias.name.split(".")[1]
-                    if layer in INTERIOR_LAYERS:
-                        found.add((rel, alias.name, frozenset({alias.asname or alias.name})))
-    return found
-
-
-# La trampa: sldb/api/__init__.py re-exporta nombres directo desde sldb.store
-# (EdgeIndex, JournalEntry, id builders...). Importarlos desde sldb.api sigue
-# siendo conceptualmente interior: la capa api no los implementa, los pasa.
-# La lista de abajo es el residuo aceptado hoy (documentado en contrato-de-capas.md);
-# si alguien "arregla" un cruce moviendo el import a sldb.api y toma prestado uno
-# de estos nombres, este test queda rojo salvo que se justifique expandir PASTHROUGH.
-API_PASSTHROUGH_FROM_STORE = frozenset({
-    "EdgeIndex",
-    "EdgeNodeRecord",
-    "EdgeRebuildReport",
-    "EdgeRecord",
-    "JournalEntry",
-    "JournalVerifyReport",
-    "anchor_node_id",
-    "bare",
-    "doc_node_id",
-    "field_node_id",
-    "kind",
-    "model_node_id",
-    "relation_type_node_id",
-    "section_node_id",
-    "tag_node_id",
-})
-
-# Residuo passthrough ya existente y aceptado (no es un arreglo; es deuda de superficie).
-PASSTHROUGH_RESIDUAL = {
-    ("pron/world/graph.py", frozenset({"EdgeIndex"})),
-    ("pron/world/graph_ids.py", frozenset({"bare", "doc_node_id", "field_node_id", "kind", "model_node_id", "relation_type_node_id", "tag_node_id"})),
-}
-
-
-def _api_passthrough_imports(py: Path) -> set[tuple[str, frozenset[str]]]:
-    """(archivo relativo, nombres) importados desde `sldb.api` que son passthrough de sldb.store."""
-    rel = py.relative_to(SRC).as_posix()
-    tree = ast.parse(py.read_text(encoding="utf-8"), filename=str(py))
-    found: set[tuple[str, frozenset[str]]] = set()
-    for node in ast.walk(tree):
-        if isinstance(node, ast.ImportFrom) and node.module in ("sldb.api",):
-            names = frozenset(a.name for a in node.names)
-            leaked = names & API_PASSTHROUGH_FROM_STORE
-            if leaked:
-                found.add((rel, leaked))
-    return found
+    return {
+        (rel, module, names)
+        for node in ast.walk(tree)
+        for module, names in _crossings(node)
+    }
 
 
 def test_no_layer_leaks():
@@ -131,31 +105,4 @@ def test_no_layer_leaks():
         "Excepciones permitidas que ya no existen en el árbol (reglas muertas):\n"
         + "\n".join(f"  {f}:{m} -> {sorted(n)}" for f, m, n in sorted(stale))
         + "\nQuitarlas de ALLOWED."
-    )
-
-
-def test_no_new_api_passthrough_leaks():
-    """La trampa: `sldb.api` re-exporta nombres directo desde `sldb.store`.
-
-    Importar esos nombres desde `sldb.api` no es un arreglo de capas: sigue siendo
-    interior detrás de un passthrough. Este test fija el residuo actual
-    (PASSTHROUGH_RESIDUAL) y falla si alguien toma prestado otro nombre passthrough.
-    """
-    actual = set()
-    for py in SRC.rglob("*.py"):
-        if py.is_file():
-            actual |= _api_passthrough_imports(py)
-
-    leaked = actual - PASSTHROUGH_RESIDUAL
-    stale = PASSTHROUGH_RESIDUAL - actual
-
-    assert not leaked, (
-        "Nombres passthrough de sldb.store comprados a través de sldb.api (fuga conceptual):\n"
-        + "\n".join(f"  {f} -> {sorted(n)}" for f, n in sorted(leaked))
-        + "\nNo es un arreglo: sldb.api los re-exporta sin implementarlos. Justificar y mover a PASSTHROUGH_RESIDUAL."
-    )
-    assert not stale, (
-        "Residuos passthrough que ya no se importan (reglas muertas):\n"
-        + "\n".join(f"  {f} -> {sorted(n)}" for f, n in sorted(stale))
-        + "\nQuitarlos de PASSTHROUGH_RESIDUAL."
     )

@@ -105,7 +105,8 @@ class MemoryWorld:
         edges: Iterable[Edge] = (),
     ):
         self._docs: dict[str, tuple[str, dict[str, Any]]] = {
-            name: (model, dict(payload)) for name, (model, payload) in (documents or {}).items()
+            name: (model, dict(payload))
+            for name, (model, payload) in (documents or {}).items()
         }
         self._edges: list[Edge] = [tuple(e) for e in edges]  # type: ignore[misc]
 

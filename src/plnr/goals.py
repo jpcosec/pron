@@ -175,7 +175,9 @@ class Engine:
         if next(self.solve(goal[1], b, Overlay(ov), depth + 1), None) is None:
             yield b, ov
 
-    def _succeed(self, goal: Any, b: Bindings, ov: Overlay, depth: int) -> Iterator[Step]:
+    def _succeed(
+        self, goal: Any, b: Bindings, ov: Overlay, depth: int
+    ) -> Iterator[Step]:
         yield b, ov
 
     def _fail(self, goal: Any, b: Bindings, ov: Overlay, depth: int) -> Iterator[Step]:

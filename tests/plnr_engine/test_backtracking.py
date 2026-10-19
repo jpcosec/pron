@@ -81,7 +81,9 @@ def test_not_leaves_nothing_pending(world, theorems):
 def test_a_later_step_of_the_same_branch_still_sees_the_earlier_write(world, theorems):
     """Forking must not hide the branch from itself."""
     engine = Engine(world, theorems)
-    goal = read_one("(and (goal (book ana 6 terrace r-new ?t)) (goal (field t12 busy ?b)))")
+    goal = read_one(
+        "(and (goal (book ana 6 terrace r-new ?t)) (goal (field t12 busy ?b)))"
+    )
     found = next(engine.solve(goal, overlay=Overlay(world)), None)
     assert found is not None
     assert ground(Sym("?b"), found[0]) is True

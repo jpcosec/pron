@@ -61,4 +61,6 @@ def test_refresh_renames_per_use():
     once = refresh(read_one("(free ?t)"), 1)
     twice = refresh(read_one("(free ?t)"), 2)
     assert once != twice
-    assert unify(once, twice, EMPTY) is not None  # they can still meet through a binding
+    assert (
+        unify(once, twice, EMPTY) is not None
+    )  # they can still meet through a binding

@@ -41,12 +41,18 @@ def test_a_guarded_transition_holds_when_its_predicate_does(world, theorems):
 def test_the_same_transition_is_refused_when_the_guard_fails(world, theorems):
     world.add("r-1", "Reservation", {"party_size": 9, "status": "confirmed"})
     assert (
-        answers("(goal (transition r-1 status confirmed seated))", world, theorems, "?x") == []
+        answers(
+            "(goal (transition r-1 status confirmed seated))", world, theorems, "?x"
+        )
+        == []
     )
 
 
 def test_a_transition_with_no_edge_is_refused(world, theorems):
-    assert answers("(goal (transition r-1 status pending seated))", world, theorems, "?x") == []
+    assert (
+        answers("(goal (transition r-1 status pending seated))", world, theorems, "?x")
+        == []
+    )
 
 
 def test_backtracking_finds_the_second_answer_after_the_first_dies(world, theorems):

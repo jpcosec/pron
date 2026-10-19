@@ -23,7 +23,9 @@ PRIMITIVES = ("is", "where", "field", "edge", "compare")
 COMPARISONS = ("=", "!=", ">", "<", ">=", "<=")
 
 
-def read(engine: Engine, goal: Any, b: Bindings, ov: Overlay, depth: int) -> Iterator[Step]:
+def read(
+    engine: Engine, goal: Any, b: Bindings, ov: Overlay, depth: int
+) -> Iterator[Step]:
     """One read of the world. Every row handed back is charged to the budget, so a scan
     over a big class is as answerable-for as a deep chain of theorems."""
     head = str(goal[0])
@@ -35,7 +37,9 @@ def read(engine: Engine, goal: Any, b: Bindings, ov: Overlay, depth: int) -> Ite
         yield b1, ov
 
 
-def _is(engine: Engine, goal: Any, b: Bindings, ov: Overlay, depth: int) -> Iterator[Bindings]:
+def _is(
+    engine: Engine, goal: Any, b: Bindings, ov: Overlay, depth: int
+) -> Iterator[Bindings]:
     if len(goal) != 3:
         raise GoalError("(is DOC MODEL) takes two arguments")
     doc, model = ground(goal[1], b), ground(goal[2], b)
