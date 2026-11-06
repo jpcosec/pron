@@ -6,6 +6,8 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
+from sldb.store.layout import edges_shards_root
+
 from pron.world.doc_id import DocId
 from pron.world.graph import bare, doc_id, kind, tag_id
 from pron.world.world import World
@@ -119,7 +121,7 @@ def test_refresh_if_stale_catches_a_shard_lost_outside_sldb(world: World):
     case a write outside sldb's own API (or by-hand tampering) can leave behind."""
     assert world.graph_is_fresh()
     assert world.derived_dir == world.root / ".pron" and world.derived_dir.is_dir()
-    shutil.rmtree(world.store.sp / "runtime" / "edges")
+    shutil.rmtree(edges_shards_root(world.store.sp))
     assert not world.graph_is_fresh()
     assert world.refresh_if_stale() is True
     assert world.graph_is_fresh() and world.graph.has_node(doc_id("Table:table-3"))
