@@ -19,7 +19,7 @@ from sldb.store.query import (
     list_structural,
 )
 from sldb.store.query_engine.filter import DocumentFilter
-from sldb.store.query_engine.where_parse import WherePredicateError
+from sldb.api import WherePredicateError
 
 from pron.world.doc_id import DocId
 from pron.world.storage.document_reader import DocumentReader

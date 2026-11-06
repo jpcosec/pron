@@ -30,7 +30,6 @@ ALLOWED = {
     ("pron/mcp/schema/model_create.py", "sldb.core.exceptions", frozenset({"SLDBModelError"})),
     ("pron/mcp/schema/model_extend.py", "sldb.core.exceptions", frozenset({"SLDBModelError"})),
     ("pron/sexpr/resolving/pending_match.py", "sldb.store.query_engine.filter", frozenset({"DocumentFilter"})),
-    ("pron/sexpr/resolving/pending_match.py", "sldb.store.query_engine.where_parse", frozenset({"WherePredicateError"})),
     ("pron/world/storage/document_reader.py", "sldb.store.io", frozenset({"load_documents_index"})),
     ("pron/world/storage/document_reader.py", "sldb.store.query", frozenset({"load_runtime_documents"})),
     ("pron/world/storage/document_tracker.py", "sldb.runtime.validation", frozenset({"render_model_markdown", "validate_model_data_roundtrip", "validate_model_input_roundtrip"})),
@@ -45,7 +44,6 @@ ALLOWED = {
     ("pron/world/storage/payload_editor.py", "sldb.core.exceptions", frozenset({"SLDBPayloadSaveError"})),
     ("pron/world/storage/structural_query.py", "sldb.store.query", frozenset({"find_structural", "get_structural", "glob_structural", "list_structural"})),
     ("pron/world/storage/structural_query.py", "sldb.store.query_engine.filter", frozenset({"DocumentFilter"})),
-    ("pron/world/storage/structural_query.py", "sldb.store.query_engine.where_parse", frozenset({"WherePredicateError"})),
 }
 # fmt: on
 
