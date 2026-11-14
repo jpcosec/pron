@@ -16,7 +16,7 @@ from pron.mcp.world_mounts import WorldMounts, parse_world
 from worlds.restaurant import build_restaurant
 
 
-CACHE = (".sldb/runtime/", ".pron/")  # derived caches, rewritten by any read
+CACHE = (".sldb_cache/", ".pron/")  # derived caches, rewritten by any read
 
 
 def files(root: Path, content_only: bool = False) -> dict[str, bytes]:

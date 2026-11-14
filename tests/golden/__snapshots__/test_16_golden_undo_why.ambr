@@ -426,7 +426,7 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-1>',
+        'hash_after': '<hash-8>',
         'hash_before': '<hash-7>',
         'id': '<move-7>',
         'outcome': 'unico',
@@ -499,8 +499,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-10>',
-        'hash_before': '<hash-1>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-8>',
         'id': '<move-8>',
         'outcome': 'unico',
         'refers_to': '',
@@ -550,7 +550,7 @@
         'reads': list([
           dict({
             'address': 'Reservation:reservation-2026-09-11-luis-soto',
-            'hash_c': '<hash-5>',
+            'hash_c': '<hash-11>',
           }),
           dict({
             'address': 'Client:client-luis-soto',
@@ -577,7 +577,7 @@
             'before': 4,
             'done': True,
             'field': 'party_size',
-            'hash_c': '<hash-8>',
+            'hash_c': '<hash-9>',
             'note': '',
             'verb': 'change',
           }),
@@ -587,7 +587,7 @@
             'before': '',
             'done': True,
             'field': 'notes',
-            'hash_c': '<hash-9>',
+            'hash_c': '<hash-10>',
             'note': '',
             'verb': 'change',
           }),
@@ -620,8 +620,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-10>',
-        'hash_before': '<hash-10>',
+        'hash_after': '<hash-12>',
+        'hash_before': '<hash-12>',
         'id': '<move-9>',
         'outcome': 'unico',
         'refers_to': '',
@@ -675,8 +675,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-1>',
-        'hash_before': '<hash-10>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-12>',
         'id': '<move-10>',
         'outcome': 'unico',
         'refers_to': '',
@@ -759,8 +759,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-12>',
-        'hash_before': '<hash-1>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-8>',
         'id': '<move-11>',
         'outcome': 'unico',
         'refers_to': '',
@@ -797,7 +797,7 @@
         'reads': list([
           dict({
             'address': 'Table:table-20',
-            'hash_c': '<hash-11>',
+            'hash_c': '<hash-13>',
           }),
         ]),
         'resolved': '(forget (doc "Table:table-20"))',
@@ -819,7 +819,7 @@
             }),
             'done': True,
             'field': None,
-            'hash_c': '<hash-11>',
+            'hash_c': '<hash-13>',
             'note': '',
             'path': '<tmp>/world/tables/20.md',
             'verb': 'forget',
@@ -842,8 +842,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-12>',
-        'hash_before': '<hash-12>',
+        'hash_after': '<hash-14>',
+        'hash_before': '<hash-14>',
         'id': '<move-12>',
         'outcome': 'unico',
         'refers_to': '',
@@ -897,8 +897,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-1>',
-        'hash_before': '<hash-12>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-14>',
         'id': '<move-13>',
         'outcome': 'unico',
         'refers_to': '',
@@ -972,8 +972,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-14>',
-        'hash_before': '<hash-1>',
+        'hash_after': '<hash-16>',
+        'hash_before': '<hash-8>',
         'id': '<move-14>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1031,7 +1031,7 @@
             'before': None,
             'done': True,
             'field': None,
-            'hash_c': '<hash-13>',
+            'hash_c': '<hash-15>',
             'note': '',
             'path': '<tmp>/world/clients/client-ana-rojas.md',
             'verb': 'create',
@@ -1057,8 +1057,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-17>',
-        'hash_before': '<hash-14>',
+        'hash_after': '<hash-19>',
+        'hash_before': '<hash-16>',
         'id': '<move-15>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1102,7 +1102,7 @@
         'reads': list([
           dict({
             'address': 'Table:table-12',
-            'hash_c': '<hash-16>',
+            'hash_c': '<hash-18>',
           }),
         ]),
         'resolved': '(say book (slot "$referent:Client" (doc "Client:client-ana-rojas")) (slot "$object:Table" (doc "Table:table-12") (alternatives "Table:table-14")) (party_size 6) (date "2026-09-11") (time "21:00"))',
@@ -1131,7 +1131,7 @@
             'before': None,
             'done': True,
             'field': None,
-            'hash_c': '<hash-15>',
+            'hash_c': '<hash-17>',
             'note': '',
             'path': '<tmp>/world/reservations/reservation-2026-09-11-ana-rojas.md',
             'verb': 'create',
@@ -1207,8 +1207,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-17>',
-        'hash_before': '<hash-17>',
+        'hash_after': '<hash-19>',
+        'hash_before': '<hash-19>',
         'id': '<move-16>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1262,8 +1262,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-14>',
-        'hash_before': '<hash-17>',
+        'hash_after': '<hash-16>',
+        'hash_before': '<hash-19>',
         'id': '<move-17>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1365,8 +1365,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-14>',
-        'hash_before': '<hash-14>',
+        'hash_after': '<hash-16>',
+        'hash_before': '<hash-16>',
         'id': '<move-18>',
         'outcome': 'missing',
         'refers_to': '',
@@ -1421,8 +1421,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-14>',
-        'hash_before': '<hash-14>',
+        'hash_after': '<hash-16>',
+        'hash_before': '<hash-16>',
         'id': '<move-19>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1476,8 +1476,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-1>',
-        'hash_before': '<hash-14>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-16>',
         'id': '<move-20>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1737,7 +1737,7 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-2>',
+        'hash_after': '<hash-5>',
         'hash_before': '<hash-4>',
         'id': '<move-4>',
         'outcome': 'unico',
@@ -1815,7 +1815,7 @@
       'ledger': dict({
         'at': '<at>',
         'hash_after': '<hash-4>',
-        'hash_before': '<hash-2>',
+        'hash_before': '<hash-5>',
         'id': '<move-5>',
         'outcome': 'unico',
         'refers_to': '',
@@ -1901,7 +1901,7 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-2>',
+        'hash_after': '<hash-5>',
         'hash_before': '<hash-4>',
         'id': '<move-6>',
         'outcome': 'unico',
@@ -1961,7 +1961,7 @@
             ]),
             'done': True,
             'field': 'forms',
-            'hash_c': '<hash-1>',
+            'hash_c': '<hash-6>',
             'note': '',
             'verb': 'remove',
           }),
@@ -1993,8 +1993,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-2>',
-        'hash_before': '<hash-2>',
+        'hash_after': '<hash-5>',
+        'hash_before': '<hash-5>',
         'id': '<move-7>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2049,7 +2049,7 @@
       'ledger': dict({
         'at': '<at>',
         'hash_after': '<hash-4>',
-        'hash_before': '<hash-2>',
+        'hash_before': '<hash-5>',
         'id': '<move-8>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2131,7 +2131,7 @@
       'eval': '(change (doc "AnchorDoc:anchor-client") forms (list "client" "client" "" "clients"))',
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-6>',
+        'hash_after': '<hash-8>',
         'hash_before': '<hash-4>',
         'id': '<move-9>',
         'outcome': 'unico',
@@ -2180,7 +2180,7 @@
             ]),
             'done': True,
             'field': 'forms',
-            'hash_c': '<hash-5>',
+            'hash_c': '<hash-7>',
             'note': '',
             'verb': 'change',
           }),
@@ -2211,8 +2211,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-2>',
-        'hash_before': '<hash-6>',
+        'hash_after': '<hash-5>',
+        'hash_before': '<hash-8>',
         'id': '<move-10>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2268,7 +2268,7 @@
             ]),
             'done': True,
             'field': 'forms',
-            'hash_c': '<hash-1>',
+            'hash_c': '<hash-6>',
             'note': '',
             'verb': 'clean',
           }),
@@ -2300,8 +2300,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-2>',
-        'hash_before': '<hash-2>',
+        'hash_after': '<hash-5>',
+        'hash_before': '<hash-5>',
         'id': '<move-11>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2355,8 +2355,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-6>',
-        'hash_before': '<hash-2>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-5>',
         'id': '<move-12>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2442,8 +2442,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-8>',
-        'hash_before': '<hash-6>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-8>',
         'id': '<move-13>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2496,7 +2496,7 @@
             ]),
             'done': True,
             'field': 'forms',
-            'hash_c': '<hash-7>',
+            'hash_c': '<hash-9>',
             'note': '',
             'verb': 'remove',
           }),
@@ -2526,8 +2526,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-8>',
-        'hash_before': '<hash-8>',
+        'hash_after': '<hash-10>',
+        'hash_before': '<hash-10>',
         'id': '<move-14>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2581,8 +2581,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-6>',
-        'hash_before': '<hash-8>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-10>',
         'id': '<move-15>',
         'outcome': 'unico',
         'refers_to': '',
@@ -2665,8 +2665,8 @@
     dict({
       'ledger': dict({
         'at': '<at>',
-        'hash_after': '<hash-6>',
-        'hash_before': '<hash-6>',
+        'hash_after': '<hash-8>',
+        'hash_before': '<hash-8>',
         'id': '<move-16>',
         'outcome': 'unico',
         'refers_to': '',

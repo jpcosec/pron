@@ -12,6 +12,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from sldb.store.layout import edges_shard_path
 
 from pron.session import Session
 from pron.world.doc_id import DocId
@@ -38,14 +39,7 @@ def stale(tmp_path_factory) -> World:
         },
         Path(world.root) / "knowledge" / "theorems" / "touched.md",
     )
-    shard = (
-        Path(world.root)
-        / ".sldb"
-        / "runtime"
-        / "edges"
-        / "TheoremDoc"
-        / "theorem-touched.yaml"
-    )
+    shard = edges_shard_path(world.store.sp, "TheoremDoc", "theorem-touched")
     shard.unlink()
     return world
 
