@@ -11,9 +11,8 @@
   `request`, `alive`, `RemoteSession`, `RemoteGraph` y `RemoteWorld` aceptan `HOST:PORT`
   donde iba la ruta del socket; `pron.remote.tcp_address` dice cuál es
   (`tests/remote/test_07_serve_tcp.py`).
-- La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los tests
-  y en el montaje MCP; los goldens fijan el sello de procedencia que sldb escribe en cada
-  documento para que sus hashes no dependan del reloj y la suite vuelva a verde contra `main`.
+- La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
+  tests y en el montaje MCP.
 
 ## 1.0.0 — 2026-09-10
 
