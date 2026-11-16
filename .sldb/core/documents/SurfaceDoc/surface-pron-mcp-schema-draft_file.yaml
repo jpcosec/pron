@@ -1,0 +1,23 @@
+name: surface-pron-mcp-schema-draft_file
+path: knowledge/surfaces/surface-pron-mcp-schema-draft_file.md
+source_hash: 12d71bd6dad0209040c8714d2e829e8b025768e76f4a89eef1928645f9cf6885
+content_hash: c64fc81c6bb7487f0e4c4ea02ad40ee4bc296fae04fc967e8c9b8f2e3334d91f
+field_hashes:
+  id: a9738e229e29005f953a6f11b3bd28a4b0ed476f0acfa83ddce7ddfe9bb6fe5f
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 3f3508fbea9f4df02a011dbaad1da8a32c5b18a7fe7ed145ebc48653eb23a3f5
+  purpose: f5f65e70caba9d5171f61227bb8a43adad30842871a54e069bbc059d452b8668
+  how_it_works: f5f65e70caba9d5171f61227bb8a43adad30842871a54e069bbc059d452b8668
+  commands: 0905c3e3076b23bdedfa682aacf1180d69ac5a98531fe10ea1db7b7584f41b69
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 4fe659ade47724544314ba886a0da01ce8bedd60bf7f56ff9c3c3bdceb2d1e5a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

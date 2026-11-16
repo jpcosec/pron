@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-actions-clean_verb--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-clean_verb--SpecDoc:spec-11.md
+source_hash: 4cbf99f59b6cda1aa3b4c92d7824e3550af5e0e7eceba54a3e22378a6ca98540
+content_hash: 3cc63faeb7a2f69441feeea68af18d974d34b9608b6731be92697c773c37753f
+field_hashes:
+  title: da0d11ac33b2c9a66bcf9c0efdd7d20ee26e7feaf5ae0789cb2831587f0d593a
+  source_id: e9e493e735354bb5451ecd8ba3f0403a1e4102701ccf4c9c2c552032450bea66
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

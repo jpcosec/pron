@@ -1,0 +1,7 @@
+Task: task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada
+Title: pron versiona .sldb/store.yaml y .sldb/core/ (opción A de JP); .sldb_cache/ sigue ignorada
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Lifecycle gates:
+- task_completes -> complete: open [status = "ready_for_testing"]

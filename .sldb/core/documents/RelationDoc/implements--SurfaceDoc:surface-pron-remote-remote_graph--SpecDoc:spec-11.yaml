@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-remote-remote_graph--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-remote-remote_graph--SpecDoc:spec-11.md
+source_hash: 53cd8a04e55b11917df64aca4e669ce19e7570632653c66e7d54eec27ff6bd8c
+content_hash: c849adffdb9ea10300340936e55fb9568128d53f66b519909a43384ad070c683
+field_hashes:
+  title: f81e84c4681ab6287b8fb8fa018f70cb7c56eb498c7ce11271ded60480204bd6
+  source_id: 5a45501ac6370cdb3b453708c231e848a7cebb86ef39e95e7c25141e035eb2d0
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

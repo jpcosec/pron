@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-prevalidation-dry_runner
+path: knowledge/surfaces/surface-pron-sexpr-prevalidation-dry_runner.md
+source_hash: 8221cef830e1a0da0963f0dc428ef900dc182ad3e8e760b6e3e45337cfb42ae4
+content_hash: 3c991c5c33ac1cde1dd58a12402a5089ad0b7e168bd8f2d222a57c80858e1667
+field_hashes:
+  id: d420be4bcc81b5e85e0915a298f0e14859f24a137c2784f9495f39d48ef34499
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 188e16c5db5eb7f5da79401fa5879d8e99f6510849aacc252e109e06a1a92d48
+  purpose: 8ae3a29d84d219b93a8671566e0649f9a57f63794cacd77dee28cd50d5c60acf
+  how_it_works: 391810b59d2cc6862a680617ced94203d302e0c8b369bd2e998dbd1e19c9465e
+  commands: 9e1c19839150a50ca39427aa4777510e344efb9c155448ead86211517e8d87f5
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ec1af646f3aaa153b32925ab602bff0e25bef191ba926c97bb3969939df836e8
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

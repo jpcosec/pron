@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-matching-difflib_matcher--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-difflib_matcher--SpecDoc:spec-11.md
+source_hash: 73f4edd3e5f8e865e04c453d95fb9a07e9504f0292b9c7ec2c996a2fc145a23c
+content_hash: 274de91f952aaf73f13ab16d0c955f7126424599674385eb4cc7ce97187db81a
+field_hashes:
+  title: bffe42ac49c35b5ca2f93a18d3edc6f24491fe3818ad0d13dd356c9474233b0f
+  source_id: f151f0f82473f7c283f0c65cd7fc7e0c7f40c001ed0baf05048d268051029cbe
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

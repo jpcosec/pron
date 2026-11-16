@@ -1,0 +1,23 @@
+name: surface-pron-world-matching-difflib_matcher
+path: knowledge/surfaces/surface-pron-world-matching-difflib_matcher.md
+source_hash: 5bd821f570946bbaca1a51a8b0dc6944257ec38610959ae7eb4963618b13a467
+content_hash: 9310b92072fc953740806470d7414231559e79d05503010c2846c4c0ee11f309
+field_hashes:
+  id: 90c49744db95a217678b8d63c8f5a805f5fdf0c3884a74c726298a21edb8fa11
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1cab72574210cc3f6c7e720a964d7f5d408d06f2ab2a4d0b63a711cdf9e1c682
+  purpose: 4132f8566099b33fd30e645fc2bdef33ed10c4cbe756de34861296f77b29f544
+  how_it_works: 4132f8566099b33fd30e645fc2bdef33ed10c4cbe756de34861296f77b29f544
+  commands: a64baa9962cb0046c95627f32a55ceb8f30706be12de85e8c38d85c58c39ac2c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 65cd03da28f38b71d9238e1d41682a9327fa82c202141f0542be26e8dcb93e2e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

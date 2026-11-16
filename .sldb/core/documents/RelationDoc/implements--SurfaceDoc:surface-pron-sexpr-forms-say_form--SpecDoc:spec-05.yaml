@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-say_form--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-say_form--SpecDoc:spec-05.md
+source_hash: 5105ac3776ee76aa94ad050a79dec4e97f89097d60f3e53759afe661865868b1
+content_hash: 37895ea357a4c5a6483f5996098115ed02253f026f40eed21a38254e4292ab6f
+field_hashes:
+  title: ecba78f4fc08b1acf42cc933cd8201d1cfc0c90afd03cfbc4d4be46734cfca22
+  source_id: 69f3baa69102c8cc007c658287e1568a827b629efcee10fe675a06b78e1a7021
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-execution-compose_executor--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-compose_executor--SpecDoc:spec-05.md
+source_hash: 13b4f139b6b35cb951625e4abcbad516a3d1162720089fc05bda1bab66019bd1
+content_hash: 99ee80e4408ff409cf02ad0753f6a0d25052b954c6fec38055f4724895105a76
+field_hashes:
+  title: 000c09742ec25415fa44730246f0be423b8e027b1c09d1e0c5c7ce6238687a6e
+  source_id: e2403c3d5adfca99ddc1a45806d5f372923e156b0fea4456a21a4384e82e5801
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

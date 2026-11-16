@@ -1,0 +1,23 @@
+name: surface-pron-docs_sync-stale_surfaces
+path: knowledge/surfaces/surface-pron-docs_sync-stale_surfaces.md
+source_hash: 5f037cf423a797212ff08bfb21073155e13e8d88c4b96d54035e5427f4682a23
+content_hash: 61ac8b2c727012e6d026c4ee97dcb2d8b9d9117fd9d1f034b318edb53a84cb75
+field_hashes:
+  id: 2a1827c38002cbf974c4c19bbe9073d36ace669fec562e352707f8d8e7cd6349
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 085d44b483c15c2e36b1db04258c4ce84960dd930973f586f35f918e815aa647
+  purpose: 1c569c0d3af20be0f32368a35b1aabb9c564baa8b341a0ad9114a86819b5a288
+  how_it_works: 1c569c0d3af20be0f32368a35b1aabb9c564baa8b341a0ad9114a86819b5a288
+  commands: 1afd2cc4d74635875cc95cbe8b04dbf34704d7e45f812c69197edc0538f80fc1
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 937e8f1a004cc5cbc3ba09269694b69f37eae283ad25c48da1a326e5a3dcf903
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

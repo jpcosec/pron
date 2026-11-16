@@ -1,0 +1,14 @@
+name: dependencies
+path: knowledge/explanations/dependencies.md
+source_hash: 31316fd2e49795f2c2efc8cb0360d19dc0936552d685e05b610b70d623383896
+content_hash: 4da2f42281c86bf30e1f5977b7b3f1c96a0f2f09d797f0b5a30ba1a3632d8ef4
+field_hashes:
+  title: 64cc194eed697b69494ade27373be1b9726fc1ad4f388fb90ea3f1687a67f9db
+  question: aff76511c0dfc0d3053d82df3d59d052126affb4a3f353449c51ae1074461b8f
+  answer: 28eb0b09f9965067c740f143d32edf03b4c0f655b3a80e31cf91869cd91c9fff
+  sources: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

@@ -1,0 +1,25 @@
+name: cmd-pron-check
+path: knowledge/commands/cmd-pron-check.md
+source_hash: dda065a849c235d4e506e9e7fd75c66306f81b6efdaad800f1327ba78641e308
+content_hash: 69a95958c23b9a043e85986c7a92df4781393079bfafca8d7fa7e7b9a2f43391
+field_hashes:
+  id: 8f38dc9338b2d9bd53dc962623b97d43af62248a63689e5e2f30be121027c8e8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  command_path: 977a0be5b459b8914ab7c286cbb34e0945c0b1e0044ae532daaf1857fb6e8779
+  synopsis: dbe28db48d9516db02207330a970c13d03fc9ada4c785167551f1b25051ad3a6
+  purpose: dbe28db48d9516db02207330a970c13d03fc9ada4c785167551f1b25051ad3a6
+  how_it_works: dbe28db48d9516db02207330a970c13d03fc9ada4c785167551f1b25051ad3a6
+  arguments: b55d5e46faf5e6e0d76c8930d351dd4dcf5b2e30545de26363e869e15353a622
+  usage: 354931380a3cf0ae49a1b4281a2b8783ed8a84d4d03e7147f24ad1651b95dafd
+  tags: 7def75fd9e0923f8332490a6ce73a7597c91b4525864ff78158cc5be10180515
+  provenance: 3bca7a815ad4c2aed8cafd930a9f797a550efd102a8e0e22e24dec06998796bb
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

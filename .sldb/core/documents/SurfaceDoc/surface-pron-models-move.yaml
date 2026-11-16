@@ -1,0 +1,23 @@
+name: surface-pron-models-move
+path: knowledge/surfaces/surface-pron-models-move.md
+source_hash: cb2206ef0ce50d80289d846eb112ba10a1ec739e509ac5fea77205a402e13b33
+content_hash: 92a49c67432e240eb9782e7d32e1a30656aaf8b0963fc53367c3dff27cedbc09
+field_hashes:
+  id: 3b22a195d2c1bba35978a85fbe368f3ac3e79478c5b50c4a0f126baac6836e66
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: a3b26398b37a8bd085c5e6713d47c28918ded40f1cfc3c65c5a5c2f575eb6390
+  purpose: 04b4fe0279478b8b0bde504e6fd197ae1deee5e79fcdbe6b2af215503648b252
+  how_it_works: 04b4fe0279478b8b0bde504e6fd197ae1deee5e79fcdbe6b2af215503648b252
+  commands: fc095ddcb039da3ad3bcd8da2c6d5bfd4609030fd209753a97e65d0d4396a258
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 668d754fc6adef2c010d6cc4ad000903adc22b3bbfd91ea7ed6f60f95c32530a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

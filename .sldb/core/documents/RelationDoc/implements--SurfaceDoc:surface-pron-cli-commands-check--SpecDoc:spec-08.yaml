@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-cli-commands-check--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-check--SpecDoc:spec-08.md
+source_hash: d0de45766769e7432c1308f6249a86dc3348f2eca9cae2a1a06708bfca96075c
+content_hash: 7863db3346ad0c3460415966727ae0638c95995b6b00592f9cdeb9c4229d1161
+field_hashes:
+  title: 57debdf6d59c6b3983a5c4bfd24501fe950d8e5d4eb7d458007aacec141b7c7d
+  source_id: 269ddb183275bca5fd7b7c5f234fc47bd0e5ac48438490bf8f0687c489457131
+  target_id: 59aa893af89d2ee88318ca0da1464d84d61ac705cfc840a5e5d9e91cd7bdfd17
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,18 @@
+name: ExplanationDoc
+model_ref: pron.models:ExplanationDoc
+path: src/pron/models/explanation.py
+documents_index: .sldb/core/documents/ExplanationDoc.yaml
+sections_index: .sldb/runtime/sections/ExplanationDoc.yaml
+model_hash: 16503f93d8712dc667ead7599f16b685a77bf473f82e69d649bc8f09281130e3
+roster_hash: 48fa1bce556e996c8f983958610beb70e41d96b5e05a06b3e64b709412b8ef30
+contract_hash: 220b1ff4e915c02aef8ab3356760fe687eb6200577906cf4fedd2742f04cf5c4
+documents_count: 13
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations
+base_models: []

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-mount--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-mount--SpecDoc:spec-01.md
+source_hash: 60ba3e0c3a8b0ce0c80ec79af3c0eff2381ce6e361662e2d83df7a121131cbb2
+content_hash: 4cf06365da091ac660c14845ece2bc7230c6084291586a59ebe40b36d44e0522
+field_hashes:
+  title: 68d52afb1274d45b1311858fae58f1a99685fdfff42c09f66dbec83b9e40d8c4
+  source_id: 81d8e80df66f0ea059b66ce91eaaa54e25400b8549182e38849912c5e616cbdc
+  target_id: 512a7c574fb75a9299b2af3e96e7d6c7f512bc8b21b073e2d11929441fd1716e
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

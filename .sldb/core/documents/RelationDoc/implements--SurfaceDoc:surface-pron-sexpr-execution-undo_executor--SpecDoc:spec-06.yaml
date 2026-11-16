@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-execution-undo_executor--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-undo_executor--SpecDoc:spec-06.md
+source_hash: 6bc19870100412b22f6b219f6d06cf46b5fbc81f7a88aacd2f68027310a1b6d6
+content_hash: a5b3ea6eb9e71c29d594e4c6a78b0aa65d3f4acd49953368bb3d0f57f468548f
+field_hashes:
+  title: d5d06f6be88ab1a235ac3d3a34f59994fad143f3f6a8a6e07e9aaf449d356085
+  source_id: d28f272516f30728ae2114c7c02f531e963678d03bfb5145a364eaba5ddf4ea5
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

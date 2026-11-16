@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-projection_reader--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-projection_reader--SpecDoc:spec-12.md
+source_hash: a50e2837e3a9450a69d821d9fc33e221a028d9b13c848f3fae59814717d647fa
+content_hash: 0107855d73125a4e3fd270ca31039ada4c953e2d16486580ffadbf88a5b3b413
+field_hashes:
+  title: ece36daa5830c39ac13b94c43e3e7327dc1cc4c33045753fbea95b48480f0761
+  source_id: 53204e429b5c216b0ca3cd77ad29a40af339a7ada661edcffff2609a04d8e4c0
+  target_id: c5d9f3ee4384a7c819433e31c750d6d550797afda8cb01ae865e8444f5f7c219
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

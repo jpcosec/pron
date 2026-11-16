@@ -1,0 +1,23 @@
+name: surface-pron-mcp-walk
+path: knowledge/surfaces/surface-pron-mcp-walk.md
+source_hash: 3ec28c1b50c3dfde888845bab1a9dfcba848afe8147054af02e86343eeeaa7ab
+content_hash: 54929fa08fb3e93bc64c6428c0491404a6fd9b3a2916f99edc22199480e39e18
+field_hashes:
+  id: d3d065e9ffea0dc30e49b1676848d4f8db614134f0c665ba0f7f11de77219326
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 5704c0edb56f65bf2b230fe8f4cc0f57bd36f6f8ad58c1e1b9ac74f4c57357b5
+  purpose: 9205f79fe0d3dc7934ac4142be86329c4e3f0a152b0cf4a58899e2d6ad21b5f6
+  how_it_works: 9205f79fe0d3dc7934ac4142be86329c4e3f0a152b0cf4a58899e2d6ad21b5f6
+  commands: 16242ef7042f4afc998d08ca6e85526319798133a5cd053b9d3b2ed9101c2f62
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: f192e8c2d7d641ed330fec97aa0fc40591fa1c606e5912c8c2ad918628f5ce59
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

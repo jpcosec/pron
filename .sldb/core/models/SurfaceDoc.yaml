@@ -1,0 +1,18 @@
+name: SurfaceDoc
+model_ref: sldb.models.knowledge_surface:SurfaceDoc
+path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/surface_doc.py
+documents_index: .sldb/core/documents/SurfaceDoc.yaml
+sections_index: .sldb/runtime/sections/SurfaceDoc.yaml
+model_hash: f87549de8923642227bdbbb0ae07283c9e68fed40870458ccc28d2a84f67bab1
+roster_hash: a613498f6aac6bc708f54687ab68b57c3cd450cedcb5428c4bd25283c93fce67
+contract_hash: 6d49979b0838fe7501430ed29516354b756d984161bea50c2fc27eec9f783a00
+documents_count: 278
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.surface
+- workspace.knowledge.surfaces
+base_models: []

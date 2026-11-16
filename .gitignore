@@ -6,8 +6,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .pron/
-# pron's own world: `make world` rebuilds the store and everything generated into it
-.sldb/
+# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)
 sldb/
 knowledge/commands/
 knowledge/relations/

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-actions-forget_verb--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-actions-forget_verb--SpecDoc:spec-11.md
+source_hash: da378404ff0f0e572964986208c9250edb3d083286df178317a42d9fc8192013
+content_hash: bddb9ce850986150ce5b128a50e3d23a199aebc9a8dd0b058880108025577710
+field_hashes:
+  title: e3de1629fb426401781ecbebf413f7e11144d8a8ae06244492e7e6e8f87c5f3d
+  source_id: cd6a554f1c047f48ffd42d4bd6c1dd77020e3449783b1917cad2a4e8c95064b1
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

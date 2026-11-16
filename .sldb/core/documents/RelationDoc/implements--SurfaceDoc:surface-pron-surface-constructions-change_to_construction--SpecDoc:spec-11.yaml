@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-constructions-change_to_construction--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-constructions-change_to_construction--SpecDoc:spec-11.md
+source_hash: a35bfedc58c587e9675dfe58e9508632ecbfa095ef2fe5cbcfebba3cde5503c4
+content_hash: bc633836a8d95013d8e9ba6766a7b3cc94355b8ece5ef0c25586bc85d144a9d4
+field_hashes:
+  title: c40de19f9883b40ea0057c6c45aaa4fa80ff77273e53b3f5daf1e895e065496b
+  source_id: bde1e35f5be6f4242c38edad9830a885c9a6198bed84f4e7746023083be41674
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

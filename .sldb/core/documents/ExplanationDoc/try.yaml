@@ -1,0 +1,14 @@
+name: try
+path: knowledge/explanations/try.md
+source_hash: 7c133305975c406ce4a08a4947173b11281a2650586b19764d35f785f560f8a3
+content_hash: b965b7dbbedbf9c985c03dbbe00daca3245e0e8e42911c4a3dac3d8904a5ee11
+field_hashes:
+  title: b18c66a10466b905b43dff7c8a50ae29c82b8c7f71ed5f75b98e822fd367d35b
+  question: 3521b9efd5974176834e3bab74f0312e3a76aa3c767114f864714a77b702277c
+  answer: 67195c0d6d544df43957860c6501e23986cf42a0d76c4cfe7e97a884bc3bc099
+  sources: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

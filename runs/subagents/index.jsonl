@@ -1,2 +1,3 @@
 {"task_id": "task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v", "run_id": null, "run_dir": "runs/subagents/exec-pron-20261116-e-c2", "session_sha256": null, "commit": null}
 {"task_id": "task-decisi\u00f3n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\u00f3n-al-layout-de-sldb-c420809c", "run_id": null, "run_dir": "runs/subagents/exec-pron-20261116-d-e1", "session_sha256": null, "commit": null}
+{"task_id": "task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\u00f3n-a-de-jp-sldb-cache-sigue-ignorada", "run_id": null, "run_dir": "runs/subagents/exec-pron-20261116-s-e1", "session_sha256": null, "commit": null}

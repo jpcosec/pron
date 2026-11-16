@@ -1,0 +1,15 @@
+name: anchor-module
+path: knowledge/anchors/module.md
+source_hash: 0bac4c84a76172b447a9abcbc26f1725d2541b7cc603195ba9d7ed441fddfee2
+content_hash: 624fc09ceaff602f0e7959ff9edd2672bf05c9113127ef1133e968252f0c2d00
+field_hashes:
+  symbol: 51b03279c071bc2e55a377745fdd442c9eedc700152b19366572fa8f76d76017
+  forms: 919051aba30df9690e2f48bd5b9b2ea975e3c18ea67d8510c1cd391aabc6f0d0
+  ref: 8e113b956359f40768a0efc1050f064b2dddd3ad163f095bb7138918210313a9
+  steps: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  motive: 69efc315a1a0a50c16143a3e979d206599b3ff3f1ad37134f1e9a95ad8e3e149
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors

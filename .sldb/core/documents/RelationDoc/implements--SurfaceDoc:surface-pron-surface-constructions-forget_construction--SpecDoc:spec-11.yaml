@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-constructions-forget_construction--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-constructions-forget_construction--SpecDoc:spec-11.md
+source_hash: 4fc5bc39b36241b1a3fb59ed5a3182b70a72e8915e121c36a28d2baa7e3048c4
+content_hash: e754f52650b9a464272265372f98b0e71f158094ac08e296f725099d4f5db9b0
+field_hashes:
+  title: 96ca9e9f05b5e963d35cedb8ce3e8469c72a0da2a2083c813bfac1c6f2975316
+  source_id: 591a537e98592ed097e272cd1f1fcce85d612faf32de40078c1608b6b92b605f
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

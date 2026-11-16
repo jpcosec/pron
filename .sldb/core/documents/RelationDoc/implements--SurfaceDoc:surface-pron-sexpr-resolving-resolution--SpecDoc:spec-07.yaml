@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-resolving-resolution--SpecDoc:spec-07
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-resolution--SpecDoc:spec-07.md
+source_hash: 8293af90b2169f361009d65d50bd24b44711b64629b69ec24e071a1dead7bab9
+content_hash: 344ad77c1e041b456d5e4264a9ee42d078b2f578724410bdb56555cec70e11f9
+field_hashes:
+  title: 829f0e5177a17fe57639ddb79a9f5f2d784265d911a96e09a0cee7aed54410d6
+  source_id: 6ebce18ebf4b5fba75384dfaa37763635423ba256b97de1cda88723487c5e426
+  target_id: 0cce140629a2fc0297518d948c8191450b04cab1899ef5eb9941aa1ea72a08c2
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

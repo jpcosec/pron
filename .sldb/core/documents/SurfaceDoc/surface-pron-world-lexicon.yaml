@@ -1,0 +1,23 @@
+name: surface-pron-world-lexicon
+path: knowledge/surfaces/surface-pron-world-lexicon.md
+source_hash: 42aa2835481f051221eb72f44e7846d1656848bf0ad14a6607d8817558a55928
+content_hash: adb2f977b44d1e5bc6bf6570240c85e818fa47c5449777f229980d7521f705c0
+field_hashes:
+  id: 95b49f2842b2376f286469ee59bfb546278a056b9056a241347c80972d569c7d
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: ca6f6e16700b81fa1bc7ea17b9672f4ecc9884992b2d71f19a7f4d4432bcbfcf
+  purpose: 617a9d82807fb02f7e6b62dc18b7f0a9be33eeb4e18ee0ffc31e5b020a97125e
+  how_it_works: 7dc39d4dfbdd78ac4eabd4ef18a0fcb136f29e44a42e6e57f5c870157c5f4070
+  commands: 4262135b5ae359551234538ffe967878654e2986a003f02720feb17bd983d603
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 8b3793647a32e1f2556250351a450f0d8d9f6d58adecc6d8f2f7e192f096e6f8
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_assert--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_assert--SpecDoc:spec-11.md
+source_hash: 0aa4c02ef0f85ca63d364b79f75af3493d3f83ce0450cfea474f4e9df72751aa
+content_hash: eec459dc147942ac53ac54777ae9bdf9b5acfb0ab454a3e96fcbd73f55943fad
+field_hashes:
+  title: 4596405e973487c05785b1b9370e5dafa270c69acd43488e304340214fb0645a
+  source_id: 3d856ead9ebebe935d7338b6d75044ae97919294e65f1131d572fbb4f9e84779
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

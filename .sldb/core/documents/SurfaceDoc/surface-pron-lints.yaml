@@ -1,0 +1,23 @@
+name: surface-pron-lints
+path: knowledge/surfaces/surface-pron-lints.md
+source_hash: 0d4ca3631801831bed78e24266c5b9ba37eca58dddbd172b6630712f3226c939
+content_hash: 38a807f056dec2d59ade118ccc70f87cd74d340eb6a95646b4a098a828678656
+field_hashes:
+  id: d67dfa69f3858599fdad553bbc3b0a518954a3ca594176803f4fe97471683ad1
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 74c6a6cc02a91eb4f47877687759fc27f61d7e308b29cf11622e93a0cc8106d9
+  purpose: cb4eef75a594bcc9af2b3898ab4a2aa7afdfe8a41a79db4994557e343287a3df
+  how_it_works: cb4eef75a594bcc9af2b3898ab4a2aa7afdfe8a41a79db4994557e343287a3df
+  commands: c27205ef88958e4d8b9b072d63d54c96e76a01d091815b4417446e01f20474fa
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: e21242b6c4e4556af143a9983872ca0031971f8aec123538afd056ce7f376f14
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-execution-relation_write
+path: knowledge/surfaces/surface-pron-sexpr-execution-relation_write.md
+source_hash: c5203085706d78265193e621e23e61be9e5d7a8407548442925ed4085912bd90
+content_hash: 5cf754864551b4488958c0e66c71750edee01939a6976430072075566a52f7ce
+field_hashes:
+  id: df99867e677e64d8a0663f726e852bae7968d3f416e0ee91433f31982837d67d
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 4ee71eb97754fbb391b242bc0701bbc1568c50a3777b799fdccd490d2921f297
+  purpose: fd765e7f2c23c07fe95b1f9f4f2bdc49164ec3d9b656666f75f5610dd7b6dae3
+  how_it_works: 224c517ccf070318b0b0e4df5e9220d55052979934f2db49768999b5ad072f2c
+  commands: bfe5c85866d317cee3e8f1fbb361dfeeb05fb4ac669985f8f54d8ec89fd67cef
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 192fbc543abfebe3e5b1eaa235aed96db91d61db0e03c42698dad9a389456e19
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

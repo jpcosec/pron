@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-storage-linked_stores--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-storage-linked_stores--SpecDoc:spec-01.md
+source_hash: 8e8d64367869217bf08f9b33eb19ffa9e6cdf134fbf4ce39645aca220f3318ae
+content_hash: d90a296d5fadf058504de6372ee23263662be1763a9975f0f9248aa5b00650a7
+field_hashes:
+  title: 9317ec22718a61c99038a922365d6b84d30d2640097007c63e46ff4dcc696c9d
+  source_id: 783f9a53afcecd4ee8f6450f6c94c6ed1d04c4b9862318c02648bec52cdd894f
+  target_id: 512a7c574fb75a9299b2af3e96e7d6c7f512bc8b21b073e2d11929441fd1716e
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-classifier--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-classifier--SpecDoc:spec-06.md
+source_hash: 274d7b2d815cd9e927d83b73acd7c08711d0687dfa42b490e2b71c03683dc760
+content_hash: 5e34e61068054114381e424408c6f4380873eb3564f8d1cd7d526cc09880b41e
+field_hashes:
+  title: e6cb32e60f6ca7512613949d7b10e41408b887e0babb5eb815557daf385ac7f8
+  source_id: 2122a54ed69a1ee71252103bfc619204da90c1e7d6c0b037b2e0c177fa98adc3
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

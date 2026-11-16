@@ -1,0 +1,25 @@
+name: cmd-pron-mcp
+path: knowledge/commands/cmd-pron-mcp.md
+source_hash: a387be19730e195a539f0c0e3facc9087eb81414b8a05381421e23b9b9784d21
+content_hash: 9bb31c41f23e2d735781382298fb7a150f769698d9b177992d9aad8a2b35ec64
+field_hashes:
+  id: 2d8cd996fc1723c2588b02101317add199906eea3cc3bbb18e469a1e65d81f3c
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  command_path: 7c5c4ba60297f1adc7a83b8b86eeb7c355f6846ca0b2a04f88f94e98a978a21e
+  synopsis: a776f35b778652589cc36bc1d11b903e12b3143534485933fd10252a2cf8fbc9
+  purpose: a776f35b778652589cc36bc1d11b903e12b3143534485933fd10252a2cf8fbc9
+  how_it_works: 5119e2740b0117b8ddf9a71aaae54828804f8af859020409c23de5f91cdae4cb
+  arguments: f2e83eda89185a71cc4cef0973ab06cf81291ddcc9a6256fdbbba75480270da6
+  usage: fbf93eabe45efd3903ece0ab7d9efde64cd7ed79b6b2b8c7bbc0b6ca98e81e15
+  tags: 7def75fd9e0923f8332490a6ce73a7597c91b4525864ff78158cc5be10180515
+  provenance: a484327adde10cffe44b1229bb552dd3d7182b81668e4cdc8f74c3eafc02e5c9
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

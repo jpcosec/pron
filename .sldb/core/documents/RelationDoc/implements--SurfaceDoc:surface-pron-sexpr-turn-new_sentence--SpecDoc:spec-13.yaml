@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-new_sentence--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-new_sentence--SpecDoc:spec-13.md
+source_hash: 44038d0eb5a8f54238fcdbcfe6ee3e2fe1b248c1f423e61a6007735165103e57
+content_hash: 4f19775851014bd9b48f79ccc3070b9aecc952066b73d24aed0a17bee40a970c
+field_hashes:
+  title: 8c2659d96ca99635965b8414751e44088389be03d0c8cbf35c9de99c4d6f5765
+  source_id: 4f4bcd6fdb1b0f4f4aae7377e8e0ef0229137738827baa5f11ae87a73f7a1341
+  target_id: d78075e5bcecece28160ac80c8d4cf191d41e3c3165c790a7cedb9ee0b4470be
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

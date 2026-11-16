@@ -1,0 +1,23 @@
+name: surface-pron-kernel-actions-verb_registry
+path: knowledge/surfaces/surface-pron-kernel-actions-verb_registry.md
+source_hash: 38c0232ef292edec3d294d968457d5b4c790edb1d379dfc2d3180560a70accd5
+content_hash: 5a6ab2a28123f45fef42ab9960fa508310e6bf56a3fbe982e37217f5e5bfa31f
+field_hashes:
+  id: 834f21b848778db180d1fe7a178743589a0fa7699fcb428aedeb0f972bf47e12
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 8ffa8c56e8d112830701b0328aaa571cf54e0c9b09b769a0c11f4f5eabbf6047
+  purpose: 9aaea7a4bfd835aa064ee31b54d4028f5cd342b1d067b0dea8baf520b453d17d
+  how_it_works: 9aaea7a4bfd835aa064ee31b54d4028f5cd342b1d067b0dea8baf520b453d17d
+  commands: a64baa9962cb0046c95627f32a55ceb8f30706be12de85e8c38d85c58c39ac2c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 405dd5dcdbe8fd27dae55160c1aa608f70311d606581901cbb9042b46d9a699e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

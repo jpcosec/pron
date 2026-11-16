@@ -1,0 +1,12 @@
+name: spec-08
+path: source/spec/08-prerequisitos-y-orden.md
+source_hash: df6c2a26a6858c0807c23511fa4fdf56ac74997d4001e4042952469ad0a13b66
+content_hash: 84269732aeddcb08d78d6f337bbb418240e76cc2184438e3d022355898da27c1
+field_hashes:
+  title: bf33e31d89caaf3964ec0c9b363545883f14f1543d259e00401c1f49f7eeb6ff
+  body: c6f1caf90a6e56d8316c4acebc6fa39858375aa4b5175109d170d5a1539ba5a0
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

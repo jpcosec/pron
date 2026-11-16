@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-form_registry--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-form_registry--SpecDoc:spec-13.md
+source_hash: ecaa13027e3e529e78c5c8c84aa0e4819ac77efcaef2f7fa87d707339e804d69
+content_hash: 71538570398b5997c66c294689ac33a697fa2c5f6eaf12d36ed6b53f481a7da9
+field_hashes:
+  title: 2a0de74e2f3321f06482d2845914dbd76d7ea84c6dcf56dc4459c0446975843c
+  source_id: 5ae0c0d94f4bb47db50abc8e09679f38574deff5ae4426b2ac1a9b5c7e9b062b
+  target_id: d78075e5bcecece28160ac80c8d4cf191d41e3c3165c790a7cedb9ee0b4470be
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,18 @@
+name: SpecDoc
+model_ref: pron.models:SpecDoc
+path: src/pron/models/spec.py
+documents_index: .sldb/core/documents/SpecDoc.yaml
+sections_index: .sldb/runtime/sections/SpecDoc.yaml
+model_hash: a925cd676ec61f6760535fe7cecf46750056553294645e727a9031b83e3c6f6d
+roster_hash: 3c3b54e19f0357083e897257d0c69edd5200e5967be7f5cda09ae0b5b3e29cde
+contract_hash: 4ebb9948e6c640c833eb019510490a12a62089ae7c58066799d006978a02c256
+documents_count: 15
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec
+base_models: []

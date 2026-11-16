@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-form--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-form--SpecDoc:spec-11.md
+source_hash: 456a0323e540c660c4ff53b4e4ad460c90ed5101a231c74f1fe44f442976fe6b
+content_hash: 482e3a9619f12f32029026ab36157afd86e66de33a6e845cee0416bd6f7283c7
+field_hashes:
+  title: 713bc47bf758a24c7053e7d4c2749d90ca5ab0ef548fc819a536b02941de1067
+  source_id: 8c756566cf220dea431fcf19475417eea79f8f093f8b062c3a73f35a6239d088
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

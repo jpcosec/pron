@@ -1,0 +1,23 @@
+name: surface-pron-kernel-parts-response
+path: knowledge/surfaces/surface-pron-kernel-parts-response.md
+source_hash: 0f1ad41f0f60b9cdafbe5500d54328a78f4a315bffc243c1725b20c7890478a6
+content_hash: 100689ac0b5964c940ee4925ac3d300347d7d80637881849e475d8afa6e9f265
+field_hashes:
+  id: fd7f237fb05523f64360a5a2ee2b3ac387ff694e506ce8cd7f22f99df6e54aa2
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 309f2125bfe69455c56be7f47aa625d0ceb7903b02958204cd8e5010885b0c25
+  purpose: c1f8d89336f2c2fdbbfe137cfd40ab8d408373bf4bcaa91a4d2bff2f71e70f7a
+  how_it_works: c1f8d89336f2c2fdbbfe137cfd40ab8d408373bf4bcaa91a4d2bff2f71e70f7a
+  commands: 98743feb33e3d7e4da87496b5fd9ae13f4c0457234deb710420596d17b7b45f4
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: c6b01899fa85b8adb295f8331d19fd147fbc00bd9eb63dfb97796c3b200c39fa
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

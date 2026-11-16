@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-complement_links
+path: knowledge/surfaces/surface-pron-sexpr-resolving-complement_links.md
+source_hash: 9e813b030a08fafa22024e5e11aeef3bba1947d914e2acfddd6327734a77ed6f
+content_hash: 19e54073fcf7a6569e92f59434aa890dac442d5d410750ee48ecf2716d29d263
+field_hashes:
+  id: 3fab2b8185951f1aa75ab887c802fac529fda42d33058bbe85fd9a3f469dc02d
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: be1518958e74f473adddf51c6ac654dd09e417414169cc8f7ff5353e611bdd0f
+  purpose: 3566e6934a202eb1e25aeea5e23d43f0942b3cf841c14abba60c1d26307541b7
+  how_it_works: 3566e6934a202eb1e25aeea5e23d43f0942b3cf841c14abba60c1d26307541b7
+  commands: 358a0e40bf497e6fc92fd2f3646abdebee78a56f7ecb0c49918a0591dbc7b67e
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: e6ac4c6c0d9252eae84cfd5e97bc52008f827fdb0c058dbddb8a75685f7f3d3d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

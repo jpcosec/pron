@@ -1,0 +1,23 @@
+name: surface-pron-surface-constructions-lone_verb_construction
+path: knowledge/surfaces/surface-pron-surface-constructions-lone_verb_construction.md
+source_hash: c0535e1b27afacfe06fe267a351381fa9b0ccc1fdabec67ee577999e741fc010
+content_hash: a670526e3ac88d805b34ecdbe66917874eb8f1d88a20bb3cfb0590a750d3df15
+field_hashes:
+  id: f9fddbc0d107f69875f153be60ed5597cf67fb24118af655b0549a2b3425531a
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: c677591b00740500e5ba4735cf8970e7443d3aab3a8be1f67fdbbf48281b1d5f
+  purpose: 72f36aa54cc78a155e9a9d22a7c2a0ccc7fd90bb09c9ac5bd2083dd3377e0a76
+  how_it_works: 72f36aa54cc78a155e9a9d22a7c2a0ccc7fd90bb09c9ac5bd2083dd3377e0a76
+  commands: 6904e0e733b2e79b3f86749f543a6f16f1b7b1080ce45d8a2503cb3c6efba28d
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: fd83b69e3f0964f3124944b42c683418f0b935e8a1e35f0207a35c2d329d9acd
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

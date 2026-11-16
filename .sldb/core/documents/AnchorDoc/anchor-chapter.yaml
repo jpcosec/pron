@@ -1,0 +1,15 @@
+name: anchor-chapter
+path: knowledge/anchors/chapter.md
+source_hash: 65e6636c6ff78f880750734365f19b68dd3eff839d0df1e165365b349f77abae
+content_hash: 4309e5f92e8183e46efdba4e728b82ca30435c229a1087ad2c612812c805e431
+field_hashes:
+  symbol: 762512b49d5357e94e47713b3b222be56a4c863c30765ceaed3aaee16898d57a
+  forms: 1a7a31cf7aaa25fea7a3b12fd955401608f018c6fa1164bc5034806fd38b45cd
+  ref: dc12dab14ff6f1817b755321c100dd06018c3770e3f8a503dddfdaf791fc2571
+  steps: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  motive: 8f7087bf862a37cd27c8e25b7859c1ce679b646d993b6d8159c624da0665180f
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors

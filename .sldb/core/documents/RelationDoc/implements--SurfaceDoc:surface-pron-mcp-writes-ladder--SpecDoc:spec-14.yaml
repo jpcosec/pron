@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-writes-ladder--SpecDoc:spec-14
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-writes-ladder--SpecDoc:spec-14.md
+source_hash: 6b867bfc3aca5004726731ff5a8d9270e7932d8a251cd93637afb5c4fb8cc494
+content_hash: 602c9f458090695b947c960aaf3a13e4a9bdf9f38c44117d022e8622bcb9a594
+field_hashes:
+  title: 9c1ebf67ebb5a7ae4718bea4f3220e4b2776521aa039848bdcadd175c841830a
+  source_id: fa329637d1158d8ed3f8bbea17e0a4f923e3f14097720050d7f45c3b361feed4
+  target_id: fc8fa9b025613d5c9841560a7b1b977488b60281cf91f3787470ec584c046e12
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

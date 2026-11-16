@@ -1,0 +1,18 @@
+name: TheoremDoc
+model_ref: pron.models:TheoremDoc
+path: src/pron/models/theorem.py
+documents_index: .sldb/core/documents/TheoremDoc.yaml
+sections_index: ''
+model_hash: c146fe250ab222c2ecc9209862c91522b15fff34d7e01d1118cc3be37ccc787c
+roster_hash: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+contract_hash: 4a084d75e710cf494109b1fc4f9443a91ec04e954a20e283325dabb30ac4ada0
+documents_count: 0
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.theorem
+- workspace.knowledge.theorems
+base_models: []

@@ -14,6 +14,7 @@
 - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
   tests y en el montaje MCP.
 - docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
+- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).
 
 ## 1.0.0 — 2026-09-10
 

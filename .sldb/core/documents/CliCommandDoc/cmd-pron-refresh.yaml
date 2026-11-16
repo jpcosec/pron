@@ -1,0 +1,25 @@
+name: cmd-pron-refresh
+path: knowledge/commands/cmd-pron-refresh.md
+source_hash: 4d8e2859f84fbfce6689145de107afa67f8968d917b939bbb910aab625ae357b
+content_hash: bef520ed1491fca4ae302edd831ba94c0220395c36a9193f40d92505e9ebe6f8
+field_hashes:
+  id: 169203ed95fa2e8681659ed755655aa7d60af500fed26734d8618ca9efe8f022
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  command_path: e9423b395d6cbbd9188f8e0b63e3a3c8c4e2a5e57693113809a35eca28274c8f
+  synopsis: 9d482ace7f993dd986e87a8c83d0f3edffa8054b5b04164a476602d7c6b440fc
+  purpose: 9d482ace7f993dd986e87a8c83d0f3edffa8054b5b04164a476602d7c6b440fc
+  how_it_works: 174c10de722ea9c0732192383e0e28b9a907d14dfd5cb18034973dd0fb2bb23f
+  arguments: b55d5e46faf5e6e0d76c8930d351dd4dcf5b2e30545de26363e869e15353a622
+  usage: a34a7dddfceefcb2b1a527c7ce8f1b78f5df1824ceb4426f7a3bb91f5168f24f
+  tags: 7def75fd9e0923f8332490a6ce73a7597c91b4525864ff78158cc5be10180515
+  provenance: cf3c2e8e5dfb0d902952f250f616650f16c82e17650fb9636092b6baa8fee01a
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

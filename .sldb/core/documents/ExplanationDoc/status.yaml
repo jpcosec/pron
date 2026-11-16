@@ -1,0 +1,14 @@
+name: status
+path: knowledge/explanations/status.md
+source_hash: 7cf6b228e6b8536a241cf207686083fa0bb9b6cbb12f6eaeef4952c1193032d6
+content_hash: 58a02d6be5a7bcf12d3ac804b70eaea271d1b31c1ef0233f96adeef19c27f6fa
+field_hashes:
+  title: 881346ad9da6bbd111c04ba452421045456f7db597d88b64fa7e349881d88025
+  question: ec993601405cbe6deb989d41f28aaf349d0c848f40091e070da8c9405dd8142d
+  answer: 33807e726104fd71603273c8fcc26a1747e490e3728f5f0aa96ea0b7a54ad9b1
+  sources: 77a0783d86f61cd7aa72140ee691bbde99ebff90010338cd15c6f40ed7884389
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-planning-planner--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-planning-planner--SpecDoc:spec-06.md
+source_hash: 22d8712bcc1bff2ee4eb6b5951626954433f62c49a1907903257817d3ea12ebf
+content_hash: f0c87d34ea953282478cee137c4ebcfb73d0c53ea182fc0513a5a38132993443
+field_hashes:
+  title: 2d5341f5a3ab2ffc7d368bb6a871a265e92c13d5ab6ee97116320857736b02ab
+  source_id: 1f81f342b063eed6c6096083017054d401e54d682b26766c1387ffbfda5dc739
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

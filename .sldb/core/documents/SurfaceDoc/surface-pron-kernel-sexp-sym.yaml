@@ -1,0 +1,23 @@
+name: surface-pron-kernel-sexp-sym
+path: knowledge/surfaces/surface-pron-kernel-sexp-sym.md
+source_hash: 30208d039cd29685e67e94d3c16929f06fd5e4beaa8a1682dcd20d95c602e52a
+content_hash: 75e5e9220d803c67b53225a324ca8349a31d2efa9dfadfaa2b9c2d2d54cf86f3
+field_hashes:
+  id: ec24d0d118395c885e75f4fb0b1aab73d1dd2d0a9e507ef05fc03206bdb48cf8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: a88872e0edd4242b993d1139bd59dabb511c3f8da87f8162c47653dc6f448b8b
+  purpose: 237b5e525a8425c9b94e7fd70ec8c0f5cd4043900879e5d01236792409b050ab
+  how_it_works: 237b5e525a8425c9b94e7fd70ec8c0f5cd4043900879e5d01236792409b050ab
+  commands: 1001c9f990e9213baa209a201b4d283a6547fdd091f8c3848e3c9d6814757fbe
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: dbb89469af6850c1c1c96384876d9f0fab43f138dfb0811717d245b27515113d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

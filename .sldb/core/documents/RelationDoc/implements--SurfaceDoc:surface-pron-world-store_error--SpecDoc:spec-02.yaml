@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-store_error--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-store_error--SpecDoc:spec-02.md
+source_hash: e3cdf5f68de2232b92b769733c4ab6d41bc688ccf3fa63497d4fbea5ba0bce86
+content_hash: 2ed3544111e08854e84ea26b791e8bedc330a2a5f19317c40a34f9b6b63336dc
+field_hashes:
+  title: 2c4a6676172c96b6e6f70407c2e0a374c20598cbd27baea50225fea7b9c1f5f6
+  source_id: 0f46c22585872c131261b495d51e19038fc77c6d5616a87e536867f11e2e52d0
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

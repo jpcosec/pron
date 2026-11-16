@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-move_order--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-move_order--SpecDoc:spec-13.md
+source_hash: a2a293fb3313ad78fe304bdb1403bdb76c2be5a14e1754eb2159d20a928d766a
+content_hash: c16cb0199adffd84e479ef8602c1aa44f1e5da4698a9a51bcf859ef7f8854d08
+field_hashes:
+  title: 74dbfcd4602215371eb5011d40bbb542b246361b836901cff647fa902a135101
+  source_id: 6aa9f667bf90bf0673d422185a21fd20ad6269e55e2520bbbdbf602f476bf94a
+  target_id: d78075e5bcecece28160ac80c8d4cf191d41e3c3165c790a7cedb9ee0b4470be
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

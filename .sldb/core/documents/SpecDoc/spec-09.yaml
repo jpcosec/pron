@@ -1,0 +1,12 @@
+name: spec-09
+path: source/spec/09-una-conversacion.md
+source_hash: c9d87b60397ee7122f9416b49286394d24914bc3cd8608dd869508cbc7bbd6c2
+content_hash: 8affa39644c8ebdb6847bd98e19172ac258e9750f87cdbdfa96eb5e9b356cf86
+field_hashes:
+  title: 804d1597459b3f4fa38f1b93a6509020653bde7cf91a8b753b32c33267ed3730
+  body: 72116f287fbcbf9019667dc0815e71629d9056b2c722ff42543f93a579ebd8a2
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-execution-undo_executor
+path: knowledge/surfaces/surface-pron-sexpr-execution-undo_executor.md
+source_hash: a0d411adafcafda28585d4e3ed39c5a268e54eca9cf342dca6bd7272e5aa29db
+content_hash: baf803d3a6543c77552bd1c2d1284fabb8b4d351a0221027c3664f26035613e0
+field_hashes:
+  id: b8987103801111ac5cc65462bb9c10212bc25b40acfe77583382009bdd1e23eb
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1db3d6aa6c19b736e8be85b439e0f4af54b3b15d80ad111f5a13f100213a506f
+  purpose: 7b0b561af8baea5cfb3d6261e9e0083259b7a68c4fb4f89982e92a326a54371d
+  how_it_works: 09093ef26a5976b06a9f74120f28e820750c0347ec63cbed7205234c60492ec6
+  commands: 4ff862f638306244e0f15ff3a82fc8e7826e2851dca062b0fc7a908f66ceaaa3
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 1636e020103ca53d42db8a5cde5dfe5bc82d39da30a53c019066c9af331d064e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,23 @@
+name: surface-pron-world-fingerprint
+path: knowledge/surfaces/surface-pron-world-fingerprint.md
+source_hash: 537929697703e31b38892db8a9cce92d24a0f86d6fbb8627261bb6d40950e4b3
+content_hash: 79a31867d72e9205d090db172d53b6c44a6cb3c026e2ee2d221aad8112b5b739
+field_hashes:
+  id: 0373022f7b5e4037e58cab0f6f40566670077356c0afa468f0b1d48d34ee0ae5
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 655201b65f960b94eb87787b45cbb1c7ec67c0683d6d96ab540737d54f90b03b
+  purpose: 3d0ec01737433cd962b05f3bf4382595dd9de93d927ebb69642afac364b5e2bc
+  how_it_works: 3d0ec01737433cd962b05f3bf4382595dd9de93d927ebb69642afac364b5e2bc
+  commands: bf18470c887d7337661d72c94bf54ffedfd488aafa3963d40c8e63cd92b34c9b
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ae9fe597440f69ce8b193688f2bd1d484d6fad9c275df184e19654b80947cbfa
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

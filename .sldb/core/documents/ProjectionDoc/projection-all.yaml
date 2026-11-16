@@ -1,0 +1,23 @@
+name: projection-all
+path: knowledge/projections/all.md
+source_hash: 444c1cf78742b4ebec608ce76cdae0802f9785690a24ce8e4d0939e7e8af402e
+content_hash: f00f084acf40b34e6e6d6ba4bc69f38f808608a3cbb997da8ed78f414d7273b0
+field_hashes:
+  name: 5cf7504d9781301d83347546cdabc01a03c9638ab5b36c0a9203911078a0d1a4
+  stores: 410f56ffc397313bc96deb8d6ac150e99a6d2bfadcc832a6c2b1d4fbd4f96545
+  models: 4ea0136e67d336481f269479f5f0b816e00f9ce55a0ad9ff54d98aa09c6dec15
+  relations: 2e9c2c32350188963f1028cb5495a6215d8c585f1a52d48ed50cced81c264bc5
+  actions: 910256dac63362ac89b51c02c492df771d8569a59034d9e1b415caf1d3e06439
+  aliases: bea0e3ec4c32132ca0641ce9a12dd75c620a9fc89ccc91c8a6bca8432f1bc24f
+  naming: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+  display: c1121d7ef3e8937a420b1bd085476df1c36ffc59cdb01cec4ba812ef13879e2e
+  key: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+  matching: 19688e30af64ee003e6a6d4dc2b1cc6673e8bbd951244449169ba871ba6214d0
+  exposed: fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa
+  mutability: 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
+  description: b84cc2999c3b411b556744fc94ea629bd98478e0c19677843c0be0e363baf2ff
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.projection
+- workspace.knowledge.projections

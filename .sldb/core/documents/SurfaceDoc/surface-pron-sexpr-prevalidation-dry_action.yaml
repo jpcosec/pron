@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-prevalidation-dry_action
+path: knowledge/surfaces/surface-pron-sexpr-prevalidation-dry_action.md
+source_hash: 6bfa1afb94f9fe13917a00d0dc65254b1867211a3447634958ed71b31ab345c4
+content_hash: b716e617e832d6a8cc5e753fd72a643a7fcc2af9c7646b3f46c5b4b25deb66ea
+field_hashes:
+  id: 81ad2e12796bb1acf502eef1c6ad49afea739def2c5e55c8aeb899a68e343331
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: f6da286720510fc359d9dcca2f396b10e9d6d15be55234d6a0ce986b7e948a9f
+  purpose: 39289f7af1f020ffb90c019c9a279bcdbcff078fc885c88ac7c5fe1f993b5b77
+  how_it_works: 5cbe36b7a058ec96a91f4b66ffc65fb9044871f1dd9911e92a89d2c32f01a456
+  commands: 6df4a2ead2e10ef1e79e223ed6336c34453dba1c9cc69e950b850db9f30309be
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b587e16db8a2dd8981b2de9e209599e90be8a45c19a3ee1c97b47f3207966dae
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

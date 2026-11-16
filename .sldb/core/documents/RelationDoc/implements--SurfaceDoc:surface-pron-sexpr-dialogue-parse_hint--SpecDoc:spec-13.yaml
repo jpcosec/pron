@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-parse_hint--SpecDoc:spec-13
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-parse_hint--SpecDoc:spec-13.md
+source_hash: 72f73d4049e0a674aab65f8f9d5e36f649352dc76094aaaad8853812e2ad65f6
+content_hash: 17bfdd90b6e7442dc6880baed8aaed4e6b3fd8989253833ffdb4d9ce4f2c2eae
+field_hashes:
+  title: 7de101a65866b30011565125978c92a0f625e0b5fb2e034e5ddf76a43f12bcaf
+  source_id: 38ed36946d91519c6fc084cce473d42a6201cd6551543dca3b7aaf1f8b244277
+  target_id: d78075e5bcecece28160ac80c8d4cf191d41e3c3165c790a7cedb9ee0b4470be
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

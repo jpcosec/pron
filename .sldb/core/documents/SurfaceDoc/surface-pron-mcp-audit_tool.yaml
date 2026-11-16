@@ -1,0 +1,23 @@
+name: surface-pron-mcp-audit_tool
+path: knowledge/surfaces/surface-pron-mcp-audit_tool.md
+source_hash: 00090bb9440375edd2c2384bccdfb7aa18604f53d4be7e191990635030e70cad
+content_hash: 44be9c6714ea64bb2c48462ca3a9751d22e662e928625c5dc4461b3bff7b95cc
+field_hashes:
+  id: 998cb3e87bf42d4aaf57ae7ddcbe615ed5ca56c1df1493d71b8ae3d3dbda9dde
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: ce7a403443787e5cb11e0ffb86abadd35d682f0e8b70f9af5431ca442e574245
+  purpose: 981331798ff691d2e88cca7bca65cd0da0b612cfb0283ae2f589467f68c8f3ab
+  how_it_works: 981331798ff691d2e88cca7bca65cd0da0b612cfb0283ae2f589467f68c8f3ab
+  commands: 9d1ae7dfbf25993be16b8eed65773c6967ba96dca2a79b66edbb3ae0a30dc5c2
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: d4c0b8e7e87ce8dccb2850c774ec04e216dc72020b5eea474ba928cbd59c4192
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

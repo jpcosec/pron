@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-dry_evaluator
+path: knowledge/surfaces/surface-pron-mcp-writes-dry_evaluator.md
+source_hash: 4f4dbe41cd51b3499e61ac1d8fa5ffb54ea96195c3afd42aae89f1477e7951f5
+content_hash: d9823eff9168889d906524bc009e33436e8529ae9bfc2191e81f7b4c1e67b181
+field_hashes:
+  id: 62ccfee8bb1885b6b46b7c0fa7a91bad8a5e44fd5372f6ffec018edade79733c
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: f3772b41033652f92e1a4e2869b91464074e4346cb35b7ae410371913fbf67a0
+  purpose: 8e2c717c99a455bf1a8c7c7ac1cdba12523ff21341bc3693e67c36d793c5728e
+  how_it_works: 8e2c717c99a455bf1a8c7c7ac1cdba12523ff21341bc3693e67c36d793c5728e
+  commands: 987a3d82cc7e6095bbd4f13e231e37b1762aee8af8c6218d26c63d77d07e7e43
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 4a1b4d88334a0cf192f98ba6918c14700676d63daefd4e2f65af17ea155e2bc5
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

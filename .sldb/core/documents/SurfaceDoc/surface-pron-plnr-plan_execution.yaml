@@ -1,0 +1,23 @@
+name: surface-pron-plnr-plan_execution
+path: knowledge/surfaces/surface-pron-plnr-plan_execution.md
+source_hash: 91940b09f65e5921e15f553ad5626e584f604e49db26df2622f7cfef7b49b18a
+content_hash: e27235ac7eb528f4a85517cd986acf2414f757df688d6010ba3497f40e7ec6c7
+field_hashes:
+  id: 567927172ac6ac5550b56a6dbeedcd79c226c7efbde33f9cb6e49e2141ae4d9a
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 2b41548468991d8524ae0055850f2b91b5b670b143bdd2fc81edeef2982010ab
+  purpose: 56412d8b8cd0271ee9ef603c6508108266c7b9785be8d446e213afc12088f86b
+  how_it_works: b83ed54a91c477391597c82cc56637293b1720d707cb0cefef84d872c098d9d9
+  commands: 167e722bb64a4918bd6fdfc09a5dd5810530440b7a6b8a18f57f6b556d451cae
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 1017044ccb7d8aa643cdf23d678eae0cb7612494f70ad1dd036bc462b1031475
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

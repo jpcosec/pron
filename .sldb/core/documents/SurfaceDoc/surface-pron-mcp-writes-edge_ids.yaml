@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-edge_ids
+path: knowledge/surfaces/surface-pron-mcp-writes-edge_ids.md
+source_hash: b936e6811db40b24e01be2b8b1c2e7d3207b5cd674c5e67886159aa67d8b67e8
+content_hash: b5b862a573b05e18950b9ed0a05d94867fb02fd9cf6ff2ca4ca4607a854cb3fd
+field_hashes:
+  id: 25f6d3b5316038f4474f525a262052c06a6cd1e6b6c6515d15ff2e7f6bbc5ce1
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: d8c650e31740fe654f9d7335e44bb38566399be0fe47d8c93b143319011f51e2
+  purpose: b9e51f4f1ed09850f774e8fae336281a00764e0770334c4b5c37ca4c33fe51ee
+  how_it_works: 9a27de023581d4421f1ea77735184f1eea9fdc28a0ecdd4b0929312a54cd14f3
+  commands: d6ddf8f57863e93e72d105eb74b3860d19c3d791ca6238a3fe75c3e6e2d84896
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 982c332629038ed3afc1916ce4c3ca86699fcf83879a27ec14ea94f6137839dd
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

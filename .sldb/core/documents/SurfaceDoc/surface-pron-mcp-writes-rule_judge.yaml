@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-rule_judge
+path: knowledge/surfaces/surface-pron-mcp-writes-rule_judge.md
+source_hash: 08c58a49b69c1696d2c87d499e86742e2dab493ead8e8c25d31f1343ecdd204d
+content_hash: 8395140190510885f22a0b0be0ce7857450e35b4dd3a50c1b53109f511e541f8
+field_hashes:
+  id: c3c4eb5afcd808475262f0886514b6b6bb2ba5a0a620d008c333d2094540175a
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 0d33f245b5bd3326dbdb36d2da743d105e785bfba6db33151ffcc29a91b271c8
+  purpose: 2cc65ee456f4a65e4574579afb0c6cc54a53888cba3dddd723e6cf50521eb402
+  how_it_works: 2cc65ee456f4a65e4574579afb0c6cc54a53888cba3dddd723e6cf50521eb402
+  commands: cc59432d34519cdc72b60e0602ee1905d877a8ea3eea311ef5a8460f93a6a3bf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 0a111bc5eb4a7320c7d6906056b0cab9237af193c4fbea9a8b1d2387a50d0f45
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

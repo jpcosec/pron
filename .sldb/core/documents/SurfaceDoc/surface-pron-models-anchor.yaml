@@ -1,0 +1,23 @@
+name: surface-pron-models-anchor
+path: knowledge/surfaces/surface-pron-models-anchor.md
+source_hash: 0257954a6ee09638d5f7d41a454741c05724e6b30cc92d85d9db2b45f9ad57ab
+content_hash: 85e2f33b42163da989c160eed8128af955ede5d3cf0d9d1c045c92530e3a3a81
+field_hashes:
+  id: ea7b92add0bbdb955075bde73e3b6d0c8adcdcc0d001a7d3d8880b4039c794e8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1fb40111ad11cff64d353e3cc9f2cffff9179785537108c29141346d70589302
+  purpose: cac725b34147738646289dda2e4689e69b38d594817b6ce836997371cb32dd6b
+  how_it_works: cac725b34147738646289dda2e4689e69b38d594817b6ce836997371cb32dd6b
+  commands: af2b6c4564de00562ff3b298a38a4b0788852c09ddd352ba34aa9688ddd2690d
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ebf811d38b06934bb5c5d2c52063fd2f6df3ba0a56673c94fd10bf49f2512545
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

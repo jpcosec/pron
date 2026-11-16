@@ -1,0 +1,12 @@
+ M .gitignore
+ M CHANGELOG.md
+ M "desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada.md"
+?? .deskops.log
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/bundle-3.md"
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/preflight-3.md"
+?? runs/subagents/exec-pron-20261116-s-e1/
+?? "runs/subagents/exec-pron-20261116/context-review/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/bundle/0004cd80ab7068b8b8bba00ec65c8d318857e79c2ccb11683ef25c69aec5ec1f/"
+?? "runs/subagents/exec-pron-20261116/context-review/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/preflight/a65e43176d335cfcf5b4a353f2103e4e6c0cbaa53e8a066d4e2359de98882940/"
+?? runs/subagents/triaje-pron-20261116/
+---
+git status --porcelain --untracked-files=all .sldb | wc -l: 816

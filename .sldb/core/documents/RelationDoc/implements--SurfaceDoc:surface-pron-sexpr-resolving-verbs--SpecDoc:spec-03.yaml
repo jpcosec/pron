@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-resolving-verbs--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-verbs--SpecDoc:spec-03.md
+source_hash: 1af41860b3dc282e85edbd30b549bde426a5e6fd5f56467806629a1deff04073
+content_hash: d2447f81d0c19449691b93962f145b515a982272bdd8986caf9c504746f7721b
+field_hashes:
+  title: 914a58e1f6c3cf048d92f53fac78e87bb648ad2eee335e12736aff099248c2b0
+  source_id: beb296f7bb13c91849a87da45330efbeadc7b104a8a738b7b6feb77150d1481b
+  target_id: 89f523b1c005c89664d9f826e6ff8d40b4fef77f315521abbe94e4401feb3a59
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

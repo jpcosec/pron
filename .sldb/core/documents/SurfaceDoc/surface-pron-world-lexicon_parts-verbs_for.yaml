@@ -1,0 +1,23 @@
+name: surface-pron-world-lexicon_parts-verbs_for
+path: knowledge/surfaces/surface-pron-world-lexicon_parts-verbs_for.md
+source_hash: c7e489fdcb23f05d00a6843ad164459f6f0995ed1439dd70fc686b65a97f0405
+content_hash: 61389b5d8be0d22fc1df8a1f0b96cd7c2d145f2902a18a2e7552646b899a6a49
+field_hashes:
+  id: 08f955353c14d69ac07d8f4ad9fdc0c7274956a43f745fca7c14af7ad45c9d51
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 36f1a0acbfe9aae8dc5cad0385b5615cac7ba7b228639c6010d4ab3fd3ea04b4
+  purpose: 29b56efaa817df357811644204e60dcbe48a7ada30fab113714aad6f4207d080
+  how_it_works: 29b56efaa817df357811644204e60dcbe48a7ada30fab113714aad6f4207d080
+  commands: d8cea1e505a72ff01e3413f5b437aaae033173c27c4fcde87b8f1c21c5a07507
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 885e1ddf6d95019f5e9625f9771d66f0770a3ff0a478563f027a8921593c8497
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

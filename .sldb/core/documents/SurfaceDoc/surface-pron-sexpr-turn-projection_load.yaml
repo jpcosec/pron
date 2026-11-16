@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-turn-projection_load
+path: knowledge/surfaces/surface-pron-sexpr-turn-projection_load.md
+source_hash: 9055610e580f8694aabb97fa7af33a6114a473a504867dc20ce19971d7eedbcd
+content_hash: 13a9c61b05624c927a5ee002a61423e3f6cf182448ee784fbaf90933a9e7550e
+field_hashes:
+  id: 1a106e6af30d7a70a5afc227f6ab96c439bbe16ffc49f595dd107c908f7b85ab
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 0393deb2a5755d89f0635fd9e00669616e4dcac68d10b6c1644ee2d5c551f6c8
+  purpose: f82139f0ea8951f3948ffd45f18ee057b432d13ae2e3743e5c71e92e706ca383
+  how_it_works: f931a3a6c83346abd65e8da8ecbcc5f96a3c77a4a7081d474c54cd266725cfed
+  commands: 08ba5432d650a86201b0db3c6213013e2bf09d104dbcff531d22b45b825cdcb3
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 4cca783da6345da50fe63b95b6cfd9ede38313f52531e951d9e1ff167fb6d5ff
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

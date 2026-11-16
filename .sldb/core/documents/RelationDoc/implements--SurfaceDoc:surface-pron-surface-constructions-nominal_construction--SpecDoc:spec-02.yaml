@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-constructions-nominal_construction--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-constructions-nominal_construction--SpecDoc:spec-02.md
+source_hash: 43e85fbdb2a904c33675aced2538ea700380b95ff6f9be44d77faba60125821c
+content_hash: 7cda395abb45de782e13978f6a81445fe1427ae4f0c20425ebf178a74edab910
+field_hashes:
+  title: e7d3bb3b6aa85c2da37568c215f8651b60083bb407af2426d595375704c64b26
+  source_id: 86a903c92a382a872c833d4145d204024574287646f85dc6b2ea2ba778dddb8f
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

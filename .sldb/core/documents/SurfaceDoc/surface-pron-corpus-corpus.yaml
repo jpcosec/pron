@@ -1,0 +1,23 @@
+name: surface-pron-corpus-corpus
+path: knowledge/surfaces/surface-pron-corpus-corpus.md
+source_hash: 0ae0eb3817e115f25bb7c7504949448afc9eab2b6b2fd8e5d4ad150dc0972edc
+content_hash: 1b91dbd3889902ed75083bb6f3545cda70cebde83107ca4c7aa0fc1125cfb197
+field_hashes:
+  id: 86ec582a79e6a327755a5d5a067a2ec823beeef37d6e4cf2ea2bab9fb7d1717d
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 4b194d347aec0fc916ca9f023bc548f248c95c200e8b6516fe4e315aeb2d4c70
+  purpose: ff31e8e2ac142bef6f613d263b643b7228bb1b4f5bce4d9ccc3d4b989c151543
+  how_it_works: ff31e8e2ac142bef6f613d263b643b7228bb1b4f5bce4d9ccc3d4b989c151543
+  commands: fe1f4d7997f59c3aa2aba0109f9c008da6b62998773a4642a6f0d683b71e4b7c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 2961b4a30c50d93b117b5b211943c0c08766ae7794b61fef69cf0786c2c3d2c2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

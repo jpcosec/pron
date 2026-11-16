@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-dialogue-value_suggestions
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-value_suggestions.md
+source_hash: c238b856a927867963ed809038323143d895fcba09f3a6adda87f9a711c5911b
+content_hash: 761ed700d2d444f3329c2f2424bbb40984faf78b6648db06cfe1bc02ab3b7b86
+field_hashes:
+  id: 7c71bd7e74d5b71a8d54296b75eb34a1e5218a299454c02ced1979c962b6b618
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: cd6091e30eb276f13b066ff36ad6fef04e8e7b687811179dbcbe528736c4be9f
+  purpose: a3a7f459f861fd33a5a9f175303351d79b83b38d033bb8a4222b5ac048760cf4
+  how_it_works: 06728e5551b150608ce992550e05906b0784d7b3bd0b10e09a62c9b0441631b9
+  commands: 273745bc194d346f5c799a41b7af562124e856405e0443d1c4d5e727eb6f2da7
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: af063b3202a74b3351d8abc942c4971226296cfa8a86ad2f2fcdd4007f5f15de
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-neighbors--SpecDoc:spec-14
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-neighbors--SpecDoc:spec-14.md
+source_hash: cb18bd187249e682c8534b75d4d13dfa2e0f11b9fab68786da64f911528ece7a
+content_hash: 1c667582b71c5c4b8c2f39710161b61d505401ad5b4208e5336871fb93a087fb
+field_hashes:
+  title: f24c0522c904bebd4350aea714b9395fb823987b3dda28af758120214f25c43a
+  source_id: 5dcae5f38cff9b2ff79a06a6f6d92e5974605a4fc2834c60c072533c8ddfe050
+  target_id: fc8fa9b025613d5c9841560a7b1b977488b60281cf91f3787470ec584c046e12
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

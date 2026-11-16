@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-designation--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-designation--SpecDoc:spec-06.md
+source_hash: dbc87ef20a5b86de739e80ccef91ec6458833c4eb80ffaac6c75b13fa5a9ba0a
+content_hash: 44570d0c8317c3d16c0c15db04bded97025da452a0846ca3e0a8c99f7c007ce9
+field_hashes:
+  title: 3fc5518fc7d938a567b478ee7866d7bf94c3c36f9fb7d8cbae3b89e03efc1052
+  source_id: 796877043693432b40ca41b6ea3384b6fd799dd4134626a80a71982de35e6091
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,12 @@
+name: spec-12
+path: source/spec/12-pron-para-un-runtime.md
+source_hash: eec531c7957bac992869a5884f7252d536f18ec297dcd0faa3e68bf089e03cc4
+content_hash: f5c77b2337ce8fb577824dd07bb80411fc223b3df471bfb4f8a9a046113e6c92
+field_hashes:
+  title: 15f0a0f6c863d38b5ff7022a4adecbfe8c91a579c22bc4cad1132e0c2418a116
+  body: 4394c88309b618ec7bd8322bb7572e18354dab5a160e1da83b647ba8e5f90701
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

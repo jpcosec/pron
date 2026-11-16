@@ -1,0 +1,23 @@
+name: surface-pron-world-matching-embedder_protocol
+path: knowledge/surfaces/surface-pron-world-matching-embedder_protocol.md
+source_hash: 88676b5cf539ac38e30c59f0b00a670d4ea53d4f15880cf62bde038c40df3799
+content_hash: 1c2a2f6aaf111ea1daae4e5f28b6420aef3684863f1379a8ae838118e30c8625
+field_hashes:
+  id: 58e6794375b3caf5037dd5d7fe15258b007c17b050978427699da31b6bff0485
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 2bfb6e0a81d1ca61e9659e2bf731418cb1be65feb61b812645984228ccee63e0
+  purpose: b2f49af34f95c2a7e5b0f9b57ff4d022949d5cc7771f31740214a2906c2972e9
+  how_it_works: b2f49af34f95c2a7e5b0f9b57ff4d022949d5cc7771f31740214a2906c2972e9
+  commands: a64baa9962cb0046c95627f32a55ceb8f30706be12de85e8c38d85c58c39ac2c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: fc35000102373f999c88f8beec26ead25edbfa03dbd1c33bc39d96bc215407b3
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

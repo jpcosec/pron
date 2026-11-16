@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-lints--SpecDoc:spec-08.md
+source_hash: 4d302ec86621df4f1955925b68ede677a4dbbddfd80d55d8d7f23f26b41a7814
+content_hash: 852f8be8f4a452fc60376e78d50e8106c7e137c785f8a39ed82bebd50b8b5e1f
+field_hashes:
+  title: 239642b24d3cbc38c25c11650be5ed2bce67e3e4341a98d4a2dea7d240aed551
+  source_id: 03e547c8677f6b43ded384e2fc163ce30794dd72f81ffe4b8768d2d4aaae82c2
+  target_id: 59aa893af89d2ee88318ca0da1464d84d61ac705cfc840a5e5d9e91cd7bdfd17
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

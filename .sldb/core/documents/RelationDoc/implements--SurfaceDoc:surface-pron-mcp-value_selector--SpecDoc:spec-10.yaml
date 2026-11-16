@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-value_selector--SpecDoc:spec-10
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-value_selector--SpecDoc:spec-10.md
+source_hash: 95da04ce3ed3e224b77daee00904a934044760a1d4930ee2817d5e4c3af5ca27
+content_hash: 064878402327e58ee32e2a768358511f3527b44d598847d083869811220aba64
+field_hashes:
+  title: 89f60c97991b1102cb7d0c0624922f38bf0eec298b124428bd1832bbda750c6c
+  source_id: c424fd8b3ad913ad7a2220cc1a91164b869bc01174fb4a9dd1a96e1b61574a0e
+  target_id: df3a7c5faa81b2dac2cf8f93ff479c53e58fe53d627a5b21d6ae73560d8a4455
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

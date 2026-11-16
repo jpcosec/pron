@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-predicate_filter
+path: knowledge/surfaces/surface-pron-sexpr-resolving-predicate_filter.md
+source_hash: f631e297a1fc088b7e0f168882a161a8b9ebd84d44c2476c0ecccbf0d1546215
+content_hash: 0bd7e481d6825c347aa325c6c299314b1c7faf510ccef9064e8bfa032ca73a61
+field_hashes:
+  id: a8ce0861e38b146ba4c8485e7d4ce2d181e5518441852b96158995984b17364f
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 31b3178ffd6df8ab962f9241e1a923b1f2ac531f01fc77c0c3576457bdcbff60
+  purpose: af08b098f5789ce4cb6c565374d4dc6b082fa97cbfdee415fde6f1593ad33a9d
+  how_it_works: 3c6fe7d40a82447f4264afeaa0715736cedb08df6d1123e6078ebcc62998a15a
+  commands: 1829d2c1b79685ba85e8e047399744b7508440cb530a6f0b08d3139f6cb9232f
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 8099731f331898577079af3283466c4e4c5522b3284ce1c55ee088923810b440
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

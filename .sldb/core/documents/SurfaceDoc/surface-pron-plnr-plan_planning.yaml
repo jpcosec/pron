@@ -1,0 +1,23 @@
+name: surface-pron-plnr-plan_planning
+path: knowledge/surfaces/surface-pron-plnr-plan_planning.md
+source_hash: 0196c9b5e9018fb2db96a9718cfb6125c988d0c58e8bbef26c15fb2b3ac1a2ce
+content_hash: 4cf4134e06e817c43ed5238bc150a37b04c812685edddf116237e66ef109796d
+field_hashes:
+  id: 3abfb30e5c64b979d8965b7a7b58c55e12e1e272a5c74140184f92323ab6c4e5
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 40c0d16a3a7cc442356b5583bb029e13fed4622b10b8e1b5eb4ca4dc05ab13ed
+  purpose: 10858ff5c7b39479c297d14cda237bd51e22d91394499399e922dff27c1cc8d2
+  how_it_works: 0f73dc0c3ef0ee1b644b43fb05e2301b4d44111fd5c275eb5a09faf0b60c64aa
+  commands: b8b6e13c3201a67ff7e6d008fd2be113dab109203e48fee9ff408a75e40eeda8
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 5939b65aab70ae9bb29bdab1183e3e147720ea003aff0dd637760e4373ff6171
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

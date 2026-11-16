@@ -1,0 +1,14 @@
+name: pron-kb
+path: knowledge/explanations/pron-kb.md
+source_hash: 79e8fc2a9b8ccf2e4a45ef1c20380f9de3e562853a3891e7ca636a70d9e011f9
+content_hash: 5f1df346506433662115415c4faa5353e739bfc9c65945b78b7a48d962779196
+field_hashes:
+  title: bfd94424fb1bbbc54d13b2ac432240f2dde71c62361c89e70a02d8f349f36d3e
+  question: aade97d2d2e2737a1a477bf003c9770f03e19a938c371b2b29e889e0f948879c
+  answer: 6c50d0205a63ac8e377af5ac15bb8932732f7e3fd8f29fba1750d2ea0673381c
+  sources: c259821887c481957a9e2c8ccf2b5206b1390664094900c638af1471e4fbfa15
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

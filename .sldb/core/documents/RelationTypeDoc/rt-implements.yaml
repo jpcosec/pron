@@ -1,0 +1,19 @@
+name: rt-implements
+path: knowledge/relations/types/implements.md
+source_hash: 6e7bbe9d9eabbbb77a32502fc7b53b1844e090baea219bb145ffee971b83f6b8
+content_hash: ee767b1e4b9f303ac269f87720f70ae8ed5a682ceb7e70e62f6835f9f2876bc3
+field_hashes:
+  title: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  name: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  direction: bc5965e31ad9b9fbdee7d03f2a8a26540c86629ea7b2abb3eb4cf2ac5e63a18b
+  cardinality: 3ea55382070a4f53a291448ffcb0ca975ac9b850f2514acbd418f89c891c1ffd
+  axis: e5dde65923d9119e9031fb86ce39e4686c31e5edc82de2486b18c60d560a0a36
+  source_types: 6b26801f742ee7e5aef1fc9447e71583d1f69f384b16385379037eebfbefab59
+  target_types: 5161c97b84a1c7b6a142b0dd235e1255f995427ca912c6325406270080527232
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  description: 66cf09a4f0ee62d77df792aa4b2676efdcd760a7bada5dd978bea6c9b6ec9441
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.type

@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-forms-noun_compiler
+path: knowledge/surfaces/surface-pron-sexpr-forms-noun_compiler.md
+source_hash: 95bfb932593f51073c75c87b8e24ee25328995f0d84010fce2883bbe26426355
+content_hash: a8550d6abd149e22cf5e7a6ee0e51ba21ae3d0a9fb39d81acf419107e5e94e19
+field_hashes:
+  id: 75ae418fc7d7f3c5bcbe5218f1e6737be52e5f125bae3cc0a956cf5fc48d9a65
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 70a2d693bd966d6cbfa95a6b585d42cc032980b2f990d98240ce811ed94369b5
+  purpose: 53eca96240474ce7350a52c92ea27e31a8fa956d72006fc11a921e0c3f0f389c
+  how_it_works: 53eca96240474ce7350a52c92ea27e31a8fa956d72006fc11a921e0c3f0f389c
+  commands: 85f1322db3c65af089a24bffae784a7869897b217737ed0956b55f2443aa33bf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 38d1b53979a955dd7c2b0f0c7f14e018c1bedc689cc922767c915d3bf19fd98c
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

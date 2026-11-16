@@ -1,0 +1,25 @@
+name: cmd-pron-init
+path: knowledge/commands/cmd-pron-init.md
+source_hash: 84c9fac81e3ed7ca9a0e8e84e919f3de565adac028ec53f67c2ab4dc7bd4383b
+content_hash: 7abcb1ccf211d26df29d9af0562da69875b3999d3589bf1f69a5e0e281a35880
+field_hashes:
+  id: 597fe881fdd3e78093a2702e9fdf0451da96b9a8e4ed5524944d214191f41149
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  command_path: 3ca8c15d0e2eabb979f657ff8ee01111c9cc33337e716996a95b7b2216bec472
+  synopsis: 189719ab067df983d7b1352e4f8571f06b9b6c4514fa35e14a0aa5e8bfb474c6
+  purpose: 189719ab067df983d7b1352e4f8571f06b9b6c4514fa35e14a0aa5e8bfb474c6
+  how_it_works: f00292eb777e27cf6caecf58b1b048d699fe88d7f7171bd1b7b166a025946685
+  arguments: c08147083b26b3a8e0b8fa6d31ec8d71e9bbbd67d30bee3160f0c0e128b9c462
+  usage: 52ca58a36373d1d4e622c965e4f83a626659cb9f9b52cc08dff0397fe2aeae44
+  tags: 7def75fd9e0923f8332490a6ce73a7597c91b4525864ff78158cc5be10180515
+  provenance: be703eaaa1a2e54711322a4246746e74e6e9ec188977e42e14bf8d49e37931d1
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

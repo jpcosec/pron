@@ -1,0 +1,23 @@
+name: surface-pron-mcp-transitions
+path: knowledge/surfaces/surface-pron-mcp-transitions.md
+source_hash: f36f41b6e9f1055ca3eeca0d9dd06b478d95b79b58786ca4da1d30e458225c73
+content_hash: 2ee79c2d9e5123946b90913e0b3fa0ba8bc08ebe50b50b5af3fa3abdddeb8d05
+field_hashes:
+  id: b512b69eda08f2cd29d5d583bcecefa4562fe958f7fe873d2d17aba83195a651
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: fdc45e114fe0b6fbf26e59927deef8f4590f66a4f18c6dcde0f840c4b2d059b7
+  purpose: fe85b00ba12f8e789a9e61b2b4cbf0834378d34cb040d78897a5fdd9c32d747c
+  how_it_works: fe85b00ba12f8e789a9e61b2b4cbf0834378d34cb040d78897a5fdd9c32d747c
+  commands: a8eff4209bbcedd45a4393404c8df36a36f63b35818aeac2d3618c5ac6534bee
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ce4d7ecf63334f361000666e0a74be25ed5dac0dba47f3940c3fc3cc3ce80fa3
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

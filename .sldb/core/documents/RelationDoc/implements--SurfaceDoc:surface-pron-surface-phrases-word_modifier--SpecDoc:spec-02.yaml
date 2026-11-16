@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-phrases-word_modifier--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-phrases-word_modifier--SpecDoc:spec-02.md
+source_hash: 0405c27d67d6ab577010d3230013e63f2b6707861de5b8a4394bb04eef0e8eaf
+content_hash: 28157d6adf9a5af3f1991784d356cefb8e78a573fd40631ab454620c91778437
+field_hashes:
+  title: 39f50e57e525721aac3d9d7205ad8504087e86844c00ce8bec98ab5265298bcc
+  source_id: c234c1a29af3564454f87786e35e5bcb837282cdaa82b2f1c116828172768458
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

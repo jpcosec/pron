@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-writes-edge_ids--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-writes-edge_ids--SpecDoc:spec-03.md
+source_hash: 562457aacf692c46dd5c6dadfeef6fd176323431e683576cf9535606eb3a68e6
+content_hash: 0c628da14fb0a9ff8630488ce76a3fb344bc5d1c11ee2e65d841899ab8bc7102
+field_hashes:
+  title: 8f85e557a765e35170f940f9a735981241d69f4f53817ae45b2b32d9e912f766
+  source_id: ef9e1d7d909ee8a2f28fecc7924e8e5660eb4cc4fd812c950c731e11b96fbb33
+  target_id: 89f523b1c005c89664d9f826e6ff8d40b4fef77f315521abbe94e4401feb3a59
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

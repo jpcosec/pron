@@ -1,0 +1,23 @@
+name: surface-pron-surface-constructions-assert_relation_construction
+path: knowledge/surfaces/surface-pron-surface-constructions-assert_relation_construction.md
+source_hash: 9346ad1079182c159bb01966043c34882dbb45fd4f7d02f31a72eca752427b91
+content_hash: 5b94e403fa0320687a09dc1eec556f13cf58e4798ca7a6eae2aae78e1d42a3f4
+field_hashes:
+  id: 1dd4ad8c560b6c05106b5f54c45d30d72153c9fece6916c5e60ac8c2fb86cf96
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: ed8bc7a9387f5f1890d5da95c73b2ae681e24a389f5e4dd9afd6aeac848d24fe
+  purpose: d5aa451c10dade7a38f64b3cbbb78b674dc541858c0fdbaff58fb2935e10df5b
+  how_it_works: d5aa451c10dade7a38f64b3cbbb78b674dc541858c0fdbaff58fb2935e10df5b
+  commands: 5e59ec94542c307199060485c2600d46287e700bdc99d5834c698ef8da70a519
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 1aabcc8b620058ceea4300633d01365e37cc985b2aa8f513d9d5200e586792bb
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

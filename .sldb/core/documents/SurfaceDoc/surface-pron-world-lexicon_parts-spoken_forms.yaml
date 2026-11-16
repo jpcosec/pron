@@ -1,0 +1,23 @@
+name: surface-pron-world-lexicon_parts-spoken_forms
+path: knowledge/surfaces/surface-pron-world-lexicon_parts-spoken_forms.md
+source_hash: 0f4913422d84a44924b711d99ab51f1b4885fe19ed0d2c4ebb01368ae975b6e0
+content_hash: a3ff7154a9b9e268057f98fad36d35fff3dd98e0edf9a990eb3b6a4cde3f61b8
+field_hashes:
+  id: 31829b526cf3d3d4b3a2c19718c1fb6b527923b68385f9eb88cec641e175f467
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 60be4c12185ca6cf071df55cc0fdaa1f64d2f36153be6cbd19bd76a3d232b176
+  purpose: c204952e2006810d440573b19018c3abc01280bd3497df8c17af25e08ec79778
+  how_it_works: c204952e2006810d440573b19018c3abc01280bd3497df8c17af25e08ec79778
+  commands: 0f45442a85ebae21a042091a1fc1f1a3f8683a66951163c35b080117b01e72f5
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b29730a6c4883e4295a56ba55046fb94d7113838b689768e6c2a0f539aa8580a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

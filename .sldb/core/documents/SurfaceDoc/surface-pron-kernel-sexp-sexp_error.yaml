@@ -1,0 +1,23 @@
+name: surface-pron-kernel-sexp-sexp_error
+path: knowledge/surfaces/surface-pron-kernel-sexp-sexp_error.md
+source_hash: 33a4b390ff9d4a4f1b78aef6474c9635f40f9a18f72bff1b07606d4220f565ab
+content_hash: 2668e2b7bdd5785bf2e3ee6f4fdaa73a017fea89237a99aa4bc3dc4a05bfcaf0
+field_hashes:
+  id: 8f99fb4865abe04c6bdca1a77c4a2f7965d6a763093b154a3231155e20cf162d
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 17477b67ebce73318647acd06fbdae0970166ef2d0ced0bed214896089560c12
+  purpose: 8eff66b2763784883e448c3abdc2c3ecd7e1555b08b7285faf0479e0ec6160ac
+  how_it_works: 8eff66b2763784883e448c3abdc2c3ecd7e1555b08b7285faf0479e0ec6160ac
+  commands: ce623a1e7dffa8a191dd5fc8b3d9bdec6812bef459114f790ecee331b63dc338
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 9dafc9b9181f442916a083bea6f1424d9bd042ebcde580c0fc96736ad4fe9e65
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

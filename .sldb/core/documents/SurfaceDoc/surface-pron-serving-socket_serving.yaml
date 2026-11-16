@@ -1,0 +1,23 @@
+name: surface-pron-serving-socket_serving
+path: knowledge/surfaces/surface-pron-serving-socket_serving.md
+source_hash: 9aedd0918d0b9e7e7045534efdcd84701eb1bf1ce5a608056d19099c92e86b04
+content_hash: 0635a312938a56eab432c2ee8b2fcd800ff93f4e9cf7fdefb44f2aae19243c1f
+field_hashes:
+  id: 16b33ddb5cc9c16486f844a298e3efa270b27c2299a0b2fe048a760ec0c01724
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: b907ebeba8d03b6dc64b32ff7bc2674aa1ae621252a5908ec29647318a28cce6
+  purpose: a2add11d01156f240648334007556da1249a8f2cbd4fdc8d136293f38e407e00
+  how_it_works: a2add11d01156f240648334007556da1249a8f2cbd4fdc8d136293f38e407e00
+  commands: c046cb4387de4d79b8935e715157b17a6e510115923ac6f2731716958a1d869b
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b54336dfe9ac09073afc77112f2a68af4c5909d2a56530e39b6841417d2a4ac4
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,23 @@
+name: surface-pron-mcp-family_selector
+path: knowledge/surfaces/surface-pron-mcp-family_selector.md
+source_hash: 3094483267bf76a8d22dc797a3195be2c6beaccbe578860faaad01ab77b525c9
+content_hash: be8a85009cd99189fa2471cf038123b1527571bde5f09e2df92718c2e93e2438
+field_hashes:
+  id: 8cfc1edeb78b182f6647fa2352b8f62cc1082cb469fef0a0c851b88ae4dd1611
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 681fe87388cfc6dbb8e0be09ca0ccc6698780fff7667b2f47bdad60baa902688
+  purpose: 992a1d7efee4be601e4db68eb78b34c38cc31f9f8b0d8e087bbdfec6b7293a6f
+  how_it_works: 992a1d7efee4be601e4db68eb78b34c38cc31f9f8b0d8e087bbdfec6b7293a6f
+  commands: 9679435e445c63ee9966c50c94f901a90e12b141a24f603f758a5d9d68a8f08f
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: bfdc12cd0b338087c6722f5ca231b2c29eeaa42d1ae056caf50d212bd19bd0b0
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

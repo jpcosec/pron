@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-matching-document_index--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-matching-document_index--SpecDoc:spec-05.md
+source_hash: 2dd4215d8f88dea2755ff295b1b59c24c4c49c5450816fb80c409c4771861542
+content_hash: 277b79f6ad09e52744a0de0fa96b325580f87d12c0d78c1c1a46623c8391c215
+field_hashes:
+  title: 86be658e64337f923330046523047ad747604a6865e728c7dbc6f3a10683f96a
+  source_id: 8460f3b243306a60733969f0165cdb3a4c61190a37bc6c66b4f062b140c5ef56
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

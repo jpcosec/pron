@@ -1,0 +1,23 @@
+name: surface-pron-world-mutability
+path: knowledge/surfaces/surface-pron-world-mutability.md
+source_hash: e93b7fc551ff1d5f270b36f6f6c6e2aa9ad05d2a83aedd2dc1980c8163f69735
+content_hash: 3f37939e265abb9845dc1104e82f07172e08ec30efdd84d4e2bdf939a3aca9eb
+field_hashes:
+  id: a3a26200094cc134d8cc9700437c6d57e6328b2c3e1e34e79451db237a89aab3
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 6da56306e41b4c81c7b18ab2b884f9a0bd3448972131f8ef837e0420ff6fc8b3
+  purpose: 83b08459b19609c1bc2314fc2e75b06c293cbc9865d94f9284123f60281729a0
+  how_it_works: 83b08459b19609c1bc2314fc2e75b06c293cbc9865d94f9284123f60281729a0
+  commands: 19c075fe71d29aab0f1d919cc7693a3f4fa44b9ec3f2877fe04dd0aac463de42
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 1612de6a7580d5e6e6c35d1f87f5a6344dd879c2042d03246395f8534b4824b2
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

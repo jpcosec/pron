@@ -1,0 +1,12 @@
+name: spec-13
+path: source/spec/13-formas.md
+source_hash: 4ff87cc5f3682d02c386fd6d298c06e27da8eccee483a6dda8a7b9e82074872c
+content_hash: 654678715f368f808f51eb766d80e02abef31ac6440421f8c4d4af28813db9b3
+field_hashes:
+  title: dd03dded070d738fc9012dbd219ee4029b5a2cf1a537b9cd5751aabb6fee034d
+  body: 342d673aeed8953c18ef2072ae6833e0456ebe4ff1cf4167d9f2838d153cf620
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-field_coercion--SpecDoc:spec-04
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-field_coercion--SpecDoc:spec-04.md
+source_hash: c0a8bcc8fb899b3d8a685c87feda87feb1b39b69139c6fe79fc7f0f322177100
+content_hash: 6e22fff2b8e097f8c4b7a45267aa854ebe85a1a41122249e2400f3cf5fbc81be
+field_hashes:
+  title: 9b4979d8a3efdc35200ff4bdf3c86d0243f500e38cf61cba4c29cf2c742cf130
+  source_id: ca83f781170695eea764e142b5d1d991e347accaf92c9acd57ae7fe2d923f7af
+  target_id: d4b203330280d9cb8c9c02421044903bee6bb6a3b42f0e9be217e9c427200d24
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

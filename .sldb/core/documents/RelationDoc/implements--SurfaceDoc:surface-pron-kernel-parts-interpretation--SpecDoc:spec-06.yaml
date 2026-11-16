@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-parts-interpretation--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-parts-interpretation--SpecDoc:spec-06.md
+source_hash: 20658ba0c478ddf44add4a01ba132db50ee1fce0a6af55cdd3aaa25f13d37b45
+content_hash: 3884eaf12d3d1df77b94f234b01b75eb6cc0c9fbb6074ff996b2d2072a3b1da1
+field_hashes:
+  title: 0ae9e72aba7db83b2a96e962d7a8c22a12f7e52a15a936ef6e49bd9cf6633f18
+  source_id: 8a79cde940f7f34b1cefcf2f9e090676f5dd1b1e4bb943e5348615745655e00b
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

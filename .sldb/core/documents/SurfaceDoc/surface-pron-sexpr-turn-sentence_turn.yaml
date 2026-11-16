@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-turn-sentence_turn
+path: knowledge/surfaces/surface-pron-sexpr-turn-sentence_turn.md
+source_hash: 1ea86e1980901ce8abe8068564594e2ae9798b35545edd0bfa8c26e5cf28f21c
+content_hash: 0d102425a5e9246421e8e9d0a70685dc50530c21c3cdb28ffde15676a6562b62
+field_hashes:
+  id: ee08e1a5f21cf3223980abd4d4689aaa6bf4c45b197e236eae922a0561d08f92
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 4299dec95e05c670a8e45fd1c7aea3372cb6ca397ade8bc7f633d0da25958215
+  purpose: 43d5e0301806253934cb5b2a8f75f50291034aa63d272ec8bdb50cab8aa71383
+  how_it_works: 2156bbab5a79e1b46d36093424122027fa4a872f3508300532cd8f66e917f099
+  commands: 1affe5f7b133d8d48bdcf106941d9ebf4e877393f326a95e8bc54eb61ba30bc0
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 3547f32af453d199a4bc07c315b6ee73732676103ede1664f60dcc4d9f16ff6d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

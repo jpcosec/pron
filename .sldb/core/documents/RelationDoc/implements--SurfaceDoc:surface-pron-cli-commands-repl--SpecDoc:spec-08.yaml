@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-cli-commands-repl--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-cli-commands-repl--SpecDoc:spec-08.md
+source_hash: 722ac73bcf6892cb938e785ed42c3b1b7e917c60cb3846e8c71b044a11c2e809
+content_hash: 01b98f73f958f1e6fbaff98ec2d7c20a6a08b488e59ba7969dcdc633f582fb44
+field_hashes:
+  title: 5543b47d1775b7b2bfc77c3f177234e446318b49a511c8e1613e2759b4421bbe
+  source_id: 058653b260f39ce61d9b2022d855eea5ff9e28bbfd94421f066b2f1aca415bc4
+  target_id: 59aa893af89d2ee88318ca0da1464d84d61ac705cfc840a5e5d9e91cd7bdfd17
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

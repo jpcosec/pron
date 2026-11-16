@@ -1,0 +1,23 @@
+name: surface-pron-surface-dates
+path: knowledge/surfaces/surface-pron-surface-dates.md
+source_hash: 2868022c70556a374492f61d23586026d4173a02488c9067514818b2fa73ad49
+content_hash: 3b8ee9d9f96a01af2ce196b8492d050b459aedee716a9c57b68337d967889c70
+field_hashes:
+  id: 7e3b1374446a8766fba59cc008ac012a35b4780ad4836e705a2dc5470f01dd87
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 058de608f20a07b2ebcbeec5d5f505bc0a27531572559a16ded58a5758263013
+  purpose: 4a87144a482da0477b5e81f433f593e218c53086b767dd8d6037e914f083aacc
+  how_it_works: 4a87144a482da0477b5e81f433f593e218c53086b767dd8d6037e914f083aacc
+  commands: 6f4cc591dbe38575c89e1ce5eafc54633a469f059e730430e7f3989da28444b0
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 375c95301fb57e0e03f275f9a6577803c5d8a9e3267997e16aa19b9bc3ccbbc8
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

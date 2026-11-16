@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-edge_reader
+path: knowledge/surfaces/surface-pron-sexpr-resolving-edge_reader.md
+source_hash: bdb2d5f90039b6037cd90af652aee96ccd7b7ae2c51d77a83a92def531185bcf
+content_hash: 36090d9126539023d020d5e849cac400f012616e3de1dfc95b4aebac853f3f12
+field_hashes:
+  id: 30597e0eca25b1d57ea428d4c5fde0adad4044ba327a037128505a99b9a409cd
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: d545ddf1493e86a92e7f2918904a6f945fde990182e8769a3c36ec8a1bdf93b2
+  purpose: ec0818f48aaa8941a4f8d8503e4a679aebdf08bb29e071af209fbbc031655dea
+  how_it_works: cc3f58200317e6c55c56ed7d78826993bea2b2b42377a04c3578eadbaeb74f55
+  commands: 9e20a177fc9209607a599dfd918f5515d8ecdc3d23c335b6f0d45d728c0b6bcf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: f4e0bd4e6a43d3c7ddb1127c18ceb3d2bc2c196ce5f8aec1cca67d2e0f9ca93d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

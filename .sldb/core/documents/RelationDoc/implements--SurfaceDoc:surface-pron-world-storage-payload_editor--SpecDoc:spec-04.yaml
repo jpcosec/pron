@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-storage-payload_editor--SpecDoc:spec-04
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-storage-payload_editor--SpecDoc:spec-04.md
+source_hash: cada1be5f4c90cebc57c765a67ef2f6e69b52900043099e6fc46d26955ef771d
+content_hash: 181bb3cc3df4446570d74d3012f2085691ff9505127e5b8c015371e7423bbcd0
+field_hashes:
+  title: 8e92fbf213852a0ef2e53d546c1a9af3ba95fc3ff2e15f4fedf2e21c628ae9f7
+  source_id: 58df67dc6f15cf31acbff56d2cb97485517c14b02db6c3133e972482c429d63d
+  target_id: d4b203330280d9cb8c9c02421044903bee6bb6a3b42f0e9be217e9c427200d24
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

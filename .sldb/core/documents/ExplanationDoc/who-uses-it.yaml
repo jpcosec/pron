@@ -1,0 +1,14 @@
+name: who-uses-it
+path: knowledge/explanations/who-uses-it.md
+source_hash: 848762d59a880f2246cbbc9f22f5ce45f0f5666d8483adca0d32f900bcaa9471
+content_hash: daff929a4e0f118824dde47f65f5c67d3ae2197090bf07d12b3a1131fb87d221
+field_hashes:
+  title: bf6a646fb268cf66969f85e4492f7a5fab0914bcc2d3cf29964c127ea2b1362b
+  question: e5bdcfa39414e4b8fa3733e8d77932e1029921b349e71cebb7d3abd21627ee34
+  answer: d77efbecbcd347cb534de0c97ce218496015a2d9412135018875c4dda6754b9e
+  sources: 1ac4be275e5cc96af1bd7bc1f9f860d4de08bbfe87ae507cf3336a7520c6adf0
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

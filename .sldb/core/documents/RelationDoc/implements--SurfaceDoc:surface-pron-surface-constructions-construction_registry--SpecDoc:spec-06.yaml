@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-constructions-construction_registry--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-constructions-construction_registry--SpecDoc:spec-06.md
+source_hash: 326c5662d485ef347125490a6636ffd25d42c70932aad45c48da13de63a2917f
+content_hash: bdf1e1fefbffe2c414f45badf74010da3f4fe825c7334381d0143ec4ee829bcc
+field_hashes:
+  title: 2ea273feace61c1e91a2d4396eb6c66da204b508017f62835bb8d46685063172
+  source_id: 623dbbacbb4519eb3b4cd79cee26a072f53d73b5d19cab548880962ae67aea59
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

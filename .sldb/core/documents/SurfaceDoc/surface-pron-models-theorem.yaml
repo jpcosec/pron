@@ -1,0 +1,23 @@
+name: surface-pron-models-theorem
+path: knowledge/surfaces/surface-pron-models-theorem.md
+source_hash: 5aa197032ef1c6e2aac116b73f77db49d158d85f20beda5e1254e2c856dbc9b7
+content_hash: ac3c37e4b7ddd6fcc719a1bb5e2a034415d90f8ab0235cba31fa67f8f010a08b
+field_hashes:
+  id: 3123760e2f1190e5051430332f056d57a78a961e0991f2b25b47a815f6edd2c0
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: cc01b621caa09d66118cbd05070ec36e358c0684c2b9aeae53d116563020710c
+  purpose: 8d4131f7abe7dd7ce235d5b3e550ba227b21fb51480bc644fc69441c89f9edaf
+  how_it_works: b3f0d575e41d3ce9b3b9ceec8a6c685ebce930ddc0e5f6da0e0899110694ff44
+  commands: 51b2e5f1a36c3f6a36d0f82c076317910e2b4fe470888590b142c5b9b460969a
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: a2e2ec0b0c8c5d1985b644bb099d5553e863508803b73b3f8f20da0d9b3a4a56
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

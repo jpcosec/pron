@@ -1,0 +1,23 @@
+name: surface-pron-world-projection_reader
+path: knowledge/surfaces/surface-pron-world-projection_reader.md
+source_hash: b71ec66250e710434f123c58f75880527eaf204a4f9ea9506627b8b17bfef083
+content_hash: b0dca44941eafccad0ecb6e5fc75d60dd3ead1ba71cfaa64691f1b1bff890001
+field_hashes:
+  id: 88a67b4f96d026d61aa233817c93bfa27585791081c369e61851ba27c54e4509
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 48e503f2e5090e7e0c21ddac7a95928b23358a643341445c84f2146575e4b7c5
+  purpose: 8c89da443e3af3f1e61e4891c6b55722e309479f214ca3e759524d9de7df8c31
+  how_it_works: 8c89da443e3af3f1e61e4891c6b55722e309479f214ca3e759524d9de7df8c31
+  commands: 4bf3c62520b7dc2954e1f9c41b1590d112ce78105dfa168ec9d79adb435c8c2f
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: dd4ce1e8e0cc5e50ce3a03b0784fbfb073affab96e262a74ca1ea940b45e48f3
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,23 @@
+name: surface-pron-cli-commands-eval
+path: knowledge/surfaces/surface-pron-cli-commands-eval.md
+source_hash: 5798b85f960d105bd537eeae9c13127b2e25027c5b165916c90e1b2b4d21d26a
+content_hash: 4297fc2b2967aa197ffa8484d5f6adc5547b4590f0ef457f5d3fba289b800764
+field_hashes:
+  id: 29f31c289fe07669050e96ab68cc2bcada72caf02b3d891a64f318fa3c33434f
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 2c029c77218996c1c53c3197723ac70ddf15a3e80294cef5f635609a5a76806e
+  purpose: 42aade88bb68fcf595c924a317a9a29a961680b1d08920e157f012a03926810a
+  how_it_works: 42aade88bb68fcf595c924a317a9a29a961680b1d08920e157f012a03926810a
+  commands: 015216f42e276406f362ac2893a1fd98d9b1793bd6c8b349be9374cbf3c0b5cb
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 54364a987f4fd05c406b1141343a869e3cd8baf08e7c587230d8b066df8d6e3a
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_compose--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-prevalidation-dry_compose--SpecDoc:spec-05.md
+source_hash: d0c2e7d0f0e333a418d06c8eac09fdabf840951759402da6f1cce0cc6639742c
+content_hash: 64673d98e10d77b643d0a63e73e5df687c025d04910744366ef71cb2c0e6185c
+field_hashes:
+  title: 00f0d125cdea192d6aecfbf039af278911a64143fbc6dbfd69ece46db3caf227
+  source_id: aeea0e7626c6b115995616a00ea6169ae076f982afe2f2caf08d8dfad0c28fae
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

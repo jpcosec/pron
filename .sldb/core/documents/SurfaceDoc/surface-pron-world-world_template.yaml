@@ -1,0 +1,23 @@
+name: surface-pron-world-world_template
+path: knowledge/surfaces/surface-pron-world-world_template.md
+source_hash: 1c738631c49b576b7ce728cd6357c99be26e2122573f63eac73b20a95df645ee
+content_hash: 804e12ad304dbebeea176d244805e3e6b9c0ef3bbe220f5af317ecf86ea8ae15
+field_hashes:
+  id: 5a888d1cb71f13ad5b8da9643053515e1ef3b1aabf4ddd392b1c4353af6de380
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: d0dc38510c86b4451f917e27224ef6e52229b8a087c46faa35f5055c087a32a6
+  purpose: 042725ac6cbebbb34a3fe09f3e42e273ada9211691ec7f44b2f186fa29f0e4a9
+  how_it_works: 042725ac6cbebbb34a3fe09f3e42e273ada9211691ec7f44b2f186fa29f0e4a9
+  commands: d34767f6c7409294412b90157f9429c8b523e12aed5fbcfb95d6ac5ee0b67fe7
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 1c5c6e096c3e934fff9cc58a5ab0aaaf17663ad3e6a454659fc4b0db30d62ddc
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-lexicon_parts-alias_words--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-lexicon_parts-alias_words--SpecDoc:spec-05.md
+source_hash: 5f1330c2ff306151ca8d6a7d21d453051ef5dc694f5772d55dc0efa311d5af20
+content_hash: 0397e32d7f86e722f58c7d9a6f37e946ec15ae7c3b5e796addff6ddd61eea25d
+field_hashes:
+  title: 4cb9108a0b35395b0ff5a9b2d649cc05333e265b9f9ebbdb7fe7d0d7ab4a80c0
+  source_id: 7d9dae3820bb4b2d14e50e78b0d9ac6c198fb82edb7b330ec2fcd9a26042220a
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

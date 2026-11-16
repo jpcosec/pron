@@ -1,0 +1,18 @@
+name: RepositoryDoc
+model_ref: deskops.models:RepositoryDoc
+path: ''
+documents_index: .sldb/core/documents/RepositoryDoc.yaml
+sections_index: .sldb/runtime/sections/RepositoryDoc.yaml
+model_hash: 3c2e9bb1a4bac5d388f90de3380876ea4d6963f709bf3e9cb046ad20c06961bc
+roster_hash: 4de9a17332db6d5f287435a242c9b6c2ae8e0b15ca3ed4f580cc3b961cc360e4
+contract_hash: 4e3d7ee7a6c1475b5bd6a9cce0510dfc1b7d7e3ede1f63f68f797108a5a817cc
+documents_count: 1
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.desk.repository
+- workspace.desk.registry
+base_models: []

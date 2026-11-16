@@ -1,0 +1,23 @@
+name: surface-pron-kernel-actions-verb
+path: knowledge/surfaces/surface-pron-kernel-actions-verb.md
+source_hash: 1d634b455d0fea528f2fba8166ff459493e772a57e7bf231e8385f993666a98e
+content_hash: 4e900f24a124738ede5d981783ffa04b468596874b2e1eb11fea9017d37f9c25
+field_hashes:
+  id: 13dce626681904f70d4c4417072e52caf28770fc3d59cb7ecfff391135a2bf1e
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: f72392cae4d60169931f2942fc46df6abf058ec7062e0d133f5f71996074a6a1
+  purpose: 751cf6f5fd524fde57b772524ae771dc3e61a288db09b011c284312fd8352661
+  how_it_works: 751cf6f5fd524fde57b772524ae771dc3e61a288db09b011c284312fd8352661
+  commands: a5184324ab1b022346879a5cc82ddeefc501ded96706734869dee95f14a1fbd6
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ca204a8b94f2bab50252cd84bec025112094840465c0aeadf4af02fc77e71d6c
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-phrases-field_values--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-phrases-field_values--SpecDoc:spec-06.md
+source_hash: 8c077449d34354b3c465c14d0477d4477454cd44206ad8561b6f045893efa026
+content_hash: d9bcd71a2d4da061eb70f05b071e5973ad697039c48519ef3c8160492d7a3bc2
+field_hashes:
+  title: e2af595d336149ee0c0f9749b3d66d7435e3a1a48f64e5323504aaa09b86a177
+  source_id: 5e520c68f3b2bf297d865a290c9d88411a52e995faad3cd808c4bf69b34fb2ee
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

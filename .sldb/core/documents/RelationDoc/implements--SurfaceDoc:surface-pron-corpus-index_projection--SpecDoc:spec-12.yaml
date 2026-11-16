@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-corpus-index_projection--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-corpus-index_projection--SpecDoc:spec-12.md
+source_hash: 21b6f5f1b9ce6d50d05f5abf15065eb6baf58c7ca86b0a2180ce961cc1fb16bc
+content_hash: 96bfb50d76603eab01939791949feb4cd6eca04721a66b75b91d6dd10bad84ef
+field_hashes:
+  title: 2dcd3d46cb821f6335f425f7878fac17e5a14c50b5d7c7a11466f9fd28246b61
+  source_id: fd6f5e3b735204a44bcc83f8871e68983b19d2aa1bd6c67f26f2aed107423d83
+  target_id: c5d9f3ee4384a7c819433e31c750d6d550797afda8cb01ae865e8444f5f7c219
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,23 @@
+name: surface-pron-kernel-sexp-read_write
+path: knowledge/surfaces/surface-pron-kernel-sexp-read_write.md
+source_hash: 6f40a01da3d79d2062faaa0b0c498f19d5fe3742daa904afc250c6c36810e3d4
+content_hash: 45641ce165336c24a695395dfe015ac5e408f385edf074088cc4aab1b2f70703
+field_hashes:
+  id: 91917497ab7964cf99391173e0b5d32e7b91f9f3ea4e563f2733e65d65cd730e
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: f337a69db819845ad77789e20d00117721493551c6813c8afbf636fd3757b0d9
+  purpose: 46c6ca7752b6e37cbe0599f7c2d120ca836fc745492b4494d5c644ef239b38ac
+  how_it_works: c52a6b2d5f09d20fd495e2a30003ea16bb1a906580f333718de73a8ec584d6ec
+  commands: 8ae21c3b96d30136686b89f6a468ef0fcc44bc1e4278ab79d98b58769d5a7e9f
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 01bcb830b17101de9d506864643ed005e46653daed18ce9837ec0f8cb9878294
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

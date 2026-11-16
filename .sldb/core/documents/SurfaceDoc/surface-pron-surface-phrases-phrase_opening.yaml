@@ -1,0 +1,23 @@
+name: surface-pron-surface-phrases-phrase_opening
+path: knowledge/surfaces/surface-pron-surface-phrases-phrase_opening.md
+source_hash: 3b2c89da657e018eb93434cf001ee94fad8dda3ba2bf0551dcefdb14a0b03a89
+content_hash: 888844908a7055aec3e8cf32b72dbf998cb7ff2ee31e0c9a0103f5bf2864fca7
+field_hashes:
+  id: 6981dda8455b5503939cb9ae3506669e1e58b9c93e2f3ca00b8cf8bec04f4d6e
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 8987a4c6bc19cdccc5e35bad4ea6cb3a1226e9b1d36dfcbb6a9b4c98285a23f2
+  purpose: cb775117d415247838bbd769d316774398b352449caf453e3c154c6f1140fd5d
+  how_it_works: cb775117d415247838bbd769d316774398b352449caf453e3c154c6f1140fd5d
+  commands: 0ed8bd8ce47f7c6b68e58315f26757e6c9210253e73cb61eedfaf96bbab171dc
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: c0e80ec1bb32398864209465f449e019613ed0b55c611fc3b8dfc68190047324
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

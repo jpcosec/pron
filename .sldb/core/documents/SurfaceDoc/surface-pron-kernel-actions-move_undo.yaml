@@ -1,0 +1,23 @@
+name: surface-pron-kernel-actions-move_undo
+path: knowledge/surfaces/surface-pron-kernel-actions-move_undo.md
+source_hash: 779112d9b1d59b9024a193d01c9ca934cdc954c203b6d65a7bdf2c0a0bd6f197
+content_hash: 81387b22472a0b1068f1e56e33eabd99ef9ea6806d1e5cbf5505dacb591bd2f5
+field_hashes:
+  id: 68cf6616cdbbc1516b3b002306c717a1748abcc3ef4ee29fcd039fc97b064a8b
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 8a0180f693dbddb5f28e6ec185ed8c69065dfe98ed68600e7094d49c9b4dd299
+  purpose: 77d7fa25082e2fdefe6b51afca527fbda6dafb2d55a22da2ca22557ce482a3ae
+  how_it_works: 77d7fa25082e2fdefe6b51afca527fbda6dafb2d55a22da2ca22557ce482a3ae
+  commands: b1879e24ad84fe03f275ea360154dd0d45573e923343d5fe9aa2d1ae45446e27
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: f537ce9dc832cdce078ee35cf163da312d2586b6d6b5d926d4caebb4bbcd8c52
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

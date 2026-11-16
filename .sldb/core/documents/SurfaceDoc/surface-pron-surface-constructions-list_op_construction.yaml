@@ -1,0 +1,23 @@
+name: surface-pron-surface-constructions-list_op_construction
+path: knowledge/surfaces/surface-pron-surface-constructions-list_op_construction.md
+source_hash: a606e5892ebf1bd571316230eb77970b9e5825a70d644ae35406d35fca5dc3dc
+content_hash: 930e72379525154e877a30ca4bf4301d7b048797d0c9f7edc9b8129a377c1d92
+field_hashes:
+  id: c041a1eed122266d855b02cb1c84325fbb655b88d422e200824e02b3fc6a92c2
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: adcd5fc93f46ce37ddd6196a3ed26f4422ac072bced5a79a5088972e2e2029ba
+  purpose: 4c1add928db42d5b40c76a4c62d687657cf9399092320325269bbf7d8d5a00b9
+  how_it_works: 4c1add928db42d5b40c76a4c62d687657cf9399092320325269bbf7d8d5a00b9
+  commands: b26c99ffb42a64bd6232ab22235d86737ef62402ea34339a25cf31d29cdcbbfd
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ac9f6af00fb1c849e9f9392808af9a4da56fce8abf49adfee7e0645ca7a5d327
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

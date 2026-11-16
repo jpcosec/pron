@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-mutability--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-mutability--SpecDoc:spec-05.md
+source_hash: 949703c79ee8f4a752d28be2fbdb7e155c9fa0a421cf422a5f407e136fa53f8b
+content_hash: e424249dff48997291eee0a2df5391dc682bac4fcb53473f5e51c3fa16d100c6
+field_hashes:
+  title: 065103bd2185e9f2975f13964fd15b50f868b4e4ce6e2f8f4bb58fa4e1f75f36
+  source_id: e244f3462c1c2100b28b094fad537f614fe8b8d91a1a79ba05ec7a6a58bc7b0e
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

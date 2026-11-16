@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-edge_assertion
+path: knowledge/surfaces/surface-pron-sexpr-resolving-edge_assertion.md
+source_hash: 426be5c811707f4a282664323439b0037cbbb9724f5bca030c372c6f3c7b85a9
+content_hash: 596da445707c1913ae32cedd388a70f1fe4bc0a5f5f9932e28e8084d531926a0
+field_hashes:
+  id: a51290a906f8efb9183ae06fb317e527ba3bad99ef0ea2eafa3340f46f6a08d0
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1209f0b51d64c1cf7fd3831da1ca14d4d02fc2cffa924245af2682c844e2ab25
+  purpose: ad8079642d0ba1305607b1a9117212c5abe05e61aec1e4640ac072bc7d30ad8c
+  how_it_works: ad8079642d0ba1305607b1a9117212c5abe05e61aec1e4640ac072bc7d30ad8c
+  commands: 391ae391193a6ae9ee24155483e41cf439e32658d75d906e1614dedd87d6d291
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: f958ace787a89548f3afde159f0741e0bfcf03c6c9aeb07605b2c792385ca4fb
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

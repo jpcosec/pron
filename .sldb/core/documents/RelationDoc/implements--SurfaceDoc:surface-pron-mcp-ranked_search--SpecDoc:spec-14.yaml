@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-ranked_search--SpecDoc:spec-14
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-ranked_search--SpecDoc:spec-14.md
+source_hash: 4f1e1ab4e543e5937396e69ab72530fc4ebaf6e53047552ec8087c2b75007fa5
+content_hash: d5f0720e445dcdf3dd7650d1c92330d8391d129b1c7255d75465adae4d990208
+field_hashes:
+  title: c0d29d8744ae71965ba824c87351f06b4de6de1fa0ca98a248128b44ae9dd34c
+  source_id: 9b6a3f1e9849f079a679269af57af067aaba035a1d4911ff52279feb270d5b35
+  target_id: fc8fa9b025613d5c9841560a7b1b977488b60281cf91f3787470ec584c046e12
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

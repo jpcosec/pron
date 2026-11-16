@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-literal_reads--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-literal_reads--SpecDoc:spec-01.md
+source_hash: 8fef599e408a9fef3dbf626f589b5728089d93b1ec92077e1e11c6a0f819ec70
+content_hash: 11a57a9c46f542ba7438e555e2c5fe996cf13eece543fcff2a089c6477c30660
+field_hashes:
+  title: 03ad08316ba83fc3e72b3b214698586685a3a4a5c8b6b3fa1bc01155522d52eb
+  source_id: a249b10f2149fe0dad260b2f0746908bc0d30c0c0aa68b9993993e5a0c78cc26
+  target_id: 512a7c574fb75a9299b2af3e96e7d6c7f512bc8b21b073e2d11929441fd1716e
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

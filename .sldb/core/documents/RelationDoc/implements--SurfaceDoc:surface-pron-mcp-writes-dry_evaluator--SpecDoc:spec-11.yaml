@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-writes-dry_evaluator--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-writes-dry_evaluator--SpecDoc:spec-11.md
+source_hash: 6b3eccc309b5f4e195d91cfdcc93d3bee40cba054ac4611b68ed43d4a86ed463
+content_hash: a2b9863f370376453be0394937e10cc7c0fca705371cc858802c543108a6dd5d
+field_hashes:
+  title: dc770a226dc0fded66e970bf15bc5d989e912f4269d5d88acbc2b4c46087a373
+  source_id: 9aff7953cb2d5dd45955a7bef1dba54a9b0867b08cca65ba2badc4be3133f6d6
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

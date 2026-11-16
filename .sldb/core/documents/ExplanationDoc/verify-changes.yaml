@@ -1,0 +1,14 @@
+name: verify-changes
+path: knowledge/explanations/verify-changes.md
+source_hash: 279389d8ef92b4569f0011512a9d58c351d523704e49e94ee4d93ebd9da3c4c4
+content_hash: 90d31b6972ea4b72c759bd5bc383adbcb28adf2352c59d428eafb87e000a2ae1
+field_hashes:
+  title: b1024b11e7d980eb58487e537ff63342997e34f6dfe56c93f6a1041190640d71
+  question: e8d2444827cf923bbdc31c2a59fb8f198e5fb7cc72b8f019107d26c51cb63655
+  answer: 0faf74599fd0ca817197b9faf90628efdad4e6ac71b837b61620f391f5c68514
+  sources: 2336f8c7af675a79e916c7a534ac9eb31eb8c99f7dc0a8e8f0fdbafe92f80db5
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

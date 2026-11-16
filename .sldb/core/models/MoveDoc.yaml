@@ -1,0 +1,18 @@
+name: MoveDoc
+model_ref: pron.models:MoveDoc
+path: src/pron/models/move.py
+documents_index: .sldb/core/documents/MoveDoc.yaml
+sections_index: .sldb/runtime/sections/MoveDoc.yaml
+model_hash: e4f0571a1e9a14ecc1ba9c610e3dc8c2e4144c0372afe08495b33fde13ef02e2
+roster_hash: ece8ad8efc8aa6e2601490b930df23949cdbf16a2c034a4b6bd0621af2bd2220
+contract_hash: 081fb2a77bd0713785922fb01978b1494ef3aa8c6cb6a10c18642a565d724a2b
+documents_count: 8
+version: 1
+canonical: false
+family: ledger
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.pron.move
+- workspace.knowledge.ledger
+base_models: []

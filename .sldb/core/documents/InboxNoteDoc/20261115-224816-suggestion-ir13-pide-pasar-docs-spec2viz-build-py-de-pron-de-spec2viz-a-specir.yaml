@@ -1,0 +1,24 @@
+name: 20261115-224816-suggestion-ir13-pide-pasar-docs-spec2viz-build-py-de-pron-de-spec2viz-a-specir
+path: desk/inbox/20261115-224816-suggestion-ir13-pide-pasar-docs-spec2viz-build-py-de-pron-de-spec2viz-a-specir.md
+source_hash: b906e395a3353859ae42d24478427a90a85735f87f5bbfd31b8b7f2156729b4f
+content_hash: f01a1e5df575fa62dd3e7d938903e1d85d196b68e693c41150e23caa4740b99a
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: bedfd7658116eea0e9c6aa56c43288b769f14cc22546ef2cbac2588069909ad8
+  target_project: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  created_at: bdaef98867f4ccc362df3864000ff9717fd430922fafe73c217db839a3dfd882
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  acknowledged_at: ad3501c6a33a26808bf53c217cbef022a80e405eb1a4c6512948d2459bbc098a
+  title: 0a1c1014f002b57792d1e8491cf57ecbad6ccd8a1b3008d24d02a69dac05917a
+  body: 4ef7ea2ab3a229bbe16f2c9c568537a0e7af720ecd400295c2383acc916987bd
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-16T04:14:49Z'
+  authority: generated
+  via: save_document_payload

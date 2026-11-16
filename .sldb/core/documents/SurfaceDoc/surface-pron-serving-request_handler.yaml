@@ -1,0 +1,23 @@
+name: surface-pron-serving-request_handler
+path: knowledge/surfaces/surface-pron-serving-request_handler.md
+source_hash: 6f1a6cb048aca2b5ad08134b6f224a1f1c022428906f40d416b87d41db379f4a
+content_hash: 193ea2d6369c8e449e8ee044cc22c8b50f932e10769845fb30afa7416576e14a
+field_hashes:
+  id: 8c0999d7dec9d05383bbc8d8e849695ed74ae7eb97fe5655f7e6675baf9d3924
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 63a947eb95e6d4f0b21257e17a81d38f3c4bafcea2a41fe012a2827424e82525
+  purpose: 1f118a3abf52b208f05017399f56bf7df8b7ae26aba13f2879718e8bc8763312
+  how_it_works: 1f118a3abf52b208f05017399f56bf7df8b7ae26aba13f2879718e8bc8763312
+  commands: e4c78cc00d6b88436a25ab02f05848669027a53df53337a6cc46b2cc1117fbcd
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: c0c54d3430be4bac7406940e84cb30001b44efecd8fb8509918306ac01db0ab9
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

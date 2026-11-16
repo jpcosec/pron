@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-nouns--SpecDoc:spec-02.md
+source_hash: 843d815cb6beb21dcbade14706c7d31aaebe5edc4f0b29f52c596b280c0b34b7
+content_hash: 7e9f5dfbaf48080e4b02ae3959fe3d9a809185e173891eedb98344ee62662134
+field_hashes:
+  title: 70955d04c285192c3847fad09db2dcceeba8f733959135ee08bb2d5cde5d8ac2
+  source_id: 6611d4e8b28e44474cb311a5ca1b9e07082ce7db510fc97af8c5b27ab2b3fdaa
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

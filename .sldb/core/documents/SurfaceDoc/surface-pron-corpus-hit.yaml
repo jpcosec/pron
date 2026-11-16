@@ -1,0 +1,23 @@
+name: surface-pron-corpus-hit
+path: knowledge/surfaces/surface-pron-corpus-hit.md
+source_hash: 2cc0463deae0f6e84b3b1daca578acc8b8c4a30525000461103909292d7b75ce
+content_hash: bc04cdc4480f0d1b83f2104bbf6bd94a1cd0cdd13c3a21f6792aba72242213b9
+field_hashes:
+  id: b4b7c159ee76c4ff5a49c1c44cab20f41c19cf65e64027b9afeea74d4fbdafd8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: a194b6ccfc02c395014591314fc2c1f19d73d79a570ace3b66578a79b656f755
+  purpose: 60fa49f95948b2e4c911ad9e2112c2ead9101b23988a2b3ca487632d4eb77a66
+  how_it_works: 60fa49f95948b2e4c911ad9e2112c2ead9101b23988a2b3ca487632d4eb77a66
+  commands: a64baa9962cb0046c95627f32a55ceb8f30706be12de85e8c38d85c58c39ac2c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 3ed1cb60dbe3301b70ca0c282335df6da6304e4bd2d9b6db31afcd78929e6124
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

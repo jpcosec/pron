@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-writes-rule_edges--SpecDoc:spec-14
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-writes-rule_edges--SpecDoc:spec-14.md
+source_hash: d9bfd42e52be4221a30c49a187d808865055d3d5cf325194b6f4b9e3fb169b89
+content_hash: 854492bb3f2765ce8e9bc3a3db42b4c0a5e2664191d34f1ce20e822910571981
+field_hashes:
+  title: 0f5c7e37262978bcdf53756fcd6dc9f37c883443756955a89da3ac22d376cb1c
+  source_id: 603d1f45aad611b6312d323bddb55180fa28f2a21e5a89a22134768bfd8168ba
+  target_id: fc8fa9b025613d5c9841560a7b1b977488b60281cf91f3787470ec584c046e12
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

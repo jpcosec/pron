@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-classifying-function_word_table--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-classifying-function_word_table--SpecDoc:spec-06.md
+source_hash: 9ee809eec90fc57f74b4f2cbfffb30d06aceae656bc5d5181cd0abc4c056f62a
+content_hash: bf691d65aaa908c46b54512ea612e05c751ffc75cdcfb75786c33ca95df980fc
+field_hashes:
+  title: 9646030bafe6f019a4eec4e578c72bfa5645ac90974e2a6994a36e0c89d1e1d6
+  source_id: 6a5ca70c02d3eac185257020de1747d440073073fb218f428c75df0e13874f12
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

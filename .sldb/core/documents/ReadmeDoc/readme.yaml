@@ -1,0 +1,12 @@
+name: readme
+path: knowledge/readme.md
+source_hash: 67f2a88923b93129b6e871cf57b7fbf222bd7890a7d80a3f20e9002c82207b12
+content_hash: 971db7ea1e6d424de2d21548be292310ff91fcb719ff83a9ba69f3f69c345b33
+field_hashes:
+  title: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  parts: e1a5ed035ddf0cf23a1dc0ceb3f5f3db90f092f9ba35213070eb4702b3182668
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.readme
+- workspace.knowledge

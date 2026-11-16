@@ -1,0 +1,23 @@
+name: surface-pron-plnr-theorem_load
+path: knowledge/surfaces/surface-pron-plnr-theorem_load.md
+source_hash: 9f8cfad62f513ba01e8b56e1b7b1750208ea6198c63e901bcd3c70f52a43d3d8
+content_hash: cdcedeaad65d5f1ae90ca78abf2ba292459b3742dc544ebbb58410d3724c1a3d
+field_hashes:
+  id: 0f5ceef64f3b1432f78d8a08a2acb50b0c8a1cbcb3fc98c6db6f8ffcfc772bfe
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 2b2309ac4d5773ecddf98a1d5a20da7c8d22b077b9ac85b652a789280a807ec4
+  purpose: 9146986588c6602388786f6420fe551669241c1cec42b2ac617cceeda49b7eaa
+  how_it_works: fa3491a9763586376ca2946926406c41b9f0105ee184340b67a2be2d88753e1c
+  commands: 103efbfb485bb47d8710fab9734ace3f07fa8b98878c79122812dd1aacd93984
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 452b26b13eb4ae9a912c396d39943edb75699c9b11d5afbd7214af6eb9cc8010
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

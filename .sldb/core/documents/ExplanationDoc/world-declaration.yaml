@@ -1,0 +1,14 @@
+name: world-declaration
+path: knowledge/explanations/world-declaration.md
+source_hash: 5da69b6ac6dd077dc022483fcdebeee25f41ade2b892f09e1ead5732f284fed8
+content_hash: 17933a88c41ced46e152bc087d213ab4dff5f7ff0a8d83871764128cfd403f1e
+field_hashes:
+  title: 358d85365217061806507f5caad27626b47db1fdc4dba9933aae4c7f8dc9de07
+  question: 7713abf7c6cdffe822fd7601693843a78ebd8ac1e1b17b7699a335b610bcb8f0
+  answer: 97edd025ed81e3c304f12ad64cae7db480328600083123b1baa367e95bafbb18
+  sources: 53e298fd697aeef3c83e22934c40b816fbc1eccc4e471a6a9ae15cf2ff995e81
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

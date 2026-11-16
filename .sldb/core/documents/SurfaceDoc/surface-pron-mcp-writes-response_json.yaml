@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-response_json
+path: knowledge/surfaces/surface-pron-mcp-writes-response_json.md
+source_hash: ecabd6e83e957727c9ae827fa6889088454af4361679f08958d6b7ba6f01eaa2
+content_hash: 3ad8185c099c40d27cccd3dd6f6e92a651d005cfaae8aa5b5460262bc3daf8b7
+field_hashes:
+  id: 2e7a752fafb5aa09ea4dc8cad27396c24a5f0693ba01cb2770f77fc962b84195
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: cc7df5cb754351b5a2b64d2dc87bf295bec5f1a527fd23b9e3e5bfecd6ebc6d8
+  purpose: df42030b701d8956d086de6193a94f302f5c8a11c1d252dab28da34bbda43f82
+  how_it_works: df42030b701d8956d086de6193a94f302f5c8a11c1d252dab28da34bbda43f82
+  commands: 8813949b5e3d251d912f2f18bdf5ce342943470fe913659ecb5932e7ad8ed2b8
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 518e04ddb9dd12755bfbcdf31af8d525a2fe3cc9c6cb5febc8c3f519f6a1fd95
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

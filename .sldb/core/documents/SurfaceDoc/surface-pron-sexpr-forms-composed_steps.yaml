@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-forms-composed_steps
+path: knowledge/surfaces/surface-pron-sexpr-forms-composed_steps.md
+source_hash: 3c658c4a316350dd2225610cb0d5f1e4a81d79f650df5da3dc95231662e3b18a
+content_hash: c3dc150b50e6abe51686b728b3a57130e4ecc18d69186db2b92cfe1a78c76c36
+field_hashes:
+  id: 5df45b198dd05821a1801a77b1a01197225217bc31f346fbd5f14179104134b9
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 3af1a3387dd374a4e0f1d4e9d7569b0da457020cde53be988ac2787046458fef
+  purpose: 348402bbe69b8c1b8124cc725e032fcd02647eb3e55e858e803488d20a2c8a5d
+  how_it_works: 348402bbe69b8c1b8124cc725e032fcd02647eb3e55e858e803488d20a2c8a5d
+  commands: 653706dd58af386551a9615bd542dd71d5c210a7608f42d0e8b1e5dbb089794d
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 31431a8f0805ae3d4d003e985e3ff7e7daba88b6ccf3a1c9972364083b55e86d
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

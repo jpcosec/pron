@@ -1,0 +1,18 @@
+name: CliCommandDoc
+model_ref: sldb.models.knowledge_surface:CliCommandDoc
+path: /home/jp/proyectos/SLDB_1/sldb/src/sldb/models/cli_command_doc.py
+documents_index: .sldb/core/documents/CliCommandDoc.yaml
+sections_index: .sldb/runtime/sections/CliCommandDoc.yaml
+model_hash: 0d8fac286bb06870bf74a1972bc197e6b008d0252adb45c6d4a1f2491eb2eace
+roster_hash: 14237d382a8d74dc4d493018cec53f35286433a0b515a42d3c088c3dfd8d70d2
+contract_hash: e0546b6ee7bec4fe9fa3e9d060897b93211cdd32dd2e1c83f7b59c4260e2c03e
+documents_count: 10
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.cli_command
+- workspace.knowledge.commands
+base_models: []

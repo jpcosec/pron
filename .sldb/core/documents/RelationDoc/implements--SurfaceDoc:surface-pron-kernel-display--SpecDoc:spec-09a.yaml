@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-display--SpecDoc:spec-09a
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-display--SpecDoc:spec-09a.md
+source_hash: a03936131e26bf50e97af089a540fb9ad6f08df514140b007125d83ef6d353fc
+content_hash: f613337d7367b8b05883ea4ac82c34773c6009b9a90f6313f3e8af566f375159
+field_hashes:
+  title: 35a8f462198c6e3fa7375fcec33ef92ba7b69d6a811251c987dca227aa1edd20
+  source_id: dc2e226035b53902cb0b94a21ebfecc353419982fa3c30732ee11f953f2b97aa
+  target_id: 63c114e59e51cf51aa933d517d7987731fa8544f20a46f88003ee4e11a4d0524
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

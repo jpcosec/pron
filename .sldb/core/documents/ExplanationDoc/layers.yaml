@@ -1,0 +1,14 @@
+name: layers
+path: knowledge/explanations/layers.md
+source_hash: 1609ff85365b373d606fe3b9798b9550b710b11c9c7809b7433f99cbfb3c911d
+content_hash: f76c524525d81d738f976a1d3d03312f9e833bc3cb0b0fc5f4cc75c3ce740d0f
+field_hashes:
+  title: 9f49a3856eae4f1c0ff21fa66e0b9be1d07776e68352892790676e4a274320d0
+  question: 730df3934507f9e899f2c988e68462d9d657f7fc5da9cdc03a7c8f4366514e6d
+  answer: f994f601bb6b28a26c367dacabbbf429ff085d951bed0a7ab8c62b2e853c1095
+  sources: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

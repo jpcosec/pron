@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-dialogue-corrector
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-corrector.md
+source_hash: 88ed8829da1c9f60dbd9a28f8c97d5bdcc71906a9a416a6242de6dd8660783e7
+content_hash: 3b60bf6e4005ee178e88b6582bf0eac150fccbac4d30a3a252178e5730e56ae8
+field_hashes:
+  id: 60ec63e2862a826c106d70786f82983a78dda7ac3ce6e531fa758e1246bd210c
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 6be535965b3d33a6ea544195e7a940d77978731c66f571d53d152953d7c74d46
+  purpose: 71ff7efc11bfb7a089919699f50f5dcff1e05d4885ec072936fdda25d75dff76
+  how_it_works: a1f8a219a373607be1f9b1f50d4a794cb9013bf60c857dfb11e011a4d6260e7e
+  commands: 985fe184d7e3b5a2d96e25d58f2f1ea7b91c14422d147a4f87ee23cc704a85c6
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 491242c81117f6985c35b0b3d2dadd8c46bf643babf4f3c1bf1483d54bd8130e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

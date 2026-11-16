@@ -1,0 +1,23 @@
+name: surface-pron-surface-classifier
+path: knowledge/surfaces/surface-pron-surface-classifier.md
+source_hash: 1ae222da8c274207615f6f1659d422c206b8b8e8cadc04be2b141b93e7549c91
+content_hash: f2194a2f805b6d6a76bb19d8095263d96feb958b344056d97ae7a869cb54abc7
+field_hashes:
+  id: 06524997557fb964140455690c2cffbc4361945b6780eed15c412e1de0710182
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: bdc8ddf63a4c34abaa7b1b5238c4937e35c0876f8e4f9af54b465dea8a6e5356
+  purpose: fd69f63149790631384fc463b63ef11cf68611aff73479423a5e6a496db500fd
+  how_it_works: 18bbe097d95c1ba5527ef22c8b8d90d7ea9a7dcae2e9215d738b285037f44d6e
+  commands: 3e2591254252efb2dfed4c75c20b64ae471e9a49469b8cce7f3955d49b860be5
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b32f8511c10cb39513a567087aab11786633e97fa316c25519c32a6e19729e75
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

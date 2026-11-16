@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-remote-client--SpecDoc:spec-11
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-remote-client--SpecDoc:spec-11.md
+source_hash: 608e13c88c785ffb6b7ce3f3cd211995519aecff5cb8376499bc1ad4f679ee9c
+content_hash: 9ca7c0beb44ff350af7b468d38216563d12e7a4a2834af9b158bea0e0f1f345f
+field_hashes:
+  title: fd5e3c556fc69e17eaa994127c690c25e58e1be8ba36b18897a4aedc1af3588e
+  source_id: d5188c51dbb4c48ecf837a4706bd96738ebc75082910e06e0a207ab81b4a7734
+  target_id: 47e9ea75d3aacc6c5583bc043c8cff51a720c0b0fb84f1a9a3fdb7b82e97f037
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

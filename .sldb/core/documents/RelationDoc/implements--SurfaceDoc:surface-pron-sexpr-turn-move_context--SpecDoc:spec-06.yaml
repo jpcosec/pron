@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-move_context--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-move_context--SpecDoc:spec-06.md
+source_hash: 8c1570fe3d80856c07886d2097315a4b8d68d04c6aa7f2b468c92a9b87ee9c35
+content_hash: 6794075b616d25ca7bad976052ef41648afb1cac505a20e34a6e1e5a8dc2b00e
+field_hashes:
+  title: 308214980f35923d1b0be9ac1ac49b79b5a4609444cae361a4e39fca2589328a
+  source_id: 6a5cb6ccd58883c8f41d6229d44801ffbd1d1f1f1cf4de7209c873230436fbea
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

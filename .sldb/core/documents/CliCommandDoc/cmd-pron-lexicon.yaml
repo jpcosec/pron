@@ -1,0 +1,25 @@
+name: cmd-pron-lexicon
+path: knowledge/commands/cmd-pron-lexicon.md
+source_hash: 91807ce9795720dd70711672093af2822d7ac47a099d6b4c6b68be85a053d96b
+content_hash: eeb5b3b69be3ea23be960ee896f6bbe1a59763ecdc16cf15a227f187822e8b3f
+field_hashes:
+  id: 1c246c35a99c31f5b34c06ad961d7c458063e23a703bb1433da59aaa4040681a
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  command_path: 0c9766979c98ce3caf5d081d6a1ec49a50e3b9f8e2794ebd1af210ae71db5179
+  synopsis: 5faeb62665a5c99b30a8ed7bf7d18a09cd17d388a848488f5b0d05acc3ba08c6
+  purpose: 5faeb62665a5c99b30a8ed7bf7d18a09cd17d388a848488f5b0d05acc3ba08c6
+  how_it_works: 6a574a4f0cd72663c746ffc3f88805a9a72ce779bde2e014b139a47e7609cd64
+  arguments: d4a8d4d36c84ab402bd2d7ffe78c01fca4565d668e9281c9f307025e2ed2c7bd
+  usage: 7108d947b8cc3fa3587f156ebb3d79fd4cbf7d20a9e093eec0464fe7f375d249
+  tags: 7def75fd9e0923f8332490a6ce73a7597c91b4525864ff78158cc5be10180515
+  provenance: 97a2d35d7be33e49182c8039366952e6d5145da3ca6766cf4b30390c967eb1d2
+semantic_tags:
+- domain:system_architecture
+- entity:cli_command
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.cli_command
+- workspace.knowledge.commands

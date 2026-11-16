@@ -1,0 +1,23 @@
+name: surface-pron-docs_sync-spec_docs
+path: knowledge/surfaces/surface-pron-docs_sync-spec_docs.md
+source_hash: 3ba8acaca92e4eb39560a612b5fa962a243718e322585c55fc25ce1d7ed3147d
+content_hash: 538b020c395d20a3d8cfaab40fa1b5a14c86d0f612427fbd7c82709ee5ca5f59
+field_hashes:
+  id: 4519c5d35d34dcd0078347ad8ccb0bbcbd2d607aab0ee31e49a57bca230444ce
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 9b2184dc056b8369bb0576f2d166e8a957c754f99f5cdefce8f65ace7cf99152
+  purpose: f395ae8bc6a50c64458ab123b1a7d7db8d0c6db2a37ca691c30a7381a8613494
+  how_it_works: f395ae8bc6a50c64458ab123b1a7d7db8d0c6db2a37ca691c30a7381a8613494
+  commands: ea04789f39588472837745881c226f291b2dcd9c154ef2c68d793d213cb3ecdc
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 7b53444f47b22a55fd9f405ee0033f40bfaeab5746c88256f9758b220122c9f6
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

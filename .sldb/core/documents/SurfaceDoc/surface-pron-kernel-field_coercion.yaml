@@ -1,0 +1,23 @@
+name: surface-pron-kernel-field_coercion
+path: knowledge/surfaces/surface-pron-kernel-field_coercion.md
+source_hash: 43305835693abdb210390c4837ea7ec4f50f830e528b21bcae1001df14fa0ce5
+content_hash: 7104a5f7ddec75071eb0d893016685b3566da5e921da273fc0b77311900dd6f8
+field_hashes:
+  id: e563342df4f1dbb9126573ff0230c32a90e9f23cc972570392579c9f545d2db8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 89ced25ff1e0f73758a393a1efa2b4908089ad786ae892c836bfcddad64d8030
+  purpose: 4f187c42f646948e342044e96094afe917ec43c238d9c0b64566e581ba67b2e4
+  how_it_works: 4f187c42f646948e342044e96094afe917ec43c238d9c0b64566e581ba67b2e4
+  commands: ceee5794b2c2c69a250b91ac7167b28c4602b223d5dc74209ad9cc44a0adc1b6
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: dc1480c953120b40279bbe52fa8614426ee4f1b425339305cf9c2a67e0a56ed9
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

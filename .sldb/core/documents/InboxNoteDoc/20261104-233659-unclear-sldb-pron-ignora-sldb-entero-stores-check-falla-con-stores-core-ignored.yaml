@@ -1,0 +1,20 @@
+name: 20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored
+path: desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md
+source_hash: 84f2ae9474cb75a595d95e76ea29ee4a051212bf3316e085f8e9718bfcd6d6ca
+content_hash: ab0c700ef0d3889f48c9778d522f94f20cc0574e0457e654668267e184a8042f
+field_hashes:
+  kind: 683144a12969e0fd85512737e57b4db93ed15ee760906165a5516d581a77889a
+  sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
+  target_project: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  created_at: b5060df8b88bf47cf0495f8da8750ee06eb7754d67dc833da0c04951db6784c3
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  acknowledged_at: bf503e99dd39e7c0162d84982d1d8ff8464b5554d0b911b7c0d2f524613817e7
+  title: 9cbf2a78db5edd07079eed102f6e910a2fecf63e379f0631f2b49ad35c35f55b
+  body: 7e14978cbcb974b1f548bde69d07f9deb1edc3405c19c97ff7ee326d83fd2bb6
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance: null

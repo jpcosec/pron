@@ -1,0 +1,23 @@
+name: surface-pron-remote-remote_session
+path: knowledge/surfaces/surface-pron-remote-remote_session.md
+source_hash: f8e0c4b31ce239553c99810c5d28d69696ee616efcf5a831dff1b30a7c3b4645
+content_hash: 247e882183f1f8563d111a932bc21c6b879d59ec1aa2c91fbbcfb12938755a84
+field_hashes:
+  id: 03849c55167300f1a02f3f07fae5870bea06ba4022560cea0c19ad5279ce7941
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: cec7acbf54872189fe4372933995b1defaf8a7c5799e0bfbd0c60c51fc874fcf
+  purpose: eda672c412eb78cef996e56e250ef2a2fad565fcc759df442c534c1cfe4322d8
+  how_it_works: eda672c412eb78cef996e56e250ef2a2fad565fcc759df442c534c1cfe4322d8
+  commands: 887df25146dc63e9b2eee8632cc937cdb612edb93c6f872d0d11114846734f0c
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ccb3210d4d489fbf1b0fe63ed9a3b5318a919458490fd9ae1f1b41b7537d8b42
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-dialogue-designation
+path: knowledge/surfaces/surface-pron-sexpr-dialogue-designation.md
+source_hash: 74907e649f674a7345bc7189cd22e504a761964ffe02d52b44a8dc584f3ef556
+content_hash: b8665852208254ecb7396c431f78347e65809f1f900784c86eadf80f0fbc084d
+field_hashes:
+  id: 0b5fe5fc9e785dd20c59759561115916512ff58f34b5daf6b442759e5698dca7
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1cfb793ad8f17bff6874c25e70cf0a2181e916a192b93ac79a7580e4942dd995
+  purpose: cbd65a33100a613ab2334aa32149c4cb0c1d62e21d10b6c281c2c26a35612664
+  how_it_works: cbd65a33100a613ab2334aa32149c4cb0c1d62e21d10b6c281c2c26a35612664
+  commands: be1861cc2316b1a1049cb78e70cf85f80b004ad50bf9f72c5e978a9c6d3f74bf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: f91b1037207bad1a38bd032a263ef03494ccdcf8750bb7c16429ea1f6314b1c4
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

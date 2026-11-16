@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-state_machine
+path: knowledge/surfaces/surface-pron-sexpr-resolving-state_machine.md
+source_hash: 9c468e03b979297daa7288748092e1bcd48cc8dcc82e8437707742416edd8a65
+content_hash: 65e8de25dbdb7a767628dac656ca614e2d23cbbca39e3d3f953b2adf2a4fe2fa
+field_hashes:
+  id: 12ab4e15b8720b7fb19d62a7b0133600b0e2f8614ac6ba51c8988b19699d9344
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: a161ef87897ebbbf0792b5bba3f12ca497eab382faca9f73baab64ab16593469
+  purpose: 29e1f6f2f6b371a0f0ebc7139b08a722fefbfd8400bc8480d6b03d062e4279e0
+  how_it_works: 29e1f6f2f6b371a0f0ebc7139b08a722fefbfd8400bc8480d6b03d062e4279e0
+  commands: 3c378017733230fc50da061835df152cc5acc7bfdd19bb58fa1bccd5a865c2e2
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b824a1475d9f7d4170b98b8bc85f3537b70b7b4e652d2d18a9a8612077b46923
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

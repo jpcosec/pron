@@ -1,0 +1,23 @@
+name: surface-pron-mcp-ranked_search
+path: knowledge/surfaces/surface-pron-mcp-ranked_search.md
+source_hash: 7c9ed2dedb88c05920ea741c6f6753257a9c4bb308f7eb8f557f57e92f8a1e0a
+content_hash: 0b100f03fecae4469d8121027a1c2b8b1ba9bfe05d1e3fe66476a00d6379c22c
+field_hashes:
+  id: 461b8f0d2a70400add7ad780a3f1c9b7dd3bd9c0fa58e5c164ab0a180e1f52c8
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1cc4b40c18b3127b76492d7dc1d7f74428b3bc843fabb0e0a2c5d74a0bf1e049
+  purpose: e508c041c17238ce246f0e83605b9f8014e86f5f4efe00aab4f76971c737625e
+  how_it_works: e508c041c17238ce246f0e83605b9f8014e86f5f4efe00aab4f76971c737625e
+  commands: 1f093c33343cd45c0108352011f537ae5d178d6f6e0a47f70c2026f1c82c7fdf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 41f2e87997deb9231090ad5e7e8f73ca0e530e7a8308b6d6581de93fc32eb0c7
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

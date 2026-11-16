@@ -1,0 +1,23 @@
+name: surface-pron-plnr-commit
+path: knowledge/surfaces/surface-pron-plnr-commit.md
+source_hash: 85ddcbdf28133dd5f323279b239cd721d585c7ed845ad2e4df7cb9b3bf27b18a
+content_hash: 2f28bc72e6f1d430df7b9d24c90784ee5bcb3be9168e61cc93b5671bef21a214
+field_hashes:
+  id: 04d35b14ad0ee0b14120c69d25c8ac8a05b111096e4f06c3c256bae0500ee417
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: e8acec09d62cdd53998fdcf912a93636027749602d727e31c403928f4e01f63a
+  purpose: 98817c0eb79ab1eb1b92010a593198a8672c0ee07a000e774e88a9022e10aab3
+  how_it_works: 4b3317d9c8cf1a2c4c15d2044f49008d282d55201a1632c44e892bbab743bd1e
+  commands: c3e2063798a7eeb693f811bbbb257b22c6263cdcfad8636262e9fce9e9cd131a
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 31da1ee82680164f51ae693d60220a75fcb74de8463777856f5018326da6ce78
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

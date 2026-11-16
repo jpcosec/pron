@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-planning-needed_model
+path: knowledge/surfaces/surface-pron-sexpr-planning-needed_model.md
+source_hash: 90870c31fa8e41ddb41f04c2ac768464e0e7f3d861da91cab3501d52f7aa2a83
+content_hash: 750b545a450c1c61cab40f5893a8555b87542bb75d8a85f861f2b0a681ecb162
+field_hashes:
+  id: 6da32a00d2653e503cc79d0f6a36f76596f3b12c380086bbfcd5dda9a1a5ab88
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: edc037efa23158de0b5b2fced69ac8645a50ab76cf00159c90ef3f5145c8735b
+  purpose: 33b139341d0a1f59ac3bc50612d9029291816beacc5b04caf61f494246af6c91
+  how_it_works: b1f247d0370d45db26050a7de99d230606ec0e88401698bd84ee1ad73b84ebd8
+  commands: 3f9bbd7598663f24a45a14e233366174dbc7a9247698f8bb8d46983789dfd76b
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: d0792d7f1febac5aca1a4368dc4168f30f4acbc1a95385f08ba8aa8b1aab40d9
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

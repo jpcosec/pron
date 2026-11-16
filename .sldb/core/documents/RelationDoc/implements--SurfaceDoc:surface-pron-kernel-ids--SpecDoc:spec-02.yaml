@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-ids--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-ids--SpecDoc:spec-02.md
+source_hash: d0acc1728634b9b6639523ba332e4299ad3d813300c60fe4e503aa5b511d0e16
+content_hash: fa8a24e8292575ee8da8a56f1ab72fafe9ffe755b13f028c1cd06b617d436618
+field_hashes:
+  title: 63d55d0234a2abb85f7ed2f6db61079018dd79461c0450a7d005ce390766e7fd
+  source_id: 699eb09f381051a829fd15e030f7912c97b46159a627b814cbf850d23354cb22
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

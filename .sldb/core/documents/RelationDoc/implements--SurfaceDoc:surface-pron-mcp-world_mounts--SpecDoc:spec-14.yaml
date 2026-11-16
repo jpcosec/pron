@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-world_mounts--SpecDoc:spec-14
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-world_mounts--SpecDoc:spec-14.md
+source_hash: 7b8ccf131ef8bbabbd7a463e8571fe91336e5a1826518cade4a41ab5cc662d80
+content_hash: 4ba4b62bae4df1bfd936f82a9052794d8f4624da6dc9c518df238df43ba98394
+field_hashes:
+  title: 331e706c1146bcc8830d25cfe15741a44a30dc4f7db1eab810599dcaf950c829
+  source_id: fb87ed875df9edba95f71692b1968a8888f885494d2a9da55d9aa13dfb5d2548
+  target_id: fc8fa9b025613d5c9841560a7b1b977488b60281cf91f3787470ec584c046e12
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

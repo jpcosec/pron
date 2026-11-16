@@ -1,0 +1,18 @@
+name: InboxNoteDoc
+model_ref: deskops.models:InboxNoteDoc
+path: ''
+documents_index: .sldb/core/documents/InboxNoteDoc.yaml
+sections_index: .sldb/runtime/sections/InboxNoteDoc.yaml
+model_hash: d346f0fb089d45415cefdf14cf066b00d51c9ec25329f5ed4b4fa44ac4a9fb5a
+roster_hash: 8917bf8d7d0ba531a6d9d19995b4eba4c8a6ac38cd87d3a652ae7a9a5490e6dd
+contract_hash: b163632f56cd2bc835d2d3726b1b3034d6329017760cce551c6aa7f8f3f8380a
+documents_count: 3
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+base_models: []

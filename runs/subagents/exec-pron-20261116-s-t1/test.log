@@ -1,0 +1,260 @@
+# test.log tester deskops-t-5c0748a304c0  2026-11-16T07:15:17Z  cwd=/mnt/ssd/proyectos/SLDB_1/pron  HEAD=d94a3a1
+
+## C1 diff contra contrato
+$ git diff -- .gitignore CHANGELOG.md
+diff --git a/.gitignore b/.gitignore
+index 0144836..2a3b9e8 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -6,8 +6,7 @@ __pycache__/
+ .mypy_cache/
+ .ruff_cache/
+ .pron/
+-# pron's own world: `make world` rebuilds the store and everything generated into it
+-.sldb/
++# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)
+ sldb/
+ knowledge/commands/
+ knowledge/relations/
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 72c9f24..350a4df 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -14,6 +14,7 @@
+ - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
+   tests y en el montaje MCP.
+ - docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
++- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).
+ 
+ ## 1.0.0 — 2026-09-10
+ 
+rc=0
+
+$ sed -n '1,30p' .gitignore | cat -n
+     1	# derived: rebuilt by tools, never versioned
+     2	__pycache__/
+     3	*.pyc
+     4	*.egg-info/
+     5	.pytest_cache/
+     6	.mypy_cache/
+     7	.ruff_cache/
+     8	.pron/
+     9	# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)
+    10	sldb/
+    11	knowledge/commands/
+    12	knowledge/relations/
+    13	knowledge/surfaces/
+    14	docs/spec2viz/out/
+    15	docs/spec2viz/index.html
+    16	docs/spec2viz/offline.html
+    17	docs/spec2viz/diagrams.md
+    18	# local Claude Code agent worktrees
+    19	.claude/worktrees/
+    20	# from the plnr engine's own .gitignore
+    21	*.py[cod]
+    22	build/
+    23	dist/
+    24	.venv/
+    25	.sldb_cache/
+rc=0
+
+$ grep -nxF '.sldb/' .gitignore
+rc=1
+
+$ grep -nxF '# pron'"'"'s own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)' .gitignore
+9:# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)
+rc=0
+
+$ grep -nxE 'sldb/|\.sldb_cache/' .gitignore
+10:sldb/
+25:.sldb_cache/
+rc=0
+
+$ awk '/^## Sin publicar/{f=1;next} /^## /{f=0} f' CHANGELOG.md | cat -A | tail -5
+- La cachM-CM-) derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los$
+  tests y en el montaje MCP.$
+- docs/spec2viz/build.py valida, renderiza y arma el catM-CM-!logo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).$
+- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su cachM-CM-) .sldb_cache/ sigue ignorada (decisiM-CM-3n de JP del 2026-11-16).$
+$
+rc=0
+
+$ grep -cxF '- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).' CHANGELOG.md
+grep: invalid option -- ' '
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Try 'grep --help' for more information.
+rc=2
+
+$ git diff --numstat -- .gitignore CHANGELOG.md
+1	2	.gitignore
+1	0	CHANGELOG.md
+rc=0
+
+## C2 Validation V1..V6
+$ git branch --show-current
+master
+rc=0
+
+$ git check-ignore -q .sldb/store.yaml; test $? -eq 1
+rc=0
+
+$ git check-ignore -q .sldb/core/store_index.yaml; test $? -eq 1
+rc=0
+
+$ git check-ignore -q .sldb_cache; test $? -eq 0
+rc=0
+
+$ TMPDIR=/dev/shm sldb stores check --pythonpath . 2>&1 | grep -cE 'stores/(core_ignored|cache_not_ignored)'
+0
+rc=1
+
+$ echo status=$(git status --porcelain --untracked-files=all .sldb | wc -l) find=$(find .sldb -type f | wc -l); test $(git status --porcelain --untracked-files=all .sldb | wc -l) -eq $(find .sldb -type f | wc -l)
+status=817 find=817
+rc=0
+
+$ git status --porcelain --untracked-files=all .sldb | grep -vc '^?? '
+0
+rc=1
+
+## C3 nada runtime
+$ find .sldb -maxdepth 2
+.sldb
+.sldb/store.yaml
+.sldb/core
+.sldb/core/store_index.yaml
+.sldb/core/models
+.sldb/core/documents
+rc=0
+
+$ git status --porcelain --untracked-files=all | grep -c '\.sldb_cache'
+0
+rc=1
+
+$ find .sldb \( -iname '*.lock' -o -iname '*lock*' -o -iname '*.tmp' -o -iname '*.pid' -o -iname '*.sqlite*' -o -iname '*.db' -o -iname '*.pkl' -o -iname '*.pickle' \) -print
+rc=0
+
+$ find .sldb -type d \( -name runtime -o -name edges -o -name sections -o -name semantic -o -name graphs -o -name cache -o -name '.cache' \) -print
+rc=0
+
+$ find .sldb/core -mindepth 1 -maxdepth 3 -type d | sort
+.sldb/core/documents
+.sldb/core/documents/AnchorDoc
+.sldb/core/documents/BoardDoc
+.sldb/core/documents/CliCommandDoc
+.sldb/core/documents/ExplanationDoc
+.sldb/core/documents/InboxNoteDoc
+.sldb/core/documents/MoveDoc
+.sldb/core/documents/ProjectionDoc
+.sldb/core/documents/ReadmeDoc
+.sldb/core/documents/RelationDoc
+.sldb/core/documents/RelationTypeDoc
+.sldb/core/documents/RepositoryDoc
+.sldb/core/documents/ReviewDoc
+.sldb/core/documents/RitualDoc
+.sldb/core/documents/RuleDoc
+.sldb/core/documents/RunDoc
+.sldb/core/documents/SpecDoc
+.sldb/core/documents/SurfaceDoc
+.sldb/core/documents/TaskCodeDoc
+.sldb/core/documents/TaskDecisionDoc
+.sldb/core/models
+rc=0
+
+$ find .sldb -type f | sed -E 's/.*\.//' | sort | uniq -c
+    817 yaml
+rc=0
+
+$ find .sldb -type f | wc -l; du -sh .sldb
+817
+3.5M	.sldb
+rc=0
+
+## C4 nada más cambió
+$ git status --short
+ M .gitignore
+ M CHANGELOG.md
+ M "desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada.md"
+?? .deskops.log
+?? .sldb/
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/bundle-3.md"
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/preflight-3.md"
+?? runs/subagents/exec-pron-20261116-s-e1/
+?? runs/subagents/exec-pron-20261116-s-t1/
+?? "runs/subagents/exec-pron-20261116/context-review/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/bundle/0004cd80ab7068b8b8bba00ec65c8d318857e79c2ccb11683ef25c69aec5ec1f/"
+?? "runs/subagents/exec-pron-20261116/context-review/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/preflight/a65e43176d335cfcf5b4a353f2103e4e6c0cbaa53e8a066d4e2359de98882940/"
+?? runs/subagents/triaje-pron-20261116/
+rc=0
+
+$ git status --short | grep -vE '^.. ("?desk/|"?runs/|\.deskops\.log$|\.sldb/)'
+ M .gitignore
+ M CHANGELOG.md
+rc=0
+
+## C5 stores check
+$ TMPDIR=/dev/shm sldb stores check --pythonpath .
+FAIL: store integrity — 780 documents in 35 models — 7 error(es), 30 alerta(s)
+error: [store/model-unresolved] AnchorDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+error: [store/model-unresolved] ProjectionDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+error: [store/model-unresolved] MoveDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+error: [store/model-unresolved] TheoremDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath); with no documents left, `sldb models remove TheoremDoc` unregisters it
+error: [store/model-unresolved] SpecDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+error: [store/model-unresolved] ExplanationDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+error: [store/model-unresolved] ReadmeDoc: the model's class cannot be imported here, so its fields were not re-extracted
+    fix     : make the model importable (install its package, or pass --pythonpath)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-bundle-1: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-bundle-2: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-evidence-commit-1: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-evidence-commit-2: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-evidence-document-1: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-evidence-document-2: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-1: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-2: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-preflight-1: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-preflight-2: subject -> TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: lost (doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-bundle-1: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:30b4b24a449deef302ecedd14e5c8ef692bf00bae89e35b52b71c4dbff494198)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-bundle-2: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:30b4b24a449deef302ecedd14e5c8ef692bf00bae89e35b52b71c4dbff494198)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-bundle-3: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:30b4b24a449deef302ecedd14e5c8ef692bf00bae89e35b52b71c4dbff494198)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-bundle-4: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:04b87aed93e54165792061f2b365ae65bb4d26e0dc80d667fbd40a503e7f7b63)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-bundle-5: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-evidence-atom-1: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-evidence-commit-1: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-evidence-commit-2: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-evidence-tests-1: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-evidence-tests-2: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-1: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:5fe199f82fb11980c744fb3d5a9561849c19853f30e77bb11694ae510f898e4e)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-2: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:5fe199f82fb11980c744fb3d5a9561849c19853f30e77bb11694ae510f898e4e)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-3: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:30b4b24a449deef302ecedd14e5c8ef692bf00bae89e35b52b71c4dbff494198)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-4: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:30b4b24a449deef302ecedd14e5c8ef692bf00bae89e35b52b71c4dbff494198)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-5: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:04b87aed93e54165792061f2b365ae65bb4d26e0dc80d667fbd40a503e7f7b63)
+alert: [anchors/doc_lost] ReviewDoc:review-task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v-preflight-6: subject -> TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v: lost (doc:TaskCodeDoc:task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v@sha256:0adf3e76aec0fd45f618bfb3969b7a1cae616a8aa19db1d41b272b06c9ebb131)
+alert: [anchors/doc_changed] ReviewDoc:review-task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada-bundle-1: subject -> TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada: changed (doc:TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada@sha256:4aeefbec0c2ae19cf4f18bf86504c2c8c559f8419088f120936b9f899a28ce2d)
+alert: [anchors/doc_changed] ReviewDoc:review-task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada-bundle-2: subject -> TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada: changed (doc:TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada@sha256:1854de7b5fe3a1b68005c0d474fda4296bf215f704a5a8bec6113b57184ceb1a)
+alert: [anchors/doc_changed] ReviewDoc:review-task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada-preflight-1: subject -> TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada: changed (doc:TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada@sha256:4aeefbec0c2ae19cf4f18bf86504c2c8c559f8419088f120936b9f899a28ce2d)
+alert: [anchors/doc_changed] ReviewDoc:review-task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada-preflight-2: subject -> TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada: changed (doc:TaskCodeDoc:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada@sha256:1854de7b5fe3a1b68005c0d474fda4296bf215f704a5a8bec6113b57184ceb1a)
+rc=1
+
+## C1 (repetición) viñeta exacta: el grep -cxF anterior falló por el '-' inicial; se repite con -e
+$ grep -cxF -e '- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).' CHANGELOG.md
+1
+rc=0
+
+$ awk '/^## Sin publicar/{f=1;next} /^## /{f=0} f && /^- /{l=$0} END{print l}' CHANGELOG.md
+- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).
+rc=0
+
+## C5 (resumen) códigos de stores check
+$ TMPDIR=/dev/shm sldb stores check --pythonpath . 2>&1 | grep -oE '^(error|alert): \[[^]]+\]' | sort | uniq -c
+      4 alert: [anchors/doc_changed]
+     26 alert: [anchors/doc_lost]
+      7 error: [store/model-unresolved]
+rc=0
+
+$ TMPDIR=/dev/shm sldb stores check --pythonpath . 2>&1 | grep -cE '\[stores/'
+0
+rc=1
+

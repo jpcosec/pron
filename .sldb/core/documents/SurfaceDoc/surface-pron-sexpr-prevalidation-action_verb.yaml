@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-prevalidation-action_verb
+path: knowledge/surfaces/surface-pron-sexpr-prevalidation-action_verb.md
+source_hash: 2bf51de4b73feed9a1f7fd63be3c7c54e7df45afea6c04177fcca8f8cee81653
+content_hash: 50994e0b9f84b76ab65799ab1970b48a2ebfa04664493b3683968620989db345
+field_hashes:
+  id: 1d8873632d75653922a2f3d9ad751567c0e9ce73eb9c7d81ea7c42345324c201
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: b506502aca9ea2e5b2e795ac644ea74d64bad6f43b2e85b53089ce421681aff0
+  purpose: aeb68e5fea62d3112e0d36c08f70e289a5d8e861145581f44fb90feb137a5579
+  how_it_works: 0dc90f22da81d5cb1e57c2b757c367201790262e368d9d32805855f1f7d712a0
+  commands: 3522cbe5f78427e094058722a882c8d19ccb2cfa9cae32a7293feb2603e2d184
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 40a9dfe738ba10968df1901e2321161a8e479a63e1c1e4c7f948604d8677e41e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

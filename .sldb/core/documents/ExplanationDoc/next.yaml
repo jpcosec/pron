@@ -1,0 +1,14 @@
+name: next
+path: knowledge/explanations/next.md
+source_hash: 6398ac883ce12a043c8d0b54f43b6b245028d3f03c67b5963a4abcc471e449ba
+content_hash: 346389ec12d522929dbe936f05e47b3f38903785bfe9cadde238e3ccc6026902
+field_hashes:
+  title: 9a8bb238dc855a1c76baa30a147707c5b5b7694f779cc96228b3da99468efec8
+  question: fdc6f0fdadc54140bbdfc21483a1756763b9b0ccd2f7c1c53f05254dc6b789bc
+  answer: 8c497fa76b7c60d7f894878607459d3b1296fb257ba2bc6cf104f47bf445dc4e
+  sources: 42d0fb8779d29d665ac20bbf9bf3572d4be439fcfbdac5dd19450e8de415f66a
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

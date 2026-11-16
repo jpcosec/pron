@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-ladder
+path: knowledge/surfaces/surface-pron-mcp-writes-ladder.md
+source_hash: 3b79cfb22799e4376f5c3af64c23123e8f14600a64de1eff1a6ab532c8b21678
+content_hash: f98f7dac0a9845d37a670dbfab20cb0ca4da2aaa23b96b50ee46214fb058a2a1
+field_hashes:
+  id: bf747e8cb8ee4cb1ed68630cc46456cc2d5652885ab4746756a4c08cad0fd8f6
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 28b960ec004f3bd0a8e58946971b3a03d52b571aeff96bb351a6ef369bdc5126
+  purpose: 4de4a5e25be072b0c9dff615f4fd28cffef0f878c8960a149caf2427abd23b6e
+  how_it_works: 4de4a5e25be072b0c9dff615f4fd28cffef0f878c8960a149caf2427abd23b6e
+  commands: f182d972a76957ecd6eb33433ad0aacdd14b67ca7f052a2c08341483b9afccc2
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: b45e7022c7186f5ca66a0d7559252513d9ffdc15073530116bf53fd53e382e3e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

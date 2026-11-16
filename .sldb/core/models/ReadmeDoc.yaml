@@ -1,0 +1,18 @@
+name: ReadmeDoc
+model_ref: pron.models:ReadmeDoc
+path: src/pron/models/readme.py
+documents_index: .sldb/core/documents/ReadmeDoc.yaml
+sections_index: .sldb/runtime/sections/ReadmeDoc.yaml
+model_hash: c0f50321e48e433556a7e7ea27ac41b4d55362e6cd5f3aea4d1000d760c54b99
+roster_hash: 2243af4976d6dbe92adbc2372944d9cdcd46c36c3dff741828fe83073a399517
+contract_hash: a902faf1c48672ede80989a96ecbcc399035c37a98b505cea5502f3be85d95d8
+documents_count: 1
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.readme
+- workspace.knowledge
+base_models: []

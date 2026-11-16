@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-verbs
+path: knowledge/surfaces/surface-pron-sexpr-resolving-verbs.md
+source_hash: 13dd35c10a35d9c1a868389adb7a52fb41cde507e8e006c0c447113315c946bf
+content_hash: 789f28002992d56cea32c796ef3b91de3ec074597b4e7df9bebeca36b6ae9062
+field_hashes:
+  id: 24d68246f87ee306d0d6737d2aef6bceb6c85c0d1d085f58fb985978a4058c54
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 56796bb3cb0c7a4be9915f66e063ac5a120bf5115879295aaf71049bfceef33d
+  purpose: 0465c922bfaa3c0dfa30f581b4a020206d5735efbc75e91da86655c1405a7ee2
+  how_it_works: 4672682af5f4eda132bfe199add4badb12a4d2282483ff70339e041c0016e353
+  commands: 9f5f9eceb64eb75727b2044dbd79e4832895d11220ec1d97434c8d1b9ffc01f4
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 77aba2b3fba868b3dbabcdfdbf2bda84134c51bf7d07be108b7807192229f039
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

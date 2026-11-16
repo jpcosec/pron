@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-docs_sync-stale_surfaces--SpecDoc:spec-08
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-docs_sync-stale_surfaces--SpecDoc:spec-08.md
+source_hash: 76d09cd66a517a85033f9901b09b53e3f2a7267d23da64e83d5aa176679cfb80
+content_hash: e00a92092d828d97780f75f6c0d68dc48a8cf91c7219bc08733ad04aba2beed4
+field_hashes:
+  title: b670cbeb56c5b3cddc7c4c3fc5d4cc1a41574021f5e4babd5a7db7a567da3310
+  source_id: a730e93526e90ddbcf9dbc182c2cec6252d06d90aa1397e357447b3b4c91072a
+  target_id: 59aa893af89d2ee88318ca0da1464d84d61ac705cfc840a5e5d9e91cd7bdfd17
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

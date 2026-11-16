@@ -1,0 +1,12 @@
+name: spec-06
+path: source/spec/06-superficie-y-dialogo.md
+source_hash: 0abec24f57f962508e11a24021bdfb79b335602ad666d4dd0d5db3fcd319f93e
+content_hash: 05066fdbadc7685c1ba48dee503b2bea20b3e57b64db30c4f9db8534025dc378
+field_hashes:
+  title: 257d4fbdce2de8ed1364ba45b49d22ba3cc33177b301e3bfd92444b6731d07a1
+  body: c32f3cc6d8dd48ff9c484f66122727798290ecfc870d68b9d832eba9c4e5f859
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

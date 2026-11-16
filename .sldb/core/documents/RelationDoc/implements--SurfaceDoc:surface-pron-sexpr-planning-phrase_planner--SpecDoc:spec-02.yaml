@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-planning-phrase_planner--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-planning-phrase_planner--SpecDoc:spec-02.md
+source_hash: 2e100ded13c45fbbfe3db346d593254eee4e7cf8869e647950ac86e6a8530d21
+content_hash: 2a270fd3af48c09dc3c16e4561d9495c964a91a9d276ecfa9e3dc77d5ea2225f
+field_hashes:
+  title: 23285d6cd9d0a6398783fbc4deaa007ba88208b843f0757869316a0a7bec2a5f
+  source_id: 4f4ffa1cf55de5ac7cdf80c82c8a0be1458c8b38b0c72d5f404087e627c4e26a
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

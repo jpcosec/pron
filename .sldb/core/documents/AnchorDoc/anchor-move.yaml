@@ -1,0 +1,15 @@
+name: anchor-move
+path: knowledge/anchors/move.md
+source_hash: 4f1bb69922a066dfd349d1f83d2f7b3f0a8924b11472ebfaa461af70897660ee
+content_hash: b089d343a88a13efbf8244303b69428a2d9276fe21eff2b8c282d7d0b475e4c5
+field_hashes:
+  symbol: c1becffaa3515c695c890a2330d8f07dc5e8247db6f2bb20f0dae89f94761791
+  forms: ce11bad32f85f572fbab46b6824f50535eddaefa0665eb36be7b71d63ca76b94
+  ref: b7ea2ae95ad902025f8465728bd4a4b8ed9072bd4623615a46e946889815ec01
+  steps: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+  motive: 1791b8ffa23883e2035d5fa9a8a9d452ddd6e781fe9a993c79b7ac2e45f881d9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.anchor
+- workspace.knowledge.anchors

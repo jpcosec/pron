@@ -1,0 +1,26 @@
+diff --git a/.gitignore b/.gitignore
+index 0144836..2a3b9e8 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -6,8 +6,7 @@ __pycache__/
+ .mypy_cache/
+ .ruff_cache/
+ .pron/
+-# pron's own world: `make world` rebuilds the store and everything generated into it
+-.sldb/
++# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)
+ sldb/
+ knowledge/commands/
+ knowledge/relations/
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 72c9f24..350a4df 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -14,6 +14,7 @@
+ - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
+   tests y en el montaje MCP.
+ - docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
++- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).
+ 
+ ## 1.0.0 — 2026-09-10
+ 

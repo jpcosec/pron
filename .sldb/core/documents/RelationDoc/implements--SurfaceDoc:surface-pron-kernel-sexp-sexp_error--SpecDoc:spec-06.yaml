@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-kernel-sexp-sexp_error--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-kernel-sexp-sexp_error--SpecDoc:spec-06.md
+source_hash: 52da672e0609dc4582b3a161ef1a77b0992983e00351864647a41fb4033ed746
+content_hash: d904ccc85d62fab17f8c19e4cfe9b1c1d61e0b2b282c1b4eb12a62319509fbd0
+field_hashes:
+  title: 4eb6e1d5f234aa6f83bb4ca18df95828d8c868facccdc618fe71998331f1ec7c
+  source_id: 3fb98f4d0d4f7afee2054ead027491b4eb2ee3b32f2d8ae508bca14dd5fb0794
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

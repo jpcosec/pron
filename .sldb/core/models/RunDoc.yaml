@@ -1,0 +1,18 @@
+name: RunDoc
+model_ref: deskops.models:RunDoc
+path: ''
+documents_index: .sldb/core/documents/RunDoc.yaml
+sections_index: .sldb/runtime/sections/RunDoc.yaml
+model_hash: 732938cd5efe3d8ce5efc8f4afcd1b2035a3d7a4b74357ab0fa9290a48bdf22c
+roster_hash: 7d28388247a1306890988f5f5e10ef25cfb1c3c910031dd4f11db976b825264b
+contract_hash: 91a7ed3e2876f2cb00cbef51f4676bf543fade7907d1d1112732538c13b292b7
+documents_count: 9
+version: 1
+canonical: false
+family: null
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.workflow.run
+- workspace.desk.runs
+base_models: []

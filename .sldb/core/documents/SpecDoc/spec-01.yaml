@@ -1,0 +1,12 @@
+name: spec-01
+path: source/spec/01-mundo.md
+source_hash: 25bdb8cee4cb53b5753eb0a30653a04cd37c57d81c39507fe2e9a9896dc6cad9
+content_hash: acd83bdab03567a757132798fdaa40d34e35dd9f42c3ceaaffb1c228391b9991
+field_hashes:
+  title: 563512f3c472277ed94bd470eab6e4fa40fec4bba35150b3f70ee30445cf25d9
+  body: 10de8f8138124856022c1c77d0f7df61d33d0d3470cf7dba8add36d596681b26
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

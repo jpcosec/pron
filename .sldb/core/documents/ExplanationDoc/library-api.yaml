@@ -1,0 +1,14 @@
+name: library-api
+path: knowledge/explanations/library-api.md
+source_hash: 1ddd4e3151e9abbbc43f36402ef66ecc13eb3a46a112d69edf5aa5007b762e39
+content_hash: a6f825a45f770f52fc7229c05c6066d25fa7bf239bce82de562b306da3ba7f89
+field_hashes:
+  title: d45af7c4fb5d3c593cb9ee20e9bc129da26330ac41a8dd6a027f71c33b366e71
+  question: e2ab66bf7ba10636854894a46b5fcfab8faf20019d3f96d9b1bd80e8107ae00d
+  answer: bebed73eed958c23c20e28a6d5a142efc3436cc53bb8096d9eb6dac000c99f15
+  sources: 42d0fb8779d29d665ac20bbf9bf3572d4be439fcfbdac5dd19450e8de415f66a
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

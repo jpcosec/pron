@@ -1,0 +1,21 @@
+name: move-20260915T130153-001
+path: ledger/move-20260915T130153-001.md
+source_hash: c18d51efabe03b6d8c625f479a20ad182c03661a778c7b84d9ced97e60069cae
+content_hash: 5e0fb2baf27ab90ea3ec3a4eca488512f629c1cd9e087f880595df80396618bf
+field_hashes:
+  id: da9dd893105ea0cc7239653f8740204071f97252ee3c875c6a81cb1827722563
+  at: 12176a6a87b19ac0c3c09ff290b2c7be89ab7df6302506b4c7737aad32ba98c2
+  speaker: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  outcome: 980582a8d58b894da0ef455f6e796a7ddd677abc1479a52f2a8352d3353ab08e
+  state_before: f1e9fd76b060acd35d03436802948ae8dc003d04880e6eb2549aa2c834909302
+  state_after: f1e9fd76b060acd35d03436802948ae8dc003d04880e6eb2549aa2c834909302
+  hash_before: c7c08e011d1eeb4a4edd764ec88aed8f366463c87f1c0c5c0aec32d51c424fae
+  hash_after: c7c08e011d1eeb4a4edd764ec88aed8f366463c87f1c0c5c0aec32d51c424fae
+  refers_to: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  sentence: 84d56268ec1819e98d0b738d175d73b63abd9c6e17a36407319acf64f8bddb3a
+  record: 61feb25219779435dcf47f9ac897deb3cb28ea71a06c1b39cce74846db2ee130
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.pron.move
+- workspace.knowledge.ledger

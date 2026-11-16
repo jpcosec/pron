@@ -1,0 +1,14 @@
+name: how-it-works
+path: knowledge/explanations/how-it-works.md
+source_hash: 6c4e972a1c7cd6c240c170463099bb355feeadda184eb46c276cd465fcab6ce8
+content_hash: d53e560c6abf9294872a2038d7ac7bece1cd71cdc5099e6dd383cbeda2345c00
+field_hashes:
+  title: 0066c95717ad19bbe105131bfbccc1e5f2733a017c89ab858953175a24aa8707
+  question: e7faab004b19916a2f80b101640593e829ffb4907830895f0442def46231f7a1
+  answer: 558d3a80594e89498cbbc16e3ab1c68ca9b3783373777f1193c1ef1697721aab
+  sources: 74175177535614c8477600ae6297764090ed2d844e3933b3bcee8f4ae8e29f31
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-turn-projection_load--SpecDoc:spec-05
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-turn-projection_load--SpecDoc:spec-05.md
+source_hash: 60f5e5010599a638f002212eb63c5061a12b3164d36b079e40e75bef55d2615f
+content_hash: 83e372e52d88d86b8a72a1e940cdf45eba686d6ac7c5c8b4b0787102233ef381
+field_hashes:
+  title: 3f142c501c35d3167815625358c436ba07cb4ef44bf6df9356006ad61b1a3a2d
+  source_id: c17ba66badcb58b33d3521749b2501d93394deb258920280f5b8353e3c6b405a
+  target_id: e3667d0bb24f6bf624ff0c1480fb80969c08438b61dc51860c88e0795e3f0a4f
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

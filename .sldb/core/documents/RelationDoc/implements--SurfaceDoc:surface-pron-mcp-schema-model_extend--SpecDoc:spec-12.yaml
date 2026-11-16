@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-mcp-schema-model_extend--SpecDoc:spec-12
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-mcp-schema-model_extend--SpecDoc:spec-12.md
+source_hash: ee6a291b4318e1488719f6d2b00919dfbf8c3136849cc99286251145f7a7acef
+content_hash: 82c378aa06304bd19b06dd9114651ea77a8a4fe48504ba4d01937c89453ee24c
+field_hashes:
+  title: 1404cb23ee34bf26c32b7f60f83f541ccd73097edbe76e929ecb404bf7e66041
+  source_id: f74b5e8c9e8f2cd906cbb274be6c6bb9fad5478aae5572e074f9748171bbedd8
+  target_id: c5d9f3ee4384a7c819433e31c750d6d550797afda8cb01ae865e8444f5f7c219
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

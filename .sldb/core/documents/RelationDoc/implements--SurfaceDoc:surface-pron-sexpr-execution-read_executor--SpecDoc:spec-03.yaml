@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-execution-read_executor--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-execution-read_executor--SpecDoc:spec-03.md
+source_hash: 659201a16b2f7e8367c620ef3ca23213fcee28b84c7686038ad47d05c450f06a
+content_hash: e7e24da1a07c8e2000549568c574f4d9715dfff66dfb5519b3e082c095690764
+field_hashes:
+  title: 6d729fc63d8e6f85383917fc22895258bd8e14cd8c656dfd188852debb18bda9
+  source_id: 65da8e7c00cc619f560556c4c0b568ac1d671bb2c93b81861027345aeaf8b744
+  target_id: 89f523b1c005c89664d9f826e6ff8d40b4fef77f315521abbe94e4401feb3a59
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

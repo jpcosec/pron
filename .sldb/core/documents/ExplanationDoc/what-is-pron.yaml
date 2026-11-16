@@ -1,0 +1,14 @@
+name: what-is-pron
+path: knowledge/explanations/what-is-pron.md
+source_hash: 079dfbb5a420fd464076dac42fc7a0168955d89cd16b56be4388ffc12f7769b8
+content_hash: 8895d5feb3318eee3bd3b1b866213d264b20339846d5ac261d4cdd888243a5fc
+field_hashes:
+  title: 1f38ff11a08e6167457cbc31982689d22f016a31b0c4ec8fdbe54496bc01110a
+  question: 1f38ff11a08e6167457cbc31982689d22f016a31b0c4ec8fdbe54496bc01110a
+  answer: aaada900ba39885c5c0e8a57be29aca8bddce8a927f618c2d6532d5011217404
+  sources: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

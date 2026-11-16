@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-turn-ledger
+path: knowledge/surfaces/surface-pron-sexpr-turn-ledger.md
+source_hash: 5de58aa3d5180f4d9e030e2e0002a289d1839a8164e71dca6f45dd22d523f08f
+content_hash: 39a4920404cde7083201e976ec156bebba49cc808c4153d659a653d7e6aed50e
+field_hashes:
+  id: 0153987db816ea9f1658c1765d95f7ca0e2779381922fb75256d6c04791aedc2
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: afd3dae724b9cb9c87c92e3760e4a85262be7dacf69520521808dbcb5b53bdd3
+  purpose: ddf58d836d34807b488946d0786bf7ce30c11bef5c789080b2a48d53bac01b91
+  how_it_works: ddf58d836d34807b488946d0786bf7ce30c11bef5c789080b2a48d53bac01b91
+  commands: a731535336c6fffcf5474a33930821c9e2ea233e12c6a2dbd05ff708ebc7f0f8
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 34dd316a1b9ab616334ef728d5c574957149d8fc50fa300d72ab549fd5abebdc
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

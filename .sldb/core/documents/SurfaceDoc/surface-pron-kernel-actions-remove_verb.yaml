@@ -1,0 +1,23 @@
+name: surface-pron-kernel-actions-remove_verb
+path: knowledge/surfaces/surface-pron-kernel-actions-remove_verb.md
+source_hash: e4c770ebd6e944b46050b581d6a868865282a7160a2cb3a71f595b6cee2629e1
+content_hash: 030790e037e5e2ad497959b5580f94742d896c7d0a758d1d9bff69cc93594036
+field_hashes:
+  id: 97fa2c2e1835bcfb838608891cddbbb4ebfefd9d2e160fc2c73d665dc5859404
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 948a046e1b5fe7f70962bcde1bb1971d04745e34add6cb0bf66a6113487fc973
+  purpose: b006bd7e2b3a3cf1706b36529f47085df7e2d92f9f358be02b6ac1763b4e2d6c
+  how_it_works: b006bd7e2b3a3cf1706b36529f47085df7e2d92f9f358be02b6ac1763b4e2d6c
+  commands: d66f2c61298147096ebc1ff8ab61a9cc0881ff2dbfc1f58e6527224349f48566
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: e75b001656ed8deff72eaccd7246c0266ff5f3f9d037099f47069a3846ce78a5
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

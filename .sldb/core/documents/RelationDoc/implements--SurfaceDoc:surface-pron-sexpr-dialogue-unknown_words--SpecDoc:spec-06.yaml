@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-unknown_words--SpecDoc:spec-06.md
+source_hash: acf165116de1c96d154be95a12d7d015731ab20b364ba7a018d661b00e1a9509
+content_hash: 60a256bf00a0bf7d2970af0447398d5d44c52714a47dc3b6ee4873bcdaf42dd2
+field_hashes:
+  title: 587d78f3936e2bde71b61664103ecc27f5c2c198c7fa600fdf7856c36f583ad4
+  source_id: cc2bca13dd811a1f2d5ef08769b53bb927712cac9b185232218a8b7ec295ffde
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

@@ -1,0 +1,12 @@
+name: spec-14
+path: source/spec/14-superficie-mcp.md
+source_hash: b6d0b63a847d56180f1de3e0e8329a7993e7be6376b656aba7b281a9f10aa50c
+content_hash: cbd5c99eba5b775d59271819363695fba4f62c54fcbcdfc3a0e91bdb49a5f586
+field_hashes:
+  title: 4db7a8a243f89dd3467c99296f814c75ac3960222783946fead436a071530e25
+  body: 0a89491f264f5952b568d0b57371c33bea5d7492ee4250810ef5b2646c0b6742
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

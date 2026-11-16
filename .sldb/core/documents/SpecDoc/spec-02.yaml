@@ -1,0 +1,12 @@
+name: spec-02
+path: source/spec/02-sustantivos.md
+source_hash: ade856cf2b7618d6164bdc81c5e7e49b9e8969bfb064f4f59f1a5100923412ad
+content_hash: 20ae6c656cdc3e7d62d4358d75ab0c3db0f1a0d56c6e6781d4248b9f70f735ce
+field_hashes:
+  title: c6d466c18b10394320ef9f09d3554c8fc07726af3f674c735315e6d69caed597
+  body: 83751604db9695e388c38153c4b7f01195d26c8e63cb935b85679d7a21c9798e
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

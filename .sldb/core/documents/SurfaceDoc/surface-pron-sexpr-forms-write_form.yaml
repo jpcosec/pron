@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-forms-write_form
+path: knowledge/surfaces/surface-pron-sexpr-forms-write_form.md
+source_hash: 66d149c0340e4619a6170c023121c2d6102add6f5728da75c7105593adaf54ab
+content_hash: 45269a4c754ecf3b1e0b5335f28114d78d28458e8dd2a198a2b498bf2c3c3261
+field_hashes:
+  id: b7571f3a3b9aa11a75dec9646b17ecac37c3d16ea419c4e5f70f2800534cdc68
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 26136c4b2dfd4262dcc720a3814968794891bb7ea2d625a482dcae9993334d8f
+  purpose: 970ee8db03994d7c83f52238d7221e29b744392ecf91fdb7e2793188209ebac9
+  how_it_works: 970ee8db03994d7c83f52238d7221e29b744392ecf91fdb7e2793188209ebac9
+  commands: c8c64ceda194e538ae4ed62d5251b61b362990795743c4e4172dc493c71d037b
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: e325608ca6c6d57674badd31d1c6aa65f9258810f800d11cf13b43ad0b943a1f
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

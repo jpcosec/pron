@@ -1,0 +1,23 @@
+name: surface-pron-mcp-writes-content_forms
+path: knowledge/surfaces/surface-pron-mcp-writes-content_forms.md
+source_hash: 8098ca564a20fe66276540ec4e6ee1ee3b48cdf2fbc9ed4b6a72f6bc2f8df9b6
+content_hash: 6fdce92685408afbfe7680e568d0f242f46fe56bbc000f661abbcfbd030ac77b
+field_hashes:
+  id: 49eed13483d27f65f72ab6f9b72c7c6a130020afa416a6e1de5a5daf6180d403
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 06eb8703b4513ed38814eb5aaf756d85bbfefc607ff5e45ebe07b7f0fe97c3fb
+  purpose: f3b83f088ee6b95840fc183cf96aad102b7b081db81567b918e92e8146d7907a
+  how_it_works: f3b83f088ee6b95840fc183cf96aad102b7b081db81567b918e92e8146d7907a
+  commands: 0ec742f96f5e2150edf0b16a54f1b0f8c97cc1aab16ed9df6afc6843b2402ec9
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: d84533191e7cc3243cdcfc2d9fc9be4edb476c2474f1332a07d98cdf17abd312
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

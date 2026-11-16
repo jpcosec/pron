@@ -1,0 +1,23 @@
+name: surface-pron-mcp-read_tools
+path: knowledge/surfaces/surface-pron-mcp-read_tools.md
+source_hash: e259b0b9dbe08123aef33cb9424b211fb39bf27f8e0537d9bbbd2b78a11309d6
+content_hash: cbc4bd2e8f5c131273a74d76636efef7745ffa54adbc753f69c43c9966648194
+field_hashes:
+  id: ac3cca379da6d7dd60e24e70e802fa20208820900608267b43569a23d5d35286
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 2cfb3f8da5ff2a131fd4ed768d58d0a35adc3ee3fed912876cc1d0e6a27d2923
+  purpose: 09d93cf93b88ef64464dacb303282d5cb399c991d772b66d2e144190f11316fa
+  how_it_works: 09d93cf93b88ef64464dacb303282d5cb399c991d772b66d2e144190f11316fa
+  commands: 9f362464f5e3c486d71a7fe7a8dca56f387005e5b51d44498d17baa363519f6f
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: ffacfe85e8fe8c1fcc25e77748761bd8c26d5270376289761eccfb54bc908e16
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

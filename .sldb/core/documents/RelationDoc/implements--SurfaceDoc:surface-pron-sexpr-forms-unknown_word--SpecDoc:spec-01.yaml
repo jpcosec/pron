@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-forms-unknown_word--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-forms-unknown_word--SpecDoc:spec-01.md
+source_hash: 7d56e6cc6bc6eefd08466f9dfcdf739750d54a901f5c53762418ed93a8ea45f9
+content_hash: 5763023ed0d00d110477195b0f0010669cfbcfe8ef37827008d19666f0cebd79
+field_hashes:
+  title: fc17f94131bdd8d0130d46ea423c9a27e8a598e7621b6bdac66d868ad0aec55a
+  source_id: 3e9e3e3c32112c1bf9b31b7bde0cedc8c9bf26db6503592898a1cb59ed3b3bf3
+  target_id: 512a7c574fb75a9299b2af3e96e7d6c7f512bc8b21b073e2d11929441fd1716e
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

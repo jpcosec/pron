@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-resolving-relation_checks--SpecDoc:spec-03
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-resolving-relation_checks--SpecDoc:spec-03.md
+source_hash: 8c412ab74244d7935f31441be6879bcc804028fbd97d4447b98ae295f3d2b5dc
+content_hash: 9b3b405004594b7ea99fe7a1eab7e65e9260d65b5c2d50b0b3a5d36e8ca987a6
+field_hashes:
+  title: b1ba03cffbc3a8043029c70d5ad516133c27d65862c2171c17dbbd66fc740507
+  source_id: 5e274ee1f1870c27a56b025fa79c260543ff81a2410b73716cd6cbd1471e2625
+  target_id: 89f523b1c005c89664d9f826e6ff8d40b4fef77f315521abbe94e4401feb3a59
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

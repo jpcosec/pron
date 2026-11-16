@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-serving-world_names--SpecDoc:spec-01
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-serving-world_names--SpecDoc:spec-01.md
+source_hash: 3b1c991c2b7076a7f611f256ff754829c0f49002e3b3f478f85e26129bfa9366
+content_hash: 8b4f14f03ebe2aa9e87b2f179bc3c3b000569d91223de249b784715d98196b65
+field_hashes:
+  title: b77f92946b842aecc97016cae1ef5d2d99f6e085136eeaae1ba6bf7699fcbae9
+  source_id: 21276c04972beb942702cc95f03cf81a4fed8dc9b6e78b5eb5ab04a3dd9f8008
+  target_id: 512a7c574fb75a9299b2af3e96e7d6c7f512bc8b21b073e2d11929441fd1716e
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

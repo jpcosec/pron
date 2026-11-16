@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-world-doc_id--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-world-doc_id--SpecDoc:spec-02.md
+source_hash: c635b4712f0da4a671ae4ac0394bfdc279e3eab7ab3cd74a3ed1307943dd3ac0
+content_hash: b5718ac9924d3d9fe6d3e694a23f8565f88a730df283360cc45276e463e7fa59
+field_hashes:
+  title: 8d2cb2955054cd4209cc477156831518bd755eb5de18233980c359a2de3ed9e9
+  source_id: 13803096e7dab4e30fb77791c2153765d94ba61369170333205a7e65c3f10cc1
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

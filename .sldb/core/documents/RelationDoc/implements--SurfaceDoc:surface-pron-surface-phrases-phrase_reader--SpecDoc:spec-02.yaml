@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-surface-phrases-phrase_reader--SpecDoc:spec-02
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-surface-phrases-phrase_reader--SpecDoc:spec-02.md
+source_hash: d7cf6813c090b360632e2e7a465d6faa550fdf7aa0346105fdc25af03735604a
+content_hash: d94bf70eb140c80ec9b4a0f494196620d43744a322451ce3352d8083bc6f845a
+field_hashes:
+  title: 5cca5a40e262a93ce7d301341e64727be81217cfc25dfffca3f43ec906b2142d
+  source_id: 70e4eb991ee4196a94f00cfe13623ae854b89564efbd9fcbdd048992cdc14b84
+  target_id: 56180c414576e9f75f70b3adeb8b461c4933bb14043e68cc1e462698c32d8275
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

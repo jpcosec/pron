@@ -1,0 +1,12 @@
+name: spec-03
+path: source/spec/03-verbos-transitivos.md
+source_hash: 53c0a8002407ea20c33873544ccc485818f524546fdbfe7b3891abce030af2db
+content_hash: 4161913930fae2c09c49d07d905090f3069d6956816b54b9293da7e251fa35fe
+field_hashes:
+  title: 60adc093f9a52b7343c9ee4b360c41d81f8b4c1a773dd4c46f00083f8573df99
+  body: bfcc6e6625ee855733d75fde79614412a08b1aaa6b9b9670b2c5f47703e82c55
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.spec
+- workspace.source.spec

@@ -1,0 +1,18 @@
+name: ProjectionDoc
+model_ref: pron.models:ProjectionDoc
+path: src/pron/models/projection.py
+documents_index: .sldb/core/documents/ProjectionDoc.yaml
+sections_index: .sldb/runtime/sections/ProjectionDoc.yaml
+model_hash: b872cb1afcc46a96bdb8bc57744bcd2319650f60f13cefdc9ff2f98a059e697c
+roster_hash: fabda0cb30e4a315901742ca08e934964475d2c7e407be3e554f9739eec7da4b
+contract_hash: 01086ea76c2fada4e2b64fed3200bcba3e10f56ef7072ace14569a82568b2efb
+documents_count: 1
+version: 1
+canonical: false
+family: knowledge
+semantics:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.projection
+- workspace.knowledge.projections
+base_models: []

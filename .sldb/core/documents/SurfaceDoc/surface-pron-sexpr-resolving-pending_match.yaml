@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-resolving-pending_match
+path: knowledge/surfaces/surface-pron-sexpr-resolving-pending_match.md
+source_hash: b45918d5fcd2e8e7d6de20dc3d31d10463b3e56b1faa03f47e1acc08a214a964
+content_hash: 6e138e977ff366178fc11744951e65efd059320dc0150672d2142e1a8950b1bc
+field_hashes:
+  id: f73be67bf54014dd2900a218cdf6f7d9e1030864da46bfc49bd73cebc627d15f
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1da9eece09bbfcbab2ad9c4a7bb50d40661dbb32c01994f3d8ff7f7c97c0c319
+  purpose: 5c5f0a0c4c7e8a1bfd24abe42dd614f3c0cefe0e194438e057f36f765e3e7e17
+  how_it_works: 5c5f0a0c4c7e8a1bfd24abe42dd614f3c0cefe0e194438e057f36f765e3e7e17
+  commands: 52fcdd6b8953d841c2aafd0a15e822dc92989efe9531461676cbde420a8bc23d
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: 6bec2ff7d1af2cb6407fb694064b66a3636344cb5abde8a3b7b52276de6a4ab7
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

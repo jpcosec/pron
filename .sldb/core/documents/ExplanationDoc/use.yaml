@@ -1,0 +1,14 @@
+name: use
+path: knowledge/explanations/use.md
+source_hash: 8aef1423f162e5353b3274711dec75d4463e9a03e96f38f060845b3ea675859b
+content_hash: 82a664e18acd9e170e88323656d1074e529bb31a1bde56c3c8699ab7aefef7c3
+field_hashes:
+  title: 0455d66fead0bc0027a480c555174ddfdb3fe4cb885d01f36c08dc7615d3169e
+  question: cb678879c87a1e7c944362ca13cb1f0a385de113a811e7ae9a58973e09769fdd
+  answer: ca6ed17a808fb4485f284a9fbad3dd8e5cf3ce4eea1f61315e901385f779a58e
+  sources: 9b28307109febb932ede2040a8c7ce6aeb3077fd3ef03bb7d416e3bb14160e7d
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.knowledge.explanation
+- workspace.knowledge.explanations

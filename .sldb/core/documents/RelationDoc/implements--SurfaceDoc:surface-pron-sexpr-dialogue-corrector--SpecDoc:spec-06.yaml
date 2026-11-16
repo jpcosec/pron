@@ -1,0 +1,17 @@
+name: implements--SurfaceDoc:surface-pron-sexpr-dialogue-corrector--SpecDoc:spec-06
+path: knowledge/relations/implements--SurfaceDoc:surface-pron-sexpr-dialogue-corrector--SpecDoc:spec-06.md
+source_hash: 49245901a1890111eaaa566d76e7fc7037bc6e766a446f0595d11cbb8b16771c
+content_hash: 9d3bfcbfec45e051fa954ffeecd8ca3fe61fe7bc067f05f6cb8e0353a3628097
+field_hashes:
+  title: ac7cf542c46a0f832856c62f27b1b5581742cbe027dffa654231bc21a9d3d028
+  source_id: 5dbdabd9cb6b36268e93601fea2b1e8b02280450349e07bef2879292e4cc67ec
+  target_id: 118c8b381c7f0cdf5bf23e25a9e6525fda6c1dc7f6c80b784b4b2fee3fe8f8d7
+  relation_type: 34a7eaaa3fb302a3bfbff758c5c959a9454c455173e4824199f5b6f9ef679bd5
+  condition: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  notes: 1a3f9b6fdfc90cb1c6a8a0af1ab79c39a61a6a30b827195b6da192bf0a9391c6
+  attributes: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+semantic_tags:
+- layer.topology
+- representation.markdown
+- source.document.markdown
+- type.relation.instance

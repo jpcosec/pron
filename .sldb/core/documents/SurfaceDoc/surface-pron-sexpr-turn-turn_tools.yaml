@@ -1,0 +1,23 @@
+name: surface-pron-sexpr-turn-turn_tools
+path: knowledge/surfaces/surface-pron-sexpr-turn-turn_tools.md
+source_hash: 26125fbc7fbc7fa7a9d6ec8a08070781c42a6be0805cf4c16d8f9353267ab5f4
+content_hash: 836363df13de5b88dfa5d135149af3ac9a93d315d818d24734154311cfbdc7ee
+field_hashes:
+  id: 3fc36bfd1ffc0949263e0d9451e29a32457c1afb817ac35c95aa5b82c1b9c3dd
+  system: 1e6e84d52f8d8e656cbd188d8ad739f7b63d1bbc367d69e60d7847878a083a95
+  surface: 1589371ccfd47c0ab9b1230ed596be27128ba0e51f6bcd55ee7398e805cd0ce9
+  purpose: 898c8f3f4487f57675de995aaa3505c3229fe26ecad97d24243c3a47a54bf294
+  how_it_works: b8e227a769f8848d0d8e09a6a5a4b6bf75c6cfff3c9945503f2914e8790355d9
+  commands: be932f8a334e5c30f3097a040bb9bbb871f0a156953c82642149cf639e1725bf
+  tags: 594926e8ad3a50117d2d2f9728168c69d116e14138c71a3d6b3fed32d78cfe6c
+  provenance: e8409556690ef96951c5286d1d948513a7fa8cc3f3a099677f9439787390526e
+semantic_tags:
+- domain:system_architecture
+- entity:module
+- impl:here
+- kind:software
+- representation.markdown
+- source.document.markdown
+- system:pron
+- type.knowledge.surface
+- workspace.knowledge.surfaces

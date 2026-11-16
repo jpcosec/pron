@@ -1,0 +1,17 @@
+name: repo-IR
+path: desk/registry/repo-IR.md
+source_hash: 9cbb45afbbded1ed58409002df064dbcf5097b1c9922f0589c54180ae3730105
+content_hash: 4992c991db505200fe56da2607fca48bc7237ab705c1832ae8592aea9e80fdda
+field_hashes:
+  name: bedfd7658116eea0e9c6aa56c43288b769f14cc22546ef2cbac2588069909ad8
+  id: bedfd7658116eea0e9c6aa56c43288b769f14cc22546ef2cbac2588069909ad8
+  path: 9509a17fc33a1066a65c6f58420e517917f31d8d27e5991433dbb601305c0c2d
+  status: db0fb2bf5ebc424454c3e11b5ee8bfb43af24a52e561aa49e94143831dc6fd93
+  description: a0479b155eded88a20d74c4c9c873a49986b25480b737cced8b3397d341a9432
+  tags: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.repository
+- workspace.desk.registry
+provenance: null
