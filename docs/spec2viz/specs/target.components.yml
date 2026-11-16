@@ -118,14 +118,14 @@ data:
     - {from: superficie, to: reltypes, relation: verifica, label: "¿el verbo aplica al sujeto y al objeto? · source_types, target_types"}
     - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?"}
     - {from: superficie, to: addr, relation: pide, label: "condición de la arista evaluada por sldb sobre el sujeto · find … --where"}
-    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
+    - {from: superficie, to: kernel, relation: ejecuta, label: "verbo de acción, o verbo transitivo afirmado"}
     - {from: kernel, to: writes, relation: uses, label: "crear doc · cambiar campo · escribir RelationDoc"}
     - {from: writes, to: docs, relation: writes, label: re-renderiza y valida}
     - {from: writes, to: relinst, relation: writes, label: "una arista nueva es un documento más del store"}
     - {from: kernel, to: proyector, relation: triggers, label: refrescar tras escribir}
     - {from: proyector, to: export, relation: runs}
     - {from: proyector, to: ingest, relation: runs}
-    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
+    - {from: export, to: ingest, relation: feeds, label: "nodos, tags, contención"}
     - {from: relinst, to: ingest, relation: feeds, label: una arista por RelationDoc}
     - {from: ingest, to: snapshot, relation: builds}
     - {from: traversal, to: snapshot, relation: reads}

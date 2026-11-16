@@ -1,0 +1,78 @@
+$ uv tool list | grep -A2 specir   # antes de instalar
+(sin salida) rc=1
+
+$ uv tool install --editable /mnt/ssd/proyectos/SLDB_1/IR
+rc=0 (resolvió structuredlanguagedb==0.1.13 desde PyPI, no el checkout local de sldb)
+
+$ uv tool list | grep -A2 specir
+specir v0.1.0
+- specir
+- specir-install
+rc=0
+
+$ specir --help | head -5
+Traceback (most recent call last):
+  File "/home/robocop/.local/bin/specir", line 4, in <module>
+    from specir.cli import main
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/cli.py", line 25, in <module>
+    from specir.visual.commands import (
+rc=1
+
+$ specir diagram validate --help
+Traceback (most recent call last):
+  File "/home/robocop/.local/bin/specir", line 4, in <module>
+    from specir.cli import main
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/cli.py", line 25, in <module>
+    from specir.visual.commands import (
+    ...<7 lines>...
+    )
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/__init__.py", line 26, in <module>
+    from specir.visual.catalog import AnnotationsTarget, build_catalog, render_catalog
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/__init__.py", line 17, in <module>
+    from specir.visual.catalog.atoms import CatalogAtoms, catalog_atoms, spec_view, split_shared_atoms
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/atoms.py", line 22, in <module>
+    from sldb.api.matching import (
+    ...<8 lines>...
+    )
+ImportError: cannot import name 'SpecView' from 'sldb.api.matching' (/home/robocop/.local/share/uv/tools/specir/lib/python3.13/site-packages/sldb/api/matching/__init__.py)
+rc=1
+
+$ specir diagram render --help
+Traceback (most recent call last):
+  File "/home/robocop/.local/bin/specir", line 4, in <module>
+    from specir.cli import main
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/cli.py", line 25, in <module>
+    from specir.visual.commands import (
+    ...<7 lines>...
+    )
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/__init__.py", line 26, in <module>
+    from specir.visual.catalog import AnnotationsTarget, build_catalog, render_catalog
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/__init__.py", line 17, in <module>
+    from specir.visual.catalog.atoms import CatalogAtoms, catalog_atoms, spec_view, split_shared_atoms
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/atoms.py", line 22, in <module>
+    from sldb.api.matching import (
+    ...<8 lines>...
+    )
+ImportError: cannot import name 'SpecView' from 'sldb.api.matching' (/home/robocop/.local/share/uv/tools/specir/lib/python3.13/site-packages/sldb/api/matching/__init__.py)
+rc=1
+
+$ specir catalog build --help
+Traceback (most recent call last):
+  File "/home/robocop/.local/bin/specir", line 4, in <module>
+    from specir.cli import main
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/cli.py", line 25, in <module>
+    from specir.visual.commands import (
+    ...<7 lines>...
+    )
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/__init__.py", line 26, in <module>
+    from specir.visual.catalog import AnnotationsTarget, build_catalog, render_catalog
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/__init__.py", line 17, in <module>
+    from specir.visual.catalog.atoms import CatalogAtoms, catalog_atoms, spec_view, split_shared_atoms
+  File "/mnt/ssd/proyectos/SLDB_1/IR/src/specir/visual/catalog/atoms.py", line 22, in <module>
+    from sldb.api.matching import (
+    ...<8 lines>...
+    )
+ImportError: cannot import name 'SpecView' from 'sldb.api.matching' (/home/robocop/.local/share/uv/tools/specir/lib/python3.13/site-packages/sldb/api/matching/__init__.py)
+rc=1
+
+# Validaciones p5: NO ejecutadas (p1 falló; el brief manda parar sin tocar pron)

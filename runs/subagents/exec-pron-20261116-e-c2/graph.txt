@@ -1,0 +1,23 @@
+Missing graph references:
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:23:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:50:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:56:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:62:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:64:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md:line:70:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+- missing_declared_target: task:task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada -> doc:docs/decision-store-sldb.md
+  provenance: desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md:line:52:source-file-reference
+  reason: declared target was not found among extracted graph nodes
+7 missing, 0 informational

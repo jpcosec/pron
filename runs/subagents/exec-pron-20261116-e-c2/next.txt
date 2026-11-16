@@ -1,0 +1,21 @@
+Task: task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v
+Title: pron docs/spec2viz/build.py invoca specir en vez de spec2viz (pedido IR13, gate G4 de retiro de spec2viz)
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Phase: closeout
+Required ritual:
+- desk/rituals/closeout.md
+Required pills:
+- desk/contexts/pills.md
+Next actions:
+1. Confirm passing validation evidence and pill coverage.
+2. Remove the task from the active board and delete the resolved task file when ready.
+3. Untrack the store entry if tracked.
+4. Create one atomic closing commit.
+Advance when:
+- Closeout ritual obligations are satisfied.
+Sources:
+- task: desk/tasks/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v.md
+- board: desk/tasks/Board.md
+- workflow: deskops/spec/workflows/task_lifecycle.yaml

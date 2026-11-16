@@ -1,0 +1,80 @@
+$ uv tool install --reinstall --editable /mnt/ssd/proyectos/SLDB_1/IR --with-editable /home/robocop/herramientas/sldb
+Resolved 16 packages in 212ms
+   Building structuredlanguagedb @ file:///home/robocop/herramientas/sldb
+   Building specir @ file:///mnt/ssd/proyectos/SLDB_1/IR
+      Built specir @ file:///mnt/ssd/proyectos/SLDB_1/IR
+      Built structuredlanguagedb @ file:///home/robocop/herramientas/sldb
+Prepared 16 packages in 1.23s
+Uninstalled 16 packages in 829ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 16 packages in 520ms
+ ~ annotated-types==0.8.0
+ ~ click==8.5.1
+ ~ jinja2==3.1.6
+ ~ linkify-it-py==2.2.0
+ ~ markdown-it-py==4.3.0
+ ~ markupsafe==3.0.4
+ ~ mdit-py-plugins==0.7.0
+ ~ mdurl==0.1.2
+ ~ networkx==3.7
+ ~ pydantic==2.14.3
+ ~ pydantic-core==2.50.4
+ ~ pyyaml==6.0.3
+ ~ specir==0.1.0 (from file:///mnt/ssd/proyectos/SLDB_1/IR)
+ - structuredlanguagedb==0.1.13
+ + structuredlanguagedb==0.1.13 (from file:///home/robocop/herramientas/sldb)
+ ~ typing-extensions==4.16.0
+ ~ typing-inspection==0.4.5
+Installed 2 executables: specir, specir-install
+rc=0
+$ specir diagram validate --help
+Usage: specir diagram validate [OPTIONS] SPEC ...
+
+  Validate one or more semantic diagram spec files.
+
+Options:
+  --help  Show this message and exit.
+rc=0
+$ specir diagram render --help
+Usage: specir diagram render [OPTIONS] SPEC ...
+
+  Render one or more semantic diagram spec files.
+
+Options:
+  --out PATH                      Output directory for rendered files.
+                                  [default: .]
+  --renderer, --backend [plantuml|mermaid|vega|d2|antonia-html|tree|graph|bpmn|json]
+                                  Force a renderer instead of using the spec
+                                  type default.
+  --help                          Show this message and exit.
+rc=0
+$ specir catalog build --help
+Usage: specir catalog build [OPTIONS]
+
+  Build a diagram catalog HTML bundle from a vistas registry or diagram store.
+
+Options:
+  --config PATH           Path to a legacy vistas.yml registry or a
+                          hierarchical diagram store config.  [required]
+  --out PATH              HTML file to write.  [required]
+  --base-dir PATH         Base directory for template and vista source paths.
+                          Defaults to the config file directory.
+  --atoms-dir PATH        Directory with W5H1 atom markdown files to inject as
+                          window.ATOMS_DB.
+  --atoms-tag TEXT        Embed only atoms carrying this tag (full `ns:value`
+                          or just `value`); repeatable. Default: all atoms.
+  --strict-atoms          Fail the build if a spec `atoms:` id does not exist
+                          among the loaded atoms (default: warning).
+  --annotations           Save the page's annotations in an sldb store through
+                          `sldb serve`; the server and the document can also
+                          come from the page URL
+                          (`?sldb=<url>&annotations=<id>`).
+  --sldb-url TEXT         Base URL of `sldb serve --cors` that keeps the
+                          annotations (implies --annotations).
+  --annotations-doc TEXT  Id of the CatalogAnnotationsDoc that holds them
+                          (implies --annotations). Default: derived from the
+                          catalog's name.
+  --help                  Show this message and exit.
+rc=0

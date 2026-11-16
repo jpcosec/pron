@@ -1,0 +1,177 @@
+== Verificación p1-p4 ==
+$ which specir
+/home/robocop/.local/bin/specir
+rc=0
+
+$ uv tool list | grep -A3 '^specir'
+specir v0.1.0
+- specir
+- specir-install
+rc=0
+
+$ specir diagram validate --help
+Usage: specir diagram validate [OPTIONS] SPEC ...
+
+  Validate one or more semantic diagram spec files.
+
+Options:
+  --help  Show this message and exit.
+rc=0
+
+$ specir diagram render --help
+Usage: specir diagram render [OPTIONS] SPEC ...
+
+  Render one or more semantic diagram spec files.
+
+Options:
+  --out PATH                      Output directory for rendered files.
+                                  [default: .]
+  --renderer, --backend [plantuml|mermaid|vega|d2|antonia-html|tree|graph|bpmn|json]
+                                  Force a renderer instead of using the spec
+                                  type default.
+  --help                          Show this message and exit.
+rc=0
+
+$ specir catalog build --help
+Usage: specir catalog build [OPTIONS]
+
+  Build a diagram catalog HTML bundle from a vistas registry or diagram store.
+
+Options:
+  --config PATH           Path to a legacy vistas.yml registry or a
+                          hierarchical diagram store config.  [required]
+  --out PATH              HTML file to write.  [required]
+  --base-dir PATH         Base directory for template and vista source paths.
+                          Defaults to the config file directory.
+  --atoms-dir PATH        Directory with W5H1 atom markdown files to inject as
+                          window.ATOMS_DB.
+  --atoms-tag TEXT        Embed only atoms carrying this tag (full `ns:value`
+                          or just `value`); repeatable. Default: all atoms.
+  --strict-atoms          Fail the build if a spec `atoms:` id does not exist
+                          among the loaded atoms (default: warning).
+  --annotations           Save the page's annotations in an sldb store through
+                          `sldb serve`; the server and the document can also
+                          come from the page URL
+                          (`?sldb=<url>&annotations=<id>`).
+  --sldb-url TEXT         Base URL of `sldb serve --cors` that keeps the
+                          annotations (implies --annotations).
+  --annotations-doc TEXT  Id of the CatalogAnnotationsDoc that holds them
+                          (implies --annotations). Default: derived from the
+                          catalog's name.
+  --help                  Show this message and exit.
+rc=0
+
+$ grep -c 'docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).' CHANGELOG.md
+1
+rc=0
+
+$ grep -n 'specIR\|specir\|spec2viz' docs/spec2viz/build.py docs/spec2viz/README.md
+docs/spec2viz/README.md:5:- [Catálogo navegable de spec2viz](index.html): filtros, navegación y herramientas del visor nativo. Carga Mermaid desde el CDN configurado por spec2viz.
+docs/spec2viz/README.md:14:Desde este directorio, con `specir`, `mmdc`, Python y PyYAML disponibles:
+docs/spec2viz/README.md:20:Comandos principales del CLI de specIR:
+docs/spec2viz/README.md:23:specir diagram validate specs/*.yml
+docs/spec2viz/README.md:24:specir diagram render specs/*.yml --backend mermaid --out out/mermaid
+docs/spec2viz/README.md:25:specir catalog build --config catalog.yml --out index.html
+docs/spec2viz/build.py:1:"""Rebuild the specIR catalog and portable SVG views from semantic YAML."""
+docs/spec2viz/build.py:22:        run('specir', 'diagram', 'validate', *specs)
+docs/spec2viz/build.py:23:        run('specir', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
+docs/spec2viz/build.py:24:        run('specir', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
+docs/spec2viz/build.py:30:    """Export a specIR catalog with pre-rendered Mermaid to portable views."""
+rc=0
+
+== p3b: conteo de textos citados ==
+$ grep -cF 'label: verbo de acción, o verbo transitivo afirmado}' docs/spec2viz/specs/target.components.yml
+1
+rc=0
+
+$ grep -cF 'label: nodos, tags, contención}' docs/spec2viz/specs/target.components.yml
+1
+rc=0
+
+$ grep -cF "'-w', '1800'" docs/spec2viz/build.py
+1
+rc=0
+
+$ grep -nF 'label: verbo de acción' docs/spec2viz/specs/target.components.yml; grep -nF 'label: nodos, tags' docs/spec2viz/specs/target.components.yml; grep -n "mmdc" docs/spec2viz/build.py
+121:    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
+128:    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
+46:        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '-w', '1800', '-q'], cwd=root, check=True)
+rc=0
+
+$ cat ~/.local/share/uv/tools/specir/uv-receipt.toml
+[tool]
+requirements = [
+    { name = "specir", editable = "/mnt/ssd/proyectos/SLDB_1/IR" },
+    { name = "structuredlanguagedb", editable = "/home/robocop/herramientas/sldb" },
+]
+entrypoints = [
+    { name = "specir", install-path = "/home/robocop/.local/bin/specir", from = "specir" },
+    { name = "specir-install", install-path = "/home/robocop/.local/bin/specir-install", from = "specir" },
+]
+rc=0
+
+$ ~/.local/share/uv/tools/specir/bin/python -c 'import sldb,sys; print(sldb.__file__)'
+/mnt/ssd/herramientas/sldb/src/sldb/__init__.py
+rc=0
+
+== p3b: aplicación ==
+ok docs/spec2viz/specs/target.components.yml | label: verbo de acción, o verbo transitivo afirmado} -> label: "verbo de acción, o verbo transitivo afirmado"}
+ok docs/spec2viz/specs/target.components.yml | label: nodos, tags, contención} -> label: "nodos, tags, contención"}
+ok docs/spec2viz/build.py | '-w', '1800' -> '--size', '1800'
+rc=0
+
+$ git diff -- docs/spec2viz/specs/target.components.yml; grep -n mmdc docs/spec2viz/build.py
+diff --git a/docs/spec2viz/specs/target.components.yml b/docs/spec2viz/specs/target.components.yml
+index 15acd69..0c1d66e 100644
+--- a/docs/spec2viz/specs/target.components.yml
++++ b/docs/spec2viz/specs/target.components.yml
+@@ -118,14 +118,14 @@ data:
+     - {from: superficie, to: reltypes, relation: verifica, label: "¿el verbo aplica al sujeto y al objeto? · source_types, target_types"}
+     - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?"}
+     - {from: superficie, to: addr, relation: pide, label: "condición de la arista evaluada por sldb sobre el sujeto · find … --where"}
+-    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
++    - {from: superficie, to: kernel, relation: ejecuta, label: "verbo de acción, o verbo transitivo afirmado"}
+     - {from: kernel, to: writes, relation: uses, label: "crear doc · cambiar campo · escribir RelationDoc"}
+     - {from: writes, to: docs, relation: writes, label: re-renderiza y valida}
+     - {from: writes, to: relinst, relation: writes, label: "una arista nueva es un documento más del store"}
+     - {from: kernel, to: proyector, relation: triggers, label: refrescar tras escribir}
+     - {from: proyector, to: export, relation: runs}
+     - {from: proyector, to: ingest, relation: runs}
+-    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
++    - {from: export, to: ingest, relation: feeds, label: "nodos, tags, contención"}
+     - {from: relinst, to: ingest, relation: feeds, label: una arista por RelationDoc}
+     - {from: ingest, to: snapshot, relation: builds}
+     - {from: traversal, to: snapshot, relation: reads}
+46:        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '--size', '1800', '-q'], cwd=root, check=True)
+rc=0
+
+$ readlink -f /home/robocop/herramientas/sldb; readlink -f /home/robocop/herramientas; grep -i sldb ~/.local/share/uv/tools/specir/uv-receipt.toml
+/mnt/ssd/herramientas/sldb
+/mnt/ssd/herramientas
+    { name = "specir", editable = "/mnt/ssd/proyectos/SLDB_1/IR" },
+    { name = "structuredlanguagedb", editable = "/home/robocop/herramientas/sldb" },
+rc=0
+
+== Validation ==
+-- V1
+$ grep -nE "run\('spec2viz'" docs/spec2viz/build.py
+rc=1
+
+-- V2
+$ cd docs/spec2viz && PATH=/mnt/ssd/herramientas/mermaid-cli:$PATH TMPDIR=/dev/shm python3 build.py
+codigo.capas.yml: OK
+target.components.yml: OK
+target.dialogo.yml: OK
+target.turno.yml: OK
+Rendered codigo.capas.yml -> out/mermaid/codigo.capas.mmd
+Rendered target.components.yml -> out/mermaid/target.components.mmd
+Rendered target.dialogo.yml -> out/mermaid/target.dialogo.mmd
+Rendered target.turno.yml -> out/mermaid/target.turno.mmd
+Rendered catalog -> index.html
+Generated 4 SVGs, diagrams.md and offline.html
+rc=0
+
+-- V3
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path graph_ui=../UIs/graph_ui --path deskops=../deskops --path pron=../pron --path sldb=../sldb --path spec2viz/.sldb=../spec2viz/.sldb | grep -P '^\s*pron\t'
+rc(pipeline)=1 PIPESTATUS=1 1
+

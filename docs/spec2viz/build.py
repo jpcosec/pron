@@ -1,4 +1,4 @@
-"""Rebuild the spec2viz catalog and portable SVG views from semantic YAML."""
+"""Rebuild the specIR catalog and portable SVG views from semantic YAML."""
 from pathlib import Path
 import argparse
 import base64
@@ -19,15 +19,15 @@ def main():
     args = parser.parse_args()
     specs = sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'specs').glob('*.yml'))
     if not args.exports_only:
-        run('spec2viz', 'diagram', 'validate', *specs)
-        run('spec2viz', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
-        run('spec2viz', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
+        run('specir', 'diagram', 'validate', *specs)
+        run('specir', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
+        run('specir', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
 
     export_views(ROOT)
 
 
 def export_views(root):
-    """Export a spec2viz catalog with pre-rendered Mermaid to portable views."""
+    """Export a specIR catalog with pre-rendered Mermaid to portable views."""
     catalog = yaml.safe_load((root / 'catalog.yml').read_text())['diagram_store']
     items = catalog['items']
     title_text = catalog.get('title', 'pron')
@@ -43,7 +43,7 @@ def export_views(root):
         ident = item['id']
         title = item['title']
         svg = f'out/svg/{Path(item["mmd"]).stem}.svg'
-        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '-w', '1800', '-q'], cwd=root, check=True)
+        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '--size', '1800', '-q'], cwd=root, check=True)
         notes = '\n'.join(f'- {note}' for note in item['notes'])
         mermaid = (root / item['mmd']).read_text()
         markdown.extend([f'## {title}', '', item['desc'], '', notes, '', f'```mermaid\n{mermaid}\n```', ''])

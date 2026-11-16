@@ -1,0 +1,70 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index dc35488..72c9f24 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -13,6 +13,7 @@
+   (`tests/remote/test_07_serve_tcp.py`).
+ - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
+   tests y en el montaje MCP.
++- docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
+ 
+ ## 1.0.0 — 2026-09-10
+ 
+diff --git a/docs/spec2viz/README.md b/docs/spec2viz/README.md
+index f744009..97d84a3 100644
+--- a/docs/spec2viz/README.md
++++ b/docs/spec2viz/README.md
+@@ -11,18 +11,18 @@ Vistas de `pron`: la arquitectura objetivo, proyección gráfica de [`source/spe
+ 
+ `specs/*.yml` son las fuentes semánticas de los diagramas. `catalog.yml` contiene sus descripciones y notas de interpretación. Los archivos de `out/`, los HTML y `diagrams.md` son generados y no se versionan: los enlaces de arriba existen después de correr `python build.py`.
+ 
+-Desde este directorio, con `spec2viz`, `mmdc`, Python y PyYAML disponibles:
++Desde este directorio, con `specir`, `mmdc`, Python y PyYAML disponibles:
+ 
+ ```bash
+ python build.py
+ ```
+ 
+-Comandos principales del CLI de spec2viz:
++Comandos principales del CLI de specIR:
+ 
+ ```bash
+-spec2viz diagram validate specs/*.yml
+-spec2viz diagram render specs/*.yml --backend mermaid --out out/mermaid
+-spec2viz catalog build --config catalog.yml --out index.html
++specir diagram validate specs/*.yml
++specir diagram render specs/*.yml --backend mermaid --out out/mermaid
++specir catalog build --config catalog.yml --out index.html
+ ```
+ 
+ `python build.py --exports-only` regenera SVG, Markdown y visor sin conexión a partir del Mermaid ya producido.
+diff --git a/docs/spec2viz/build.py b/docs/spec2viz/build.py
+index 9009a75..9de35e3 100644
+--- a/docs/spec2viz/build.py
++++ b/docs/spec2viz/build.py
+@@ -1,4 +1,4 @@
+-"""Rebuild the spec2viz catalog and portable SVG views from semantic YAML."""
++"""Rebuild the specIR catalog and portable SVG views from semantic YAML."""
+ from pathlib import Path
+ import argparse
+ import base64
+@@ -19,15 +19,15 @@ def main():
+     args = parser.parse_args()
+     specs = sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'specs').glob('*.yml'))
+     if not args.exports_only:
+-        run('spec2viz', 'diagram', 'validate', *specs)
+-        run('spec2viz', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
+-        run('spec2viz', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
++        run('specir', 'diagram', 'validate', *specs)
++        run('specir', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
++        run('specir', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
+ 
+     export_views(ROOT)
+ 
+ 
+ def export_views(root):
+-    """Export a spec2viz catalog with pre-rendered Mermaid to portable views."""
++    """Export a specIR catalog with pre-rendered Mermaid to portable views."""
+     catalog = yaml.safe_load((root / 'catalog.yml').read_text())['diagram_store']
+     items = catalog['items']
+     title_text = catalog.get('title', 'pron')

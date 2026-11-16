@@ -13,6 +13,7 @@
   (`tests/remote/test_07_serve_tcp.py`).
 - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
   tests y en el montaje MCP.
+- docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
 
 ## 1.0.0 — 2026-09-10
 

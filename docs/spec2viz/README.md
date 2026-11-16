@@ -11,18 +11,18 @@ Vistas de `pron`: la arquitectura objetivo, proyección gráfica de [`source/spe
 
 `specs/*.yml` son las fuentes semánticas de los diagramas. `catalog.yml` contiene sus descripciones y notas de interpretación. Los archivos de `out/`, los HTML y `diagrams.md` son generados y no se versionan: los enlaces de arriba existen después de correr `python build.py`.
 
-Desde este directorio, con `spec2viz`, `mmdc`, Python y PyYAML disponibles:
+Desde este directorio, con `specir`, `mmdc`, Python y PyYAML disponibles:
 
 ```bash
 python build.py
 ```
 
-Comandos principales del CLI de spec2viz:
+Comandos principales del CLI de specIR:
 
 ```bash
-spec2viz diagram validate specs/*.yml
-spec2viz diagram render specs/*.yml --backend mermaid --out out/mermaid
-spec2viz catalog build --config catalog.yml --out index.html
+specir diagram validate specs/*.yml
+specir diagram render specs/*.yml --backend mermaid --out out/mermaid
+specir catalog build --config catalog.yml --out index.html
 ```
 
 `python build.py --exports-only` regenera SVG, Markdown y visor sin conexión a partir del Mermaid ya producido.

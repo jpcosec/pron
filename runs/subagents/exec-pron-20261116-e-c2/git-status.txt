@@ -1,0 +1,22 @@
+ M CHANGELOG.md
+ M "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/owner-2.md"
+ M desk/tasks/Board.md
+ M desk/tasks/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v.md
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+?? .deskops.log
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-3.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-4.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-5.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-4.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-5.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-6.md
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/"
+?? "desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada.md"
+?? runs/subagents/.herdr-coordination.md
+?? runs/subagents/exec-pron-20261116-e-6327bf9f19e7/
+?? runs/subagents/exec-pron-20261116-e-a2/
+?? runs/subagents/exec-pron-20261116-e-c2/
+?? runs/subagents/exec-pron-20261116/
+?? runs/subagents/triaje-pron-20261116/

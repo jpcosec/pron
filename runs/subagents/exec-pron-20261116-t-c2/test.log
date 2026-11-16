@@ -1,0 +1,396 @@
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git rev-parse --abbrev-ref HEAD; git log -1 --oneline
+master
+157171f desk: triaje de inbox de pron (IR13 -> task.code, .sldb/ ignorado -> task.decision, GO10 ack) [skip ci]
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git diff -- docs/spec2viz/build.py docs/spec2viz/README.md docs/spec2viz/specs/target.components.yml CHANGELOG.md
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index dc35488..72c9f24 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -13,6 +13,7 @@
+   (`tests/remote/test_07_serve_tcp.py`).
+ - La caché derivada de sldb se lee de `.sldb_cache/` (su `stores migrate-layout`) en los
+   tests y en el montaje MCP.
++- docs/spec2viz/build.py valida, renderiza y arma el catálogo con specir en vez de spec2viz (pedido IR13 del gate de retiro de spec2viz).
+ 
+ ## 1.0.0 — 2026-09-10
+ 
+diff --git a/docs/spec2viz/README.md b/docs/spec2viz/README.md
+index f744009..97d84a3 100644
+--- a/docs/spec2viz/README.md
++++ b/docs/spec2viz/README.md
+@@ -11,18 +11,18 @@ Vistas de `pron`: la arquitectura objetivo, proyección gráfica de [`source/spe
+ 
+ `specs/*.yml` son las fuentes semánticas de los diagramas. `catalog.yml` contiene sus descripciones y notas de interpretación. Los archivos de `out/`, los HTML y `diagrams.md` son generados y no se versionan: los enlaces de arriba existen después de correr `python build.py`.
+ 
+-Desde este directorio, con `spec2viz`, `mmdc`, Python y PyYAML disponibles:
++Desde este directorio, con `specir`, `mmdc`, Python y PyYAML disponibles:
+ 
+ ```bash
+ python build.py
+ ```
+ 
+-Comandos principales del CLI de spec2viz:
++Comandos principales del CLI de specIR:
+ 
+ ```bash
+-spec2viz diagram validate specs/*.yml
+-spec2viz diagram render specs/*.yml --backend mermaid --out out/mermaid
+-spec2viz catalog build --config catalog.yml --out index.html
++specir diagram validate specs/*.yml
++specir diagram render specs/*.yml --backend mermaid --out out/mermaid
++specir catalog build --config catalog.yml --out index.html
+ ```
+ 
+ `python build.py --exports-only` regenera SVG, Markdown y visor sin conexión a partir del Mermaid ya producido.
+diff --git a/docs/spec2viz/build.py b/docs/spec2viz/build.py
+index 9009a75..b0a0ff2 100644
+--- a/docs/spec2viz/build.py
++++ b/docs/spec2viz/build.py
+@@ -1,4 +1,4 @@
+-"""Rebuild the spec2viz catalog and portable SVG views from semantic YAML."""
++"""Rebuild the specIR catalog and portable SVG views from semantic YAML."""
+ from pathlib import Path
+ import argparse
+ import base64
+@@ -19,15 +19,15 @@ def main():
+     args = parser.parse_args()
+     specs = sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'specs').glob('*.yml'))
+     if not args.exports_only:
+-        run('spec2viz', 'diagram', 'validate', *specs)
+-        run('spec2viz', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
+-        run('spec2viz', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
++        run('specir', 'diagram', 'validate', *specs)
++        run('specir', 'diagram', 'render', *specs, '--backend', 'mermaid', '--out', 'out/mermaid')
++        run('specir', 'catalog', 'build', '--config', 'catalog.yml', '--out', 'index.html')
+ 
+     export_views(ROOT)
+ 
+ 
+ def export_views(root):
+-    """Export a spec2viz catalog with pre-rendered Mermaid to portable views."""
++    """Export a specIR catalog with pre-rendered Mermaid to portable views."""
+     catalog = yaml.safe_load((root / 'catalog.yml').read_text())['diagram_store']
+     items = catalog['items']
+     title_text = catalog.get('title', 'pron')
+@@ -43,7 +43,7 @@ def export_views(root):
+         ident = item['id']
+         title = item['title']
+         svg = f'out/svg/{Path(item["mmd"]).stem}.svg'
+-        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '-w', '1800', '-q'], cwd=root, check=True)
++        subprocess.run(['mmdc', '-i', item['mmd'], '-o', svg, '-t', 'neutral', '-b', 'white', '--size', '1800', '-q'], cwd=root, check=True)
+         notes = '\n'.join(f'- {note}' for note in item['notes'])
+         mermaid = (root / item['mmd']).read_text()
+         markdown.extend([f'## {title}', '', item['desc'], '', notes, '', f'```mermaid\n{mermaid}\n```', ''])
+diff --git a/docs/spec2viz/specs/target.components.yml b/docs/spec2viz/specs/target.components.yml
+index 15acd69..0c1d66e 100644
+--- a/docs/spec2viz/specs/target.components.yml
++++ b/docs/spec2viz/specs/target.components.yml
+@@ -118,14 +118,14 @@ data:
+     - {from: superficie, to: reltypes, relation: verifica, label: "¿el verbo aplica al sujeto y al objeto? · source_types, target_types"}
+     - {from: superficie, to: traversal, relation: pregunta, label: "verbo transitivo leído · ¿quién implementa X? · ¿existe transitions_to desde el estado actual?"}
+     - {from: superficie, to: addr, relation: pide, label: "condición de la arista evaluada por sldb sobre el sujeto · find … --where"}
+-    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
++    - {from: superficie, to: kernel, relation: ejecuta, label: "verbo de acción, o verbo transitivo afirmado"}
+     - {from: kernel, to: writes, relation: uses, label: "crear doc · cambiar campo · escribir RelationDoc"}
+     - {from: writes, to: docs, relation: writes, label: re-renderiza y valida}
+     - {from: writes, to: relinst, relation: writes, label: "una arista nueva es un documento más del store"}
+     - {from: kernel, to: proyector, relation: triggers, label: refrescar tras escribir}
+     - {from: proyector, to: export, relation: runs}
+     - {from: proyector, to: ingest, relation: runs}
+-    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
++    - {from: export, to: ingest, relation: feeds, label: "nodos, tags, contención"}
+     - {from: relinst, to: ingest, relation: feeds, label: una arista por RelationDoc}
+     - {from: ingest, to: snapshot, relation: builds}
+     - {from: traversal, to: snapshot, relation: reads}
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git status --short
+ M CHANGELOG.md
+ M "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/owner-2.md"
+ M desk/tasks/Board.md
+ M desk/tasks/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v.md
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+?? .deskops.log
+?? .herdr-coordination.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-3.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-4.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle-5.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/evidence-tests-1.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-4.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-5.md
+?? desk/reviews/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight-6.md
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/"
+?? "desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada.md"
+?? runs/subagents/.herdr-coordination.md
+?? runs/subagents/exec-pron-20261116-e-6327bf9f19e7/
+?? runs/subagents/exec-pron-20261116-e-a2/
+?? runs/subagents/exec-pron-20261116-e-c2/
+?? runs/subagents/exec-pron-20261116-t-c2/
+?? runs/subagents/exec-pron-20261116/
+?? runs/subagents/triaje-pron-20261116/
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git status --short | grep -vE '^.. (desk/|runs/|\.deskops\.log)'
+ M CHANGELOG.md
+ M "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/owner-2.md"
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+?? .herdr-coordination.md
+?? "desk/reviews/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada/"
+?? "desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opci\303\263n-a-de-jp-sldb-cache-sigue-ignorada.md"
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ grep -nE "run\('spec2viz'" docs/spec2viz/build.py
+--- rc=1
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron/docs/spec2viz] $ PATH=/mnt/ssd/herramientas/mermaid-cli:$PATH TMPDIR=/dev/shm python3 build.py
+codigo.capas.yml: OK
+target.components.yml: OK
+target.dialogo.yml: OK
+target.turno.yml: OK
+Rendered codigo.capas.yml -> out/mermaid/codigo.capas.mmd
+Rendered target.components.yml -> out/mermaid/target.components.mmd
+Rendered target.dialogo.yml -> out/mermaid/target.dialogo.mmd
+Rendered target.turno.yml -> out/mermaid/target.turno.mmd
+Rendered catalog -> index.html
+Generated 4 SVGs, diagrams.md and offline.html
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/IR] $ .venv/bin/specir retirement check --path graph_ui=../UIs/graph_ui --path deskops=../deskops --path pron=../pron --path sldb=../sldb --path spec2viz/.sldb=../spec2viz/.sldb | grep -P '^\s*pron\t'; echo "PIPESTATUS=${PIPESTATUS[*]}"
+PIPESTATUS=1 1
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/IR] $ .venv/bin/specir retirement check --path graph_ui=../UIs/graph_ui --path deskops=../deskops --path pron=../pron --path sldb=../sldb --path spec2viz/.sldb=../spec2viz/.sldb
+audited repos: graph_ui, deskops, pron, sldb, IR
+audited stores: spec2viz/.sldb
+dependencies: 119
+  graph_ui	.github/requirements-suite.txt:10	dependencia declarada	-e git+https://github.com/jpcosec/spec2viz@master#egg=spec2viz
+  graph_ui	frontends/mindmap/sldb_adapter.py:245	importación	from spec2viz.notation_view import ViewError, resolve_view
+  graph_ui	frontends/mindmap/sldb_adapter.py:437	importación	from spec2viz.notation_view import ViewError, resolve_documents
+  graph_ui	pyproject.toml:19	dependencia declarada	notation = ["spec2viz>=0.1.0"]
+  graph_ui	pyproject.toml:24	dependencia declarada	"spec2viz>=0.1.0",
+  graph_ui	tests/e2e_mindmap_notation.py:27	importación	spec2viz = pytest.importorskip("spec2viz")
+  graph_ui	tests/e2e_mindmap_notation.py:42	invocación del comando	if not all(p.exists() for p in pilots) or not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_mindmap_notation.py:48	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *(p.name for p in pilots), "--store", ".sldb"],
+  graph_ui	tests/e2e_notation_activity.py:121	invocación del comando	if not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_activity.py:128	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *[s.name for s in specs], "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_notation_class.py:51	invocación del comando	if not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_class.py:58	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *[s.name for s in specs], "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_notation_deployment.py:85	invocación del comando	if not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_deployment.py:92	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *[s.name for s in specs], "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_notation_legibility.py:38	importación	spec2viz = pytest.importorskip("spec2viz")
+  graph_ui	tests/e2e_notation_legibility.py:169	invocación del comando	if not ACTIVITY.exists() or not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_legibility.py:175	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", FIXTURE.name, DENSE.name, ACTIVITY.name, "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_notation_sequence.py:101	invocación del comando	if not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_sequence.py:108	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *[s.name for s in specs], "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_notation_style.py:141	invocación del comando	if not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_notation_style.py:147	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", "component-infra.yml", "--notation", "infra.yml", "--store", ".sldb"],
+  graph_ui	tests/e2e_review_workbench_views.py:40	importación	spec2viz = pytest.importorskip("spec2viz")
+  graph_ui	tests/e2e_review_workbench_views.py:76	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *pilots, "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/e2e_review_workbench_views.py:86	invocación del comando	if not all((PILOTS / p).exists() for p in HERE + THERE) or not shutil.which("spec2viz"):
+  graph_ui	tests/e2e_review_workbench_views.py:96	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", "component-infra.yml", "--notation", "infra.yml", "--store", ".sldb"],
+  graph_ui	tests/test_mindmap_notation.py:20	importación	spec2viz = pytest.importorskip("spec2viz")
+  graph_ui	tests/test_mindmap_notation.py:21	importación	from spec2viz.notation_view import resolve_view  # noqa: E402
+  graph_ui	tests/test_mindmap_notation.py:40	invocación del comando	if not all(p.exists() for p in pilots) or not shutil.which("spec2viz"):
+  graph_ui	tests/test_mindmap_notation.py:45	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *(p.name for p in pilots), "--store", ".sldb"],
+  graph_ui	tests/test_projection_views.py:18	importación	spec2viz = pytest.importorskip("spec2viz")
+  graph_ui	tests/test_projection_views.py:28	invocación del comando	if not all((PILOTS / p).exists() for p in pilots) or not shutil.which("spec2viz"):
+  graph_ui	tests/test_projection_views.py:33	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", *pilots, "--store", ".sldb"], cwd=root, check=True, capture_output=True)
+  graph_ui	tests/test_projection_views.py:82	invocación del comando	subprocess.run(["spec2viz", "diagram", "sync", "component-infra.yml", "--notation", "infra.yml", "--store", ".sldb"],
+  graph_ui	tests/test_projection_views.py:167	importación	pytest.importorskip("spec2viz.sldb_models").ViewDoc  # task a: the model lives in spec2viz
+  deskops	.claude/skills/deskops-workflow/SKILL.md:27	habilidad de agente	(`spec2viz diagram render` / `spec2viz catalog build`) derive from specs and decisions. Atoms
+  deskops	.claude/skills/deskops-workflow/SKILL.md:59	habilidad de agente	re-run `spec2viz diagram render` / `spec2viz catalog build`. Validate before rendering:
+  deskops	.claude/skills/deskops-workflow/SKILL.md:60	habilidad de agente	`spec2viz diagram validate <spec.yml>`.
+  deskops	.claude/skills/deskops-workflow/SKILL.md:101	habilidad de agente	| Validate a diagram spec | `spec2viz diagram validate <spec.yml>` |
+  deskops	.claude/skills/deskops-workflow/SKILL.md:102	habilidad de agente	| Render a diagram | `spec2viz diagram render <spec.yml> --out <dir> [--renderer mermaid\|plantuml\|vega\|d2\|antonia-html\|json]` |
+  deskops	.claude/skills/deskops-workflow/SKILL.md:103	habilidad de agente	| Build a diagram catalog | `spec2viz catalog build --config <catalog.yml> --out <out.html>` |
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:8	habilidad de agente	commands (`spec2viz render`, `spec2viz validate`, `spec2viz schema`, `spec2viz lint`) remain as
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:13	habilidad de agente	- `spec2viz diagram validate <spec.yml> [<spec2.yml> ...]` — validate one or more diagram specs
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:15	habilidad de agente	- `spec2viz diagram render <spec.yml> [<spec2.yml> ...] --out <dir> \
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:19	habilidad de agente	- `spec2viz diagram schema [--type sequence|state|component|activity|deployment|matrix] [--out <file>]`
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:21	habilidad de agente	- `spec2viz diagram generate` — generate a component spec from Python source AST (reverse
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:23	habilidad de agente	- `spec2viz diagram lint <spec-or-mmd> [...]` — lint rendered Mermaid for browser-breaking syntax.
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:27	habilidad de agente	- `spec2viz catalog build --config <vistas.yml-or-diagram-store.yml> --out <out.html> \
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:33	habilidad de agente	- `spec2viz catalog schema [--out <file>]` — JSON Schema for diagram-store / `project.yml` configs.
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:34	habilidad de agente	- `spec2viz catalog serve` — serve a built catalog locally with auto-save for viewer annotations
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:80	habilidad de agente	- `spec2viz render <spec.yml> --out <dir> [--renderer ...]` == `spec2viz diagram render`
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:81	habilidad de agente	- `spec2viz validate <spec.yml>` == `spec2viz diagram validate`
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:82	habilidad de agente	- `spec2viz schema [--type ...] [--out ...]` == `spec2viz diagram schema` (also accepts
+  deskops	.claude/skills/deskops-workflow/references/spec2viz-cli.md:84	habilidad de agente	- `spec2viz lint <spec-or-mmd>` == `spec2viz diagram lint`
+  deskops	.opencode/skills/use-spec2viz/SKILL.md:2	habilidad de agente	name: use-spec2viz
+  deskops	desk/drawer/plans/workspace-documental/render_diagram.py:7	invocación del comando	subprocess.run(['spec2viz','diagram','validate',str(B/'dag.diagram.yaml')],check=True)
+  deskops	desk/drawer/plans/workspace-documental/render_diagram.py:9	invocación del comando	subprocess.run(['spec2viz','diagram','render',str(B/'dag.diagram.yaml'),'--renderer',renderer,'--out',str(B)],check=True)
+  sldb	tests/notations/test_component_spec_python.py:43	importación	python_ast = pytest.importorskip("spec2viz.generators.python_ast")
+  IR	tests/test_matriz_cobertura_spec2viz.py:31	importación	main = importlib.import_module("spec2viz.cli").main
+  IR	tests/visual/parity.py:52	importación	from spec2viz.compilers import compile_ir
+  IR	tests/visual/parity.py:53	importación	from spec2viz.loader import load
+  IR	tests/visual/parity.py:54	importación	from spec2viz.validator import validate
+  IR	tests/visual/render_parity.py:74	importación	from spec2viz.compilers import compile_ir
+  IR	tests/visual/render_parity.py:75	importación	from spec2viz.loader import load
+  IR	tests/visual/render_parity.py:76	importación	from spec2viz.renderers import render
+  IR	tests/visual/render_parity.py:77	importación	from spec2viz.renderers.bpmn import render_bpmn_html
+  IR	tests/visual/render_parity.py:87	importación	from spec2viz.cli import DIAGRAM_RENDERERS
+  IR	tests/visual/render_parity.py:88	importación	from spec2viz.renderers import DEFAULT_RENDERER, EXT_MAP
+  IR	tests/visual/render_parity.py:94	importación	from spec2viz.renderers.view_mermaid import view_to_mermaid
+  IR	tests/visual/render_parity.py:100	importación	from spec2viz.linters.mermaid import lint_mermaid
+  IR	tests/visual/render_parity.py:106	importación	from spec2viz.schema import json_schema
+  IR	tests/visual/render_parity.py:112	importación	from spec2viz import render_to_file
+  IR	tests/visual/render_parity.py:119	importación	import spec2viz
+  IR	tests/visual/render_parity.py:190	importación	from spec2viz.linters.mermaid import lint_mermaid
+  IR	tests/visual/render_parity.py:191	importación	from spec2viz.schema import json_schema
+  IR	tests/visual/test_catalog_parity.py:39	importación	spec2viz = pytest.importorskip("spec2viz")
+  IR	tests/visual/test_catalog_parity.py:49	importación	from spec2viz.sldb_sync import check_catalog as oracle
+  IR	tests/visual/test_catalog_parity.py:102	importación	from spec2viz.sldb_sync import SpecSync as OracleSync
+  IR	tests/visual/test_catalog_parity.py:103	importación	from spec2viz.sldb_sync import sync_catalog as oracle_sync
+  IR	tests/visual/test_catalog_parity.py:122	importación	from spec2viz.cli import main
+  IR	tests/visual/test_catalog_parity.py:154	importación	from spec2viz.deskops import render_deskops
+  IR	tests/visual/test_catalog_parity.py:203	importación	from spec2viz.deskops import render_deskops
+  IR	tests/visual/test_lint_mermaid.py:86	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_cases.py:314	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_commands.py:251	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:53	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:59	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_render_parity.py:83	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_resources.py:62	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_schema.py:44	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:105	importación	spec2viz = pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:117	importación	from spec2viz.sldb_sync import SpecSync as Spec2VizSync
+  IR	tests/visual/test_sync_generation_parity.py:201	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:229	importación	import spec2viz.graph_import as oracle
+  IR	tests/visual/test_sync_generation_parity.py:258	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:259	importación	from spec2viz.graph_import import component_spec_from_graph as oracle_from_graph
+  IR	tests/visual/test_sync_generation_parity.py:260	importación	from spec2viz.graph_import import load_store_index
+  IR	tests/visual/test_sync_generation_parity.py:302	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_sync_generation_parity.py:303	importación	from spec2viz.generators.python_ast import generate_python_ast_spec
+  IR	tests/visual/test_visual_parity.py:35	importación	pytest.importorskip("spec2viz")
+  IR	tests/visual/test_visual_parity.py:43	importación	pytest.importorskip("spec2viz")
+  spec2viz/.sldb	store.yaml:44	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	store.yaml:47	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	store.yaml:50	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	store.yaml:53	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	store.yaml:56	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/store_index.yaml:141	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	core/store_index.yaml:154	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	core/store_index.yaml:167	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	core/store_index.yaml:180	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	core/store_index.yaml:193	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/store_index.yaml:246	modelo registrado	model_ref: spec2viz.sldb_models:ViewDoc
+  spec2viz/.sldb	core/store_index.yaml:259	modelo registrado	model_ref: spec2viz.sldb_models:PaletteDoc
+  spec2viz/.sldb	core/models/GlyphDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:GlyphDoc
+  spec2viz/.sldb	core/models/LinkDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:LinkDoc
+  spec2viz/.sldb	core/models/NotationDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:NotationDoc
+  spec2viz/.sldb	core/models/PaletteDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:PaletteDoc
+  spec2viz/.sldb	core/models/SpecDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:SpecDoc
+  spec2viz/.sldb	core/models/SpecNodeDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:SpecNodeDoc
+  spec2viz/.sldb	core/models/ViewDoc.yaml:2	modelo registrado	model_ref: spec2viz.sldb_models:ViewDoc
+rows not accredited: 13
+  SV-A17: abierta
+  SV-G08: abierta
+  SV-H01: abierta
+  SV-H03: abierta
+  SV-I02: abierta
+  SV-K09: abierta
+  SV-K16: abierta
+  SV-K18: abierta
+  SV-K21: abierta
+  SV-K22: abierta
+  SV-K23: abierta
+  SV-K26: abierta
+  SV-K29: abierta
+gate: failed, the retirement is not declared
+--- rc=1
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ command -v specir; ls -l $(command -v specir); head -1 $(command -v specir); command -v mmdc; PATH=/mnt/ssd/herramientas/mermaid-cli:$PATH command -v mmdc
+/home/robocop/.local/bin/specir
+lrwxrwxrwx 1 robocop robocop 53 Nov 16 02:21 /home/robocop/.local/bin/specir -> /home/robocop/.local/share/uv/tools/specir/bin/specir
+#!/home/robocop/.local/share/uv/tools/specir/bin/python
+/mnt/ssd/herramientas/mermaid-cli/mmdc
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ specir diagram validate docs/spec2viz/specs/*.yml
+codigo.capas.yml: OK
+target.components.yml: OK
+target.dialogo.yml: OK
+target.turno.yml: OK
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git status --short docs/spec2viz
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git status --short --ignored docs/spec2viz
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+!! docs/spec2viz/diagrams.md
+!! docs/spec2viz/index.html
+!! docs/spec2viz/offline.html
+!! docs/spec2viz/out/
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git check-ignore -v docs/spec2viz/out docs/spec2viz/index.html docs/spec2viz/offline.html docs/spec2viz/diagrams.md
+.gitignore:15:docs/spec2viz/out/	docs/spec2viz/out
+.gitignore:16:docs/spec2viz/index.html	docs/spec2viz/index.html
+.gitignore:17:docs/spec2viz/offline.html	docs/spec2viz/offline.html
+.gitignore:18:docs/spec2viz/diagrams.md	docs/spec2viz/diagrams.md
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git ls-files docs/spec2viz | grep -E '(^docs/spec2viz/out/|index\.html|offline\.html|diagrams\.md)'
+--- rc=1
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git -c core.quotePath=false status --short | grep -vE '^.. "?(desk/|runs/|\.deskops\.log)'
+ M CHANGELOG.md
+ M docs/spec2viz/README.md
+ M docs/spec2viz/build.py
+ M docs/spec2viz/specs/target.components.yml
+?? .herdr-coordination.md
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ ls -l --time-style=full-iso .herdr-coordination.md; head -5 .herdr-coordination.md; git check-ignore -v .herdr-coordination.md
+-rw-r--r-- 1 robocop robocop 4333 2026-11-16 02:31:01.627558085 -0300 .herdr-coordination.md
+
+--- 2026-11-16 02:31:01 dispatch -> w5:p17 ---
+PROMPT: Lee y ejecuta, al pie de la letra, el brief /mnt/ssd/proyectos/SLDB_1/pron/runs/subagents/exec-pron-20261116-e-c2/brief.md. Eres el ejecutor deskops-e-fe40ac7a9ef8-a2 (ciclo de corrección 2). Trabaja en /mnt/ssd/proyectos/SLDB_1/pron. No commitees ni pushees.
+OUTPUT (tail):
+0)
+--- rc=1
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ cat /home/robocop/.local/share/uv/tools/specir/uv-receipt.toml
+[tool]
+requirements = [
+    { name = "specir", editable = "/mnt/ssd/proyectos/SLDB_1/IR" },
+    { name = "structuredlanguagedb", editable = "/home/robocop/herramientas/sldb" },
+]
+entrypoints = [
+    { name = "specir", install-path = "/home/robocop/.local/bin/specir", from = "specir" },
+    { name = "specir-install", install-path = "/home/robocop/.local/bin/specir-install", from = "specir" },
+]
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ /home/robocop/.local/share/uv/tools/specir/bin/python -c 'import specir,sldb,sys; print(specir.__file__); print(sldb.__file__)'
+/mnt/ssd/proyectos/SLDB_1/IR/src/specir/__init__.py
+/mnt/ssd/herramientas/sldb/src/sldb/__init__.py
+--- rc=0
+
+=== [cwd /mnt/ssd/proyectos/SLDB_1/pron] $ git diff --stat
+ CHANGELOG.md                                         |  1 +
+ .../owner-2.md"                                      | 20 +++++++++++---------
+ desk/tasks/Board.md                                  |  9 ++++++++-
+ ...ec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v.md | 19 ++++++++++++-------
+ docs/spec2viz/README.md                              | 10 +++++-----
+ docs/spec2viz/build.py                               | 12 ++++++------
+ docs/spec2viz/specs/target.components.yml            |  4 ++--
+ 7 files changed, 45 insertions(+), 30 deletions(-)
+--- rc=0
+
+=== $ readlink -f /home/robocop/herramientas/sldb
+/mnt/ssd/herramientas/sldb
+--- rc=0
+

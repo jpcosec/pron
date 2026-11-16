@@ -1,0 +1,136 @@
+=== p1 (instalación y --help) ===
+$ uv tool install --reinstall --editable /mnt/ssd/proyectos/SLDB_1/IR --with-editable /home/robocop/herramientas/sldb
+Resolved 16 packages in 212ms
+   Building structuredlanguagedb @ file:///home/robocop/herramientas/sldb
+   Building specir @ file:///mnt/ssd/proyectos/SLDB_1/IR
+      Built specir @ file:///mnt/ssd/proyectos/SLDB_1/IR
+      Built structuredlanguagedb @ file:///home/robocop/herramientas/sldb
+Prepared 16 packages in 1.23s
+Uninstalled 16 packages in 829ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 16 packages in 520ms
+ ~ annotated-types==0.8.0
+ ~ click==8.5.1
+ ~ jinja2==3.1.6
+ ~ linkify-it-py==2.2.0
+ ~ markdown-it-py==4.3.0
+ ~ markupsafe==3.0.4
+ ~ mdit-py-plugins==0.7.0
+ ~ mdurl==0.1.2
+ ~ networkx==3.7
+ ~ pydantic==2.14.3
+ ~ pydantic-core==2.50.4
+ ~ pyyaml==6.0.3
+ ~ specir==0.1.0 (from file:///mnt/ssd/proyectos/SLDB_1/IR)
+ - structuredlanguagedb==0.1.13
+ + structuredlanguagedb==0.1.13 (from file:///home/robocop/herramientas/sldb)
+ ~ typing-extensions==4.16.0
+ ~ typing-inspection==0.4.5
+Installed 2 executables: specir, specir-install
+rc=0
+$ specir diagram validate --help
+Usage: specir diagram validate [OPTIONS] SPEC ...
+
+  Validate one or more semantic diagram spec files.
+
+Options:
+  --help  Show this message and exit.
+rc=0
+$ specir diagram render --help
+Usage: specir diagram render [OPTIONS] SPEC ...
+
+  Render one or more semantic diagram spec files.
+
+Options:
+  --out PATH                      Output directory for rendered files.
+                                  [default: .]
+  --renderer, --backend [plantuml|mermaid|vega|d2|antonia-html|tree|graph|bpmn|json]
+                                  Force a renderer instead of using the spec
+                                  type default.
+  --help                          Show this message and exit.
+rc=0
+$ specir catalog build --help
+Usage: specir catalog build [OPTIONS]
+
+  Build a diagram catalog HTML bundle from a vistas registry or diagram store.
+
+Options:
+  --config PATH           Path to a legacy vistas.yml registry or a
+                          hierarchical diagram store config.  [required]
+  --out PATH              HTML file to write.  [required]
+  --base-dir PATH         Base directory for template and vista source paths.
+                          Defaults to the config file directory.
+  --atoms-dir PATH        Directory with W5H1 atom markdown files to inject as
+                          window.ATOMS_DB.
+  --atoms-tag TEXT        Embed only atoms carrying this tag (full `ns:value`
+                          or just `value`); repeatable. Default: all atoms.
+  --strict-atoms          Fail the build if a spec `atoms:` id does not exist
+                          among the loaded atoms (default: warning).
+  --annotations           Save the page's annotations in an sldb store through
+                          `sldb serve`; the server and the document can also
+                          come from the page URL
+                          (`?sldb=<url>&annotations=<id>`).
+  --sldb-url TEXT         Base URL of `sldb serve --cors` that keeps the
+                          annotations (implies --annotations).
+  --annotations-doc TEXT  Id of the CatalogAnnotationsDoc that holds them
+                          (implies --annotations). Default: derived from the
+                          catalog's name.
+  --help                  Show this message and exit.
+rc=0
+
+=== V1 ===
+$ grep -nE "run\('spec2viz'" docs/spec2viz/build.py
+rc=1
+
+=== V2 ===
+$ cd docs/spec2viz && TMPDIR=/dev/shm python3 build.py
+codigo.capas.yml: OK
+target.components.yml: ERROR: Invalid diagram schema in specs/target.components.yml (type component): unknown key 'data.edges.16.o verbo transitivo afirmado'; unknown key 'data.edges.23.tags'; unknown key 'data.edges.23.contención'. Every key must be part of the schema of its type (`spec2viz diagram schema` exports them).
+Traceback (most recent call last):
+  File "/mnt/ssd/proyectos/SLDB_1/pron/docs/spec2viz/build.py", line 81, in <module>
+    main()
+  File "/mnt/ssd/proyectos/SLDB_1/pron/docs/spec2viz/build.py", line 22, in main
+    run('specir', 'diagram', 'validate', *specs)
+  File "/mnt/ssd/proyectos/SLDB_1/pron/docs/spec2viz/build.py", line 13, in run
+    subprocess.run(args, cwd=ROOT, check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('specir', 'diagram', 'validate', 'specs/codigo.capas.yml', 'specs/target.components.yml', 'specs/target.dialogo.yml', 'specs/target.turno.yml')' returned non-zero exit status 1.
+rc=1
+-- out/mermaid/*.mmd:
+docs/spec2viz/out/mermaid/codigo.capas.mmd
+docs/spec2viz/out/mermaid/target.components.mmd
+docs/spec2viz/out/mermaid/target.dialogo.mmd
+docs/spec2viz/out/mermaid/target.turno.mmd
+-- index.html:
+-rw-rw-r-- 1 robocop robocop 73632 Sep 17 07:52 docs/spec2viz/index.html
+
+=== V3 ===
+$ cd /mnt/ssd/proyectos/SLDB_1/IR && .venv/bin/specir retirement check --path graph_ui=../UIs/graph_ui --path deskops=../deskops --path pron=../pron --path sldb=../sldb --path spec2viz/.sldb=../spec2viz/.sldb | grep -P '^\s*pron\t'
+rc(pipeline/grep)=1 PIPESTATUS=1 1
+
+=== extras ===
+$ specir --help | head -5
+Usage: specir [OPTIONS] COMMAND [ARGS]...
+
+  specIR CLI: semantic diagram specs -> diagrams -> catalog HTML.
+
+  Taxonomy:
+$ uv tool list | grep -A2 specir
+specir v0.1.0
+- specir
+- specir-install
+-- which specir: /home/robocop/.local/bin/specir
+
+=== Diagnóstico V2: ¿preexistente? (mismo validate con spec2viz, sin cambios en specs/) ===
+$ cd docs/spec2viz && spec2viz diagram validate specs/*.yml
+codigo.capas.yml: OK
+target.components.yml: ERROR: Invalid diagram schema in specs/target.components.yml (type component): unknown key 'data.edges.16.o verbo transitivo afirmado'; unknown key 'data.edges.23.tags'; unknown key 'data.edges.23.contención'. Every key must be part of the schema of its type (`spec2viz diagram schema` exports them).
+rc=1
+$ git status --short docs/spec2viz/specs
+(vacío: specs/ sin cambios)
+$ grep -n ... specs/target.components.yml
+121:    - {from: superficie, to: kernel, relation: ejecuta, label: verbo de acción, o verbo transitivo afirmado}
+128:    - {from: export, to: ingest, relation: feeds, label: nodos, tags, contención}
