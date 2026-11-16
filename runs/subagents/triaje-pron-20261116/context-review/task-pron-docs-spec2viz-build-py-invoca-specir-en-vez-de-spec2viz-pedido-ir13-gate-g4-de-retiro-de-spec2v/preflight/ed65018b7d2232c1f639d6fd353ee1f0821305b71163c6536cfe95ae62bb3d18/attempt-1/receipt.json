@@ -1,0 +1,9 @@
+{
+  "key": "task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/preflight",
+  "technical_ok": true,
+  "returncode": 0,
+  "input_sha256": "ed65018b7d2232c1f639d6fd353ee1f0821305b71163c6536cfe95ae62bb3d18",
+  "output_sha256": "bb963c53e05fba05877f06d7375f54e6794ae82b5c7243f0e071c3ea794a9b7b",
+  "start": "2026-11-16T04:11:09.996253+00:00",
+  "end": "2026-11-16T04:11:29.015329+00:00"
+}

@@ -1,12 +1,12 @@
 name: task-pron-vuelve-a-verde-contra-sldb-main-la-caché-de-aristas-se-lee-de-sldb-cache-y-los-goldens-de-la-co
 path: desk/tasks/task-pron-vuelve-a-verde-contra-sldb-main-la-caché-de-aristas-se-lee-de-sldb-cache-y-los-goldens-de-la-co.md
-source_hash: cf7c048ffff4919684c6fba4f660eab4c0c567abf7284105e9e71b71ded8a214
-content_hash: 9ec27ef6d34ab545866cca1f4bdfa270636e0e39323e051375d700ddc8de19cf
+source_hash: 7f515e286eb8957624913f886c054ae018a75240e00520679be775634458ef5e
+content_hash: 6691c5beadc97b9cb63f1d2b7e9cf7d0c1e696d8d7be35d4109eb12f39bae45b
 field_hashes:
   title: ed38ee35fb4a3fdd8ad6248dbdf2fcbcb832090a6d894b1210426a89d2b8498e
   id: 4e3a1db166eab6eee6c34a967117e420bd9aa05dfe813063478f4706c35c1c0e
   status: 6ae048f08fcab44bfbc8463f074bfdb40f94c6bdf56d3aad9a7e1c05e5d5b5c1
-  summary: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  summary: 36fcfdba51e18440cacda33442591ab7bf8196ff251b6461ad6d5f31a9f9f717
   tags: 9e7e8be2998f87dfcbb538781d827f202722ef7dad630b93bca343e20f247db8
   current_node: ff5161892aac34735bf10c411f7230b62b7b56446e230a5d26fb75afde4704b6
   history: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
@@ -33,6 +33,6 @@ semantic_tags:
 - workspace:desk
 provenance:
   by: agent
-  at: '2026-11-14T05:43:25Z'
+  at: '2026-11-16T08:31:37Z'
   authority: generated
-  via: create_document
+  via: save_document_payload

@@ -1,12 +1,15 @@
 ---
 sldb:
   by: agent
-  at: '2026-11-14T05:43:25Z'
+  at: '2026-11-16T08:31:37Z'
   authority: generated
-  via: create_document
+  via: save_document_payload
 id: task-pron-vuelve-a-verde-contra-sldb-main-la-caché-de-aristas-se-lee-de-sldb-cache-y-los-goldens-de-la-co
 status: draft
-summary: ''
+summary: 'BLOQUEADA 2026-11-16 (supervisor): p2 hecho (826ef13, grep .sldb/runtime
+  vacío); quedan 4 goldens (undo no restaura hash del mundo, ac7d0f5) y test_04/test_10
+  (sldb 9f27733f pierde table-77 tras untrack/track). Esperando respuesta de sldb:
+  inbox 20261116-053107-unclear-pron-contra-sldb-9f27733f.'
 tags:
 - workspace:desk
 - artifact:task

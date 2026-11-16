@@ -1,0 +1,9 @@
+{
+  "key": "task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/preflight",
+  "technical_ok": true,
+  "returncode": 0,
+  "input_sha256": "f332612fc14d10ba4f2d1965f852a8342de2b4662be54160289b8a8f38a96ffa",
+  "output_sha256": "3e9bec981f33c789fb13bae4086fe7e3096128597afd95d9cf10309c59002edb",
+  "start": "2026-11-16T04:13:46.937705+00:00",
+  "end": "2026-11-16T04:13:57.503674+00:00"
+}
