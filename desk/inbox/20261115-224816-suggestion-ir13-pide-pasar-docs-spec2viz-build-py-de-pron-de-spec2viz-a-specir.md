@@ -1,4 +1,9 @@
 ---
+sldb:
+  by: agent
+  at: '2026-11-16T04:14:49Z'
+  authority: generated
+  via: save_document_payload
 # unclear | suggestion
 kind: suggestion
 # e.g., other_repo
@@ -8,9 +13,11 @@ target_project: pron-repair
 # ISO 8601 timestamp
 created_at: '2026-11-15T22:48:16'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: pron-repair
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-16T01:14:48'
 ---
 
 # IR13 pide pasar docs/spec2viz/build.py de pron de spec2viz a specir

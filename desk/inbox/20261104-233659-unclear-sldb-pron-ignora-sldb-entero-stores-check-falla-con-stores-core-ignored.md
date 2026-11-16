@@ -8,9 +8,11 @@ target_project: pron
 # ISO 8601 timestamp
 created_at: '2026-11-04T23:36:59'
 # open | closed
-status: open
+status: closed
 # project identity that acknowledged the note
+acknowledged_by: pron-repair
 # ISO 8601 timestamp, set when acknowledged
+acknowledged_at: '2026-11-16T01:14:50'
 ---
 
 # sldb: pron ignora .sldb/ entero; stores check falla con stores/core_ignored
