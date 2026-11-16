@@ -1,0 +1,78 @@
+{
+  "key": "task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle",
+  "input_sha256": "5416c03202635fad4f278d6d972096c3a438bc260737e9c3210b9c16c1f80601",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/pron/runs/subagents/exec-pron-20261116/context-review/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v/bundle/5416c03202635fad4f278d6d972096c3a438bc260737e9c3210b9c16c1f80601/attempt-1/input.md"
+  ],
+  "model": "deepseek/deepseek-flash",
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-pron-docs-spec2viz-build-py-invoca-specir-en-vez-de-spec2viz-pedido-ir13-gate-g4-de-retiro-de-spec2v.md",
+      "sha256": "27ec3e40798026bd0e4f368a2e04530792ce7bf43dce42f1d597f9dbcf0caf20",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/phase.md",
+      "sha256": "f0b1b3663a2ba7342a51269cec025e0723dd018a1c727991bcf4f8b9de291e51",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/execution.md",
+      "sha256": "79e6abbbbbf4f330f80aeafccfb9d3d091f307d51b2043c1893b521006955c0d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/testing.md",
+      "sha256": "0a1cd3ee93257f66eb41bd39d3c792049ca4100d5f8e2d05218eeeff7cb195db",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/closeout.md",
+      "sha256": "a99d53f3394f7ec84670ce74a33ac4bab3784f02bc0676611ba1111b1c335ab5",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/spec2viz/build.py",
+      "sha256": "32c1d14c3088bd644a305ac2f97fee1162dcf9249aae052861b77d8c6e3f6078",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/spec2viz/README.md",
+      "sha256": "5ea4b9e6f92c65b672161250d67bcf6f3092a1bcd0c441635659d83e2e567dff",
+      "projection": "whole_file"
+    },
+    {
+      "path": "docs/spec2viz/specs/target.components.yml",
+      "sha256": "7bc26441c138ea19d8f8a6e72887087ad54ccd10515932d43d5ef78cf9687c75",
+      "projection": "whole_file"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "65cad4dd8ee20aaa573815066cc5d767211d1608664c644e6356cfff303b0e8e",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [],
+  "started": "2026-11-16T05:26:54.450342+00:00",
+  "finished": "2026-11-16T05:27:03.833540+00:00",
+  "retry_reason": "ciclo de corrección 2: el ejecutor e-86f5d629bc99-a2 paró en V2 por dos fallos preexistentes (labels sin comillas en target.components.yml; -w de mmdc ya no existe en mermaid-cli 12); se agregan p3b, el spec a files y el mmdc al PATH de la validación"
+}
