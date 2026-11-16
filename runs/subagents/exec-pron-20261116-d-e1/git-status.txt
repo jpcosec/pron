@@ -1,0 +1,7 @@
+ M "desk/tasks/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c.md"
+?? .deskops.log
+?? "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/evidence-commit-1.md"
+?? "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/evidence-document-1.md"
+?? docs/decision-store-sldb.md
+?? runs/subagents/exec-pron-20261116-d-e1/
+?? runs/subagents/triaje-pron-20261116/

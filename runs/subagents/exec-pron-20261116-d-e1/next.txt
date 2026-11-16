@@ -1,0 +1,23 @@
+Task: task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c
+Title: Decisión de JP: pron versiona .sldb/ (store.yaml + core/) o queda como excepción al layout de sldb c420809c
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.decision
+Phase: closeout
+Required ritual:
+- desk/rituals/closeout.md
+Required pills:
+- desk/contexts/pills.md
+Next actions:
+1. Confirm passing validation evidence and pill coverage.
+2. Remove the task from the active board and delete the resolved task file when ready.
+3. Untrack the store entry if tracked.
+4. Create one atomic closing commit.
+Advance when:
+- Closeout ritual obligations are satisfied.
+Blocked by:
+- error: [rules/rule-closeout-task-decision] TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: Una tarea task.decision se cierra con recibos evidence aceptados e intactos de commit y document (los escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "commit" and anchor_state = "intact" and verdict = "accepted") (seen: {}) (witness: ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-bundle-1 {"kind":"bundle"})
+Sources:
+- task: desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md
+- board: desk/tasks/Board.md
+- workflow: deskops/spec/workflows/task_lifecycle.yaml

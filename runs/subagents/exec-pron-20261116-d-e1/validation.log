@@ -1,0 +1,13 @@
+$ grep -nE '^Opción elegida: [ABC]$' docs/decision-store-sldb.md
+3:Opción elegida: A
+rc=0
+
+$ deskops review status task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c --root .
+task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/preflight stale              9e1ae9938bd9
+task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/bundle stale              2f444c4454a8
+rc=0
+
+$ grep -nE '^(verdict|disposed_at):' desk/reviews/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/owner-2.md
+27:verdict: accepted
+34:disposed_at: '2026-11-16T05:13:21.911717+00:00'
+rc=0

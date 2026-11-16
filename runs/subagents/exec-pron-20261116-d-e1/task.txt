@@ -1,0 +1,8 @@
+Task: task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c
+Title: Decisión de JP: pron versiona .sldb/ (store.yaml + core/) o queda como excepción al layout de sldb c420809c
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.decision
+Lifecycle gates:
+- task_completes -> complete: open [status = "ready_for_testing"]
+  blocked by: error: [rules/rule-closeout-task-decision] TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c: Una tarea task.decision se cierra con recibos evidence aceptados e intactos de commit y document (los escribe deskops closeout verify). | any(^subject: kind = "evidence" and fact = "commit" and anchor_state = "intact" and verdict = "accepted") (seen: {}) (witness: ReviewDoc:review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-bundle-1 {"kind":"bundle"})

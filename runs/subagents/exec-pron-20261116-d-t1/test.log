@@ -1,0 +1,373 @@
+$ git branch --show-current
+master
+rc=0
+
+$ cat 'desk/reviews/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/owner-2.md'
+---
+sldb:
+  by: agent
+  at: '2026-11-16T05:13:26Z'
+  authority: generated
+  via: save_document_payload
+# review-<task>-<kind>-<n>
+id: review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-2
+# preflight | bundle | reproduction | goldens | owner | node | evidence
+kind: owner
+# kind evidence only: tests | commit | atom | materialization | document | external
+fact: ''
+# kind evidence only: what the producer verified, one item per line
+value: ''
+# doc:<Model>:<id> or empty for reviews of plan nodes
+subject: doc:TaskDecisionDoc:task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c@sha256:217624b4472d6e0c4a300f24e0ccec4afe5cdfacda4acf49c116931a8765cd03
+# <plan>/dag.yaml#node:<ID>; empty when subject names a document
+subject_ref: ''
+# RuntimeProfileDoc name or "human"
+engine: human
+actor: pron-repair
+# Run evidence directory under runs/, relative to the project root
+run_dir: ''
+input_sha256: ''
+output_sha256: ''
+# pending | accepted | rejected | incomplete
+verdict: accepted
+reason: 'Opción A: JP 2026-11-16 (transmitida por el supervisor). Se versionan .sldb/store.yaml
+  y .sldb/core/; no se versiona la parte runtime/caché del store (.sldb_cache/ y lo
+  que sea runtime), que sigue ignorada.'
+# ISO 8601 timestamp
+created_at: '2026-11-16T04:13:30.181084+00:00'
+# ISO 8601 timestamp, empty while pending
+disposed_at: '2026-11-16T05:13:21.911717+00:00'
+disposed_by: pron-repair
+# e.g. workspace:desk
+tags:
+- workspace:desk
+---
+
+# Owner review of task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c
+
+## Summary
+
+_Summarize what was reviewed and the evidence this receipt records._
+
+owner receipt recorded by pron-repair; evidence: (none)
+
+## Disposition
+
+_Record the verdict rationale and who disposed of the review._
+
+Verdict accepted: Opción A: JP 2026-11-16 (transmitida por el supervisor). Se versionan .sldb/store.yaml y .sldb/core/; no se versiona la parte runtime/caché del store (.sldb_cache/ y lo que sea runtime), que sigue ignorada.
+rc=0
+
+$ grep -nE '^(verdict|disposed_at|reason):' 'desk/reviews/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/owner-2.md'
+27:verdict: accepted
+28:reason: 'Opción A: JP 2026-11-16 (transmitida por el supervisor). Se versionan .sldb/store.yaml
+34:disposed_at: '2026-11-16T05:13:21.911717+00:00'
+rc=0
+
+$ cat 'desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md'
+---
+sldb:
+  by: agent
+  at: '2026-11-16T07:08:53Z'
+  authority: generated
+  via: save_document_payload
+id: task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c
+status: active
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+- host:robocop2
+current_node: ritual-testing
+history:
+- task_activates
+references:
+- desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md
+- .gitignore
+- Makefile
+- docs/decision-store-sldb.md
+- 15bcbba9c4e01e0a6294f8a5ac931594edce5e7a
+depends_on: []
+pills: []
+files:
+- docs/decision-store-sldb.md
+- .gitignore
+- Makefile
+task_type: task.decision
+inherits_from: []
+inherit_acceptance_context: false
+atoms: []
+---
+
+# Decisión de JP: pron versiona .sldb/ (store.yaml + core/) o queda como excepción al layout de sldb c420809c
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+sldb c420809c (2026-11-04) aplica la decisión del dueño del 2026-10-29: el store .sldb/ (store.yaml + core/) se versiona y .sldb_cache/ es la caché ignorada. pron ignora .sldb/ entero (.gitignore línea 10, bajo el comentario "pron's own world: make world rebuilds the store"), porque ahí `make world` (Makefile líneas 29-32) regenera el mundo de pron: hoy unos 740 documentos derivados en .sldb/core/documents (RelationDoc 359, SurfaceDoc 278, RelationTypeDoc, SpecDoc, ExplanationDoc, CliCommandDoc, MoveDoc, AnchorDoc, ReadmeDoc). Consecuencias medidas el 2026-11-16 en robocop2: `sldb stores check` sale con error stores/core_ignored; `deskops doctor --root .` declara el desk roto; los documentos del desk (TaskCodeDoc, InboxNoteDoc y los ReviewDoc de los recibos preflight/bundle/owner) se escriben en .sldb/core y git los ignora, así que no viajan en un clon y una tarea de pron no puede activarse en otra máquina. Origen: nota del inbox desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md.
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+JP elige una de tres opciones y la elección queda escrita y commiteada en pron: (A) versionar .sldb/ como el resto de los repos: quitar la línea `.sldb/` de .gitignore y commitear store.yaml y core/, mundo derivado incluido; (B) separar stores: el mundo derivado de pron sale de .sldb/ a otro store ignorado y .sldb/ queda versionado solo con el desk (exige cambiar `pron init --world` y el Makefile); (C) pron queda como excepción declarada: .sldb/ sigue ignorado, stores check sigue en error y los recibos del desk no se versionan. Recomendación del coordinador: A, porque cumple la decisión del 2026-10-29 sin tocar código de pron y hace versionables los recibos; su costo es versionar unos 740 documentos regenerables y sus diffs al correr make world.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Entra: registrar la elección de JP (recibo owner), escribir docs/decision-store-sldb.md con la opción elegida, su razón y sus consecuencias, y commitearlo. Si la elección exige cambios (A o B), esta tarea solo crea la tarea task.code que los implementa (con .gitignore, Makefile y los archivos de src/pron que correspondan) y la referencia aquí; no los implementa. No entra: cambiar sldb ni su política, editar .gitignore o el código de pron, ni correr `sldb stores migrate-layout`.
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+La elección es solo de JP: el ejecutor no elige ni adopta la recomendación. p1: comprobar con 'deskops review status task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c --root .' (desde /mnt/ssd/proyectos/SLDB_1/pron) que el recibo owner 'review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-2' (ya registrado por el coordinador el 2026-11-16 con verdict pending) está accepted e intact; si sigue pending, parar sin escribir nada: JP lo dispone con deskops review dispose 'review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-2' --verdict accepted --reason 'Opción <letra>: <razón>' --root . y la letra elegida se lee de ese reason. p2: escribir docs/decision-store-sldb.md con, en este orden: una línea exacta 'Opción elegida: X' donde X es una sola letra A, B o C; la fecha del dispose de JP (campo disposed_at del recibo, formato AAAA-MM-DD); la razón copiada del reason de JP; y las consecuencias de esa opción para sldb stores check y para los recibos del desk, tomadas del goal. p3: si la letra es A o B, crear la tarea de implementación con deskops add task --root . --task-type task.code --title 'pron implementa la opción X de docs/decision-store-sldb.md (store .sldb/)' --goal, --scope y --validation derivados de la opción (A: quitar .sldb/ de .gitignore y commitear .sldb/store.yaml y .sldb/core; B: mover el mundo de make world a un store ignorado y versionar .sldb/ solo con el desk) y --implementation-path que cite docs/decision-store-sldb.md; si es C no se crea tarea. p4: un solo commit con docs/decision-store-sldb.md y los archivos de desk/ que deskops haya tocado, mensaje con [skip ci], y push a origin master (autorizado por la regla del desk de pushear al cerrar).
+
+## Validation
+
+_List the checks required before this task can close._
+
+- grep -nE '^Opción elegida: [ABC]$' docs/decision-store-sldb.md   # exactamente una línea
+- deskops review status task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c --root .   # owner accepted e intact
+- git log -1 --format=%H -- docs/decision-store-sldb.md   # commit alcanzable desde HEAD
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+Recibo owner aceptado por JP; docs/decision-store-sldb.md commiteado y pusheado en master de pron con la opción elegida; si la opción es A o B, existe en desk/tasks una task.code que la implementa y referencia el documento.
+rc=0
+
+$ cat 'docs/decision-store-sldb.md'
+# Decisión: el store .sldb/ de pron se versiona
+
+Opción elegida: A
+
+Fecha del dispose de JP: 2026-11-16
+
+## Razón
+
+Copiada del reason del recibo owner
+`review-task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c-owner-2`:
+
+> JP 2026-11-16 (transmitida por el supervisor). Se versionan .sldb/store.yaml y .sldb/core/;
+> no se versiona la parte runtime/caché del store (.sldb_cache/ y lo que sea runtime), que sigue
+> ignorada.
+
+## Contexto
+
+- sldb c420809c (2026-11-04) aplica la decisión del dueño del 2026-10-29: el store `.sldb/`
+  (`store.yaml` + `core/`) se versiona y `.sldb_cache/` es la caché ignorada. El aviso llegó a pron
+  en la nota del inbox
+  `desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md`.
+- `.gitignore` de pron ignoraba `.sldb/` entero, bajo el comentario "pron's own world: make world
+  rebuilds the store", porque `make world` regenera ahí el mundo de pron.
+- Las opciones, tal como las describe el goal de la tarea de decisión:
+  - **(A)** versionar `.sldb/` como el resto de los repos: quitar la línea `.sldb/` de `.gitignore`
+    y commitear `store.yaml` y `core/`, mundo derivado incluido.
+  - **(B)** separar stores: el mundo derivado de pron sale de `.sldb/` a otro store ignorado y
+    `.sldb/` queda versionado solo con el desk (exige cambiar `pron init --world` y el Makefile).
+  - **(C)** pron queda como excepción declarada: `.sldb/` sigue ignorado, `stores check` sigue en
+    error y los recibos del desk no se versionan.
+
+## Consecuencias de la opción A
+
+- **`sldb stores check`:** deja de emitir `stores/core_ignored`.
+- **Recibos y documentos del desk** (TaskCodeDoc, InboxNoteDoc, los ReviewDoc de los recibos
+  preflight/bundle/owner): viajan en git, así que una tarea de pron puede activarse en otra máquina.
+- **Costo:** se versionan unos 740 documentos derivados y regenerables de `.sldb/core/documents`,
+  y aparecen sus diffs al correr `make world`.
+- **Sigue ignorado:** `.sldb_cache/` (la parte runtime/caché del store).
+
+## Implementación
+
+Este documento no implementa nada. Los cambios (`.gitignore` y el commit de `.sldb/store.yaml` y
+`.sldb/core/`) los hace la `task.code` de seguimiento
+`task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada`
+(`desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md`).
+rc=0
+
+$ grep -nE '^Opción elegida: [ABC]$' 'docs/decision-store-sldb.md'
+3:Opción elegida: A
+rc=0
+
+$ grep -nE '^Opción elegida: [ABC]$' 'docs/decision-store-sldb.md' | wc -l
+1
+rc=0
+
+$ grep -n '2026-11-16' 'docs/decision-store-sldb.md'
+5:Fecha del dispose de JP: 2026-11-16
+12:> JP 2026-11-16 (transmitida por el supervisor). Se versionan .sldb/store.yaml y .sldb/core/;
+rc=0
+
+$ git status --short
+ M "desk/tasks/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c.md"
+?? .deskops.log
+?? "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/evidence-commit-1.md"
+?? "desk/reviews/task-decisi\303\263n-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepci\303\263n-al-layout-de-sldb-c420809c/evidence-document-1.md"
+?? docs/decision-store-sldb.md
+?? runs/subagents/exec-pron-20261116-d-e1/
+?? runs/subagents/exec-pron-20261116-d-t1/
+?? runs/subagents/triaje-pron-20261116/
+rc=0
+
+$ git status --short -- . ':!desk' ':!runs' ':!.deskops.log'
+?? docs/decision-store-sldb.md
+rc=0
+
+$ git status --short -- .gitignore Makefile src
+rc=0
+
+$ git diff --stat -- .gitignore Makefile src
+rc=0
+
+$ git check-ignore -v .sldb_cache/ .sldb_cache/x
+.gitignore:26:.sldb_cache/	.sldb_cache/
+.gitignore:26:.sldb_cache/	.sldb_cache/x
+rc=0
+
+$ test -f 'desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md' && echo exists
+exists
+rc=0
+
+$ cat 'desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md'
+---
+sldb:
+  by: agent
+  at: '2026-11-16T05:21:28Z'
+  authority: generated
+  via: save_document_payload
+id: task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada
+status: draft
+summary: ''
+tags:
+- workspace:desk
+- artifact:task
+- host:robocop2
+current_node: ritual-execution
+history: []
+references:
+- desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md
+- desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md
+- .gitignore
+depends_on:
+- task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c
+pills: []
+files:
+- .gitignore
+- .sldb/store.yaml
+- .sldb/core
+- CHANGELOG.md
+task_type: task.code
+inherits_from: []
+inherit_acceptance_context: false
+atoms: []
+---
+
+# pron versiona .sldb/store.yaml y .sldb/core/ (opción A de JP); .sldb_cache/ sigue ignorada
+
+## Rationale
+
+_Explain why this task exists or the business driver behind it._
+
+JP decidió el 2026-11-16 la opción A de la task.decision task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c (recibo owner-2 aceptado), con una precisión: se versionan .sldb/store.yaml y .sldb/core/ y no se versiona la parte runtime/caché del store (.sldb_cache/ y lo que sea runtime). Hoy .gitignore línea 10 ignora `.sldb/` entero, así que `sldb stores check` sale con error stores/core_ignored y los documentos del desk (TaskDoc, InboxNoteDoc, ReviewDoc de los recibos) que deskops escribe en .sldb/core no viajan en un clon. Medido el 2026-11-16: .sldb/ contiene solo store.yaml y core/ (789 archivos, 3,3 MB, mundo de `make world` más el desk); la caché runtime ya vive en .sldb_cache/ (23 MB), ignorada por .gitignore línea 26.
+
+## Goal
+
+_Describe the concrete result this task must produce._
+
+En master de pron, .sldb/store.yaml y todo .sldb/core/ están versionados, .sldb_cache/ sigue ignorada, y `sldb stores check` ya no emite stores/core_ignored ni stores/cache_not_ignored.
+
+## Scope
+
+_State what is in scope and what is out of scope._
+
+Entra (ejecutor): .gitignore (quitar la línea '.sldb/' y reescribir su comentario; mantener '.sldb_cache/') y la viñeta de CHANGELOG.md; nada más en el árbol de trabajo. Entra (coordinador, en el cierre): indexar y commitear .gitignore, CHANGELOG.md, .sldb/store.yaml y .sldb/core con deskops closeout commit --paths en master, y pushear. 'Lo que sea runtime' del store ya está fuera de .sldb/: el 2026-11-16 .sldb/ contiene solo store.yaml y core/ (verificado con ls y find), y la caché runtime vive en .sldb_cache/; si al ejecutar aparece en .sldb/ algo que no sea store.yaml ni core/, el ejecutor para y lo reporta sin ignorarlo ni versionarlo. No entra: la línea 'sldb/' de .gitignore (línea 11, otro directorio), los errores store/model-unresolved de stores check (otro problema; hacen que stores check salga con rc 1 igual), cambiar make world, el Makefile o src/pron, cambiar sldb, regenerar el mundo, y escribir docs/decision-store-sldb.md (lo hace la task.decision).
+
+## Implementation Path
+
+_Outline the expected implementation route or affected surface._
+
+p1: en .gitignore borrar la línea '.sldb/' (línea 10) y reescribir el comentario de la línea 9, que hoy dice '# pron's own world: `make world` rebuilds the store and everything generated into it', como '# pron's own world: `make world` rebuilds these from the repo (the store .sldb/ is versioned; its cache .sldb_cache/ is not)'. La línea 'sldb/' (11) y '.sldb_cache/' (26) no se tocan. p2: viñeta en CHANGELOG.md al final de la lista bajo '## Sin publicar': '- El store de sldb de pron se versiona (.sldb/store.yaml y .sldb/core/), como en el resto de los repos; su caché .sldb_cache/ sigue ignorada (decisión de JP del 2026-11-16).' p3: correr las comprobaciones de Validation sobre el árbol de trabajo, sin git add ni commit: el ejecutor no indexa nada; el coordinador commitea .gitignore, CHANGELOG.md, .sldb/store.yaml y .sldb/core con deskops closeout commit --paths y pushea.
+
+## Validation
+
+_List the checks required before this task can close._
+
+- git branch --show-current   # imprime master
+- git check-ignore -q .sldb/store.yaml; test $? -eq 1   # rc 0 de test: store.yaml no ignorado
+- git check-ignore -q .sldb/core/store_index.yaml; test $? -eq 1   # store_index.yaml existe en .sldb/core (verificado 2026-11-16); rc 0 de test
+- git check-ignore -q .sldb_cache; test $? -eq 0   # rc 0: la caché sigue ignorada
+- TMPDIR=/dev/shm sldb stores check --pythonpath . 2>&1 | grep -cE 'stores/(core_ignored|cache_not_ignored)'   # pasa si imprime 0 (grep sale con rc 1 en ese caso, es lo esperado; el rc de stores check no cuenta por los model-unresolved)
+- test $(git status --porcelain --untracked-files=all .sldb | wc -l) -eq $(find .sldb -type f | wc -l)   # antes del commit: cada archivo del store aparece como untracked (??), ninguno ignorado
+
+## Done When
+
+_Name the observable condition that makes the task complete._
+
+Ejecutor: las seis comprobaciones de Validation pasan sobre el árbol de trabajo con solo .gitignore y CHANGELOG.md modificados. Coordinador, tras el closeout: git ls-files .sldb | wc -l igual a find .sldb -type f | wc -l, commit en master de pron pusheado.
+rc=0
+
+$ grep -nE '^(id|task_type):' 'desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md'
+7:id: task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada
+28:task_type: task.code
+rc=0
+
+$ grep -n 'decision-store-sldb.md' 'desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md'
+52:Entra (ejecutor): .gitignore (quitar la línea '.sldb/' y reescribir su comentario; mantener '.sldb_cache/') y la viñeta de CHANGELOG.md; nada más en el árbol de trabajo. Entra (coordinador, en el cierre): indexar y commitear .gitignore, CHANGELOG.md, .sldb/store.yaml y .sldb/core con deskops closeout commit --paths en master, y pushear. 'Lo que sea runtime' del store ya está fuera de .sldb/: el 2026-11-16 .sldb/ contiene solo store.yaml y core/ (verificado con ls y find), y la caché runtime vive en .sldb_cache/; si al ejecutar aparece en .sldb/ algo que no sea store.yaml ni core/, el ejecutor para y lo reporta sin ignorarlo ni versionarlo. No entra: la línea 'sldb/' de .gitignore (línea 11, otro directorio), los errores store/model-unresolved de stores check (otro problema; hacen que stores check salga con rc 1 igual), cambiar make world, el Makefile o src/pron, cambiar sldb, regenerar el mundo, y escribir docs/decision-store-sldb.md (lo hace la task.decision).
+rc=0
+
+$ grep -c 'task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada' 'docs/decision-store-sldb.md'
+2
+rc=0
+
+$ grep -n '^\.sldb/$\|^\.sldb_cache/' .gitignore
+10:.sldb/
+26:.sldb_cache/
+rc=0
+
+$ git ls-files --error-unmatch .sldb/store.yaml
+error: pathspec '.sldb/store.yaml' did not match any file(s) known to git
+Did you forget to 'git add'?
+rc=1
+
+$ deskops review status task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c --root .
+task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/preflight stale              3346daee8a8d
+task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/bundle stale              70e754aa50a4
+rc=0
+
+$ deskops review status task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c --root . --format yaml
+- key: task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/preflight
+  state: stale
+  input_sha256: 3346daee8a8d2762abdeb15dfd6c32187e4379df7894072fb5dca201c19451ee
+- key: task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/bundle
+  state: stale
+  input_sha256: 70e754aa50a4df06064d1fc471cbeee93ed86198e10fd9403620d9dc49ef81c5
+
+rc=0
+
+$ ls desk/reviews/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c/
+bundle-1.md
+bundle-2.md
+evidence-commit-1.md
+evidence-document-1.md
+owner-1.md
+owner-2.md
+preflight-1.md
+preflight-2.md
+rc=0
+
+$ sed -n '/^## Implementation Path/,/^## Validation/p' desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md | grep -c 'decision-store-sldb'
+0
+rc=1
+
+$ sed -n '/^references:/,/^depends_on:/p' desk/tasks/task-pron-versiona-sldb-store-yaml-y-sldb-core-opción-a-de-jp-sldb-cache-sigue-ignorada.md
+references:
+- desk/inbox/20261104-233659-unclear-sldb-pron-ignora-sldb-entero-stores-check-falla-con-stores-core-ignored.md
+- desk/tasks/task-decisión-de-jp-pron-versiona-sldb-store-yaml-core-o-queda-como-excepción-al-layout-de-sldb-c420809c.md
+- .gitignore
+depends_on:
+rc=0
+
