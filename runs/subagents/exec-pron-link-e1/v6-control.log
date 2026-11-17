@@ -1,0 +1,81 @@
++ export TMPDIR=/dev/shm
++ TMPDIR=/dev/shm
++ W=/dev/shm/pron-link-ci-control
++ rm -rf /dev/shm/pron-link-ci-control
++ mkdir -p /dev/shm/pron-link-ci-control/pron
++ rsync -a --exclude .git --exclude .sldb_cache /mnt/ssd/proyectos/SLDB_1/pron/ /dev/shm/pron-link-ci-control/pron/
++ git clone -q --depth 1 https://github.com/jpcosec/opsys.git /dev/shm/pron-link-ci-control/deskops
++ git -C /mnt/ssd/proyectos/SLDB_1/pron show HEAD:.sldb/store.yaml
++ git -C /mnt/ssd/proyectos/SLDB_1/pron show HEAD:.sldb/core/store_index.yaml
++ cd /dev/shm/pron-link-ci-control/pron
++ PATH=/dev/shm/pron-venv/bin:/home/robocop/.cargo/bin:/home/robocop/.opencode/bin:/home/robocop/.local/bin:/home/robocop/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ TMPDIR=/dev/shm
++ timeout 2400 make world PYTHON=python
+test -f .sldb/core/store_index.yaml || sldb stores init
+python -m pron.cli.main init --world . --pythonpath . --knowledge > /dev/null
+Skipped broken models: CrossroadDoc, AtomDoc, BoardDoc, DeskFAQDoc, InboxNoteDoc, MaterializationContractDoc, PillDoc, ProtoAtomDoc, RepositoryDoc, ReviewDoc, RitualDoc, RoleDoc, RunDoc, RuntimeProfileDoc, StepDoc, TaskAggregateDoc, TaskCodeDoc, TaskDebugDoc, TaskDecisionDoc, TaskDoc, TaskDocsDoc, TaskExternalDoc, TaskRefactorDoc
+python -m pron.cli.main docs --world . --pythonpath .
+Skipped broken models: CrossroadDoc, AtomDoc, BoardDoc, DeskFAQDoc, InboxNoteDoc, MaterializationContractDoc, PillDoc, ProtoAtomDoc, RepositoryDoc, ReviewDoc, RitualDoc, RoleDoc, RunDoc, RuntimeProfileDoc, StepDoc, TaskAggregateDoc, TaskCodeDoc, TaskDebugDoc, TaskDecisionDoc, TaskDoc, TaskDocsDoc, TaskExternalDoc, TaskRefactorDoc
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/cli/main.py", line 40, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/cli/main.py", line 29, in main
+    return cli.invoke(ctx)
+           ^^^^^^^^^^^^^^^
+  File "/dev/shm/pron-venv/lib/python3.12/site-packages/click/core.py", line 2054, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/pron-venv/lib/python3.12/site-packages/click/core.py", line 1414, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/pron-venv/lib/python3.12/site-packages/click/core.py", line 911, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/cli/commands/docs.py", line 28, in command
+    opened.refresh()  # the indexes and the graph follow the documents just written
+    ^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/world/world.py", line 153, in refresh
+    self._update_stores(stores)
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/world/world.py", line 161, in _update_stores
+    self.store.update_index(s)
+  File "/mnt/ssd/proyectos/SLDB_1/pron/src/pron/world/storage/linked_stores.py", line 96, in update_index
+    report = update_store_indexes(self.sp_of(store), self.pythonpath)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/api/stores/update_store_indexes.py", line 31, in update_store_indexes
+    return StoreIndexRefresh(location, pythonpath)(wait)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/api/stores/update_store_indexes.py", line 48, in __call__
+    idx = load_store_index(sp)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/__init__.py", line 82, in load_store_index
+    return _cached(path, lambda: guarded_load(path, lambda: StoreIndexIO.load(store_path)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/__init__.py", line 48, in _cached
+    hit = (sig, loader())
+                ^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/__init__.py", line 82, in <lambda>
+    return _cached(path, lambda: guarded_load(path, lambda: StoreIndexIO.load(store_path)))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/derived_guard.py", line 32, in guarded_load
+    return loader()
+           ^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/__init__.py", line 82, in <lambda>
+    return _cached(path, lambda: guarded_load(path, lambda: StoreIndexIO.load(store_path)))
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/ssd/proyectos/SLDB_1/sldb/src/sldb/store/io/store_index.py", line 37, in load
+    raise FileNotFoundError(f"No store_index.yaml at {store_path}")
+FileNotFoundError: No store_index.yaml at /dev/herramientas/deskops/.sldb
+CliCommandDoc cmd-pron-init
+CliCommandDoc cmd-pron-lexicon
+CliCommandDoc cmd-pron-say
+CliCommandDoc cmd-pron-eval
+CliCommandDoc cmd-pron-repl
+CliCommandDoc cmd-pron-serve
+CliCommandDoc cmd-pron-mcp
+CliCommandDoc cmd-pron-docs
+make: *** [Makefile:32: world] Error 1
++ echo 'V6 rc=2'
+V6 rc=2

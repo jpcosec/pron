@@ -1,0 +1,37 @@
+name: review-task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y-evidence-commit-2
+path: desk/reviews/task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y/evidence-commit-2.md
+source_hash: 7429e3490047cd30270a18c7e0b0d7a3051d0a9615df663287d71ad8e686b628
+content_hash: 384b74885495497d80dc0dcdf01b854cb109cca7aceb0727f3398c3c3d03d45e
+field_hashes:
+  id: e05d6dae7d8be42b9211fdc43305f0fea7a1b0d690bb2696cf44f9159d61ed09
+  title: f0e355022cc994c58f1f429e4174de03e4cf4d9f2b8402b6a9575fd906201291
+  kind: edecec53ab11f560816e75a17681eb83886beace01d7fb927d99707d3d031aac
+  fact: 5ea9c58673a69c87d0e5540a6f9978aad8f8e0a0b9ce3471cff139c730d97888
+  value: 87be0cd260b39f69418d581315faf28ebc2ce8cdeebba154b37a1d884641dcf7
+  subject: c159eb79851ac214aaccd07695f08a1fd971e5ddc92c427f813987aaa019defc
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 9eeef991471c47a0f748cc581c93b036c7560af99f0fcdf1ed75357a5551f1ac
+  actor: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  run_dir: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  input_sha256: 5b1479cd054dadae77f832f75585f60edf2e286020c0d1130c04638eaf655056
+  contract_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  output_sha256: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  verdict: d288c584af270151f7b7cd7977b94160ce1d7b501dee2d6308f2ac84ebaacc99
+  reason: 615bd92b122fd8acb6b316a972f4a350479f0d9136c4ec8fffc021425a16bd21
+  created_at: 81a13a7f9ca69d4ff0d35b31d14c8b5341627d40f777ab233f302796d89b8ba7
+  disposed_at: 81a13a7f9ca69d4ff0d35b31d14c8b5341627d40f777ab233f302796d89b8ba7
+  disposed_by: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  summary: 6a558c057ec65db3c2db18ca4ea21e155d6417c5371a9a54ac16b05eac014498
+  disposition: edeb2a0229c0afdb6851f4a010c06dca6eb428b38617ad5d957c2e7d258e517f
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T17:45:05Z'
+  authority: generated
+  via: create_document

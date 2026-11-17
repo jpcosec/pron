@@ -1,0 +1,17 @@
++ PATH=/dev/shm/pron-venv/bin:/home/robocop/.cargo/bin:/home/robocop/.opencode/bin:/home/robocop/.local/bin:/home/robocop/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ TMPDIR=/dev/shm
++ timeout 2400 make world PYTHON=python
+test -f .sldb/core/store_index.yaml || sldb stores init
+python -m pron.cli.main init --world . --pythonpath . --knowledge > /dev/null
+python -m pron.cli.main docs --world . --pythonpath .
+Sections rebuild: 1 documents missing on disk (RunDoc: 1); e.g. runs/subagents/exec-deskops-e-289fe7bfa1df/run.md
+Skipped missing documents: run-deskops-e-289fe7bfa1df
+CliCommandDoc cmd-pron-init
+CliCommandDoc cmd-pron-lexicon
+CliCommandDoc cmd-pron-say
+CliCommandDoc cmd-pron-eval
+CliCommandDoc cmd-pron-repl
+CliCommandDoc cmd-pron-serve
+CliCommandDoc cmd-pron-mcp
+CliCommandDoc cmd-pron-docs
+V4 rc=0

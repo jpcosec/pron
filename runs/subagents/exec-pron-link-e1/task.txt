@@ -1,0 +1,7 @@
+Task: task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y
+Title: pron/.sldb enlaza deskops como repo hermano ../deskops/.sldb en vez de la ruta de robocop2 ../../../herramientas, y el check de pron clona deskops al lado
+Status: ready_for_testing
+Current node: ritual-closeout
+Task type: task.code
+Lifecycle gates:
+- task_completes -> complete: open [status = "ready_for_testing"]

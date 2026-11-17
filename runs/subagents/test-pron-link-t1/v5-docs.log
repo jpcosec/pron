@@ -1,0 +1,5 @@
++ PATH=/dev/shm/pron-venv/bin:/home/robocop/.cargo/bin:/home/robocop/.opencode/bin:/home/robocop/.local/bin:/home/robocop/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
++ TMPDIR=/dev/shm
++ timeout 2400 python -m pron.cli.main docs --world . --pythonpath .
+up to date
+V5 rc=0

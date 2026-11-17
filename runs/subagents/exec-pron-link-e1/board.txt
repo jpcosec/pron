@@ -1,0 +1,10 @@
+Board: board-001
+Title: pron-repair Board
+status: 
+summary: 
+scope: desk
+purpose: Route the active execution set for pron-repair.
+tasks: desk/tasks/task-pron-vuelve-a-verde-contra-sldb-main-la-caché-de-aristas-se-lee-de-sldb-cache-y-los-goldens-de-la-co.md, desk/tasks/task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y.md
+pills: desk/contexts/pills.md
+rituals: desk/rituals/phase.md, desk/rituals/execution.md, desk/rituals/testing.md, desk/rituals/closeout.md
+notes: Bootstrap complete. Add active task docs under `desk/tasks/` and route them here.

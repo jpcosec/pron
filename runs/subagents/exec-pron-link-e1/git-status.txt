@@ -1,0 +1,6 @@
+ M .github/workflows/check.yml
+ M .sldb/core/store_index.yaml
+ M .sldb/store.yaml
+ M CHANGELOG.md
+?? .deskops.log
+?? runs/subagents/exec-pron-link-e1/

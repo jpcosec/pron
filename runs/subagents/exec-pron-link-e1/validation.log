@@ -1,0 +1,65 @@
+## V1: sldb stores list | grep -F "deskops -> ../deskops/.sldb"
+- deskops -> ../deskops/.sldb
+rc=0
+
+## V2: grep -n 'herramientas/deskops' .sldb/store.yaml .sldb/core/store_index.yaml
+rc=1 (1 esperado)
+
+## V3: linked_store(.sldb, deskops)
+/mnt/ssd/proyectos/SLDB_1/deskops/.sldb
+rc=0
+
+## V4: make world en layout CI de sldb (W=/dev/shm/pron-link-ci, caché fría, deskops clonado de jpcosec/opsys). Precheck sed -n 29,32p Makefile coincide.
+salida completa: runs/subagents/exec-pron-link-e1/v4-world.log
++ echo 'V4 rc=0'
+V4 rc=0
+ocurrencias 'No store_index'/Traceback/Error: 0
+
+## V5: python -m pron.cli.main docs --world . --pythonpath . (en /dev/shm/pron-link-ci/pron)
+salida completa: runs/subagents/exec-pron-link-e1/v5-docs.log
+V5 rc=0
+ocurrencias 'No store_index.yaml': 0
+
+## V6 (control, enlaces de HEAD, W=/dev/shm/pron-link-ci-control)
+salida completa: runs/subagents/exec-pron-link-e1/v6-control.log
++ echo 'V6 rc=2'
+V6 rc=2
+FileNotFoundError: No store_index.yaml at /dev/herramientas/deskops/.sldb
+
+## V7: orden de pasos de check.yml
+rc=0
+
+## V8: git diff --stat HEAD -- . ':!runs'
+ .github/workflows/check.yml | 3 +++
+ .sldb/core/store_index.yaml | 2 +-
+ .sldb/store.yaml            | 2 +-
+ CHANGELOG.md                | 1 +
+ 4 files changed, 6 insertions(+), 2 deletions(-)
+rc=0
+## V8: git diff HEAD -- .sldb/store.yaml .sldb/core/store_index.yaml
+diff --git a/.sldb/core/store_index.yaml b/.sldb/core/store_index.yaml
+index 847b79b..e835fad 100644
+--- a/.sldb/core/store_index.yaml
++++ b/.sldb/core/store_index.yaml
+@@ -1,6 +1,6 @@
+ stores:
+ - name: deskops
+-  path: ../../../herramientas/deskops/.sldb
++  path: ../deskops/.sldb
+ models:
+ - name: RelationTypeDoc
+   model_ref: sldb.models.relation_type_doc:RelationTypeDoc
+diff --git a/.sldb/store.yaml b/.sldb/store.yaml
+index c70003c..04710df 100644
+--- a/.sldb/store.yaml
++++ b/.sldb/store.yaml
+@@ -1,7 +1,7 @@
+ version: 1
+ links:
+ - name: deskops
+-  path: ../../../herramientas/deskops/.sldb
++  path: ../deskops/.sldb
+ models:
+ - name: RelationTypeDoc
+   model_ref: sldb.models.relation_type_doc:RelationTypeDoc
+rc=0

@@ -1,0 +1,242 @@
+bringing up nodes...
+bringing up nodes...
+
+........................................................................ [ 14%]
+........................................................................ [ 29%]
+........................................................................ [ 44%]
+..........F............................................................. [ 59%]
+........................F...........................................F... [ 74%]
+...............................................F....F................... [ 89%]
+...........F......................................                       [100%]
+=================================== FAILURES ===================================
+________________ test_mount_adds_a_world_to_the_running_daemon _________________
+[gw3] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+daemon = <pron.serve.Server object at 0x7bbbf0f54440>
+tmp_path = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/test_mount_adds_a_world_to_the0')
+
+    def test_mount_adds_a_world_to_the_running_daemon(daemon: Server, tmp_path):
+        root = tmp_path / "third"
+        init_bare(root)
+        assert (
+            request(
+                daemon.path,
+                {
+                    "op": "mount",
+                    "name": "third",
+                    "root": str(root),
+                    "pythonpath": str(root),
+                },
+            )["world"]
+            == "third"
+        )
+>       assert "third" in request(daemon.path, {"op": "worlds"})["worlds"] and alive(
+            socket_path(root)
+        )
+E       AssertionError: assert ('third' in {'agent': '/dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/agent0/world', 'restaurant': '/dev/shm/pytest-of-robocop/p.../restaurant4/world', 'third': '/dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/test_mount_adds_a_world_to_the0/third'} and False)
+E        +  where False = alive(PosixPath('/dev/shm/pron-0de0e6a2a038.sock'))
+E        +    where PosixPath('/dev/shm/pron-0de0e6a2a038.sock') = socket_path(PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/test_mount_adds_a_world_to_the0/third'))
+
+tests/remote/test_09_worlds_daemon.py:115: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/test_mount_adds_a_world_to_the0/third/.sldb
+_______________________________ test_eval_forms ________________________________
+[gw1] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+tmp_path = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_eval_forms0')
+snapshot = list([
+  dict({
+    'eval': '(create Client (name "Eva Diaz") (phone "9 4444 0000"))',
+    'ledger': dict({
+      'at'...an (show (all Table))?',
+    'trace': list([
+      'forms: (all Table)',
+    ]),
+    'written': dict({
+    }),
+  }),
+])
+
+    def test_eval_forms(tmp_path, snapshot):
+        _, session = restaurant(tmp_path, projection="keeper")
+        steps = [("eval", forms) for forms in FORMS]
+>       assert play(session, steps, tmp_path) == snapshot
+E       AssertionError: assert [+ received] == [- snapshot]
+E           ......
+E              ...
+E                 'at': '<at>',
+E         -       'hash_after': '<hash-6>',
+E         +       'hash_after': '<hash-11>',
+E                 'hash_before': '<hash-9>',
+E                   ......
+E         
+E         ...Full output truncated (13 lines hidden), use '-vv' to show
+
+tests/golden/test_16_golden_eval.py:39: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_eval_forms0/world/.sldb
+Registered 'Client'
+Registered 'Table'
+Registered 'Reservation'
+Registered 'State'
+_______________________ test_undo_and_why_on_list_fields _______________________
+[gw1] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+tmp_path = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_undo_and_why_on_list_fiel0')
+snapshot = list([
+  dict({
+    'eval': '(show (doc "AnchorDoc:anchor-client"))',
+    'ledger': dict({
+      'at': '<at>',
+      '...y',
+      'forms: (why)',
+      'ledger: <move-15>',
+    ]),
+    'turn': 'why?',
+    'written': dict({
+    }),
+  }),
+])
+
+    def test_undo_and_why_on_list_fields(tmp_path, snapshot):
+        _, session = restaurant(tmp_path, projection="keeper")
+>       assert play(session, LISTS, tmp_path) == snapshot
+E       AssertionError: assert [+ received] == [- snapshot]
+E           ......
+E              ...
+E                 'at': '<at>',
+E         -       'hash_after': '<hash-2>',
+E         +       'hash_after': '<hash-5>',
+E                 'hash_before': '<hash-4>',
+E                 ......
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/golden/test_16_golden_undo_why.py:57: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_undo_and_why_on_list_fiel0/world/.sldb
+Registered 'Client'
+Registered 'Table'
+Registered 'Reservation'
+Registered 'State'
+________________________ test_undo_and_why_on_documents ________________________
+[gw1] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+tmp_path = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_undo_and_why_on_documents0')
+snapshot = list([
+  dict({
+    'ledger': dict({
+      'at': '<at>',
+      'hash_after': '<hash-1>',
+      'hash_before': '<hash-1...    ]),
+    'turn': 'undo the last move',
+    'written': dict({
+      'Client:client-ana-rojas': None,
+    }),
+  }),
+])
+
+    def test_undo_and_why_on_documents(tmp_path, snapshot):
+        _, session = restaurant(tmp_path)
+>       assert play(session, DOCUMENTS, tmp_path) == snapshot
+E       AssertionError: assert [+ received] == [- snapshot]
+E           ......
+E              ...
+E                 'at': '<at>',
+E         -       'hash_after': '<hash-1>',
+E         +       'hash_after': '<hash-8>',
+E                 'hash_before': '<hash-7>',
+E                 ......
+E         
+E         ...Full output truncated (8 lines hidden), use '-vv' to show
+
+tests/golden/test_16_golden_undo_why.py:62: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw1/test_undo_and_why_on_documents0/world/.sldb
+Registered 'Client'
+Registered 'Table'
+Registered 'Reservation'
+Registered 'State'
+____________ test_untrack_and_track_take_the_document_out_and_back _____________
+[gw0] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+world = <pron.world.world.World object at 0x72df7dd93bc0>
+
+    def test_untrack_and_track_take_the_document_out_and_back(world: World):
+        store = world.store
+        path = store.doc_path(NEW)
+>       store.untrack(NEW)
+
+tests/world/test_04_store_by_doc_id.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/pron/world/storage/document_tracker.py:103: in untrack
+    untrack_document(self.sp_of(doc_id.store), doc_id.name, self.pythonpath)
+/mnt/ssd/herramientas/sldb/src/sldb/api/documents/untrack_document.py:46: in untrack_document
+    m_entry, m_idx, doc = find_doc(location.store_path, location.project_root, idx, document)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+sp = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw0/restaurant6/world/.sldb')
+root = PosixPath('/dev/shm/pytest-of-robocop/pytest-1825/popen-gw0/restaurant6/world')
+idx = StoreIndex(stores=[], models=[ModelEntry(name='Client', model_ref='restaurant.models:Client', path='/dev/shm/pytest-of...ng the refs and the ref as authored.")], store_hash='d9e7e3f550118b419ed07807fdce9c557a44480bb522ac69a85491010f13024c')
+doc_ref = 'table-77'
+
+    def find_doc(sp: Path, root: Path, idx: StoreIndex, doc_ref: str) -> tuple[ModelEntry, ModelsIndex, DocumentEntry]:
+        """The model entry, models index and document entry of a tracked document.
+    
+        `doc_ref` is usually a name: one cheap shard check per model. A path may be given as the
+        store recorded it (relative to the project root) or absolute. Falling back to a match
+        by path uses this operation's own cached entries (PLAN 15 capa 8: a doc found by name
+        never pays for that; a fallback within an already-composed operation pays nothing new).
+    
+        Raises:
+            SLDBError: When no model tracks a document with that name or path.
+        """
+        for m_entry in idx.models:
+            if (doc := load_document_shard(documents_shard_path(sp, m_entry.name, doc_ref))) is not None:
+                return m_entry, load_models_index(root / m_entry.models_index), doc
+        recorded = _as_recorded(root, doc_ref)
+        for m_entry in idx.models:
+            if doc := next((d for d in documents_hash.entries_of(sp, m_entry.name) if d.path == recorded), None):
+                return m_entry, load_models_index(root / m_entry.models_index), doc
+>       raise SLDBError(f"Doc '{doc_ref}' not found.")
+E       sldb.core.exceptions.sldb_error.SLDBError: Doc 'table-77' not found.
+
+/mnt/ssd/herramientas/sldb/src/sldb/api/documents/document_lookup.py:39: SLDBError
+___________________ test_a_world_alone_still_works_the_same ____________________
+[gw3] linux -- Python 3.12.3 /dev/shm/pron-venv/bin/python
+
+nodes = (<pron.world.world.World object at 0x7bbbf2479520>, <pron.world.world.World object at 0x7bbbf21ca390>)
+
+    def test_a_world_alone_still_works_the_same(nodes):
+        a, _ = nodes
+        s = Session(a, projection="all", speaker="alone", now=NOW)
+        r = s.turn("the reservations of Ana Rojas")
+>       assert r.outcome == "unico" and "confirmed" in r.text, r.text
+E       AssertionError: None.
+E       assert ('unico' == 'unico'
+E         
+E           unico and 'confirmed' in 'None.')
+E        +  where 'None.' = Response(text='None.', outcome='unico', trace=['interpretation: nominal', 'forms: (show (the Reservation (plural) (of-...t.{Reservation+}\' --where \'doc ~ "ana"\' → 0', 'find \'st.{Reservation+}\' --where \'doc ~ "rojas"\' → 0', '∩ → 0']}).text
+
+tests/world/test_10_federation.py:131: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/a0/world/.sldb
+Registered 'Client'
+Registered 'Table'
+Registered 'Reservation'
+Registered 'State'
+Initialized store at /dev/shm/pytest-of-robocop/pytest-1825/popen-gw3/b0/world/.sldb
+Registered 'Client'
+Registered 'Table'
+Registered 'Reservation'
+Registered 'State'
+--------------------------- snapshot report summary ----------------------------
+3 snapshots failed. 27 snapshots passed.
+=========================== short test summary info ============================
+FAILED tests/remote/test_09_worlds_daemon.py::test_mount_adds_a_world_to_the_running_daemon
+FAILED tests/golden/test_16_golden_eval.py::test_eval_forms - AssertionError:...
+FAILED tests/golden/test_16_golden_undo_why.py::test_undo_and_why_on_list_fields
+FAILED tests/golden/test_16_golden_undo_why.py::test_undo_and_why_on_documents
+FAILED tests/world/test_04_store_by_doc_id.py::test_untrack_and_track_take_the_document_out_and_back
+FAILED tests/world/test_10_federation.py::test_a_world_alone_still_works_the_same
+6 failed, 476 passed in 270.99s (0:04:30)
