@@ -1,0 +1,90 @@
+{
+  "key": "task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y/bundle",
+  "input_sha256": "8dd3975dc98bae9da6f09fbf36982e0021380d22d93aacfd8d470a53b14e3477",
+  "argv": [
+    "pi",
+    "--provider",
+    "deepseek",
+    "--model",
+    "deepseek-flash",
+    "--thinking",
+    "low",
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools",
+    "--print",
+    "--system-prompt",
+    "Revisor barato aislado de un encargo de planificación. Trabajas solo con el input explícito: sin herramientas, historial ni otras fuentes. No ejecutas nada. Responde en español con estas secciones exactas: REFORMULACION (propósito, resultado, repo, límites), AMBIGUEDADES (numeradas, cada una con cita textual del input y qué obligaría a inventar; escribe \"ninguna\" si no hay), DRY-RUN (lecturas, cambios previstos, dependencias y validaciones futuras, sin ejecutar), FUTURO (lo que produce otro nodo o decide un humano, no ambigüedad). REFORMULACION describe el encargo del nodo, no esta revisión. DRY-RUN describe cómo lo ejecutaría un ejecutor futuro, hipotéticamente y sin ejecutar nada. Si el nodo es un agregado o paquete no ejecutable, dilo y además recorre cómo lo cumplen sus hijos, qué transfiere cada uno al siguiente y cómo se valida el resultado conjunto. Máximo 350 palabras.",
+    "@/mnt/ssd/proyectos/SLDB_1/pron/runs/subagents/link-deskops-20261116/context-review/task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y/bundle/8dd3975dc98bae9da6f09fbf36982e0021380d22d93aacfd8d470a53b14e3477/attempt-1/input.md"
+  ],
+  "binary": "pi",
+  "model": "deepseek/deepseek-flash",
+  "input_delivery": "file",
+  "isolation_flags": [
+    "--offline",
+    "--no-session",
+    "--no-context-files",
+    "--no-skills",
+    "--no-extensions",
+    "--no-prompt-templates",
+    "--no-tools"
+  ],
+  "profile": "runtime-pi-deepseek-flash",
+  "selection_reason": "deepseek-flash: perfil barato verificado en esta máquina por ritual-context-review (D4)",
+  "sources": [
+    {
+      "path": "desk/tasks/task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y.md",
+      "sha256": "870d19fc100fe3dc2f933064de94bc923b8164939ba02c527a1ec1716b1d16c2",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/phase.md",
+      "sha256": "f0b1b3663a2ba7342a51269cec025e0723dd018a1c727991bcf4f8b9de291e51",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/execution.md",
+      "sha256": "79e6abbbbbf4f330f80aeafccfb9d3d091f307d51b2043c1893b521006955c0d",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/testing.md",
+      "sha256": "0a1cd3ee93257f66eb41bd39d3c792049ca4100d5f8e2d05218eeeff7cb195db",
+      "projection": "whole_file"
+    },
+    {
+      "path": "desk/rituals/closeout.md",
+      "sha256": "a99d53f3394f7ec84670ce74a33ac4bab3784f02bc0676611ba1111b1c335ab5",
+      "projection": "whole_file"
+    },
+    {
+      "path": ".sldb/core/store_index.yaml",
+      "sha256": "2605429f1e947152be460877d5bd2e64ebdd836dd79177a5dc38d62f25e58a7d",
+      "projection": "whole_file"
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "sha256": "975f6db72c2e32eba3260fc774a10915d987febf18857ce25f5dda51f6d70abc",
+      "projection": "whole_file"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "b37fcbc3a1dd60871a906857255988b03ac2c82f5a59b6c551029aa054c76695",
+      "projection": "whole_file"
+    }
+  ],
+  "omitted_sources": [
+    {
+      "path": ".sldb/store.yaml",
+      "reason": "size>=60000",
+      "size": 61271
+    }
+  ],
+  "started": "2026-11-17T04:40:01.361500+00:00",
+  "finished": "2026-11-17T04:55:01.519760+00:00",
+  "retry_reason": "El input cambió: corrige las ambigüedades de preflight-5 y bundle-5 (criterio de V6, Makefile distinto, alcance de p0, canal del reporte, opsys, anclas)"
+}

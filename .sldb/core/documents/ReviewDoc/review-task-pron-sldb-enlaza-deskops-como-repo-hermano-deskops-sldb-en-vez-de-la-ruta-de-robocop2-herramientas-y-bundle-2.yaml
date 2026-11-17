@@ -1,0 +1,36 @@
+name: review-task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y-bundle-2
+path: desk/reviews/task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y/bundle-2.md
+source_hash: 1df51a2aa90883e522adde39492baad9a7fddf06011548067b95bdf240df21c5
+content_hash: 5460a66a9e5e022a7c2080c431ed7961ac61d6a66c7c9beb7959f155e8325ea8
+field_hashes:
+  id: d07deda28362a28aeedf0989b83f56dc54f234e0b73cab23cec28d1dd40e6859
+  title: d4b1eacf656169823ec096ff36ccef0ebdaf053a65070aaece46902aeca1c476
+  kind: 4c522949265daa3973b2389b594a235b5c6e47c70d2af6e23bd14f8173f56280
+  fact: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  value: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  subject: a2898faa683ac31a27e698ca215b2d4858d6eda3cc55b639ec76f4d90bd8c0dd
+  subject_ref: 12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126
+  engine: 6874c40de9971944b9706ccc769074b7f77cb595ed78bafba748db5266461238
+  actor: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  run_dir: e8a5a9efaff9a567067cf7874449e24115e7ee05bb63ccbeb5783e34f88afaf3
+  input_sha256: 86eb267b0d2ea3666927c8f94ba3cb23582c21e27793b4eec90b05401d283793
+  output_sha256: 3673b6f3b089c1bbc7f2f1dbdc585e884970ca11726c8e578555dd679464834d
+  verdict: d5a7606c75f86f5046e5c8312a9819e4778be8ab33a7e8950d62f7ba620684fe
+  reason: 3e4dc5fa1af9901c974b126adc37db7481289dd246a105ca84d43bc2450dcce1
+  created_at: 339e2f3695536209e11a88569a0a415a80177fe4aa1eaa185f358d8ef82fbc93
+  disposed_at: 1b48e5d8513ab9ab50a61af5998f64572a1598f19392a81f6db9b77346dcd6ec
+  disposed_by: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  summary: fb0413b49b13fbd4422aa253e9434f348ae971ac724115f9503cbb991f583808
+  disposition: b03bdddd3c9c04643abe1c2352760a3b2e8c32875532be81a1c9809d90c8da16
+  tags: 26f66ebae91f717518f0d0c6585e99f1cbd539bcb3504598ddeb732dec3a0af9
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.workflow.review
+- workspace.desk.runs
+- workspace:desk
+provenance:
+  by: agent
+  at: '2026-11-17T02:58:08Z'
+  authority: generated
+  via: save_document_payload

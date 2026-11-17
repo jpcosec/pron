@@ -1,0 +1,24 @@
+name: 20261116-194348-suggestion-pron-sldb-enlaza-deskops-por-una-ruta-de-robocop2-herramientas-deskops-sldb-y-rompe-el-job-store-del-ci-de-sldb
+path: desk/inbox/20261116-194348-suggestion-pron-sldb-enlaza-deskops-por-una-ruta-de-robocop2-herramientas-deskops-sldb-y-rompe-el-job-store-del-ci-de-sldb.md
+source_hash: b5c6cd6986c2221baca5ec4544f9451355cd24e6cadc43fbccb98e5a591e0cd2
+content_hash: bc9e3fbdc8d7e8f69035a16da24a2941e1a148b6f6ffce9526a49ea524bb45d2
+field_hashes:
+  kind: f4accece99081750b6b8b5089a3f24b11d5ceba70797c3eb49000d84b98344fc
+  sender_project: adf8f4fb55456ba91d0b029904c49d4d1b85540b989a86435dfb80c0a89f7efb
+  target_project: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  created_at: 0aec91a397a73f842a53cd7c7dff5e169f0219f61b5bbb8108ed3fd48da78f6e
+  status: 02e31f51aa8b1b6a622c4f7c30fab328d711cad4c9da74b9965ada8aa15d9df2
+  acknowledged_by: 8e7d42497d066cf2702e1aec85ede74beecbb16e002906840a4e20c4e1e3e0c7
+  acknowledged_at: 1584f92ba1997638f92cf0543444e6fa819d519ca1616e67db79960c3faaa2e8
+  title: 95ae1c814d3f24da2b45d10d6c59a6578f12ad60d3b976a0b2d4abe772604bf6
+  body: ba2e67276a9e7802794490033468856671d2fb9debe58dd9dbc33e7b61ff0951
+semantic_tags:
+- representation.markdown
+- source.document.markdown
+- type.desk.inbox-note
+- workspace.desk.inbox
+provenance:
+  by: agent
+  at: '2026-11-17T01:39:17Z'
+  authority: generated
+  via: save_document_payload

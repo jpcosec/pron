@@ -1,0 +1,9 @@
+{
+  "key": "task-pron-sldb-enlaza-deskops-como-repo-hermano-deskops-sldb-en-vez-de-la-ruta-de-robocop2-herramientas-y/bundle",
+  "technical_ok": false,
+  "returncode": null,
+  "input_sha256": "8dd3975dc98bae9da6f09fbf36982e0021380d22d93aacfd8d470a53b14e3477",
+  "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "start": "2026-11-17T04:40:01.361500+00:00",
+  "end": "2026-11-17T04:55:01.519760+00:00"
+}
