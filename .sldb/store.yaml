@@ -1,7 +1,7 @@
 version: 1
 links:
 - name: deskops
-  path: ../../../herramientas/deskops/.sldb
+  path: ../deskops/.sldb
 models:
 - name: RelationTypeDoc
   model_ref: sldb.models.relation_type_doc:RelationTypeDoc
